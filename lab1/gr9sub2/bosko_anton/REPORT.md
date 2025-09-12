@@ -47,7 +47,9 @@ grep -i ' install ' logs/dpkg.log \
 | uniq -c \
 | sort -nr \
 | head -n 10
-
+```
+Вывод
+```
       1 zstd
       1 zlib1g
       1 zip
