@@ -4,20 +4,22 @@
 Подсчитать 5 самых частых “слов” в /var/log/syslog 
 
 ## Шаги/решения
-cat logs/syslog \
+```cat logs/syslog \
   | tr -cs '[:alnum:]' '\n' \
   | tr '[:upper:]' '[:lower:]' \
   | sort \
   | uniq -c \
   | sort -nr \
   | head -n 5
+```
    
 ## Выводы
-   7268 00
-   5121 09
-   5105 virtualbox
-   5097 dasha
-   5086 2025
+```   7268 00
+      5121 09
+      5105 virtualbox
+      5097 dasha
+      5086 2025
+```
 
 ## Использование AI
 Для объяснения работы некоторых команд
