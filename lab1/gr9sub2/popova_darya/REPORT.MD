@@ -4,7 +4,8 @@
 Подсчитать 5 самых частых “слов” в /var/log/syslog 
 
 ## Шаги/решения
-```cat logs/syslog \
+```bash
+cat logs/syslog \
   | tr -cs '[:alnum:]' '\n' \
   | tr '[:upper:]' '[:lower:]' \
   | sort \
@@ -14,7 +15,8 @@
 ```
    
 ## Выводы
-```   7268 00
+```   
+      7268 00
       5121 09
       5105 virtualbox
       5097 dasha
@@ -30,7 +32,8 @@
 Найти строки с Failed или Invalid в /var/log/auth.log.Извлечь IP‑адреса, посчитать TOP‑10 источников. Замаскировать последний октет IP (например, 192.168.0.15 → 192.168.0.x) с помощью sed.
 
 ## Шаги/решения
-```grep -E 'Failed|Invalid' logs/auth.log
+```
+grep -E 'Failed|Invalid' logs/auth.log
 ```
 Результат: 
 ```
@@ -57,13 +60,15 @@ grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}' auth.log\
 
 ## Шаги/решения
 
-```grep ' install ' dpkg.log \
+```
+grep ' install ' dpkg.log \
   | awk '{print $4}' \
   | sort | uniq -c | sort -nr | head -n 10
 ```
    
 ## Выводы
-```   1 zstd:amd64
+```  
+      1 zstd:amd64
       1 zlib1g:amd64
       1 zip:amd64
       1 zenity-common:all
