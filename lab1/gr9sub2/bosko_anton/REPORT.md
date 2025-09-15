@@ -25,9 +25,9 @@ cat logs/syslog \
 - Извлеките IP‑адреса, посчитайте TOP‑10 источников.
 - Замаскируйте последний октет IP (например, 192.168.0.15 → 192.168.0.x) с помощью sed.
 ```bash
-grep -Ei 'Failed|Invalid' logs/auth.log \
+grep -Ei 'Failed|Invalid' auth.test \
 | grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' \
-| sed -E 's/(\d+\.\d+\.\d+\.)\d+/\1x/g' \
+| sed -E 's/([0-9]+\.[0-9]+\.[0-9]+\.)[0-9]+/\1x/g' \
 | sort \
 | uniq -c \
 | sort -nr \
