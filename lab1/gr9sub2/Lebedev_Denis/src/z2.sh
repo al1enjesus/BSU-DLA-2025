@@ -1,3 +1,4 @@
+#!/bin/bash
 cat /var/log/auth.log \
 	| grep -iE 'Failed|Invalid' \
 	| grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' \
