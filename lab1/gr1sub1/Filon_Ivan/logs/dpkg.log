@@ -1,0 +1,51 @@
+2025-09-14 15:03:48 startup archives unpack
+2025-09-14 15:03:49 install sl:amd64 <none> 5.02-1
+2025-09-14 15:03:49 status half-installed sl:amd64 5.02-1
+2025-09-14 15:03:49 status triggers-pending man-db:amd64 2.9.1-1
+2025-09-14 15:03:49 status unpacked sl:amd64 5.02-1
+2025-09-14 15:03:49 startup packages configure
+2025-09-14 15:03:49 configure sl:amd64 5.02-1 <none>
+2025-09-14 15:03:49 status unpacked sl:amd64 5.02-1
+2025-09-14 15:03:49 status half-configured sl:amd64 5.02-1
+2025-09-14 15:03:49 status installed sl:amd64 5.02-1
+2025-09-14 15:03:49 trigproc man-db:amd64 2.9.1-1 <none>
+2025-09-14 15:03:49 status half-configured man-db:amd64 2.9.1-1
+2025-09-14 15:03:49 status installed man-db:amd64 2.9.1-1
+2025-09-15 21:58:08 startup archives unpack
+2025-09-15 21:58:09 install libonig5:amd64 <none> 6.9.4-1
+2025-09-15 21:58:09 status triggers-pending libc-bin:amd64 2.31-0ubuntu9.17
+2025-09-15 21:58:09 status half-installed libonig5:amd64 6.9.4-1
+2025-09-15 21:58:09 status unpacked libonig5:amd64 6.9.4-1
+2025-09-15 21:58:09 install libjq1:amd64 <none> 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:09 status half-installed libjq1:amd64 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:09 status unpacked libjq1:amd64 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:09 install jq:amd64 <none> 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:09 status half-installed jq:amd64 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:09 status triggers-pending man-db:amd64 2.9.1-1
+2025-09-15 21:58:09 status unpacked jq:amd64 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:09 install tree:amd64 <none> 1.8.0-1
+2025-09-15 21:58:09 status half-installed tree:amd64 1.8.0-1
+2025-09-15 21:58:10 status unpacked tree:amd64 1.8.0-1
+2025-09-15 21:58:10 startup packages configure
+2025-09-15 21:58:10 configure tree:amd64 1.8.0-1 <none>
+2025-09-15 21:58:10 status unpacked tree:amd64 1.8.0-1
+2025-09-15 21:58:10 status half-configured tree:amd64 1.8.0-1
+2025-09-15 21:58:10 status installed tree:amd64 1.8.0-1
+2025-09-15 21:58:10 configure libonig5:amd64 6.9.4-1 <none>
+2025-09-15 21:58:10 status unpacked libonig5:amd64 6.9.4-1
+2025-09-15 21:58:10 status half-configured libonig5:amd64 6.9.4-1
+2025-09-15 21:58:10 status installed libonig5:amd64 6.9.4-1
+2025-09-15 21:58:10 configure libjq1:amd64 1.6-1ubuntu0.20.04.1 <none>
+2025-09-15 21:58:10 status unpacked libjq1:amd64 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:10 status half-configured libjq1:amd64 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:10 status installed libjq1:amd64 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:10 configure jq:amd64 1.6-1ubuntu0.20.04.1 <none>
+2025-09-15 21:58:10 status unpacked jq:amd64 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:10 status half-configured jq:amd64 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:10 status installed jq:amd64 1.6-1ubuntu0.20.04.1
+2025-09-15 21:58:10 trigproc man-db:amd64 2.9.1-1 <none>
+2025-09-15 21:58:10 status half-configured man-db:amd64 2.9.1-1
+2025-09-15 21:58:10 status installed man-db:amd64 2.9.1-1
+2025-09-15 21:58:10 trigproc libc-bin:amd64 2.31-0ubuntu9.17 <none>
+2025-09-15 21:58:10 status half-configured libc-bin:amd64 2.31-0ubuntu9.17
+2025-09-15 21:58:11 status installed libc-bin:amd64 2.31-0ubuntu9.17
