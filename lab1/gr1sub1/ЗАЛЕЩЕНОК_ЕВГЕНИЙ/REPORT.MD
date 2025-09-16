@@ -58,7 +58,7 @@ cat /var/log/syslog | tr -cs '[:alnum:]' '\n' | tr '[:upper:]' '[:lower:]' | sor
 
 **Итоговая команда:**
 ```bash
-grep -E 'Failed|Invalid' /var/log/auth.log | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | sed -E 's/(\d+\.\d+\.\d+\.)\d+/\1x/g' | sort | uniq -c | sort -nr | head -n 10
+grep -E 'Failed|Invalid' /var/log/auth.log | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | sed -E 's/([0-9]+\.[0-9]+\.[0-9]+\.)[0-9]+/\1x/g' | sort | uniq -c | sort -nr | head -n 10
 ```
 ---
 #### Выводы
@@ -108,6 +108,7 @@ grep ' install ' /var/log/dpkg.log | awk '{print $4}' | cut -d: -f1 | sort | uni
 1.  Получения пошагового объяснения работы команд `awk` и `cut` в составе конвейера.
 2.  Интерпретации полученного пустого вывода как валидного результата.
 3.  Помощи в структурировании и написании данного отчёта в формате Markdown.
+
 
 
 
