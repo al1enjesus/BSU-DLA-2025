@@ -102,3 +102,4 @@ grep ' install ' /var/log/dpkg.log | awk '{print $4}' | cut -d: -f1 | sort | uni
 3.  Помощи в структурировании и написании данного отчёта в формате Markdown.
 
 
+
