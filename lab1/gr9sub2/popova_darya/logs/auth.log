@@ -1,0 +1,132 @@
+2025-09-12T08:52:01.721426+00:00 dasha-VirtualBox systemd-logind[939]: New seat seat0.
+2025-09-12T08:52:01.721431+00:00 dasha-VirtualBox systemd-logind[939]: Watching system buttons on /dev/input/event0 (Power Button)
+2025-09-12T08:52:01.721433+00:00 dasha-VirtualBox systemd-logind[939]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2025-09-12T08:52:01.721436+00:00 dasha-VirtualBox systemd-logind[939]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2025-09-12T08:52:01.721469+00:00 dasha-VirtualBox polkitd[913]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-12T08:52:01.721475+00:00 dasha-VirtualBox polkitd[913]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-12T08:52:01.721551+00:00 dasha-VirtualBox polkitd[913]: Finished loading, compiling and executing 16 rules
+2025-09-12T08:52:01.721563+00:00 dasha-VirtualBox polkitd[913]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+2025-09-12T08:52:03.377059+00:00 dasha-VirtualBox useradd[1339]: new group: name=dasha, GID=1000
+2025-09-12T08:52:03.377904+00:00 dasha-VirtualBox useradd[1339]: new user: name=dasha, UID=1000, GID=1000, home=/home/dasha, shell=/bin/bash, from=none
+2025-09-12T08:52:03.377927+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to group 'adm'
+2025-09-12T08:52:03.377948+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to group 'cdrom'
+2025-09-12T08:52:03.377970+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to group 'sudo'
+2025-09-12T08:52:03.377983+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to group 'dip'
+2025-09-12T08:52:03.377996+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to group 'plugdev'
+2025-09-12T08:52:03.378008+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to group 'users'
+2025-09-12T08:52:03.378024+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to group 'lpadmin'
+2025-09-12T08:52:03.378046+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to shadow group 'adm'
+2025-09-12T08:52:03.378063+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to shadow group 'cdrom'
+2025-09-12T08:52:03.378076+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to shadow group 'sudo'
+2025-09-12T08:52:03.378094+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to shadow group 'dip'
+2025-09-12T08:52:03.378112+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to shadow group 'plugdev'
+2025-09-12T08:52:03.378128+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to shadow group 'users'
+2025-09-12T08:52:03.378140+00:00 dasha-VirtualBox useradd[1339]: add 'dasha' to shadow group 'lpadmin'
+2025-09-12T08:52:03.417986+00:00 dasha-VirtualBox passwd[1349]: password for 'dasha' changed by 'root'
+2025-09-12T08:52:05.573726+00:00 dasha-VirtualBox gdm-autologin]: gkr-pam: no password is available for user
+2025-09-12T08:52:05.606848+00:00 dasha-VirtualBox gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user dasha(uid=1000) by dasha(uid=0)
+2025-09-12T08:52:05.642622+00:00 dasha-VirtualBox systemd-logind[939]: New session 1 of user dasha.
+2025-09-12T08:52:05.661676+00:00 dasha-VirtualBox (systemd): pam_unix(systemd-user:session): session opened for user dasha(uid=1000) by dasha(uid=0)
+2025-09-12T08:52:05.882023+00:00 dasha-VirtualBox gdm-autologin]: gkr-pam: couldn't unlock the login keyring.
+2025-09-12T08:52:06.265460+00:00 dasha-VirtualBox gnome-keyring-daemon[1605]: The Secret Service was already initialized
+2025-09-12T08:52:06.266805+00:00 dasha-VirtualBox gnome-keyring-daemon[1750]: discover_other_daemon: 1
+2025-09-12T08:52:06.274590+00:00 dasha-VirtualBox gnome-keyring-daemon[1755]: discover_other_daemon: 1
+2025-09-12T08:52:06.274854+00:00 dasha-VirtualBox gnome-keyring-daemon[1605]: The PKCS#11 component was already initialized
+2025-09-12T08:52:06.274916+00:00 dasha-VirtualBox gnome-keyring-daemon[1758]: discover_other_daemon: 1
+2025-09-12T08:52:07.964245+00:00 dasha-VirtualBox polkitd[913]: Registered Authentication Agent for unix-session:1 (system bus name :1.43 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+2025-09-12T08:54:14.711354+00:00 dasha-VirtualBox systemd-logind[939]: The system will power off now!
+2025-09-12T08:54:14.759100+00:00 dasha-VirtualBox systemd-logind[939]: System is powering down.
+2025-09-12T08:54:14.777831+00:00 dasha-VirtualBox gdm-autologin]: pam_unix(gdm-autologin:session): session closed for user dasha
+2025-09-12T16:07:37.719830+03:00 dasha-VirtualBox systemd-logind[861]: New seat seat0.
+2025-09-12T16:07:37.719833+03:00 dasha-VirtualBox systemd-logind[861]: Watching system buttons on /dev/input/event0 (Power Button)
+2025-09-12T16:07:37.719836+03:00 dasha-VirtualBox systemd-logind[861]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2025-09-12T16:07:37.719839+03:00 dasha-VirtualBox systemd-logind[861]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2025-09-12T16:07:37.719864+03:00 dasha-VirtualBox polkitd[844]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-12T16:07:37.719870+03:00 dasha-VirtualBox polkitd[844]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-12T16:07:37.719878+03:00 dasha-VirtualBox polkitd[844]: Finished loading, compiling and executing 16 rules
+2025-09-12T16:07:37.719887+03:00 dasha-VirtualBox polkitd[844]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+2025-09-12T16:07:38.824002+03:00 dasha-VirtualBox gdm-autologin]: gkr-pam: no password is available for user
+2025-09-12T16:07:38.889885+03:00 dasha-VirtualBox gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user dasha(uid=1000) by dasha(uid=0)
+2025-09-12T16:07:38.934985+03:00 dasha-VirtualBox systemd-logind[861]: New session 1 of user dasha.
+2025-09-12T16:07:38.955926+03:00 dasha-VirtualBox (systemd): pam_unix(systemd-user:session): session opened for user dasha(uid=1000) by dasha(uid=0)
+2025-09-12T16:07:39.339018+03:00 dasha-VirtualBox gdm-autologin]: gkr-pam: couldn't unlock the login keyring.
+2025-09-12T16:07:39.908197+03:00 dasha-VirtualBox gnome-keyring-daemon[1120]: The Secret Service was already initialized
+2025-09-12T16:07:39.908602+03:00 dasha-VirtualBox gnome-keyring-daemon[1338]: discover_other_daemon: 1
+2025-09-12T16:07:39.917806+03:00 dasha-VirtualBox gnome-keyring-daemon[1120]: The PKCS#11 component was already initialized
+2025-09-12T16:07:39.918353+03:00 dasha-VirtualBox gnome-keyring-daemon[1345]: discover_other_daemon: 1
+2025-09-12T16:07:39.918749+03:00 dasha-VirtualBox gnome-keyring-daemon[1342]: discover_other_daemon: 1
+2025-09-12T16:07:43.311965+03:00 dasha-VirtualBox polkitd[844]: Registered Authentication Agent for unix-session:1 (system bus name :1.40 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+2025-09-12T16:15:01.215247+03:00 dasha-VirtualBox CRON[2948]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:15:01.218955+03:00 dasha-VirtualBox CRON[2948]: pam_unix(cron:session): session closed for user root
+2025-09-12T16:15:10.848303+03:00 dasha-VirtualBox dbus-daemon[833]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2025-09-12T16:17:01.233060+03:00 dasha-VirtualBox CRON[3160]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:17:01.255002+03:00 dasha-VirtualBox CRON[3160]: pam_unix(cron:session): session closed for user root
+2025-09-12T16:25:01.352039+03:00 dasha-VirtualBox CRON[3457]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:25:01.366596+03:00 dasha-VirtualBox CRON[3457]: pam_unix(cron:session): session closed for user root
+2025-09-12T16:30:01.503800+03:00 dasha-VirtualBox CRON[3462]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:30:01.515208+03:00 dasha-VirtualBox CRON[3462]: pam_unix(cron:session): session closed for user root
+2025-09-12T16:35:01.601209+03:00 dasha-VirtualBox CRON[3470]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:35:01.608320+03:00 dasha-VirtualBox CRON[3470]: pam_unix(cron:session): session closed for user root
+2025-09-12T16:45:01.483315+03:00 dasha-VirtualBox CRON[3481]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:45:01.490621+03:00 dasha-VirtualBox CRON[3481]: pam_unix(cron:session): session closed for user root
+2025-09-12T17:36:27.327511+03:00 dasha-VirtualBox CRON[3487]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T17:36:27.343017+03:00 dasha-VirtualBox CRON[3487]: pam_unix(cron:session): session closed for user root
+2025-09-12T17:45:01.418359+03:00 dasha-VirtualBox CRON[3535]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T17:45:01.424247+03:00 dasha-VirtualBox CRON[3535]: pam_unix(cron:session): session closed for user root
+2025-09-14T13:34:33.846517+03:00 dasha-VirtualBox polkitd[859]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-14T13:34:33.846520+03:00 dasha-VirtualBox polkitd[859]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-14T13:34:33.846537+03:00 dasha-VirtualBox polkitd[859]: Finished loading, compiling and executing 16 rules
+2025-09-14T13:34:33.846559+03:00 dasha-VirtualBox polkitd[859]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+2025-09-14T13:34:33.846565+03:00 dasha-VirtualBox systemd-logind[911]: New seat seat0.
+2025-09-14T13:34:33.846668+03:00 dasha-VirtualBox systemd-logind[911]: Watching system buttons on /dev/input/event0 (Power Button)
+2025-09-14T13:34:33.846671+03:00 dasha-VirtualBox systemd-logind[911]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2025-09-14T13:34:33.846676+03:00 dasha-VirtualBox systemd-logind[911]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2025-09-14T13:34:34.845298+03:00 dasha-VirtualBox gdm-autologin]: gkr-pam: no password is available for user
+2025-09-14T13:34:34.885710+03:00 dasha-VirtualBox gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user dasha(uid=1000) by dasha(uid=0)
+2025-09-14T13:34:34.930874+03:00 dasha-VirtualBox systemd-logind[911]: New session 1 of user dasha.
+2025-09-14T13:34:34.966616+03:00 dasha-VirtualBox (systemd): pam_unix(systemd-user:session): session opened for user dasha(uid=1000) by dasha(uid=0)
+2025-09-14T13:34:35.426848+03:00 dasha-VirtualBox gdm-autologin]: gkr-pam: couldn't unlock the login keyring.
+2025-09-14T13:34:36.300910+03:00 dasha-VirtualBox gnome-keyring-daemon[1177]: The Secret Service was already initialized
+2025-09-14T13:34:36.301501+03:00 dasha-VirtualBox gnome-keyring-daemon[1402]: discover_other_daemon: 1
+2025-09-14T13:34:36.311136+03:00 dasha-VirtualBox gnome-keyring-daemon[1177]: The PKCS#11 component was already initialized
+2025-09-14T13:34:36.312053+03:00 dasha-VirtualBox gnome-keyring-daemon[1406]: discover_other_daemon: 1
+2025-09-14T13:34:36.320820+03:00 dasha-VirtualBox gnome-keyring-daemon[1407]: discover_other_daemon: 1
+2025-09-14T13:34:39.610553+03:00 dasha-VirtualBox polkitd[859]: Registered Authentication Agent for unix-session:1 (system bus name :1.41 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+2025-09-14T13:35:01.338111+03:00 dasha-VirtualBox CRON[2087]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T13:35:01.345874+03:00 dasha-VirtualBox CRON[2087]: pam_unix(cron:session): session closed for user root
+2025-09-14T13:38:08.697915+03:00 dasha-VirtualBox sudo:    dasha : TTY=pts/0 ; PWD=/home/dasha ; USER=root ; COMMAND=/usr/bin/su
+2025-09-14T13:38:08.698639+03:00 dasha-VirtualBox sudo: pam_unix(sudo:session): session opened for user root(uid=0) by dasha(uid=1000)
+2025-09-14T13:38:08.709652+03:00 dasha-VirtualBox su[3384]: (to root) root on pts/1
+2025-09-14T13:38:08.710829+03:00 dasha-VirtualBox su[3384]: pam_unix(su:session): session opened for user root(uid=0) by dasha(uid=0)
+2025-09-14T13:39:08.146836+03:00 dasha-VirtualBox su[3384]: pam_unix(su:session): session closed for user root
+2025-09-14T13:39:08.148355+03:00 dasha-VirtualBox sudo: pam_unix(sudo:session): session closed for user root
+2025-09-14T13:45:01.709612+03:00 dasha-VirtualBox CRON[3718]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T13:45:01.724706+03:00 dasha-VirtualBox CRON[3718]: pam_unix(cron:session): session closed for user root
+2025-09-14T13:55:01.733734+03:00 dasha-VirtualBox CRON[3874]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T13:55:01.740646+03:00 dasha-VirtualBox CRON[3874]: pam_unix(cron:session): session closed for user root
+2025-09-14T14:05:01.762418+03:00 dasha-VirtualBox CRON[3963]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T14:05:01.776605+03:00 dasha-VirtualBox CRON[3963]: pam_unix(cron:session): session closed for user root
+2025-09-14T14:15:01.781246+03:00 dasha-VirtualBox CRON[4045]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T14:15:01.785092+03:00 dasha-VirtualBox CRON[4045]: pam_unix(cron:session): session closed for user root
+2025-09-14T14:17:01.792576+03:00 dasha-VirtualBox CRON[4060]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T14:17:01.809025+03:00 dasha-VirtualBox CRON[4060]: pam_unix(cron:session): session closed for user root
+2025-09-14T14:18:11.255650+03:00 dasha-VirtualBox dbus-daemon[846]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2025-09-14T14:25:01.819380+03:00 dasha-VirtualBox CRON[4235]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T14:25:01.826619+03:00 dasha-VirtualBox CRON[4235]: pam_unix(cron:session): session closed for user root
+2025-09-14T14:30:01.838086+03:00 dasha-VirtualBox CRON[4267]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T14:30:01.852974+03:00 dasha-VirtualBox CRON[4267]: pam_unix(cron:session): session closed for user root
+2025-09-14T14:35:01.856798+03:00 dasha-VirtualBox CRON[4358]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T14:35:01.863222+03:00 dasha-VirtualBox CRON[4358]: pam_unix(cron:session): session closed for user root
+2025-09-14T14:45:01.892243+03:00 dasha-VirtualBox CRON[5040]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T14:45:01.901681+03:00 dasha-VirtualBox CRON[5040]: pam_unix(cron:session): session closed for user root
+2025-09-14T14:52:06.420346+03:00 dasha-VirtualBox gdm-password]: gkr-pam: unlocked login keyring
+2025-09-14T14:55:01.914166+03:00 dasha-VirtualBox CRON[5461]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T14:55:01.929245+03:00 dasha-VirtualBox CRON[5461]: pam_unix(cron:session): session closed for user root
+2025-09-14T15:05:01.935377+03:00 dasha-VirtualBox CRON[6046]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T15:05:01.942286+03:00 dasha-VirtualBox CRON[6046]: pam_unix(cron:session): session closed for user root
+2025-09-14T15:15:01.960950+03:00 dasha-VirtualBox CRON[6608]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T15:15:01.976927+03:00 dasha-VirtualBox CRON[6608]: pam_unix(cron:session): session closed for user root
+2025-09-14T15:17:01.979503+03:00 dasha-VirtualBox CRON[6674]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T15:17:01.996110+03:00 dasha-VirtualBox CRON[6674]: pam_unix(cron:session): session closed for user root
+2025-09-14T15:25:01.011713+03:00 dasha-VirtualBox CRON[7016]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-14T15:25:01.015694+03:00 dasha-VirtualBox CRON[7016]: pam_unix(cron:session): session closed for user root
