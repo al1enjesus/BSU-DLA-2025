@@ -103,3 +103,28 @@
 2025-09-18T19:49:07.027216+00:00 ubuntu CRON[7701]: pam_unix(cron:session): session closed for user root
 2025-09-18T19:55:01.063105+00:00 ubuntu CRON[7714]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
 2025-09-18T19:55:01.071698+00:00 ubuntu CRON[7714]: pam_unix(cron:session): session closed for user root
+2025-09-18T20:05:01.125380+00:00 ubuntu CRON[7773]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T20:05:01.130531+00:00 ubuntu CRON[7773]: pam_unix(cron:session): session closed for user root
+2025-09-18T20:15:01.193640+00:00 ubuntu CRON[7883]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T20:15:01.202199+00:00 ubuntu CRON[7883]: pam_unix(cron:session): session closed for user root
+2025-09-18T20:17:01.245866+00:00 ubuntu CRON[7887]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T20:17:01.256603+00:00 ubuntu CRON[7887]: pam_unix(cron:session): session closed for user root
+2025-09-18T20:25:01.308499+00:00 ubuntu CRON[8039]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T20:25:01.316942+00:00 ubuntu CRON[8039]: pam_unix(cron:session): session closed for user root
+2025-09-18T20:30:01.358158+00:00 ubuntu CRON[8064]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T20:30:01.361234+00:00 ubuntu CRON[8064]: pam_unix(cron:session): session closed for user root
+2025-09-18T20:35:01.399834+00:00 ubuntu CRON[8081]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T20:35:01.406882+00:00 ubuntu CRON[8081]: pam_unix(cron:session): session closed for user root
+2025-09-18T20:45:01.459617+00:00 ubuntu CRON[8103]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T20:45:01.468499+00:00 ubuntu CRON[8103]: pam_unix(cron:session): session closed for user root
+2025-09-18T20:50:39.554184+00:00 ubuntu sudo:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu/Desktop/dla/BSU-DLA-2025/lab1/gr9sub2/KUSHMAR_ELINA/logs ; USER=root ; COMMAND=/usr/bin/apt install hydra
+2025-09-18T20:50:39.555657+00:00 ubuntu sudo: pam_unix(sudo:session): session opened for user root(uid=0) by ubuntu(uid=1000)
+2025-09-18T20:50:39.606873+00:00 ubuntu sudo: pam_unix(sudo:session): session closed for user root
+2025-09-18T20:55:01.537578+00:00 ubuntu CRON[8161]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T20:55:01.547253+00:00 ubuntu CRON[8161]: pam_unix(cron:session): session closed for user root
+2025-09-18T21:05:01.612868+00:00 ubuntu CRON[8186]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T21:05:01.621746+00:00 ubuntu CRON[8186]: pam_unix(cron:session): session closed for user root
+2025-09-18T21:15:01.682308+00:00 ubuntu CRON[8234]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T21:15:01.689680+00:00 ubuntu CRON[8234]: pam_unix(cron:session): session closed for user root
+2025-09-18T21:17:01.723641+00:00 ubuntu CRON[8239]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T21:17:01.731429+00:00 ubuntu CRON[8239]: pam_unix(cron:session): session closed for user root

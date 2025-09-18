@@ -2596,3 +2596,126 @@
 2025-09-18T17:40:05.346770+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
 2025-09-18T17:40:05.402139+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
 2025-09-18T17:40:05.402486+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T17:44:39.586713+00:00 ubuntu xdg-desktop-por[3151]: Backend call failed: GDBus.Error:org.gnome.SessionManager.GeneralError: Application ID not specified
+2025-09-18T17:44:52.157370+00:00 ubuntu spice-vdagentd: No QXL devices found, not generating xorg.conf
+2025-09-18T17:44:52.596824+00:00 ubuntu spice-vdagentd: message repeated 3 times: [ No QXL devices found, not generating xorg.conf]
+2025-09-18T17:44:52.743652+00:00 ubuntu spice-vdagent[2470]: Found monitor Virtual-1 with geometry 3440x1440+0-0 - associating it to SPICE display #0
+2025-09-18T17:44:52.746884+00:00 ubuntu spice-vdagent[2470]: Found monitor Virtual-1 with geometry 3440x1440+0-0 - associating it to SPICE display #0
+2025-09-18T17:44:52.747855+00:00 ubuntu spice-vdagent[2470]: XRRSetScreenSize failed, not enough mem?
+2025-09-18T17:44:52.748041+00:00 ubuntu spice-vdagent[2470]: Restoring previous config
+2025-09-18T17:44:52.749852+00:00 ubuntu spice-vdagent[2470]: Found monitor Virtual-1 with geometry 3440x1440+0-0 - associating it to SPICE display #0
+2025-09-18T17:44:52.750954+00:00 ubuntu spice-vdagent[2470]: Ignoring previous failed client monitor config
+2025-09-18T17:44:52.751891+00:00 ubuntu spice-vdagent[2470]: Found monitor Virtual-1 with geometry 3440x1440+0-0 - associating it to SPICE display #0
+2025-09-18T17:44:55.257293+00:00 ubuntu spice-vdagent[2470]: Found monitor Virtual-1 with geometry 1920x1080+0-0 - associating it to SPICE display #0
+2025-09-18T17:44:55.313565+00:00 ubuntu kernel: input: spice vdagent tablet as /devices/virtual/input/input7
+2025-09-18T17:44:55.292115+00:00 ubuntu spice-vdagent[2470]: Found monitor Virtual-1 with geometry 1920x1080+0-0 - associating it to SPICE display #0
+2025-09-18T17:44:55.372613+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+2025-09-18T17:44:55.372812+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+2025-09-18T17:44:55.372865+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+2025-09-18T17:44:55.373010+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+2025-09-18T17:44:55.373059+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+2025-09-18T17:44:55.373110+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+2025-09-18T17:44:55.373150+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+2025-09-18T17:44:55.373189+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+2025-09-18T17:44:55.373244+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+2025-09-18T17:44:55.373264+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+2025-09-18T17:44:55.373301+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+2025-09-18T17:44:55.373328+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+2025-09-18T17:44:55.373359+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+2025-09-18T17:44:55.373387+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+2025-09-18T17:44:55.373423+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+2025-09-18T17:44:55.373481+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+2025-09-18T17:44:55.373514+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+2025-09-18T17:44:55.373562+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+2025-09-18T17:45:01.865801+00:00 ubuntu CRON[7644]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-09-18T17:45:37.823413+00:00 ubuntu spice-vdagentd: No QXL devices found, not generating xorg.conf
+2025-09-18T17:45:37.849660+00:00 ubuntu spice-vdagentd: No QXL devices found, not generating xorg.conf
+2025-09-18T17:45:37.856843+00:00 ubuntu spice-vdagent[2470]: XRRSetScreenSize failed, not enough mem?
+2025-09-18T17:45:37.857487+00:00 ubuntu spice-vdagent[2470]: Restoring previous config
+2025-09-18T17:45:37.872090+00:00 ubuntu spice-vdagent[2470]: Found monitor Virtual-1 with geometry 1920x1080+0-0 - associating it to SPICE display #0
+2025-09-18T17:45:37.873319+00:00 ubuntu spice-vdagent[2470]: Ignoring previous failed client monitor config
+2025-09-18T17:45:37.874978+00:00 ubuntu spice-vdagent[2470]: Found monitor Virtual-1 with geometry 1920x1080+0-0 - associating it to SPICE display #0
+2025-09-18T17:45:40.351801+00:00 ubuntu spice-vdagent[2470]: Found monitor Virtual-1 with geometry 1440x900+0-0 - associating it to SPICE display #0
+2025-09-18T17:45:40.375073+00:00 ubuntu kernel: input: spice vdagent tablet as /devices/virtual/input/input8
+2025-09-18T17:45:40.355603+00:00 ubuntu spice-vdagent[2470]: Found monitor Virtual-1 with geometry 1440x900+0-0 - associating it to SPICE display #0
+2025-09-18T17:45:40.445607+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+2025-09-18T17:45:40.445838+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+2025-09-18T17:45:40.445886+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+2025-09-18T17:45:40.445981+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+2025-09-18T17:45:40.446030+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+2025-09-18T17:45:40.446058+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+2025-09-18T17:45:40.446095+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+2025-09-18T17:45:40.446181+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+2025-09-18T17:45:40.446207+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+2025-09-18T17:45:40.446247+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+2025-09-18T17:45:40.446290+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+2025-09-18T17:45:40.446328+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+2025-09-18T17:45:40.446360+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+2025-09-18T17:45:40.446391+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+2025-09-18T17:45:40.446439+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+2025-09-18T17:45:40.446458+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+2025-09-18T17:45:40.446496+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+2025-09-18T17:45:40.446531+00:00 ubuntu gnome-shell[2057]: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+2025-09-18T17:50:08.595244+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+2025-09-18T17:50:08.642503+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
+2025-09-18T17:50:08.642887+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T19:48:49.333366+00:00 ubuntu systemd-resolved[930]: Clock change detected. Flushing caches.
+2025-09-18T19:48:49.354150+00:00 ubuntu systemd[1]: Started anacron.service - Run anacron jobs.
+2025-09-18T19:48:49.363064+00:00 ubuntu systemd[1]: Starting fwupd-refresh.service - Refresh fwupd metadata and update motd...
+2025-09-18T19:48:49.366852+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+2025-09-18T19:48:49.379603+00:00 ubuntu systemd[1]: anacron.service: Deactivated successfully.
+2025-09-18T19:48:49.398910+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
+2025-09-18T19:48:49.399354+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T19:48:49.465405+00:00 ubuntu systemd[1]: fwupd-refresh.service: Deactivated successfully.
+2025-09-18T19:48:49.465880+00:00 ubuntu systemd[1]: Finished fwupd-refresh.service - Refresh fwupd metadata and update motd.
+2025-09-18T19:49:07.011597+00:00 ubuntu CRON[7700]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+2025-09-18T19:49:07.024956+00:00 ubuntu CRON[7702]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+2025-09-18T19:50:05.445977+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+2025-09-18T19:50:05.485710+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
+2025-09-18T19:50:05.486257+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T19:55:01.065840+00:00 ubuntu CRON[7715]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-09-18T20:00:00.452393+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+2025-09-18T20:00:00.508029+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
+2025-09-18T20:00:00.508452+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T20:05:01.127501+00:00 ubuntu CRON[7774]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-09-18T20:09:07.649732+00:00 ubuntu xdg-desktop-por[3151]: Backend call failed: GDBus.Error:org.gnome.SessionManager.GeneralError: Application ID not specified
+2025-09-18T20:09:12.635497+00:00 ubuntu xdg-desktop-por[3151]: Backend call failed: GDBus.Error:org.gnome.SessionManager.GeneralError: Application ID not specified
+2025-09-18T20:10:00.693532+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+2025-09-18T20:10:00.734837+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
+2025-09-18T20:10:00.735260+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T20:15:01.196838+00:00 ubuntu CRON[7884]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-09-18T20:17:01.248938+00:00 ubuntu CRON[7888]: (root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2025-09-18T20:18:08.374113+00:00 ubuntu xdg-desktop-por[3151]: Backend call failed: GDBus.Error:org.gnome.SessionManager.GeneralError: Application ID not specified
+2025-09-18T20:19:09.934202+00:00 ubuntu xdg-desktop-por[3151]: message repeated 3 times: [ Backend call failed: GDBus.Error:org.gnome.SessionManager.GeneralError: Application ID not specified]
+2025-09-18T20:19:29.243978+00:00 ubuntu gnome-text-edit[7917]: Trying to snapshot GtkGizmo 0xc5f8a987a930 without a current allocation
+2025-09-18T20:20:03.675762+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+2025-09-18T20:20:03.709353+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
+2025-09-18T20:20:03.709705+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T20:22:39.505799+00:00 ubuntu systemd[1]: Starting fwupd-refresh.service - Refresh fwupd metadata and update motd...
+2025-09-18T20:22:39.597204+00:00 ubuntu systemd[1]: fwupd-refresh.service: Deactivated successfully.
+2025-09-18T20:22:39.597429+00:00 ubuntu systemd[1]: Finished fwupd-refresh.service - Refresh fwupd metadata and update motd.
+2025-09-18T20:25:01.311162+00:00 ubuntu CRON[8040]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-09-18T20:30:01.360672+00:00 ubuntu CRON[8065]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+2025-09-18T20:30:01.373265+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+2025-09-18T20:30:01.429543+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
+2025-09-18T20:30:01.429882+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T20:34:21.447637+00:00 ubuntu systemd[1]: Started anacron.service - Run anacron jobs.
+2025-09-18T20:34:21.479666+00:00 ubuntu systemd[1]: anacron.service: Deactivated successfully.
+2025-09-18T20:35:01.400943+00:00 ubuntu CRON[8083]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-09-18T20:40:00.693267+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+2025-09-18T20:40:00.745253+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
+2025-09-18T20:40:00.745614+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T20:45:01.462756+00:00 ubuntu CRON[8104]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-09-18T20:50:01.867661+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+2025-09-18T20:50:01.919578+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
+2025-09-18T20:50:01.921152+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T20:55:01.540315+00:00 ubuntu CRON[8162]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-09-18T21:00:03.704146+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+2025-09-18T21:00:03.781242+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
+2025-09-18T21:00:03.781511+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T21:05:01.614977+00:00 ubuntu CRON[8187]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-09-18T21:10:03.701871+00:00 ubuntu systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+2025-09-18T21:10:03.768252+00:00 ubuntu systemd[1]: sysstat-collect.service: Deactivated successfully.
+2025-09-18T21:10:03.768559+00:00 ubuntu systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+2025-09-18T21:15:01.685900+00:00 ubuntu CRON[8235]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+2025-09-18T21:17:01.725781+00:00 ubuntu CRON[8240]: (root) CMD (cd / && run-parts --report /etc/cron.hourly)
