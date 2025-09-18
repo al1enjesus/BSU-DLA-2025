@@ -46,6 +46,23 @@ cat out/top_errors.csv
 cat out/bursts.csv
 ```
 
+Пример вывода для `docker_normalized.csv` на фикстурах:
+```ts_iso,container,stream,message
+ 2025-09-12T00:00:00.000000192Z ,nginx, stdout , 172.17.0.252 - - [2025/09/12:00:00:00 +0000]   GET /login HTTP/1.1   200 50   -     Go-http-client/1.1  
+ 2025-09-12T00:00:00.000000275Z ,app, stdout , INFO request handled ok 1
+ 2025-09-12T00:00:00.000000499Z ,nginx, stdout , 172.17.0.118 - - [2025/09/12:00:00:00 +0000]   GET /static/logo.png HTTP/1.1   200 1502   -     k6/0.50  
+ 2025-09-12T00:00:00.000000855Z ,app, stderr , FATAL db connection failed: timeout
+ 2025-09-12T00:00:00.000000904Z ,nginx, stdout , 172.17.0.92 - - [2025/09/12:00:00:00 +0000]   GET /notfound HTTP/1.1   404 147   -     curl/8.4.0  
+ 2025-09-12T00:00:01.000000466Z ,app, stdout , INFO request handled ok 2
+ 2025-09-12T00:00:01.000000475Z ,nginx, stdout , 172.17.0.166 - - [2025/09/12:00:00:01 +0000]   GET / HTTP/1.1   200 765   -     Mozilla/5.0
+ ...
+```
+
+И пример для `bursts.csv` на сгенерированных ИИ данных:
+```container,minute,count,baseline_avg,multiplier
+compose-app-1,2025-09-18T17:33,40,2,3.0
+```
+
 В обоих случаях (на фикстурах и реальных логах) "бурстов" (аномалий) не было обнаружено, поэтому с помощью ИИ был сгенерирова файл `docker_burst_fixture.csv`, на котором и была проверена работа скрипта.
 
 # Выводы

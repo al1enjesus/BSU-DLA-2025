@@ -26,7 +26,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ -z "$SRC_FILE" || -z "$OUT_FILE" ]]; then
-  echo "Error: --in and --out are required" >&2
+  echo "Error: --src and --out are required" >&2
   exit 1
 fi
 
