@@ -64,16 +64,16 @@ normalize_from_fixtures() {
     {
       line=$0
       # naive field extraction
-      log=""; stream=""; time=""; container=FILENAME
+      lo=""; stream=""; time=""; container=FILENAME
       if (match(line, /"time"\s*:\s*"[^"]+"/)) { t=substr(line, RSTART, RLENGTH); split(t, a, ":"); time=a[2]; sub(/^\s*"/, "", time); sub(/"\s*$/, "", time) }
       if (match(line, /"stream"\s*:\s*"[^"]+"/)) { s=substr(line, RSTART, RLENGTH); split(s, a, ":"); stream=a[2]; sub(/^\s*"/, "", stream); sub(/"\s*$/, "", stream) }
-      if (match(line, /"log"\s*:\s*"[^"]*"/)) { l=substr(line, RSTART, RLENGTH); split(l, a, ":"); log=substr(l, index(l, ":")+1); sub(/^\s*"/, "", log); sub(/"\s*$/, "", log) }
-      gsub(/\\t/, " ", log); gsub(/\\n/, " ", log)
-      gsub(/,/, " ", log)
+      if (match(line, /"log"\s*:\s*"[^"]*"/)) { l=substr(line, RSTART, RLENGTH); split(l, a, ":"); lo=substr(l, index(l, ":")+1); sub(/^\s*"/, "", lo); sub(/"\s*$/, "", lo) }
+	      gsub(/\\t/, " ", lo); gsub(/\\n/, " ", lo)
+      gsub(/,/, " ", lo)
       # derive container name from filename (strip dir and extension)
       n=split(container, parts, "/"); base=parts[n]; sub(/\.[^.]*$/, "", base)
       if (time=="") next
-      print time, base, (stream==""?"stdout":stream), log
+      print time, base, (stream==""?"stdout":stream), lo
     }
   ' "$src_dir"/*.log | sort -t, -k1,1 > "$out_csv"
 }
@@ -86,7 +86,7 @@ normalize_from_docker() {
   if [[ -n "$CONTAINERS" ]]; then
     list=$(echo "$CONTAINERS" | tr ',' ' ')
   else
-    list=$(docker ps --format '{{.Names}}')
+    list=$(docker ps -a --format '{{.Names}}')
   fi
   for name in $list; do
     # docker logs timestamps are RFC3339Nano; use since/until if provided
