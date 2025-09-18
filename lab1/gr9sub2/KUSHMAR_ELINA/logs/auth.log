@@ -1,0 +1,105 @@
+2025-09-18T16:42:59.757008+00:00 ubuntu systemd-logind[1384]: New seat seat0.
+2025-09-18T16:42:59.757009+00:00 ubuntu systemd-logind[1384]: Watching system buttons on /dev/input/event0 (Power Button)
+2025-09-18T16:42:59.757011+00:00 ubuntu systemd-logind[1384]: Watching system buttons on /dev/input/event3 (QEMU QEMU USB Keyboard)
+2025-09-18T16:42:59.757052+00:00 ubuntu polkitd[1374]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-18T16:42:59.757056+00:00 ubuntu polkitd[1374]: Loading rules from directory /run/polkit-1/rules.d
+2025-09-18T16:42:59.757057+00:00 ubuntu polkitd[1374]: Error opening rules directory: Error opening directory “/run/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-18T16:42:59.757059+00:00 ubuntu polkitd[1374]: Loading rules from directory /usr/local/share/polkit-1/rules.d
+2025-09-18T16:42:59.757060+00:00 ubuntu polkitd[1374]: Error opening rules directory: Error opening directory “/usr/local/share/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-18T16:42:59.757062+00:00 ubuntu polkitd[1374]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-18T16:43:00.130570+00:00 ubuntu polkitd[1374]: Finished loading, compiling and executing 18 rules
+2025-09-18T16:43:00.136598+00:00 ubuntu polkitd[1374]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+2025-09-18T16:43:01.756006+00:00 ubuntu useradd[1694]: new group: name=installer, GID=1001
+2025-09-18T16:43:01.756073+00:00 ubuntu useradd[1694]: new user: name=installer, UID=1001, GID=1001, home=/home/installer, shell=/usr/bin/subiquity-shell, from=none
+2025-09-18T16:43:01.756725+00:00 ubuntu useradd[1694]: add 'installer' to group 'adm'
+2025-09-18T16:43:01.756759+00:00 ubuntu useradd[1694]: add 'installer' to group 'dialout'
+2025-09-18T16:43:01.756778+00:00 ubuntu useradd[1694]: add 'installer' to group 'cdrom'
+2025-09-18T16:43:01.756796+00:00 ubuntu useradd[1694]: add 'installer' to group 'floppy'
+2025-09-18T16:43:01.756814+00:00 ubuntu useradd[1694]: add 'installer' to group 'sudo'
+2025-09-18T16:43:01.756831+00:00 ubuntu useradd[1694]: add 'installer' to group 'audio'
+2025-09-18T16:43:01.756849+00:00 ubuntu useradd[1694]: add 'installer' to group 'dip'
+2025-09-18T16:43:01.756874+00:00 ubuntu useradd[1694]: add 'installer' to group 'video'
+2025-09-18T16:43:01.756900+00:00 ubuntu useradd[1694]: add 'installer' to group 'plugdev'
+2025-09-18T16:43:01.756920+00:00 ubuntu useradd[1694]: add 'installer' to group 'netdev'
+2025-09-18T16:43:01.756937+00:00 ubuntu useradd[1694]: add 'installer' to group 'lxd'
+2025-09-18T16:43:01.756959+00:00 ubuntu useradd[1694]: add 'installer' to shadow group 'adm'
+2025-09-18T16:43:01.756983+00:00 ubuntu useradd[1694]: add 'installer' to shadow group 'dialout'
+2025-09-18T16:43:01.757001+00:00 ubuntu useradd[1694]: add 'installer' to shadow group 'cdrom'
+2025-09-18T16:43:01.757028+00:00 ubuntu useradd[1694]: add 'installer' to shadow group 'floppy'
+2025-09-18T16:43:01.757046+00:00 ubuntu useradd[1694]: add 'installer' to shadow group 'sudo'
+2025-09-18T16:43:01.757063+00:00 ubuntu useradd[1694]: add 'installer' to shadow group 'audio'
+2025-09-18T16:43:01.757099+00:00 ubuntu useradd[1694]: add 'installer' to shadow group 'dip'
+2025-09-18T16:43:01.757117+00:00 ubuntu useradd[1694]: add 'installer' to shadow group 'video'
+2025-09-18T16:43:01.757133+00:00 ubuntu useradd[1694]: add 'installer' to shadow group 'plugdev'
+2025-09-18T16:43:01.757151+00:00 ubuntu useradd[1694]: add 'installer' to shadow group 'netdev'
+2025-09-18T16:43:01.757170+00:00 ubuntu useradd[1694]: add 'installer' to shadow group 'lxd'
+2025-09-18T16:43:12.445055+00:00 ubuntu gdm-autologin]: gkr-pam: no password is available for user
+2025-09-18T16:43:12.485069+00:00 ubuntu gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-18T16:43:12.494361+00:00 ubuntu systemd-logind[1384]: New session 1 of user ubuntu.
+2025-09-18T16:43:12.526731+00:00 ubuntu (systemd): pam_unix(systemd-user:session): session opened for user ubuntu(uid=1000) by ubuntu(uid=0)
+2025-09-18T16:43:12.527831+00:00 ubuntu systemd-logind[1384]: New session 2 of user ubuntu.
+2025-09-18T16:43:12.789693+00:00 ubuntu gdm-autologin]: gkr-pam: couldn't unlock the login keyring.
+2025-09-18T16:43:13.405870+00:00 ubuntu gnome-keyring-daemon[1897]: The PKCS#11 component was already initialized
+2025-09-18T16:43:13.406425+00:00 ubuntu gnome-keyring-daemon[2047]: discover_other_daemon: 1
+2025-09-18T16:43:13.406794+00:00 ubuntu gnome-keyring-daemon[1897]: The Secret Service was already initialized
+2025-09-18T16:43:13.407124+00:00 ubuntu gnome-keyring-daemon[2049]: discover_other_daemon: 1
+2025-09-18T16:43:13.422562+00:00 ubuntu gnome-keyring-daemon[2054]: discover_other_daemon: 1
+2025-09-18T16:43:21.248678+00:00 ubuntu polkitd[1374]: Registered Authentication Agent for unix-session:1 (system bus name :1.42 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale C.UTF-8)
+2025-09-18T16:43:24.550825+00:00 ubuntu sudo:   ubuntu : PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/systemctl start udisks2-inhibit.service
+2025-09-18T16:43:24.551411+00:00 ubuntu sudo: pam_unix(sudo:session): session opened for user root(uid=0) by ubuntu(uid=1000)
+2025-09-18T16:43:24.557694+00:00 ubuntu sudo: pam_unix(sudo:session): session closed for user root
+2025-09-18T16:43:33.556480+00:00 ubuntu chpasswd[3494]: pam_unix(chpasswd:chauthtok): password changed for installer
+2025-09-18T16:43:33.556557+00:00 ubuntu chpasswd[3494]: gkr-pam: couldn't update the login keyring password: no old password was entered
+2025-09-18T16:43:33.792980+00:00 ubuntu realmd[3507]: Loaded settings from: /usr/lib/realmd/realmd-defaults.conf /usr/lib/realmd/realmd-distro.conf
+2025-09-18T16:43:33.793027+00:00 ubuntu realmd[3507]: holding daemon: startup
+2025-09-18T16:43:33.793046+00:00 ubuntu realmd[3507]: starting service
+2025-09-18T16:43:33.794732+00:00 ubuntu realmd[3507]: connected to bus
+2025-09-18T16:43:33.796174+00:00 ubuntu realmd[3507]: GLib-GIO: _g_io_module_get_default: Found default implementation local (GLocalVfs) for ‘gio-vfs’
+2025-09-18T16:43:33.796349+00:00 ubuntu realmd[3507]: released daemon: startup
+2025-09-18T16:43:33.797132+00:00 ubuntu realmd[3507]: claimed name on bus: org.freedesktop.realmd
+2025-09-18T16:43:33.801096+00:00 ubuntu realmd[3507]: client using service: :1.88
+2025-09-18T16:43:33.801147+00:00 ubuntu realmd[3507]: holding daemon: :1.88
+2025-09-18T16:43:33.801636+00:00 ubuntu realmd[3507]: Using 'r50.3502' operation for method 'Discover' invocation on 'org.freedesktop.realmd.Provider' interface
+2025-09-18T16:43:33.801669+00:00 ubuntu realmd[3507]: Registered cancellable for operation 'r50.3502'
+2025-09-18T16:43:33.804867+00:00 ubuntu realmd[3507]:  * No default domain received via DHCP or given by hostname
+2025-09-18T16:43:33.807541+00:00 ubuntu realmd[3507]: client gone away: :1.88
+2025-09-18T16:43:33.807581+00:00 ubuntu realmd[3507]: released daemon: :1.88
+2025-09-18T16:44:26.094327+00:00 ubuntu sudo:   ubuntu : PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/systemctl stop udisks2-inhibit.service
+2025-09-18T16:44:26.097712+00:00 ubuntu sudo: pam_unix(sudo:session): session opened for user root(uid=0) by ubuntu(uid=1000)
+2025-09-18T16:44:26.166969+00:00 ubuntu sudo: pam_unix(sudo:session): session closed for user root
+2025-09-18T16:44:34.575567+00:00 ubuntu realmd[3507]: quitting realmd service after timeout
+2025-09-18T16:44:34.578117+00:00 ubuntu realmd[3507]: stopping service
+2025-09-18T16:45:01.459092+00:00 ubuntu CRON[4661]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T16:45:01.463987+00:00 ubuntu CRON[4661]: pam_unix(cron:session): session closed for user root
+2025-09-18T16:49:55.223627+00:00 ubuntu sudo:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu/Desktop/dla ; USER=root ; COMMAND=/usr/bin/apt install git
+2025-09-18T16:49:55.233830+00:00 ubuntu sudo: pam_unix(sudo:session): session opened for user root(uid=0) by ubuntu(uid=1000)
+2025-09-18T16:50:11.507295+00:00 ubuntu sudo: pam_unix(sudo:session): session closed for user root
+2025-09-18T16:55:01.528173+00:00 ubuntu CRON[5830]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T16:55:01.533381+00:00 ubuntu CRON[5830]: pam_unix(cron:session): session closed for user root
+2025-09-18T17:05:01.598828+00:00 ubuntu CRON[6549]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T17:05:01.603691+00:00 ubuntu CRON[6549]: pam_unix(cron:session): session closed for user root
+2025-09-18T17:15:01.644739+00:00 ubuntu CRON[6612]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T17:15:01.651252+00:00 ubuntu CRON[6612]: pam_unix(cron:session): session closed for user root
+2025-09-18T17:17:01.678180+00:00 ubuntu CRON[6641]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T17:17:01.692764+00:00 ubuntu CRON[6641]: pam_unix(cron:session): session closed for user root
+2025-09-18T17:20:48.546870+00:00 ubuntu sudo:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu/Desktop/dla/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/snap install curl
+2025-09-18T17:20:48.547999+00:00 ubuntu sudo: pam_unix(sudo:session): session opened for user root(uid=0) by ubuntu(uid=1000)
+2025-09-18T17:21:05.914128+00:00 ubuntu sudo: pam_unix(sudo:session): session closed for user root
+2025-09-18T17:25:01.728877+00:00 ubuntu CRON[7158]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T17:25:01.734548+00:00 ubuntu CRON[7158]: pam_unix(cron:session): session closed for user root
+2025-09-18T17:27:50.997947+00:00 ubuntu sudo:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/apt install git
+2025-09-18T17:27:50.999188+00:00 ubuntu sudo: pam_unix(sudo:session): session opened for user root(uid=0) by ubuntu(uid=1000)
+2025-09-18T17:27:51.148054+00:00 ubuntu sudo: pam_unix(sudo:session): session closed for user root
+2025-09-18T17:29:06.446020+00:00 ubuntu dbus-daemon[1368]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2025-09-18T17:30:01.767629+00:00 ubuntu CRON[7393]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T17:30:01.770395+00:00 ubuntu CRON[7393]: pam_unix(cron:session): session closed for user root
+2025-09-18T17:35:01.805759+00:00 ubuntu CRON[7509]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T17:35:01.810887+00:00 ubuntu CRON[7509]: pam_unix(cron:session): session closed for user root
+2025-09-18T17:45:01.861859+00:00 ubuntu CRON[7643]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T17:45:01.869572+00:00 ubuntu CRON[7643]: pam_unix(cron:session): session closed for user root
+2025-09-18T19:49:07.010778+00:00 ubuntu CRON[7699]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T19:49:07.014477+00:00 ubuntu CRON[7699]: pam_unix(cron:session): session closed for user root
+2025-09-18T19:49:07.024332+00:00 ubuntu CRON[7701]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T19:49:07.027216+00:00 ubuntu CRON[7701]: pam_unix(cron:session): session closed for user root
+2025-09-18T19:55:01.063105+00:00 ubuntu CRON[7714]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-18T19:55:01.071698+00:00 ubuntu CRON[7714]: pam_unix(cron:session): session closed for user root
