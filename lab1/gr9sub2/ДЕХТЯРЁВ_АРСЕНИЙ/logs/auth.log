@@ -1,0 +1,270 @@
+Sep 12 00:14:17 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 12 00:14:17 Lenovo-Legion-Y530-15ICH pkexec[87552]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 12 00:17:01 Lenovo-Legion-Y530-15ICH CRON[88682]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 12 00:17:01 Lenovo-Legion-Y530-15ICH CRON[88682]: pam_unix(cron:session): session closed for user root
+Sep 12 00:35:11 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Lid closed.
+Sep 12 00:35:11 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Suspending...
+Sep 12 18:49:24 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Lid opened.
+Sep 12 18:49:24 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Operation 'sleep' finished.
+Sep 12 18:49:32 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 12 18:49:32 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 12 18:49:32 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 12 18:49:32 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 12 18:49:32 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 12 18:49:32 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 12 18:49:34 Lenovo-Legion-Y530-15ICH gdm-password]: gkr-pam: unlocked login keyring
+Sep 12 18:49:35 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 12 18:49:35 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 12 18:49:37 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 12 18:49:37 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 12 18:52:26 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 12 18:52:26 Lenovo-Legion-Y530-15ICH pkexec[99144]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 12 18:55:26 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 12 18:55:26 Lenovo-Legion-Y530-15ICH pkexec[135306]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 12 18:58:26 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 12 18:58:26 Lenovo-Legion-Y530-15ICH pkexec[137983]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 12 19:17:01 Lenovo-Legion-Y530-15ICH CRON[144579]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 12 19:17:01 Lenovo-Legion-Y530-15ICH CRON[144579]: pam_unix(cron:session): session closed for user root
+Sep 12 19:30:01 Lenovo-Legion-Y530-15ICH CRON[148148]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 12 19:30:01 Lenovo-Legion-Y530-15ICH CRON[148148]: pam_unix(cron:session): session closed for user root
+Sep 12 19:42:30 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Lid closed.
+Sep 12 19:42:30 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Suspending...
+Sep 13 10:28:21 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Lid opened.
+Sep 13 10:28:21 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Operation 'sleep' finished.
+Sep 13 10:28:29 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:28:29 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:28:30 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:28:30 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:28:33 Lenovo-Legion-Y530-15ICH gdm-password]: gkr-pam: unlocked login keyring
+Sep 13 10:28:43 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:28:43 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:28:47 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:28:47 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:28:49 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:28:49 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:28:59 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:28:59 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:29:04 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:29:04 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:29:07 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:29:07 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:29:13 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 13 10:29:13 Lenovo-Legion-Y530-15ICH pkexec[154476]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 13 10:29:13 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:29:13 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:29:15 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:29:15 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:29:22 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:29:22 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:29:30 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 13 10:29:30 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 13 10:30:01 Lenovo-Legion-Y530-15ICH CRON[158136]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 13 10:30:01 Lenovo-Legion-Y530-15ICH CRON[158136]: pam_unix(cron:session): session closed for user root
+Sep 13 10:32:12 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 13 10:32:12 Lenovo-Legion-Y530-15ICH pkexec[159254]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 13 11:17:01 Lenovo-Legion-Y530-15ICH CRON[173402]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 13 11:17:01 Lenovo-Legion-Y530-15ICH CRON[173402]: pam_unix(cron:session): session closed for user root
+Sep 13 11:30:01 Lenovo-Legion-Y530-15ICH CRON[177350]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 13 11:30:01 Lenovo-Legion-Y530-15ICH CRON[177350]: pam_unix(cron:session): session closed for user root
+Sep 13 11:50:28 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Lid closed.
+Sep 13 11:50:28 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Suspending...
+Sep 15 21:57:30 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Lid opened.
+Sep 15 21:57:30 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Operation 'sleep' finished.
+Sep 15 21:57:38 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:57:39 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:57:39 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:57:39 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:58:22 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:58:22 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:58:29 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:58:29 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:58:37 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:58:37 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:58:42 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:58:42 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:58:46 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:58:46 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:58:49 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:58:49 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:58:54 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:58:54 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:59:00 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:59:00 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:59:08 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:59:08 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:59:10 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:59:10 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:59:17 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:59:17 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 21:59:25 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 21:59:25 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 22:00:10 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 15 22:00:10 Lenovo-Legion-Y530-15ICH pkexec[191116]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 15 22:01:20 Lenovo-Legion-Y530-15ICH gdm-password]: gkr-pam: unlocked login keyring
+Sep 15 22:15:11 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 15 22:15:11 Lenovo-Legion-Y530-15ICH pkexec[197270]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 15 22:17:01 Lenovo-Legion-Y530-15ICH CRON[197762]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 15 22:17:01 Lenovo-Legion-Y530-15ICH CRON[197762]: pam_unix(cron:session): session closed for user root
+Sep 15 22:30:01 Lenovo-Legion-Y530-15ICH CRON[201152]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 15 22:30:01 Lenovo-Legion-Y530-15ICH CRON[201152]: pam_unix(cron:session): session closed for user root
+Sep 15 23:17:01 Lenovo-Legion-Y530-15ICH CRON[213325]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 15 23:17:01 Lenovo-Legion-Y530-15ICH CRON[213325]: pam_unix(cron:session): session closed for user root
+Sep 15 23:30:01 Lenovo-Legion-Y530-15ICH CRON[216630]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 15 23:30:01 Lenovo-Legion-Y530-15ICH CRON[216630]: pam_unix(cron:session): session closed for user root
+Sep 16 00:17:01 Lenovo-Legion-Y530-15ICH CRON[228935]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 16 00:17:01 Lenovo-Legion-Y530-15ICH CRON[228935]: pam_unix(cron:session): session closed for user root
+Sep 16 00:18:22 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Lid closed.
+Sep 16 00:18:22 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Suspending...
+Sep 18 22:27:21 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Lid opened.
+Sep 18 22:27:21 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Operation 'sleep' finished.
+Sep 18 22:27:29 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:27:29 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:27:29 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:27:29 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:27:40 Lenovo-Legion-Y530-15ICH gdm-password]: gkr-pam: unlocked login keyring
+Sep 18 22:27:47 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:27:47 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:27:50 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:27:50 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:27:56 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:27:56 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:27:59 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:27:59 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:28:32 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:28:32 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:28:35 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:28:35 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:28:48 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:28:48 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:28:55 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:28:55 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:29:03 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:29:03 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:29:05 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:29:05 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:29:18 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:29:18 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:29:27 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 18 22:29:27 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 18 22:30:01 Lenovo-Legion-Y530-15ICH CRON[234931]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 18 22:30:01 Lenovo-Legion-Y530-15ICH CRON[234931]: pam_unix(cron:session): session closed for user root
+Sep 18 22:30:07 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 18 22:30:07 Lenovo-Legion-Y530-15ICH pkexec[235079]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 18 22:45:06 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 18 22:45:06 Lenovo-Legion-Y530-15ICH pkexec[246566]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 18 23:21:54 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Operation 'sleep' finished.
+Sep 18 23:22:17 Lenovo-Legion-Y530-15ICH gdm-password]: gkr-pam: unlocked login keyring
+Sep 18 23:26:45 Lenovo-Legion-Y530-15ICH su: pam_unix(su:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/1 ruser=lufus rhost=  user=lufus
+Sep 18 23:26:47 Lenovo-Legion-Y530-15ICH su: FAILED SU (to lufus) lufus on pts/1
+Sep 18 23:26:53 Lenovo-Legion-Y530-15ICH su: pam_unix(su:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/1 ruser=lufus rhost=  user=lufus
+Sep 18 23:26:54 Lenovo-Legion-Y530-15ICH su: FAILED SU (to lufus) lufus on pts/1
+Sep 18 23:27:01 Lenovo-Legion-Y530-15ICH su: pam_unix(su:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/1 ruser=lufus rhost=  user=root
+Sep 18 23:27:03 Lenovo-Legion-Y530-15ICH su: FAILED SU (to root) lufus on pts/1
+Sep 18 23:30:01 Lenovo-Legion-Y530-15ICH CRON[252750]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 18 23:30:01 Lenovo-Legion-Y530-15ICH CRON[252750]: pam_unix(cron:session): session closed for user root
+Sep 18 23:39:02 Lenovo-Legion-Y530-15ICH sudo:    lufus : TTY=pts/2 ; PWD=/home/lufus ; USER=root ; COMMAND=/usr/bin/apt update
+Sep 18 23:39:02 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 18 23:39:16 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:session): session closed for user root
+Sep 18 23:39:16 Lenovo-Legion-Y530-15ICH sudo:    lufus : TTY=pts/2 ; PWD=/home/lufus ; USER=root ; COMMAND=/usr/bin/apt install -y build-essential git gdb strace ltrace htop
+Sep 18 23:39:16 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 18 23:39:22 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:session): session closed for user root
+Sep 18 23:41:56 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 18 23:41:56 Lenovo-Legion-Y530-15ICH pkexec[257093]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 19 00:14:39 Lenovo-Legion-Y530-15ICH gnome-keyring-daemon[7322]: asked to register item /org/freedesktop/secrets/collection/login/2, but it's already registered
+Sep 19 00:17:01 Lenovo-Legion-Y530-15ICH CRON[261833]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 19 00:17:01 Lenovo-Legion-Y530-15ICH CRON[261833]: pam_unix(cron:session): session closed for user root
+Sep 19 00:36:23 Lenovo-Legion-Y530-15ICH sudo:    lufus : unknown user admin ; TTY=pts/4 ; PWD=/home/lufus/Documents/Study/DLA/BSU-DLA-2025/lab1/gr9sub2/ДЕХТЯРЁВ_АРСЕНИЙ ; USER=admin ; 
+Sep 19 00:39:25 Lenovo-Legion-Y530-15ICH gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)
+Sep 19 00:39:25 Lenovo-Legion-Y530-15ICH systemd-logind[813]: New session c2 of user gdm.
+Sep 19 00:39:25 Lenovo-Legion-Y530-15ICH systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)
+Sep 19 00:39:26 Lenovo-Legion-Y530-15ICH polkitd(authority=local): Registered Authentication Agent for unix-session:c2 (system bus name :1.658 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Sep 19 00:39:35 Lenovo-Legion-Y530-15ICH gdm-password]: pam_unix(gdm-password:auth): check pass; user unknown
+Sep 19 00:39:35 Lenovo-Legion-Y530-15ICH gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost= 
+Sep 19 00:39:51 Lenovo-Legion-Y530-15ICH gdm-password]: pam_unix(gdm-password:auth): check pass; user unknown
+Sep 19 00:39:51 Lenovo-Legion-Y530-15ICH gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost= 
+Sep 19 00:40:04 Lenovo-Legion-Y530-15ICH gdm-password]: gkr-pam: unlocked login keyring
+Sep 19 00:40:14 Lenovo-Legion-Y530-15ICH gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep 19 00:40:14 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Session c2 logged out. Waiting for processes to exit.
+Sep 19 00:40:14 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Removed session c2.
+Sep 19 00:40:14 Lenovo-Legion-Y530-15ICH polkitd(authority=local): Unregistered Authentication Agent for unix-session:c2 (system bus name :1.658, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
+Sep 19 00:46:05 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Lid closed.
+Sep 19 00:46:05 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Suspending...
+Sep 19 11:16:45 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Lid opened.
+Sep 19 11:16:45 Lenovo-Legion-Y530-15ICH systemd-logind[813]: Operation 'sleep' finished.
+Sep 19 11:16:53 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 19 11:16:53 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 19 11:16:54 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 19 11:16:54 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 19 11:16:54 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 19 11:16:54 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 19 11:16:56 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 19 11:16:56 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 19 11:16:58 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 19 11:16:58 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 19 11:17:00 Lenovo-Legion-Y530-15ICH gdm-password]: gkr-pam: unlocked login keyring
+Sep 19 11:17:38 Lenovo-Legion-Y530-15ICH CRON[268104]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 19 11:17:38 Lenovo-Legion-Y530-15ICH CRON[268104]: pam_unix(cron:session): session closed for user root
+Sep 19 11:18:33 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 19 11:18:33 Lenovo-Legion-Y530-15ICH pkexec[284206]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 19 11:21:33 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 19 11:21:33 Lenovo-Legion-Y530-15ICH pkexec[293579]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 19 11:30:01 Lenovo-Legion-Y530-15ICH CRON[294237]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 19 11:30:01 Lenovo-Legion-Y530-15ICH CRON[294237]: pam_unix(cron:session): session closed for user root
+Sep 19 12:12:09 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:auth): conversation failed
+Sep 19 12:12:09 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:auth): auth could not identify password for [lufus]
+Sep 19 12:12:17 Lenovo-Legion-Y530-15ICH sudo:    lufus : TTY=pts/1 ; PWD=/home/lufus/Documents/Study/DLA/BSU-DLA-2025/lab1/gr9sub2/ДЕХТЯРЁВ_АРСЕНИЙ/logs ; USER=root ; COMMAND=/usr/bin/apt update
+Sep 19 12:12:17 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:session): session opened for user root(uid=0) by lufus(uid=1000)
+Sep 19 12:12:24 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:session): session closed for user root
+Sep 19 12:12:33 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 19 12:12:33 Lenovo-Legion-Y530-15ICH pkexec[297580]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 19 12:12:34 Lenovo-Legion-Y530-15ICH sudo:    lufus : TTY=pts/1 ; PWD=/home/lufus/Documents/Study/DLA/BSU-DLA-2025/lab1/gr9sub2/ДЕХТЯРЁВ_АРСЕНИЙ/logs ; USER=root ; COMMAND=/usr/bin/apt-get upgrade
+Sep 19 12:12:34 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:session): session opened for user root(uid=0) by lufus(uid=1000)
+Sep 19 12:13:54 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:session): session closed for user root
+Sep 19 12:13:55 Lenovo-Legion-Y530-15ICH sudo:    lufus : TTY=pts/1 ; PWD=/home/lufus/Documents/Study/DLA/BSU-DLA-2025/lab1/gr9sub2/ДЕХТЯРЁВ_АРСЕНИЙ/logs ; USER=root ; COMMAND=/usr/bin/apt-get upgrade
+Sep 19 12:13:55 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:session): session opened for user root(uid=0) by lufus(uid=1000)
+Sep 19 12:15:20 Lenovo-Legion-Y530-15ICH sudo: pam_unix(sudo:session): session closed for user root
+Sep 19 12:15:31 Lenovo-Legion-Y530-15ICH pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 19 12:15:31 Lenovo-Legion-Y530-15ICH pkexec[299277]: lufus: Executing command [USER=root] [TTY=unknown] [CWD=/home/lufus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 19 12:17:01 Lenovo-Legion-Y530-15ICH CRON[299360]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 19 12:17:01 Lenovo-Legion-Y530-15ICH CRON[299360]: pam_unix(cron:session): session closed for user root
+Sep 19 12:30:01 Lenovo-Legion-Y530-15ICH CRON[300214]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 19 12:30:01 Lenovo-Legion-Y530-15ICH CRON[300214]: pam_unix(cron:session): session closed for user root
+Sep 19 13:17:01 Lenovo-Legion-Y530-15ICH CRON[306759]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 19 13:17:01 Lenovo-Legion-Y530-15ICH CRON[306759]: pam_unix(cron:session): session closed for user root
+Sep 19 13:22:52 Lenovo-Legion-Y530-15ICH gdm-password]: gkr-pam: unlocked login keyring
+Sep 19 13:30:01 Lenovo-Legion-Y530-15ICH CRON[307347]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 19 13:30:01 Lenovo-Legion-Y530-15ICH CRON[307347]: pam_unix(cron:session): session closed for user root
+Sep 19 13:51:57 Lenovo-Legion-Y530-15ICH systemd-logind[813]: System is powering down.
+Sep 19 11:05:25 Lenovo-Legion-Y530-15ICH systemd-logind[795]: New seat seat0.
+Sep 19 11:05:25 Lenovo-Legion-Y530-15ICH systemd-logind[795]: Watching system buttons on /dev/input/event1 (Power Button)
+Sep 19 11:05:25 Lenovo-Legion-Y530-15ICH systemd-logind[795]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Sep 19 11:05:25 Lenovo-Legion-Y530-15ICH systemd-logind[795]: Watching system buttons on /dev/input/event2 (Sleep Button)
+Sep 19 11:05:25 Lenovo-Legion-Y530-15ICH systemd-logind[795]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Sep 19 11:05:25 Lenovo-Legion-Y530-15ICH gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)
+Sep 19 11:05:25 Lenovo-Legion-Y530-15ICH systemd-logind[795]: New session c1 of user gdm.
+Sep 19 11:05:25 Lenovo-Legion-Y530-15ICH systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)
+Sep 19 11:05:27 Lenovo-Legion-Y530-15ICH polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.35 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Sep 19 11:05:41 Lenovo-Legion-Y530-15ICH gdm-password]: gkr-pam: unable to locate daemon control file
+Sep 19 11:05:41 Lenovo-Legion-Y530-15ICH gdm-password]: gkr-pam: stashed password to try later in open session
+Sep 19 11:05:41 Lenovo-Legion-Y530-15ICH gdm-password]: pam_unix(gdm-password:session): session opened for user lufus(uid=1000) by (uid=0)
+Sep 19 11:05:41 Lenovo-Legion-Y530-15ICH systemd-logind[795]: New session 2 of user lufus.
+Sep 19 11:05:41 Lenovo-Legion-Y530-15ICH systemd: pam_unix(systemd-user:session): session opened for user lufus(uid=1000) by (uid=0)
+Sep 19 11:05:41 Lenovo-Legion-Y530-15ICH gdm-password]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep 19 11:05:42 Lenovo-Legion-Y530-15ICH gnome-keyring-daemon[1970]: keyring was in an invalid or unrecognized format: /home/lufus/.local/share/keyrings/default.keyring
+Sep 19 11:05:42 Lenovo-Legion-Y530-15ICH gnome-keyring-daemon[1970]: The SSH agent was already initialized
+Sep 19 11:05:42 Lenovo-Legion-Y530-15ICH gnome-keyring-daemon[1970]: The PKCS#11 component was already initialized
+Sep 19 11:05:42 Lenovo-Legion-Y530-15ICH gnome-keyring-daemon[1970]: The Secret Service was already initialized
+Sep 19 11:05:42 Lenovo-Legion-Y530-15ICH polkitd(authority=local): Registered Authentication Agent for unix-session:2 (system bus name :1.82 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Sep 19 11:05:44 Lenovo-Legion-Y530-15ICH gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep 19 11:05:44 Lenovo-Legion-Y530-15ICH systemd-logind[795]: Session c1 logged out. Waiting for processes to exit.
+Sep 19 11:05:44 Lenovo-Legion-Y530-15ICH systemd-logind[795]: Removed session c1.
+Sep 19 11:05:44 Lenovo-Legion-Y530-15ICH polkitd(authority=local): Unregistered Authentication Agent for unix-session:c1 (system bus name :1.35, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
+Sep 19 11:05:45 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 19 11:05:45 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 19 11:05:47 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 19 11:05:47 Lenovo-Legion-Y530-15ICH PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 19 11:15:20 Lenovo-Legion-Y530-15ICH gnome-keyring-daemon[1970]: asked to register item /org/freedesktop/secrets/collection/login/2, but it's already registered
+Sep 19 11:17:01 Lenovo-Legion-Y530-15ICH CRON[3643]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 19 11:17:01 Lenovo-Legion-Y530-15ICH CRON[3643]: pam_unix(cron:session): session closed for user root
+Sep 19 11:30:01 Lenovo-Legion-Y530-15ICH CRON[3757]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 19 11:30:01 Lenovo-Legion-Y530-15ICH CRON[3757]: pam_unix(cron:session): session closed for user root
