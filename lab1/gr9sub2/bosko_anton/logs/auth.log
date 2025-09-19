@@ -1,0 +1,207 @@
+2025-09-11T21:17:19.558795+00:00 anton-QEMU-Virtual-Machine systemd-logind[985]: New seat seat0.
+2025-09-11T21:17:19.558797+00:00 anton-QEMU-Virtual-Machine systemd-logind[985]: Watching system buttons on /dev/input/event0 (Power Button)
+2025-09-11T21:17:19.558799+00:00 anton-QEMU-Virtual-Machine systemd-logind[985]: Watching system buttons on /dev/input/event3 (QEMU QEMU USB Keyboard)
+2025-09-11T21:17:19.640707+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-11T21:17:19.642977+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /run/polkit-1/rules.d
+2025-09-11T21:17:19.643006+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/run/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:17:19.643024+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/local/share/polkit-1/rules.d
+2025-09-11T21:17:19.643041+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/usr/local/share/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:17:19.643078+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-11T21:17:19.704482+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Finished loading, compiling and executing 18 rules
+2025-09-11T21:17:19.708069+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+2025-09-11T21:17:21.372104+00:00 anton-QEMU-Virtual-Machine useradd[1398]: new group: name=anton, GID=1000
+2025-09-11T21:17:21.372277+00:00 anton-QEMU-Virtual-Machine useradd[1398]: new user: name=anton, UID=1000, GID=1000, home=/home/anton, shell=/bin/bash, from=none
+2025-09-11T21:17:21.372604+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to group 'adm'
+2025-09-11T21:17:21.372652+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to group 'cdrom'
+2025-09-11T21:17:21.372679+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to group 'sudo'
+2025-09-11T21:17:21.372703+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to group 'dip'
+2025-09-11T21:17:21.372793+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to group 'plugdev'
+2025-09-11T21:17:21.372826+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to group 'users'
+2025-09-11T21:17:21.372878+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to group 'lpadmin'
+2025-09-11T21:17:21.372928+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to shadow group 'adm'
+2025-09-11T21:17:21.372955+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to shadow group 'cdrom'
+2025-09-11T21:17:21.372979+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to shadow group 'sudo'
+2025-09-11T21:17:21.373009+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to shadow group 'dip'
+2025-09-11T21:17:21.373032+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to shadow group 'plugdev'
+2025-09-11T21:17:21.373055+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to shadow group 'users'
+2025-09-11T21:17:21.373100+00:00 anton-QEMU-Virtual-Machine useradd[1398]: add 'anton' to shadow group 'lpadmin'
+2025-09-11T21:17:21.399349+00:00 anton-QEMU-Virtual-Machine passwd[1403]: password for 'anton' changed by 'root'
+2025-09-11T21:17:33.423090+00:00 anton-QEMU-Virtual-Machine gdm-autologin]: gkr-pam: no password is available for user
+2025-09-11T21:17:33.449583+00:00 anton-QEMU-Virtual-Machine gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user anton(uid=1000) by anton(uid=0)
+2025-09-11T21:17:33.461562+00:00 anton-QEMU-Virtual-Machine systemd-logind[985]: New session 1 of user anton.
+2025-09-11T21:17:33.493544+00:00 anton-QEMU-Virtual-Machine (systemd): pam_unix(systemd-user:session): session opened for user anton(uid=1000) by anton(uid=0)
+2025-09-11T21:17:33.494606+00:00 anton-QEMU-Virtual-Machine systemd-logind[985]: New session 2 of user anton.
+2025-09-11T21:17:33.666286+00:00 anton-QEMU-Virtual-Machine gdm-autologin]: gkr-pam: couldn't unlock the login keyring.
+2025-09-11T21:17:34.035393+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[2128]: discover_other_daemon: 1
+2025-09-11T21:17:34.035500+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: The Secret Service was already initialized
+2025-09-11T21:17:34.035619+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: The PKCS#11 component was already initialized
+2025-09-11T21:17:34.035633+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[2134]: discover_other_daemon: 1
+2025-09-11T21:17:34.035856+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[2135]: discover_other_daemon: 1
+2025-09-11T21:17:35.736055+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Registered Authentication Agent for unix-session:1 (system bus name :1.48 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+2025-09-11T21:18:38.602676+00:00 anton-QEMU-Virtual-Machine pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by anton(uid=1000)
+2025-09-11T21:18:38.604320+00:00 anton-QEMU-Virtual-Machine pkexec[4650]: anton: Executing command [USER=root] [TTY=unknown] [CWD=/home/anton] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+2025-09-11T21:18:44.045349+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Identity `unix-group:admin' is not valid, ignoring: No UNIX group with name admin: No such file or directory
+2025-09-11T21:18:50.023360+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Operator of unix-session:1 successfully authenticated as unix-user:anton to gain TEMPORARY authorization for action org.debian.apt.install-or-remove-packages for system-bus-name::1.112 [/usr/bin/python3 /usr/bin/update-manager --no-update --no-focus-on-map] (owned by unix-user:anton)
+2025-09-11T21:19:32.242428+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Reloading rules
+2025-09-11T21:19:32.243303+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Collecting garbage unconditionally...
+2025-09-11T21:19:32.243330+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-11T21:19:32.243353+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /run/polkit-1/rules.d
+2025-09-11T21:19:32.243377+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/run/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:32.243401+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/local/share/polkit-1/rules.d
+2025-09-11T21:19:32.243424+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/usr/local/share/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:32.243447+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-11T21:19:32.244470+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Finished loading, compiling and executing 18 rules
+2025-09-11T21:19:32.244523+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Reloading rules
+2025-09-11T21:19:32.244670+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Collecting garbage unconditionally...
+2025-09-11T21:19:32.244697+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-11T21:19:32.244735+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /run/polkit-1/rules.d
+2025-09-11T21:19:32.244774+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/run/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:32.244792+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/local/share/polkit-1/rules.d
+2025-09-11T21:19:32.244816+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/usr/local/share/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:32.244832+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-11T21:19:32.247520+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Finished loading, compiling and executing 18 rules
+2025-09-11T21:19:34.131576+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Reloading rules
+2025-09-11T21:19:34.131635+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Collecting garbage unconditionally...
+2025-09-11T21:19:34.131661+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-11T21:19:34.131848+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /run/polkit-1/rules.d
+2025-09-11T21:19:34.131886+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/run/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:34.131909+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/local/share/polkit-1/rules.d
+2025-09-11T21:19:34.131939+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/usr/local/share/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:34.131956+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-11T21:19:34.137106+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Finished loading, compiling and executing 18 rules
+2025-09-11T21:19:34.137153+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Reloading rules
+2025-09-11T21:19:34.137173+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Collecting garbage unconditionally...
+2025-09-11T21:19:34.137261+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-11T21:19:34.137277+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /run/polkit-1/rules.d
+2025-09-11T21:19:34.137299+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/run/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:34.137323+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/local/share/polkit-1/rules.d
+2025-09-11T21:19:34.137346+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/usr/local/share/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:34.137369+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-11T21:19:34.139046+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Finished loading, compiling and executing 18 rules
+2025-09-11T21:19:34.885000+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Reloading rules
+2025-09-11T21:19:34.885076+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Collecting garbage unconditionally...
+2025-09-11T21:19:34.885097+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-11T21:19:34.885109+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /run/polkit-1/rules.d
+2025-09-11T21:19:34.885138+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/run/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:34.885153+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/local/share/polkit-1/rules.d
+2025-09-11T21:19:34.885306+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/usr/local/share/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:34.885330+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-11T21:19:34.888571+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Finished loading, compiling and executing 18 rules
+2025-09-11T21:19:34.888644+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Reloading rules
+2025-09-11T21:19:34.888673+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Collecting garbage unconditionally...
+2025-09-11T21:19:34.888686+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /etc/polkit-1/rules.d
+2025-09-11T21:19:34.888697+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /run/polkit-1/rules.d
+2025-09-11T21:19:34.889072+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/run/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:34.889091+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/local/share/polkit-1/rules.d
+2025-09-11T21:19:34.889114+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Error opening rules directory: Error opening directory “/usr/local/share/polkit-1/rules.d”: No such file or directory (g-file-error-quark, 4)
+2025-09-11T21:19:34.889128+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Loading rules from directory /usr/share/polkit-1/rules.d
+2025-09-11T21:19:34.892011+00:00 anton-QEMU-Virtual-Machine polkitd[960]: Finished loading, compiling and executing 18 rules
+2025-09-11T21:21:54.164141+00:00 anton-QEMU-Virtual-Machine pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by anton(uid=1000)
+2025-09-11T21:21:54.165448+00:00 anton-QEMU-Virtual-Machine pkexec[17435]: anton: Executing command [USER=root] [TTY=unknown] [CWD=/home/anton] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+2025-09-12T12:55:01.226431+00:00 anton-QEMU-Virtual-Machine CRON[18584]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T12:55:01.230973+00:00 anton-QEMU-Virtual-Machine CRON[18584]: pam_unix(cron:session): session closed for user root
+2025-09-12T13:01:56.438320+00:00 anton-QEMU-Virtual-Machine gdm-password]: gkr-pam: unlocked login keyring
+2025-09-12T13:05:01.256399+00:00 anton-QEMU-Virtual-Machine CRON[20430]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T13:05:01.260491+00:00 anton-QEMU-Virtual-Machine CRON[20430]: pam_unix(cron:session): session closed for user root
+2025-09-12T13:12:16.753577+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: couldn't initialize slot with master password: The password or PIN is incorrect
+2025-09-12T13:12:16.757907+00:00 anton-QEMU-Virtual-Machine gdm-password]: gkr-pam: unlocked login keyring
+2025-09-12T13:15:01.301964+00:00 anton-QEMU-Virtual-Machine CRON[20570]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T13:15:01.307738+00:00 anton-QEMU-Virtual-Machine CRON[20570]: pam_unix(cron:session): session closed for user root
+2025-09-12T13:17:01.320780+00:00 anton-QEMU-Virtual-Machine CRON[20583]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T13:17:01.329176+00:00 anton-QEMU-Virtual-Machine CRON[20583]: pam_unix(cron:session): session closed for user root
+2025-09-12T13:19:24.407766+00:00 anton-QEMU-Virtual-Machine dbus-daemon[953]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2025-09-12T13:23:49.104518+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: couldn't initialize slot with master password: The password or PIN is incorrect
+2025-09-12T13:23:49.105502+00:00 anton-QEMU-Virtual-Machine gdm-password]: gkr-pam: unlocked login keyring
+2025-09-12T13:25:01.379785+00:00 anton-QEMU-Virtual-Machine CRON[20751]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T13:25:01.384795+00:00 anton-QEMU-Virtual-Machine CRON[20751]: pam_unix(cron:session): session closed for user root
+2025-09-12T13:30:01.417376+00:00 anton-QEMU-Virtual-Machine CRON[20782]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T13:30:01.423799+00:00 anton-QEMU-Virtual-Machine CRON[20782]: pam_unix(cron:session): session closed for user root
+2025-09-12T13:35:01.442535+00:00 anton-QEMU-Virtual-Machine CRON[20813]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T13:35:01.448666+00:00 anton-QEMU-Virtual-Machine CRON[20813]: pam_unix(cron:session): session closed for user root
+2025-09-12T13:45:01.491739+00:00 anton-QEMU-Virtual-Machine CRON[20860]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T13:45:01.499710+00:00 anton-QEMU-Virtual-Machine CRON[20860]: pam_unix(cron:session): session closed for user root
+2025-09-12T13:48:48.936502+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: couldn't initialize slot with master password: The password or PIN is incorrect
+2025-09-12T13:48:48.941266+00:00 anton-QEMU-Virtual-Machine gdm-password]: gkr-pam: unlocked login keyring
+2025-09-12T13:55:01.525295+00:00 anton-QEMU-Virtual-Machine CRON[21010]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T13:55:01.531658+00:00 anton-QEMU-Virtual-Machine CRON[21010]: pam_unix(cron:session): session closed for user root
+2025-09-12T14:47:44.496608+00:00 anton-QEMU-Virtual-Machine CRON[21115]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T14:47:44.500320+00:00 anton-QEMU-Virtual-Machine CRON[21115]: pam_unix(cron:session): session closed for user root
+2025-09-12T14:48:57.240887+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: couldn't initialize slot with master password: The password or PIN is incorrect
+2025-09-12T14:48:57.242378+00:00 anton-QEMU-Virtual-Machine gdm-password]: gkr-pam: unlocked login keyring
+2025-09-12T14:49:07.153139+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: couldn't initialize slot with master password: The password or PIN is incorrect
+2025-09-12T14:49:07.154402+00:00 anton-QEMU-Virtual-Machine gdm-password]: gkr-pam: unlocked login keyring
+2025-09-12T14:49:12.686878+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: couldn't initialize slot with master password: The password or PIN is incorrect
+2025-09-12T14:49:12.687825+00:00 anton-QEMU-Virtual-Machine gdm-password]: gkr-pam: unlocked login keyring
+2025-09-12T14:55:01.077227+00:00 anton-QEMU-Virtual-Machine CRON[21597]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T14:55:01.084502+00:00 anton-QEMU-Virtual-Machine CRON[21597]: pam_unix(cron:session): session closed for user root
+2025-09-12T15:05:01.127293+00:00 anton-QEMU-Virtual-Machine CRON[21756]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T15:05:01.133426+00:00 anton-QEMU-Virtual-Machine CRON[21756]: pam_unix(cron:session): session closed for user root
+2025-09-12T15:15:01.169067+00:00 anton-QEMU-Virtual-Machine CRON[21842]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T15:15:01.174130+00:00 anton-QEMU-Virtual-Machine CRON[21842]: pam_unix(cron:session): session closed for user root
+2025-09-12T15:17:01.187027+00:00 anton-QEMU-Virtual-Machine CRON[21861]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T15:17:01.195341+00:00 anton-QEMU-Virtual-Machine CRON[21861]: pam_unix(cron:session): session closed for user root
+2025-09-12T15:21:24.755031+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: couldn't initialize slot with master password: The password or PIN is incorrect
+2025-09-12T15:21:24.757984+00:00 anton-QEMU-Virtual-Machine gdm-password]: gkr-pam: unlocked login keyring
+2025-09-12T15:25:01.222572+00:00 anton-QEMU-Virtual-Machine CRON[22002]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T15:25:01.227186+00:00 anton-QEMU-Virtual-Machine CRON[22002]: pam_unix(cron:session): session closed for user root
+2025-09-12T15:30:01.248287+00:00 anton-QEMU-Virtual-Machine CRON[22184]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T15:30:01.252405+00:00 anton-QEMU-Virtual-Machine CRON[22184]: pam_unix(cron:session): session closed for user root
+2025-09-12T15:35:01.268283+00:00 anton-QEMU-Virtual-Machine CRON[22376]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T15:35:01.271977+00:00 anton-QEMU-Virtual-Machine CRON[22376]: pam_unix(cron:session): session closed for user root
+2025-09-12T15:45:01.304739+00:00 anton-QEMU-Virtual-Machine CRON[22633]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T15:45:01.307667+00:00 anton-QEMU-Virtual-Machine CRON[22633]: pam_unix(cron:session): session closed for user root
+2025-09-12T15:55:01.345513+00:00 anton-QEMU-Virtual-Machine CRON[23148]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T15:55:01.351124+00:00 anton-QEMU-Virtual-Machine CRON[23148]: pam_unix(cron:session): session closed for user root
+2025-09-12T16:20:31.002145+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: couldn't initialize slot with master password: The password or PIN is incorrect
+2025-09-12T16:20:31.003608+00:00 anton-QEMU-Virtual-Machine gdm-password]: gkr-pam: unlocked login keyring
+2025-09-12T16:20:52.346008+00:00 anton-QEMU-Virtual-Machine pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by anton(uid=1000)
+2025-09-12T16:20:52.346915+00:00 anton-QEMU-Virtual-Machine pkexec[23528]: anton: Executing command [USER=root] [TTY=unknown] [CWD=/home/anton] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+2025-09-12T16:23:54.928560+00:00 anton-QEMU-Virtual-Machine sudo: pam_unix(sudo:auth): authentication failure; logname=anton uid=1000 euid=0 tty=/dev/pts/0 ruser=anton rhost=  user=anton
+2025-09-12T16:24:01.623302+00:00 anton-QEMU-Virtual-Machine sudo:    anton : TTY=pts/0 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/su
+2025-09-12T16:24:01.624284+00:00 anton-QEMU-Virtual-Machine sudo: pam_unix(sudo:session): session opened for user root(uid=0) by anton(uid=1000)
+2025-09-12T16:24:01.640316+00:00 anton-QEMU-Virtual-Machine su[23676]: (to root) root on pts/1
+2025-09-12T16:24:01.641555+00:00 anton-QEMU-Virtual-Machine su[23676]: pam_unix(su:session): session opened for user root(uid=0) by anton(uid=0)
+2025-09-12T16:24:01.644218+00:00 anton-QEMU-Virtual-Machine systemd-logind[985]: Existing logind session ID 2 used by new audit session, ignoring.
+2025-09-12T16:24:01.663355+00:00 anton-QEMU-Virtual-Machine systemd-logind[985]: New session c1 of user root.
+2025-09-12T16:24:01.689092+00:00 anton-QEMU-Virtual-Machine (systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:24:01.690897+00:00 anton-QEMU-Virtual-Machine systemd-logind[985]: New session 22 of user root.
+2025-09-12T16:25:01.128442+00:00 anton-QEMU-Virtual-Machine CRON[24006]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:25:01.132140+00:00 anton-QEMU-Virtual-Machine CRON[24006]: pam_unix(cron:session): session closed for user root
+2025-09-12T16:25:12.669669+00:00 anton-QEMU-Virtual-Machine su[23676]: pam_unix(su:session): session closed for user root
+2025-09-12T16:25:12.676399+00:00 anton-QEMU-Virtual-Machine sudo: pam_unix(sudo:session): session closed for user root
+2025-09-12T16:25:12.679422+00:00 anton-QEMU-Virtual-Machine systemd-logind[985]: Session c1 logged out. Waiting for processes to exit.
+2025-09-12T16:25:12.685565+00:00 anton-QEMU-Virtual-Machine systemd-logind[985]: Removed session c1.
+2025-09-12T16:25:22.925007+00:00 anton-QEMU-Virtual-Machine (sd-pam): pam_unix(systemd-user:session): session closed for user root
+2025-09-12T16:25:22.925159+00:00 anton-QEMU-Virtual-Machine systemd-logind[985]: Removed session 22.
+2025-09-12T16:26:52.334132+00:00 anton-QEMU-Virtual-Machine pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by anton(uid=1000)
+2025-09-12T16:26:52.335053+00:00 anton-QEMU-Virtual-Machine pkexec[24226]: anton: Executing command [USER=root] [TTY=unknown] [CWD=/home/anton] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+2025-09-12T16:30:01.145827+00:00 anton-QEMU-Virtual-Machine CRON[24401]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:30:01.146817+00:00 anton-QEMU-Virtual-Machine CRON[24401]: pam_unix(cron:session): session closed for user root
+2025-09-12T16:35:01.160290+00:00 anton-QEMU-Virtual-Machine CRON[24535]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:35:01.163739+00:00 anton-QEMU-Virtual-Machine CRON[24535]: pam_unix(cron:session): session closed for user root
+2025-09-12T16:45:01.188850+00:00 anton-QEMU-Virtual-Machine CRON[24648]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:45:01.191684+00:00 anton-QEMU-Virtual-Machine CRON[24648]: pam_unix(cron:session): session closed for user root
+2025-09-12T16:55:01.219847+00:00 anton-QEMU-Virtual-Machine CRON[24844]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T16:55:01.223056+00:00 anton-QEMU-Virtual-Machine CRON[24844]: pam_unix(cron:session): session closed for user root
+2025-09-12T17:05:01.241447+00:00 anton-QEMU-Virtual-Machine CRON[24948]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T17:05:01.245293+00:00 anton-QEMU-Virtual-Machine CRON[24948]: pam_unix(cron:session): session closed for user root
+2025-09-12T17:15:01.273856+00:00 anton-QEMU-Virtual-Machine CRON[25112]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T17:15:01.276673+00:00 anton-QEMU-Virtual-Machine CRON[25112]: pam_unix(cron:session): session closed for user root
+2025-09-12T17:17:01.290281+00:00 anton-QEMU-Virtual-Machine CRON[25129]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T17:17:01.297257+00:00 anton-QEMU-Virtual-Machine CRON[25129]: pam_unix(cron:session): session closed for user root
+2025-09-12T17:25:01.322332+00:00 anton-QEMU-Virtual-Machine CRON[25208]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T17:25:01.328101+00:00 anton-QEMU-Virtual-Machine CRON[25208]: pam_unix(cron:session): session closed for user root
+2025-09-12T17:25:11.077770+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: couldn't initialize slot with master password: The password or PIN is incorrect
+2025-09-12T17:25:11.078834+00:00 anton-QEMU-Virtual-Machine gdm-password]: gkr-pam: unlocked login keyring
+2025-09-12T17:30:01.346511+00:00 anton-QEMU-Virtual-Machine CRON[25305]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T17:30:01.352083+00:00 anton-QEMU-Virtual-Machine CRON[25305]: pam_unix(cron:session): session closed for user root
+2025-09-12T17:35:01.362476+00:00 anton-QEMU-Virtual-Machine CRON[25371]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T17:35:01.366553+00:00 anton-QEMU-Virtual-Machine CRON[25371]: pam_unix(cron:session): session closed for user root
+2025-09-12T17:45:01.390097+00:00 anton-QEMU-Virtual-Machine CRON[25583]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T17:45:01.394248+00:00 anton-QEMU-Virtual-Machine CRON[25583]: pam_unix(cron:session): session closed for user root
+2025-09-12T17:49:12.240760+00:00 anton-QEMU-Virtual-Machine gnome-keyring-daemon[1707]: couldn't initialize slot with master password: The password or PIN is incorrect
+2025-09-12T17:49:12.241856+00:00 anton-QEMU-Virtual-Machine gdm-password]: gkr-pam: unlocked login keyring
+2025-09-12T17:55:01.424062+00:00 anton-QEMU-Virtual-Machine CRON[25910]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T17:55:01.428676+00:00 anton-QEMU-Virtual-Machine CRON[25910]: pam_unix(cron:session): session closed for user root
+2025-09-12T18:05:01.447304+00:00 anton-QEMU-Virtual-Machine CRON[26083]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2025-09-12T18:05:01.450604+00:00 anton-QEMU-Virtual-Machine CRON[26083]: pam_unix(cron:session): session closed for user root
