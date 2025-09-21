@@ -1,0 +1,100 @@
+Sep 14 21:26:08 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: New seat seat0.
+Sep 14 21:26:08 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Watching system buttons on /dev/input/event2 (Power Button)
+Sep 14 21:26:08 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Watching system buttons on /dev/input/event0 (Power Button)
+Sep 14 21:26:08 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Watching system buttons on /dev/input/event1 (Lid Switch)
+Sep 14 21:26:08 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Sep 14 21:26:08 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Watching system buttons on /dev/input/event6 (HP WMI hotkeys)
+Sep 14 21:26:18 timofey-Victus-by-HP-Laptop-16-e0xxx gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)
+Sep 14 21:26:18 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: New session c1 of user gdm.
+Sep 14 21:26:18 timofey-Victus-by-HP-Laptop-16-e0xxx systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)
+Sep 14 21:26:20 timofey-Victus-by-HP-Laptop-16-e0xxx polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.45 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Sep 14 21:26:25 timofey-Victus-by-HP-Laptop-16-e0xxx gdm-password]: gkr-pam: unable to locate daemon control file
+Sep 14 21:26:25 timofey-Victus-by-HP-Laptop-16-e0xxx gdm-password]: gkr-pam: stashed password to try later in open session
+Sep 14 21:26:25 timofey-Victus-by-HP-Laptop-16-e0xxx gdm-password]: pam_unix(gdm-password:session): session opened for user timofey(uid=1000) by (uid=0)
+Sep 14 21:26:25 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: New session 2 of user timofey.
+Sep 14 21:26:25 timofey-Victus-by-HP-Laptop-16-e0xxx systemd: pam_unix(systemd-user:session): session opened for user timofey(uid=1000) by (uid=0)
+Sep 14 21:26:25 timofey-Victus-by-HP-Laptop-16-e0xxx gdm-password]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep 14 21:26:25 timofey-Victus-by-HP-Laptop-16-e0xxx gnome-keyring-daemon[1731]: The PKCS#11 component was already initialized
+Sep 14 21:26:25 timofey-Victus-by-HP-Laptop-16-e0xxx gnome-keyring-daemon[1731]: The SSH agent was already initialized
+Sep 14 21:26:25 timofey-Victus-by-HP-Laptop-16-e0xxx gnome-keyring-daemon[1731]: The Secret Service was already initialized
+Sep 14 21:26:26 timofey-Victus-by-HP-Laptop-16-e0xxx polkitd(authority=local): Registered Authentication Agent for unix-session:2 (system bus name :1.84 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Sep 14 21:26:27 timofey-Victus-by-HP-Laptop-16-e0xxx gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep 14 21:26:27 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Session c1 logged out. Waiting for processes to exit.
+Sep 14 21:26:28 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Removed session c1.
+Sep 14 21:26:28 timofey-Victus-by-HP-Laptop-16-e0xxx polkitd(authority=local): Unregistered Authentication Agent for unix-session:c1 (system bus name :1.45, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8) (disconnected from bus)
+Sep 14 18:27:40 timofey-Victus-by-HP-Laptop-16-e0xxx pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 14 18:27:40 timofey-Victus-by-HP-Laptop-16-e0xxx pkexec[3174]: timofey: Executing command [USER=root] [TTY=unknown] [CWD=/home/timofey] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 14 18:38:38 timofey-Victus-by-HP-Laptop-16-e0xxx sudo: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=timofey rhost=  user=timofey
+Sep 14 18:38:51 timofey-Victus-by-HP-Laptop-16-e0xxx sudo:  timofey : TTY=pts/0 ; PWD=/home/timofey ; USER=root ; COMMAND=/usr/sbin/visudo
+Sep 14 18:38:51 timofey-Victus-by-HP-Laptop-16-e0xxx sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 14 18:39:07 timofey-Victus-by-HP-Laptop-16-e0xxx sudo: pam_unix(sudo:session): session closed for user root
+Sep 14 18:39:09 timofey-Victus-by-HP-Laptop-16-e0xxx gnome-keyring-daemon[1731]: asked to register item /org/freedesktop/secrets/collection/login/1, but it's already registered
+Sep 14 18:41:49 timofey-Victus-by-HP-Laptop-16-e0xxx sudo:  timofey : TTY=pts/0 ; PWD=/etc ; USER=root ; COMMAND=/usr/sbin/visudo
+Sep 14 18:41:49 timofey-Victus-by-HP-Laptop-16-e0xxx sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 14 18:41:55 timofey-Victus-by-HP-Laptop-16-e0xxx sudo: pam_unix(sudo:session): session closed for user root
+Sep 14 19:10:31 timofey-Victus-by-HP-Laptop-16-e0xxx sudo:  timofey : TTY=pts/0 ; PWD=/home/timofey ; USER=root ; COMMAND=/usr/bin/apt update
+Sep 14 19:10:31 timofey-Victus-by-HP-Laptop-16-e0xxx sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 14 19:10:55 timofey-Victus-by-HP-Laptop-16-e0xxx sudo: pam_unix(sudo:session): session closed for user root
+Sep 14 19:12:38 timofey-Victus-by-HP-Laptop-16-e0xxx pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Sep 14 19:12:38 timofey-Victus-by-HP-Laptop-16-e0xxx pkexec[6255]: timofey: Executing command [USER=root] [TTY=unknown] [CWD=/home/timofey] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 14 19:17:01 timofey-Victus-by-HP-Laptop-16-e0xxx CRON[6868]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 14 19:17:01 timofey-Victus-by-HP-Laptop-16-e0xxx CRON[6868]: pam_unix(cron:session): session closed for user root
+Sep 14 19:46:48 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 14 19:46:50 timofey-Victus-by-HP-Laptop-16-e0xxx gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=timofey
+Sep 14 19:46:57 timofey-Victus-by-HP-Laptop-16-e0xxx gdm-password]: gkr-pam: unlocked login keyring
+Sep 14 20:17:01 timofey-Victus-by-HP-Laptop-16-e0xxx CRON[10217]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 14 20:17:01 timofey-Victus-by-HP-Laptop-16-e0xxx CRON[10217]: pam_unix(cron:session): session closed for user root
+Sep 14 20:17:49 timofey-Victus-by-HP-Laptop-16-e0xxx gdm-password]: gkr-pam: unlocked login keyring
+Sep 14 20:36:56 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Lid closed.
+Sep 14 20:36:56 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 14 20:37:04 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Lid opened.
+Sep 14 20:37:04 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 14 20:37:09 timofey-Victus-by-HP-Laptop-16-e0xxx gdm-password]: gkr-pam: unlocked login keyring
+Sep 14 21:17:01 timofey-Victus-by-HP-Laptop-16-e0xxx CRON[12733]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 14 21:17:01 timofey-Victus-by-HP-Laptop-16-e0xxx CRON[12733]: pam_unix(cron:session): session closed for user root
+Sep 14 21:22:35 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Lid closed.
+Sep 14 21:22:35 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:03:37 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:04:03 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:04:38 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:05:05 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:05:40 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:06:07 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:06:43 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:07:10 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:07:46 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:08:13 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:08:49 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:09:16 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:09:51 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:10:18 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:10:57 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:11:24 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:12:00 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:12:27 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:13:03 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:13:30 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:14:07 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:14:34 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:15:09 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:15:36 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:16:11 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:16:38 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:17:14 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:17:34 timofey-Victus-by-HP-Laptop-16-e0xxx CRON[15059]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 15 16:17:34 timofey-Victus-by-HP-Laptop-16-e0xxx CRON[15059]: pam_unix(cron:session): session closed for user root
+Sep 15 16:17:41 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:18:17 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:18:44 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:19:20 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:19:47 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:20:22 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:20:49 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:21:25 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:21:52 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:22:28 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:22:55 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:23:31 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:23:58 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
+Sep 15 16:24:33 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Operation 'sleep' finished.
+Sep 15 16:25:00 timofey-Victus-by-HP-Laptop-16-e0xxx systemd-logind[739]: Suspending...
