@@ -1,0 +1,56 @@
+Sep 10 01:38:24 DESKTOP-1R6JDGE login[420]: pam_unix(login:session): session opened for user kaiser(uid=1000) by (uid=0)
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd-logind[225]: New session 1 of user kaiser.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd: pam_unix(systemd-user:session): session opened for user kaiser(uid=1000) by (uid=0)
+Sep 10 01:40:19 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser ; USER=root ; COMMAND=/usr/bin/ss -tulpn
+Sep 10 01:40:19 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 10 01:40:19 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd-logind[226]: New seat seat0.
+Sep 16 23:00:07 DESKTOP-1R6JDGE login[410]: pam_unix(login:session): session opened for user kaiser(uid=1000) by (uid=0)
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd-logind[226]: New session 1 of user kaiser.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd: pam_unix(systemd-user:session): session opened for user kaiser(uid=1000) by (uid=0)
+Sep 16 23:16:30 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /var/log/syslog logs/
+Sep 16 23:16:30 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:16:30 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:17:01 DESKTOP-1R6JDGE CRON[4698]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Sep 16 23:17:01 DESKTOP-1R6JDGE CRON[4698]: pam_unix(cron:session): session closed for user root
+Sep 16 23:17:11 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /var/log/syslog logs/
+Sep 16 23:17:11 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:17:11 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:17:41 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /var/log/syslog logs/
+Sep 16 23:17:41 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:17:41 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:18:20 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /var/log/syslog logs/
+Sep 16 23:18:20 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:18:20 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:20:26 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /home/kaiser/var/log/syslog logs/
+Sep 16 23:20:26 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:20:26 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:21:56 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /var/log/syslog.log
+Sep 16 23:21:56 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:21:56 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:22:19 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /var/log/syslog.log/
+Sep 16 23:22:19 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:22:19 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:22:46 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /var/log/syslog logs/syslog.log
+Sep 16 23:22:46 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:22:46 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:23:31 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /var/log/syslog.log/logs
+Sep 16 23:23:31 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:23:31 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:24:03 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /home/kaiser/var/log/syslog.log
+Sep 16 23:24:03 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:24:03 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:24:05 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /home/kaiser/var/log/syslog.log/
+Sep 16 23:24:05 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:24:05 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:24:33 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025 ; USER=root ; COMMAND=/usr/bin/cp /var/log/syslog ./syslog.temp
+Sep 16 23:24:33 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:24:33 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:25:42 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025/lab1/gr9sub2/STAYAN_YV ; USER=root ; COMMAND=/usr/bin/cp /var/log/syslog logs/
+Sep 16 23:25:42 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:25:42 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:27:31 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025/lab1/gr9sub2/STAYAN_YV ; USER=root ; COMMAND=/usr/bin/chown kaiser:kaiser logs/syslog
+Sep 16 23:27:31 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Sep 16 23:27:31 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session closed for user root
+Sep 16 23:27:49 DESKTOP-1R6JDGE sudo:   kaiser : TTY=pts/0 ; PWD=/home/kaiser/BSU-DLA-2025/lab1/gr9sub2/STAYAN_YV ; USER=root ; COMMAND=/usr/bin/cp /var/log/auth.log logs/
+Sep 16 23:27:49 DESKTOP-1R6JDGE sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
