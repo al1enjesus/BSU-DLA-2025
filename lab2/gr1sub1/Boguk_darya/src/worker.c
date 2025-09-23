@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
             usleep(sleep_us_light);
         }
         printf("[Worker %d] tick=%d mode=%s CPU=%d\n",
-               getpid(), tick,
+               (int)getpid(), tick,
                mode_heavy ? "heavy" : "light",
                sched_getcpu());
         fflush(stdout);
