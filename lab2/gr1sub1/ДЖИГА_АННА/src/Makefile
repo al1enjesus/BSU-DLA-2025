@@ -1,12 +1,13 @@
 CC=gcc
+CFLAGS=-Wall -O2
 
 all: supervisor worker
 
 supervisor: supervisor.c
-	$(CC) supervisor.c -o supervisor
+	$(CC) $(CFLAGS) supervisor.c -o supervisor
 
 worker: worker.c
-	$(CC) worker.c -o worker
+	$(CC) $(CFLAGS) worker.c -o worker
 
 clean:
 	rm -f supervisor worker

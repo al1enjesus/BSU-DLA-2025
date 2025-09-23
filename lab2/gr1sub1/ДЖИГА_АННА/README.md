@@ -1,3 +1,8 @@
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=24.04
+Компилятор: GCC (GNU Compiler Collection)
+Версия: 13.3.0
+CPU: 8
 1. Заходите в папку ```src```
 2. Пишите в терминале команду ```make```
 3. Пишите в терминале команду ```./supervisor```

@@ -25,12 +25,20 @@ void spawn_worker(int idx) {
     } else if (pid > 0) {
         workers[idx] = pid;
         if (idx % 2 == 0) {
-            nice(10);
+            if (setpriority(PRIO_PROCESS, pid, 10) == -1) {
+                perror("setpriority");
+            }
+        } else {
+            if (setpriority(PRIO_PROCESS, pid, 0) == -1) {
+                perror("setpriority");
+            }
         }
         cpu_set_t mask;
         CPU_ZERO(&mask);
         CPU_SET(idx % 2, &mask);
-        sched_setaffinity(pid, sizeof(mask), &mask);
+        if (sched_setaffinity(pid, sizeof(mask), &mask) == -1) {
+            perror("sched_setaffinity");
+        }
         printf("[Supervisor] started worker %d (pid=%d)\n", idx, pid);
     }
 }
