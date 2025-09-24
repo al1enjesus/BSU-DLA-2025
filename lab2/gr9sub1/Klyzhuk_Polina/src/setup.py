@@ -11,15 +11,15 @@ def check_python_version():
 
 
 def install_requirements():
-    """Устанавливает зависимости из requirements.txt"""
-    requirements_file = Path("requirements.txt")
+    """Устанавливает зависимости из requirements.txt.txt"""
+    requirements_file = Path("requirements.txt.txt")
 
     if not requirements_file.exists():
-        print("❌ Файл requirements.txt не найден")
+        print("❌ Файл requirements.txt.txt не найден")
         sys.exit(1)
 
     try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt.txt"])
         print("✅ Зависимости установлены успешно")
     except subprocess.CalledProcessError:
         print("❌ Ошибка при установке зависимостей")
