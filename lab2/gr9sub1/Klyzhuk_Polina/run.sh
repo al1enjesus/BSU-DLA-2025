@@ -6,7 +6,7 @@ source venv/bin/activate
 
 # Запуск супервизора в фоне
 echo "Запуск супервизора..."
-python src/supervisor.py config.json &
+python src/supervisor.py src/config.json &
 SUPERVISOR_PID=$!
 
 echo "Супервизор запущен с PID: $SUPERVISOR_PID"
