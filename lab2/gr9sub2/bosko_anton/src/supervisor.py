@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# supervisor.py — минимальный супервизор для лабораторной работы
+# supervisor.py — минимальный супервизор для лабораторной работы Б
 
 import argparse
 import json
@@ -15,7 +15,6 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # ---------- config utilities ----------
 def load_config(path):
-    # try YAML first, fallback to JSON/simple parser
     try:
         import yaml
         with open(path, 'r') as f:
@@ -60,6 +59,16 @@ class Supervisor:
         signal.signal(signal.SIGUSR1, self._on_usr1)
         signal.signal(signal.SIGUSR2, self._on_usr2)
 
+    # ---------- helper for setting nice ----------
+    @staticmethod
+    def nice_preexec(nice_value):
+        def _func():
+            try:
+                os.nice(nice_value)
+            except Exception as e:
+                print(f"[worker] Failed to set nice: {e}")
+        return _func
+
     # spawn worker (optionally keep same logical id)
     def spawn_worker(self, worker_id=None):
         if worker_id is None:
@@ -68,15 +77,24 @@ class Supervisor:
 
         worker_py = os.path.join(ROOT, "worker.py")
         cmd = [sys.executable, worker_py, "--config", os.path.abspath(self.cfg_path)]
-        # start_new_session so child is in its own session (safer)
-        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, start_new_session=True, text=True)
 
-        self.workers[p.pid] = {"id": worker_id, "popen": p}
+        # установить nice: четные воркеры — стандартный приоритет, нечетные — пониженный
+        nice_value = 0 if worker_id % 2 == 0 else 10
+
+        p = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            start_new_session=True,
+            text=True,
+            preexec_fn=self.nice_preexec(nice_value)
+        )
+
+        self.workers[p.pid] = {"id": worker_id, "popen": p, "nice": nice_value}
         self.id_to_restarts.setdefault(worker_id, deque())
-        # record a "start" timestamp for restart-limiting logic
         self.id_to_restarts[worker_id].append(time.time())
 
-        print(f"[supervisor] spawned worker id={worker_id} pid={p.pid}")
+        print(f"[supervisor] spawned worker id={worker_id} pid={p.pid} nice={nice_value}")
         return p.pid
 
     def start_initial(self):
@@ -84,12 +102,10 @@ class Supervisor:
         for _ in range(n):
             self.spawn_worker()
 
-    # signal handlers
+    # ---------- signal handlers ----------
     def _on_sigchld(self, signum, frame):
-        # reap all dead children
         try:
             while True:
-                # -1 => any child, WNOHANG => non-blocking
                 pid, status = os.waitpid(-1, os.WNOHANG)
                 if pid == 0:
                     break
@@ -109,22 +125,18 @@ class Supervisor:
         print(f"[supervisor] worker id={worker_id} pid={pid} exited (exitcode={exitcode}, sig={term_sig})")
 
         if self.stop_event.is_set():
-            # we're shutting down; don't restart
             return
 
-        # check restart rate limit
         dq = self.id_to_restarts.setdefault(worker_id, deque())
         now = time.time()
-        # drop old timestamps
         while dq and (now - dq[0]) > self.RESTART_WINDOW:
             dq.popleft()
         if len(dq) >= self.RESTART_LIMIT:
-            print(f"[supervisor] worker id={worker_id} exceeded restart limit ({self.RESTART_LIMIT} times in {self.RESTART_WINDOW}s). NOT restarting.")
+            print(f"[supervisor] worker id={worker_id} exceeded restart limit. NOT restarting.")
             return
 
-        # restart
         print(f"[supervisor] restarting worker id={worker_id}...")
-        time.sleep(0.1)  # small backoff
+        time.sleep(0.1)
         self.spawn_worker(worker_id=worker_id)
 
     def _broadcast(self, sig):
@@ -150,37 +162,28 @@ class Supervisor:
             print(f"[supervisor] failed to reload config: {e}")
             return
 
-        # graceful restart: ask workers to stop, then start new ones to match new config
         desired = int(self.cfg.get("workers", 3))
         print(f"[supervisor] new desired workers = {desired}")
-        # send SIGTERM to all workers
         self._broadcast(signal.SIGTERM)
-        # wait up to graceful_timeout for them to exit
         deadline = time.time() + self.graceful_timeout
         while self.workers and time.time() < deadline:
             time.sleep(0.1)
-        # kill any remaining
         for pid in list(self.workers.keys()):
             try:
                 os.kill(pid, signal.SIGKILL)
             except Exception:
                 pass
         self.workers.clear()
-        # spawn desired count
         for _ in range(desired):
             self.spawn_worker()
 
     def _on_terminate(self, signum, frame):
         print("[supervisor] termination signal received, shutting down gracefully...")
         self.stop_event.set()
-        # ask workers to exit
         self._broadcast(signal.SIGTERM)
-        # give them time
         deadline = time.time() + self.graceful_timeout
         while self.workers and time.time() < deadline:
             time.sleep(0.1)
-            # reap any exited children (SIGCHLD handler will run too)
-            # but explicitly try to reap here as well
             try:
                 while True:
                     pid, status = os.waitpid(-1, os.WNOHANG)
@@ -189,8 +192,6 @@ class Supervisor:
                     self._handle_child_exit(pid, status)
             except ChildProcessError:
                 break
-
-        # force kill remaining
         for pid in list(self.workers.keys()):
             try:
                 print(f"[supervisor] killing stubborn worker pid={pid}")
@@ -199,23 +200,19 @@ class Supervisor:
                 pass
         self.workers.clear()
         print("[supervisor] shutdown complete.")
-        # exit process
         sys.exit(0)
 
     def run(self):
         print("[supervisor] starting up...")
         self.start_initial()
-        # main loop — keep the process alive; signal handlers do the work
         try:
             while not self.stop_event.is_set():
-                # try to read worker outputs (non-blocking)
                 for pid, meta in list(self.workers.items()):
                     p = meta["popen"]
                     if p.stdout:
-                        # read available lines without blocking
                         line = p.stdout.readline()
                         if line:
-                            print(f"[worker {meta['id']}/{pid}] {line.strip()}")
+                            print(f"[worker {meta['id']}/{pid} nice={meta['nice']}] {line.strip()}")
                 time.sleep(0.2)
         except KeyboardInterrupt:
             self._on_terminate(signal.SIGINT, None)
@@ -225,7 +222,6 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("config", help="path to config file (yaml/json/KEY=VALUE)")
     args = parser.parse_args()
-
     sup = Supervisor(args.config)
     sup.run()
 
