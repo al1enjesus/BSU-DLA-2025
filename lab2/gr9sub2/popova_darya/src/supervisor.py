@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import argparse
 import json
 import os
@@ -87,11 +86,35 @@ class Supervisor:
                 f"[supervisor] worker {idx} restart rate limit exceeded ({len(dq)} in {RESTART_WINDOW}s) — backoff, will not restart now"
             )
             return
+
         cmd = [sys.executable, str(Path(__file__).parent / "worker.py"), "--id", str(idx), "--config", str(self.config_path)]
+
+        # pass optional nice / cpus from config if available
+        attrs = {}
+        wa = self.config.get("worker_attrs")
+        if isinstance(wa, list) and idx < len(wa):
+            attrs = wa[idx] or {}
+        else:
+            nice_map = self.config.get("nice_map", {})
+            aff_map = self.config.get("affinity_map", {})
+            if str(idx) in nice_map:
+                attrs["nice"] = nice_map[str(idx)]
+            if str(idx) in aff_map:
+                attrs["cpus"] = aff_map[str(idx)]
+
+        if "nice" in attrs:
+            cmd += ["--nice", str(int(attrs["nice"]))]
+        if "cpus" in attrs:
+            if isinstance(attrs["cpus"], list):
+                cpus_arg = ",".join(str(int(c)) for c in attrs["cpus"])
+            else:
+                cpus_arg = str(attrs["cpus"])
+            cmd += ["--cpus", cpus_arg]
+
         p = subprocess.Popen(cmd)
         self.procs[idx] = p
         dq.append(now)
-        print(f"[supervisor] started worker {idx} pid={p.pid}")
+        print(f"[supervisor] started worker {idx} pid={p.pid} attrs={attrs}")
 
     def _stop_worker(self, idx, sig=signal.SIGTERM):
         p = self.procs.get(idx)

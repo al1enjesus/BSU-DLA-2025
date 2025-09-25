@@ -1,6 +1,13 @@
 {
-  "workers": 3,
+  "workers": 4,
   "mode_default": "heavy",
   "mode_heavy": { "work_us": 9000, "sleep_us": 1000 },
-  "mode_light": { "work_us": 2000, "sleep_us": 8000 }
+  "mode_light": { "work_us": 2000, "sleep_us": 8000 },
+  "worker_attrs": [
+    { "nice": 0,  "cpus": [0] },
+    { "nice": 10, "cpus": [0] },
+    { "nice": 0,  "cpus": [1] },
+    { "nice": 10, "cpus": [1] }
+  ]
 }
+

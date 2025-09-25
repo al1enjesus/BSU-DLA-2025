@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 import json
 import os
@@ -47,11 +48,32 @@ def busy_wait_micros(us):
         pass
 
 
+def try_set_nice(n):
+    try:
+        # PRIO_PROCESS, pid 0 (self)
+        os.setpriority(os.PRIO_PROCESS, 0, int(n))
+        print(f"[worker {os.getpid()}] set nice={n}")
+    except Exception as e:
+        print(f"[worker {os.getpid()}] cannot set nice={n}: {e}")
+
+
+def try_set_affinity(cpus):
+    try:
+        # cpus: iterable of ints
+        cpu_set = {int(c) for c in cpus}
+        os.sched_setaffinity(0, cpu_set)
+        print(f"[worker {os.getpid()}] set affinity={sorted(cpu_set)}")
+    except Exception as e:
+        print(f"[worker {os.getpid()}] cannot set affinity={cpus}: {e}")
+
+
 def main():
     global mode, stats_tick, psutil
     ap = argparse.ArgumentParser()
     ap.add_argument("--id", required=True)
     ap.add_argument("--config", default="config.json")
+    ap.add_argument("--nice", type=int, help="nice value to set for this worker")
+    ap.add_argument("--cpus", type=str, help="comma-separated cpu list to pin to, e.g. 0,1")
     args = ap.parse_args()
     config_path = Path(args.config)
 
@@ -70,6 +92,15 @@ def main():
     pid = os.getpid()
     proc = psutil.Process(pid) if psutil else None
 
+    # apply requested scheduling attributes early
+    if args.nice is not None:
+        try_set_nice(args.nice)
+
+    if args.cpus:
+        cpus_list = [int(x.strip()) for x in args.cpus.split(",") if x.strip() != ""]
+        if cpus_list:
+            try_set_affinity(cpus_list)
+
     try:
         affinity = os.sched_getaffinity(0)
     except Exception:
@@ -81,8 +112,9 @@ def main():
     while not stop_flag:
         # determine current profile
         profile = cfg.get("mode_heavy") if mode == "heavy" else cfg.get("mode_light")
+
+        # small safe fallback (in case profile is missing)
         if profile is None:
-            # fall back to defaults
             if mode == "heavy":
                 work_us = 9000
                 sleep_us = 1000
@@ -114,3 +146,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

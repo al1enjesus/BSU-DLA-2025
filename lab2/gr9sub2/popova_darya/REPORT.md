@@ -22,3 +22,22 @@
   sudo apt update
   sudo apt install -y python3 python3-pip procps util-linux sysstat strace
   pip3 install --user psutil
+  
+  
+  ```
+  dasha@dasha-VirtualBox:~/Desktop/BSU-DLA-2025/lab2/gr9sub2/popova_darya$ pidstat -u 1 10 -p 6376
+Linux 6.14.0-29-generic (dasha-VirtualBox) 	09/25/2025 	_x86_64_	(4 CPU)
+
+10:43:32 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:43:33 PM  1000      6376   48.51    0.00    0.00   39.60   48.51     1  python3
+10:43:34 PM  1000      6376   51.00    0.00    0.00   37.00   51.00     1  python3
+10:43:35 PM  1000      6376   48.00    1.00    0.00   40.00   49.00     1  python3
+10:43:36 PM  1000      6376   46.00    0.00    0.00   44.00   46.00     1  python3
+10:43:37 PM  1000      6376   50.00    0.00    0.00   38.00   50.00     1  python3
+10:43:38 PM  1000      6376   50.00    1.00    0.00   38.00   51.00     1  python3
+10:43:39 PM  1000      6376   54.00    0.00    0.00   34.00   54.00     1  python3
+10:43:40 PM  1000      6376   49.00    0.00    0.00   40.00   49.00     1  python3
+10:43:41 PM  1000      6376   50.00    0.00    0.00   39.00   50.00     1  python3
+10:43:42 PM  1000      6376   44.55    0.00    0.00   45.54   44.55     1  python3
+Average:     1000      6376   49.10    0.20    0.00   39.52   49.30     -  python3
+```
