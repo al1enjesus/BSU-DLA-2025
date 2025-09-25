@@ -12,6 +12,9 @@
 #include <yaml-cpp/yaml.h>
 #include <atomic>
 #include <mutex>
+#include <sched.h>
+#include <sys/resource.h>
+#include <cstring>
 
 using namespace std;
 
@@ -29,12 +32,20 @@ public:
 		int workers;
 		Mode heavy;
 		Mode light;
+		int scheduling_policy; // Added field for scheduling policy
 	};
 
 	enum class WorkMode
 	{
 		LIGHT = 1,
 		HEAVY = 2
+	};
+
+	enum class SchedulingPolicy
+	{
+		DEFAULT,
+		MIXED_NICE,
+		CPU_AFFINITY
 	};
 
 private:
@@ -47,6 +58,9 @@ private:
 	static constexpr int DEFAULT_HEAVY_SLEEP_US = 1000000;
 	static constexpr int DEFAULT_LIGHT_WORK_US = 1000000;
 	static constexpr int DEFAULT_LIGHT_SLEEP_US = 500000;
+	static constexpr int NICE_HIGH_VALUE = 10;
+	static constexpr int NICE_NORMAL_VALUE = 0;
+	static constexpr int DEFAULT_CPU_AFFINITIES = 1;
 
 	static inline Config config{};
 	static inline vector<pid_t> workers{};
@@ -60,6 +74,8 @@ private:
 	static inline string workerPath{};
 	static inline mutex workersMutex{};
 	static inline mutex restartTimesMutex{};
+	static inline SchedulingPolicy schedulingPolicy{SchedulingPolicy::DEFAULT};
+	static inline int availableCPUs{1};
 
 	Supervisor();
 
@@ -78,6 +94,9 @@ private:
 			auto light = yamlConfig["light"];
 			config.light.work_us = light["work_us"].as<int>();
 			config.light.sleep_us = light["sleep_us"].as<int>();
+
+			config.scheduling_policy = yamlConfig["scheduling_policy"].as<int>(0);
+			setSchedulingPolicy(config.scheduling_policy);
 		}
 		catch (const YAML::Exception &e)
 		{
@@ -87,10 +106,70 @@ private:
 			config.workers = DEFAULT_WORKERS;
 			config.heavy = {DEFAULT_HEAVY_WORK_US, DEFAULT_HEAVY_SLEEP_US};
 			config.light = {DEFAULT_LIGHT_WORK_US, DEFAULT_LIGHT_SLEEP_US};
+			config.scheduling_policy = 0; // Default scheduling policy
 		}
 	}
 
-	static void spawnWorker()
+	static void setupSystemInfo()
+	{
+		cpu_set_t cpuset;
+		CPU_ZERO(&cpuset);
+		if (sched_getaffinity(0, sizeof(cpuset), &cpuset) == 0)
+		{
+			availableCPUs = CPU_COUNT(&cpuset);
+			cout << "[SUP] System has " << availableCPUs << " available CPU(s)" << endl;
+		}
+		else
+		{
+			cerr << "[SUP] Failed to get CPU affinity: " << strerror(errno) << endl;
+			availableCPUs = DEFAULT_CPU_AFFINITIES;
+		}
+	}
+
+	static void applySchedulingPolicy(int workerIndex)
+	{
+		switch (schedulingPolicy)
+		{
+		case SchedulingPolicy::MIXED_NICE:
+		{
+			int niceValue = (workerIndex % 2 == 0) ? NICE_HIGH_VALUE : NICE_NORMAL_VALUE;
+			if (setpriority(PRIO_PROCESS, 0, niceValue) != 0)
+			{
+				cerr << "[WORKER] Failed to set nice value to " << niceValue
+						 << ": " << strerror(errno) << endl;
+			}
+
+			cout << "[WORKER] Set nice value to " << niceValue << endl;
+			break;
+		}
+		case SchedulingPolicy::CPU_AFFINITY:
+		{
+			if (availableCPUs > 1)
+			{
+				cpu_set_t cpuset;
+				CPU_ZERO(&cpuset);
+				int targetCPU = workerIndex % availableCPUs;
+				CPU_SET(targetCPU, &cpuset);
+
+				if (sched_setaffinity(0, sizeof(cpuset), &cpuset) != 0)
+				{
+					cerr << "[WORKER] Failed to set CPU affinity to CPU " << targetCPU
+							 << ": " << strerror(errno) << endl;
+				}
+				cout << "[WORKER] Set CPU affinity to CPU " << targetCPU << endl;
+			}
+			else
+			{
+				cerr << "[WORKER] Not enough CPUs for affinity setting" << endl;
+			}
+			break;
+		}
+		default:
+			break;
+		}
+	}
+
+	static void spawnWorker(int workerIndex)
 	{
 		pid_t pid = fork();
 
@@ -103,7 +182,8 @@ private:
 		// Child process
 		if (pid == 0)
 		{
-			// Pass config parameters as command line arguments
+			applySchedulingPolicy(workerIndex);
+
 			string heavyWork = to_string(config.heavy.work_us);
 			string heavySleep = to_string(config.heavy.sleep_us);
 			string lightWork = to_string(config.light.work_us);
@@ -209,7 +289,7 @@ private:
 
 					if ((int)restartTimes.size() <= MAX_RESTARTS_PER_WINDOW)
 					{
-						spawnWorker();
+						spawnWorker(0);
 					}
 					else
 					{
@@ -269,20 +349,43 @@ private:
 		signal(SIGUSR2, onSwitchToHeavy);
 	}
 
+	static void setSchedulingPolicy(int policy)
+	{
+		switch (policy)
+		{
+		case 1:
+			schedulingPolicy = SchedulingPolicy::MIXED_NICE;
+			cout << "[SUP] Using mixed nice values scheduling policy" << endl;
+			break;
+
+		case 2:
+			schedulingPolicy = SchedulingPolicy::CPU_AFFINITY;
+			cout << "[SUP] Using CPU affinity scheduling policy" << endl;
+			break;
+
+		default:
+			schedulingPolicy = SchedulingPolicy::DEFAULT;
+			cout << "[SUP] Using default scheduling policy" << endl;
+			break;
+		}
+	}
+
 public:
 	static void setup(const string &config_file, const string &worker_path)
 	{
 		configFile = config_file;
 		workerPath = worker_path;
 		setupSignalHandlers();
+		setupSystemInfo();
 		readConfig();
 	}
 
 	static void run()
 	{
+		// Spawn workers
 		for (int i = 0; i < config.workers; i++)
 		{
-			spawnWorker();
+			spawnWorker(i);
 		}
 
 		while (true)
@@ -302,7 +405,7 @@ public:
 
 				for (int i = 0; i < config.workers; i++)
 				{
-					spawnWorker();
+					spawnWorker(i);
 				}
 
 				reload.store(false);
@@ -325,12 +428,6 @@ int main(int argc, char *argv[])
 
 	configFile = argv[1];
 	workerPath = argv[2];
-
-	if (configFile.empty() || workerPath.empty())
-	{
-		cerr << "Both config file and worker path must be provided." << endl;
-		return 1;
-	}
 
 	Supervisor::setup(configFile, workerPath);
 	Supervisor::run();

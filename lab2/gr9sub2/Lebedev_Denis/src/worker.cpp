@@ -4,6 +4,7 @@
 #include <atomic>
 #include <chrono>
 #include <sched.h>
+#include <sys/resource.h>
 
 using namespace std;
 
@@ -45,10 +46,13 @@ private:
 		tick++;
 
 		int cpu = sched_getcpu();
+		int nice = getpriority(PRIO_PROCESS, 0);
+
 		cout << "PID=" << getpid()
 				 << " mode=" << (mode == WorkMode::HEAVY ? "HEAVY" : "LIGHT")
 				 << " tick=" << tick
 				 << " cpu=" << cpu
+				 << " nice=" << nice
 				 << endl;
 	}
 
