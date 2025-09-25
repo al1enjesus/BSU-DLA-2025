@@ -69,13 +69,16 @@ private:
 	static inline atomic<bool> shuttingDown{false};
 	static inline atomic<WorkMode> currentMode{WorkMode::HEAVY};
 	static inline map<pid_t, string> workerStatus{};
+	static inline map<pid_t, int> workerIndices{}; // Map PID to original worker index
 	static inline deque<chrono::steady_clock::time_point> restartTimes{};
 	static inline string configFile{};
 	static inline string workerPath{};
 	static inline mutex workersMutex{};
 	static inline mutex restartTimesMutex{};
+	static inline mutex workerIndicesMutex{}; // Mutex for worker indices map
 	static inline SchedulingPolicy schedulingPolicy{SchedulingPolicy::DEFAULT};
 	static inline int availableCPUs{1};
+	static inline int nextWorkerIndex{0}; // Counter for assigning unique indices
 
 	Supervisor();
 
@@ -203,8 +206,12 @@ private:
 			lock_guard<mutex> lock(workersMutex);
 			workers.push_back(pid);
 		}
+		{
+			lock_guard<mutex> lock(workerIndicesMutex);
+			workerIndices[pid] = workerIndex;
+		}
 
-		cout << "[SUP] started worker " << pid << endl;
+		cout << "[SUP] started worker " << pid << " with index " << workerIndex << endl;
 	}
 
 	static void stopWorkers()
@@ -269,7 +276,18 @@ private:
 
 		while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
 		{
-			cout << "[SUP] worker " << pid << " exited" << endl;
+			int originalIndex = -1;
+			{
+				lock_guard<mutex> lock(workerIndicesMutex);
+				auto it = workerIndices.find(pid);
+				if (it != workerIndices.end())
+				{
+					originalIndex = it->second;
+					workerIndices.erase(it);
+				}
+			}
+
+			cout << "[SUP] worker " << pid << " (index " << originalIndex << ") exited" << endl;
 			{
 				lock_guard<mutex> lock(workersMutex);
 				workers.erase(std::remove(workers.begin(), workers.end(), pid), workers.end());
@@ -289,7 +307,9 @@ private:
 
 					if ((int)restartTimes.size() <= MAX_RESTARTS_PER_WINDOW)
 					{
-						spawnWorker(0);
+						// Use original index if available, otherwise assign new index
+						int indexToUse = (originalIndex != -1) ? originalIndex : nextWorkerIndex++;
+						spawnWorker(indexToUse);
 					}
 					else
 					{
@@ -382,6 +402,9 @@ public:
 
 	static void run()
 	{
+		// Initialize nextWorkerIndex
+		nextWorkerIndex = config.workers;
+
 		// Spawn workers
 		for (int i = 0; i < config.workers; i++)
 		{
