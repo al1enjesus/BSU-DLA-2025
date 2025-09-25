@@ -24,6 +24,7 @@ fi
 
 # Запуск супервизора в фоне
 echo "Запускаем супервизор..."
+export PYTHONUNBUFFERED=1
 python3 "$SUPERVISOR" "$CONFIG" &
 SUP_PID=$!
 echo $SUP_PID > "$PID_FILE"
