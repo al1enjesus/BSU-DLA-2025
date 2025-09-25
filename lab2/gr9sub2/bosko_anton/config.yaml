@@ -1,11 +1,8 @@
-workers: 3
-restart_limit:
-  max_restarts: 5
-  window_sec: 30
+workers: 2  # количество воркеров
 
 mode_heavy:
-  work_us: 9000
-  sleep_us: 1000
+  work_us: 9000   # время "вычислений" в микросекундах
+  sleep_us: 1000  # время "сна" в микросекундах
 
 mode_light:
   work_us: 2000
