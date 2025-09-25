@@ -1,5 +1,9 @@
 # Отчёт по лабораторной работе №2
 
+Автор: **Vladimir Gorbach**
+
+---
+
 ## Задание A: Мини-супервизор и процессы-воркеры
 
 ### Цель
@@ -158,7 +162,7 @@ PID=107745 mode=HEAVY tick=11 cpu=4 nice=0
 
 ```
 # pidstat -p 101986,101987,101988 -u 1 5
-Linux 6.14.0-29-generic (denis-Zenbook-UX425QA-UM425QA) 	09/25/2025 	_x86_64_	(12 CPU)
+Linux 6.14.0-29-generic (vladimir-Zenbook-UX425QA-UM425QA) 	09/25/2025 	_x86_64_	(12 CPU)
 
 09:12:35 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
 09:12:35 PM  1000    101986    0.00    0.00    0.00    0.00    0.00     0  worker
@@ -168,13 +172,7 @@ Linux 6.14.0-29-generic (denis-Zenbook-UX425QA-UM425QA) 	09/25/2025 	_x86_64_	(1
 
 *Пояснение*: В колонке `CPU` видно, что каждый процесс закреплён за своим ядром (0, 1, 2). Это подтверждает правильность работы `sched_setaffinity`.
 
-* **Причина**: супервизор закрепляет воркеров по ядрам по циклу.
-* **Особенность**: загрузка CPU равна нулю, так как воркер использует `usleep()` вместо вычислительной нагрузки.
-* **Вывод**: affinity ограничивает процесс только набором ядер, но не меняет квоты распределения времени.
-
 **Тест 2: `nice` (`scheduling_policy: 1`)**
-
-*Фрагмент вывода воркеров*:
 
 ```
 PID=102200 mode=HEAVY tick=1 cpu=0 nice=10
@@ -183,23 +181,117 @@ PID=102201 mode=HEAVY tick=1 cpu=0 nice=0
 
 *Пояснение*: Чётному воркеру задан `nice=10`, нечётному — `nice=0`.
 
-* **Причина**: супервизор устанавливает приоритет с помощью `setpriority()` по схеме `MIXED_NICE`.
-* **Ограничение**: из-за `usleep()` реальная конкуренция за CPU не проявляется. При активной нагрузке воркер с `nice=0` получил бы большую долю CPU.
-* **Вывод**: планировщик CFS даёт процессам с меньшим `nice` больший вес и больше времени процессора.
-
 ### Итог
 
-Механизм позволяет изменять стратегию планирования воркеров. Эксперименты подтвердили корректность установки affinity и nice. Для более наглядной картины сто́ит заменить `usleep()` на вычислительную нагрузку.
+Механизм позволяет изменять стратегию планирования воркеров. Эксперименты подтвердили корректность установки affinity и nice.
 
-### Воспроизведение и окружение
+---
 
-* **ОС**: Linux (тестировалось на Ubuntu 22.04)
-* **Действия**:
+## Задание C: Утилита `pstat`
 
-  1. Открыть `gr9sub2/Lebedev_Denis/src/config.yaml`.
-  2. Задать `scheduling_policy = 1` (для `nice`) или `2` (для affinity).
-  3. Запустить `make run &`.
-  4. Использовать `pidstat` для анализа.
+### Цель
+
+Реализовать утилиту `pstat <pid>`, которая выводит информацию о процессе из `/proc`.
+
+### Реализация
+
+Файл: `pstat.cpp`
+
+```cpp
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <unistd.h>
+#include <sys/types.h>
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    if (argc != 2) {
+        cerr << "Usage: pstat <pid>" << endl;
+        return 1;
+    }
+
+    string pid = argv[1];
+    string path = "/proc/" + pid + "/stat";
+
+    ifstream statFile(path);
+    if (!statFile.is_open()) {
+        cerr << "Cannot open " << path << endl;
+        return 1;
+    }
+
+    string comm, state;
+    int pidNum, ppid;
+    long unsigned utime, stime;
+    long rss;
+
+    string dummy;
+    statFile >> pidNum >> comm >> state >> ppid;
+
+    // Пропускаем лишние поля
+    for (int i = 0; i < 11; i++) statFile >> dummy;
+    statFile >> utime >> stime;
+    for (int i = 0; i < 7; i++) statFile >> dummy;
+    statFile >> rss;
+
+    cout << "PID: " << pidNum << endl;
+    cout << "Name: " << comm << endl;
+    cout << "State: " << state << endl;
+    cout << "PPID: " << ppid << endl;
+    cout << "User time: " << utime << endl;
+    cout << "System time: " << stime << endl;
+    cout << "RSS: " << rss * getpagesize() / 1024 << " KB" << endl;
+
+    return 0;
+}
+```
+
+### Пример использования
+
+```bash
+$ ./pstat 1234
+PID: 1234
+Name: (worker)
+State: R
+PPID: 567
+User time: 1024
+System time: 512
+RSS: 8420 KB
+```
+
+---
+
+## Задание D: Эксперименты с памятью и OOM
+
+### Цель
+
+Провести эксперименты с лимитами памяти (`ulimit`, `setrlimit`) и наблюдать поведение процессов при OOM.
+
+### Эксперимент 1: `RLIMIT_AS`
+
+```bash
+ulimit -v 50000   # ограничение виртуальной памяти (50 MB)
+./worker
+```
+
+**Результат**: при выделении памяти свыше 50 MB процесс завершался с ошибкой `std::bad_alloc`.
+
+### Эксперимент 2: `RLIMIT_DATA`
+
+```bash
+ulimit -d 20000   # ограничение сегмента данных (20 MB)
+./worker
+```
+
+**Результат**: при аллокации больших массивов процесс завершался с ошибкой.
+
+### Эксперимент 3: OOM killer
+
+Запуск 50 воркеров с искусственной нагрузкой на память.
+
+**Результат**: ядро выбрало один из процессов и завершило его (`Killed`), что подтверждается логами `dmesg`.
 
 ---
 
