@@ -1,28 +1,9 @@
-# REPORT — Lab2 A) Мини-супервизор с воркерами  
-**Студент:** Попова Дарья  
-**Группа:** gr9sub2  
-**Задание:** A) Мини-супервизор с воркерами  
-**Дата:** <вставь дату>
-
----
+#  Lab2 A) Мини-супервизор с воркерами  
 
 ## 1. Цель работы
-Реализовать простой супервизор, который:
-- порождает N воркеров и отслеживает их состояние,
-- корректно обрабатывает сигналы: SIGTERM/SIGINT (graceful shutdown), SIGHUP (graceful reload), SIGUSR1/SIGUSR2 (переключение профилей нагрузки),
-- перезапускает упавших воркеров с ограничением частоты рестартов,
-- воркеры имитируют нагрузку и выводят диагностические строки.
 
 ## 2. Среда выполнения
-- ОС: Debian/Ubuntu (VM / WSL2)
-- Python 3.x
-- Опционально: `psutil` для получения номера CPU
-- Установлено:
-  ```bash
-  sudo apt update
-  sudo apt install -y python3 python3-pip procps util-linux sysstat strace
-  pip3 install --user psutil
-  
+
   
   ```
   dasha@dasha-VirtualBox:~/Desktop/BSU-DLA-2025/lab2/gr9sub2/popova_darya$ pidstat -u 1 10 -p 6376
