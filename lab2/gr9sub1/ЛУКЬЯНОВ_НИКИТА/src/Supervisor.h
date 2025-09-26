@@ -1,4 +1,4 @@
-#ifndef SUPEVISOR_H
+#ifndef SUPERVISOR_H
 #define SUPERVISOR_H
 
 #include <vector>
@@ -50,8 +50,10 @@ public:
 
         pthread_mutex_unlock(&sInstance->mWorkerConfig->mtx);
 
-        if(!sInstance->createWorkers(configResult.workers))
+        if(!sInstance->createWorkers(configResult.workers)) {
+            gracefullyEnd();
             return false;
+        }
 
         return true;
     }
@@ -106,19 +108,7 @@ public:
             usleep(200000);
         }
 
-        std::cout << "[Supervisor " << getpid() << "] Shutting down workers...\n";
-        for(auto &w : sInstance->mWorkers) {
-            std::cout << "[Supervisor " << getpid() << "] Try to gracefully end worker " << w.pid << "\n"; 
-            kill(w.pid, SIGTERM);
-        }
-        
-        for(int i=0; i < sInstance->mWorkers.size(); i++) 
-            wait(nullptr);
-
-        pthread_mutex_destroy(&sInstance->mWorkerConfig->mtx);
-        shm_unlink("/shared_worker_config");
-
-        std::cout << "[Supervisor " << getpid() << "] Exiting\n";
+        gracefullyEnd();
 
         return 0;
     }
@@ -144,16 +134,14 @@ private:
 
         ftruncate(fd, sizeof(WorkerConfig));
         
-        WorkerConfig* rawWorkerConfig = reinterpret_cast<WorkerConfig*>(
+        mWorkerConfig = reinterpret_cast<WorkerConfig*>(
             mmap(nullptr, sizeof(WorkerConfig), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0)
         );
         
-        if(!rawWorkerConfig) {
+        if(!mWorkerConfig) {
             std::cout << "Failed to map shared memory\n";
             return false;
         }
-        
-        mWorkerConfig = std::unique_ptr<WorkerConfig>(rawWorkerConfig);
         
         return true;
     }
@@ -167,17 +155,19 @@ private:
         mWorkers.resize(N);
         std::cout << "[Supervisor " << getpid() << "] Creating workers...\n";
         for(int i = 0; i < N; ++i) {
-            createWorker(i);
+            if(!createWorker(i))
+                return false;
         }
         std::cout << "[Supervisor " << getpid() << "] Done.\n";
         return true;
     }
 
-    void createWorker(const int i, const int restartCount = 0) {
+    bool createWorker(const int i, const int restartCount = 0) {
         pid_t pid = fork();
    
         if(pid == -1) {
             std::cout << "[Supervisor " << getpid() << "] Some error occluded\n";
+            return false;
         }
         else if (pid == 0) {
             execl("./worker", "./worker", nullptr);
@@ -188,6 +178,8 @@ private:
             mWorkers[i] = {pid, std::chrono::steady_clock::now(), restartCount};
             std::cout << "[Supervisor " << getpid() << "] New Worker " <<  mWorkers[i].pid << "\n";
         }
+
+        return true;
     }
 
     void handleExitedWorker(const pid_t pid) {
@@ -210,6 +202,22 @@ private:
         else {
             std::cout << "[Supervisor " << getpid() << "] Too many restarts for worker " << pid << "\n";
         }
+    }
+
+    static void gracefullyEnd() {
+        std::cout << "[Supervisor " << getpid() << "] Shutting down workers...\n";
+        for(auto &w : sInstance->mWorkers) {
+            std::cout << "[Supervisor " << getpid() << "] Try to gracefully end worker " << w.pid << "\n"; 
+            kill(w.pid, SIGTERM);
+        }
+        
+        for(int i=0; i < sInstance->mWorkers.size(); i++) 
+            wait(nullptr);
+
+        pthread_mutex_destroy(&sInstance->mWorkerConfig->mtx);
+        shm_unlink("/shared_worker_config");
+
+        std::cout << "[Supervisor " << getpid() << "] Exiting\n";
     }
 
     void shareConfigResult(const ConfigData& configResult) {
@@ -272,7 +280,7 @@ private:
 
 private:
     static Supervisor* sInstance;
-    std::unique_ptr<WorkerConfig> mWorkerConfig = nullptr;
+    WorkerConfig* mWorkerConfig = nullptr;
     std::vector<WorkerInfo> mWorkers;
 
     volatile sig_atomic_t shutdownFlag = 0;

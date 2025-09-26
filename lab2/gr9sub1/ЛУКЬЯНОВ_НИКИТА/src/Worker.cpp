@@ -52,7 +52,7 @@ int main() {
     pid_t pid = getpid();
     uint64_t tick = 0;
 
-    ConfigData cfgData;
+    ConfigData cfgData{0, 0, 0, 0};
     while(running) {
         int cpu = sched_getcpu();
         if(reload) {

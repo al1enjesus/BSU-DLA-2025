@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -pthread
+CXXFLAGS = -std=c++17 -Wall -pthread -lrt
 
 all: supervisor worker
 
