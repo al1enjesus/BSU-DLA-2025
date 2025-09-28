@@ -50,9 +50,15 @@ private:
     static inline mutex mtxIndices{};
     static inline int availableCPUs{1};
     static inline int nextIndex{0};
+    static inline mutex mtxNextIndex;
+
 
     Supervisor() = default;
 
+    static int getNextIndex() {
+        lock_guard<mutex> lock(mtxNextIndex);
+        return nextIndex++;
+    }
     static void handleChild(int) {
         int status;
         pid_t pid;
@@ -75,7 +81,7 @@ private:
                 restartTimes.push_back(now);
                 while(!restartTimes.empty() && chrono::duration_cast<chrono::seconds>(now-restartTimes.front()).count()>RESTART_WINDOW)
                     restartTimes.pop_front();
-                if ((int)restartTimes.size()<=MAX_RESTARTS) spawnWorker(idx!=-1?idx:nextIndex++);
+                if ((int)restartTimes.size()<=MAX_RESTARTS) spawnWorker(idx!=-1?idx:getNextIndex());
                 else cerr<<"[SUP] Too many restarts, skipping...\n";
             }
         }
