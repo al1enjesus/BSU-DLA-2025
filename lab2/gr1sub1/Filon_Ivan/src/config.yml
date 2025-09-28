@@ -1,0 +1,10 @@
+workers: 3
+scheduling_policy: 1
+
+heavy:
+  work_us: 300000
+  sleep_us: 200000
+
+light:
+  work_us: 700000
+  sleep_us: 400000
