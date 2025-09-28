@@ -35,7 +35,7 @@ def read_back(path):
     return total
 
 def main():
-    print("worker_sync_io: start")
+    print("worker: start")
     print("sleep 10s")
     time.sleep(10)
 
