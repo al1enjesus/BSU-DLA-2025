@@ -13,6 +13,6 @@ python3 src/pstat.py <PID> --compare
 
 ```bash
 chmod +x src/worker_sync_io.py
-./src/worker_sync_io.py & echo $!
+./src/worker.py & echo $!
 # запомни PID процесса, или используй ps чтобы его найти
 ```
