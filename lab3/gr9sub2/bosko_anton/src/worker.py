@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# src/worker_sync_io.py
+# src/worker.py
 import os, time
 
 BUF = b'0' * (1024*1024)  # 1 MiB
@@ -57,7 +57,7 @@ def main():
     except Exception as e:
         print("cleanup failed:", e)
 
-    print("worker_sync_io: done")
+    print("worker: done")
 
 if __name__ == "__main__":
     main()
