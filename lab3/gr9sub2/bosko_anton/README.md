@@ -12,7 +12,7 @@ python3 src/pstat.py <PID> --compare
 Запуск воркера (в отдельном терминале):
 
 ```bash
-chmod +x src/worker_sync_io.py
+chmod +x src/worker.py
 ./src/worker.py & echo $!
 # запомни PID процесса, или используй ps чтобы его найти
 ```

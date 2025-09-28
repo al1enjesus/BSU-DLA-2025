@@ -1,7 +1,7 @@
 ## Артефакты 
 
 * `src/pstat.py` — утилита на Python; берёт данные из `/proc/<pid>` и при `--compare` выводит также `ps`, `top`, `pidstat` для сравнения.
-* `src/worker_sync_io.py` — тестовый воркер:
+* `src/worker.py` — тестовый воркер:
 
   * спит 10 с,
   * пишет 50 MiB синхронно (O_SYNC) в файл в текущей папке,
@@ -15,7 +15,7 @@
 1. В одном терминале:
 
 ```bash
-./src/worker_sync_io.py & echo $!
+./src/worker.py & echo $!
 # получаем PID, например 4318
 ```
 
