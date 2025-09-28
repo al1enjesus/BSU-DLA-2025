@@ -1,0 +1,9 @@
+workers: 3
+
+heavy:
+  work_us: 4000000
+  sleep_us: 1000000
+
+light:
+  work_us: 500000
+  sleep_us: 1500000
