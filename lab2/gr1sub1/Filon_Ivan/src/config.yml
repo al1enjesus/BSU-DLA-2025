@@ -3,8 +3,8 @@ scheduling_policy: 1
 
 heavy:
   work_us: 700000
-  sleep_us: 400000
+  sleep_us: 100000
 
 light:
-  work_us: 250000
-  sleep_us: 100000
+  work_us: 150000
+  sleep_us: 500000
