@@ -8,7 +8,6 @@
 **Цель:** поиск наиболее частых упоминаний в логах  
 
 **Команда:**
-```bash
 cat /var/log/syslog \
 | tr -cs '[:alnum:]' '\n' \
 | tr '[:upper:]' '[:lower:]' \
@@ -18,8 +17,6 @@ cat /var/log/syslog \
 | head -n 5
 Результат выполнения:
 
-yaml
-Копировать код
 9389 00
 8631 03
 8496 2025
@@ -33,8 +30,6 @@ yaml
 
 Команда:
 
-bash
-Копировать код
 cat /var/log/auth.log \
 | grep -E "Failed|Invalid" \
 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' \
@@ -45,9 +40,6 @@ cat /var/log/auth.log \
 | head -10
 Результат выполнения:
 
-scss
-Копировать код
-(пусто)
 Вывод:
 Команда не вывела результата, так как в логах отсутствуют неудачные попытки входа.
 
@@ -56,8 +48,6 @@ scss
 
 Команда:
 
-bash
-Копировать код
 grep " install " /var/log/dpkg.log \
 | awk '{print $4}' \
 | cut -d ':' -f 1 \
@@ -67,7 +57,6 @@ grep " install " /var/log/dpkg.log \
 | head -n 10
 Результат выполнения:
 
-Копировать код
 1 vim-runtime
 1 vim
 1 liberror-perl
