@@ -44,26 +44,55 @@ static void setup_signals(void) {
     sigaction(SIGUSR2, &sa, NULL);
 }
 
+static void busy_work(uint64_t iterations) __attribute__((optimize("O0")));
+
 static void busy_work(uint64_t iterations) {
     volatile uint64_t x = 0;
-    for (uint64_t i = 0; i < iterations; i++) {
-        x += i ^ (x << 1);
+    volatile uint64_t temp;
+    
+    for (volatile uint64_t i = 0; i < iterations; i++) {
+        temp = i ^ (x << 1);
+        x += temp;
+        // Дополнительные операции для увеличения нагрузки
+        temp = x * 31 + i;
+        x ^= temp >> 3;
     }
-    (void)x;
+    
+    // Принудительное использование результата (совместимо с C99)
+    __asm__ __volatile__("" : : "r" (x) : "memory");
 }
 
 static void nanosleep_us(long usec) {
     struct timespec ts;
     ts.tv_sec = usec / 1000000;
     ts.tv_nsec = (usec % 1000000) * 1000;
-    while (nanosleep(&ts, &ts) == -1 && errno == EINTR) {
-        // retry on signal interruption
+    
+    int retries = 0;
+    while (nanosleep(&ts, &ts) == -1) {
+        if (errno == EINTR) {
+            retries++;
+            if (retries > 10) {
+                fprintf(stderr, "[worker %d] WARNING: nanosleep interrupted %d times\n", 
+                        getpid(), retries);
+                break;
+            }
+            continue; // retry on signal interruption
+        } else {
+            fprintf(stderr, "[worker %d] ERROR: nanosleep failed: %s\n", 
+                    getpid(), strerror(errno));
+            break;
+        }
     }
 }
 
 static void set_nice_priority(int nice_val) {
     if (setpriority(PRIO_PROCESS, 0, nice_val) == -1) {
+        fprintf(stderr, "[worker %d] ERROR: Failed to set nice to %d: %s\n", 
+                getpid(), nice_val, strerror(errno));
         perror("setpriority");
+    } else {
+        printf("[worker %d] Successfully set nice to %d\n", getpid(), nice_val);
+        fflush(stdout);
     }
 }
 
@@ -75,15 +104,23 @@ static void set_cpu_affinity(int cpu) {
     CPU_SET((unsigned)cpu, &set);
     
     if (sched_setaffinity(0, sizeof(set), &set) == -1) {
+        fprintf(stderr, "[worker %d] ERROR: Failed to set CPU affinity to %d: %s\n", 
+                getpid(), cpu, strerror(errno));
         perror("sched_setaffinity");
-        printf("[worker %d] Failed to set CPU affinity to %d\n", getpid(), cpu);
     } else {
         printf("[worker %d] Successfully set CPU affinity to %d\n", getpid(), cpu);
+        fflush(stdout);
     }
 }
 
 static int get_current_cpu(void) {
-    return sched_getcpu();
+    int cpu = sched_getcpu();
+    if (cpu == -1) {
+        fprintf(stderr, "[worker %d] WARNING: sched_getcpu failed: %s\n", 
+                getpid(), strerror(errno));
+        return -1;
+    }
+    return cpu;
 }
 
 static void print_worker_info(void) {

@@ -83,22 +83,47 @@ static int read_proc_status(int pid, proc_info_t *info) {
     
     FILE *fp = fopen(path, "r");
     if (!fp) {
-        perror("fopen /proc/pid/status");
+        fprintf(stderr, "Cannot open %s: %s\n", path, strerror(errno));
         return -1;
     }
     
     char line[LINE_MAX_LEN];
+    char key[64], value_str[128];
+    unsigned long value;
+    long svalue;
+    
+    // Инициализация значений по умолчанию
     info->voluntary_ctxt_switches = -1;
     info->nonvoluntary_ctxt_switches = -1;
     info->vm_rss_kb = 0;
+    info->rss_anon_kb = 0;
+    info->rss_file_kb = 0;
     
     while (fgets(line, sizeof(line), fp)) {
-        if (strncmp(line, "VmRSS:", 6) == 0) {
-            sscanf(line, "VmRSS: %lu kB", &info->vm_rss_kb);
-        } else if (strncmp(line, "voluntary_ctxt_switches:", 24) == 0) {
-            sscanf(line, "voluntary_ctxt_switches: %ld", &info->voluntary_ctxt_switches);
-        } else if (strncmp(line, "nonvoluntary_ctxt_switches:", 27) == 0) {
-            sscanf(line, "nonvoluntary_ctxt_switches: %ld", &info->nonvoluntary_ctxt_switches);
+        // Убираем символ новой строки
+        line[strcspn(line, "\n")] = 0;
+        
+        // Парсим строки формата "Key:\tValue [unit]"
+        if (sscanf(line, "%63[^:]:\t%127s", key, value_str) == 2) {
+            if (strcmp(key, "VmRSS") == 0) {
+                if (sscanf(value_str, "%lu", &value) == 1) {
+                    info->vm_rss_kb = value;
+                }
+            } else if (strcmp(key, "RssAnon") == 0) {
+                if (sscanf(value_str, "%lu", &value) == 1) {
+                    info->rss_anon_kb = value;
+                }
+            } else if (strcmp(key, "RssFile") == 0) {
+                if (sscanf(value_str, "%lu", &value) == 1) {
+                    info->rss_file_kb = value;
+                }
+            }
+        } else if (sscanf(line, "%63[^:]:\t%ld", key, &svalue) == 2) {
+            if (strcmp(key, "voluntary_ctxt_switches") == 0) {
+                info->voluntary_ctxt_switches = svalue;
+            } else if (strcmp(key, "nonvoluntary_ctxt_switches") == 0) {
+                info->nonvoluntary_ctxt_switches = svalue;
+            }
         }
     }
     
@@ -112,21 +137,31 @@ static int read_proc_io(int pid, proc_info_t *info) {
     
     FILE *fp = fopen(path, "r");
     if (!fp) {
-        // /proc/pid/io может быть недоступен для некоторых процессов
+        // /proc/pid/io может отсутствовать, это не критично
         info->read_bytes = 0;
         info->write_bytes = 0;
         return 0;
     }
     
     char line[LINE_MAX_LEN];
+    char key[64];
+    unsigned long value;
+    
+    // Инициализация значений по умолчанию
     info->read_bytes = 0;
     info->write_bytes = 0;
     
     while (fgets(line, sizeof(line), fp)) {
-        if (strncmp(line, "read_bytes:", 11) == 0) {
-            sscanf(line, "read_bytes: %lu", &info->read_bytes);
-        } else if (strncmp(line, "write_bytes:", 12) == 0) {
-            sscanf(line, "write_bytes: %lu", &info->write_bytes);
+        // Убираем символ новой строки
+        line[strcspn(line, "\n")] = 0;
+        
+        // Парсим строки формата "key: value"
+        if (sscanf(line, "%63[^:]:%lu", key, &value) == 2) {
+            if (strcmp(key, "read_bytes") == 0) {
+                info->read_bytes = value;
+            } else if (strcmp(key, "write_bytes") == 0) {
+                info->write_bytes = value;
+            }
         }
     }
     
@@ -140,7 +175,6 @@ static int read_proc_smaps_rollup(int pid, proc_info_t *info) {
     
     FILE *fp = fopen(path, "r");
     if (!fp) {
-        // smaps_rollup может быть недоступен на старых ядрах
         info->rss_anon_kb = 0;
         info->rss_file_kb = 0;
         return 0;

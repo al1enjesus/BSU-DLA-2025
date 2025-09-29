@@ -9,6 +9,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/stat.h>
+#include <libgen.h>
 
 #define MAX_WORKERS 16
 #define CONFIG_LINE_MAX 256
@@ -42,6 +43,50 @@ static volatile sig_atomic_t child_died = 0;
 static config_t config;
 static worker_t workers[MAX_WORKERS];
 static int num_workers = 0;
+
+static char* find_worker_path(void) {
+    static char worker_path[1024];
+    
+    // 1. Сначала попробуем в той же директории, что и supervisor
+    char self_path[1024];
+    ssize_t len = readlink("/proc/self/exe", self_path, sizeof(self_path) - 1);
+    if (len != -1) {
+        self_path[len] = '\0';
+        char *dir = dirname(self_path);
+        snprintf(worker_path, sizeof(worker_path), "%s/worker", dir);
+        if (access(worker_path, X_OK) == 0) {
+            return worker_path;
+        }
+    }
+    
+    // 2. Попробуем в текущей директории
+    if (access("./worker", X_OK) == 0) {
+        return "./worker";
+    }
+    
+    // 3. Попробуем относительно текущей директории
+    if (access("worker", X_OK) == 0) {
+        return "worker";
+    }
+    
+    // 4. Поиск в PATH
+    const char *path_env = getenv("PATH");
+    if (path_env) {
+        char *path_copy = strdup(path_env);
+        char *dir = strtok(path_copy, ":");
+        while (dir) {
+            snprintf(worker_path, sizeof(worker_path), "%s/worker", dir);
+            if (access(worker_path, X_OK) == 0) {
+                free(path_copy);
+                return worker_path;
+            }
+            dir = strtok(NULL, ":");
+        }
+        free(path_copy);
+    }
+    
+    return NULL; // Не найден
+}
 
 static void signal_handler(int sig) {
     switch (sig) {
@@ -169,6 +214,42 @@ static int parse_config(const char *filename) {
     return 0;
 }
 
+static int validate_config(void) {
+    // Проверка количества воркеров
+    if (config.workers < 1 || config.workers > MAX_WORKERS) {
+        fprintf(stderr, "ERROR: workers must be between 1 and %d\n", MAX_WORKERS);
+        return -1;
+    }
+    
+    // Проверка времён работы и сна
+    if (config.heavy_work_us < 0 || config.heavy_sleep_us < 0 ||
+        config.light_work_us < 0 || config.light_sleep_us < 0) {
+        fprintf(stderr, "ERROR: work and sleep times must be non-negative\n");
+        return -1;
+    }
+    
+    // Проверка nice значений
+    for (int i = 0; i < config.workers; i++) {
+        if (config.nice_values[i] < -20 || config.nice_values[i] > 19) {
+            fprintf(stderr, "ERROR: nice value %d for worker %d is out of range [-20, 19]\n", 
+                    config.nice_values[i], i);
+            return -1;
+        }
+    }
+    
+    // Проверка CPU affinity
+    long nprocs = sysconf(_SC_NPROCESSORS_ONLN);
+    for (int i = 0; i < config.workers; i++) {
+        if (config.cpu_affinity[i] >= nprocs || config.cpu_affinity[i] < -1) {
+            fprintf(stderr, "ERROR: CPU affinity %d for worker %d is invalid (system has %ld CPUs)\n", 
+                    config.cpu_affinity[i], i, nprocs);
+            return -1;
+        }
+    }
+    
+    return 0;
+}
+
 static int can_restart_worker(int worker_idx) {
     time_t now = time(NULL);
     worker_t *w = &workers[worker_idx];
@@ -209,7 +290,13 @@ static void start_worker(int worker_idx) {
         snprintf(nice_str, sizeof(nice_str), "%d", workers[worker_idx].nice_value);
         snprintf(cpu_str, sizeof(cpu_str), "%d", workers[worker_idx].cpu_affinity);
         
-        execl("./worker", "worker", 
+        char *worker_path = find_worker_path();
+        if (!worker_path) {
+            fprintf(stderr, "[supervisor] ERROR: worker executable not found\n");
+            exit(1);
+        }
+        
+        execl(worker_path, "worker", 
               heavy_work_str, heavy_sleep_str,
               light_work_str, light_sleep_str,
               nice_str, cpu_str, NULL);
@@ -352,6 +439,11 @@ int main(int argc, char *argv[]) {
     
     // Парсим конфигурацию
     if (parse_config(config_file) != 0) {
+        return 1;
+    }
+    
+    // Валидируем конфигурацию
+    if (validate_config() != 0) {
         return 1;
     }
     
