@@ -19,6 +19,10 @@ for tool in pidstat taskset renice ps; do
     fi
 done
 
+if [ "$(uname)" != "Linux" ]; then
+    echo "⚠ Внимание: affinity и часть метрик поддерживаются только в Linux"
+fi
+
 echo ""
 echo "=== Часть 1: Запуск процессов с разными настройками планирования ==="
 
@@ -103,14 +107,16 @@ echo ""
 echo "=== Часть 5: Демонстрация изменения nice в реальном времени ==="
 if [ -n "${WORKER_PIDS[0]}" ] && [ -n "${WORKER_PIDS[1]}" ]; then
     echo "Changing nice values for Workers 0 and 1..."
-    for i in 0 1; do
-        NICE_VAL=$(( i == 0 ? 5 : 15 ))
-        if command -v renice &> /dev/null; then
-            sudo renice -n $NICE_VAL -p ${WORKER_PIDS[i]} 2>/dev/null || renice -n $NICE_VAL -p ${WORKER_PIDS[i]}
-        else
-            echo "Warning: renice not available, skipping nice change for Worker $i"
-        fi
-    done
+
+    # Проверяем root-права
+    if [ "$(id -u)" -ne 0 ]; then
+        echo "⚠ Пропущено: изменение nice ниже 0 требует root"
+    else
+        for i in 0 1; do
+            NICE_VAL=$(( i == 0 ? 5 : 15 ))
+            renice -n $NICE_VAL -p ${WORKER_PIDS[i]}
+        done
+    fi
 
     echo "New nice values:"
     for i in 0 1; do

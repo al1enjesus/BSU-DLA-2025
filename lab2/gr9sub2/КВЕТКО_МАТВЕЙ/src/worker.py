@@ -136,12 +136,13 @@ class Worker:
 
 def main():
     """Точка входа для запуска воркера как отдельного процесса"""
-    if len(sys.argv) != 3:
-        print("Usage: worker.py <worker_id> <config_file>")
+    if len(sys.argv) < 2:
+        print("Usage: worker.py <worker_id> [config_file]")
         sys.exit(1)
 
     worker_id = int(sys.argv[1])
-    config_file = sys.argv[2]
+    # Если конфиг не передан — берём config.json по умолчанию
+    config_file = sys.argv[2] if len(sys.argv) > 2 else "config.json"
 
     try:
         config = SupervisorConfig.from_file(config_file)

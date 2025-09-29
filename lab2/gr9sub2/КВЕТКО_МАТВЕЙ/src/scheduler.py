@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+from sched import scheduler
 import sys
 import platform
 from typing import List, Optional
@@ -22,7 +23,7 @@ class ProcessScheduler:
 
             # Для текущего процесса используем os.nice напрямую
             if pid == os.getpid():
-                os.nice(nice_value - os.nice(0))  # можно оставить, т.к. один вызов
+                os.setpriority(os.PRIO_PROCESS, 0, nice_value)
                 return True
             else:
                 # Для других процессов используем renice
