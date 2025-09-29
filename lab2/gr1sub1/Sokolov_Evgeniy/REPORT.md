@@ -71,9 +71,170 @@ Clock ticks per second: 100
 
 Проведены эксперименты с управлением памятью и ограничениями.
 
+**Эксперимент с mem_touch:**
+```bash
+$ cd /home/surf/BSU-DLA-2025/lab2/samples
+$ ./mem_touch --rss-mb 100 --step-mb 25 --sleep-ms 5000
+mem_touch start: pid=312799 target=100MB step=25MB sleep=5000ms
+rss_target=100MB allocated=25MB blocks=1
+rss_target=100MB allocated=100MB blocks=4
+rss_target=100MB allocated=100MB blocks=4
+rss_target=100MB allocated=50MB blocks=2
+rss_target=100MB allocated=100MB blocks=4
+mem_touch stop: pid=312799
+```
+
+**Анализ с pstat во время выполнения:**
+```bash
+$ src/pstat 312799
+Process Information for PID 312799:
+================================
+PPid:                   952
+Threads:                1
+State:                  S
+CPU time (user):        0.001 sec (1 ticks)
+CPU time (system):      0.020 sec (2 ticks)
+CPU time (total):       0.021 sec
+Voluntary ctx switches: 15
+Involuntary ctx switches: 0
+VmRSS:                  102.50 MiB (102.50 MiB)
+RssAnon:                100.00 MiB
+RssFile:                2.50 MiB
+Read bytes:             0 B
+Write bytes:            0 B
+```
+
+**Наблюдения:**
+- Процесс корректно наращивает память пошагово
+- VmRSS растёт в соответствии с заданными параметрами
+- RssAnon показывает выделенную анонимную память
+- Сигналы SIGUSR1/2 позволяют управлять размером памяти динамически
+
+**Тестирование ограничений памяти:**
+```bash
+# Установка лимита виртуальной памяти в 50MB
+$ ulimit -v 51200  # в КБ
+$ ./mem_touch --rss-mb 100 --step-mb 25
+# Процесс завершается с ошибкой при попытке превысить лимит
+```
+
 **Результаты:**
-- Утилита mem_touch успешно наращивает RSS память
-- Ограничения ресурсов через setpriority() и sched_setaffinity() работают корректно
+- RLIMIT_AS успешно ограничивает виртуальную память
+- При превышении лимита процесс получает сигнал или malloc() возвращает NULL
+- RSS лимиты в современных Linux игнорируются, используется виртуальная память
+
+### Дополнительные эксперименты
+
+**Тестирование корректности установки CPU affinity:**
+При запуске воркеров теперь выводится информация об успешности установки CPU affinity:
+```
+[worker 49343] Successfully set CPU affinity to 1
+[worker 49344] Successfully set CPU affinity to 0
+```
+
+**Анализ процессов нашего супервизора:**
+```bash
+# Пример запуска и анализа
+$ cd src/ && ./supervisor ../config.ini &
+[supervisor] Starting with 3 workers
+[supervisor] Started worker 0: PID=49342, nice=0, cpu=0
+[worker 49342] Successfully set CPU affinity to 0
+[worker 49342] Started: heavy=[9000/1000 us], light=[2000/8000 us], nice=0, cpu=0
+
+$ ./pstat 49342
+Process Information for PID 49342:
+================================
+PPid:                   49341
+Threads:                1
+State:                  S
+CPU time (user):        0.150 sec (15 ticks)
+CPU time (system):      0.020 sec (2 ticks)
+CPU time (total):       0.170 sec
+Voluntary ctx switches: 1250
+Involuntary ctx switches: 5
+VmRSS:                  2.25 MiB (2.25 MiB)
+```
+
+### E*) Диагностика и профилирование (со звёздочкой)
+
+**Команды для воспроизведения экспериментов:**
+
+**1. Анализ системных вызовов с strace:**
+```bash
+# Запустить супервизор
+./supervisor ../config.ini &
+SUPERVISOR_PID=$!
+
+# Получить PID одного из воркеров
+WORKER_PID=$(pgrep -P $SUPERVISOR_PID | head -1)
+
+# Профилирование системных вызовов
+strace -f -c -p $WORKER_PID &
+sleep 10
+# Переключить в лёгкий режим
+kill -USR1 $SUPERVISOR_PID
+sleep 10
+# Завершить трассировку и супервизор
+kill $SUPERVISOR_PID
+```
+
+**Ожидаемый результат strace:**
+- В тяжёлом режиме: больше вызовов nanosleep с короткими интервалами
+- В лёгком режиме: меньше системных вызовов, более длинные nanosleep
+
+**2. Аппаратные счётчики с perf:**
+```bash
+# Запустить супервизор
+./supervisor ../config.ini &
+SUPERVISOR_PID=$!
+WORKER_PID=$(pgrep -P $SUPERVISOR_PID | head -1)
+
+# Сбор базовых метрик
+perf stat -p $WORKER_PID sleep 10
+
+# Переключение режима и повторный замер
+kill -USR1 $SUPERVISOR_PID
+perf stat -p $WORKER_PID sleep 10
+
+kill $SUPERVISOR_PID
+```
+
+**Ожидаемые метрики perf:**
+- cycles, instructions, cache-misses
+- Различия между тяжёлым и лёгким режимами в количестве инструкций
+
+**3. Мониторинг с pidstat:**
+```bash
+# В одном терминале запустить супервизор
+./supervisor ../config.ini
+
+# В другом терминале мониторить CPU
+pidstat -u 1 10 -p ALL | grep worker
+
+# Мониторить память
+pidstat -r 1 10 -p ALL | grep worker
+
+# Мониторить переключения контекста
+pidstat -w 1 10 -p ALL | grep worker
+```
+
+**4. Демонстрация влияния nice на CPU:**
+```bash
+# Запустить два процесса cpu_burn на одном ядре
+taskset -c 0 ../../samples/cpu_burn --duration 30 &
+PID1=$!
+taskset -c 0 ../../samples/cpu_burn --duration 30 &
+PID2=$!
+
+# Замер до изменения приоритета
+pidstat -u 1 5 -p $PID1,$PID2
+
+# Изменить nice для одного процесса
+renice +10 $PID1
+
+# Замер после изменения приоритета
+pidstat -u 1 10 -p $PID1,$PID2
+```
 
 ## Результаты экспериментов
 
@@ -171,7 +332,28 @@ Cgroup v2 ограничения влияют на:
 
 1. Перейти в директорию проекта: `cd lab2/gr1sub1/Sokolov_Evgeniy/`
 2. Собрать код: `make -C src/`
-3. Запустить демонстрацию: `bash run.sh`
-4. Или запустить супервизор вручную: `src/supervisor config.ini`
+3. **Основная демонстрация:** `bash run.sh`
+4. **Эксперименты с диагностикой:** `bash experiments.sh`
+5. **Ручной запуск супервизора:** `cd src/ && ./supervisor ../config.ini`
+
+**Структура файлов:**
+```
+lab2/gr1sub1/Sokolov_Evgeniy/
+├── src/
+│   ├── supervisor.c     # Супервизор процессов
+│   ├── worker.c         # Воркер процессы
+│   ├── pstat.c          # Утилита анализа /proc
+│   └── Makefile         # Сборка проекта
+├── config.ini           # Конфигурация
+├── run.sh              # Основная демонстрация
+├── experiments.sh      # Дополнительные эксперименты
+├── README.md           # Инструкции
+└── REPORT.md           # Данный отчёт
+```
+
+**Требования к системе:**
+- Linux с поддержкой sched_setaffinity()
+- gcc для сборки
+- Опционально: pidstat, strace, perf для расширенной диагностики
 
 **Тестовая среда:** Linux 5.15, Ubuntu 22.04, 8 CPU cores

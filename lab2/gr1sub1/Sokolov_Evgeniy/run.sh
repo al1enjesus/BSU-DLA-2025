@@ -13,8 +13,10 @@ make -C src/
 
 echo
 echo "2. Запуск супервизора на 15 секунд..."
-timeout 15s src/supervisor config.ini &
+cd src/
+timeout 15s ./supervisor ../config.ini &
 SUPERVISOR_PID=$!
+cd ..
 
 sleep 2
 

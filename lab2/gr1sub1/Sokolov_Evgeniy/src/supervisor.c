@@ -209,7 +209,7 @@ static void start_worker(int worker_idx) {
         snprintf(nice_str, sizeof(nice_str), "%d", workers[worker_idx].nice_value);
         snprintf(cpu_str, sizeof(cpu_str), "%d", workers[worker_idx].cpu_affinity);
         
-        execl("src/worker", "worker", 
+        execl("./worker", "worker", 
               heavy_work_str, heavy_sleep_str,
               light_work_str, light_sleep_str,
               nice_str, cpu_str, NULL);

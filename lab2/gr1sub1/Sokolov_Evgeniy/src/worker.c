@@ -76,6 +76,9 @@ static void set_cpu_affinity(int cpu) {
     
     if (sched_setaffinity(0, sizeof(set), &set) == -1) {
         perror("sched_setaffinity");
+        printf("[worker %d] Failed to set CPU affinity to %d\n", getpid(), cpu);
+    } else {
+        printf("[worker %d] Successfully set CPU affinity to %d\n", getpid(), cpu);
     }
 }
 

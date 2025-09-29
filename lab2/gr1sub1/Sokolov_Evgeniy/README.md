@@ -20,12 +20,18 @@ make
 
 ### Запуск супервизора
 ```bash
-./supervisor config.ini
+cd src/
+./supervisor ../config.ini
 ```
 
 ### Запуск демонстрации
 ```bash
 bash run.sh
+```
+
+### Дополнительные эксперименты
+```bash
+bash experiments.sh    # Диагностика и профилирование (задание E*)
 ```
 
 ## Описание компонентов
