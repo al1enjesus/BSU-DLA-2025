@@ -1,4 +1,3 @@
-# src/worker.py — замените текущую реализацию run_worker этим кодом
 import os
 import time
 import signal
@@ -7,21 +6,17 @@ from .logger import Logger
 from multiprocessing import shared_memory
 
 def busy_wait_us(us: int):
-    end = time.monotonic_ns() + int(us) * 1000
-    acc = 0
-    while time.monotonic_ns() < end:
-        acc ^= 0x9e111111111
-    return acc
+    time.sleep(us / 1_000_000)
 
 def _apply_assignment(nice_val, cpus, logger, comp, pid):
-    # apply nice
+    # применить nice
     if nice_val is not None:
         try:
-            # setpriority may raise for permissions; use fallback to os.nice when possible
+            # setpriority может вызывать исключения, поэтому нужно сделать обработку и fallback по возможности
             try:
                 os.setpriority(os.PRIO_PROCESS, 0, int(nice_val))
             except AttributeError:
-                # fallback: inc nice by difference (best-effort)
+                # fallback: инкремент значения nice на разницу delta
                 cur = os.getpriority(os.PRIO_PROCESS, 0)
                 delta = int(nice_val) - cur
                 if delta != 0:
@@ -30,10 +25,9 @@ def _apply_assignment(nice_val, cpus, logger, comp, pid):
         except Exception as e:
             logger.error(comp, 'failed apply nice', pid=pid, error=str(e))
 
-    # apply cpu affinity
+    # применение cpu affinity
     if cpus is not None and hasattr(os, 'sched_setaffinity'):
         try:
-            # ensure cpus is a list/iterable of ints
             cpuset = set(int(x) for x in cpus)
             os.sched_setaffinity(0, cpuset)
             logger.info(comp, 'applied affinity', pid=pid, cpus=list(cpuset))
@@ -45,7 +39,7 @@ def run_worker(worker_id: int, modes: dict, log_path: str, initial_mode: str, ni
     comp = f'worker-{worker_id}'
     pid = os.getpid()
 
-    # initial apply
+    # первоначальное применение значений
     _apply_assignment(nice, cpus, logger, comp, pid)
 
     # connect to shared memory if provided
@@ -77,15 +71,13 @@ def run_worker(worker_id: int, modes: dict, log_path: str, initial_mode: str, ni
         logger.info(comp, 'sigusr2 -> heavy', pid=pid)
 
     def _hup(sig, frame):
-        # read current assignments from shared memory and apply for our slot
+        # чтение переменных из конфига в shared-memory
         nonlocal shm
         if not shm:
             logger.error(comp, 'sighup but no shared memory connected', pid=pid)
             return
         try:
-            # read null-terminated JSON blob
             buf = bytes(shm.buf)
-            # find first null byte
             try:
                 end = buf.index(0)
                 data = buf[:end].decode('utf-8')

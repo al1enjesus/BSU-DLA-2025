@@ -1,47 +1,24 @@
-# вставьте это в src/supervisor.py, заменяя класс Supervisor
 import json
 import time
 import os
 import signal
-import argparse
 from multiprocessing import Process
 from multiprocessing import shared_memory
 from .logger import Logger
 from .worker import run_worker
-
-SHM_SIZE = 64 * 1024  # 64 KiB for JSON assignment blob
 
 class Supervisor:
     def __init__(self, config_path):
         self.config_path = config_path
         self.config = self._load_config()
         self.log = Logger(self.config.get('log_path', 'logs/demo.log'))
-        # planner removed — using shared memory instead
-        self.workers = {}  # slot -> {proc, pid, start, restarts}
+        self.workers = {}
         rl = self.config.get('restart_limit', {})
+        self.shm_size = self.config.get('shm_size', 64 * 1024)
         self.restart_count = int(rl.get('count', 5))
         self.restart_window = int(rl.get('window_seconds', 30))
         self.need_reload = False
         self.terminated = False
-
-        # create shared memory segment
-        # name chosen deterministically per supervisor pid so tests/other sups don't collide
-        self.shm_name = f"sup_shm_{os.getpid()}"
-        try:
-            # try to unlink existing (leftover) then create
-            try:
-                existing = shared_memory.SharedMemory(name=self.shm_name)
-                existing.close()
-                existing.unlink()
-            except FileNotFoundError:
-                pass
-            self.shm = shared_memory.SharedMemory(create=True, size=SHM_SIZE, name=self.shm_name)
-            # initialize with assignments from config
-            self._write_shm_assignments(self._build_assignments_from_config(self.config))
-            self.log.info('supervisor', 'created shared memory', shm_name=self.shm_name, size=SHM_SIZE)
-        except Exception as e:
-            self.log.error('supervisor', 'failed to create shared memory', error=str(e))
-            raise
 
         signal.signal(signal.SIGCHLD, self._sigchld)
         signal.signal(signal.SIGTERM, self._sigterm)
@@ -51,10 +28,21 @@ class Supervisor:
         signal.signal(signal.SIGUSR2, self._sigusr2)
 
     def _build_assignments_from_config(self, cfg):
-        # Expect arrays 'nice_values' and 'cpu_affinity' in config; fallback sane defaults
-        workers = int(cfg.get('workers', 2))
-        nice_vals = cfg.get('nice_values', [])
-        cpu_aff = cfg.get('cpu_affinity', [])
+        try:
+            workers = int(cfg.get('workers', 2))
+            nice_vals = cfg.get('nice_values', [])
+            if workers != len(nice_vals):
+                self.log.error('supervisor', 'nice_values size != workers, revise your config')
+                raise Exception("Invalid config")
+
+            cpu_aff = cfg.get('cpu_affinity', [])
+            if workers != len(cpu_aff):
+                self.log.error('supervisor', 'cpu_affinity size != workers, revise your config')
+                raise Exception("Invalid config")
+        except Exception as e:
+            self.log.error('supervisor', f"failed to load config: {str(e)}")
+            return
+
         assigns = []
         for i in range(workers):
             nice = None
@@ -73,18 +61,35 @@ class Supervisor:
         """Write JSON to shared memory (null-terminated)."""
         try:
             b = json.dumps({'assignments': assigns}).encode('utf-8')
-            if len(b) >= SHM_SIZE:
+            if len(b) >= self.shm_size:
                 raise ValueError("assignment blob too large for SHM")
-            # zero buffer then write
-            self.shm.buf[:] = b'\x00' * SHM_SIZE
+            self.shm.buf[:] = b'\x00' * self.shm_size
             self.shm.buf[:len(b)] = b
-            # optional: null-terminate already done by zeros
             self.log.info('supervisor', 'wrote assignments to shm', shm_name=self.shm_name, count=len(assigns))
         except Exception as e:
             self.log.error('supervisor', 'failed write shm', error=str(e))
 
-    # ---- public interface ----
     def start_workers(self, n=None):
+        # создание сегмента shared-memory
+        # имя выбирается таким образом, чтобы можно было параллельно запустить несколько supervisor'ов
+        # достигается за счет включения pid в название сегмента памяти
+        self.shm_name = f"sup_shm_{os.getpid()}"
+        try:
+            # чистка на всякий случай
+            try:
+                existing = shared_memory.SharedMemory(name=self.shm_name)
+                existing.close()
+                existing.unlink()
+            except FileNotFoundError:
+                pass
+            self.shm = shared_memory.SharedMemory(create=True, size=self.shm_size, name=self.shm_name)
+            self._write_shm_assignments(self._build_assignments_from_config(self.config))
+            self.log.info('supervisor', 'created shared memory', shm_name=self.shm_name, size=self.shm_size)
+        except Exception as e:
+            self.log.error('supervisor', 'failed to create shared memory', error=str(e))
+            raise
+
+        self.terminated = False
         n = n or int(self.config.get('workers', 2))
         for i in range(n):
             self._spawn(i)
@@ -152,7 +157,7 @@ class Supervisor:
             time.sleep(0.5)
 
     def _spawn(self, idx):
-        # read assignment for slot idx from current config (we store in self.config too)
+        # чтение конфигурационных значений по индексу и создание воркера
         assigns = self._build_assignments_from_config(self.config)
         assign = assigns[idx] if idx < len(assigns) else {'nice': None, 'cpus': None}
         try:
@@ -163,7 +168,7 @@ class Supervisor:
                 'heavy',
                 assign.get('nice'),
                 assign.get('cpus'),
-                self.shm_name  # new arg: shared memory name
+                self.shm_name
             ))
             p.start()
             pid = p.pid
@@ -211,7 +216,6 @@ class Supervisor:
                 raise
 
     def _reload_config(self):
-        """Reload configuration, update shared memory assignments and signal workers to apply them"""
         self.log.info('supervisor', 'reloading config')
         newc = self._load_config()
         self.config = newc
@@ -243,11 +247,11 @@ class Supervisor:
                     pass
                 del self.workers[idx]
 
-        # update shared memory with new assignments
+        # обновление сегмента shared-memory
         assigns = self._build_assignments_from_config(self.config)
         self._write_shm_assignments(assigns)
 
-        # tell workers to reload from shared memory
+        # отправление сигнала SIGHUP, на который завязана логика обновления конфига для воркеров 
         for idx, w in list(self.workers.items()):
             try:
                 os.kill(w['pid'], signal.SIGHUP)
@@ -273,7 +277,7 @@ class Supervisor:
                     os.kill(w['pid'], signal.SIGKILL)
                 except Exception:
                     pass
-        # cleanup shared memory
+        # чистка
         try:
             self.shm.close()
             self.shm.unlink()
@@ -281,10 +285,3 @@ class Supervisor:
             pass
         self.log.info('supervisor', 'shutdown complete')
 
-
-if __name__ == '__main__':
-    p = argparse.ArgumentParser()
-    p.add_argument('--config', required=True)
-    args = p.parse_args()
-    sup = Supervisor(args.config)
-    sup.start()

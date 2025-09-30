@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-import os, json
+import argparse
 from impl.supervisor import Supervisor
 
-ROOT = os.path.dirname(__file__)
-CONF = os.path.join(ROOT, 'config.json')
-cfg  = json.load(open(CONF))
-sup  = Supervisor(CONF)
 
 def menu():
+    p = argparse.ArgumentParser()
+    p.add_argument('--config', required=True)
+    args = p.parse_args()
+    sup = Supervisor(args.config)
+
     while True:
         print("\n=== DEMO MENU ===")
         print("1. Start workers")

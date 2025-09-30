@@ -1,6 +1,7 @@
 {
-    "workers": 3,
+    "workers": 4,
     "log_path": "logs/demo.log",
+    "shm_size": 65536,
     "mode_heavy": {
         "work_us": 9000,
         "sleep_us": 1000
@@ -12,7 +13,8 @@
     "nice_values": [
         0,
         10,
-        0
+        0,
+        -19
     ],
     "cpu_affinity": [
         [
@@ -24,6 +26,9 @@
         [
             0,
             1
+        ],
+        [
+            0
         ]
     ],
     "restart_limit": {

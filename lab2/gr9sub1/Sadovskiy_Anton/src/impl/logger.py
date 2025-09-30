@@ -4,9 +4,8 @@ from datetime import datetime
 
 class Logger:
     """
-    Simple process-safe logger with fixed column output:
+    Межпроцессно-безопасный логгер, который собирает логи в формате таблицы:
     TS | COMPONENT | PID | LEVEL | MESSAGE | EXTRA
-    Columns are separated by a single tab character for easy parsing.
     """
     def __init__(self, path: str):
         self.path = path
@@ -20,14 +19,12 @@ class Logger:
             os.write(self.fd, (text + "\n").encode())
             print(text)
         except Exception:
-            pass  # ignore logging failures
+            pass 
 
     def log(self, level: str, component: str, message: str, **extra):
         ts = datetime.utcnow().isoformat() + "Z"
         pid = os.getpid()
-        # convert extra dict to key=value pairs separated by commas
         extra_str = ",".join(f"{k}={v}" for k, v in extra.items())
-        # columns separated by tabs
         line = f"{ts}\t{component}\t{pid}\t{level}\t{message}\t{extra_str}"
         self._write_line(line)
 
