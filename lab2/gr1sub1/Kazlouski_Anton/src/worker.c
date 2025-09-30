@@ -2,7 +2,6 @@
 #include <unistd.h>
 #include <signal.h>
 #include <time.h>
-#include <math.h>
 
 volatile sig_atomic_t keep_running = 1;
 volatile sig_atomic_t current_mode = 0;
@@ -40,15 +39,22 @@ void setup_signals() {
     sigaction(SIGUSR2, &sa, NULL);
 }
 
-void cpu_work(int microseconds) {
+void cpu_work_simple(int microseconds) {
     struct timespec start, current;
-    clock_gettime(CLOCK_MONOTONIC, &start);
+    if (clock_gettime(CLOCK_MONOTONIC, &start) == -1) {
+        perror("clock_gettime failed");
+        return;
+    }
 
     long nanoseconds = microseconds * 1000L;
-    double calculation = 0.0;
+    volatile unsigned long counter __attribute__((unused)) = 0;
 
     while (1) {
-        clock_gettime(CLOCK_MONOTONIC, &current);
+        if (clock_gettime(CLOCK_MONOTONIC, &current) == -1) {
+            perror("clock_gettime failed");
+            break;
+        }
+
         long elapsed = (current.tv_sec - start.tv_sec) * 1000000000L +
             (current.tv_nsec - start.tv_nsec);
 
@@ -56,36 +62,14 @@ void cpu_work(int microseconds) {
             break;
         }
 
-        for (int i = 0; i < 1000; i++) {
-            calculation += sin(i * 0.1) * cos(i * 0.1);
+        for (int i = 0; i < 100; i++) {
+            counter += i * 3;
         }
-    }
-
-    if (calculation < 0) {
-        printf("");
     }
 }
 
-void cpu_work_simple(int microseconds) {
-    clock_t start = clock();
-    double calculation = 0.0;
-
-    while (1) {
-        clock_t now = clock();
-        double elapsed = ((double)(now - start)) / CLOCKS_PER_SEC * 1000000.0;
-
-        if (elapsed >= microseconds) {
-            break;
-        }
-
-        for (int i = 0; i < 500; i++) {
-            calculation += sqrt(i * 1.0) * log(i + 1.0);
-        }
-    }
-
-    if (calculation < 0) {
-        printf("");
-    }
+void cpu_work(int microseconds) {
+    cpu_work_simple(microseconds);
 }
 
 int main(void) {
@@ -93,12 +77,6 @@ int main(void) {
     setup_signals();
 
     int tick_count = 0;
-
-    void (*work_func)(int) = cpu_work_simple;
-
-#ifdef CLOCK_MONOTONIC
-    work_func = cpu_work;
-#endif
 
     while(keep_running) {
         mode_config *current_config = current_mode ? &light_mode : &heavy_mode;
@@ -110,7 +88,7 @@ int main(void) {
                current_config->sleep_us);
         fflush(stdout);
 
-        work_func(current_config->work_us);
+        cpu_work(current_config->work_us);
 
         usleep(current_config->sleep_us);
 
@@ -119,4 +97,4 @@ int main(void) {
 
     printf("Worker %d: Shutting down gracefully\n", getpid());
     return 0;
-} 
+}

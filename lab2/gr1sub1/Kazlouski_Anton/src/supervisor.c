@@ -5,6 +5,7 @@
 #include <sys/wait.h>
 #include <errno.h>
 #include <time.h>
+#include <pthread.h>
 
 #define MAX_WORKERS 10
 #define MAX_RESTARTS 5
@@ -20,10 +21,16 @@ volatile sig_atomic_t keep_running = 1;
 volatile sig_atomic_t reload_config = 0;
 volatile sig_atomic_t switch_to_light = 0;
 volatile sig_atomic_t switch_to_heavy = 0;
+volatile sig_atomic_t child_exited = 0;
 
 worker_info workers[MAX_WORKERS];
 int num_workers = 3;
-int worker_pids[MAX_WORKERS];
+pthread_mutex_t workers_mutex = PTHREAD_MUTEX_INITIALIZER;
+
+void sigchld_handler(int sig) {
+    (void)sig;
+    child_exited = 1;
+}
 
 void signal_handler(int sig) {
     switch(sig) {
@@ -45,6 +52,7 @@ void signal_handler(int sig) {
 
 void setup_signals() {
     struct sigaction sa;
+
     sa.sa_handler = signal_handler;
     sigemptyset(&sa.sa_mask);
     sa.sa_flags = 0;
@@ -55,7 +63,9 @@ void setup_signals() {
     sigaction(SIGUSR1, &sa, NULL);
     sigaction(SIGUSR2, &sa, NULL);
 
-    signal(SIGCHLD, SIG_DFL);
+    sa.sa_handler = sigchld_handler;
+    sa.sa_flags = SA_RESTART | SA_NOCLDSTOP;
+    sigaction(SIGCHLD, &sa, NULL);
 }
 
 pid_t start_worker() {
@@ -76,6 +86,9 @@ pid_t start_worker() {
 
 int can_restart(pid_t pid) {
     time_t now = time(NULL);
+    int result = 0;
+
+    pthread_mutex_lock(&workers_mutex);
 
     for (int i = 0; i < num_workers; i++) {
         if (workers[i].pid == pid) {
@@ -86,47 +99,100 @@ int can_restart(pid_t pid) {
             if (workers[i].restarts < MAX_RESTARTS) {
                 workers[i].restarts++;
                 workers[i].last_restart = now;
-                return 1;
+                result = 1;
             } else {
                 printf("Supervisor: Too many restarts for worker %d\n", pid);
-                return 0;
+                result = 0;
+            }
+            break;
+        }
+    }
+
+    pthread_mutex_unlock(&workers_mutex);
+    return result;
+}
+
+void handle_child_exit() {
+    pid_t pid;
+    int status;
+
+    pthread_mutex_lock(&workers_mutex);
+
+    while ((pid = waitpid(-1, &status, WNOHANG)) > 0) {
+        printf("Supervisor: Worker %d exited with status %d\n", pid, WEXITSTATUS(status));
+
+        if (keep_running && can_restart(pid)) {
+            for (int i = 0; i < num_workers; i++) {
+                if (workers[i].pid == pid) {
+                    printf("Supervisor: Restarting worker...\n");
+                    pid_t new_pid = start_worker();
+                    if (new_pid > 0) {
+                        workers[i].pid = new_pid;
+                    } else {
+                        fprintf(stderr, "Supervisor: Failed to restart worker\n");
+                        workers[i].pid = -1;
+                    }
+                    break;
+                }
             }
         }
     }
-    return 1;
+
+    if (pid == -1 && errno != ECHILD) {
+        perror("waitpid failed");
+    }
+
+    pthread_mutex_unlock(&workers_mutex);
 }
 
 void graceful_shutdown() {
     printf("Supervisor: Starting graceful shutdown...\n");
 
+    pthread_mutex_lock(&workers_mutex);
+
     for (int i = 0; i < num_workers; i++) {
         if (workers[i].pid > 0) {
             printf("Supervisor: Sending SIGTERM to worker %d\n", workers[i].pid);
-            kill(workers[i].pid, SIGTERM);
+            if (kill(workers[i].pid, SIGTERM) == -1) {
+                perror("kill failed");
+            }
         }
     }
+
+    pthread_mutex_unlock(&workers_mutex);
 
     time_t start = time(NULL);
-    int workers_running = num_workers;
+    int workers_running;
 
-    while (workers_running > 0 && (time(NULL) - start) < 5) {
-        pid_t pid = waitpid(-1, NULL, WNOHANG);
-        if (pid > 0) {
-            printf("Supervisor: Worker %d terminated\n", pid);
-            workers_running--;
-        } else if (pid == -1 && errno == ECHILD) {
-            break;
+    do {
+        workers_running = 0;
+        pthread_mutex_lock(&workers_mutex);
+
+        for (int i = 0; i < num_workers; i++) {
+            if (workers[i].pid > 0) {
+                workers_running++;
+            }
         }
-        usleep(100000);
-    }
+
+        pthread_mutex_unlock(&workers_mutex);
+
+        if (workers_running > 0 && (time(NULL) - start) < 5) {
+            usleep(100000);
+            handle_child_exit();
+        }
+    } while (workers_running > 0 && (time(NULL) - start) < 5);
 
     if (workers_running > 0) {
         printf("Supervisor: Force killing remaining workers\n");
+        pthread_mutex_lock(&workers_mutex);
+
         for (int i = 0; i < num_workers; i++) {
             if (workers[i].pid > 0) {
                 kill(workers[i].pid, SIGKILL);
             }
         }
+
+        pthread_mutex_unlock(&workers_mutex);
     }
 
     while (waitpid(-1, NULL, WNOHANG) > 0) {}
@@ -135,63 +201,85 @@ void graceful_shutdown() {
 void reload_workers() {
     printf("Supervisor: Reloading configuration and restarting workers...\n");
 
+    pthread_mutex_lock(&workers_mutex);
+
     for (int i = 0; i < num_workers; i++) {
         if (workers[i].pid > 0) {
-            kill(workers[i].pid, SIGTERM);
+            if (kill(workers[i].pid, SIGTERM) == -1) {
+                perror("kill failed");
+            }
         }
     }
 
+    pthread_mutex_unlock(&workers_mutex);
+
     sleep(1);
 
+    pthread_mutex_lock(&workers_mutex);
+
     for (int i = 0; i < num_workers; i++) {
-        workers[i].pid = start_worker();
-        workers[i].restarts = 0;
-        workers[i].last_restart = time(NULL);
+        pid_t new_pid = start_worker();
+        if (new_pid > 0) {
+            workers[i].pid = new_pid;
+            workers[i].restarts = 0;
+            workers[i].last_restart = time(NULL);
+        } else {
+            fprintf(stderr, "Supervisor: Failed to start worker %d\n", i);
+            workers[i].pid = -1;
+        }
     }
+
+    pthread_mutex_unlock(&workers_mutex);
 }
 
 void switch_workers_mode(int light_mode) {
     printf("Supervisor: Switching workers to %s mode\n",
            light_mode ? "LIGHT" : "HEAVY");
 
+    pthread_mutex_lock(&workers_mutex);
+
     for (int i = 0; i < num_workers; i++) {
         if (workers[i].pid > 0) {
-            kill(workers[i].pid, light_mode ? SIGUSR1 : SIGUSR2);
+            if (kill(workers[i].pid, light_mode ? SIGUSR1 : SIGUSR2) == -1) {
+                perror("kill failed");
+            }
         }
     }
+
+    pthread_mutex_unlock(&workers_mutex);
 }
 
-int main() {
+int main(void) {
     printf("Supervisor started with PID: %d\n", getpid());
     setup_signals();
 
+    pthread_mutex_lock(&workers_mutex);
+
     for (int i = 0; i < num_workers; i++) {
-        workers[i].pid = start_worker();
-        workers[i].restarts = 0;
-        workers[i].last_restart = time(NULL);
+        pid_t pid = start_worker();
+        if (pid > 0) {
+            workers[i].pid = pid;
+            workers[i].restarts = 0;
+            workers[i].last_restart = time(NULL);
+        } else {
+            fprintf(stderr, "Supervisor: Failed to start initial worker %d\n", i);
+            workers[i].pid = -1;
+        }
     }
+
+    pthread_mutex_unlock(&workers_mutex);
 
     printf("Supervisor: Started %d workers. Send signals to manage:\n", num_workers);
     printf("  SIGTERM/SIGINT - graceful shutdown\n");
     printf("  SIGHUP - reload configuration\n");
     printf("  SIGUSR1 - switch to light mode\n");
     printf("  SIGUSR2 - switch to heavy mode\n");
+    printf("Supervisor PID: %d\n", getpid());
 
     while (keep_running) {
-        pid_t pid;
-        int status;
-
-        while ((pid = waitpid(-1, &status, WNOHANG)) > 0) {
-            printf("Supervisor: Worker %d exited with status %d\n", pid, status);
-
-            if (keep_running && can_restart(pid)) {
-                for (int i = 0; i < num_workers; i++) {
-                    if (workers[i].pid == pid) {
-                        workers[i].pid = start_worker();
-                        break;
-                    }
-                }
-            }
+        if (child_exited) {
+            child_exited = 0;
+            handle_child_exit();
         }
 
         if (reload_config) {
@@ -209,10 +297,12 @@ int main() {
             switch_workers_mode(0);
         }
 
-        usleep(100000); // 100ms
+        usleep(100000);
     }
 
     graceful_shutdown();
     printf("Supervisor: Shutdown complete\n");
+
+    pthread_mutex_destroy(&workers_mutex);
     return 0;
-} 
+}
