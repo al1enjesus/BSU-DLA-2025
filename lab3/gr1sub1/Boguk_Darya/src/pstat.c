@@ -18,7 +18,7 @@ void trim(char* str) {
     str[end - start + 1] = '\0';
 }
 
-int get_proc_value(const char* filename, const char* key, char* result) {
+int get_proc_value(const char* filename, const char* key, char* result, size_t result_size) {
     FILE* f = fopen(filename, "r");
     if (!f) return 0;
     
