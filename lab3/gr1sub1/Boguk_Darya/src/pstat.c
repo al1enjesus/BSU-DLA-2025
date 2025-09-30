@@ -5,6 +5,8 @@
 #include <ctype.h>
 
 #define MAX_BUF 1024
+#define MAX_VALUE_LEN 64
+#define MAX_NAME_LEN 256
 
 void trim(char* str) {
     if (!str) return;
@@ -27,7 +29,12 @@ int get_proc_value(const char* filename, const char* key, char* result) {
         if (strncmp(buf, key, strlen(key)) == 0) {
             char* val = strchr(buf, ':');
             if (val) {
-                strcpy(result, val + 1);
+                size_t len = strlen(val + 1);
+                if (len >= result_size) {
+                    len = result_size - 1;
+                }
+                strncpy(result, val + 1, len);
+                result[len] = '\0';
                 trim(result);
                 found = 1;
                 break;
@@ -40,6 +47,7 @@ int get_proc_value(const char* filename, const char* key, char* result) {
 }
 
 int check_pid(const char* str) {
+    if (!str || strlen(str) == 0) return 0; 
     for (int i = 0; str[i]; i++) {
         if (!isdigit(str[i])) return 0;
     }
@@ -59,7 +67,10 @@ int main(int argc, char* argv[]) {
     }
     long hz = sysconf(_SC_CLK_TCK);
     char stat_path[MAX_BUF];
-    snprintf(stat_path, sizeof(stat_path), "/proc/%s/stat", pid);
+    if (snprintf(stat_path, sizeof(stat_path), "/proc/%s/stat", pid) >= sizeof(stat_path)) {
+        fprintf(stderr, "Error\n");
+        return 1;
+    }
     
     FILE* f = fopen(stat_path, "r");
     if (!f) {
@@ -71,7 +82,7 @@ int main(int argc, char* argv[]) {
     fgets(line, sizeof(line), f);
     fclose(f);
 
-    char name[256], state;
+    char name[MAX_NAME_LEN], state;
     long ppid, utime, stime;
     
     if (sscanf(line, "%*d (%255[^)]) %c %ld %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %ld %ld",
@@ -85,23 +96,23 @@ int main(int argc, char* argv[]) {
     snprintf(io_path, sizeof(io_path), "/proc/%s/io", pid);
     snprintf(smaps_path, sizeof(smaps_path), "/proc/%s/smaps_rollup", pid);
     
-    char threads[64] = "N/A";
-    char vmrss[64] = "N/A";
-    char voluntary[64] = "N/A";
-    char nonvoluntary[64] = "N/A";
-    char read_bytes[64] = "N/A";
-    char write_bytes[64] = "N/A";
-    char rssanon[64] = "N/A";
-    char rssfile[64] = "N/A";
+    char threads[MAX_VALUE_LEN] = "N/A";
+    char vmrss[MAX_VALUE_LEN] = "N/A";
+    char voluntary[MAX_VALUE_LEN] = "N/A";
+    char nonvoluntary[MAX_VALUE_LEN] = "N/A";
+    char read_bytes[MAX_VALUE_LEN] = "N/A";
+    char write_bytes[MAX_VALUE_LEN] = "N/A";
+    char rssanon[MAX_VALUE_LEN] = "N/A";
+    char rssfile[MAX_VALUE_LEN] = "N/A";
     
-    get_proc_value(status_path, "Threads", threads);
-    get_proc_value(status_path, "VmRSS", vmrss);
-    get_proc_value(status_path, "voluntary_ctxt_switches", voluntary);
-    get_proc_value(status_path, "nonvoluntary_ctxt_switches", nonvoluntary);
-    get_proc_value(io_path, "read_bytes", read_bytes);
-    get_proc_value(io_path, "write_bytes", write_bytes);
-    get_proc_value(smaps_path, "RssAnon", rssanon);
-    get_proc_value(smaps_path, "RssFile", rssfile);
+    get_proc_value(status_path, "Threads", threads, sizeof(threads));
+    get_proc_value(status_path, "VmRSS", vmrss, sizeof(vmrss));
+    get_proc_value(status_path, "voluntary_ctxt_switches", voluntary, sizeof(voluntary));
+    get_proc_value(status_path, "nonvoluntary_ctxt_switches", nonvoluntary, sizeof(nonvoluntary));
+    get_proc_value(io_path, "read_bytes", read_bytes, sizeof(read_bytes));
+    get_proc_value(io_path, "write_bytes", write_bytes, sizeof(write_bytes));
+    get_proc_value(smaps_path, "RssAnon", rssanon, sizeof(rssanon));
+    get_proc_value(smaps_path, "RssFile", rssfile, sizeof(rssfile));
     
     printf("--- Process statistics for PID %s ---\n", pid);
     printf("PPid: %ld\n", ppid);
