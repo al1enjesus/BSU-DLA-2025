@@ -95,7 +95,7 @@ def main():
 
     try:
         vmrss_kb = int(vmrss.split()[0])
-    except:
+    except (ValueError, IndexError, AttributeError):
         vmrss_kb = 0
     print(f"VmRSS: {format_size(vmrss_kb)}")
     print(f"  RssAnon: {format_size(rss_anon)}")

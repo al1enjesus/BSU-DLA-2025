@@ -19,7 +19,7 @@ PERF_CMD="/usr/lib/linux-tools-6.8.0-85/perf"
 ps -p $PID -o pid,ppid,state,time,thcount,rss > "$LOG_DIR/ps_result.txt" &
 top -b -n 1 -p $PID > "$LOG_DIR/top_result.txt" &
 pidstat -p $PID 1 5 > "$LOG_DIR/pidstat_result.txt" &
-python3 src/pstat.py $PID > "$LOG_DIR/pstat_resulttxt" &
+python3 src/pstat.py $PID > "$LOG_DIR/pstat_result.txt" &
 timeout 5 strace -f -c -p $PID 2> "$LOG_DIR/strace_result.txt" &
 sudo $PERF_CMD stat -p $PID sleep 5 > "$LOG_DIR/perf_result.txt" 2>&1 &
 
