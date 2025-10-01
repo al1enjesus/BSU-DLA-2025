@@ -1,0 +1,18 @@
+
+ Performance counter stats for process id '2705':
+
+             97,16 msec task-clock                       #    0,019 CPUs utilized             
+            11 207      context-switches                 #  115,348 K/sec                     
+                30      cpu-migrations                   #  308,774 /sec                      
+                 0      page-faults                      #    0,000 /sec                      
+       118 742 231      cycles                           #    1,222 GHz                       
+       146 767 664      instructions                     #    1,24  insn per cycle            
+        28 100 171      branches                         #  289,220 M/sec                     
+           300 447      branch-misses                    #    1,07% of all branches           
+                        TopdownL1                 #      5,0 %  tma_backend_bound      
+                                                  #     69,4 %  tma_bad_speculation    
+                                                  #     21,6 %  tma_frontend_bound     
+                                                  #      3,9 %  tma_retiring           
+
+       5,004084863 seconds time elapsed
+

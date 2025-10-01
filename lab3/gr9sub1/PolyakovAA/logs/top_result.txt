@@ -1,0 +1,8 @@
+top - 01:47:25 up  5:07,  1 user,  load average: 0,36, 0,51, 0,62
+Задачи:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  2,4 us,  2,4 sy,  0,0 ni, 95,1 id,  0,0 wa,  0,0 hi,  0,0 si,  0,0 st 
+МиБ Mem :  15731,3 total,   8149,4 free,   3773,7 used,   4331,2 buff/cache     
+МиБ Swap:   3907,0 total,   3907,0 free,      0,0 used.  11957,5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+
+   2705 andrei    20   0 4560968 326952 148676 S   0,0   2,0   4:54.45
