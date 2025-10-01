@@ -2,10 +2,10 @@
 
 CONFIG_FILE='./supervisor.env'
 WORKERS=3
-MODE_HEAVY_WORK_US=9000
-MODE_HEAVY_SLEEP_US=1000
-MODE_LIGHT_WORK_US=2000
-MODE_LIGHT_SLEEP_US=8000
+MODE_HEAVY_WORK_US=900000
+MODE_HEAVY_SLEEP_US=100000
+MODE_LIGHT_WORK_US=200000
+MODE_LIGHT_SLEEP_US=800000
 
 # Базовые настройки для воркеров
 CURRENT_MODE="heavy"
@@ -17,20 +17,23 @@ declare -a WORKER_PIDS
 declare -a WORKER_RESTARTS
 
 
+log() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a supervisor.log
+}
+
+
 read_config() {
     if [[ ! -f "$CONFIG_FILE" ]]; then
-        echo "Config file $CONFIG_FILE not found, using defaults"
+        log "Config file $CONFIG_FILE not found, using defaults"
         return 1
     fi
     
     source "$CONFIG_FILE"
     
-    if [[ -z "$workers" || "$workers" -lt 2 ]]; then
-        echo "Invalid workers count: $workers, using default: 3"
-        workers=3
+    if [[ -z "$WORKERS" || "$WORKERS" -lt 2 ]]; then
+        log "Invalid workers count: $WORKERS, using default: 3"
+        WORKERS=3
     fi
-    
-    WORKERS=$workers
 }
 
 
@@ -82,24 +85,24 @@ worker(){
             cpu_info=$(cat /proc/self/stat | awk '{print $39}')
         fi
 
-        echo "Worker $worker_id ($BASHPID): mode=$mode, iter=$iteration, work=${work_duration}ms, sleep=${sleep_duration}ms, cpu=$cpu_info, avg_work=$((total_work_time/iteration))ms, avg_sleep=$((total_sleep_time/iteration))ms"
+        log "Worker $worker_id ($BASHPID): mode=$mode, iter=$iteration, work=${work_duration}ms, sleep=${sleep_duration}ms, cpu=$cpu_info, avg_work=$((total_work_time/iteration))ms, avg_sleep=$((total_sleep_time/iteration))ms"
     done
 }
 
 
 # Управление с воркерами
 start_workers() {
-    echo "Starting $WORKERS workers in $CURRENT_MODE mode"
+    log "Starting $WORKERS workers in $CURRENT_MODE mode"
     for ((i=0; i<WORKERS; i++)); do
         worker $i &
         WORKER_PIDS[$i]=$!
         WORKER_RESTARTS[$i]=""
-        echo "Started worker $i with PID ${WORKER_PIDS[$i]}"
+        log "Started worker $i with PID ${WORKER_PIDS[$i]}"
     done
 }
 
 stop_workers() {
-    echo "Stopping workers..."
+    log "Stopping workers..."
     for pid in "${WORKER_PIDS[@]}"; do
         if kill -0 "$pid" 2>/dev/null; then
             kill -SIGTERM "$pid" 2>/dev/null
@@ -117,13 +120,13 @@ stop_workers() {
         done
         
         if kill -0 "$pid" 2>/dev/null; then
-            echo "Force killing worker $pid"
+            log "Force killing worker $pid"
             kill -SIGKILL "$pid" 2>/dev/null
         fi
     done
     
     WORKER_PIDS=()
-    echo "All workers stopped"
+    log "All workers stopped"
 }
 
 restart_workers() {
@@ -141,7 +144,7 @@ check_workers() {
         local pid=${WORKER_PIDS[$i]}
         
         if ! kill -0 "$pid" 2>/dev/null; then
-            echo "Worker $i (PID $pid) died, checking restart policy..."
+            log "Worker $i (PID $pid) died, checking restart policy..."
             
             local now=$(date +%s)
             local restarts=(${WORKER_RESTARTS[$i]})
@@ -154,13 +157,13 @@ check_workers() {
             done
             
             if [[ ${#recent_restarts[@]} -lt 5 ]]; then
-                echo "Restarting worker $i..."
+                log "Restarting worker $i..."
                 worker $i &
                 WORKER_PIDS[$i]=$!
                 WORKER_RESTARTS[$i]="${recent_restarts[*]} $now"
-                echo "Restarted worker $i with PID ${WORKER_PIDS[$i]}"
+                log "Restarted worker $i with PID ${WORKER_PIDS[$i]}"
             else
-                echo "Restart limit exceeded for worker $i, waiting..."
+                log "Restart limit exceeded for worker $i, waiting..."
                 WORKER_RESTARTS[$i]="${recent_restarts[*]}"
             fi
         fi
@@ -170,12 +173,13 @@ check_workers() {
 
 # Главная функция
 main() {
-    echo "Supervisor started with PID $BASHPID"
+    log "Supervisor started with PID $BASHPID"
 
-    trap 'echo "Get SIGTERM/SIGINT"; SHUTDOWN_REQUESTED=true' SIGTERM SIGINT
-    trap 'echo "Get SIGHUP"; RELOAD_REQUESTED=true' SIGHUP
-    trap 'echo "Get SIGUSR1"; CURRENT_MODE="light"; for pid in "${WORKER_PIDS[@]}"; do kill -SIGUSR1 "$pid" 2>/dev/null; done' SIGUSR1
-    trap 'echo "Get SIGUSR2"; CURRENT_MODE="heavy"; for pid in "${WORKER_PIDS[@]}"; do kill -SIGUSR2 "$pid" 2>/dev/null; done' SIGUSR2
+    trap 'log "Get SIGTERM/SIGINT"; SHUTDOWN_REQUESTED=true' SIGTERM SIGINT
+    trap 'log "Get EXIT"; SHUTDOWN_REQUESTED=true' EXIT
+    trap 'log "Get SIGHUP"; RELOAD_REQUESTED=true' SIGHUP
+    trap 'log "Get SIGUSR1"; CURRENT_MODE="light"; for pid in "${WORKER_PIDS[@]}"; do kill -SIGUSR1 "$pid" 2>/dev/null; done' SIGUSR1
+    trap 'log "Get SIGUSR2"; CURRENT_MODE="heavy"; for pid in "${WORKER_PIDS[@]}"; do kill -SIGUSR2 "$pid" 2>/dev/null; done' SIGUSR2
     trap 'check_workers' SIGCHLD
 
     read_config
@@ -188,12 +192,12 @@ main() {
 
         if $SHUTDOWN_REQUESTED; then
             stop_workers
-            echo "Supervisor shutdown completed"
+            log "Supervisor shutdown completed"
             exit 0
         fi
 
         if $RELOAD_REQUESTED; then
-            echo "Reloading configuration..."
+            log "Reloading configuration..."
             read_config
             restart_workers
             RELOAD_REQUESTED=false
