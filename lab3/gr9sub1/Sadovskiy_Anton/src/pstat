@@ -1,0 +1,145 @@
+#!/usr/bin/env python3
+import os
+import sys
+
+def fmt_bytes(kb: int) -> str:
+    """
+    Функция форматирует размер, выраженный в килобайтах (KiB), 
+    в удобный для чтения вид: либо KiB, либо MiB.
+    """
+    if kb >= 1024:
+        return f"{kb / 1024:.2f} MiB"
+    return f"{kb} KiB"
+
+def read_stat(pid):
+    """
+    Читает файл /proc/<pid>/stat и возвращает словарь 
+    с нужными нам значениями.
+    
+    /proc/<pid>/stat содержит несколько полей, которые нас интересуют:
+    - ppid  (поле 4)
+    - state (поле 3)
+    - utime (поле 14, индекс 13)
+    - stime (поле 15, индекс 14)
+    """
+    path = f"/proc/{pid}/stat"
+    with open(path) as f:
+        data = f.read().split()
+    return {
+        "utime": int(data[13]),
+        "stime": int(data[14]),
+        "ppid": int(data[3]),
+        "state": data[2],
+    }
+
+def read_status(pid):
+    """
+    Читает /proc/<pid>/status и парсит его в словарь.
+    Этот файл удобен тем, что значения там представлены в виде ключ: значение.
+    Отсюда можно взять:
+    - Threads
+    - VmRSS
+    - voluntary_ctxt_switches
+    - nonvoluntary_ctxt_switches
+    и другие полезные параметры.
+    """
+    path = f"/proc/{pid}/status"
+    res = {}
+    with open(path) as f:
+        for line in f:
+            key, *val = line.strip().split(":")
+            val = "".join(val).strip()
+            res[key] = val
+    return res
+
+def read_io(pid):
+    """
+    Чтение /proc/<pid>/io, содержащего статистику ввода/вывода процесса:
+    - read_bytes
+    - write_bytes
+    """
+    path = f"/proc/{pid}/io"
+    res = {}
+    with open(path) as f:
+        for line in f:
+            key, val = line.strip().split(":")
+            res[key.strip()] = int(val.strip())
+    return res
+
+def read_smaps_rollup(pid):
+    """
+    Чтение /proc/<pid>/smaps_rollup, если он доступен (что не всегда так).
+    Этот файл агрегирует статистику использования памяти процессом.
+    Интересующие поля:
+    - RssAnon   (анонимная память)
+    - RssFile   (отображённые файлы)
+    - RssShmem  (разделяемая память)
+    Все значения в KiB.
+    """
+    path = f"/proc/{pid}/smaps_rollup"
+    res = {}
+    if os.path.exists(path):
+        with open(path) as f:
+            for line in f:
+                if line.startswith(("RssAnon", "RssFile", "RssShmem")):
+                    key, val = line.split(":", 1)
+                    kb = int(val.strip().split()[0])
+                    res[key] = kb
+    return res
+
+def pstat(pid):
+    """
+    Главная функция: собирает статистику процесса и печатает краткий отчёт.
+    """
+    # Получение количества тиков процессора в секунду для рассчета времени CPU
+    hz = os.sysconf(os.sysconf_names['SC_CLK_TCK'])
+
+    try:
+        # Чтение файлов  в /proc/<pid> для сбора статистики
+        stat = read_stat(pid)
+        status = read_status(pid)
+        io = read_io(pid)
+        smaps = read_smaps_rollup(pid)
+    except PermissionError as e:
+        # Если нет доступа к файлам процесса (например, чужой процесс без sudo)
+        print(f"Permission to parse process {pid} stat files denied.\n"
+              "Try changing user or run with 'sudo'.")
+        return
+    except FileNotFoundError as e:
+        # Если процесса с указанным pid не существует
+        print(f"Stats file connected to process {pid} were not found.\n"
+              "Make sure you use existing process PID as an argument")
+        return
+
+    # utime/stime — количество тиков CPU в режиме пользователя и ядра
+    utime = stat["utime"]
+    stime = stat["stime"]
+    # CPU time в секундах = (utime+stime) / HZ
+    cpu_time = (utime + stime) / hz
+
+    # Вывод сводки в консоль
+    print(f"PID: {pid}")
+    print(f"PPid: {stat['ppid']}")
+    print(f"State: {stat['state']}")
+    print(f"Threads: {status.get('Threads')}")
+    print(f"utime: {utime} ticks")
+    print(f"stime: {stime} ticks")
+    print(f"CPU time: {cpu_time:.2f} sec")
+    print(f"voluntary_ctxt_switches: {status.get('voluntary_ctxt_switches')}")
+    print(f"nonvoluntary_ctxt_switches: {status.get('nonvoluntary_ctxt_switches')}")
+    print(f"VmRSS: {status.get('VmRSS')}")
+    if smaps:
+        print(f"RssAnon: {fmt_bytes(smaps.get('RssAnon', 0))}")
+        print(f"RssFile: {fmt_bytes(smaps.get('RssFile', 0))}")
+        print(f"RssShmem: {fmt_bytes(smaps.get('RssShmem', 0))}")
+
+    print(f"read_bytes: {io.get('read_bytes')}")
+    print(f"write_bytes: {io.get('write_bytes')}")
+
+if __name__ == "__main__":
+    # Проверяем, что пользователь передал PID
+    if len(sys.argv) != 2:
+        print(f"Usage: {sys.argv[0]} <pid>")
+        sys.exit(1)
+    pid = sys.argv[1]
+    pstat(pid)
