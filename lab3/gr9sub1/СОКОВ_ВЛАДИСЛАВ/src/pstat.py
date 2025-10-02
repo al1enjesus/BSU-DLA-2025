@@ -19,7 +19,8 @@ def read(path):
     try:
         with open(path, 'r', encoding='utf-8') as f:
             return f.read()
-    except Exception:
+    except (OSError, IOError, PermissionError) as e:
+        print(f"Cannot read {path}: {e}", file=sys.stderr)
         return None
 
 

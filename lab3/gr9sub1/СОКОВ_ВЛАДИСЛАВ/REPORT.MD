@@ -56,7 +56,6 @@ sudo strace -c -p $PID -t -o strace.out
 
 ```
 $ ./run.sh 27917
-./run.sh: line 1: #!/bin/bash: No such file or directory
 PID: 27917
 PPid: 18541
 Threads: 1
