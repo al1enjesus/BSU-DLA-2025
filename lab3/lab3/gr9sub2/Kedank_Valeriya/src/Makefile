@@ -1,5 +1,5 @@
 PYTHON=python3
-SCRIPT=proc_info.py
+SCRIPT=pstat.py
 
 run:
     $(PYTHON) $(SCRIPT) $$PID

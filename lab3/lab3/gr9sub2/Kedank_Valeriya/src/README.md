@@ -16,10 +16,10 @@
 
 ```bash
 cd src
-python3 proc_info.py <PID>
+python3 pstat.py <PID>
 ```
 
 ## Пример
 
-`python3 proc_info.py 1234`
+`python3 pstat.py 1234`
 
