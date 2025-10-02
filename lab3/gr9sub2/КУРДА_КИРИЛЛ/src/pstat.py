@@ -1,6 +1,17 @@
 import sys
 import os
+import re
 from pathlib import Path
+
+KB_TO_BYTES = 1024
+MB_TO_BYTES = 1024 * 1024
+GB_TO_BYTES = 1024 * 1024 * 1024
+
+STAT_STATE_IDX = 0
+STAT_PPID_IDX = 1
+STAT_UTIME_IDX = 11
+STAT_STIME_IDX = 12
+STAT_NUM_THREADS_IDX = 17
 
 def format_bytes(bytes_val, unit='B'):
     """Форматирование байтов в удобный вид"""
@@ -14,26 +25,39 @@ def format_bytes(bytes_val, unit='B'):
     return f"{bytes_val:.2f} Pi{unit}"
 
 def parse_proc_stat(pid):
-    """Парсинг /proc/<pid>/stat"""
+    """
+    Парсинг /proc/<pid>/stat с корректной обработкой имен процессов со скобками
+    
+    Формат: pid (comm) state ppid pgrp ...
+    Где comm может содержать скобки, например: (worker (1))
+    """
     try:
         with open(f'/proc/{pid}/stat', 'r') as f:
             stat = f.read().strip()
         
-        end_paren = stat.rfind(')')
-        fields = stat[end_paren + 2:].split()
+        first_paren = stat.find('(')
+        last_paren = stat.rfind(')')
         
-        state = fields[0]
-        ppid = int(fields[1])
-        utime = int(fields[11])
-        stime = int(fields[12])
-        num_threads = int(fields[17])
+        if first_paren == -1 or last_paren == -1 or first_paren >= last_paren:
+            end_paren = stat.rfind(')')
+            fields = stat[end_paren + 2:].split()
+        else:
+            comm = stat[first_paren+1:last_paren]
+            fields = stat[last_paren + 2:].split()
+        
+        state = fields[STAT_STATE_IDX]
+        ppid = int(fields[STAT_PPID_IDX])
+        utime = int(fields[STAT_UTIME_IDX])
+        stime = int(fields[STAT_STIME_IDX])
+        num_threads = int(fields[STAT_NUM_THREADS_IDX])
         
         return {
             'state': state,
             'ppid': ppid,
             'utime': utime,
             'stime': stime,
-            'num_threads': num_threads
+            'num_threads': num_threads,
+            'comm': comm if 'comm' in locals() else None
         }
     except (FileNotFoundError, IndexError, ValueError) as e:
         return None
@@ -51,15 +75,14 @@ def parse_proc_status(pid):
         result = {}
         
         if 'VmRSS' in status:
-            result['VmRSS'] = int(status['VmRSS'].split()[0]) * 1024
+            result['VmRSS'] = int(status['VmRSS'].split()[0]) * KB_TO_BYTES
         
         if 'RssAnon' in status:
-            result['RssAnon'] = int(status['RssAnon'].split()[0]) * 1024
+            result['RssAnon'] = int(status['RssAnon'].split()[0]) * KB_TO_BYTES
         
         if 'RssFile' in status:
-            result['RssFile'] = int(status['RssFile'].split()[0]) * 1024
+            result['RssFile'] = int(status['RssFile'].split()[0]) * KB_TO_BYTES
         
-        # Переключения контекста
         if 'voluntary_ctxt_switches' in status:
             result['voluntary_ctxt_switches'] = int(status['voluntary_ctxt_switches'])
         
@@ -96,6 +119,26 @@ def get_hz():
     except:
         return 100
 
+def validate_pid(pid_arg):
+    """
+    Валидация и преобразование PID аргумента
+    Возвращает целочисленный PID или вызывает исключение
+    """
+    if pid_arg == '$$':
+        return os.getppid()
+    elif pid_arg == 'self':
+        return os.getpid()
+    else:
+        try:
+            pid = int(pid_arg)
+            if pid < 0:
+                raise ValueError(f"PID должен быть положительным числом, получено: {pid}")
+            return pid
+        except ValueError as e:
+            print(f"Ошибка: Неверный формат PID '{pid_arg}'")
+            print("PID должен быть числом, '$$' для родительского shell, или 'self' для текущего процесса")
+            sys.exit(1)
+
 def main():
     if len(sys.argv) != 2:
         print(f"Использование: {sys.argv[0]} <pid>")
@@ -105,17 +148,7 @@ def main():
         print(f"  {sys.argv[0]} self   # Анализ самого себя")
         sys.exit(1)
     
-    pid_arg = sys.argv[1]
-    
-    if pid_arg == '$$':
-        pid = os.getppid()
-    elif pid_arg == 'self':
-        pid = os.getpid()
-    else:
-        try:
-            pid = int(pid_arg)
-        except ValueError:
-            pid = pid_arg
+    pid = validate_pid(sys.argv[1])
     
     if not os.path.exists(f'/proc/{pid}'):
         print(f"Ошибка: Процесс с PID {pid} не найден")
@@ -155,7 +188,7 @@ def main():
             'X': '(Dead)',
             'I': '(Idle)'
         }
-        print(states.get(stat['state'], ''))
+        print(states.get(stat['state'], '(Unknown)'))
         print(f"Threads: {stat['num_threads']}")
         
         hz = get_hz()
@@ -173,7 +206,7 @@ def main():
     if status:
         print("\n--- Память ---")
         if 'VmRSS' in status:
-            rss_mb = status['VmRSS'] / (1024 * 1024)
+            rss_mb = status['VmRSS'] / MB_TO_BYTES
             print(f"VmRSS: {format_bytes(status['VmRSS'])} ({rss_mb:.2f} MiB)")
         
         if 'RssAnon' in status:

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -5,6 +7,18 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 PSTAT_PATH=""
+TEMP_DIR="/tmp/lab3_$$"
+
+mkdir -p "$TEMP_DIR"
+
+cleanup() {
+    if [ -d "$TEMP_DIR" ]; then
+        rm -rf "$TEMP_DIR"
+    fi
+}
+
+trap cleanup EXIT
+trap 'echo -e "\n${YELLOW}Прервано пользователем${NC}"; cleanup; exit 130' INT
 
 print_header() {
     echo -e "\n${BLUE}===================================================${NC}"
@@ -55,14 +69,14 @@ demo_workload() {
     print_header "Демонстрация с различными нагрузками"
     
     echo -e "${YELLOW}1. Процесс с CPU нагрузкой${NC}"
-    cat << 'EOF' > /tmp/cpu_load.py
+    cat << 'EOF' > "$TEMP_DIR/cpu_load.py"
 import time
 start = time.time()
 while time.time() - start < 3:
     x = sum(i*i for i in range(10000))
 EOF
     
-    python3 /tmp/cpu_load.py &
+    python3 "$TEMP_DIR/cpu_load.py" &
     CPU_PID=$!
     sleep 1
     
@@ -71,14 +85,14 @@ EOF
     wait $CPU_PID 2>/dev/null || true
     
     echo -e "\n${YELLOW}2. Процесс с памятью${NC}"
-    cat << 'EOF' > /tmp/mem_load.py
+    cat << 'EOF' > "$TEMP_DIR/mem_load.py"
 import os, time
 data = bytearray(50 * 1024 * 1024)  # 50 MB
 print(f"Allocated 50 MB, PID: {os.getpid()}")
 time.sleep(3)
 EOF
     
-    python3 /tmp/mem_load.py &
+    python3 "$TEMP_DIR/mem_load.py" &
     MEM_PID=$!
     sleep 1
     
@@ -123,30 +137,38 @@ advanced_diagnostics() {
     
     echo -e "${YELLOW}Анализ системных вызовов с strace${NC}"
     
-    cat << 'EOF' > /tmp/io_test.py
+    cat << EOF > "$TEMP_DIR/io_test.py"
 import time, os
+temp_dir = "$TEMP_DIR"
 for i in range(100):
-    with open(f'/tmp/test_{i}.txt', 'w') as f:
+    filepath = os.path.join(temp_dir, f'test_{i}.txt')
+    with open(filepath, 'w') as f:
         f.write('test' * 100)
     time.sleep(0.01)
     if i % 10 == 0:
         print(f"Processed {i} files")
 EOF
     
-    python3 /tmp/io_test.py &
+    python3 "$TEMP_DIR/io_test.py" &
     IO_PID=$!
     sleep 0.5
     
     echo "Трассировка процесса с I/O (PID $IO_PID):"
     
-    timeout 2 strace -c -p $IO_PID 2>&1 | head -20 || true
+    # Более безопасный способ трассировки
+    strace -c -p $IO_PID 2>&1 &
+    TRACE_PID=$!
+    sleep 2
+    kill $TRACE_PID 2>/dev/null || true
     
-    # Убиваем процесс и чистим файлы
+    # Ждем завершения и убиваем тестовый процесс
     kill $IO_PID 2>/dev/null || true
     wait $IO_PID 2>/dev/null || true
-    rm -f /tmp/test_*.txt 2>/dev/null || true
     
-    # Проверяем perf
+    for i in {0..99}; do
+        rm -f "$TEMP_DIR/test_${i}.txt" 2>/dev/null || true
+    done
+    
     echo -e "\n${YELLOW}Проверка perf:${NC}"
     if command -v perf &> /dev/null; then
         echo -e "${GREEN}perf установлен${NC}"
@@ -165,7 +187,7 @@ check_environment() {
     if grep -qi microsoft /proc/version; then
         echo -e "${GREEN}✓${NC} Обнаружен WSL2"
     else
-        echo -e "${YELLOW}⚠${NC} Не WSL2, работаем в обычном Linux"
+        echo -e "${YELLOW}${NC} Не WSL2, работаем в обычном Linux"
     fi
     
     if command -v python3 &> /dev/null; then
@@ -260,6 +282,7 @@ main_menu() {
             7) run_all_demos ;;
             q|Q) 
                 echo -e "${GREEN}Выход...${NC}"
+                cleanup
                 exit 0 
                 ;;
             *) 
@@ -290,20 +313,21 @@ main() {
         demo_workload
         compare_tools
         advanced_diagnostics
+        cleanup
         exit 0
     elif [ "$1" == "--check" ]; then
         check_environment
+        cleanup
         exit 0
     elif [ "$1" == "--basic" ]; then
         setup_files
         demo_basic
+        cleanup
         exit 0
     fi
     
     setup_files
     main_menu
 }
-
-trap 'echo -e "\n${YELLOW}Прервано пользователем${NC}"; exit 130' INT
 
 main "$@"
