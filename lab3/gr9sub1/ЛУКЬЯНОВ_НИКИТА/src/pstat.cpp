@@ -84,10 +84,11 @@ public:
         ProcFileReader procFileReader;
         std::string strPid = std::to_string(mPid);
 
-        if(!(procFileReader.readKeyValue("/proc/" + strPid + "/status", table) &&
-            procFileReader.readKeyValue("/proc/" + strPid + "/io", table) &&
-            procFileReader.readStatFile("/proc/" + strPid + "/stat", table))
-        ) {
+        const std::string procPath = "/proc/" + strPid;
+
+        if (!procFileReader.readKeyValue(procPath + "/status", table) ||
+            !procFileReader.readKeyValue(procPath + "/io", table) ||
+            !procFileReader.readStatFile(procPath + "/stat", table)) {
             return {};
         }
 
@@ -161,7 +162,21 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    ProcStat proc_stat(std::stoi(argv[1]));
+    uint32_t pid{};
+
+    try {
+        pid = std::stoi(argv[1]);
+    }
+    catch(const std::exception& e) {
+        std::cout << "Pid is not a number!" << std::endl;
+    }
+
+    if(pid <= 0 || pid > UINT32_MAX) {
+        std::cout << "Pid is out of range!" << std::endl;
+        return 2;
+    }
+
+    ProcStat proc_stat(pid);
 
     for (const auto & data: proc_stat.getStatistics()) {
         std::cout << data.first << " " << data.second << std::endl;
