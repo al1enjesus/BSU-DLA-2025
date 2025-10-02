@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """pstat: краткая сводка по /proc/<pid>
 
 Читает: /proc/<pid>/stat, /proc/<pid>/status, /proc/<pid>/io, /proc/<pid>/smaps_rollup (если есть)

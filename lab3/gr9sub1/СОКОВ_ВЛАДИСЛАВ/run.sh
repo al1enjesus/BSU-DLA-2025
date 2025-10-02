@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 # Простая обёртка для запуска pstat
 if [ "$#" -lt 1 ]; then
   echo "Usage: $0 <pid>"
