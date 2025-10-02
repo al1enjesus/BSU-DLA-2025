@@ -48,7 +48,7 @@ alex@PCLinux:~$ ps -p 2952 -o pid,ppid,state,etimes,rss
 
 - Сравнение с top
 ```
-lex@PCLinux:~$ top -p 2952
+alex@PCLinux:~$ top -p 2952
 
 top - 23:12:32 up 13:48,  1 user,  load average: 1,04, 1,24, 1,14
 Задачи:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
