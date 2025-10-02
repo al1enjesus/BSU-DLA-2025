@@ -26,40 +26,104 @@ def format_bytes(bytes_val, unit='B'):
 
 def parse_proc_stat(pid):
     """
-    Парсинг /proc/<pid>/stat с корректной обработкой имен процессов со скобками
+    Надежный парсинг /proc/<pid>/stat
     
-    Формат: pid (comm) state ppid pgrp ...
-    Где comm может содержать скобки, например: (worker (1))
+    Формат файла: pid (comm) state ppid pgrp ...
+    где comm может содержать любые символы, включая скобки и пробелы
+    
+    Стратегия:
+    1. Читаем файл целиком
+    2. Находим PID в начале (до первого пробела)
+    3. Находим comm между первой '(' после PID и последней ')' в строке
+    4. Все после последней ')' - это поля статистики
     """
     try:
         with open(f'/proc/{pid}/stat', 'r') as f:
-            stat = f.read().strip()
+            stat_line = f.read().strip()
         
-        first_paren = stat.find('(')
-        last_paren = stat.rfind(')')
+        first_space = stat_line.find(' ')
+        if first_space == -1:
+            return None
+            
+        pid_str = stat_line[:first_space]
         
-        if first_paren == -1 or last_paren == -1 or first_paren >= last_paren:
-            end_paren = stat.rfind(')')
-            fields = stat[end_paren + 2:].split()
-        else:
-            comm = stat[first_paren+1:last_paren]
-            fields = stat[last_paren + 2:].split()
+        if not stat_line[first_space:].lstrip().startswith('('):
+            return None
         
-        state = fields[STAT_STATE_IDX]
-        ppid = int(fields[STAT_PPID_IDX])
-        utime = int(fields[STAT_UTIME_IDX])
-        stime = int(fields[STAT_STIME_IDX])
-        num_threads = int(fields[STAT_NUM_THREADS_IDX])
+        comm_start = stat_line.find('(', first_space)
+        if comm_start == -1:
+            return None
+            
+        comm_end = stat_line.rfind(')')
+        if comm_end == -1 or comm_end <= comm_start:
+            return None
+            
+        comm = stat_line[comm_start + 1:comm_end]
+        
+        fields_str = stat_line[comm_end + 1:].strip()
+        if not fields_str:
+            return None
+            
+        fields = fields_str.split()
+        
+        required_fields = max(STAT_STATE_IDX, STAT_PPID_IDX, 
+                              STAT_UTIME_IDX, STAT_STIME_IDX, 
+                              STAT_NUM_THREADS_IDX) + 1
+        
+        if len(fields) < required_fields:
+            # Недостаточно полей для парсинга
+            return None
+        
+        try:
+            result = {
+                'state': fields[STAT_STATE_IDX],
+                'ppid': int(fields[STAT_PPID_IDX]),
+                'utime': int(fields[STAT_UTIME_IDX]),
+                'stime': int(fields[STAT_STIME_IDX]),
+                'num_threads': int(fields[STAT_NUM_THREADS_IDX]),
+                'comm': comm
+            }
+            return result
+        except (ValueError, IndexError):
+            # Не удалось преобразовать поля в нужные типы
+            return None
+            
+    except (FileNotFoundError, IOError, OSError) as e:
+        return None
+
+def parse_proc_stat_alternative(pid):
+    """
+    Альтернативный метод парсинга через регулярное выражение
+    Используется как резервный вариант
+    """
+    try:
+        with open(f'/proc/{pid}/stat', 'r') as f:
+            stat_line = f.read().strip()
+        
+        pattern = r'^(\d+)\s+\((.*)\)\s+(.+)$'
+        match = re.match(pattern, stat_line)
+        
+        if not match:
+            return None
+        
+        pid_from_stat = match.group(1)
+        comm = match.group(2)
+        fields_str = match.group(3)
+        
+        fields = fields_str.split()
+        
+        if len(fields) < 18:
+            return None
         
         return {
-            'state': state,
-            'ppid': ppid,
-            'utime': utime,
-            'stime': stime,
-            'num_threads': num_threads,
-            'comm': comm if 'comm' in locals() else None
+            'state': fields[0],
+            'ppid': int(fields[1]),
+            'utime': int(fields[11]),
+            'stime': int(fields[12]),
+            'num_threads': int(fields[17]),
+            'comm': comm
         }
-    except (FileNotFoundError, IndexError, ValueError) as e:
+    except Exception:
         return None
 
 def parse_proc_status(pid):
@@ -174,6 +238,10 @@ def main():
         pass
     
     stat = parse_proc_stat(pid)
+    
+    if stat is None:
+        stat = parse_proc_stat_alternative(pid)
+    
     if stat:
         print("\n--- Базовая информация ---")
         print(f"Parent PID: {stat['ppid']}")
@@ -191,6 +259,7 @@ def main():
         print(states.get(stat['state'], '(Unknown)'))
         print(f"Threads: {stat['num_threads']}")
         
+        # Вычисление CPU времени
         hz = get_hz()
         cpu_time = (stat['utime'] + stat['stime']) / hz
         utime_sec = stat['utime'] / hz
