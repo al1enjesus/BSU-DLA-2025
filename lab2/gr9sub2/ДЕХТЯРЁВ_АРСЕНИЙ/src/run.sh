@@ -13,7 +13,7 @@ start_supervisor() {
     if [[ ! -f "$SCRIPT_PATH/$CONFIG_FILE" ]]; then
         echo "Creating default config..."
         cat > "$SCRIPT_PATH/$CONFIG_FILE" << EOF
-WORKERS=3
+WORKERS=4
 MODE_HEAVY_WORK_US=9000
 MODE_HEAVY_SLEEP_US=1000
 MODE_LIGHT_WORK_US=2000
@@ -38,7 +38,17 @@ stop_supervisor() {
 
 show_processes() {
     echo "=== Current Processes ==="
-    ps aux | grep -E "(supervisor|worker)" | grep -v grep || true
+    ps -eo pid,ni,psr,pcpu,comm | grep -E "(supervisor|worker)" | grep -v grep || true
+}
+
+show_detailed_stats() {
+    echo "=== Detailed Worker Statistics ==="
+    if [[ -n "$SUPERVISOR_PID" ]] && kill -0 "$SUPERVISOR_PID" 2>/dev/null; then
+        kill -USR1 "$SUPERVISOR_PID"
+        sleep 1
+    fi
+    echo "=== Process details ==="
+    ps -eo pid,ni,psr,pcpu,comm | grep -E "(supervisor|worker)" | grep -v grep || true
 }
 
 # Демонстрационные сценарии
@@ -56,11 +66,11 @@ demo_reload() {
     echo "### Demo: Config Reload ###"
     start_supervisor
     sleep 3
-    echo "Current workers: 3"
+    echo "Current workers: 4"
     show_processes
     
-    echo "Changing config to 4 workers..."
-    sed -i 's/workers=3/workers=4/' "$SCRIPT_PATH/$CONFIG_FILE"
+    echo "Changing config to 6 workers..."
+    sed -i 's/WORKERS=4/WORKERS=6/' "$SCRIPT_PATH/$CONFIG_FILE"
     echo "Sending SIGHUP for reload..."
     kill -HUP "$SUPERVISOR_PID"
     sleep 3
@@ -115,15 +125,135 @@ demo_restart_policy() {
     stop_supervisor
 }
 
-trap 'pkill -P $$' EXIT
+demo_nice_effect() {
+    echo "### Demo: Nice Value Effect ###"
+    start_supervisor
+    sleep 2
+    
+    echo "=== Initial worker scheduling setup ==="
+    show_detailed_stats
+    
+    echo "=== Monitoring CPU distribution for 10 seconds ==="
+    echo "Workers with nice=10 should get less CPU time than workers with nice=0"
+    echo "Starting pidstat monitoring..."
+    
+    # Собираем PID всех worker процессов
+    WORKER_PIDS=$(ps aux | grep "worker" | grep -v grep | awk '{print $2}' | tr '\n' ',' | sed 's/,$//')
+    
+    if [[ -n "$WORKER_PIDS" ]]; then
+        # Запускаем pidstat в фоне
+        pidstat -u -p "$WORKER_PIDS" 1 10 > pidstat_nice.log &
+        PIDSTAT_PID=$!
+        
+        echo "pidstat running with PID: $PIDSTAT_PID, logging to pidstat_nice.log"
+        sleep 11
+        
+        # Показываем результаты
+        echo "=== pidstat Results ==="
+        grep -A 20 "Average:" pidstat_nice.log || cat pidstat_nice.log
+        
+        echo "=== Analysis ==="
+        echo "Workers with nice=10 (first half): expected ~20-25% CPU"
+        echo "Workers with nice=0 (second half): expected ~80-90% CPU"
+    else
+        echo "No worker PIDs found for monitoring"
+    fi
+    
+    stop_supervisor
+}
+
+demo_affinity_effect() {
+    echo "### Demo: CPU Affinity Effect ###"
+    start_supervisor
+    sleep 2
+    
+    echo "=== Worker CPU affinity setup ==="
+    show_detailed_stats
+    
+    echo "=== Monitoring CPU core distribution ==="
+    echo "Workers should be pinned to specific CPU cores:"
+    echo "- First quarter: CPU 0"
+    echo "- Second quarter: CPU 1" 
+    echo "- Third quarter: CPU 0"
+    echo "- Fourth quarter: CPU 1"
+    
+    # Мониторим распределение по ядрам
+    echo "=== Running core distribution monitoring ==="
+    for i in {1..5}; do
+        echo "--- Sample $i ---"
+        ps -eo pid,psr,comm | grep worker | grep -v grep | sort -n
+        sleep 2
+    done
+    
+    echo "=== CPU affinity verification ==="
+    WORKER_PIDS=$(ps aux | grep "worker" | grep -v grep | awk '{print $2}')
+    for pid in $WORKER_PIDS; do
+        if command -v taskset > /dev/null 2>&1; then
+            affinity=$(taskset -p $pid 2>/dev/null | awk '{print $6}' || echo "N/A")
+            echo "PID $pid: CPU affinity mask = $affinity"
+        else
+            psr=$(ps -o psr -p $pid 2>/dev/null | tail -1 | tr -d ' ')
+            echo "PID $pid: Running on CPU $psr"
+        fi
+    done
+    
+    stop_supervisor
+}
+
+demo_combined_scheduling() {
+    echo "### Demo: Combined Nice + Affinity ###"
+    start_supervisor
+    sleep 2
+    
+    echo "=== Complete scheduling setup ==="
+    show_detailed_stats
+    
+    echo "=== Detailed process information ==="
+    echo "PID | NI | PSR | %CPU | COMMAND"
+    ps -eo pid,ni,psr,pcpu,comm | grep -E "(supervisor|worker)" | grep -v grep | sort -k2,2n -k3,3n
+    
+    echo ""
+    echo "=== Legend ==="
+    echo "NI (Nice): 10 = low priority, 0 = normal priority"
+    echo "PSR (Processor): CPU core the process is running on"
+    echo "%CPU: CPU usage percentage"
+    
+    echo ""
+    echo "=== Expected distribution ==="
+    echo "Workers 0-1: nice=10, CPU 0-1"
+    echo "Workers 2-3: nice=0, CPU 0-1"
+    
+    # Запускаем мониторинг производительности
+    echo ""
+    echo "=== Starting performance monitoring ==="
+    WORKER_PIDS=$(ps aux | grep "worker" | grep -v grep | awk '{print $2}' | tr '\n' ',' | sed 's/,$//')
+    
+    if [[ -n "$WORKER_PIDS" ]]; then
+        timeout 10s pidstat -u -p "$WORKER_PIDS" 1 > pidstat_combined.log 2>&1 &
+        echo "Monitoring for 10 seconds..."
+        sleep 11
+        
+        echo "=== Performance Results ==="
+        if [[ -f "pidstat_combined.log" ]]; then
+            grep -E "(CPU|worker|Average|^[0-9])" pidstat_combined.log | head -30
+        fi
+    fi
+    
+    stop_supervisor
+}
+
+trap 'pkill -P $$; rm -f pidstat_nice.log pidstat_combined.log' EXIT
 
 if [ $# -lt 1 ];then
-    echo "Usage: $0 {shutdown|reload|mode|restart|all}"
-    echo "  shutdown - Demo graceful shutdown"
-    echo "  reload   - Demo config reload" 
-    echo "  mode     - Demo mode switching"
-    echo "  restart  - Demo restart policy"
-    echo "  all      - Run all demos"
+    echo "Usage: $0 {shutdown|reload|mode|restart|nice|affinity|scheduling|all}"
+    echo "  shutdown   - Demo graceful shutdown"
+    echo "  reload     - Demo config reload" 
+    echo "  mode       - Demo mode switching"
+    echo "  restart    - Demo restart policy"
+    echo "  nice       - Demo nice value effect"
+    echo "  affinity   - Demo CPU affinity effect"
+    echo "  scheduling - Demo combined nice + affinity"
+    echo "  all        - Run all demos"
     exit 1
 fi
 
@@ -141,6 +271,15 @@ case "${1:-all}" in
     restart)
         demo_restart_policy
         ;;
+    nice)
+        demo_nice_effect
+        ;;
+    affinity)
+        demo_affinity_effect
+        ;;
+    scheduling)
+        demo_combined_scheduling
+        ;;
     all)
         echo "=== Running All Demos ==="
         demo_graceful_shutdown
@@ -150,16 +289,27 @@ case "${1:-all}" in
         demo_mode_switch
         echo
         demo_restart_policy
+        echo
+        demo_nice_effect
+        echo
+        demo_affinity_effect
+        echo
+        demo_combined_scheduling
         ;;
     *)
-        echo "Usage: $0 {shutdown|reload|mode|restart|all}"
-        echo "  shutdown - Demo graceful shutdown"
-        echo "  reload   - Demo config reload" 
-        echo "  mode     - Demo mode switching"
-        echo "  restart  - Demo restart policy"
-        echo "  all      - Run all demos"
+        echo "Usage: $0 {shutdown|reload|mode|restart|nice|affinity|scheduling|all}"
+        echo "  shutdown   - Demo graceful shutdown"
+        echo "  reload     - Demo config reload" 
+        echo "  mode       - Demo mode switching"
+        echo "  restart    - Demo restart policy"
+        echo "  nice       - Demo nice value effect"
+        echo "  affinity   - Demo CPU affinity effect"
+        echo "  scheduling - Demo combined nice + affinity"
+        echo "  all        - Run all demos"
         exit 1
         ;;
 esac
 
 echo "=== Demo Completed ==="
+
+rm -f pidstat_nice.log pidstat_combined.log
