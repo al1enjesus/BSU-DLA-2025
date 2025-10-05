@@ -10,9 +10,20 @@ def read_file(path):
         return f"[Ошибка чтения {path}: {e}]"
 
 def parse_stat(stat_content):
-    """Разбор /proc/[pid]/stat — возвращает словарь с основными полями."""
+    """Разбор /proc/[pid]/stat — возвращает словарь с основными полями.
+    Индексы соответствуют документации proc(5):
+      pid    (0)
+      comm   (1)
+      state  (2)
+      ppid   (3)
+      utime  (13)
+      stime  (14)
+      rss    (23)
+    """
     try:
         parts = stat_content.split()
+        if len(parts) < 24:  # проверка на достаточную длину
+            raise ValueError("Недостаточно полей в stat")
         return {
             "pid": parts[0],
             "comm": parts[1].strip("()"),
@@ -22,13 +33,17 @@ def parse_stat(stat_content):
             "stime": parts[14],
             "rss": parts[23],
         }
-    except Exception:
+    except Exception as e:
+        print(f"[Ошибка разбора stat]: {e}")
         return {}
 
 def main():
-    # Определяем PID
+    # --- Валидация PID ---
     if len(sys.argv) > 1:
         pid = sys.argv[1]
+        if not pid.isdigit():
+            print(f"Ошибка: PID должен быть числом, получено '{pid}'")
+            sys.exit(1)
     else:
         pid = str(os.getpid())
 

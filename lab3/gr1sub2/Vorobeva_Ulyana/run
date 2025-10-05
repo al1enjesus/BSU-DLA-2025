@@ -1,44 +1,44 @@
 рещультат выполнения без переданного PID
-Running pstat for PID 10272
+RRunning pstat for PID 12695
 ============================
-pstat — Анализ процесса 10272
+pstat — Анализ процесса 12695
 ============================
-PID: 10272
-Команда: bash
+PID: 12695
+Команда: run.sh
 Состояние: S
 PPID: 9650
 utime: 0
 stime: 0
-RSS (страницы): 835
+RSS (страницы): 945
 
 --- /proc/[pid]/status ---
-Name:   bash
+Name:   run.sh
 State:  S (sleeping)
-Pid:    10272
+Pid:    12695
 PPid:   9650
 TracerPid:      0
 Uid:    1000    1000    1000    1000
 VmSize:     7008 kB
-VmRSS:      3340 kB
+VmRSS:      3780 kB
 
 --- /proc/[pid]/cmdline ---
-bash ./run.sh 
+/bin/bash ./run.sh 
 
-Завершено успешно 
+Завершено успешно
 
 --- ps output ---
     PID    PPID S  UTIME STIME   RSS NLWP COMMAND
-  10272    9650 S      - 15:18  3588    1 bash
+  12695    9650 S      - 16:32  3868    1 run.sh
 
 --- top (one snapshot) ---
-top - 15:18:11 up  1:22,  1 user,  load average: 0.76, 0.45, 0.41
+top - 16:32:32 up  2:36,  1 user,  load average: 1.14, 0.84, 0.58
 Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  5.0 us,  1.7 sy,  0.0 ni, 93.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem :  15773.2 total,   5809.7 free,   3982.8 used,   5980.7 buff/cache
-MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.  10477.6 avail Mem 
+%Cpu(s):  4.2 us,  2.5 sy,  0.0 ni, 93.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  15773.2 total,   5014.6 free,   4677.4 used,   6081.1 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   9776.0 avail Mem 
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-  10272 ullecses  20   0    7008   3712   3188 S   0.0   0.0   0:00.00 bash
+  12695 ullecses  20   0    7008   3868   3340 S   0.0   0.0   0:00.00 run.sh
 
 --- strace -c (short 2s attach; may require root) ---
 Skipping strace on current shell to avoid noise
@@ -47,7 +47,7 @@ Skipping strace on current shell to avoid noise
 результат выполнения с переданным PID 
 
 ullecses@ullecses-IdeaPad-Gaming-3-15IHU6:~/BSU-DLA-2025/lab3/gr1sub2/Vorobeva_Ulyana$ ./run.sh 1
-Running pstat for PID 1
+RRunning pstat for PID 1
 ============================
 pstat — Анализ процесса 1
 ============================
@@ -56,7 +56,7 @@ PID: 1
 Состояние: S
 PPID: 0
 utime: 64
-stime: 67
+stime: 72
 RSS (страницы): 3273
 
 --- /proc/[pid]/status ---
@@ -64,7 +64,7 @@ Name:   systemd
 State:  S (sleeping)
 Pid:    1
 PPid:   0
-TracerPid:      0
+TracerPid:      10989
 Uid:    0       0       0       0
 VmSize:   169752 kB
 VmRSS:     13092 kB
@@ -79,13 +79,13 @@ VmRSS:     13092 kB
       1       0 S      - 13:55 13092    1 systemd
 
 --- top (one snapshot) ---
-top - 15:51:05 up  1:55,  1 user,  load average: 0.47, 0.26, 0.29
+top - 16:33:53 up  2:37,  1 user,  load average: 1.13, 0.93, 0.63
 Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  5.8 us,  1.7 sy,  0.0 ni, 92.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem :  15773.2 total,   5685.7 free,   4146.6 used,   5940.9 buff/cache
-MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.  10405.3 avail Mem 
+%Cpu(s):  0.8 us,  0.8 sy,  0.0 ni, 98.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  15773.2 total,   5023.1 free,   4717.1 used,   6033.0 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   9785.1 avail Mem 
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-      1 root      20   0  169752  13092   8288 S   0.0   0.1   0:01.31 systemd
+      1 root      20   0  169752  13092   8288 S   0.0   0.1   0:01.36 systemd
 
 --- strace -c (short 2s attach; may require root) ---
