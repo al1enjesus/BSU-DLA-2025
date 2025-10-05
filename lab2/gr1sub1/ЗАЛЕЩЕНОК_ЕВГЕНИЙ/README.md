@@ -99,6 +99,7 @@
 
 **До применения `nice` (равный приоритет):**
 
+```
 Linux 6.14.0-33-generic (zhenklchhhPC) 	10/05/2025 	_x86_64_	(12 CPU)
 
 05:02:48 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
@@ -124,9 +125,9 @@ Linux 6.14.0-33-generic (zhenklchhhPC) 	10/05/2025 	_x86_64_	(12 CPU)
 Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
 Average:     1000      9622   50.00    0.00    0.00   50.00   50.00     -  bash
 Average:     1000      9623   50.00    0.00    0.00   50.00   50.00     -  bash
-
+```
 **После применения `nice = +10` ко второму процессу:**
-
+```
 Linux 6.14.0-33-generic (zhenklchhhPC) 	10/05/2025 	_x86_64_	(12 CPU)
 
 05:03:20 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
@@ -152,7 +153,7 @@ Linux 6.14.0-33-generic (zhenklchhhPC) 	10/05/2025 	_x86_64_	(12 CPU)
 Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
 Average:     1000      9636   99.80    0.00    0.00    0.00   99.80     -  bash
 Average:     1000      9637    0.00    0.00    0.00    0.00    0.00     -  run.sh
-
+```
 ### Выводы по Части B
 Из результатов `pidstat` видно, что при равном приоритете оба процесса получают примерно одинаковое количество процессорного времени (~50% %CPU). После установки `nice = +10` для второго процесса его доля CPU значительно падает, в то время как процесс с `nice = 0` получает почти всё доступное время. Это наглядно демонстрирует, как планировщик CFS (Completely Fair Scheduler) в Linux распределяет процессорное время пропорционально приоритетам (весам) процессов.
 
