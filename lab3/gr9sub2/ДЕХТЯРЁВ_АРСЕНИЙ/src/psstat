@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+
+usage() {
+    echo "Usage:"
+    echo "  psstat <pid>"
+}
+
+
+check_args() {
+    if [ $# -ne 1 ]; then
+        usage
+        exit 1
+    fi
+
+    PID=$1
+
+    if [[ !($PID =~ ^[0-9]+$) ]]; then
+        usage
+        exit 1
+    fi
+
+    if [ ! -d "/proc/$PID" ]; then
+        echo "Error: Process with PID $PID does not exist"
+        exit 1
+    fi
+}
+
+
+parse_stat() {
+    local stat_info=$(cat /proc/$PID/stat)
+    name=$(echo $stat_info | cut -d ' ' -f 2 | tr -d '()')
+    state=$(echo $stat_info | cut -d ' ' -f 3)
+    ppid=$(echo $stat_info | cut -d ' ' -f 4)
+    utime=$(echo $stat_info | cut -d ' ' -f 14)
+    stime=$(echo $stat_info | cut -d ' ' -f 15)
+    num_threads=$(echo $stat_info | cut -d ' ' -f 20)
+}
+
+
+parse_status() {
+    voluntary_ctxt_switches=$(cat /proc/$PID/status | grep -w 'voluntary_ctxt_switches' | cut -f 2)
+    nonvoluntary_ctxt_switches=$(cat /proc/$PID/status | grep -w 'nonvoluntary_ctxt_switches' | cut -f 2)
+    vm_rss=$(cat /proc/$PID/status | grep -w 'VmRSS' | cut -f 2 | tr -d -c [:digit:])
+}
+
+show_info() {
+    echo -e "Name:\t  $name"
+    echo -e "Status:\t  $state"
+    echo -e "PPid:\t  $ppid"
+    echo -e "utime:\t  $utime"
+    echo -e "stime:\t  $stime"
+    echo -e "Threads:  $num_threads"
+    echo -e "voluntary_ctxt_switches:  $voluntary_ctxt_switches"
+    echo -e "nonvoluntary_ctxt_switches:  $nonvoluntary_ctxt_switches"
+    echo -e "VmRSS:  $vm_rss"
+}
+
+main() {
+    check_args $@
+    
+    parse_stat
+    parse_status
+
+    # cat /proc/$PID/io
+    # cat /proc/$PID/smaps_rollup
+
+    show_info
+
+}
+
+
+main $@
