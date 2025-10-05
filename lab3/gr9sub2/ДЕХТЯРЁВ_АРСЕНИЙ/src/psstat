@@ -69,10 +69,9 @@ parse_io() {
 
 
 calculate_cpu_time() {
-    # Get system HZ (clock ticks per second)
     local HZ=$(getconf CLK_TCK 2>/dev/null)
     if [ -z "$HZ" ] || [ "$HZ" -eq 0 ]; then
-        HZ=100  # Default fallback
+        HZ=100 
     fi
     
     cpu_time_sec=$(echo "scale=2; ($utime + $stime) / $HZ" | bc 2>/dev/null)
