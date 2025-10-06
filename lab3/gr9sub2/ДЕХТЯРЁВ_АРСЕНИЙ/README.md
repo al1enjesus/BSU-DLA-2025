@@ -29,9 +29,9 @@ chmod +x ./src/pstat
 
 При желании можно скапировать в /bin/bash
 ```bash
-cp src/pstat -t /bin/bash
+cp src/pstat -t /usr/local/bin/
 ```
-Или временно доабвить в $PATH (запускать находясь в этой директории)
+Или временно добавить в $PATH (запускать находясь в этой директории)
 ```bash
 export PATH=$PATH:$PWD/src
 ```

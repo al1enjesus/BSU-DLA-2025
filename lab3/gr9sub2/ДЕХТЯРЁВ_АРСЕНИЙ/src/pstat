@@ -111,7 +111,8 @@ calculate_cpu_time() {
                 HZ=100 
             fi
         else
-            HZ=100
+            cpu_time_sec="N/A"
+            return
         fi 
     fi
     
