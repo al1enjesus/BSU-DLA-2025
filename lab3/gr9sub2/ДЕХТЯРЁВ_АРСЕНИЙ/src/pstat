@@ -11,7 +11,7 @@ check_environment() {
 
 usage() {
     echo "Usage:"
-    echo "  psstat <pid>"
+    echo "  pstat <pid>"
 }
 
 
