@@ -1,0 +1,66 @@
+=== Memory Metrics Collection ===
+Linux 5.15.0-139-generic (Ubuntu2) 	10/06/2025 	_x86_64_	(1 CPU)
+
+01:27:02 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:03 PM  1000      7201      0.00      0.00    2500     700   0.03  supervisor
+01:27:03 PM  1000      7203      0.00      0.00    2496     572   0.03  worker
+01:27:03 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:03 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+01:27:03 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:04 PM  1000      7201      0.00      0.00    2500     700   0.03  supervisor
+01:27:04 PM  1000      7203      0.00      0.00    2496     572   0.03  worker
+01:27:04 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:04 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+01:27:04 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:05 PM  1000      7201      1.00      0.00    2500     700   0.03  supervisor
+01:27:05 PM  1000      7203      0.00      0.00    2496     572   0.03  worker
+01:27:05 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:05 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+01:27:05 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:06 PM  1000      7201      0.00      0.00    2500     700   0.03  supervisor
+01:27:06 PM  1000      7203      0.00      0.00    2496     572   0.03  worker
+01:27:06 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:06 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+01:27:06 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:07 PM  1000      7201      0.00      0.00    2500     700   0.03  supervisor
+01:27:07 PM  1000      7203      0.00      0.00    2496     572   0.03  worker
+01:27:07 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:07 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+01:27:07 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:08 PM  1000      7201      0.00      0.00    2500     700   0.03  supervisor
+01:27:08 PM  1000      7203      0.00      0.00    2496     572   0.03  worker
+01:27:08 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:08 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+01:27:08 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:09 PM  1000      7201      0.00      0.00    2500     700   0.03  supervisor
+01:27:09 PM  1000      7203      0.00      0.00    2496     572   0.03  worker
+01:27:09 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:09 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+01:27:09 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:10 PM  1000      7201      0.00      0.00    2500     700   0.03  supervisor
+01:27:10 PM  1000      7203      0.00      0.00    2496     572   0.03  worker
+01:27:10 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:10 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+01:27:10 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:11 PM  1000      7201      2.00      0.00    2500     700   0.03  supervisor
+01:27:11 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:11 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+01:27:11 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:12 PM  1000      7201      0.00      0.00    2500     700   0.03  supervisor
+01:27:12 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:12 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+Average:      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+Average:     1000      7201      0.30      0.00    2500     700   0.03  supervisor
+Average:     1000      7203      0.00      0.00    2496     572   0.03  worker
+Average:     1000      7204      0.00      0.00    2496     576   0.03  worker
+Average:     1000      7205      0.00      0.00    2496     580   0.03  worker

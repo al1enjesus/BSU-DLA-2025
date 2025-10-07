@@ -1,0 +1,66 @@
+=== CPU Metrics Collection ===
+Linux 5.15.0-139-generic (Ubuntu2) 	10/06/2025 	_x86_64_	(1 CPU)
+
+01:27:02 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:03 PM  1000      7201    0.00    0.00    0.00    2.00    0.00     0  supervisor
+01:27:03 PM  1000      7203    5.00   14.00    0.00   83.00   19.00     0  worker
+01:27:03 PM  1000      7204    1.00    2.00    0.00   99.00    3.00     0  worker
+01:27:03 PM  1000      7205    3.00   16.00    0.00   80.00   19.00     0  worker
+
+01:27:03 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:04 PM  1000      7201    0.00    0.00    0.00    4.95    0.00     0  supervisor
+01:27:04 PM  1000      7203    3.96   17.82    0.00   77.23   21.78     0  worker
+01:27:04 PM  1000      7204    0.00    1.98    0.00  100.99    1.98     0  worker
+01:27:04 PM  1000      7205    2.97   19.80    0.00   77.23   22.77     0  worker
+
+01:27:04 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:05 PM  1000      7201    0.00    0.00    0.00    3.00    0.00     0  supervisor
+01:27:05 PM  1000      7203    5.00   24.00    0.00   62.00   29.00     0  worker
+01:27:05 PM  1000      7204    1.00    2.00    0.00   79.00    3.00     0  worker
+01:27:05 PM  1000      7205    5.00   23.00    0.00   62.00   28.00     0  worker
+
+01:27:05 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:06 PM  1000      7201    0.00    0.00    0.00    2.97    0.00     0  supervisor
+01:27:06 PM  1000      7203    5.94   23.76    0.00   54.46   29.70     0  worker
+01:27:06 PM  1000      7204    0.99    4.95    0.00  110.89    5.94     0  worker
+01:27:06 PM  1000      7205    6.93   25.74    0.00   56.44   32.67     0  worker
+
+01:27:06 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:07 PM  1000      7201    0.00    0.00    0.00    5.00    0.00     0  supervisor
+01:27:07 PM  1000      7203    2.00    8.00    0.00   15.00   10.00     0  worker
+01:27:07 PM  1000      7204    3.00   19.00    0.00   81.00   22.00     0  worker
+01:27:07 PM  1000      7205    3.00   13.00    0.00   26.00   16.00     0  worker
+
+01:27:07 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:08 PM  1000      7201    0.00    0.00    0.00    3.96    0.00     0  supervisor
+01:27:08 PM  1000      7203    3.96   13.86    0.00   24.75   17.82     0  worker
+01:27:08 PM  1000      7204    3.96   13.86    0.00   52.48   17.82     0  worker
+01:27:08 PM  1000      7205    2.97   13.86    0.00   28.71   16.83     0  worker
+
+01:27:08 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:09 PM  1000      7201    0.00    0.00    0.00    1.00    0.00     0  supervisor
+01:27:09 PM  1000      7203    8.00   33.00    0.00   57.00   41.00     0  worker
+01:27:09 PM  1000      7204    0.00    2.00    0.00   51.00    2.00     0  worker
+01:27:09 PM  1000      7205    9.00   34.00    0.00   59.00   43.00     0  worker
+
+01:27:09 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:10 PM  1000      7201    0.00    0.00    0.00    1.00    0.00     0  supervisor
+01:27:10 PM  1000      7203    4.00   37.00    0.00   50.00   41.00     0  worker
+01:27:10 PM  1000      7204    4.00   11.00    0.00   80.00   15.00     0  worker
+01:27:10 PM  1000      7205    7.00   33.00    0.00   48.00   40.00     0  worker
+
+01:27:10 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:11 PM  1000      7201    0.00    0.00    0.00    1.00    0.00     0  supervisor
+01:27:11 PM  1000      7204    2.00   12.00    0.00  104.00   14.00     0  worker
+01:27:11 PM  1000      7205    6.00   33.00    0.00   52.00   39.00     0  worker
+
+01:27:11 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:12 PM  1000      7201    0.00    0.00    0.00    2.00    0.00     0  supervisor
+01:27:12 PM  1000      7204    1.00    3.00    0.00   80.00    4.00     0  worker
+01:27:12 PM  1000      7205    6.00   29.00    0.00   54.00   35.00     0  worker
+
+Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+Average:     1000      7201    0.00    0.00    0.00    2.69    0.00     -  supervisor
+Average:     1000      7203    3.79   17.15    0.00   42.37   20.94     -  worker
+Average:     1000      7204    1.69    7.18    0.00   83.85    8.87     -  worker
+Average:     1000      7205    5.18   24.03    0.00   54.34   29.21     -  worker
