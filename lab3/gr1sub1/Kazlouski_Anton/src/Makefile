@@ -1,6 +1,6 @@
-CC = clang
-CFLAGS = -Wall -Wextra -O2
-TARGET = pstat
+CC=gcc
+CFLAGS=-Wall -Wextra -O2
+TARGET=pstat
 
 all: $(TARGET)
 

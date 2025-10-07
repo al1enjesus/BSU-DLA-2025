@@ -1,23 +1,16 @@
 #!/bin/bash
-# Демонстрация запуска утилиты pstat и сравнения с системными инструментами
 PID=$1
-
 if [ -z "$PID" ]; then
-  echo "Usage: ./run.sh <pid>"
+  echo "Usage: $0 <pid>"
   exit 1
 fi
 
-echo "Running ./pstat $PID"
 ./src/pstat $PID
-
 echo
-echo "=== ps output ==="
-ps -p $PID -o pid,ppid,thcount,state,time,rss,vsz,comm
-
+ps -p $PID -o pid,ppid,state,time,rss,vsz,comm
 echo
-echo "=== vmmap summary ==="
-vmmap -summary $PID | head -n 30
-
+top -p $PID -b -n 1 | head -n 20
 echo
-echo "=== top snapshot ==="
-top -pid $PID -stats pid,command,cpu,time,rsize | head -n 10
+cat /proc/$PID/status | grep -E 'Threads|voluntary_ctxt_switches|nonvoluntary_ctxt_switches'
+echo
+cat /proc/$PID/io
