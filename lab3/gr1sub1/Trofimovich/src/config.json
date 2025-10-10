@@ -1,0 +1,16 @@
+{
+  "fields": [
+    {"name": "PPid", "unit": "raw"},
+    {"name": "State", "unit": "raw"},
+    {"name": "Threads", "unit": "raw"},
+    {"name": "VmRSS", "unit": "MiB"},
+    {"name": "RssAnon", "unit": "KiB"},
+    {"name": "RssFile", "unit": "KiB"},
+    {"name": "voluntary_ctxt_switches", "unit": "raw"},
+    {"name": "nonvoluntary_ctxt_switches", "unit": "raw"},
+    {"name": "utime", "unit": "ticks"},
+    {"name": "stime", "unit": "ticks"},
+    {"name": "read_bytes", "unit": "raw"},
+    {"name": "write_bytes", "unit": "raw"}
+  ]
+}
