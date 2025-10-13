@@ -2,53 +2,66 @@ CC=gcc
 CFLAGS=-fPIC -Wall -Werror
 LDFLAGS_SPY=-shared -ldl
 
+# Directories
+BIN_DIR=bin
+LIB_DIR=lib
+LOG_DIR=logs
+
+# Main targets
+MYTRACER=$(BIN_DIR)/mytracer
+BENCHMARK=$(BIN_DIR)/benchmark
+BENCHMARK_OPEN=$(BIN_DIR)/benchmark_open
+HELLO_STATIC=$(BIN_DIR)/hello_static
+SYSCALL_SPY_LIB=$(LIB_DIR)/libsyscall_spy.so
+
+# All executables and libraries to be built by 'all'
+BUILD_TARGETS=$(MYTRACER) $(BENCHMARK) $(HELLO_STATIC) $(SYSCALL_SPY_LIB)
+
 .PHONY: all clean run_ls run_cat run_grep run_benchmark run_static_test perf_benchmark
 
-all: libsyscall_spy.so hello_static benchmark mytracer
+all: $(BUILD_TARGETS)
 
-libsyscall_spy.so: src/syscall_spy.c
-	mkdir -p lib
-	$(CC) $(CFLAGS) $(LDFLAGS_SPY) -o lib/$@ $< 
+# Ensure directories exist before building any target that needs them
+$(BUILD_TARGETS) $(BENCHMARK_OPEN): | $(BIN_DIR) $(LIB_DIR)
 
-hello_static: src/hello.c
-	mkdir -p bin
-	$(CC) -static -o bin/$@ $<
+# Rule to create directories
+$(BIN_DIR) $(LIB_DIR) $(LOG_DIR):
+	mkdir -p $@
 
-benchmark: src/benchmark.c
-	mkdir -p bin
-	$(CC) -o bin/$@ $<
+# Build rules
+$(SYSCALL_SPY_LIB): src/syscall_spy.c
+	$(CC) $(CFLAGS) $(LDFLAGS_SPY) -o $@ $<
 
-benchmark_open: src/benchmark_open.c
-	mkdir -p bin
-	$(CC) -o bin/$@ $<
+$(HELLO_STATIC): src/hello.c
+	$(CC) -static -o $@ $<
 
-mytracer: src/mytracer.c src/syscall_names.h
-	mkdir -p bin
-	$(CC) -o bin/$@ $(filter %.c,$^)
+$(BENCHMARK): src/benchmark.c
+	$(CC) -o $@ $<
 
-run_benchmark:
-	mkdir -p logs
-	./bin/benchmark > logs/benchmark.log
+$(BENCHMARK_OPEN): src/benchmark_open.c
+	$(CC) -o $@ $<
 
-perf_benchmark:
-	mkdir -p logs
-	perf stat -e cycles,instructions,context-switches,page-faults ./bin/benchmark_open > logs/perf_benchmark.log 2>&1
+$(MYTRACER): src/mytracer.c src/syscall_names.h
+	$(CC) -o $@ $(filter %.c,$^)
 
-run_ls:
-	mkdir -p logs
-	LD_PRELOAD=./lib/libsyscall_spy.so ls -la > logs/ls.log 2>&1
+# Runner rules
+run_benchmark: $(BENCHMARK) | $(LOG_DIR)
+	./$(BENCHMARK) > $(LOG_DIR)/benchmark.log
 
-run_cat:
-	mkdir -p logs
-	LD_PRELOAD=./lib/libsyscall_spy.so cat /etc/passwd > logs/cat.log 2>&1
+perf_benchmark: $(BENCHMARK_OPEN) | $(LOG_DIR)
+	perf stat -e cycles,instructions,context-switches,page-faults ./$(BENCHMARK_OPEN) > $(LOG_DIR)/perf_benchmark.log 2>&1
 
-run_grep:
-	mkdir -p logs
-	LD_PRELOAD=./lib/libsyscall_spy.so grep root /etc/passwd > logs/grep.log 2>&1
+run_ls: $(SYSCALL_SPY_LIB) | $(LOG_DIR)
+	LD_PRELOAD=./$(SYSCALL_SPY_LIB) ls -la > $(LOG_DIR)/ls.log 2>&1
 
-run_static_test:
-	mkdir -p logs
-	LD_PRELOAD=./lib/libsyscall_spy.so ./bin/hello_static > logs/static.log 2>&1
+run_cat: $(SYSCALL_SPY_LIB) | $(LOG_DIR)
+	LD_PRELOAD=./$(SYSCALL_SPY_LIB) cat /etc/passwd > $(LOG_DIR)/cat.log 2>&1
+
+run_grep: $(SYSCALL_SPY_LIB) | $(LOG_DIR)
+	LD_PRELOAD=./$(SYSCALL_SPY_LIB) grep root /etc/passwd > $(LOG_DIR)/grep.log 2>&1
+
+run_static_test: $(SYSCALL_SPY_LIB) $(HELLO_STATIC) | $(LOG_DIR)
+	LD_PRELOAD=./$(SYSCALL_SPY_LIB) ./$(HELLO_STATIC) > $(LOG_DIR)/static.log 2>&1
 
 clean:
-	rm -rf lib bin logs
+	rm -rf $(LIB_DIR) $(BIN_DIR) $(LOG_DIR)

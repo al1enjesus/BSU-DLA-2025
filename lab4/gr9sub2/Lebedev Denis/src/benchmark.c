@@ -5,9 +5,16 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/time.h>
+#include <errno.h>
+#include <string.h>
+#include <limits.h>
 
 #define ITERATIONS 1000000
 #define CPU_FREQ_GHZ 3.3
+
+#ifndef PATH_MAX
+#define PATH_MAX 4096
+#endif
 
 uint64_t measure_cycles(void (*func)()) {
     uint64_t start, end;
@@ -29,17 +36,31 @@ void getpid_call() {
 }
 
 void open_close_call() {
-    int fd = open("/home/testfile", O_WRONLY | O_CREAT, 0644);
-    char buf[4096];
-    read(fd, buf, sizeof(buf));
-    if (fd != -1) {
-        close(fd);
+    const char *home = getenv("HOME");
+    if (!home) {
+        fprintf(stderr, "Error: HOME environment variable not set\n");
+        return;
+    }
+
+    char path[PATH_MAX];
+    snprintf(path, sizeof(path), "%s/testfile", home);
+
+    int fd = open(path, O_WRONLY | O_CREAT, 0644);
+    if (fd == -1) {
+        fprintf(stderr, "Error: open failed for %s: %s\n", path, strerror(errno));
+        return;
+    }
+
+    if (close(fd) == -1) {
+        fprintf(stderr, "Error: close failed: %s\n", strerror(errno));
     }
 }
 
 void gettimeofday_call() {
     struct timeval tv;
-    gettimeofday(&tv, NULL);
+    if (gettimeofday(&tv, NULL) == -1) {
+        fprintf(stderr, "Error: gettimeofday failed: %s\n", strerror(errno));
+    }
 }
 
 int main() {
