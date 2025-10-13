@@ -4,7 +4,7 @@ LDFLAGS_SPY=-shared -ldl
 
 .PHONY: all clean run_ls run_cat run_grep run_benchmark run_static_test perf_benchmark
 
-all: libsyscall_spy.so hello_static benchmark benchmark_open
+all: libsyscall_spy.so hello_static benchmark mytracer
 
 libsyscall_spy.so: src/syscall_spy.c
 	mkdir -p lib
@@ -21,6 +21,10 @@ benchmark: src/benchmark.c
 benchmark_open: src/benchmark_open.c
 	mkdir -p bin
 	$(CC) -o bin/$@ $<
+
+mytracer: src/mytracer.c src/syscall_names.h
+	mkdir -p bin
+	$(CC) -o bin/$@ $(filter %.c,$^)
 
 run_benchmark:
 	mkdir -p logs
