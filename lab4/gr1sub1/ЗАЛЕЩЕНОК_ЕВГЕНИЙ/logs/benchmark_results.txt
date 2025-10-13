@@ -1,0 +1,4 @@
+1. Userspace dummy():		Avg Cycles: 56.68, Avg Time: 20.99 ns
+2. Syscall getpid():		Avg Cycles: 383.76, Avg Time: 142.13 ns, Slower: 6.77x
+3. Syscall open()+close():	Avg Cycles: 4809.43, Avg Time: 1781.27 ns, Slower: 84.85x
+4. vDSO gettimeofday():		Avg Cycles: 60.20, Avg Time: 22.30 ns, Slower: 1.06x

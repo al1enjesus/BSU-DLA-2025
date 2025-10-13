@@ -1,0 +1,1 @@
+[SPY] write(fd=1, buf=0x55b78cc5a430, count=17) = 17
