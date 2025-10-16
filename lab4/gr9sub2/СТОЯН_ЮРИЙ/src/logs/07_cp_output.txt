@@ -1,8 +1,0 @@
-[36m
-[SPY] === Variant: find/tar/cp === Program: cp ===
-[0m[32m[SPY] OPEN: "test_data/file1.txt" -> fd=3
-[0m[32m[SPY] OPEN: "copied.txt" -> fd=4
-[0m[33m[SPY] READ: fd=3, bytes=15
-[0m[35m[SPY] WRITE: fd=4, bytes=15
-[0m[SPY] CLOSE: fd=4
-[SPY] CLOSE: fd=3
