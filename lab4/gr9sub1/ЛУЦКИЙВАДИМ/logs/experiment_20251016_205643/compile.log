@@ -1,0 +1,18 @@
+gcc -shared -fPIC -O2 -o libsyscall_spy.so syscall_spy.c -ldl
+ Библиотека скомпилирована: libsyscall_spy.so
+gcc -O2 -o benchmark benchmark.c
+benchmark.c: In function ‘run_cache_experiment’:
+benchmark.c:93:5: warning: ignoring return value of ‘system’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   93 |     system("echo 'test content' > /tmp/cache_test");
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+benchmark.c:96:5: warning: ignoring return value of ‘system’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   96 |     system("sync; echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null");
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+benchmark.c: In function ‘main’:
+benchmark.c:123:5: warning: ignoring return value of ‘system’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  123 |     system("touch /tmp/benchmark_test");
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+benchmark.c:133:5: warning: ignoring return value of ‘system’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  133 |     system("rm -f /tmp/benchmark_test /tmp/cache_test");
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Бенчмарк скомпилирован: benchmark

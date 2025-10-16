@@ -1,0 +1,28 @@
+=== System Call Benchmark ===
+Iterations: 1000000
+
+Benchmarking: dummy() - userspace function
+  Average cycles: 50.81
+  Average time: 42.11 ns
+  Slowdown vs dummy: 21.05x
+
+Benchmarking: getpid() - fast syscall
+  Average cycles: 609.04
+  Average time: 199.09 ns
+  Slowdown vs dummy: 99.55x
+
+Benchmarking: gettimeofday() - vDSO call
+  Average cycles: 149.54
+  Average time: 69.81 ns
+  Slowdown vs dummy: 34.91x
+
+Benchmarking: open()+close() - file operation
+  Average cycles: 6993.82
+  Average time: 2234.54 ns
+  Slowdown vs dummy: 1117.27x
+
+=== Cache Experiment ===
+Cold cache open+close: 979045 ns
+Hot cache open+close: 5380 ns
+Difference: 181.98x
+
