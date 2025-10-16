@@ -1,0 +1,4 @@
+[SPY] read(fd=4, buf=0x55d0ca562200, count=5) = 5
+[SPY] close(fd=4) = 0
+[SPY] write(fd=3, buf=0x55d0ca562000, count=10240) = 10240
+[SPY] close(fd=3) = 0

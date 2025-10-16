@@ -1,0 +1,5 @@
+[SPY] open("copy_test.txt", O_DIRECTORY, 00) = -1 [ERROR: No such file or directory]
+[SPY] open("test_file.txt", , 00) = 3
+[SPY] openat(AT_FDCWD, "copy_test.txt", O_WRONLY|O_CREAT|O_EXCL, 0664) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0

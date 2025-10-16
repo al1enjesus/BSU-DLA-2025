@@ -1,0 +1,7 @@
+=== System Call Benchmark ===
+Iterations: 1000000
+
+dummy() userspace: 1462 ns, 58 cycles
+getpid() syscall: 1808 ns, 18446744068860 cycles
+open()+close(): 5124 ns, 11991 cycles
+gettimeofday() vDSO: 2428 ns, 3948 cycles
