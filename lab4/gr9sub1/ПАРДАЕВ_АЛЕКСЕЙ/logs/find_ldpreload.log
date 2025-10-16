@@ -1,0 +1,55 @@
+[SPY] open(".", flags=0x80000, mode=00) = 3 (OK)
+[SPY] openat(AT_FDCWD, "/tmp", 0xb0900, mode=00) = 4 (OK)
+[SPY] openat(fd, "systemd-private-5b55a7a599744a0c9e216f863a422445-systemd-resolved.service-0Sp2EX", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/systemd-private-5b55a7a599744a0c9e216f863a422445-systemd-resolved.service-0Sp2EX’: Отказано в доступе
+[SPY] openat(fd, "systemd-private-5b55a7a599744a0c9e216f863a422445-upower.service-HngDrt", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/systemd-private-5b55a7a599744a0c9e216f863a422445-upower.service-HngDrt’: Отказано в доступе
+[SPY] openat(fd, "lab4_test", 0xb0900, mode=00) = 6 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] close(fd=7) = 0 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] openat(fd, ".org.chromium.Chromium.bXN3y5", 0xb0900, mode=00) = 6 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] close(fd=7) = 0 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] openat(fd, "systemd-private-5b55a7a599744a0c9e216f863a422445-power-profiles-daemon.service-sjphEW", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/systemd-private-5b55a7a599744a0c9e216f863a422445-power-profiles-daemon.service-sjphEW’: Отказано в доступе
+[SPY] openat(fd, "systemd-private-5b55a7a599744a0c9e216f863a422445-colord.service-Pp2fFG", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/systemd-private-5b55a7a599744a0c9e216f863a422445-colord.service-Pp2fFG’: Отказано в доступе
+[SPY] openat(fd, "systemd-private-5b55a7a599744a0c9e216f863a422445-systemd-oomd.service-6ZcDwf", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/systemd-private-5b55a7a599744a0c9e216f863a422445-systemd-oomd.service-6ZcDwf’: Отказано в доступе
+[SPY] openat(fd, ".ICE-unix", 0xb0900, mode=00) = 6 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] close(fd=7) = 0 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] openat(fd, "systemd-private-5b55a7a599744a0c9e216f863a422445-fwupd.service-b0IKdE", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/systemd-private-5b55a7a599744a0c9e216f863a422445-fwupd.service-b0IKdE’: Отказано в доступе
+[SPY] openat(fd, "snap-private-tmp", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/snap-private-tmp’: Отказано в доступе
+[SPY] openat(fd, "systemd-private-5b55a7a599744a0c9e216f863a422445-systemd-timesyncd.service-35jXEA", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/systemd-private-5b55a7a599744a0c9e216f863a422445-systemd-timesyncd.service-35jXEA’: Отказано в доступе
+[SPY] openat(fd, "systemd-private-5b55a7a599744a0c9e216f863a422445-switcheroo-control.service-kHO4pf", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/systemd-private-5b55a7a599744a0c9e216f863a422445-switcheroo-control.service-kHO4pf’: Отказано в доступе
+[SPY] openat(fd, "systemd-private-5b55a7a599744a0c9e216f863a422445-polkit.service-j171Jz", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/systemd-private-5b55a7a599744a0c9e216f863a422445-polkit.service-j171Jz’: Отказано в доступе
+[SPY] openat(fd, "hsperfdata_alex", 0xb0900, mode=00) = 6 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] close(fd=7) = 0 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] openat(fd, ".font-unix", 0xb0900, mode=00) = 6 (OK)
+[SPY] close(fd=7) = 0 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] openat(fd, ".X11-unix", 0xb0900, mode=00) = 6 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] close(fd=7) = 0 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] openat(fd, "systemd-private-5b55a7a599744a0c9e216f863a422445-ModemManager.service-g2plQ2", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/systemd-private-5b55a7a599744a0c9e216f863a422445-ModemManager.service-g2plQ2’: Отказано в доступе
+[SPY] openat(fd, ".XIM-unix", 0xb0900, mode=00) = 6 (OK)
+[SPY] close(fd=7) = 0 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] openat(fd, "systemd-private-5b55a7a599744a0c9e216f863a422445-systemd-logind.service-rxpSZE", 0xb0900, mode=00) = -1 (Отказано в доступе)
+find: ‘/tmp/systemd-private-5b55a7a599744a0c9e216f863a422445-systemd-logind.service-rxpSZE’: Отказано в доступе
+[SPY] close(fd=5) = 0 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] close(fd=3) = 0 (OK)
