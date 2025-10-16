@@ -73,7 +73,7 @@ void run_benchmark(const char* name, void (*test_func)(void)) {
     }
     double avg_cycles = (double)total_cycles / ITERATIONS;
     
-    // Измерение времени
+
     long total_ns = 0;
     for (int i = 0; i < ITERATIONS / 100; i++) { // Меньше итераций для времени
         total_ns += measure_nanoseconds(test_func);
