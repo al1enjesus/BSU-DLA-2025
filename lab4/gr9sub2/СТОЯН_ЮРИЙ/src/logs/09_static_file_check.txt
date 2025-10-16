@@ -1,0 +1,1 @@
+static_test: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=3306cc08cda785011a6345c3b5f08d8dcb52f525, for GNU/Linux 3.2.0, not stripped

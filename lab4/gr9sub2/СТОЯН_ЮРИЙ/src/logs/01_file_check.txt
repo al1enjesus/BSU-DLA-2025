@@ -1,0 +1,1 @@
+libsyscall_spy.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=4c8ab8514a994b7b7097aad0734e6d65cf79bc70, not stripped
