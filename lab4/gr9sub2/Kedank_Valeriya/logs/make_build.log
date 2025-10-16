@@ -1,0 +1,165 @@
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, buf=0x7fff582db680, count=16) = 0 bytes
+[SPY] close(fd=3) = 0
+[SPY] open(path="simple.c", flags=0x100()) = 3
+[SPY] read(fd=3, buf=0x3012550, count=25) = 25 bytes
+[SPY]   data: "int main() { return 0; }
+"
+[SPY] close(fd=3) = 0
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/include/stdc-predef.h", flags=0x100()) = -1 (ENOENT)
+[SPY] open(path="/usr/local/include/stdc-predef.h", flags=0x100()) = -1 (ENOENT)
+[SPY] open(path="/usr/include/x86_64-linux-gnu/stdc-predef.h", flags=0x100()) = -1 (ENOENT)
+[SPY] open(path="/usr/include/stdc-predef.h", flags=0x100()) = 4
+[SPY] read(fd=4, buf=0x309dee0, count=2290) = 2290 bytes
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, buf=0x7fff582dc400, count=16) = 0 bytes
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, buf=0x7fff582db820, count=16) = 0 bytes
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] open(path="/tmp/cctcEsBA.ld", flags=0x241(O_WRONLY|O_CREAT|O_TRUNC|), mode=0666) = 3
+[SPY] open(path="/tmp/ccrYs3iC.le", flags=0x241(O_WRONLY|O_CREAT|O_TRUNC|), mode=0666) = 4
+[SPY] close(fd=5) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=6) = 0
+[SPY] read(fd=5, buf=0x7ffe93ac68d0, count=16) = 0 bytes
+[SPY] close(fd=5) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=4) = 0
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o", flags=0x0)) = 5
+[SPY] read(fd=5, buf=0x7ffe82672760, count=16) = 16 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=5, buf=0x7ffe82672690, count=64) = 64 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=5, buf=0x555c18e714b0, count=832) = 832 bytes
+[SPY] read(fd=5, buf=0x555c18e71800, count=126) = 126 bytes
+[SPY] read(fd=5, buf=0x555c18e714b0, count=832) = 832 bytes
+[SPY] read(fd=5, buf=0x555c18e71800, count=126) = 126 bytes
+[SPY] close(fd=5) = 0
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o", flags=0x0)) = 6
+[SPY] read(fd=6, buf=0x7ffe82672760, count=16) = 16 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=6, buf=0x7ffe82672690, count=64) = 64 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=6, buf=0x555c18e97860, count=704) = 704 bytes
+[SPY] read(fd=6, buf=0x555c18e71cb0, count=96) = 96 bytes
+[SPY]   data: ""
+[SPY] read(fd=6, buf=0x555c18e97860, count=704) = 704 bytes
+[SPY] read(fd=6, buf=0x555c18e71cb0, count=96) = 96 bytes
+[SPY]   data: ""
+[SPY] close(fd=6) = 0
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o", flags=0x0)) = 7
+[SPY] read(fd=7, buf=0x7ffe82672760, count=16) = 16 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=7, buf=0x7ffe82672690, count=64) = 64 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=7, buf=0x555c18e8a780, count=1088) = 1088 bytes
+[SPY] read(fd=7, buf=0x555c18e8abd0, count=164) = 164 bytes
+[SPY] read(fd=7, buf=0x555c18e8a780, count=1088) = 1088 bytes
+[SPY] read(fd=7, buf=0x555c18e8abd0, count=164) = 164 bytes
+[SPY] close(fd=7) = 0
+[SPY] open(path="/tmp/ccrAP2lp.o", flags=0x0)) = 8
+[SPY] read(fd=8, buf=0x7ffe82672760, count=16) = 16 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=8, buf=0x7ffe82672690, count=64) = 64 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=8, buf=0x555c18e97860, count=704) = 704 bytes
+[SPY] read(fd=8, buf=0x555c18e71cb0, count=103) = 103 bytes
+[SPY] read(fd=8, buf=0x555c18e97860, count=704) = 704 bytes
+[SPY] read(fd=8, buf=0x555c18e71cb0, count=103) = 103 bytes
+[SPY] close(fd=8) = 0
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/libgcc_s.so", flags=0x0)) = 10
+[SPY] read(fd=10, buf=0x7ffe82672460, count=16) = 16 bytes
+[SPY]   data: "/* GNU ld script"
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/libgcc_s.so.1", flags=0x0)) = 11
+[SPY] read(fd=11, buf=0x7ffe826726b0, count=16) = 16 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=11, buf=0x7ffe826725e0, count=64) = 64 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=11, buf=0x555c18ee5fa0, count=1792) = 1792 bytes
+[SPY] read(fd=11, buf=0x555c18ee66b0, count=274) = 274 bytes
+[SPY] read(fd=11, buf=0x555c18ee5fa0, count=1792) = 1792 bytes
+[SPY] read(fd=11, buf=0x555c18ee66b0, count=274) = 274 bytes
+[SPY] close(fd=11) = 0
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/libc.so", flags=0x0)) = 13
+[SPY] read(fd=13, buf=0x7ffe82672460, count=16) = 16 bytes
+[SPY]   data: "/* GNU ld script"
+[SPY] open(path="/lib/x86_64-linux-gnu/libc.so.6", flags=0x0)) = 14
+[SPY] read(fd=14, buf=0x7ffe826726b0, count=16) = 16 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=14, buf=0x7ffe826725e0, count=64) = 64 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=14, buf=0x555c18f24ef0, count=4288) = 4288 bytes
+[SPY] read(fd=14, buf=0x555c18ef8270, count=1099) = 1099 bytes
+[SPY] read(fd=14, buf=0x555c18f24ef0, count=4288) = 4288 bytes
+[SPY] read(fd=14, buf=0x555c18ef8270, count=1099) = 1099 bytes
+[SPY] close(fd=14) = 0
+[SPY] open(path="/usr/lib/x86_64-linux-gnu/libc_nonshared.a", flags=0x0)) = 15
+[SPY] read(fd=15, buf=0x7ffe826724a0, count=16) = 16 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=15, buf=0x7ffe826723d0, count=64) = 64 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=15, buf=0x555c18e97860, count=704) = 704 bytes
+[SPY] read(fd=15, buf=0x555c18ee5ee0, count=99) = 99 bytes
+[SPY]   data: ""
+[SPY] read(fd=15, buf=0x555c18e97860, count=704) = 704 bytes
+[SPY] read(fd=15, buf=0x555c18ee5ee0, count=99) = 99 bytes
+[SPY]   data: ""
+[SPY] close(fd=15) = 0
+[SPY] open(path="/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2", flags=0x0)) = 16
+[SPY] read(fd=16, buf=0x7ffe826726b0, count=16) = 16 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=16, buf=0x7ffe826725e0, count=64) = 64 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=16, buf=0x555c18f57bb0, count=1728) = 1728 bytes
+[SPY] read(fd=16, buf=0x555c18e8a8f0, count=264) = 264 bytes
+[SPY] read(fd=16, buf=0x555c18f57bb0, count=1728) = 1728 bytes
+[SPY] read(fd=16, buf=0x555c18e8a8f0, count=264) = 264 bytes
+[SPY] close(fd=16) = 0
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/libgcc_s.so", flags=0x0)) = 18
+[SPY] read(fd=18, buf=0x7ffe82672460, count=16) = 16 bytes
+[SPY]   data: "/* GNU ld script"
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/libgcc_s.so.1", flags=0x0)) = 19
+[SPY] read(fd=19, buf=0x7ffe826726b0, count=16) = 16 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=19, buf=0x7ffe826725e0, count=64) = 64 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=19, buf=0x555c190fab20, count=1792) = 1792 bytes
+[SPY] read(fd=19, buf=0x555c190d61a0, count=274) = 274 bytes
+[SPY] read(fd=19, buf=0x555c190fab20, count=1792) = 1792 bytes
+[SPY] read(fd=19, buf=0x555c190d61a0, count=274) = 274 bytes
+[SPY] close(fd=19) = 0
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o", flags=0x0)) = 21
+[SPY] read(fd=21, buf=0x7ffe82672760, count=16) = 16 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=21, buf=0x7ffe82672690, count=64) = 64 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=21, buf=0x555c18e97860, count=704) = 704 bytes
+[SPY] read(fd=21, buf=0x555c18e8b4b0, count=114) = 114 bytes
+[SPY] read(fd=21, buf=0x555c18e97860, count=704) = 704 bytes
+[SPY] read(fd=21, buf=0x555c18e8b4b0, count=114) = 114 bytes
+[SPY] close(fd=21) = 0
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o", flags=0x0)) = 22
+[SPY] read(fd=22, buf=0x7ffe82672760, count=16) = 16 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=22, buf=0x7ffe82672690, count=64) = 64 bytes
+[SPY]   data: "ELF"
+[SPY] read(fd=22, buf=0x555c19122fd0, count=512) = 512 bytes
+[SPY] read(fd=22, buf=0x555c191231e0, count=75) = 75 bytes
+[SPY]   data: ""
+[SPY] read(fd=22, buf=0x555c19122fd0, count=512) = 512 bytes
+[SPY] read(fd=22, buf=0x555c191231e0, count=75) = 75 bytes
+[SPY]   data: ""
+[SPY] close(fd=22) = 0
