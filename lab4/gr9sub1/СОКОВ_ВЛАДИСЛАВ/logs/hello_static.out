@@ -1,0 +1,2 @@
+Running static hello (should NOT be intercepted)
+hello static

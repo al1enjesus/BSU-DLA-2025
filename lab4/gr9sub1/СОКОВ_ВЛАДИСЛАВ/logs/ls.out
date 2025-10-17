@@ -1,0 +1,25 @@
+Running: LD_PRELOAD=./libsyscall_spy.so ls -la /etc/apt
+[SPY] opendir("/etc/apt") = 0x5a1fb2cf5b90
+[SPY] readdir(0x5a1fb2cf5b90) -> d_name: sources.list.d
+[SPY] readdir(0x5a1fb2cf5b90) -> d_name: ..
+[SPY] readdir(0x5a1fb2cf5b90) -> d_name: trusted.gpg
+[SPY] readdir(0x5a1fb2cf5b90) -> d_name: sources.list
+[SPY] readdir(0x5a1fb2cf5b90) -> d_name: keyrings
+[SPY] readdir(0x5a1fb2cf5b90) -> d_name: trusted.gpg.d
+[SPY] readdir(0x5a1fb2cf5b90) -> d_name: apt.conf.d
+[SPY] readdir(0x5a1fb2cf5b90) -> d_name: auth.conf.d
+[SPY] readdir(0x5a1fb2cf5b90) -> d_name: preferences.d
+[SPY] readdir(0x5a1fb2cf5b90) -> d_name: .
+[SPY] readdir(0x5a1fb2cf5b90) -> d_name: NULL
+[SPY] closedir(0x5a1fb2cf5b90) = 0
+total 40
+drwxr-xr-x  8 root root 4096 Oct 16 23:06 .
+drwxr-xr-x 97 root root 4096 Oct 17 05:52 ..
+drwxr-xr-x  2 root root 4096 Aug  5 19:57 apt.conf.d
+drwxr-xr-x  2 root root 4096 Mar 31  2024 auth.conf.d
+drwxr-xr-x  2 root root 4096 Mar 31  2024 keyrings
+drwxr-xr-x  2 root root 4096 Aug  5 19:57 preferences.d
+-rw-r--r--  1 root root  270 Oct 16 23:06 sources.list
+drwxr-xr-x  2 root root 4096 Oct 16 23:06 sources.list.d
+-rw-r--r--  1 root root  640 Oct 16 23:06 trusted.gpg
+drwxr-xr-x  2 root root 4096 Oct 16 23:06 trusted.gpg.d

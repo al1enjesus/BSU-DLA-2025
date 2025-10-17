@@ -1,0 +1,198 @@
+Running: LD_PRELOAD=./libsyscall_spy.so grep -R '^#' /etc/apt | head -n 1000
+[SPY] open("/proc/self/maps", flags=0x0) = 3
+[SPY] read(fd=3, buf=0x789e99cd4000, count=8192) = 3942
+[SPY] read(fd=3, buf=0x789e99cd4f66, count=4250) = 1054
+[SPY] read(fd=3, buf=0x789e99cd2000, count=16384) = 3942
+[SPY] read(fd=3, buf=0x789e99cd2f66, count=12442) = 1054
+[SPY] read(fd=3, buf=0x789e99cd3384, count=11388) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt", flags=0x100) = 3
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt", flags=0x90900) = 3
+[SPY] readdir(0x5beb094b84c0) -> d_name: sources.list.d
+[SPY] readdir(0x5beb094b84c0) -> d_name: ..
+[SPY] readdir(0x5beb094b84c0) -> d_name: trusted.gpg
+[SPY] readdir(0x5beb094b84c0) -> d_name: sources.list
+[SPY] readdir(0x5beb094b84c0) -> d_name: keyrings
+[SPY] readdir(0x5beb094b84c0) -> d_name: trusted.gpg.d
+[SPY] readdir(0x5beb094b84c0) -> d_name: apt.conf.d
+[SPY] readdir(0x5beb094b84c0) -> d_name: auth.conf.d
+[SPY] readdir(0x5beb094b84c0) -> d_name: preferences.d
+[SPY] readdir(0x5beb094b84c0) -> d_name: .
+[SPY] readdir(0x5beb094b84c0) -> d_name: NULL
+[SPY] closedir(0x5beb094b84c0) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/sources.list.d", flags=0x90900) = 3
+[SPY] readdir(0x5beb094b84c0) -> d_name: ..
+[SPY] readdir(0x5beb094b84c0) -> d_name: ubuntu.sources
+[SPY] readdir(0x5beb094b84c0) -> d_name: archive_uri-https_packages_microsoft_com_ubuntu_24_04_prod-noble.list
+[SPY] readdir(0x5beb094b84c0) -> d_name: .
+[SPY] readdir(0x5beb094b84c0) -> d_name: NULL
+[SPY] closedir(0x5beb094b84c0) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/sources.list.d/ubuntu.sources", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 2552
+[SPY] read(fd=3, buf=0x5beb0949f9f8, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/sources.list.d/archive_uri-https_packages_microsoft_com_ubuntu_24_04_prod-noble.list", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 134
+[SPY] read(fd=3, buf=0x5beb0949f086, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/trusted.gpg", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 640
+[SPY] read(fd=3, buf=0x5beb0949f280, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/sources.list", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 270
+[SPY] read(fd=3, buf=0x5beb0949f10e, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/keyrings", flags=0x90900) = 3
+[SPY] readdir(0x5beb094c1070) -> d_name: ..
+[SPY] readdir(0x5beb094c1070) -> d_name: .
+[SPY] readdir(0x5beb094c1070) -> d_name: NULL
+[SPY] closedir(0x5beb094c1070) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/trusted.gpg.d", flags=0x90900) = 3
+[SPY] readdir(0x5beb094c1070) -> d_name: ..
+[SPY] readdir(0x5beb094c1070) -> d_name: .
+[SPY] readdir(0x5beb094c1070) -> d_name: ubuntu-keyring-2012-cdimage.gpg
+[SPY] readdir(0x5beb094c1070) -> d_name: ubuntu-keyring-2018-archive.gpg
+[SPY] readdir(0x5beb094c1070) -> d_name: NULL
+[SPY] closedir(0x5beb094c1070) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/trusted.gpg.d/ubuntu-keyring-2012-cdimage.gpg", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 1165
+/etc/apt/sources.list.d/ubuntu.sources:# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+/etc/apt/sources.list.d/ubuntu.sources:# newer versions of the distribution.
+/etc/apt/sources.list.d/ubuntu.sources:## Ubuntu distribution repository
+/etc/apt/sources.list.d/ubuntu.sources:##
+/etc/apt/sources.list.d/ubuntu.sources:## The following settings can be adjusted to configure which packages to use from Ubuntu.
+/etc/apt/sources.list.d/ubuntu.sources:## Mirror your choices (except for URIs and Suites) in the security section below to
+/etc/apt/sources.list.d/ubuntu.sources:## ensure timely security updates.
+/etc/apt/sources.list.d/ubuntu.sources:##
+/etc/apt/sources.list.d/ubuntu.sources:## Types: Append deb-src to enable the fetching of source package.
+/etc/apt/sources.list.d/ubuntu.sources:## URIs: A URL to the repository (you may add multiple URLs)
+/etc/apt/sources.list.d/ubuntu.sources:## Suites: The following additional suites can be configured
+/etc/apt/sources.list.d/ubuntu.sources:##   <name>-updates   - Major bug fix updates produced after the final release of the
+/etc/apt/sources.list.d/ubuntu.sources:##                      distribution.
+/etc/apt/sources.list.d/ubuntu.sources:##   <name>-backports - software from this repository may not have been tested as
+/etc/apt/sources.list.d/ubuntu.sources:##                      extensively as that contained in the main release, although it includes
+/etc/apt/sources.list.d/ubuntu.sources:##                      newer versions of some applications which may provide useful features.
+/etc/apt/sources.list.d/ubuntu.sources:##                      Also, please note that software in backports WILL NOT receive any review
+/etc/apt/sources.list.d/ubuntu.sources:##                      or updates from the Ubuntu security team.
+/etc/apt/sources.list.d/ubuntu.sources:## Components: Aside from main, the following components can be added to the list
+/etc/apt/sources.list.d/ubuntu.sources:##   restricted  - Software that may not be under a free license, or protected by patents.
+/etc/apt/sources.list.d/ubuntu.sources:##   universe    - Community maintained packages. Software in this repository receives maintenance
+/etc/apt/sources.list.d/ubuntu.sources:##                 from volunteers in the Ubuntu community, or a 10 year security maintenance
+/etc/apt/sources.list.d/ubuntu.sources:##                 commitment from Canonical when an Ubuntu Pro subscription is attached.
+/etc/apt/sources.list.d/ubuntu.sources:##   multiverse  - Community maintained of restricted. Software from this repository is
+/etc/apt/sources.list.d/ubuntu.sources:##                 ENTIRELY UNSUPPORTED by the Ubuntu team, and may not be under a free
+/etc/apt/sources.list.d/ubuntu.sources:##                 licence. Please satisfy yourself as to your rights to use the software.
+/etc/apt/sources.list.d/ubuntu.sources:##                 Also, please note that software in multiverse WILL NOT receive any
+/etc/apt/sources.list.d/ubuntu.sources:##                 review or updates from the Ubuntu security team.
+/etc/apt/sources.list.d/ubuntu.sources:##
+/etc/apt/sources.list.d/ubuntu.sources:## See the sources.list(5) manual page for further settings.
+/etc/apt/sources.list.d/ubuntu.sources:## Ubuntu security updates. Aside from URIs and Suites,
+/etc/apt/sources.list.d/ubuntu.sources:## this should mirror your choices in the previous section.
+/etc/apt/sources.list.d/archive_uri-https_packages_microsoft_com_ubuntu_24_04_prod-noble.list:# deb-src https://packages.microsoft.com/ubuntu/24.04/prod noble main
+/etc/apt/sources.list:# Ubuntu sources have moved to the /etc/apt/sources.list.d/ubuntu.sources
+/etc/apt/sources.list:# file, which uses the deb822 format. Use deb822-formatted .sources files
+/etc/apt/sources.list:# to manage package sources in the /etc/apt/sources.list.d/ directory.
+/etc/apt/sources.list:# See the sources.list(5) manual page for details.
+grep: /etc/apt/trusted.gpg.d/ubuntu-keyring-2012-cdimage.gpg: binary file matches
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/trusted.gpg.d/ubuntu-keyring-2018-archive.gpg", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 1167
+grep: /etc/apt/trusted.gpg.d/ubuntu-keyring-2018-archive.gpg: binary file matches
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/apt.conf.d", flags=0x90900) = 3
+[SPY] readdir(0x5beb094c1070) -> d_name: ..
+[SPY] readdir(0x5beb094c1070) -> d_name: 01autoremove
+[SPY] readdir(0x5beb094c1070) -> d_name: 70debconf
+[SPY] readdir(0x5beb094c1070) -> d_name: 20auto-upgrades
+[SPY] readdir(0x5beb094c1070) -> d_name: 20apt-esm-hook.conf
+[SPY] readdir(0x5beb094c1070) -> d_name: 01-vendor-ubuntu
+[SPY] readdir(0x5beb094c1070) -> d_name: 20packagekit
+[SPY] readdir(0x5beb094c1070) -> d_name: 50unattended-upgrades
+[SPY] readdir(0x5beb094c1070) -> d_name: .
+[SPY] readdir(0x5beb094c1070) -> d_name: 50command-not-found
+[SPY] readdir(0x5beb094c1070) -> d_name: 20snapd.conf
+[SPY] readdir(0x5beb094c1070) -> d_name: 50appstream
+[SPY] readdir(0x5beb094c1070) -> d_name: NULL
+[SPY] closedir(0x5beb094c1070) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/apt.conf.d/01autoremove", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 399
+[SPY] read(fd=3, buf=0x5beb0949f18f, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/apt.conf.d/70debconf", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 182
+[SPY] read(fd=3, buf=0x5beb0949f0b6, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/apt.conf.d/20auto-upgrades", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 80
+[SPY] read(fd=3, buf=0x5beb0949f050, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/apt.conf.d/20apt-esm-hook.conf", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 392
+[SPY] read(fd=3, buf=0x5beb0949f188, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/apt.conf.d/01-vendor-ubuntu", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 92
+[SPY] read(fd=3, buf=0x5beb0949f05c, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/apt.conf.d/20packagekit", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 1037
+[SPY] read(fd=3, buf=0x5beb0949f40d, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/apt.conf.d/50unattended-upgrades", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 6155
+[SPY] read(fd=3, buf=0x5beb094a080b, count=94208) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/apt.conf.d/50command-not-found", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 625
+[SPY] read(fd=3, buf=0x5beb0949f271, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/apt.conf.d/20snapd.conf", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 127
+[SPY] read(fd=3, buf=0x5beb0949f07f, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/apt.conf.d/50appstream", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 2569
+[SPY] read(fd=3, buf=0x5beb0949fa09, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/auth.conf.d", flags=0x90900) = 3
+[SPY] readdir(0x5beb094c1070) -> d_name: ..
+[SPY] readdir(0x5beb094c1070) -> d_name: .
+[SPY] readdir(0x5beb094c1070) -> d_name: NULL
+[SPY] closedir(0x5beb094c1070) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/preferences.d", flags=0x90900) = 3
+[SPY] readdir(0x5beb094c1070) -> d_name: ..
+[SPY] readdir(0x5beb094c1070) -> d_name: ubuntu-pro-esm-apps
+[SPY] readdir(0x5beb094c1070) -> d_name: ubuntu-pro-esm-infra
+[SPY] readdir(0x5beb094c1070) -> d_name: .
+[SPY] readdir(0x5beb094c1070) -> d_name: NULL
+[SPY] closedir(0x5beb094c1070) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/preferences.d/ubuntu-pro-esm-apps", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 437
+[SPY] read(fd=3, buf=0x5beb0949f1b5, count=98304) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "/etc/apt/preferences.d/ubuntu-pro-esm-infra", flags=0x100) = 3
+[SPY] read(fd=3, buf=0x5beb0949f000, count=98304) = 429
+[SPY] read(fd=3, buf=0x5beb0949f1ad, count=98304) = 0
+[SPY] close(fd=3) = 0
+/etc/apt/apt.conf.d/50command-not-found:## This file is provided by command-not-found(1) to download
+/etc/apt/apt.conf.d/50command-not-found:## Commands metadata files.
+/etc/apt/apt.conf.d/50command-not-found:# Refresh AppStream cache when APT's cache is updated (i.e. apt update)
+/etc/apt/apt.conf.d/50appstream:## This file is provided by appstreamcli(1) to download DEP-11
+/etc/apt/apt.conf.d/50appstream:## metadata files.
+/etc/apt/apt.conf.d/50appstream:# Refresh AppStream cache when APT's cache is updated (i.e. apt update)
+/etc/apt/preferences.d/ubuntu-pro-esm-apps:# This file is used by Ubuntu Pro and supplied by the ubuntu-pro-client
+/etc/apt/preferences.d/ubuntu-pro-esm-apps:# package. It has no effect if Ubuntu Pro services are not in use since no
+/etc/apt/preferences.d/ubuntu-pro-esm-apps:# other apt repositories are expected to match o=UbuntuESMApps.
+/etc/apt/preferences.d/ubuntu-pro-esm-apps:#
+/etc/apt/preferences.d/ubuntu-pro-esm-apps:# Pin esm-apps packages to a slightly higher value than the default,
+/etc/apt/preferences.d/ubuntu-pro-esm-apps:# so those are preferred over a non-ESM package from the archive when the
+/etc/apt/preferences.d/ubuntu-pro-esm-apps:# service is enabled.
+/etc/apt/preferences.d/ubuntu-pro-esm-infra:# This file is used by Ubuntu Pro and supplied by the ubuntu-pro-client
+/etc/apt/preferences.d/ubuntu-pro-esm-infra:# package. It has no effect if Ubuntu Pro services are not in use since no
+/etc/apt/preferences.d/ubuntu-pro-esm-infra:# other apt repositories are expected to match o=UbuntuESM.
+/etc/apt/preferences.d/ubuntu-pro-esm-infra:#
+/etc/apt/preferences.d/ubuntu-pro-esm-infra:# Pin esm-infra packages to a slightly higher value than the default,
+/etc/apt/preferences.d/ubuntu-pro-esm-infra:# so those are preferred over a non-ESM package from the archive when the
+/etc/apt/preferences.d/ubuntu-pro-esm-infra:# service is enabled.
