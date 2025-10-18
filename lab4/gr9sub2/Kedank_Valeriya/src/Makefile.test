@@ -1,0 +1,2 @@
+test: simple.c
+	gcc -o simple simple.c
