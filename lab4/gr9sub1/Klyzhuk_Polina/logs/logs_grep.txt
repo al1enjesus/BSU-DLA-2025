@@ -1,0 +1,12 @@
+[SPY] open("/dev/tty", O_RDONLY|O_RDWR) = 3 (OK)
+[SPY] close(fd=3) = 0 (OK)
+[SPY] open("/proc/self/maps", O_RDONLY) = 3 (OK)
+[SPY] read(fd=3, buf=0x721d86a0b000, count=8192) = 3940 (OK)
+[SPY] read(fd=3, buf=0x721d86a0bf64, count=4252) = 0 (OK)
+[SPY] close(fd=3) = 0 (OK)
+[SPY] openat(AT_FDCWD, "/etc/passwd", O_RDONLY) = 3 (OK)
+[SPY] read(fd=3, buf=0x5df7718f8000, count=98304) = 2810 (OK)
+[SPY] read(fd=3, buf=0x5df7718f8afa, count=98304) = 0 (OK)
+[SPY] close(fd=3) = 0 (OK)
+root:x:0:0:root:/root:/bin/bash
+nm-openvpn:x:106:112:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
