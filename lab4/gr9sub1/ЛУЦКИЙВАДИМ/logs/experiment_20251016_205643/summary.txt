@@ -1,0 +1,28 @@
+=== СТАТИСТИКА ===
+
+Количество системных вызовов по программам:
+gcc:   0
+0
+make:  0
+0
+as:    0
+0
+
+Типы системных вызовов (gcc):
+
+Результаты бенчмарка:
+Benchmarking: dummy() - userspace function
+  Average cycles: 50.81
+  Average time: 42.11 ns
+--
+Benchmarking: getpid() - fast syscall
+  Average cycles: 609.04
+  Average time: 199.09 ns
+--
+Benchmarking: gettimeofday() - vDSO call
+  Average cycles: 149.54
+  Average time: 69.81 ns
+--
+Benchmarking: open()+close() - file operation
+  Average cycles: 6993.82
+  Average time: 2234.54 ns
