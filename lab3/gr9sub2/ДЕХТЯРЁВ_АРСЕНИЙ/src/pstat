@@ -1,0 +1,210 @@
+#!/usr/bin/env bash
+
+
+check_environment() {
+    if ! bc --help >/dev/null; then
+        echo "bc command not found, please install bc"
+        exit 1
+    fi
+}
+
+
+usage() {
+    echo "Usage:"
+    echo "  pstat <pid>"
+}
+
+
+check_args() {
+    if [ $# -ne 1 ]; then
+        usage
+        exit 1
+    fi
+
+    PID=$1
+
+    if [[ ! "$PID" =~ ^[0-9]+$ ]]; then
+        usage
+        exit 1
+    fi
+
+    local MAX_PID=4194304
+    if [ "$PID" -gt "$MAX_PID" ]; then
+        echo "Error: PID $PID exceeds maximum allowed value ($MAX_PID)"
+        exit 1
+    fi
+
+    if [ ! -d "/proc/$PID" ]; then
+        echo "Error: Process with PID $PID does not exist"
+        exit 1
+    fi
+}
+
+
+safe_arithmetic() {
+    local expression=$1
+    local result
+    
+    result=$(echo "$expression" | bc 2>/dev/null)
+    if [ $? -ne 0 ] || [ -z "$result" ]; then
+        echo "Error: Arithmetic overflow or invalid calculation: $expression" >&2
+        return 1
+    fi
+    
+    echo "$result"
+    return 0
+}
+
+
+parse_stat() {
+    local stat_info
+    if ! stat_info=$(cat "/proc/$PID/stat" 2>/dev/null); then
+        echo "Error: Cannot read /proc/$PID/stat"
+        exit 1
+    fi
+    
+    name=$(echo "$stat_info" | cut -d'(' -f2- | cut -d')' -f1)
+    
+    local after_name=$(echo "$stat_info" | cut -d')' -f2-)
+    
+    state=$(echo "$after_name" | cut -d ' ' -f2)
+    ppid=$(echo "$after_name" | cut -d ' ' -f3)
+    utime=$(echo "$after_name" | cut -d ' ' -f13)
+    stime=$(echo "$after_name" | cut -d ' ' -f14)
+    num_threads=$(echo "$after_name" | cut -d' ' -f19)
+}
+
+
+parse_status() {
+    if [ ! -f "/proc/$PID/status" ]; then
+        echo "Error: Cannot read /proc/$PID/status"
+        exit 1
+    fi
+
+    voluntary_ctxt_switches=$(grep -w 'voluntary_ctxt_switches' /proc/$PID/status | cut -f 2)
+    nonvoluntary_ctxt_switches=$(grep -w 'nonvoluntary_ctxt_switches' /proc/$PID/status | cut -f 2)
+    vm_rss_kb=$(grep -w 'VmRSS' /proc/$PID/status | cut -f 2 | tr -d -c [:digit:])
+    rss_anon_kb=$(grep -w 'RssAnon' /proc/$PID/status | cut -f 2 | tr -d -c [:digit:])
+    rss_file_kb=$(grep -w 'RssFile' /proc/$PID/status | cut -f 2 | tr -d -c [:digit:])
+}
+
+
+parse_io() {
+    if [ ! -f "/proc/$PID/io" ]; then
+        echo "Warning: Cannot read /proc/$PID/io"
+        return
+    fi
+    
+    read_bytes=$(grep -w 'read_bytes' /proc/$PID/io | cut -d ' ' -f 2)
+    write_bytes=$(grep -w 'write_bytes' /proc/$PID/io | cut -d ' ' -f 2)
+}
+
+
+calculate_cpu_time() {
+    local HZ=$(getconf CLK_TCK 2>/dev/null)
+    if [ -z "$HZ" ] || [ "$HZ" -eq 0 ]; then
+        if [ -f "/proc/self/stat" ]; then
+            local user_hz=$(awk '{print $2}' /proc/uptime 2>/dev/null | cut -d. -f2 | wc -c)
+            if [ "$user_hz" -eq 4 ]; then
+                HZ=1000
+            else
+                HZ=100 
+            fi
+        else
+            cpu_time_sec="N/A"
+            return
+        fi 
+    fi
+    
+    if [[ ! "$utime" =~ ^[0-9]+$ ]] || [[ ! "$stime" =~ ^[0-9]+$ ]]; then
+        cpu_time_sec="N/A"
+        return
+    fi
+    
+    local total_ticks
+    total_ticks=$(safe_arithmetic "$utime + $stime")
+    if [ $? -ne 0 ]; then
+        cpu_time_sec="N/A"
+        return
+    fi
+    
+    cpu_time_sec=$(safe_arithmetic "scale=2; $total_ticks / $HZ")
+    if [ $? -eq 0 ] && [ -n "$cpu_time_sec" ]; then
+        cpu_time_sec="${cpu_time_sec} sec"
+    else
+        cpu_time_sec="N/A"
+    fi
+}
+
+
+format_kb() {
+    local kb=$1
+    if [ -z "$kb" ] || [[ ! "$kb" =~ ^[0-9]+$ ]] || [ "$kb" -lt 0 ]; then
+        echo "N/A"
+    elif [ "$kb" -ge 1048576 ]; then
+        local gb=$(safe_arithmetic "$kb / 1048576")
+        local mb=$(safe_arithmetic "$kb / 1024")
+        echo "${gb} GiB (${mb} MiB)"
+    elif [ "$kb" -ge 1024 ]; then
+        local mb=$(safe_arithmetic "$kb / 1024")
+        echo "${mb} MiB ($kb KiB)"
+    else
+        echo "$kb KiB"
+    fi
+}
+
+
+format_bytes() {
+    local bytes=$1
+    if [ -z "$bytes" ] || [[ ! "$bytes" =~ ^[0-9]+$ ]] || [ "$bytes" -lt 0 ]; then
+        echo "N/A"
+    elif [ "$bytes" -ge 1073741824 ]; then
+        local gb=$(safe_arithmetic "$bytes / 1073741824")
+        local mb=$(safe_arithmetic "$bytes / 1048576")
+        echo "${gb} GiB (${mb} MiB)"
+    elif [ "$bytes" -ge 1048576 ]; then
+        local mb=$(safe_arithmetic "$bytes / 1048576")
+        local kb=$(safe_arithmetic "$bytes / 1024")
+        echo "${mb} MiB (${kb} KiB)"
+    elif [ "$bytes" -ge 1024 ]; then
+        local kb=$(safe_arithmetic "$bytes / 1024")
+        echo "${kb} KiB"
+    else
+        echo "$bytes bytes"
+    fi
+}
+
+
+show_info() {
+    echo "=== Process $PID Statistics ==="
+    echo -e "Name:\t\t\t$name"
+    echo -e "State:\t\t\t$state"
+    echo -e "CPU time:\t\t$cpu_time_sec"
+    echo -e "PPid:\t\t\t$ppid"
+    echo -e "utime:\t\t\t$utime"
+    echo -e "stime:\t\t\t$stime"
+    echo -e "Threads:\t\t$num_threads"
+    echo -e "Voluntary switches:\t$voluntary_ctxt_switches"
+    echo -e "Nonvoluntary switches:\t$nonvoluntary_ctxt_switches"
+    echo -e "VmRSS:\t\t\t$(format_kb "$vm_rss_kb")"
+    echo -e "RssAnon:\t\t$(format_kb "$rss_anon_kb")"
+    echo -e "RssFile:\t\t$(format_kb "$rss_file_kb")"
+    echo -e "Read bytes:\t\t$(format_bytes "$read_bytes")"
+    echo -e "Write bytes:\t\t$(format_bytes "$write_bytes")"
+}
+
+
+main() {
+    check_environment
+    check_args "$@"
+    
+    parse_stat
+    parse_status
+    parse_io
+    calculate_cpu_time
+
+    show_info
+}
+
+
+main "$@"
