@@ -1,0 +1,16 @@
+Demo started at: Mon 06 Oct 2025 01:27:00 PM +03
+=== System information ===
+CPU cores: 1
+Kernel: 5.15.0-139-generic
+Memory: 2011232kB
+=== Memory info before start ===
+MemTotal:        2011232 kB
+MemFree:          143256 kB
+MemAvailable:     538920 kB
+SwapTotal:       1190340 kB
+SwapFree:         783412 kB
+MemTotal:        2011232 kB
+MemFree:          143256 kB
+MemAvailable:     538920 kB
+SwapTotal:       1190340 kB
+SwapFree:         783412 kB

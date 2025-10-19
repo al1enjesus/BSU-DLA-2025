@@ -1,0 +1,96 @@
+=== Process scheduling info ===
+PID 7201:
+  Nice:   0
+  CPU:   0
+  State: S+
+PID 7203:
+  Nice:   0
+  CPU:   0
+  State: R+
+PID 7204:
+  Nice:  10
+  CPU:   0
+  State: RN+
+PID 7205:
+  Nice:   0
+  CPU:   0
+  State: R+
+=== After LIGHT mode switch ===
+    PID  NI PSR %CPU %MEM COMMAND
+   7203   0   0 22.5  0.0 worker
+   7204  10   0  7.2  0.0 worker
+   7205   0   0 25.7  0.0 worker
+=== After HEAVY mode switch ===
+    PID  NI PSR %CPU %MEM COMMAND
+   7203   0   0 27.4  0.0 worker
+   7204  10   0  8.1  0.0 worker
+   7205   0   0 30.1  0.0 worker
+=== After worker crash ===
+    PID  NI PSR %CPU %MEM COMMAND
+   7204  10   0  7.7  0.0 worker
+   7205   0   0 31.8  0.0 worker
+   7259   0   0 43.0  0.0 worker
+=== Final metrics summary ===
+=== CPU Usage Statistics ===
+01:27:10 PM  1000      7201    0.00    0.00    0.00    1.00    0.00     0  supervisor
+01:27:10 PM  1000      7203    4.00   37.00    0.00   50.00   41.00     0  worker
+01:27:10 PM  1000      7204    4.00   11.00    0.00   80.00   15.00     0  worker
+01:27:10 PM  1000      7205    7.00   33.00    0.00   48.00   40.00     0  worker
+
+01:27:10 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:11 PM  1000      7201    0.00    0.00    0.00    1.00    0.00     0  supervisor
+01:27:11 PM  1000      7204    2.00   12.00    0.00  104.00   14.00     0  worker
+01:27:11 PM  1000      7205    6.00   33.00    0.00   52.00   39.00     0  worker
+
+01:27:11 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:27:12 PM  1000      7201    0.00    0.00    0.00    2.00    0.00     0  supervisor
+01:27:12 PM  1000      7204    1.00    3.00    0.00   80.00    4.00     0  worker
+01:27:12 PM  1000      7205    6.00   29.00    0.00   54.00   35.00     0  worker
+
+Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+Average:     1000      7201    0.00    0.00    0.00    2.69    0.00     -  supervisor
+Average:     1000      7203    3.79   17.15    0.00   42.37   20.94     -  worker
+Average:     1000      7204    1.69    7.18    0.00   83.85    8.87     -  worker
+Average:     1000      7205    5.18   24.03    0.00   54.34   29.21     -  worker
+=== Memory Usage Statistics ===
+01:27:10 PM  1000      7201      0.00      0.00    2500     700   0.03  supervisor
+01:27:10 PM  1000      7203      0.00      0.00    2496     572   0.03  worker
+01:27:10 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:10 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+01:27:10 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:11 PM  1000      7201      2.00      0.00    2500     700   0.03  supervisor
+01:27:11 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:11 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+01:27:11 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+01:27:12 PM  1000      7201      0.00      0.00    2500     700   0.03  supervisor
+01:27:12 PM  1000      7204      0.00      0.00    2496     576   0.03  worker
+01:27:12 PM  1000      7205      0.00      0.00    2496     580   0.03  worker
+
+Average:      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+Average:     1000      7201      0.30      0.00    2500     700   0.03  supervisor
+Average:     1000      7203      0.00      0.00    2496     572   0.03  worker
+Average:     1000      7204      0.00      0.00    2496     576   0.03  worker
+Average:     1000      7205      0.00      0.00    2496     580   0.03  worker
+=== Memory info after demo ===
+MemTotal:        2011232 kB
+MemFree:          239936 kB
+MemAvailable:     639500 kB
+SwapTotal:       1190340 kB
+SwapFree:         783668 kB
+=== Process tree during demo ===
+Supervisor PID: 7201
+Worker PIDs:    7203    7204    7205 
+=== Nice priority analysis ===
+CPU usage by process (showing nice priority effect):
+01:27:03 PM  1000      7203    5.00   14.00    0.00   83.00   19.00     0  worker
+01:27:03 PM  1000      7204    1.00    2.00    0.00   99.00    3.00     0  worker
+01:27:03 PM  1000      7205    3.00   16.00    0.00   80.00   19.00     0  worker
+01:27:04 PM  1000      7203    3.96   17.82    0.00   77.23   21.78     0  worker
+01:27:04 PM  1000      7204    0.00    1.98    0.00  100.99    1.98     0  worker
+01:27:04 PM  1000      7205    2.97   19.80    0.00   77.23   22.77     0  worker
+01:27:05 PM  1000      7203    5.00   24.00    0.00   62.00   29.00     0  worker
+01:27:05 PM  1000      7204    1.00    2.00    0.00   79.00    3.00     0  worker
+01:27:05 PM  1000      7205    5.00   23.00    0.00   62.00   28.00     0  worker
+01:27:06 PM  1000      7203    5.94   23.76    0.00   54.46   29.70     0  worker
