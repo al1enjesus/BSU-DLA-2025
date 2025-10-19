@@ -1,10 +1,27 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/time.h>
 #include <x86intrin.h>
 
 int dummy() { return 42; }
+
+double get_cpu_ghz() {
+    std::ifstream cpuinfo("/proc/cpuinfo");
+    std::string line;
+    while (std::getline(cpuinfo, line)) {
+        if (line.find("cpu MHz") != std::string::npos) {
+            auto pos = line.find(":");
+            if (pos != std::string::npos) {
+                double mhz = std::stod(line.substr(pos + 1));
+                return mhz / 1000.0;
+            }
+        }
+    }
+    return 3.0;
+}
 
 int main() {
     const int iterations = 1000000;
@@ -41,7 +58,7 @@ int main() {
         gettimeofday_cycles += (end - start);
     }
 
-    const double ns_per_cycle = 1.0 / 3.0;
+    double ns_per_cycle = 1.0 / get_cpu_ghz();
 
     double dummy_ns = double(dummy_cycles) / iterations * ns_per_cycle;
     double getpid_ns = double(getpid_cycles) / iterations * ns_per_cycle;
