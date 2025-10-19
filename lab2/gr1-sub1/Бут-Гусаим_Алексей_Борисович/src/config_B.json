@@ -1,0 +1,7 @@
+{
+    "workers": 4,
+    "mode_heavy": {"work_us": 900000, "sleep_us": 100000},
+    "mode_light": {"work_us": 200000, "sleep_us": 800000},
+    "cpu_affinity": [[0], [1], [0], [1]],
+    "nice_levels": [0, 10, 0, 10]
+}
