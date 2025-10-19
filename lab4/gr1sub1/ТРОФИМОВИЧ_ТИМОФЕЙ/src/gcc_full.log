@@ -1,0 +1,671 @@
+[SPY] Library loaded successfully! (WSL version)
+[SPY] access('/usr/local/sbin/gcc', 0x1) = -1
+[SPY] access('/usr/local/bin/gcc', 0x1) = -1
+[SPY] access('/usr/sbin/gcc', 0x1) = -1
+[SPY] access('/usr/bin/gcc', 0x1) = 0
+[SPY] stat('/usr/bin/gcc') = 0
+[SPY] access('/usr/local/sbin/gcc', 0x1) = -1
+[SPY] access('/usr/local/bin/gcc', 0x1) = -1
+[SPY] access('/usr/sbin/gcc', 0x1) = -1
+[SPY] access('/usr/bin/gcc', 0x1) = 0
+[SPY] stat('/usr/bin/gcc') = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/', 0x1) = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/', 0x1) = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/specs', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/specs', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/specs', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/specs', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/', 0x1) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper') = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper', 0x1) = 0
+[SPY] access('/tmp', 0x7) = 0
+[SPY] close(fd=3) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/cc1') = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/cc1', 0x1) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, count=16) = 0
+[SPY] close(fd=3) = 0
+[SPY] Library loaded successfully! (WSL version)
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/', 0x1) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/include') = 0
+[SPY] stat('/usr/local/include/x86_64-linux-gnu') = -1
+[SPY] stat('/usr/local/include') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/include-fixed') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include') = -1
+[SPY] stat('/usr/include/x86_64-linux-gnu') = 0
+[SPY] stat('/usr/include') = 0
+[SPY] stat('hello.c.gch') = -1
+[SPY] open('hello.c', O_RDONLY) = 3
+[SPY] fstat(fd=3) = 0
+[SPY] read(fd=3, count=97) = 97
+[SPY] close(fd=3) = 0
+[SPY] stat('/home/simba/BSU-DLA-2025/lab4/gr9sub1/САЗОНЧИК_ИВАН/src') = 0
+[SPY] stat('.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/include/stdc-predef.h.gch') = -1
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/stdc-predef.h', O_RDONLY) = -1
+[SPY] stat('/usr/local/include/stdc-predef.h.gch') = -1
+[SPY] open('/usr/local/include/stdc-predef.h', O_RDONLY) = -1
+[SPY] stat('/usr/include/x86_64-linux-gnu/stdc-predef.h.gch') = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/stdc-predef.h', O_RDONLY) = -1
+[SPY] stat('/usr/include/stdc-predef.h.gch') = -1
+[SPY] open('/usr/include/stdc-predef.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=2462) = 2462
+[SPY] close(fd=4) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/include/stdio.h.gch') = -1
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/stdio.h', O_RDONLY) = -1
+[SPY] stat('/usr/local/include/stdio.h.gch') = -1
+[SPY] open('/usr/local/include/stdio.h', O_RDONLY) = -1
+[SPY] stat('/usr/include/x86_64-linux-gnu/stdio.h.gch') = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/stdio.h', O_RDONLY) = -1
+[SPY] stat('/usr/include/stdio.h.gch') = -1
+[SPY] open('/usr/include/stdio.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=31176) = 31176
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/libc-header-start.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/libc-header-start.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/libc-header-start.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=4286) = 4286
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/features.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/features.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/features.h', O_RDONLY) = -1
+[SPY] open('/usr/include/features.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=17860) = 17860
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/features-time64.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/features-time64.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/features-time64.h', O_RDONLY) = -1
+[SPY] open('/usr/include/features-time64.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=1409) = 1409
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/wordsize.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/wordsize.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/wordsize.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=442) = 442
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/timesize.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/timesize.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/timesize.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=1109) = 1109
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/wordsize.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=442) = 442
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/sys/cdefs.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/sys/cdefs.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/sys/cdefs.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=26600) = 26600
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/wordsize.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=442) = 442
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/long-double.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/long-double.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/long-double.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=970) = 970
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/gnu/stubs.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/gnu/stubs.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/gnu/stubs.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=384) = 384
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/gnu/stubs-64.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/gnu/stubs-64.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/gnu/stubs-64.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=481) = 481
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=12959) = 12959
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=4072) = 4072
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/types.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/types.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=8806) = 8806
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/wordsize.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=442) = 442
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/timesize.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=1109) = 1109
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/wordsize.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=442) = 442
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/typesizes.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/typesizes.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/typesizes.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=3737) = 3737
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/time64.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/time64.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/time64.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=1340) = 1340
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/__fpos_t.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/types/__fpos_t.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=381) = 381
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/__mbstate_t.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/types/__mbstate_t.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=564) = 564
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/__fpos64_t.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/types/__fpos64_t.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=410) = 410
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/__FILE.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/types/__FILE.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/types/__FILE.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=110) = 110
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/FILE.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/types/FILE.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/types/FILE.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=180) = 180
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/struct_FILE.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/types/struct_FILE.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=4104) = 4104
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/stdio_lim.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/stdio_lim.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/stdio_lim.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=1213) = 1213
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/floatn.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/floatn.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/floatn.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=4373) = 4373
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/floatn-common.h', O_RDONLY) = -1
+[SPY] open('/usr/local/include/bits/floatn-common.h', O_RDONLY) = -1
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/floatn-common.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=9765) = 9765
+[SPY] close(fd=4) = 0
+[SPY] open('/usr/include/x86_64-linux-gnu/bits/long-double.h', O_RDONLY) = 4
+[SPY] fstat(fd=4) = 0
+[SPY] read(fd=4, count=970) = 970
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/x86_64-linux-gnu-as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/x86_64-linux-gnu-as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/x86_64-linux-gnu-as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/x86_64-linux-gnu-as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/x86_64-linux-gnu-as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/11/x86_64-linux-gnu-as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/11/as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/x86_64-linux-gnu-as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu-as') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/as') = -1
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, count=16) = 0
+[SPY] close(fd=3) = 0
+[SPY] Library loaded successfully! (WSL version)
+[SPY] stat('/tmp/cc0PRQPs.o') = 0
+[SPY] stat('/tmp/ccEoMHBk.s') = 0
+[SPY] stat('/tmp/cc0PRQPs.o') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/collect2') = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/collect2', 0x1) = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so', 0x4) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/11/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/11/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/.') = 0
+[SPY] stat('/lib/x86_64-linux-gnu/11/.') = -1
+[SPY] stat('/lib/x86_64-linux-gnu/.') = 0
+[SPY] stat('/lib/../lib/.') = 0
+[SPY] stat('/usr/lib/x86_64-linux-gnu/11/.') = -1
+[SPY] stat('/usr/lib/x86_64-linux-gnu/.') = 0
+[SPY] stat('/usr/lib/../lib/.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../.') = 0
+[SPY] stat('/lib/.') = 0
+[SPY] stat('/usr/lib/.') = 0
+[SPY] close(fd=3) = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/Scrt1.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/Scrt1.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/Scrt1.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/11/Scrt1.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o', 0x4) = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/crti.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/crti.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/crti.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/crti.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/11/crti.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o', 0x4) = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o', 0x4) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/11/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/.') = 0
+[SPY] stat('/lib/x86_64-linux-gnu/11/.') = -1
+[SPY] stat('/lib/x86_64-linux-gnu/.') = 0
+[SPY] stat('/lib/../lib/.') = 0
+[SPY] stat('/usr/lib/x86_64-linux-gnu/11/.') = -1
+[SPY] stat('/usr/lib/x86_64-linux-gnu/.') = 0
+[SPY] stat('/usr/lib/../lib/.') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/.') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../.') = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o', 0x4) = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/crtn.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/crtn.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/crtn.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/crtn.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/11/crtn.o', 0x4) = -1
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o', 0x4) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/collect2') = 0
+[SPY] access('/usr/lib/gcc/x86_64-linux-gnu/11/collect2', 0x1) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, count=16) = 0
+[SPY] close(fd=3) = 0
+[SPY] Library loaded successfully! (WSL version)
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/real-ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/real-ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/real-ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/real-ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/real-ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/collect-ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/collect-ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/collect-ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/collect-ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/collect-ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/ld') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/ld') = -1
+[SPY] stat('/usr/local/sbin/ld') = -1
+[SPY] stat('/usr/local/bin/ld') = -1
+[SPY] stat('/usr/sbin/ld') = -1
+[SPY] stat('/usr/bin/ld') = 0
+[SPY] access('/usr/bin/ld', 0x1) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/gnm') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/gnm') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/gnm') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/gnm') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/gnm') = -1
+[SPY] stat('/usr/local/sbin/gnm') = -1
+[SPY] stat('/usr/local/bin/gnm') = -1
+[SPY] stat('/usr/sbin/gnm') = -1
+[SPY] stat('/usr/bin/gnm') = -1
+[SPY] stat('/sbin/gnm') = -1
+[SPY] stat('/bin/gnm') = -1
+[SPY] stat('/usr/games/gnm') = -1
+[SPY] stat('/usr/local/games/gnm') = -1
+[SPY] stat('/usr/lib/wsl/lib/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu_2404.1.68.0_x64__79rhkp1fndgsc/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft MPI/Bin/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/Amazon Corretto/jdk1.8.0_392/bin/gnm') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gnm') = -1
+[SPY] stat('/mnt/c/Windows/system32/gnm') = -1
+[SPY] stat('/mnt/c/Windows/gnm') = -1
+[SPY] stat('/mnt/c/Windows/System32/Wbem/gnm') = -1
+[SPY] stat('/mnt/c/Windows/System32/WindowsPowerShell/v1.0/gnm') = -1
+[SPY] stat('/mnt/c/Windows/System32/OpenSSH/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/gnm') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/120/Tools/Binn/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/120/DTS/Binn/gnm') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/gnm') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Calibre2/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/Git/cmd/gnm') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/160/Tools/Binn/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/160/DTS/Binn/gnm') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Microsoft SQL Server/160/DTS/Binn/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/Azure Data Studio/bin/gnm') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gnm') = -1
+[SPY] stat('/mnt/c/Program Files/dotnet/gnm') = -1
+[SPY] stat('/mnt/c/Users/ivan/AppData/Local/Programs/Python/Python313/Scripts/gnm') = -1
+[SPY] stat('/mnt/c/Users/ivan/AppData/Local/Programs/Python/Python313/gnm') = -1
+[SPY] stat('/mnt/c/Users/ivan/AppData/Local/Programs/Python/Launcher/gnm') = -1
+[SPY] stat('/mnt/c/Users/ivan/AppData/Local/Microsoft/WindowsApps/gnm') = -1
+[SPY] stat('/mnt/c/Users/ivan/AppData/Local/Programs/Microsoft VS Code/bin/gnm') = -1
+[SPY] stat('/mnt/c/Users/ivan/.dotnet/tools/gnm') = -1
+[SPY] stat('/snap/bin/gnm') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/nm') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/nm') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/nm') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/nm') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/nm') = -1
+[SPY] stat('/usr/local/sbin/nm') = -1
+[SPY] stat('/usr/local/bin/nm') = -1
+[SPY] stat('/usr/sbin/nm') = -1
+[SPY] stat('/usr/bin/nm') = 0
+[SPY] access('/usr/bin/nm', 0x1) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/gstrip') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/gstrip') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/gstrip') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/gstrip') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/gstrip') = -1
+[SPY] stat('/usr/local/sbin/gstrip') = -1
+[SPY] stat('/usr/local/bin/gstrip') = -1
+[SPY] stat('/usr/sbin/gstrip') = -1
+[SPY] stat('/usr/bin/gstrip') = -1
+[SPY] stat('/sbin/gstrip') = -1
+[SPY] stat('/bin/gstrip') = -1
+[SPY] stat('/usr/games/gstrip') = -1
+[SPY] stat('/usr/local/games/gstrip') = -1
+[SPY] stat('/usr/lib/wsl/lib/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu_2404.1.68.0_x64__79rhkp1fndgsc/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft MPI/Bin/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/Amazon Corretto/jdk1.8.0_392/bin/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gstrip') = -1
+[SPY] stat('/mnt/c/Windows/system32/gstrip') = -1
+[SPY] stat('/mnt/c/Windows/gstrip') = -1
+[SPY] stat('/mnt/c/Windows/System32/Wbem/gstrip') = -1
+[SPY] stat('/mnt/c/Windows/System32/WindowsPowerShell/v1.0/gstrip') = -1
+[SPY] stat('/mnt/c/Windows/System32/OpenSSH/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/120/Tools/Binn/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/120/DTS/Binn/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Calibre2/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/Git/cmd/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Microsoft SQL Server/160/Tools/Binn/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/160/Tools/Binn/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/Microsoft SQL Server/160/DTS/Binn/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Microsoft SQL Server/160/DTS/Binn/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/Azure Data Studio/bin/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gstrip') = -1
+[SPY] stat('/mnt/c/Program Files/dotnet/gstrip') = -1
+[SPY] stat('/mnt/c/Users/ivan/AppData/Local/Programs/Python/Python313/Scripts/gstrip') = -1
+[SPY] stat('/mnt/c/Users/ivan/AppData/Local/Programs/Python/Python313/gstrip') = -1
+[SPY] stat('/mnt/c/Users/ivan/AppData/Local/Programs/Python/Launcher/gstrip') = -1
+[SPY] stat('/mnt/c/Users/ivan/AppData/Local/Microsoft/WindowsApps/gstrip') = -1
+[SPY] stat('/mnt/c/Users/ivan/AppData/Local/Programs/Microsoft VS Code/bin/gstrip') = -1
+[SPY] stat('/mnt/c/Users/ivan/.dotnet/tools/gstrip') = -1
+[SPY] stat('/snap/bin/gstrip') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/strip') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/strip') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/strip') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/strip') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/strip') = -1
+[SPY] stat('/usr/local/sbin/strip') = -1
+[SPY] stat('/usr/local/bin/strip') = -1
+[SPY] stat('/usr/sbin/strip') = -1
+[SPY] stat('/usr/bin/strip') = 0
+[SPY] access('/usr/bin/strip', 0x1) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/gcc') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/gcc') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/gcc') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/gcc') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/gcc') = -1
+[SPY] stat('/usr/local/sbin/gcc') = -1
+[SPY] stat('/usr/local/bin/gcc') = -1
+[SPY] stat('/usr/sbin/gcc') = -1
+[SPY] stat('/usr/bin/gcc') = 0
+[SPY] access('/usr/bin/gcc', 0x1) = 0
+[SPY] access('/tmp', 0x7) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, count=16) = 0
+[SPY] close(fd=3) = 0
+[SPY] Library loaded successfully! (WSL version)
+[SPY] stat('hello') = 0
+[SPY] lstat('hello') = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o') = 0
+[SPY] fstat(fd=4) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o', O_RDONLY) = 5
+[SPY] fstat(fd=5) = 0
+[SPY] read(fd=5, count=16) = 16
+[SPY] read(fd=5, count=64) = 64
+[SPY] read(fd=5, count=832) = 832
+[SPY] read(fd=5, count=126) = 126
+[SPY] read(fd=5, count=832) = 832
+[SPY] read(fd=5, count=126) = 126
+[SPY] close(fd=5) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o') = 0
+[SPY] fstat(fd=5) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o', O_RDONLY) = 6
+[SPY] fstat(fd=6) = 0
+[SPY] read(fd=6, count=16) = 16
+[SPY] read(fd=6, count=64) = 64
+[SPY] read(fd=6, count=704) = 704
+[SPY] read(fd=6, count=96) = 96
+[SPY] read(fd=6, count=704) = 704
+[SPY] read(fd=6, count=96) = 96
+[SPY] close(fd=6) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o') = 0
+[SPY] fstat(fd=6) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o', O_RDONLY) = 7
+[SPY] fstat(fd=7) = 0
+[SPY] read(fd=7, count=16) = 16
+[SPY] read(fd=7, count=64) = 64
+[SPY] read(fd=7, count=1088) = 1088
+[SPY] read(fd=7, count=164) = 164
+[SPY] read(fd=7, count=1088) = 1088
+[SPY] read(fd=7, count=164) = 164
+[SPY] close(fd=7) = 0
+[SPY] stat('/tmp/cc0PRQPs.o') = 0
+[SPY] fstat(fd=7) = 0
+[SPY] open('/tmp/cc0PRQPs.o', O_RDONLY) = 8
+[SPY] fstat(fd=8) = 0
+[SPY] read(fd=8, count=16) = 16
+[SPY] read(fd=8, count=64) = 64
+[SPY] read(fd=8, count=832) = 832
+[SPY] read(fd=8, count=116) = 116
+[SPY] read(fd=8, count=832) = 832
+[SPY] read(fd=8, count=116) = 116
+[SPY] close(fd=8) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a') = 0
+[SPY] fstat(fd=8) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so') = 0
+[SPY] fstat(fd=9) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so', O_RDONLY) = 10
+[SPY] fstat(fd=10) = 0
+[SPY] read(fd=10, count=16) = 16
+[SPY] close(fd=10) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1') = -1
+[SPY] stat('libgcc_s.so.1') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libgcc_s.so.1') = 0
+[SPY] fstat(fd=9) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libgcc_s.so.1', O_RDONLY) = 10
+[SPY] fstat(fd=10) = 0
+[SPY] read(fd=10, count=16) = 16
+[SPY] read(fd=10, count=64) = 64
+[SPY] read(fd=10, count=1792) = 1792
+[SPY] read(fd=10, count=274) = 274
+[SPY] read(fd=10, count=1792) = 1792
+[SPY] read(fd=10, count=274) = 274
+[SPY] close(fd=10) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a') = 0
+[SPY] fstat(fd=10) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libc.so') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libc.a') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libc.so') = 0
+[SPY] fstat(fd=11) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libc.so', O_RDONLY) = 12
+[SPY] fstat(fd=12) = 0
+[SPY] read(fd=12, count=16) = 16
+[SPY] close(fd=12) = 0
+[SPY] stat('/lib/x86_64-linux-gnu/libc.so.6') = 0
+[SPY] fstat(fd=11) = 0
+[SPY] open('/lib/x86_64-linux-gnu/libc.so.6', O_RDONLY) = 12
+[SPY] fstat(fd=12) = 0
+[SPY] read(fd=12, count=16) = 16
+[SPY] read(fd=12, count=64) = 64
+[SPY] read(fd=12, count=4160) = 4160
+[SPY] read(fd=12, count=1092) = 1092
+[SPY] read(fd=12, count=4160) = 4160
+[SPY] read(fd=12, count=1092) = 1092
+[SPY] close(fd=12) = 0
+[SPY] stat('/usr/lib/x86_64-linux-gnu/libc_nonshared.a') = 0
+[SPY] fstat(fd=12) = 0
+[SPY] stat('/lib64/ld-linux-x86-64.so.2') = 0
+[SPY] fstat(fd=13) = 0
+[SPY] open('/lib64/ld-linux-x86-64.so.2', O_RDONLY) = 14
+[SPY] fstat(fd=14) = 0
+[SPY] read(fd=14, count=16) = 16
+[SPY] read(fd=14, count=64) = 64
+[SPY] read(fd=14, count=1664) = 1664
+[SPY] read(fd=14, count=260) = 260
+[SPY] read(fd=14, count=1664) = 1664
+[SPY] read(fd=14, count=260) = 260
+[SPY] close(fd=14) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a') = 0
+[SPY] fstat(fd=14) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so') = 0
+[SPY] fstat(fd=15) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so', O_RDONLY) = 16
+[SPY] fstat(fd=16) = 0
+[SPY] read(fd=16, count=16) = 16
+[SPY] close(fd=16) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1') = -1
+[SPY] stat('libgcc_s.so.1') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libgcc_s.so.1') = 0
+[SPY] fstat(fd=15) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libgcc_s.so.1', O_RDONLY) = 16
+[SPY] fstat(fd=16) = 0
+[SPY] read(fd=16, count=16) = 16
+[SPY] read(fd=16, count=64) = 64
+[SPY] read(fd=16, count=1792) = 1792
+[SPY] read(fd=16, count=274) = 274
+[SPY] read(fd=16, count=1792) = 1792
+[SPY] read(fd=16, count=274) = 274
+[SPY] close(fd=16) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so') = -1
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a') = 0
+[SPY] fstat(fd=16) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o') = 0
+[SPY] fstat(fd=17) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o', O_RDONLY) = 18
+[SPY] fstat(fd=18) = 0
+[SPY] read(fd=18, count=16) = 16
+[SPY] read(fd=18, count=64) = 64
+[SPY] read(fd=18, count=704) = 704
+[SPY] read(fd=18, count=114) = 114
+[SPY] read(fd=18, count=704) = 704
+[SPY] read(fd=18, count=114) = 114
+[SPY] close(fd=18) = 0
+[SPY] stat('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o') = 0
+[SPY] fstat(fd=18) = 0
+[SPY] open('/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o', O_RDONLY) = 19
+[SPY] fstat(fd=19) = 0
+[SPY] read(fd=19, count=16) = 16
+[SPY] read(fd=19, count=64) = 64
+[SPY] read(fd=19, count=512) = 512
+[SPY] read(fd=19, count=75) = 75
+[SPY] read(fd=19, count=512) = 512
+[SPY] read(fd=19, count=75) = 75
+[SPY] close(fd=19) = 0
+[SPY] stat('/lib64/ld-linux-x86-64.so.2') = 0
+[SPY] fstat(fd=19) = 0
+[SPY] fstat(fd=19) = 0
+[SPY] fstat(fd=4) = 0
+[SPY] fstat(fd=5) = 0
+[SPY] fstat(fd=6) = 0
+[SPY] fstat(fd=7) = 0
+[SPY] fstat(fd=8) = 0
+[SPY] fstat(fd=14) = 0
+[SPY] fstat(fd=17) = 0
+[SPY] fstat(fd=18) = 0
+[SPY] fstat(fd=10) = 0
+[SPY] fstat(fd=11) = 0
+[SPY] fstat(fd=12) = 0
+[SPY] fstat(fd=16) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] fstat(fd=3) = 0
+[SPY] stat('hello') = 0
+[SPY] lstat('/tmp/cclPDhPn.cdtor.c') = 0
+[SPY] lstat('/tmp/cceDvUva.cdtor.o') = 0
+[SPY] stat('/tmp/ccpoDPXZ.res') = 0
+[SPY] stat('/tmp/cc0PRQPs.o') = 0
+[SPY] stat('/tmp/ccEoMHBk.s') = 0
