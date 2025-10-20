@@ -1,0 +1,21 @@
+[SPY] open("file1.txt", ]) = 3
+[SPY] open("file1_copy.txt", [O_WRONLY|O_CREAT|O_EXCL], mode=0664) = 4
+[SPY] read(fd=3, buf=0x70dc0addf000, count=131072) = 20
+[SPY] write(fd=4, buf=0x70dc0addf000, count=20) = 20
+[SPY] read(fd=3, buf=0x70dc0addf000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_dir/file3.txt", [O_NOFOLLOW|]) = 3
+[SPY] open("test_dir_copy/file3.txt", [O_WRONLY|O_CREAT|O_EXCL|], mode=0664) = 4
+[SPY] read(fd=3, buf=0x731aa0748000, count=131072) = 15
+[SPY] write(fd=4, buf=0x731aa0748000, count=15) = 15
+[SPY] read(fd=3, buf=0x731aa0748000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_dir/file4.txt", [O_NOFOLLOW|]) = 3
+[SPY] open("test_dir_copy/file4.txt", [O_WRONLY|O_CREAT|O_EXCL|], mode=0664) = 4
+[SPY] read(fd=3, buf=0x618183c8d000, count=131072) = 13
+[SPY] write(fd=4, buf=0x618183c8d000, count=13) = 13
+[SPY] read(fd=3, buf=0x618183c8d000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
