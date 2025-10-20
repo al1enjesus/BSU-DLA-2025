@@ -1,0 +1,6 @@
+=== Тест статической программы ===
+Обычный запуск:
+Hello World
+
+С LD_PRELOAD:
+Hello World

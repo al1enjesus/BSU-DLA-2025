@@ -1,0 +1,13 @@
+=== Эксперимент 1: ls ===
+total 976
+drwxr-xr-x 2 surff surff   4096 Oct  5 22:55 .
+drwxr-xr-x 4 surff surff   4096 Oct  5 22:52 ..
+-rw-r--r-- 1 surff surff   1649 Oct  5 22:53 Makefile
+-rwxr-xr-x 1 surff surff  37064 Oct  5 22:54 benchmark
+-rw-r--r-- 1 surff surff   6037 Oct  5 22:54 benchmark.c
+-rw-r--r-- 1 surff surff     69 Oct  5 22:54 hello.c
+-rwxr-xr-x 1 surff surff 871896 Oct  5 22:54 hello_static
+-rwxr-xr-x 1 surff surff  26064 Oct  5 22:54 libsyscall_spy.so
+-rw-r--r-- 1 surff surff   4960 Oct  5 22:53 syscall_spy.c
+-rwxr-xr-x 1 surff surff  16832 Oct  5 22:55 test_preload
+-rw-r--r-- 1 surff surff    478 Oct  5 22:55 test_preload.c
