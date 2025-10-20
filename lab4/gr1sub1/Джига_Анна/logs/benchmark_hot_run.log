@@ -1,0 +1,10 @@
+Iters=100000
+
+RESULTS (averages):
+dummy()         : 2.125240 ns, 0.000260 cycles
+getpid()        : 175.346190 ns
+gettimeofday()  : 1215.052530 ns
+open()+close()  : 2842.000000 ns (measured, 100000 iterations)
+
+Raw cycles (dummy total): 26
+Sink: 8400000
