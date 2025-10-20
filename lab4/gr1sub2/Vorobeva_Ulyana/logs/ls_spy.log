@@ -1,0 +1,29 @@
+=== LD_PRELOAD ls ===
+total 2097240
+drwxr-xr-x  20 root root       4096 Feb 16  2025 .
+drwxr-xr-x  20 root root       4096 Feb 16  2025 ..
+lrwxrwxrwx   1 root root          7 Feb 16  2025 bin -> usr/bin
+drwxr-xr-x   4 root root       4096 Mar  9  2025 boot
+drwxr-xr-x   2 root root       4096 Feb 16  2025 cdrom
+drwxr-xr-x  20 root root       5300 Oct 20  2025 dev
+drwxr-xr-x 142 root root      12288 Sep 28 21:15 etc
+drwxr-xr-x   3 root root       4096 Feb 16  2025 home
+lrwxrwxrwx   1 root root          7 Feb 16  2025 lib -> usr/lib
+lrwxrwxrwx   1 root root          9 Feb 16  2025 lib32 -> usr/lib32
+lrwxrwxrwx   1 root root          9 Feb 16  2025 lib64 -> usr/lib64
+lrwxrwxrwx   1 root root         10 Feb 16  2025 libx32 -> usr/libx32
+drwx------   2 root root      16384 Feb 16  2025 lost+found
+drwxr-xr-x   3 root root       4096 Sep 15 00:49 media
+drwxr-xr-x   2 root root       4096 Mar 16  2023 mnt
+drwxr-xr-x   4 root root       4096 Sep 28 21:15 opt
+dr-xr-xr-x 358 root root          0 Oct 20  2025 proc
+drwx------   4 root root       4096 Feb 16  2025 root
+drwxr-xr-x  35 root root        920 Oct 19 22:20 run
+lrwxrwxrwx   1 root root          8 Feb 16  2025 sbin -> usr/sbin
+drwxr-xr-x  18 root root       4096 Sep 21 20:38 snap
+drwxr-xr-x   2 root root       4096 Mar 16  2023 srv
+-rw-------   1 root root 2147483648 Feb 16  2025 swapfile
+dr-xr-xr-x  13 root root          0 Oct 20  2025 sys
+drwxrwxrwt  27 root root       4096 Oct 19 23:43 tmp
+drwxr-xr-x  14 root root       4096 Mar 16  2023 usr
+drwxr-xr-x  14 root root       4096 Mar 16  2023 var

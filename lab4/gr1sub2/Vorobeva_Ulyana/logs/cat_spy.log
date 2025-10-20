@@ -1,0 +1,9 @@
+=== LD_PRELOAD cat ===
+[SPY] init_log() called
+[SPY] open("logs/testfile.txt", O_RDONLY) = 3 (errno=2)
+[SPY] read(fd=3, buf=0x7fe115743000, count=131072) = 12 (errno=2)
+Hello world
+[SPY] write(fd=1, "Hello world
+", 12) = 12 (errno=2)
+[SPY] read(fd=3, buf=0x7fe115743000, count=131072) = 0 (errno=2)
+[SPY] close(fd=3) = 0 (errno=2)

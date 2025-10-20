@@ -1,0 +1,2 @@
+=== Static test with LD_PRELOAD ===
+read 127 bytes from /etc/hosts
