@@ -1,0 +1,15 @@
+=== Benchmark системных вызовов ===
+Итераций: 1000000
+
+dummy() userspace:        73.37 cycles/call
+getpid() syscall:        722.74 cycles/call  (9.9x медленнее)
+open+close syscall:     9397.26 cycles/call  (128.1x медленнее)
+gettimeofday vDSO:       174.22 cycles/call  (2.4x медленнее)
+
+=== Время в наносекундах (примерно при 3.0 GHz CPU) ===
+dummy() userspace:        24.46 ns
+getpid() syscall:        240.91 ns
+open+close syscall:     3132.42 ns
+gettimeofday vDSO:        58.07 ns
+
+Примечание: 1 цикл CPU @ 3.0 GHz = 0.333 ns

@@ -1,0 +1,35 @@
+--2025-10-22 20:39:12--  https://example.com/
+[SPY] open("/proc/sys/crypto/fips_enabled", flags=0x0, mode=00) = -1 (No such file or directory)
+Resolving example.com (example.com)... 23.220.75.232, 23.215.0.138, 23.215.0.136, ...
+Connecting to example.com (example.com)|23.220.75.232|:443... connected.
+[SPY] write(fd=4, buf=0x564462ec1ba0, count=405) = 405
+[SPY] read(fd=4, buf=0x564462eb8973, count=5) = -1
+[SPY] read(fd=4, buf=0x564462eb8973, count=5) = 5
+[SPY] read(fd=4, buf=0x564462eb8978, count=122) = 122
+[SPY] read(fd=4, buf=0x564462eb8973, count=5) = 5
+[SPY] read(fd=4, buf=0x564462eb8978, count=1) = 1
+[SPY] read(fd=4, buf=0x564462eb8973, count=5) = 5
+[SPY] read(fd=4, buf=0x564462eb8978, count=37) = 37
+[SPY] read(fd=4, buf=0x564462eb8973, count=5) = 5
+[SPY] read(fd=4, buf=0x564462eb8978, count=2367) = 2367
+[SPY] read(fd=4, buf=0x564462eb8973, count=5) = 5
+[SPY] read(fd=4, buf=0x564462eb8978, count=97) = 97
+[SPY] read(fd=4, buf=0x564462eb8973, count=5) = 5
+[SPY] read(fd=4, buf=0x564462eb8978, count=69) = 69
+[SPY] write(fd=4, buf=0x564462ec1ba0, count=80) = 80
+[SPY] write(fd=4, buf=0x564462ebcac3, count=148) = 148
+HTTP request sent, awaiting response... [SPY] read(fd=4, buf=0x564462eb8973, count=5) = -1
+[SPY] read(fd=4, buf=0x564462eb8973, count=5) = 5
+[SPY] read(fd=4, buf=0x564462eb8978, count=282) = 282
+[SPY] read(fd=4, buf=0x564462eb8973, count=5) = 5
+[SPY] read(fd=4, buf=0x564462eb8978, count=282) = 282
+[SPY] read(fd=4, buf=0x564462eb8973, count=5) = 5
+[SPY] read(fd=4, buf=0x564462eb8978, count=845) = 845
+200 OK
+Length: 513 [text/html]
+Saving to: ‘/tmp/lab4_wget_out’
+
+     0K                                                       100%  707M=0s
+
+2025-10-22 20:39:13 (707 MB/s) - ‘/tmp/lab4_wget_out’ saved [513/513]
+
