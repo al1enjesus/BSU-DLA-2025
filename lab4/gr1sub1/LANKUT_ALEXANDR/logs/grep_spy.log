@@ -1,0 +1,4 @@
+[SPY] Logging initialized
+[SPY] openat(AT_FDCWD, "logs/grep_test.txt", O_RDONLY|O_NOCTTY) = 3
+[SPY] read(fd=3, buf=0x55d6e5989000, count=98304) = 16
+[SPY] close(fd=3) = 0
