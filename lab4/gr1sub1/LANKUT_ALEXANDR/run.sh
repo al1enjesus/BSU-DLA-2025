@@ -1,3 +1,23 @@
+set -e
+
+for tool in strace perf; do
+    if ! command -v $tool >/dev/null 2>&1; then
+        echo "Warning: $tool is not installed. Some tests may be skipped."
+    fi
+done
+
+if [ ! -d "build" ]; then
+    echo "Error: build directory not found. Please run 'make' first."
+    exit 1
+fi
+
+for binary in build/libsyscall_spy.so build/benchmark build/static_test; do
+    if [ ! -f "$binary" ]; then
+        echo "Error: $binary not found. Please run 'make' first."
+        exit 1
+    fi
+done
+
 mkdir -p logs
 
 echo "Testing ls..."
