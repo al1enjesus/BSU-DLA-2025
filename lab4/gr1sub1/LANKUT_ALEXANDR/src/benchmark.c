@@ -10,6 +10,9 @@
 
 #define ITERATIONS 100000
 #define TEST_FILE "logs/benchmark_testfile.txt"
+#define TEST_DATA "Test data\n"
+#define ERROR_CODE_FILE_OPEN -1
+#define NSEC_PER_SEC 1000000000ULL  /* Количество наносекунд в секунде */
 
 static inline unsigned long long fast_add(unsigned long long a) {
     return a + 1;
@@ -18,7 +21,7 @@ static inline unsigned long long fast_add(unsigned long long a) {
 static unsigned long long get_time_ns(void) {
     struct timespec ts;
     clock_gettime(CLOCK_MONOTONIC, &ts);
-    return ts.tv_sec * 1000000000ULL + ts.tv_nsec;
+    return ts.tv_sec * NSEC_PER_SEC + ts.tv_nsec;
 }
 
 static unsigned long long measure_cycles(void (*func)(void)) {
@@ -50,9 +53,20 @@ static void test_gettimeofday(void) {
 
 int main() {
     FILE *f = fopen(TEST_FILE, "w");
-    if (f) {
-        fprintf(f, "Test data\n");
+    if (!f) {
+        perror("Failed to open test file");
+        return ERROR_CODE_FILE_OPEN;
+    }
+
+    if (fprintf(f, TEST_DATA) < 0) {
+        perror("Failed to write test data");
         fclose(f);
+        return ERROR_CODE_FILE_OPEN;
+    }
+
+    if (fclose(f) != 0) {
+        perror("Failed to close test file");
+        return ERROR_CODE_FILE_OPEN;
     }
 
     printf("Running each test %d times...\n\n", ITERATIONS);
@@ -62,7 +76,7 @@ int main() {
 
     // Run measurements
     for (int i = 0; i < ITERATIONS; i++) {
-        unsigned start_ns;
+        unsigned long long start_ns;
         
         // 1. Fast userspace function
         start_ns = get_time_ns();
