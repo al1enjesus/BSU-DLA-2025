@@ -1,8 +1,8 @@
 mkdir -p logs
 
 echo "Testing ls..."
-LD_PRELOAD=$PWD/build/libsyscall_spy.so /bin/ls > /dev/null 2> logs/ls_spy.log
-strace -e trace=file,desc /bin/ls > /dev/null 2> logs/ls_strace.log
+LD_PRELOAD=./build/libsyscall_spy.so ls > /dev/null 2> logs/ls_spy.log
+strace -e trace=file,desc ls > /dev/null 2> logs/ls_strace.log
 
 echo "Testing cat..."
 echo "Test data" > logs/testfile.txt
