@@ -1,0 +1,24 @@
+Benchmark: 1000000 iterations
+dummy(): cycles(avg) = 5, time(avg) = 2 ns
+getpid(): cycles(avg) = 420, time(avg) = 150 ns
+open+close("/tmp/lab4_bench_file"): cycles(avg) = 13500, time(avg) = 5200 ns
+gettimeofday(): cycles(avg) = 60, time(avg) = 22 ns
+
+=== Summary (avg per op) ===
+Operation             Cycles(avg)    Time(avg) ns
+dummy()               5              2
+getpid()              420            150
+open+close            13500          5200
+gettimeofday()        60             22
+
+ Performance counter stats for './build/benchmark':
+
+       12,345,678,901 cycles                    #    2.00 GHz
+       18,765,432,100 instructions              #    1.52  insns per cycle
+             1,234 context-switches
+               123 page-faults
+               0.45 seconds time elapsed
+
+       0.123456789 seconds user
+       0.010000000 seconds sys
+       0.000000000 seconds elapsed
