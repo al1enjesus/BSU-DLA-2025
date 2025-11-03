@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  app:
+    build: ./app
+    environment:
+      - RATE=10           # сообщений в секунду
+      - ERROR_EVERY=15    # каждое N-е сообщение будет ERROR
+      - DURATION=60       # длительность генерации логов (сек)
+    restart: "no"
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    restart: "no"
+
+

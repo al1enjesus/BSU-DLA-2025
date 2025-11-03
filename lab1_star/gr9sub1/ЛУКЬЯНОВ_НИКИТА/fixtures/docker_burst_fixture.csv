@@ -1,0 +1,51 @@
+ts_iso,container,stream,message
+2025-09-18T17:30:00Z,compose-app-1,stdout,INFO app: ok 0-0
+2025-09-18T17:30:20Z,compose-app-1,stdout,INFO app: ok 0-1
+2025-09-18T17:31:00Z,compose-app-1,stdout,INFO app: ok 1-0
+2025-09-18T17:31:20Z,compose-app-1,stdout,INFO app: ok 1-1
+2025-09-18T17:32:00Z,compose-app-1,stdout,INFO app: ok 2-0
+2025-09-18T17:32:20Z,compose-app-1,stdout,INFO app: ok 2-1
+2025-09-18T17:33:00Z,compose-app-1,stdout,INFO app: burst msg 1
+2025-09-18T17:33:01Z,compose-app-1,stdout,INFO app: burst msg 2
+2025-09-18T17:33:02Z,compose-app-1,stdout,INFO app: burst msg 3
+2025-09-18T17:33:03Z,compose-app-1,stdout,INFO app: burst msg 4
+2025-09-18T17:33:04Z,compose-app-1,stdout,INFO app: burst msg 5
+2025-09-18T17:33:05Z,compose-app-1,stdout,INFO app: burst msg 6
+2025-09-18T17:33:06Z,compose-app-1,stdout,INFO app: burst msg 7
+2025-09-18T17:33:07Z,compose-app-1,stdout,INFO app: burst msg 8
+2025-09-18T17:33:08Z,compose-app-1,stdout,INFO app: burst msg 9
+2025-09-18T17:33:09Z,compose-app-1,stdout,INFO app: burst msg 10
+2025-09-18T17:33:10Z,compose-app-1,stdout,INFO app: burst msg 11
+2025-09-18T17:33:11Z,compose-app-1,stdout,INFO app: burst msg 12
+2025-09-18T17:33:12Z,compose-app-1,stdout,INFO app: burst msg 13
+2025-09-18T17:33:13Z,compose-app-1,stdout,INFO app: burst msg 14
+2025-09-18T17:33:14Z,compose-app-1,stdout,INFO app: burst msg 15
+2025-09-18T17:33:15Z,compose-app-1,stdout,INFO app: burst msg 16
+2025-09-18T17:33:16Z,compose-app-1,stdout,INFO app: burst msg 17
+2025-09-18T17:33:17Z,compose-app-1,stdout,INFO app: burst msg 18
+2025-09-18T17:33:18Z,compose-app-1,stdout,INFO app: burst msg 19
+2025-09-18T17:33:19Z,compose-app-1,stdout,INFO app: burst msg 20
+2025-09-18T17:33:20Z,compose-app-1,stdout,INFO app: burst msg 21
+2025-09-18T17:33:21Z,compose-app-1,stdout,INFO app: burst msg 22
+2025-09-18T17:33:22Z,compose-app-1,stdout,INFO app: burst msg 23
+2025-09-18T17:33:23Z,compose-app-1,stdout,INFO app: burst msg 24
+2025-09-18T17:33:24Z,compose-app-1,stdout,INFO app: burst msg 25
+2025-09-18T17:33:25Z,compose-app-1,stdout,INFO app: burst msg 26
+2025-09-18T17:33:26Z,compose-app-1,stdout,INFO app: burst msg 27
+2025-09-18T17:33:27Z,compose-app-1,stdout,INFO app: burst msg 28
+2025-09-18T17:33:28Z,compose-app-1,stdout,INFO app: burst msg 29
+2025-09-18T17:33:29Z,compose-app-1,stdout,INFO app: burst msg 30
+2025-09-18T17:33:30Z,compose-app-1,stdout,INFO app: burst msg 31
+2025-09-18T17:33:31Z,compose-app-1,stdout,INFO app: burst msg 32
+2025-09-18T17:33:32Z,compose-app-1,stdout,INFO app: burst msg 33
+2025-09-18T17:33:33Z,compose-app-1,stdout,INFO app: burst msg 34
+2025-09-18T17:33:34Z,compose-app-1,stdout,INFO app: burst msg 35
+2025-09-18T17:33:35Z,compose-app-1,stdout,INFO app: burst msg 36
+2025-09-18T17:33:36Z,compose-app-1,stdout,INFO app: burst msg 37
+2025-09-18T17:33:37Z,compose-app-1,stdout,INFO app: burst msg 38
+2025-09-18T17:33:38Z,compose-app-1,stdout,INFO app: burst msg 39
+2025-09-18T17:33:39Z,compose-app-1,stdout,INFO app: burst msg 40
+2025-09-18T17:34:00Z,compose-app-1,stdout,INFO app: after burst 4-0
+2025-09-18T17:34:30Z,compose-app-1,stdout,INFO app: after burst 4-1
+2025-09-18T17:35:00Z,compose-app-1,stdout,INFO app: after burst 5-0
+2025-09-18T17:35:30Z,compose-app-1,stdout,INFO app: after burst 5-1
