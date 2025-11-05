@@ -11,12 +11,7 @@ all:
 clean:
 	$(MAKE) -C $(KDIR) M=$(PWD) clean
 
-install:
-	sudo insmod hello_module.ko
-	sudo insmod proc_config.ko
-	sudo insmod sys_stats.ko
+test:
+	sudo ./run.sh
 
-uninstall:
-	sudo rmmod hello_module
-	sudo rmmod proc_config
-	sudo rmmod sys_stats
+.PHONY: all clean test

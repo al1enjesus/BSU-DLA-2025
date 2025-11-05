@@ -90,5 +90,5 @@ module_init(sys_stats_init);
 module_exit(sys_stats_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Ваше Имя");
+MODULE_AUTHOR("Polina");
 MODULE_DESCRIPTION("System statistics module");

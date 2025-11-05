@@ -17,9 +17,9 @@ dmesg | tail -1
 # [ 2534.123456] Hello from Anna_Student module!
 
 # Загрузка с параметром
-sudo insmod hello_module.ko message="Custom greeting"
+sudo insmod hello_module.ko message="Polina_Test"
 dmesg | tail -1  
-# [ 2536.654321] Hello from Custom greeting module!
+# [ 2536.654321] Hello from Polina_Test module!
 
 # Выгрузка
 sudo rmmod hello_module
@@ -52,11 +52,11 @@ cat /proc/my_config
 # default
 
 # Запись нового значения
-echo "lab3_completed" > /proc/my_config
+echo "lab5_completed" > /proc/my_config
 
 # Проверка обновления
 cat /proc/my_config
-# lab3_completed
+# lab5_completed
 
 # Проверка граничных условий
 echo "very_long_string_..." > /proc/my_config  # >256 символов

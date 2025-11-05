@@ -5,6 +5,7 @@
 #include <linux/uaccess.h>
 #include <linux/fs.h>
 #include <linux/slab.h>
+#include <linux/string.h>
 
 #define PROC_NAME "my_config"
 #define MAX_SIZE 256
@@ -28,17 +29,24 @@ static ssize_t proc_read(struct file *file, char __user *buf, size_t count, loff
 
 static ssize_t proc_write(struct file *file, const char __user *buf, size_t count, loff_t *ppos)
 {
-    if (count > MAX_SIZE - 1) {
+    size_t actual_count = count;
+
+    // Учитываем символ новой строки
+    if (count > 0 && buf[count-1] == '\n') {
+        actual_count = count - 1;
+    }
+
+    if (actual_count > MAX_SIZE - 1) {
         printk(KERN_WARNING "Config data too large\n");
         return -EINVAL;
     }
 
-    if (copy_from_user(config_data, buf, count)) {
+    if (copy_from_user(config_data, buf, actual_count)) {
         return -EFAULT;
     }
 
-    config_data[count] = '\0';
-    config_size = count;
+    config_data[actual_count] = '\0';
+    config_size = actual_count;
 
     printk(KERN_INFO "Config updated to: %s\n", config_data);
     return count;
@@ -60,7 +68,8 @@ static int __init proc_config_init(void)
     strcpy(config_data, "default");
     config_size = strlen(config_data);
 
-    proc_entry = proc_create(PROC_NAME, 0666, NULL, &proc_fops);
+    // Исправлены права доступа с 0666 на 0644
+    proc_entry = proc_create(PROC_NAME, 0644, NULL, &proc_fops);
     if (!proc_entry) {
         kfree(config_data);
         printk(KERN_ERR "Failed to create /proc/%s\n", PROC_NAME);
@@ -86,5 +95,5 @@ module_init(proc_config_init);
 module_exit(proc_config_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Ваше Имя");
+MODULE_AUTHOR("Polina");
 MODULE_DESCRIPTION("/proc config file module");
