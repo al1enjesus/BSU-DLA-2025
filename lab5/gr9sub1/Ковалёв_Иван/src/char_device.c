@@ -21,14 +21,14 @@ struct chardev_data {
     struct cdev cdev;
     char buffer[DEVICE_BUFFER_SIZE];
     size_t buffer_size;
-    int open_count;
-    atomic_t open_count;  // Атомарный счетчик
-    struct mutex buffer_mutex;  // Мьютекс для защиты буфера
+    atomic_t open_count;
+    struct mutex buffer_mutex;
 };
 
 static int major_number = 0;
 static struct chardev_data *device_data = NULL;
 static struct class *char_class = NULL;
+static struct device *char_device = NULL;  // Добавляем указатель на устройство
 
 // Прототипы функций file_operations
 static int device_open(struct inode *inode, struct file *file);
@@ -52,11 +52,11 @@ static int device_open(struct inode *inode, struct file *file)
 {
     struct chardev_data *data = container_of(inode->i_cdev, struct chardev_data, cdev);
     
-    // Сохраняем указатель на данные устройства в file->private_data
     file->private_data = data;
     
     atomic_inc(&data->open_count);
-    printk(KERN_INFO "chardev: Device opened (open count: %d)\n", atomic_read(&data->open_count));
+    printk(KERN_INFO "chardev: Device opened (open count: %d)\n", 
+           atomic_read(&data->open_count));
     
     return 0;
 }
@@ -68,7 +68,8 @@ static int device_release(struct inode *inode, struct file *file)
     
     if (data) {
         atomic_dec(&data->open_count);
-         printk(KERN_INFO "chardev: Device closed (open count: %d)\n", atomic_read(&data->open_count));
+        printk(KERN_INFO "chardev: Device closed (open count: %d)\n", 
+               atomic_read(&data->open_count));
     }
     
     return 0;
@@ -80,28 +81,22 @@ static ssize_t device_read(struct file *file, char __user *user_buf,
 {
     struct chardev_data *data = (struct chardev_data *)file->private_data;
     ssize_t bytes_to_read;
-    int ret;
     
-    // Захватываем мьютекс для защиты буфера
     if (mutex_lock_interruptible(&data->buffer_mutex))
         return -ERESTARTSYS;
     
-    // Если достигнут конец буфера
     if (*offset >= data->buffer_size) {
         mutex_unlock(&data->buffer_mutex);
         return 0;
     }
     
-    // Определяем сколько байт можно прочитать
     bytes_to_read = min((size_t)(data->buffer_size - *offset), count);
     
-    // Копируем данные из kernel-space в user-space
     if (copy_to_user(user_buf, data->buffer + *offset, bytes_to_read)) {
         mutex_unlock(&data->buffer_mutex);
         return -EFAULT;
     }
     
-    // Обновляем позицию
     *offset += bytes_to_read;
     
     mutex_unlock(&data->buffer_mutex);
@@ -116,30 +111,23 @@ static ssize_t device_write(struct file *file, const char __user *user_buf,
 {
     struct chardev_data *data = (struct chardev_data *)file->private_data;
     ssize_t bytes_to_write;
-    int ret;
     
-    // Захватываем мьютекс для защиты буфера
     if (mutex_lock_interruptible(&data->buffer_mutex))
         return -ERESTARTSYS;
     
-    // Не позволяем записать больше размера буфера
     bytes_to_write = min(count, (size_t)DEVICE_BUFFER_SIZE);
     
-    // Копируем данные из user-space в kernel-space
     if (copy_from_user(data->buffer, user_buf, bytes_to_write)) {
         mutex_unlock(&data->buffer_mutex);
         return -EFAULT;
     }
     
-    // Обновляем размер буфера
     data->buffer_size = bytes_to_write;
     *offset = bytes_to_write;
     
     mutex_unlock(&data->buffer_mutex);
     
-    // Ограничиваем вывод пользовательских данных - только длина
     printk(KERN_DEBUG "chardev: Written %zd bytes to device\n", bytes_to_write);
-    // УБИРАЕМ вывод самих данных: printk(KERN_DEBUG "chardev: Data: %.*s\n", ...);
     
     return bytes_to_write;
 }
@@ -177,36 +165,46 @@ static int __init char_device_init(void)
     ret = cdev_add(&device_data->cdev, dev_num, 1);
     if (ret < 0) {
         printk(KERN_ERR "chardev: Failed to add character device\n");
-        unregister_chrdev_region(dev_num, 1);
-        kfree(device_data);
-        return ret;
+        goto error_cdev_add;
     }
     
     // Создаем класс устройства
     char_class = class_create("chardev_class");
     if (IS_ERR(char_class)) {
-        printk(KERN_ERR "chardev: Failed to create device class\n");
-        cdev_del(&device_data->cdev);
-        unregister_chrdev_region(dev_num, 1);
-        kfree(device_data);
-        return PTR_ERR(char_class);
+        ret = PTR_ERR(char_class);
+        printk(KERN_ERR "chardev: Failed to create device class: %d\n", ret);
+        goto error_class_create;
     }
     
-    // Создаем устройство в /dev
-    device_create(char_class, NULL, dev_num, NULL, DEVICE_NAME);
+    // Создаем устройство в /dev и проверяем результат
+    char_device = device_create(char_class, NULL, dev_num, NULL, DEVICE_NAME);
+    if (IS_ERR(char_device)) {
+        ret = PTR_ERR(char_device);
+        printk(KERN_ERR "chardev: Failed to create device: %d\n", ret);
+        goto error_device_create;
+    }
     
     // Инициализируем данные устройства
     device_data->buffer_size = 0;
     atomic_set(&device_data->open_count, 0);
-    mutex_init(&device_data->buffer_mutex);  // Инициализируем мьютекс
+    mutex_init(&device_data->buffer_mutex);
     memset(device_data->buffer, 0, DEVICE_BUFFER_SIZE);
     
     printk(KERN_INFO "chardev: Character device registered successfully\n");
     printk(KERN_INFO "chardev: Major number = %d\n", major_number);
-    printk(KERN_INFO "chardev: Use: sudo mknod /dev/%s c %d 0\n", 
-           DEVICE_NAME, major_number);
+    printk(KERN_INFO "chardev: Device created: /dev/%s\n", DEVICE_NAME);
     
     return 0;
+
+// Обработка ошибок с правильной последовательностью очистки
+error_device_create:
+    class_destroy(char_class);
+error_class_create:
+    cdev_del(&device_data->cdev);
+error_cdev_add:
+    unregister_chrdev_region(dev_num, 1);
+    kfree(device_data);
+    return ret;
 }
 
 // Функция выгрузки модуля
@@ -216,9 +214,13 @@ static void __exit char_device_exit(void)
     
     printk(KERN_INFO "chardev: Unloading character device\n");
     
-    // Удаляем устройство из /dev
-    if (char_class) {
+    // Удаляем устройство из /dev (только если оно было создано)
+    if (!IS_ERR_OR_NULL(char_device)) {
         device_destroy(char_class, dev_num);
+    }
+    
+    // Удаляем класс (только если он был создан)
+    if (!IS_ERR_OR_NULL(char_class)) {
         class_destroy(char_class);
     }
     
