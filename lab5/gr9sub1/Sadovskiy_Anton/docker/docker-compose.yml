@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  kernel-dev:
+    build: .
+    container_name: kernel_module_lab
+    privileged: true  # ОБЯЗАТЕЛЬНО для загрузки модулей ядра
+    volumes:
+      - ../:/workspace                # Монтируем родительскую директорию (lab5/)
+      - /lib/modules:/lib/modules:ro  # Монтируем модули ядра хоста (read-only)
+      - /usr/src:/usr/src:ro          # Монтируем исходники ядра хоста (read-only)
+      - /usr/lib:/usr/lib:ro
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    cap_add:
+      - ALL  # Добавляем все capabilities для работы с ядром
+    security_opt:
+      - seccomp:unconfined  # Отключаем seccomp для полного доступа
