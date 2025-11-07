@@ -13,7 +13,7 @@ MODULE_VERSION("1.0");
 
 // Глобальные переменные
 static unsigned long module_load_time;
-static int read_count = 0;
+static atomic_t read_count = ATOMIC_INIT(0);
 
 // Для современных версий ядра используем proc_ops
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
@@ -26,29 +26,30 @@ static ssize_t student_info_read(struct file *file, char __user *user_buf,
 {
     char buffer[512];
     int len;
+    int current_count;
     
     // Если уже прочитали весь файл, возвращаем 0
     if (*ppos > 0)
         return 0;
     
-    // Увеличиваем счетчик обращений
-    read_count++;
+    // Атомарно увеличиваем счетчик обращений
+    current_count = atomic_inc_return(&read_count);
     
     // Формируем строку с информацией
     len = snprintf(buffer, sizeof(buffer),
-                  "Name: Ковалёв Иван\n"  // Замените на ваше имя
-                  "Group: 9, Subgroup: 1\n"   // Замените на ваши данные
+                  "Name: Ковалёв Иван\n"
+                  "Group: 9, Subgroup: 1\n"
                   "Module loaded at: %lu jiffies\n"
                   "Read count: %d\n\n",
-                  module_load_time, read_count);
+                  module_load_time, current_count);
     
     // Копируем данные из kernel-space в user-space
     if (copy_to_user(user_buf, buffer, len)) {
-        return -EFAULT;  // Ошибка копирования
+        return -EFAULT;
     }
     
-    *ppos = len;  // Обновляем позицию
-    return len;    // Возвращаем количество прочитанных байт
+    *ppos = len;
+    return len;
 }
 
 // Определяем операции с файлом
@@ -93,7 +94,7 @@ static void __exit proc_module_exit(void)
         proc_remove(proc_file);
     
     printk(KERN_INFO "proc_module: /proc/student_info removed\n");
-    printk(KERN_INFO "proc_module: Final read count: %d\n", read_count);
+    printk(KERN_INFO "proc_module: Final read count: %d\n", atomic_read(&read_count));
 }
 
 // Регистрация функций

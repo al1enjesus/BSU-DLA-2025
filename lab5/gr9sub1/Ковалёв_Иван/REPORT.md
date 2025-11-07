@@ -337,6 +337,7 @@ dmesg | tail -5
 #include <linux/cdev.h>
 #include <linux/uaccess.h>
 #include <linux/slab.h>
+#include <linux/mutex.h>
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Ковалёв Иван");
@@ -353,6 +354,8 @@ struct chardev_data {
     char buffer[DEVICE_BUFFER_SIZE];
     size_t buffer_size;
     int open_count;
+    atomic_t open_count;  // Атомарный счетчик
+    struct mutex buffer_mutex;  // Мьютекс для защиты буфера
 };
 
 static int major_number = 0;
@@ -384,8 +387,8 @@ static int device_open(struct inode *inode, struct file *file)
     // Сохраняем указатель на данные устройства в file->private_data
     file->private_data = data;
     
-    data->open_count++;
-    printk(KERN_INFO "chardev: Device opened (open count: %d)\n", data->open_count);
+    atomic_inc(&data->open_count);
+    printk(KERN_INFO "chardev: Device opened (open count: %d)\n", atomic_read(&data->open_count));
     
     return 0;
 }
@@ -396,8 +399,8 @@ static int device_release(struct inode *inode, struct file *file)
     struct chardev_data *data = (struct chardev_data *)file->private_data;
     
     if (data) {
-        data->open_count--;
-        printk(KERN_INFO "chardev: Device closed (open count: %d)\n", data->open_count);
+        atomic_dec(&data->open_count);
+         printk(KERN_INFO "chardev: Device closed (open count: %d)\n", atomic_read(&data->open_count));
     }
     
     return 0;
@@ -409,21 +412,31 @@ static ssize_t device_read(struct file *file, char __user *user_buf,
 {
     struct chardev_data *data = (struct chardev_data *)file->private_data;
     ssize_t bytes_to_read;
+    int ret;
+    
+    // Захватываем мьютекс для защиты буфера
+    if (mutex_lock_interruptible(&data->buffer_mutex))
+        return -ERESTARTSYS;
     
     // Если достигнут конец буфера
-    if (*offset >= data->buffer_size)
+    if (*offset >= data->buffer_size) {
+        mutex_unlock(&data->buffer_mutex);
         return 0;
+    }
     
     // Определяем сколько байт можно прочитать
     bytes_to_read = min((size_t)(data->buffer_size - *offset), count);
     
     // Копируем данные из kernel-space в user-space
     if (copy_to_user(user_buf, data->buffer + *offset, bytes_to_read)) {
+        mutex_unlock(&data->buffer_mutex);
         return -EFAULT;
     }
     
     // Обновляем позицию
     *offset += bytes_to_read;
+    
+    mutex_unlock(&data->buffer_mutex);
     
     printk(KERN_DEBUG "chardev: Read %zd bytes from device\n", bytes_to_read);
     return bytes_to_read;
@@ -435,12 +448,18 @@ static ssize_t device_write(struct file *file, const char __user *user_buf,
 {
     struct chardev_data *data = (struct chardev_data *)file->private_data;
     ssize_t bytes_to_write;
+    int ret;
+    
+    // Захватываем мьютекс для защиты буфера
+    if (mutex_lock_interruptible(&data->buffer_mutex))
+        return -ERESTARTSYS;
     
     // Не позволяем записать больше размера буфера
     bytes_to_write = min(count, (size_t)DEVICE_BUFFER_SIZE);
     
     // Копируем данные из user-space в kernel-space
     if (copy_from_user(data->buffer, user_buf, bytes_to_write)) {
+        mutex_unlock(&data->buffer_mutex);
         return -EFAULT;
     }
     
@@ -448,8 +467,11 @@ static ssize_t device_write(struct file *file, const char __user *user_buf,
     data->buffer_size = bytes_to_write;
     *offset = bytes_to_write;
     
+    mutex_unlock(&data->buffer_mutex);
+    
+    // Ограничиваем вывод пользовательских данных - только длина
     printk(KERN_DEBUG "chardev: Written %zd bytes to device\n", bytes_to_write);
-    printk(KERN_DEBUG "chardev: Data: %.*s\n", (int)bytes_to_write, data->buffer);
+    // УБИРАЕМ вывод самих данных: printk(KERN_DEBUG "chardev: Data: %.*s\n", ...);
     
     return bytes_to_write;
 }
@@ -507,7 +529,8 @@ static int __init char_device_init(void)
     
     // Инициализируем данные устройства
     device_data->buffer_size = 0;
-    device_data->open_count = 0;
+    atomic_set(&device_data->open_count, 0);
+    mutex_init(&device_data->buffer_mutex);  // Инициализируем мьютекс
     memset(device_data->buffer, 0, DEVICE_BUFFER_SIZE);
     
     printk(KERN_INFO "chardev: Character device registered successfully\n");
