@@ -7,7 +7,7 @@
 #include <linux/version.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("9й студент группы");
+MODULE_AUTHOR("Ковалёв Иван");
 MODULE_DESCRIPTION("/proc/student_info module with statistics");
 MODULE_VERSION("1.0");
 

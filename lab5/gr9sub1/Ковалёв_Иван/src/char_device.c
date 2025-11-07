@@ -160,7 +160,7 @@ static int __init char_device_init(void)
         return ret;
     }
     
-    // Создаем класс устройства - ИСПРАВЛЕННАЯ ЧАСТЬ
+    // Создаем класс устройства
     char_class = class_create("chardev_class");  // Только один аргумент в новых ядрах
     if (IS_ERR(char_class)) {
         printk(KERN_ERR "chardev: Failed to create device class\n");
