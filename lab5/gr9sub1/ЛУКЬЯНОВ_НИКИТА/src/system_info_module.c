@@ -52,6 +52,7 @@ static ssize_t procfs_read(struct file* filp, char __user *buffer, size_t len, l
         count, (K(i.totalram) - K(available)) / 1024, uptime
     );
     
+    buf_size = min(buf_size, MAX_OUTPUT_LENGTH - 1);
     buf_size = min(buf_size, len);
 
     if(copy_to_user(buffer, buf, buf_size)) {

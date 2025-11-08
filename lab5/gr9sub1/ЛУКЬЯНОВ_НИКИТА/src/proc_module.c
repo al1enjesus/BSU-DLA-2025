@@ -46,7 +46,7 @@ static ssize_t procfs_read(struct file* filp, char __user *buffer, size_t len, l
 }   
 
 static ssize_t procfs_write(struct file *filp, const char __user *buffer, size_t len, loff_t* offset) {
-    procfs_buffer_size = min(PROCFS_MAX_SIZE, len);
+    procfs_buffer_size = min(PROCFS_MAX_SIZE - 1, len);
 
     if(copy_from_user(procfs_buffer, buffer, procfs_buffer_size)){ 
         pr_info("error copying from user");
@@ -54,15 +54,15 @@ static ssize_t procfs_write(struct file *filp, const char __user *buffer, size_t
     }
 
     *offset += procfs_buffer_size;
-
+    procfs_buffer[procfs_buffer_size] = '\0';
+    
     pr_info("procfs_write: write %lu bytes\n", procfs_buffer_size);
-
     return procfs_buffer_size;
 }
 
 #ifdef HAVE_PROC_OPS
 
-static struct proc_ops system_info_ops = {
+static struct proc_ops my_config_ops = {
     .proc_read = procfs_read,
     .proc_write = procfs_write,
 };
@@ -81,7 +81,7 @@ static int __init proc_module_init(void) {
         PROCFS_NAME, 
         0666, 
         NULL,
-        &system_info_ops
+        &my_config_ops
     );
 
     if(my_config_proc_file == NULL) {
