@@ -187,7 +187,7 @@ MODULE_VERSION("1.0");
 
 // Глобальные переменные
 static unsigned long module_load_time;
-static int read_count = 0;
+static atomic_t read_count = ATOMIC_INIT(0);
 
 // Для современных версий ядра используем proc_ops
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(5,6,0)
@@ -200,13 +200,14 @@ static ssize_t student_info_read(struct file *file, char __user *user_buf,
 {
     char buffer[512];
     int len;
+    int current_count;
     
     // Если уже прочитали весь файл, возвращаем 0
     if (*ppos > 0)
         return 0;
     
-    // Увеличиваем счетчик обращений
-    read_count++;
+    // Атомарно увеличиваем счетчик обращений
+    current_count = atomic_inc_return(&read_count);
     
     // Формируем строку с информацией
     len = snprintf(buffer, sizeof(buffer),
@@ -214,15 +215,15 @@ static ssize_t student_info_read(struct file *file, char __user *user_buf,
                   "Group: 9, Subgroup: 1\n"
                   "Module loaded at: %lu jiffies\n"
                   "Read count: %d\n\n",
-                  module_load_time, read_count);
+                  module_load_time, current_count);
     
     // Копируем данные из kernel-space в user-space
     if (copy_to_user(user_buf, buffer, len)) {
-        return -EFAULT;  // Ошибка копирования
+        return -EFAULT;
     }
     
-    *ppos = len;  // Обновляем позицию
-    return len;    // Возвращаем количество прочитанных байт
+    *ppos = len;
+    return len;
 }
 
 // Определяем операции с файлом
@@ -267,7 +268,7 @@ static void __exit proc_module_exit(void)
         proc_remove(proc_file);
     
     printk(KERN_INFO "proc_module: /proc/student_info removed\n");
-    printk(KERN_INFO "proc_module: Final read count: %d\n", read_count);
+    printk(KERN_INFO "proc_module: Final read count: %d\n", atomic_read(&read_count));
 }
 
 // Регистрация функций
@@ -390,7 +391,15 @@ struct chardev_data {
 static int major_number = 0;
 static struct chardev_data *device_data = NULL;
 static struct class *char_class = NULL;
-static struct device *char_device = NULL;  // Добавляем указатель на устройство
+static struct device *char_device = NULL;
+
+// Функция для установки прав устройства
+static char *devnode(struct device *dev, umode_t *mode)
+{
+    if (mode != NULL)
+        *mode = 0666;  // rw-rw-rw-
+    return NULL;
+}
 
 // Прототипы функций file_operations
 static int device_open(struct inode *inode, struct file *file);
@@ -531,12 +540,15 @@ static int __init char_device_init(void)
     }
     
     // Создаем класс устройства
-    char_class = class_create("chardev_class");
+    char_class = class_create(DEVICE_NAME);
     if (IS_ERR(char_class)) {
         ret = PTR_ERR(char_class);
         printk(KERN_ERR "chardev: Failed to create device class: %d\n", ret);
         goto error_class_create;
     }
+    
+    // Устанавливаем функцию для настройки прав устройства
+    char_class->devnode = devnode;
     
     // Создаем устройство в /dev и проверяем результат
     char_device = device_create(char_class, NULL, dev_num, NULL, DEVICE_NAME);
@@ -554,11 +566,10 @@ static int __init char_device_init(void)
     
     printk(KERN_INFO "chardev: Character device registered successfully\n");
     printk(KERN_INFO "chardev: Major number = %d\n", major_number);
-    printk(KERN_INFO "chardev: Device created: /dev/%s\n", DEVICE_NAME);
+    printk(KERN_INFO "chardev: Device created with 0666 permissions: /dev/%s\n", DEVICE_NAME);
     
     return 0;
 
-// Обработка ошибок с правильной последовательностью очистки
 error_device_create:
     class_destroy(char_class);
 error_class_create:
@@ -604,7 +615,8 @@ static void __exit char_device_exit(void)
 
 // Регистрация функций
 module_init(char_device_init);
-module_exit(char_device_exit);```
+module_exit(char_device_exit);
+```
 
 ### Компиляция и загрузка
 
@@ -624,11 +636,11 @@ dmesg | tail -5
 
 **Вывод dmesg:**
 ```
-[12250.246775] chardev: Character device unregistered
-[12270.762390] chardev: Initializing character device
-[12270.762569] chardev: Character device registered successfully
-[12270.762571] chardev: Major number = 240
-[12270.762574] chardev: Use: sudo mknod /dev/mychardev c 240 0
+[ 1701.902261] chardev: Character device unregistered
+[ 1985.563910] chardev: Initializing character device
+[ 1985.564093] chardev: Character device registered successfully
+[ 1985.564096] chardev: Major number = 240
+[ 1985.564099] chardev: Device created with 0666 permissions: /dev/mychardev
 ```
 
 **Тест 2: Запись данных в устройство**
@@ -640,11 +652,11 @@ dmesg | tail -5
 
 **Вывод dmesg:**
 ```
-[12340.777325] chardev: Device opened (open count: 1)
-[12340.777347] chardev: Written 23 bytes to device
-[12340.777349] chardev: Data: Test message from user
-
-[12340.777354] chardev: Device closed (open count: 0)
+[ 1985.564099] chardev: Device created with 0666 permissions: /dev/mychardev
+[ 2056.531789] audit: type=1400 audit(1762592562.597:161): apparmor="DENIED" operation="open" class="file" profile="snap.firmware-updater.firmware-notifier" name="/proc/sys/vm/max_map_count" pid=7089 comm="firmware-notifi" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[ 2065.190725] chardev: Device opened (open count: 1)
+[ 2065.190749] chardev: Written 23 bytes to device
+[ 2065.190756] chardev: Device closed (open count: 0)
 ```
 
 **Тест 3: Чтение данных из устройства**
@@ -661,11 +673,11 @@ Test message from user
 
 **Вывод dmesg:**
 ```
-
-[12340.777354] chardev: Device closed (open count: 0)
-[12353.358541] chardev: Device opened (open count: 1)
-[12353.358568] chardev: Read 23 bytes from device
-[12353.358590] chardev: Device closed (open count: 0)
+[ 2065.190749] chardev: Written 23 bytes to device
+[ 2065.190756] chardev: Device closed (open count: 0)
+[ 2115.612363] chardev: Device opened (open count: 1)
+[ 2115.612381] chardev: Read 23 bytes from device
+[ 2115.612402] chardev: Device closed (open count: 0)
 ```
 
 **Тест 5: Выгрузка модуля**
@@ -673,16 +685,16 @@ Test message from user
 ```bash
 
 sudo rmmod char_device
-dmesg | tail -3
+dmesg | tail -5
 ```
 
 **Вывод dmesg:**
 ```
-[12353.358541] chardev: Device opened (open count: 1)
-[12353.358568] chardev: Read 23 bytes from device
-[12353.358590] chardev: Device closed (open count: 0)
-[12567.850206] chardev: Unloading character device
-[12567.850427] chardev: Character device unregistered
+[ 2115.612363] chardev: Device opened (open count: 1)
+[ 2115.612381] chardev: Read 23 bytes from device
+[ 2115.612402] chardev: Device closed (open count: 0)
+[ 2173.324053] chardev: Unloading character device
+[ 2173.324208] chardev: Character device unregistered
 ```
 
 ### Объяснение работы

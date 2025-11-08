@@ -28,7 +28,15 @@ struct chardev_data {
 static int major_number = 0;
 static struct chardev_data *device_data = NULL;
 static struct class *char_class = NULL;
-static struct device *char_device = NULL;  // Добавляем указатель на устройство
+static struct device *char_device = NULL;
+
+// Функция для установки прав устройства
+static char *devnode(struct device *dev, umode_t *mode)
+{
+    if (mode != NULL)
+        *mode = 0666;  // rw-rw-rw-
+    return NULL;
+}
 
 // Прототипы функций file_operations
 static int device_open(struct inode *inode, struct file *file);
@@ -169,12 +177,15 @@ static int __init char_device_init(void)
     }
     
     // Создаем класс устройства
-    char_class = class_create("chardev_class");
+    char_class = class_create(DEVICE_NAME);
     if (IS_ERR(char_class)) {
         ret = PTR_ERR(char_class);
         printk(KERN_ERR "chardev: Failed to create device class: %d\n", ret);
         goto error_class_create;
     }
+    
+    // Устанавливаем функцию для настройки прав устройства
+    char_class->devnode = devnode;
     
     // Создаем устройство в /dev и проверяем результат
     char_device = device_create(char_class, NULL, dev_num, NULL, DEVICE_NAME);
@@ -192,11 +203,10 @@ static int __init char_device_init(void)
     
     printk(KERN_INFO "chardev: Character device registered successfully\n");
     printk(KERN_INFO "chardev: Major number = %d\n", major_number);
-    printk(KERN_INFO "chardev: Device created: /dev/%s\n", DEVICE_NAME);
+    printk(KERN_INFO "chardev: Device created with 0666 permissions: /dev/%s\n", DEVICE_NAME);
     
     return 0;
 
-// Обработка ошибок с правильной последовательностью очистки
 error_device_create:
     class_destroy(char_class);
 error_class_create:
