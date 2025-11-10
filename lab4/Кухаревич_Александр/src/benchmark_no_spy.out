@@ -1,0 +1,7 @@
+=== Syscall/process benchmark (variant 10) ===
+[dummy]        iters=20000, total=20666 ns, avg=1.0333 ns
+[getpid]       iters=20000, total=4145899 ns, avg=207.295 ns
+[pthread_create] iters=20000, total=343664106 ns, avg=17183.2 ns
+[fork+wait]    iters=20000, total=2254911781 ns, avg=112746 ns
+[fork+execve]  iters=20000, total=9681220046 ns, avg=484061 ns
+=== End ===
