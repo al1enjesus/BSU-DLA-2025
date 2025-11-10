@@ -104,12 +104,12 @@ test_proc_module() {
     # Второе чтение (проверка счётчика)
     echo "  3. Второе чтение (проверка счётчика)..."
     echo "    Содержимое:"
-    cat /proc/student_info | sed 's/^/      /'
+    cat /proc/my_config | sed 's/^/      /'
     
     # Третье чтение
     echo "  4. Третье чтение (счётчик должен быть 3)..."
     echo "    Содержимое:"
-    cat /proc/student_info | sed 's/^/      /'
+    cat /proc/my_config | sed 's/^/      /'
     
     echo "  5. Выгрузка модуля..."
     sudo rmmod proc_module
