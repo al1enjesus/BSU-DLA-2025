@@ -178,7 +178,6 @@ main() {
         if [ -f "Makefile" ]; then
             build_modules
             
-            # Тестирование модулей
             test_hello_module || true
             test_proc_module || true
             test_sys_stats_module || true
