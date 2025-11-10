@@ -90,11 +90,11 @@ test_proc_module() {
     fi
     
     # Проверка /proc файла
-    echo "  2. Проверка /proc/student_info..."
-    if [ -f "/proc/student_info" ]; then
+    echo "  2. Проверка /proc/my_config..."
+    if [ -f "/proc/my_config" ]; then
         echo -e "${GREEN}    [✓] /proc файл создан${NC}"
         echo "    Содержимое:"
-        cat /proc/student_info | sed 's/^/      /'
+        cat /proc/my_config | sed 's/^/      /'
     else
         echo -e "${RED}    [✗] /proc файл не создан${NC}"
         sudo rmmod proc_module
@@ -117,65 +117,45 @@ test_proc_module() {
     echo ""
 }
 
-# Функция для тестирования chardev_module
-test_chardev_module() {
-    echo -e "${YELLOW}[*] Тестирование chardev_module...${NC}"
+# Функция для тестирования sys_stats_module
+test_sys_stats_module() {
+    echo -e "${YELLOW}[*] Тестирование sys_stats_module...${NC}"
     
     echo "  1. Загрузка модуля..."
-    if sudo insmod src/chardev_module.ko; then
+    if sudo insmod src/sys_stats_module.ko; then
         echo -e "${GREEN}    [✓] Модуль загружен${NC}"
     else
         echo -e "${RED}    [✗] Ошибка загрузки${NC}"
         return 1
     fi
     
-    # Получение major номера
-    echo "  2. Получение major номера из dmesg..."
-    MAJOR=$(dmesg | grep "chardev: Allocated device number" | tail -1 | grep -o "major [0-9]*" | awk '{print $2}')
-    if [ -z "$MAJOR" ]; then
-        echo -e "${RED}    [✗] Не удалось получить major номер${NC}"
-        sudo rmmod chardev_module
-        return 1
-    fi
-    echo -e "${GREEN}    [✓] Major номер: $MAJOR${NC}"
-    
-    # Создание device node
-    echo "  3. Создание device node..."
-    if sudo mknod /dev/mychardev c $MAJOR 0; then
-        echo -e "${GREEN}    [✓] Device node создан${NC}"
+    # Проверка /proc файла
+    echo "  2. Проверка /proc/sys_stats..."
+    if [ -f "/proc/sys_stats" ]; then
+        echo -e "${GREEN}    [✓] /proc файл создан${NC}"
+        echo "    Содержимое:"
+        cat /proc/sys_stats | sed 's/^/      /'
     else
-        echo -e "${RED}    [✗] Ошибка создания device node${NC}"
-        sudo rmmod chardev_module
+        echo -e "${RED}    [✗] /proc файл не создан${NC}"
+        sudo rmmod sys_stats_module
         return 1
     fi
-    sudo chmod 666 /dev/mychardev
+    echo ""
     
-    # Запись в устройство
-    echo "  4. Запись в устройство..."
-    if echo "Hello from kernel test!" > /dev/mychardev; then
-        echo -e "${GREEN}    [✓] Данные записаны${NC}"
-    else
-        echo -e "${RED}    [✗] Ошибка записи${NC}"
-        sudo rm /dev/mychardev
-        sudo rmmod chardev_module
-        return 1
-    fi
-    
-    # Чтение из устройства
-    echo "  5. Чтение из устройства..."
-    echo "    Прочитано:"
-    cat /dev/mychardev | sed 's/^/      /'
+    # Повторное чтение для проверки обновления данных
+    echo "  3. Повторное чтение (проверка обновления)..."
+    sleep 1
+    cat /proc/sys_stats | sed 's/^/    /'
     echo ""
     
     # Логи
-    echo "  6. Логи из dmesg:"
-    dmesg | grep "chardev" | tail -10 | sed 's/^/    /'
+    echo "  4. Логи из dmesg:"
+    dmesg | grep "sys_stats_module" | tail -5 | sed 's/^/    /'
     
-    # Очистка
-    echo "  7. Очистка..."
-    sudo rm /dev/mychardev
-    sudo rmmod chardev_module
-    echo -e "${GREEN}    [✓] Device node и модуль удалены${NC}"
+    # Выгрузка
+    echo "  5. Выгрузка модуля..."
+    sudo rmmod sys_stats_module
+    echo -e "${GREEN}    [✓] Модуль выгружен${NC}"
     echo ""
 }
 
@@ -201,7 +181,7 @@ main() {
             # Тестирование модулей
             test_hello_module || true
             test_proc_module || true
-            test_chardev_module || true
+            test_sys_stats_module || true
             
             info_modules
             

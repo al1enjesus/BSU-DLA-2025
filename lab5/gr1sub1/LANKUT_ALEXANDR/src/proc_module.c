@@ -24,7 +24,7 @@ static ssize_t proc_read(struct file *file, char __user *ubuf,
     if (*ppos > 0)
         return 0;
 
-    // Проверяем, хватает ли места
+    // Проверяем, хватает ли места для всех данных
     if (count < config_len)
         return -EFAULT;
 
@@ -44,17 +44,15 @@ static ssize_t proc_read(struct file *file, char __user *ubuf,
 static ssize_t proc_write(struct file *file, const char __user *ubuf,
                           size_t count, loff_t *ppos)
 {
-    size_t to_write;
+    size_t to_write = count;
 
     printk(KERN_INFO "proc_module: write called (count=%zu)\n", count);
 
-    // Проверяем максимальный размер
+    // Проверяем максимальный размер - возвращаем ошибку при превышении
     if (count > MAX_CONFIG_SIZE) {
-        printk(KERN_WARNING "proc_module: write size %zu exceeds MAX %d\n",
+        printk(KERN_ERR "proc_module: write size %zu exceeds MAX %d\n",
                count, MAX_CONFIG_SIZE);
-        to_write = MAX_CONFIG_SIZE;
-    } else {
-        to_write = count;
+        return -EINVAL;  // Возвращаем ошибку вместо молчаливого обрезания
     }
 
     // Копируем данные из user-space в kernel-space
@@ -90,9 +88,9 @@ static int __init proc_init(void)
 {
     printk(KERN_INFO "proc_module: Initializing...\n");
 
-    // Создаём /proc файл с правами 0666 (читать/писать всем)
+    // Создаём /proc файл с правами 0644
     // Параметры: имя, права доступа, родительская папка, file_ops
-    proc_file = proc_create("my_config", 0666, NULL, &proc_fops);
+    proc_file = proc_create("my_config", 0644, NULL, &proc_fops);
 
     if (!proc_file) {
         printk(KERN_ERR "proc_module: Failed to create /proc/my_config\n");
