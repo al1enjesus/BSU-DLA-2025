@@ -1,4 +1,4 @@
-[2025-11-11 22:36:02] PID=4240 | UID=1000 | SYS_openat("/etc/passwd", O_RDONLY) = 3
-[2025-11-11 22:36:02] PID=4240 | UID=1000 | SYS_read(fd=3, size=4096) = 4096
-[2025-11-11 22:36:02] PID=4240 | UID=1000 | SYS_write(fd=1, size=84) = 84
-[2025-11-11 22:36:02] PID=4240 | UID=1000 | SYS_close(fd=3) = 0
+[SPY] openat("/etc/passwd", O_RDONLY) = 3
+[SPY] read(fd=3, size=4096) = 4096
+[SPY] write(fd=1, size=84) = 84
+[SPY] close(fd=3) = 0
