@@ -1,0 +1,34 @@
+obj-m += hello_module.o
+obj-m += proc_module.o
+obj-m += char_device.o
+
+KDIR := /lib/modules/$(shell uname -r)/build
+PWD := $(shell pwd)
+
+all:
+	$(MAKE) -C $(KDIR) M=$(PWD) modules
+
+clean:
+	$(MAKE) -C $(KDIR) M=$(PWD) clean
+
+install:
+	sudo insmod hello_module.ko
+	sudo insmod proc_module.ko
+	sudo insmod char_device.ko
+
+uninstall:
+	sudo rmmod hello_module
+	sudo rmmod proc_module
+	sudo rmmod char_device
+
+test:
+	sudo dmesg -C
+	sudo insmod hello_module.ko
+	sudo insmod proc_module.ko
+	sudo insmod char_device.ko
+	dmesg
+	cat /proc/student_info
+	sudo rmmod hello_module
+	sudo rmmod proc_module
+	sudo rmmod char_device
+	dmesg
