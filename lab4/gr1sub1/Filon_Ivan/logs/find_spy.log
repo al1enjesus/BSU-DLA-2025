@@ -1,0 +1,25 @@
+[SPY] open(".", O_RDONLY|O_CLOEXEC) = 3
+[SPY] openat(AT_FDCWD, "/tmp/spy_find_test", O_RDONLY|O_CLOEXEC) = 4
+[SPY] openat(fd, "dir_3", O_RDONLY|O_CLOEXEC) = 6
+[SPY] close(fd=4) = 0
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] openat(fd, "dir_5", O_RDONLY|O_CLOEXEC) = 6
+[SPY] close(fd=4) = 0
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] openat(fd, "dir_2", O_RDONLY|O_CLOEXEC) = 6
+[SPY] close(fd=4) = 0
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] openat(fd, "dir_1", O_RDONLY|O_CLOEXEC) = 6
+[SPY] close(fd=4) = 0
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] openat(fd, "dir_4", O_RDONLY|O_CLOEXEC) = 6
+[SPY] close(fd=4) = 0
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=5) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0

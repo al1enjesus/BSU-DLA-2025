@@ -1,0 +1,33 @@
+[SPY] open("/tmp/spy_tar_test.tar", O_RDONLY) = 3
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] read(fd=3, buf=0x59268fe9e000, count=10240) = 10240
+[SPY] close(fd=3) = 0

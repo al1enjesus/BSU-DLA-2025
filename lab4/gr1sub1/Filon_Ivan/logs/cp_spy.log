@@ -1,0 +1,77 @@
+[SPY] open("/tmp/spy_src.txt", O_RDONLY) = 3
+[SPY] open("/tmp/spy_dst.txt", O_RDONLY|O_WRONLY|O_TRUNC) = 4
+[SPY] read(fd=3, buf=0x712373103000, count=131072) = 12
+[SPY] write(fd=4, buf=0x712373103000, count=12) = 12
+[SPY] read(fd=3, buf=0x712373103000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/tmp/spy_src_1.txt", O_RDONLY) = 3
+[SPY] open("/tmp/spy_dst_1.txt", O_RDONLY|O_WRONLY|O_CREAT, mode=0644) = 4
+[SPY] read(fd=3, buf=0x709f6ee0a000, count=131072) = 14
+[SPY] write(fd=4, buf=0x709f6ee0a000, count=14) = 14
+[SPY] read(fd=3, buf=0x709f6ee0a000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/tmp/spy_src_2.txt", O_RDONLY) = 3
+[SPY] open("/tmp/spy_dst_2.txt", O_RDONLY|O_WRONLY|O_CREAT, mode=0644) = 4
+[SPY] read(fd=3, buf=0x7fb325a17000, count=131072) = 14
+[SPY] write(fd=4, buf=0x7fb325a17000, count=14) = 14
+[SPY] read(fd=3, buf=0x7fb325a17000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/tmp/spy_src_3.txt", O_RDONLY) = 3
+[SPY] open("/tmp/spy_dst_3.txt", O_RDONLY|O_WRONLY|O_CREAT, mode=0644) = 4
+[SPY] read(fd=3, buf=0x776ce0578000, count=131072) = 14
+[SPY] write(fd=4, buf=0x776ce0578000, count=14) = 14
+[SPY] read(fd=3, buf=0x776ce0578000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/tmp/spy_src_4.txt", O_RDONLY) = 3
+[SPY] open("/tmp/spy_dst_4.txt", O_RDONLY|O_WRONLY|O_CREAT, mode=0644) = 4
+[SPY] read(fd=3, buf=0x7744203a9000, count=131072) = 14
+[SPY] write(fd=4, buf=0x7744203a9000, count=14) = 14
+[SPY] read(fd=3, buf=0x7744203a9000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/tmp/spy_src_5.txt", O_RDONLY) = 3
+[SPY] open("/tmp/spy_dst_5.txt", O_RDONLY|O_WRONLY|O_CREAT, mode=0644) = 4
+[SPY] read(fd=3, buf=0x708a83389000, count=131072) = 14
+[SPY] write(fd=4, buf=0x708a83389000, count=14) = 14
+[SPY] read(fd=3, buf=0x708a83389000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/tmp/spy_src_6.txt", O_RDONLY) = 3
+[SPY] open("/tmp/spy_dst_6.txt", O_RDONLY|O_WRONLY|O_CREAT, mode=0644) = 4
+[SPY] read(fd=3, buf=0x7bfb136bc000, count=131072) = 14
+[SPY] write(fd=4, buf=0x7bfb136bc000, count=14) = 14
+[SPY] read(fd=3, buf=0x7bfb136bc000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/tmp/spy_src_7.txt", O_RDONLY) = 3
+[SPY] open("/tmp/spy_dst_7.txt", O_RDONLY|O_WRONLY|O_CREAT, mode=0644) = 4
+[SPY] read(fd=3, buf=0x7702c4865000, count=131072) = 14
+[SPY] write(fd=4, buf=0x7702c4865000, count=14) = 14
+[SPY] read(fd=3, buf=0x7702c4865000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/tmp/spy_src_8.txt", O_RDONLY) = 3
+[SPY] open("/tmp/spy_dst_8.txt", O_RDONLY|O_WRONLY|O_CREAT, mode=0644) = 4
+[SPY] read(fd=3, buf=0x7a43d295d000, count=131072) = 14
+[SPY] write(fd=4, buf=0x7a43d295d000, count=14) = 14
+[SPY] read(fd=3, buf=0x7a43d295d000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/tmp/spy_src_9.txt", O_RDONLY) = 3
+[SPY] open("/tmp/spy_dst_9.txt", O_RDONLY|O_WRONLY|O_CREAT, mode=0644) = 4
+[SPY] read(fd=3, buf=0x7f6c11931000, count=131072) = 14
+[SPY] write(fd=4, buf=0x7f6c11931000, count=14) = 14
+[SPY] read(fd=3, buf=0x7f6c11931000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/tmp/spy_src_10.txt", O_RDONLY) = 3
+[SPY] open("/tmp/spy_dst_10.txt", O_RDONLY|O_WRONLY|O_CREAT, mode=0644) = 4
+[SPY] read(fd=3, buf=0x7cd314ce2000, count=131072) = 15
+[SPY] write(fd=4, buf=0x7cd314ce2000, count=15) = 15
+[SPY] read(fd=3, buf=0x7cd314ce2000, count=131072) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
