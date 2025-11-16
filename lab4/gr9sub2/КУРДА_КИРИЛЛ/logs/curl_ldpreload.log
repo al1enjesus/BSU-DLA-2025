@@ -1,0 +1,14 @@
+[SPY] open("/proc/sys/crypto/fips_enabled", flags=0x0, mode=00) = -1 (No such file or directory)
+[SPY] open("/home/kirill_kurda/.curlrc", flags=0x0, mode=00) = -1 (No such file or directory)
+[SPY] open("/home/kirill_kurda/.config/curlrc", flags=0x0, mode=00) = -1 (No such file or directory)
+[SPY] open("/home/kirill_kurda/.curlrc", flags=0x0, mode=00) = -1 (No such file or directory)
+[SPY] close(fd=5) = 0 (OK)
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[SPY] write(fd=6, buf=0x7f54f2abbc5b, count=1) = 1
+[SPY] close(fd=6) = 0 (OK)
+[SPY] close(fd=5) = 0 (OK)
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   513  100   513    0     0    756      0 --:--:-- --:--:-- --:--:--   755
+[SPY] close(fd=3) = 0 (OK)
+[SPY] close(fd=4) = 0 (OK)
+[SPY] close(fd=5) = 0 (OK)
