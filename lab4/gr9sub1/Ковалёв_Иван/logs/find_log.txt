@@ -1,0 +1,55 @@
+[SPY] open(".", flags=0x80000) = 3
+[SPY] openat(AT_FDCWD, "/tmp", 0xb0900) = 4
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-apache2.service-aTBfGJ", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-apache2.service-aTBfGJ’: Permission denied
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-systemd-timesyncd.service-PKjdRm", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-systemd-timesyncd.service-PKjdRm’: Permission denied
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-bluetooth.service-m0Im6I", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-bluetooth.service-m0Im6I’: Permission denied
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-ubuntu-advantage-desktop-daemon.service-Hxno63", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-ubuntu-advantage-desktop-daemon.service-Hxno63’: Permission denied
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-power-profiles-daemon.service-aJRBNN", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-power-profiles-daemon.service-aJRBNN’: Permission denied
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-upower.service-J03DL9", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-upower.service-J03DL9’: Permission denied
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-ModemManager.service-UHGP9J", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-ModemManager.service-UHGP9J’: Permission denied
+[SPY] openat(<fd>, ".ICE-unix", 0xb0900) = 6
+[SPY] close(fd=4) = 0
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] openat(<fd>, ".X11-unix", 0xb0900) = 6
+[SPY] close(fd=4) = 0
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-systemd-logind.service-pXfTzQ", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-systemd-logind.service-pXfTzQ’: Permission denied
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-switcheroo-control.service-ZolWjO", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-switcheroo-control.service-ZolWjO’: Permission denied
+[SPY] openat(<fd>, ".XIM-unix", 0xb0900) = 6
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-systemd-resolved.service-5PjFVp", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-systemd-resolved.service-5PjFVp’: Permission denied
+[SPY] openat(<fd>, ".font-unix", 0xb0900) = 6
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-polkit.service-CwquFZ", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-polkit.service-CwquFZ’: Permission denied
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-colord.service-XrbziM", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-colord.service-XrbziM’: Permission denied
+[SPY] openat(<fd>, "snap-private-tmp", 0xb0900) = -1
+find: ‘/tmp/snap-private-tmp’: Permission denied
+[SPY] openat(<fd>, "tmpzwft9jp6", 0xb0900) = -1
+find: ‘/tmp/tmpzwft9jp6’: Permission denied
+[SPY] openat(<fd>, "{9909ABC7-C9CC-4E00-ABBC-FDFA6DB67A38}", 0xb0900) = 6
+[SPY] close(fd=4) = 0
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-fwupd.service-onhWdg", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-fwupd.service-onhWdg’: Permission denied
+[SPY] openat(<fd>, "systemd-private-c367664c13e7416c8f45c54b30e7c1d0-systemd-oomd.service-8zFsRd", 0xb0900) = -1
+find: ‘/tmp/systemd-private-c367664c13e7416c8f45c54b30e7c1d0-systemd-oomd.service-8zFsRd’: Permission denied
+[SPY] close(fd=5) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
