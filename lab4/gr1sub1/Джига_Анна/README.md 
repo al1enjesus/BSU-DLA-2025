@@ -1,0 +1,42 @@
+### Команды для полного воспроизведения
+
+*Примечание: предполагается, что сборка происходит из корневой директории lab4/gr1sub1/Джига_Анна/.*
+
+```bash
+# --- 1. СБОРКА ---
+# Сборка LD_PRELOAD библиотеки
+gcc -shared -fPIC -o ../libsyscall_spy.so syscall_spy.c -ldl
+
+# Сборка бенчмарка
+gcc -O2 -march=native -o ../benchmark benchmark.c
+
+# --- 2. ЗАДАНИЕ A (LD_PRELOAD) ---
+# Эксперимент с curl
+LD_PRELOAD=../libsyscall_spy.so curl -vI https://example.com 2> ../logs/curl_spy.log
+
+# Эксперимент с wget
+LD_PRELOAD=../libsyscall_spy.so wget -O - https://example.com 2> ../logs/wget_spy.log
+
+# Проверка на статической программе (пример)
+gcc -static -o ../hello_static src/hello.c
+LD_PRELOAD=../libsyscall_spy.so ../hello_static > ../logs/hello_spy.log
+
+# --- 3. ЗАДАНИЕ B (BENCHMARK) ---
+# Основной замер (1 млн итераций)
+../benchmark 1000000 > ../logs/benchmark_full.log
+
+# Замер Холодный/Горячий кэш
+sudo sync; sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches'
+../benchmark 100000 > ../logs/benchmark_cold.log
+../benchmark 100000 > ../logs/benchmark_hot.log
+
+# Запуск perf (для получения лога)
+# (Несмотря на ошибку, команда должна быть приведена)
+perf stat -e cycles,instructions,context-switches,page-faults ../benchmark 1000000 2> ../logs/perf_stat_full.log
+```
+
+## Среда выполнения
+- ОС: Ubuntu 24.04 LTS
+- Ядро: 6.14.0-29-generic
+- Процессор: AMD Ryzen 3 5300U with Radeon Graphics
+- Компилятор: gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0

@@ -1,0 +1,36 @@
+--2025-10-20 14:56:01--  https://example.com/
+[1760961361.145] pid=150570 tid=150570 [SPY] open("/proc/sys/crypto/fips_enabled", 0x0) = -1 errno=2 (No such file or directory)
+Resolving example.com (example.com)... 23.215.0.138, 23.220.75.232, 23.192.228.80, ...
+Connecting to example.com (example.com)|23.215.0.138|:443... connected.
+[1760961361.407] pid=150570 tid=150570 [SPY] write(fd=3, count=405) = 405
+[1760961361.407] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = -1 errno=11 (Resource temporarily unavailable)
+[1760961361.714] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = 5
+[1760961361.714] pid=150570 tid=150570 [SPY] read(fd=3, count=122) = 122
+[1760961361.714] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = 5
+[1760961361.714] pid=150570 tid=150570 [SPY] read(fd=3, count=1) = 1
+[1760961361.714] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = 5
+[1760961361.714] pid=150570 tid=150570 [SPY] read(fd=3, count=37) = 37
+[1760961361.714] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = 5
+[1760961361.714] pid=150570 tid=150570 [SPY] read(fd=3, count=2367) = 2367
+[1760961361.770] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = 5
+[1760961361.770] pid=150570 tid=150570 [SPY] read(fd=3, count=95) = 95
+[1760961361.771] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = 5
+[1760961361.771] pid=150570 tid=150570 [SPY] read(fd=3, count=69) = 69
+[1760961361.771] pid=150570 tid=150570 [SPY] write(fd=3, count=80) = 80
+[1760961361.771] pid=150570 tid=150570 [SPY] write(fd=3, count=148) = 148
+HTTP request sent, awaiting response... [1760961361.771] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = -1 errno=11 (Resource temporarily unavailable)
+[1760961362.002] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = 5
+[1760961362.002] pid=150570 tid=150570 [SPY] read(fd=3, count=282) = 282
+[1760961362.002] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = 5
+[1760961362.002] pid=150570 tid=150570 [SPY] read(fd=3, count=282) = 282
+[1760961362.002] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = -1 errno=11 (Resource temporarily unavailable)
+[1760961362.328] pid=150570 tid=150570 [SPY] read(fd=3, count=5) = 5
+[1760961362.328] pid=150570 tid=150570 [SPY] read(fd=3, count=845) = 845
+200 OK
+Length: 513 [text/html]
+Saving to: ‘STDOUT’
+
+     0K                                                       100%  111M=0s
+
+2025-10-20 14:56:02 (111 MB/s) - written to stdout [513/513]
+
