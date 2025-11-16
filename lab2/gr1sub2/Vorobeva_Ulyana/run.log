@@ -1,0 +1,46 @@
+=== Сборка ===
+rm -rf /home/ullecses/BSU-DLA-2025/lab2/gr1sub/Vorobeva_Ulyana/bin
+g++ -std=c++17 -O2 /home/ullecses/BSU-DLA-2025/lab2/gr1sub/Vorobeva_Ulyana/src/supervisor.cpp -o /home/ullecses/BSU-DLA-2025/lab2/gr1sub/Vorobeva_Ulyana/bin/supervisor -lyaml-cpp
+g++ -std=c++17 -O2 /home/ullecses/BSU-DLA-2025/lab2/gr1sub/Vorobeva_Ulyana/src/worker.cpp -o /home/ullecses/BSU-DLA-2025/lab2/gr1sub/Vorobeva_Ulyana/bin/worker
+=== Запуск супервизора с воркерами ===
+[RUN] Supervisor PID=34225
+=== Статус процессов ===
+    PID COMMAND          NI PSR
+  34225 supervisor        0   3
+  34227 worker           10   0
+  34228 worker            0   1
+  34229 worker           10   0
+=== CPU статистика (pidstat 1 5) ===
+pidstat не найден, используйте 'sudo apt install sysstat'
+=== Переключение режима воркеров в LIGHT ===
+    PID COMMAND          NI PSR
+  34225 supervisor        0   6
+  34227 worker           10   0
+  34228 worker            0   1
+  34229 worker           10   0
+=== Переключение режима воркеров в HEAVY ===
+    PID COMMAND          NI PSR
+  34225 supervisor        0   3
+  34227 worker           10   0
+  34228 worker            0   1
+  34229 worker           10   0
+=== Завершение супервизора ===
+[WORKER 34229] Mode=LIGHT Tick=1 CPU=0
+[WORKER 34229] Mode=HEAVY Tick=2 CPU=0
+[WORKER 34229] Mode=HEAVY Tick=3 CPU=0
+[WORKER 34229] exiting
+[WORKER 34228] Mode=LIGHT Tick=1 CPU=1
+[WORKER 34228] Mode=HEAVY Tick=2 CPU=1
+[WORKER 34228] Mode=HEAVY Tick=3 CPU=1
+[WORKER 34228] exiting
+[WORKER 34227] Mode=LIGHT Tick=1 CPU=0
+[WORKER 34227] Mode=HEAVY Tick=2 CPU=0
+[WORKER 34227] Mode=HEAVY Tick=3 CPU=0
+[WORKER 34227] exiting
+[SUP] Worker started PID=34227 nice=0 CPU=1
+[SUP] Worker started PID=34228 nice=10 CPU=0
+[SUP] Worker started PID=34229 nice=0 CPU=1
+[SUP] Shutting down...
+[SUP] Worker exited PID=34228
+[SUP] Worker exited PID=34227
+=== Конец демонстрации ===

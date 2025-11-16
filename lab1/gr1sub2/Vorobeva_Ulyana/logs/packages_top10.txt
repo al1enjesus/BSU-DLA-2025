@@ -1,0 +1,7 @@
+      8 installed
+      5 half-installed
+      1 rospack-tools:amd64
+      1 librospack0d:amd64
+      1 libonig5:amd64
+      1 libjq1:amd64
+      1 jq:amd64
