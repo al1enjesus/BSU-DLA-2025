@@ -267,6 +267,10 @@ MODULE_DESCRIPTION("Simple character device /dev/mychardev");
 ```
 Аналогично предыдущим заданиям, проверка работоспособности и результаты видны на приложенных скриншотах
 
+Команды для создания device node, где MAJOR = 240:
+sudo mknod /dev/mychardev c 240 0
+sudo chmod 666 /dev/mychardev
+
 ---
 
 ## Вопросы для отчёта (обязательно)

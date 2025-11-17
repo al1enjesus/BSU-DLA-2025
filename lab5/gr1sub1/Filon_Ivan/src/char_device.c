@@ -45,11 +45,19 @@ static ssize_t dev_read(struct file *file, char __user *buf, size_t len, loff_t 
 
 static ssize_t dev_write(struct file *file, const char __user *buf, size_t len, loff_t *off)
 {
-    size_t to_copy = len < BUFFER_SIZE ? len : BUFFER_SIZE;
+    size_t remaining;
+    size_t to_copy;
 
-    if (copy_from_user(kernel_buffer, buf, to_copy))
+    if (*off >= BUFFER_SIZE)
+        return -ENOSPC;
+
+    remaining = BUFFER_SIZE - *off;
+    to_copy = len < remaining ? len : remaining;
+
+    if (copy_from_user(kernel_buffer + *off, buf, to_copy))
         return -EFAULT;
 
+    *off += to_copy;
     return to_copy;
 }
 
