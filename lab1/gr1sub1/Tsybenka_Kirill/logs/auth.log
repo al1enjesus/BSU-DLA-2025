@@ -1,0 +1,84 @@
+Sep 14 14:11:04 DESKTOP-OHCJ5SB login[646]: pam_unix(login:session): session opened for user kirill123 by (uid=0)
+Sep 14 14:11:04 DESKTOP-OHCJ5SB systemd-logind[300]: New session 1 of user kirill123.
+Sep 14 14:11:04 DESKTOP-OHCJ5SB systemd: pam_unix(systemd-user:session): session opened for user kirill123 by (uid=0)
+Sep 14 14:11:05 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Sep 14 14:11:06 DESKTOP-OHCJ5SB systemd-logind[300]: New session c1 of user gdm.
+Sep 14 14:11:06 DESKTOP-OHCJ5SB systemd: pam_unix(systemd-user:session): session opened for user gdm by (uid=0)
+Sep 14 14:11:06 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep 14 14:11:06 DESKTOP-OHCJ5SB systemd-logind[300]: Session c1 logged out. Waiting for processes to exit.
+Sep 14 14:11:06 DESKTOP-OHCJ5SB systemd-logind[300]: Removed session c1.
+Sep 14 14:11:06 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Sep 14 14:11:06 DESKTOP-OHCJ5SB systemd-logind[300]: New session c2 of user gdm.
+Sep 14 14:11:09 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep 14 14:11:09 DESKTOP-OHCJ5SB systemd-logind[300]: Session c2 logged out. Waiting for processes to exit.
+Sep 14 14:11:09 DESKTOP-OHCJ5SB systemd-logind[300]: Removed session c2.
+Sep 14 14:17:01 DESKTOP-OHCJ5SB CRON[1141]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 14 14:17:01 DESKTOP-OHCJ5SB CRON[1141]: pam_unix(cron:session): session closed for user root
+Sep 14 14:31:37 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=kirill123 rhost=  user=kirill123
+Sep 14 14:31:49 DESKTOP-OHCJ5SB sudo:  kirill123 : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/kirill123/lab1_demo ; USER=root ; COMMAND=/usr/bin/ls
+Sep 14 14:31:54 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=kirill123 rhost=  user=kirill123
+Sep 14 14:32:14 DESKTOP-OHCJ5SB sudo:  kirill123 : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/kirill123/lab1_demo ; USER=root ; COMMAND=/usr/bin/ls
+Sep 14 14:54:54 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=kirill123 rhost=  user=kirill123
+Sep 14 14:55:45 DESKTOP-OHCJ5SB sudo:  kirill123 : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/kirill123/lab1_demo ; USER=root ; COMMAND=/usr/bin/apt install openssh-client -y
+Sep 14 14:55:54 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=kirill123 rhost=  user=kirill123
+Sep 14 14:56:11 DESKTOP-OHCJ5SB sudo:  kirill123 : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/kirill123/lab1_demo ; USER=root ; COMMAND=/usr/bin/apt install openssh-client -y
+Sep 14 14:56:15 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=kirill123 rhost=  user=kirill123
+Sep 14 14:56:47 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:auth): conversation failed
+Sep 14 14:56:47 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:auth): auth could not identify password for [kirill123]
+Sep 14 14:56:47 DESKTOP-OHCJ5SB sudo:  kirill123 : 1 incorrect password attempt ; TTY=pts/0 ; PWD=/home/kirill123/lab1_demo ; USER=root ; COMMAND=/usr/bin/apt install openssh-client -y
+Sep 14 14:57:47 DESKTOP-OHCJ5SB systemd-logind[292]: New seat seat0.
+Sep 14 14:57:56 DESKTOP-OHCJ5SB login[626]: pam_unix(login:session): session opened for user root by (uid=0)
+Sep 14 14:57:56 DESKTOP-OHCJ5SB systemd-logind[292]: New session 5 of user root.
+Sep 14 14:57:56 DESKTOP-OHCJ5SB systemd: pam_unix(systemd-user:session): session opened for user root by (uid=0)
+Sep 14 14:57:56 DESKTOP-OHCJ5SB login[704]: ROOT LOGIN  on '/dev/pts/1'
+Sep 14 14:57:58 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Sep 14 14:57:58 DESKTOP-OHCJ5SB systemd-logind[292]: New session c1 of user gdm.
+Sep 14 14:57:58 DESKTOP-OHCJ5SB systemd: pam_unix(systemd-user:session): session opened for user gdm by (uid=0)
+Sep 14 14:57:58 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep 14 14:57:58 DESKTOP-OHCJ5SB systemd-logind[292]: Session c1 logged out. Waiting for processes to exit.
+Sep 14 14:57:58 DESKTOP-OHCJ5SB systemd-logind[292]: Removed session c1.
+Sep 14 14:57:58 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Sep 14 14:57:58 DESKTOP-OHCJ5SB systemd-logind[292]: New session c2 of user gdm.
+Sep 14 14:58:01 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep 14 14:58:01 DESKTOP-OHCJ5SB systemd-logind[292]: Session c2 logged out. Waiting for processes to exit.
+Sep 14 14:58:01 DESKTOP-OHCJ5SB systemd-logind[292]: Removed session c2.
+Sep 14 14:58:15 DESKTOP-OHCJ5SB passwd[869]: pam_unix(passwd:chauthtok): password changed for kirill123
+Sep 14 14:58:15 DESKTOP-OHCJ5SB passwd[869]: gkr-pam: couldn't update the login keyring password: no old password was entered
+Sep 14 14:58:58 DESKTOP-OHCJ5SB login[889]: pam_unix(login:session): session opened for user kirill123 by (uid=0)
+Sep 14 14:58:58 DESKTOP-OHCJ5SB systemd-logind[292]: New session 8 of user kirill123.
+Sep 14 14:58:58 DESKTOP-OHCJ5SB systemd: pam_unix(systemd-user:session): session opened for user kirill123 by (uid=0)
+Sep 14 14:59:56 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=kirill123 rhost=  user=kirill123
+Sep 14 15:00:04 DESKTOP-OHCJ5SB sudo:  kirill123 : TTY=pts/0 ; PWD=/home/kirill123/lab1_demo ; USER=root ; COMMAND=/usr/bin/ls
+Sep 14 15:00:04 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep 14 15:00:04 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:session): session closed for user root
+Sep 14 15:01:15 DESKTOP-OHCJ5SB sudo:  kirill123 : TTY=pts/0 ; PWD=/home/kirill123/lab1_demo ; USER=root ; COMMAND=/usr/bin/apt install openssh-server -y
+Sep 14 15:01:15 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep 14 15:01:16 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:session): session closed for user root
+Sep 14 15:01:16 DESKTOP-OHCJ5SB sudo:  kirill123 : TTY=pts/0 ; PWD=/home/kirill123/lab1_demo ; USER=root ; COMMAND=/usr/sbin/service ssh start
+Sep 14 15:01:16 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep 14 15:01:17 DESKTOP-OHCJ5SB sshd[1226]: Server listening on 0.0.0.0 port 22.
+Sep 14 15:01:17 DESKTOP-OHCJ5SB sshd[1226]: Server listening on :: port 22.
+Sep 14 15:01:17 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:session): session closed for user root
+Sep 14 15:01:42 DESKTOP-OHCJ5SB sshd[1228]: Invalid user fakeuser from 127.0.0.1 port 43794
+Sep 14 15:01:42 DESKTOP-OHCJ5SB sshd[1228]: Connection closed by invalid user fakeuser 127.0.0.1 port 43794 [preauth]
+Sep 14 15:03:31 DESKTOP-OHCJ5SB sudo:  kirill123 : TTY=pts/0 ; PWD=/home/kirill123/lab1_demo ; USER=root ; COMMAND=/usr/bin/apt update
+Sep 14 15:03:31 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep 14 15:03:47 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:session): session closed for user root
+Sep 14 15:03:47 DESKTOP-OHCJ5SB sudo:  kirill123 : TTY=pts/0 ; PWD=/home/kirill123/lab1_demo ; USER=root ; COMMAND=/usr/bin/apt install sl -y
+Sep 14 15:03:47 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep 14 15:03:57 DESKTOP-OHCJ5SB sudo: pam_unix(sudo:session): session closed for user root
+Sep 15 21:47:48 DESKTOP-OHCJ5SB systemd-logind[310]: New seat seat0.
+Sep 15 21:47:57 DESKTOP-OHCJ5SB login[622]: pam_unix(login:session): session opened for user kirill123 by (uid=0)
+Sep 15 21:47:57 DESKTOP-OHCJ5SB systemd-logind[310]: New session 1 of user kirill123.
+Sep 15 21:47:57 DESKTOP-OHCJ5SB systemd: pam_unix(systemd-user:session): session opened for user kirill123 by (uid=0)
+Sep 15 21:48:00 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Sep 15 21:48:00 DESKTOP-OHCJ5SB systemd-logind[310]: New session c1 of user gdm.
+Sep 15 21:48:00 DESKTOP-OHCJ5SB systemd: pam_unix(systemd-user:session): session opened for user gdm by (uid=0)
+Sep 15 21:48:01 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep 15 21:48:01 DESKTOP-OHCJ5SB systemd-logind[310]: Session c1 logged out. Waiting for processes to exit.
+Sep 15 21:48:01 DESKTOP-OHCJ5SB systemd-logind[310]: Removed session c1.
+Sep 15 21:48:01 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Sep 15 21:48:01 DESKTOP-OHCJ5SB systemd-logind[310]: New session c2 of user gdm.
+Sep 15 21:48:07 DESKTOP-OHCJ5SB gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep 15 21:48:07 DESKTOP-OHCJ5SB systemd-logind[310]: Session c2 logged out. Waiting for processes to exit.
+Sep 15 21:48:07 DESKTOP-OHCJ5SB systemd-logind[310]: Removed session c2.
