@@ -1,0 +1,50 @@
+# Makefile for pstat project
+BIN_DIR := bin
+SRC := src/pstat.c
+CC := gcc
+CFLAGS := -std=c11 -O2 -Wall
+
+DURATION ?= 5
+
+.PHONY: all build run test clean
+
+all: build
+
+build:
+	@mkdir -p $(BIN_DIR)
+	@$(CC) $(CFLAGS) $(SRC) -o $(BIN_DIR)/pstat
+	@echo "Built $(BIN_DIR)/pstat"
+
+run: build
+	@if [ -z "$(pid)" ]; then \
+		echo "Usage: make run pid=<PID>"; exit 1; \
+	fi
+	@$(BIN_DIR)/pstat $(pid)
+
+test: build
+	@echo "Starting CPU consumer (dd) in background..."
+	@dd if=/dev/zero of=/dev/null & \
+	pid=$$!; \
+	echo "Started dd with PID=$$pid"; \
+	echo "Sleeping for $(DURATION) seconds..."; \
+	sleep $(DURATION); \
+	echo; \
+	echo "==== running $(BIN_DIR)/pstat $$pid ===="; \
+	"$(BIN_DIR)/pstat" $$pid || true; \
+	echo; \
+	echo "==== ps -o ppid,thcount,s,utime,stime,rss -p $$pid ===="; \
+	ps -o ppid,thcount,s,utime,stime,rss -p $$pid || true; \
+	echo; \
+	echo "==== pidstat -p $$pid 1 1 ===="; \
+	pidstat -p $$pid 1 1 || true; \
+	echo; \
+	echo "==== top -b -n 1 -p $$pid ===="; \
+	top -b -n 1 -p $$pid || true; \
+	echo; \
+	echo "Killing $$pid"; \
+	kill $$pid 2>/dev/null || true; \
+	echo "Done."
+
+clean:
+	@rm -rf $(BIN_DIR)
+	@echo "Cleaned."
