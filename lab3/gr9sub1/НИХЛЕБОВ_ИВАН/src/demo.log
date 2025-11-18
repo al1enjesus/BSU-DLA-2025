@@ -1,0 +1,35 @@
+[*] Запуск тестового процесса (CPU burn)
+PID=9329
+
+=== pstat.py ===
+Process yes (pid=9329)
+  PPid: 9325
+  State: R
+  Threads: 1
+  CPU time: user=0.27s sys=0.73s total=1.00s
+  Voluntary ctxt switches: 0
+  Nonvoluntary ctxt switches: 6
+  VmRSS: 1816 kB
+  read_bytes: 0
+  write_bytes: 0
+
+=== ps ===
+    PID    PPID S NLWP   RSS COMMAND
+   9329    9325 R    1  1816 yes
+
+=== pidstat ===
+Linux 6.14.0-29-generic (user-H510M-HDV) 	10/02/2025 	_x86_64_	(8 CPU)
+
+04:30:58 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+04:30:59 PM     0      9329   23.00   78.00    0.00    0.00  101.00     1  yes
+Average:        0      9329   23.00   78.00    0.00    0.00  101.00     -  yes
+
+=== top (1 итерация) ===
+top - 16:30:59 up  1:12,  1 user,  load average: 0.92, 0.80, 0.75
+Tasks:   1 total,   1 running,   0 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  3.8 us,  8.8 sy, 12.5 ni, 75.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  31966.3 total,  22243.8 free,   4291.6 used,   5482.2 buff/cache     
+MiB Swap:   8192.0 total,   8192.0 free,      0.0 used.  27674.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   9329 root      20   0    8288   1816   1816 R 100.0   0.0   0:02.22 yes
