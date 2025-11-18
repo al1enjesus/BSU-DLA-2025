@@ -1,0 +1,7 @@
+=== LD_PRELOAD grep ===
+[SPY] init_log() called
+[SPY] openat(AT_FDCWD, "logs/grep_test.txt", O_RDONLY|O_NOCTTY) = 3 (errno=84)
+[SPY] read(fd=3, buf=0x564180df5000, count=98304) = 21 (errno=84)
+[SPY] read(fd=3, buf=0x564180df5015, count=98304) = 0 (errno=84)
+[SPY] close(fd=3) = 0 (errno=84)
+hello

@@ -1,0 +1,3 @@
+=== Benchmark open+close & write ===
+open+close: iterations=10000 total_ns=11707932 avg_ns=1170.79
+write(/dev/null): iterations=10000 total_ns=1056658 avg_ns=105.67
