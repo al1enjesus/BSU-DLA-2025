@@ -1,0 +1,6 @@
+[SPY] Library loaded successfully! (WSL version)
+[SPY] stat('test.o') = -1
+[SPY] stat('test.o') = -1
+Assembler messages:
+Error: can't open test.s for reading: No such file or directory
+[SPY] lstat('test.o') = 0
