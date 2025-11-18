@@ -1,0 +1,7 @@
+[SPY] Logging initialized
+[SPY] open("logs/testfile.txt", O_RDONLY) = 3
+[SPY] read(fd=3, buf=0x7f23b7881000, count=131072) = 10
+[SPY] write(fd=1, buf=0x7f23b7881000, count=10, "Test data
+") = 10
+[SPY] read(fd=3, buf=0x7f23b7881000, count=131072) = 0
+[SPY] close(fd=3) = 0
