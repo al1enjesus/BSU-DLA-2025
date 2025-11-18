@@ -9,6 +9,35 @@
 Изучить архитектуру ядра Linux, научиться разрабатывать, собирать, загружать и отлаживать простые модули ядра, а также освоить механизмы взаимодействия модулей с пространством пользователя.
 
 Задание A: Модуль "Hello, World!"
+
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/init.h>
+#include <linux/moduleparam.h>
+
+static char *message = "Hello from Brown Dennis module!";
+module_param(message, charp, 0644);
+MODULE_PARM_DESC(message, "Custom message to display");
+
+static int __init hello_init(void) {
+    printk(KERN_INFO "=== Hello Module Loaded ===\n");
+    printk(KERN_INFO "Message: %s\n", message);
+    printk(KERN_INFO "Module loaded successfully!\n");
+    return 0;
+}
+
+static void __exit hello_exit(void) {
+    printk(KERN_INFO "=== Hello Module Unloaded ===\n");
+    printk(KERN_INFO "Goodbye from kernel space!\n");
+}
+
+module_init(hello_init);
+module_exit(hello_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Brown Dennis");
+MODULE_DESCRIPTION("Simple Hello World kernel module");
+MODULE_VERSION("1.0");
 Создать простой модуль ядра, который:
 
 При загрузке (insmod) выводит в системный журнал приветственное сообщение
@@ -35,7 +64,98 @@ bash
 Вывод:
 Модуль корректно загружается, выгружается и принимает параметры.
 
-Задание B: /proc файл с записью
+Задание B:
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/init.h>
+#include <linux/proc_fs.h>
+#include <linux/uaccess.h>
+#include <linux/slab.h>
+#include <linux/string.h>
+
+#define PROC_NAME "my_config"
+#define MAX_SIZE 256
+
+static struct proc_dir_entry *proc_file;
+static char *config_data;
+static size_t config_size;
+
+static ssize_t proc_read(struct file *file, char __user *ubuf, size_t count, loff_t *ppos) {
+    char buffer[MAX_SIZE];
+    int len;
+    
+    if (*ppos > 0) return 0;
+    
+    len = snprintf(buffer, sizeof(buffer), "%s\n", config_data);
+    
+    if (copy_to_user(ubuf, buffer, len)) return -EFAULT;
+    
+    *ppos = len;
+    return len;
+}
+
+static ssize_t proc_write(struct file *file, const char __user *ubuf, size_t count, loff_t *ppos) {
+    char *temp_buf;
+    
+    if (count >= MAX_SIZE) return -EINVAL;
+    
+    temp_buf = kmalloc(count + 1, GFP_KERNEL);
+    if (!temp_buf) return -ENOMEM;
+    
+    if (copy_from_user(temp_buf, ubuf, count)) {
+        kfree(temp_buf);
+        return -EFAULT;
+    }
+    
+    temp_buf[count] = '\0';
+    if (temp_buf[count - 1] == '\n') temp_buf[count - 1] = '\0';
+    
+    kfree(config_data);
+    config_data = temp_buf;
+    config_size = strlen(config_data);
+    
+    printk(KERN_INFO "Config updated to: %s\n", config_data);
+    return count;
+}
+
+static const struct proc_ops proc_fops = {
+    .proc_read = proc_read,
+    .proc_write = proc_write,
+};
+
+static int __init proc_init(void) {
+    config_data = kstrdup("default", GFP_KERNEL);
+    if (!config_data) return -ENOMEM;
+    
+    proc_file = proc_create(PROC_NAME, 0666, NULL, &proc_fops);
+    if (!proc_file) {
+        kfree(config_data);
+        return -ENOMEM;
+    }
+    
+    printk(KERN_INFO "=== Proc Module Loaded ===\n");
+    printk(KERN_INFO "/proc/%s created successfully\n", PROC_NAME);
+    printk(KERN_INFO "Initial config: %s\n", config_data);
+    return 0;
+}
+
+static void __exit proc_exit(void) {
+    proc_remove(proc_file);
+    kfree(config_data);
+    printk(KERN_INFO "=== Proc Module Unloaded ===\n");
+    printk(KERN_INFO "/proc/%s removed\n", PROC_NAME);
+}
+
+module_init(proc_init);
+module_exit(proc_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Brown Dennis");
+MODULE_DESCRIPTION("/proc file with read/write capability");
+MODULE_VERSION("1.0");
+
+
+ /proc файл с записью
 Создать модуль, который создаёт файл /proc/my_config с возможностью записи:
 
 По умолчанию содержит строку "default"
@@ -76,6 +196,95 @@ brown_dennis_value
 Файл корректно создаётся в /proc, поддерживает операции чтения и записи, сохраняет данные между операциями. Файл удаляется при выгрузке модуля.
 
 Задание C: /proc файл со статистикой системы
+
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/init.h>
+#include <linux/proc_fs.h>
+#include <linux/uaccess.h>
+#include <linux/sched.h>
+#include <linux/mm.h>
+#include <linux/jiffies.h>
+
+#define PROC_NAME "sys_stats"
+
+static struct proc_dir_entry *proc_file;
+
+static int count_processes(void) {
+    struct task_struct *task;
+    int count = 0;
+    
+    rcu_read_lock();
+    for_each_process(task) count++;
+    rcu_read_unlock();
+    
+    return count;
+}
+
+static void get_memory_info(unsigned long *total, unsigned long *used) {
+    struct sysinfo mem_info;
+    
+    si_meminfo(&mem_info);
+    
+    *total = (mem_info.totalram * mem_info.mem_unit) / (1024 * 1024);
+    *used = ((mem_info.totalram - mem_info.freeram) * mem_info.mem_unit) / (1024 * 1024);
+}
+
+static ssize_t stats_read(struct file *file, char __user *ubuf, size_t count, loff_t *ppos) {
+    char buffer[512];
+    int len;
+    unsigned long total_mem, used_mem;
+    unsigned long uptime_seconds;
+    int process_count;
+    
+    if (*ppos > 0) return 0;
+    
+    process_count = count_processes();
+    get_memory_info(&total_mem, &used_mem);
+    uptime_seconds = jiffies_to_msecs(jiffies) / 1000;
+    
+    len = snprintf(buffer, sizeof(buffer),
+        "System Statistics:\n"
+        "==================\n"
+        "Processes: %d\n"
+        "Memory Used: %lu MB / %lu MB\n"
+        "System Uptime: %lu seconds\n"
+        "Module loaded at jiffies: %lu\n",
+        process_count, used_mem, total_mem, uptime_seconds, jiffies);
+    
+    if (copy_to_user(ubuf, buffer, len)) return -EFAULT;
+    
+    *ppos = len;
+    return len;
+}
+
+static const struct proc_ops stats_fops = {
+    .proc_read = stats_read,
+};
+
+static int __init stats_init(void) {
+    proc_file = proc_create(PROC_NAME, 0444, NULL, &stats_fops);
+    if (!proc_file) return -ENOMEM;
+    
+    printk(KERN_INFO "=== System Stats Module Loaded ===\n");
+    printk(KERN_INFO "/proc/%s created successfully\n", PROC_NAME);
+    return 0;
+}
+
+static void __exit stats_exit(void) {
+    proc_remove(proc_file);
+    printk(KERN_INFO "=== System Stats Module Unloaded ===\n");
+    printk(KERN_INFO "/proc/%s removed\n", PROC_NAME);
+}
+
+module_init(stats_init);
+module_exit(stats_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Brown Dennis");
+MODULE_DESCRIPTION("System statistics via /proc interface");
+MODULE_VERSION("1.0");
+
 Создать модуль, который создаёт файл /proc/sys_stats с информацией:
 
 Количество запущенных процессов
