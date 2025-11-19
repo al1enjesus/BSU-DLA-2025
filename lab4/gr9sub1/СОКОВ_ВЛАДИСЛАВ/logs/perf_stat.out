@@ -1,0 +1,16 @@
+# started on Fri Oct 17 06:11:39 2025
+
+
+ Performance counter stats for './benchmark':
+
+        6613883888      cycles                                                                
+        9635522089      instructions                     #    1.46  insn per cycle            
+                 5      context-switches                                                      
+                63      page-faults                                                           
+
+       1.821417660 seconds time elapsed
+
+       0.213959000 seconds user
+       1.618827000 seconds sys
+
+

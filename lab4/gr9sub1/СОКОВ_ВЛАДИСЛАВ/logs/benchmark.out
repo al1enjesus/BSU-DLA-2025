@@ -1,0 +1,6 @@
+Running benchmark...
+dummy: total_cycles=31269046 avg_cycles=31.27
+getpid: total_cycles=329088888 avg_cycles=329.09
+gettimeofday: total_cycles=69254710 avg_cycles=69.25
+open+close: total_cycles=4508738151 avg_cycles=4508.74
+Iterations: 1000000
