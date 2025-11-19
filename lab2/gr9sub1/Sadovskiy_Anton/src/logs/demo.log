@@ -1,0 +1,373 @@
+2025-09-29T20:59:06.777938Z	supervisor	45117	INFO	wrote assignments to shm	shm_name=sup_shm_45117,count=3
+2025-09-29T20:59:06.778021Z	supervisor	45117	INFO	created shared memory	shm_name=sup_shm_45117,size=65536
+2025-09-29T20:59:09.497481Z	supervisor	45117	INFO	spawned worker	idx=0,pid=45120,nice=0,cpus=[0]
+2025-09-29T20:59:09.498296Z	supervisor	45117	INFO	spawned worker	idx=1,pid=45121,nice=10,cpus=[1]
+2025-09-29T20:59:09.498366Z	worker-0	45120	INFO	applied nice	pid=45120,nice=0
+2025-09-29T20:59:09.498983Z	supervisor	45117	INFO	spawned worker	idx=2,pid=45122,nice=0,cpus=[0, 1]
+2025-09-29T20:59:09.499107Z	worker-1	45121	INFO	applied nice	pid=45121,nice=10
+2025-09-29T20:59:09.499756Z	worker-2	45122	INFO	applied nice	pid=45122,nice=0
+2025-09-29T20:59:09.499834Z	worker-2	45122	INFO	applied affinity	pid=45122,cpus=[0, 1]
+2025-09-29T20:59:09.500022Z	worker-2	45122	INFO	connected to shared memory	shm_name=sup_shm_45117
+2025-09-29T20:59:09.500234Z	worker-2	45122	INFO	started	pid=45122,mode=heavy
+2025-09-29T20:59:09.536128Z	worker-0	45120	INFO	applied affinity	pid=45120,cpus=[0]
+2025-09-29T20:59:09.536329Z	worker-0	45120	INFO	connected to shared memory	shm_name=sup_shm_45117
+2025-09-29T20:59:09.536556Z	worker-0	45120	INFO	started	pid=45120,mode=heavy
+2025-09-29T20:59:09.538117Z	worker-1	45121	INFO	applied affinity	pid=45121,cpus=[1]
+2025-09-29T20:59:09.538282Z	worker-1	45121	INFO	connected to shared memory	shm_name=sup_shm_45117
+2025-09-29T20:59:09.538468Z	worker-1	45121	INFO	started	pid=45121,mode=heavy
+2025-09-29T20:59:10.502125Z	worker-2	45122	INFO	tick	pid=45122,tick=13,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-29T20:59:10.590113Z	worker-0	45120	INFO	tick	pid=45120,tick=15,mode=heavy,nice=0,affinity=[0]
+2025-09-29T20:59:10.606128Z	worker-1	45121	INFO	tick	pid=45121,tick=5,mode=heavy,nice=10,affinity=[1]
+2025-09-29T20:59:11.021906Z	supervisor	45117	INFO	graceful shutdown initiated	
+2025-09-29T20:59:11.022021Z	worker-2	45122	INFO	sigterm received	pid=45122,sig=15
+2025-09-29T20:59:11.022022Z	worker-0	45120	INFO	sigterm received	pid=45120,sig=15
+2025-09-29T20:59:11.024184Z	worker-2	45122	INFO	exiting	pid=45122,ticks=20
+2025-09-29T20:59:11.025011Z	worker-1	45121	INFO	sigterm received	pid=45121,sig=15
+2025-09-29T20:59:11.025031Z	supervisor	45117	INFO	sigchld received	sig=17
+2025-09-29T20:59:11.025043Z	worker-1	45121	INFO	exiting	pid=45121,ticks=7
+2025-09-29T20:59:11.070117Z	worker-0	45120	INFO	exiting	pid=45120,ticks=24
+2025-09-29T20:59:11.071274Z	supervisor	45117	INFO	sigchld received	sig=17
+2025-09-29T20:59:11.217007Z	supervisor	45117	INFO	sigchld received	sig=17
+2025-09-29T20:59:11.222603Z	supervisor	45117	INFO	shutdown complete	
+2025-09-29T20:59:13.284290Z	supervisor	45117	INFO	graceful shutdown initiated	
+2025-09-29T20:59:13.284519Z	supervisor	45117	INFO	shutdown complete	
+2025-09-30T13:09:24.536037Z	supervisor	46644	INFO	wrote assignments to shm	shm_name=sup_shm_46644,count=3
+2025-09-30T13:09:24.536185Z	supervisor	46644	INFO	created shared memory	shm_name=sup_shm_46644,size=65536
+2025-09-30T13:09:24.536239Z	supervisor	46644	INFO	starting	workers=3
+2025-09-30T13:09:24.536993Z	supervisor	46644	INFO	spawned worker	idx=0,pid=46646,nice=0,cpus=[0]
+2025-09-30T13:09:24.537772Z	supervisor	46644	INFO	spawned worker	idx=1,pid=46647,nice=10,cpus=[1]
+2025-09-30T13:09:24.537951Z	worker-0	46646	INFO	applied nice	pid=46646,nice=0
+2025-09-30T13:09:24.538102Z	worker-0	46646	INFO	applied affinity	pid=46646,cpus=[0]
+2025-09-30T13:09:24.538308Z	worker-0	46646	INFO	connected to shared memory	shm_name=sup_shm_46644
+2025-09-30T13:09:24.538488Z	worker-0	46646	INFO	started	pid=46646,mode=heavy
+2025-09-30T13:09:24.538604Z	supervisor	46644	INFO	spawned worker	idx=2,pid=46648,nice=0,cpus=[0, 1]
+2025-09-30T13:09:24.538838Z	worker-1	46647	INFO	applied nice	pid=46647,nice=10
+2025-09-30T13:09:24.539456Z	worker-2	46648	INFO	applied nice	pid=46648,nice=0
+2025-09-30T13:09:24.611786Z	worker-1	46647	INFO	applied affinity	pid=46647,cpus=[1]
+2025-09-30T13:09:24.612131Z	worker-1	46647	INFO	connected to shared memory	shm_name=sup_shm_46644
+2025-09-30T13:09:24.612329Z	worker-1	46647	INFO	started	pid=46647,mode=heavy
+2025-09-30T13:09:24.615840Z	worker-2	46648	INFO	applied affinity	pid=46648,cpus=[0, 1]
+2025-09-30T13:09:24.615993Z	worker-2	46648	INFO	connected to shared memory	shm_name=sup_shm_46644
+2025-09-30T13:09:24.616133Z	worker-2	46648	INFO	started	pid=46648,mode=heavy
+2025-09-30T13:09:25.572768Z	worker-0	46646	INFO	tick	pid=46646,tick=16,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:09:25.639760Z	worker-2	46648	INFO	tick	pid=46648,tick=14,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:09:25.731799Z	worker-1	46647	INFO	tick	pid=46647,tick=5,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:09:26.661760Z	worker-0	46646	INFO	tick	pid=46646,tick=32,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:09:26.707756Z	worker-2	46648	INFO	tick	pid=46648,tick=26,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:09:27.043754Z	worker-1	46647	INFO	tick	pid=46647,tick=9,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:09:27.665790Z	worker-0	46646	INFO	tick	pid=46646,tick=49,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:09:27.739748Z	worker-2	46648	INFO	tick	pid=46648,tick=38,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:09:28.583741Z	worker-1	46647	INFO	tick	pid=46647,tick=13,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:09:28.729797Z	worker-0	46646	INFO	tick	pid=46646,tick=67,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:09:28.791742Z	worker-2	46648	INFO	tick	pid=46648,tick=51,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:09:29.146423Z	supervisor	46644	INFO	termination signal received	sig=2
+2025-09-30T13:09:29.153771Z	worker-2	46648	INFO	sigterm received	pid=46648,sig=2
+2025-09-30T13:09:29.153797Z	worker-2	46648	INFO	exiting	pid=46648,ticks=55
+2025-09-30T13:09:29.154689Z	supervisor	46644	INFO	sigchld received	sig=17
+2025-09-30T13:09:29.171811Z	worker-0	46646	INFO	sigterm received	pid=46646,sig=2
+2025-09-30T13:09:29.171889Z	worker-0	46646	INFO	exiting	pid=46646,ticks=75
+2025-09-30T13:09:29.172707Z	supervisor	46644	INFO	sigchld received	sig=17
+2025-09-30T13:09:29.307107Z	supervisor	46644	INFO	termination signal received	sig=2
+2025-09-30T13:09:29.403833Z	worker-1	46647	INFO	sigterm received	pid=46647,sig=2
+2025-09-30T13:09:29.403894Z	worker-1	46647	INFO	exiting	pid=46647,ticks=15
+2025-09-30T13:09:29.404756Z	supervisor	46644	INFO	sigchld received	sig=17
+2025-09-30T13:09:29.461791Z	supervisor	46644	INFO	termination signal received	sig=2
+2025-09-30T13:09:29.540185Z	supervisor	46644	INFO	graceful shutdown initiated	
+2025-09-30T13:09:29.540436Z	supervisor	46644	INFO	shutdown complete	
+2025-09-30T13:09:29.625922Z	supervisor	46644	INFO	termination signal received	sig=2
+2025-09-30T13:09:29.766098Z	supervisor	46644	INFO	termination signal received	sig=2
+2025-09-30T13:09:32.915281Z	supervisor	46644	INFO	graceful shutdown initiated	
+2025-09-30T13:09:32.915441Z	supervisor	46644	INFO	shutdown complete	
+2025-09-30T13:09:39.961350Z	supervisor	46659	INFO	wrote assignments to shm	shm_name=sup_shm_46659,count=3
+2025-09-30T13:09:39.961407Z	supervisor	46659	INFO	created shared memory	shm_name=sup_shm_46659,size=65536
+2025-09-30T13:09:40.941244Z	supervisor	46659	INFO	spawned worker	idx=0,pid=46661,nice=0,cpus=[0]
+2025-09-30T13:09:40.941956Z	supervisor	46659	INFO	spawned worker	idx=1,pid=46662,nice=10,cpus=[1]
+2025-09-30T13:09:40.942029Z	worker-0	46661	INFO	applied nice	pid=46661,nice=0
+2025-09-30T13:09:40.942575Z	supervisor	46659	INFO	spawned worker	idx=2,pid=46663,nice=0,cpus=[0, 1]
+2025-09-30T13:09:40.943117Z	worker-1	46662	INFO	applied nice	pid=46662,nice=10
+2025-09-30T13:09:40.943601Z	worker-2	46663	INFO	applied nice	pid=46663,nice=0
+2025-09-30T13:09:40.967763Z	worker-1	46662	INFO	applied affinity	pid=46662,cpus=[1]
+2025-09-30T13:09:40.968035Z	worker-1	46662	INFO	connected to shared memory	shm_name=sup_shm_46659
+2025-09-30T13:09:40.968242Z	worker-1	46662	INFO	started	pid=46662,mode=heavy
+2025-09-30T13:09:40.975747Z	worker-2	46663	INFO	applied affinity	pid=46663,cpus=[0, 1]
+2025-09-30T13:09:40.975949Z	worker-2	46663	INFO	connected to shared memory	shm_name=sup_shm_46659
+2025-09-30T13:09:40.976127Z	worker-2	46663	INFO	started	pid=46663,mode=heavy
+2025-09-30T13:09:40.981788Z	worker-0	46661	INFO	applied affinity	pid=46661,cpus=[0]
+2025-09-30T13:09:40.982065Z	worker-0	46661	INFO	connected to shared memory	shm_name=sup_shm_46659
+2025-09-30T13:09:40.982354Z	worker-0	46661	INFO	started	pid=46661,mode=heavy
+2025-09-30T13:09:42.007748Z	worker-0	46661	INFO	tick	pid=46661,tick=14,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:09:42.032899Z	worker-2	46663	INFO	tick	pid=46663,tick=12,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:09:42.483798Z	worker-1	46662	INFO	tick	pid=46662,tick=5,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:09:43.039754Z	worker-0	46661	INFO	tick	pid=46661,tick=34,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:09:43.094023Z	worker-2	46663	INFO	tick	pid=46663,tick=23,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:09:43.619748Z	worker-1	46662	INFO	tick	pid=46662,tick=9,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:09:44.077807Z	worker-0	46661	INFO	tick	pid=46661,tick=53,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:09:44.099855Z	worker-2	46663	INFO	tick	pid=46663,tick=34,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:09:44.775745Z	worker-1	46662	INFO	tick	pid=46662,tick=13,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:09:45.083757Z	worker-0	46661	INFO	tick	pid=46661,tick=70,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:09:45.101815Z	worker-2	46663	INFO	tick	pid=46663,tick=44,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:09:45.205605Z	supervisor	46659	INFO	termination signal received	sig=2
+2025-09-30T13:09:45.223794Z	worker-0	46661	INFO	sigterm received	pid=46661,sig=2
+2025-09-30T13:09:45.223850Z	worker-0	46661	INFO	exiting	pid=46661,ticks=73
+2025-09-30T13:09:45.224712Z	supervisor	46659	INFO	sigchld received	sig=17
+2025-09-30T13:09:45.263755Z	worker-1	46662	INFO	sigterm received	pid=46662,sig=2
+2025-09-30T13:09:45.263841Z	worker-1	46662	INFO	exiting	pid=46662,ticks=15
+2025-09-30T13:09:45.264667Z	supervisor	46659	INFO	sigchld received	sig=17
+2025-09-30T13:09:45.268726Z	worker-2	46663	INFO	sigterm received	pid=46663,sig=2
+2025-09-30T13:09:45.268765Z	worker-2	46663	INFO	exiting	pid=46663,ticks=46
+2025-09-30T13:09:45.269358Z	supervisor	46659	INFO	sigchld received	sig=17
+2025-09-30T13:09:45.458452Z	supervisor	46659	INFO	termination signal received	sig=2
+2025-09-30T13:09:45.694071Z	supervisor	46659	INFO	termination signal received	sig=2
+2025-09-30T13:09:45.848671Z	supervisor	46659	INFO	termination signal received	sig=2
+2025-09-30T13:09:48.043195Z	supervisor	46659	INFO	graceful shutdown initiated	
+2025-09-30T13:09:48.043521Z	supervisor	46659	INFO	shutdown complete	
+2025-09-30T13:20:44.599567Z	supervisor	47159	INFO	wrote assignments to shm	shm_name=sup_shm_47159,count=3
+2025-09-30T13:20:44.599682Z	supervisor	47159	INFO	created shared memory	shm_name=sup_shm_47159,size=65536
+2025-09-30T13:20:45.524246Z	supervisor	47159	INFO	spawned worker	idx=0,pid=47161,nice=0,cpus=[0]
+2025-09-30T13:20:45.525054Z	supervisor	47159	INFO	spawned worker	idx=1,pid=47162,nice=10,cpus=[1]
+2025-09-30T13:20:45.525194Z	worker-0	47161	INFO	applied nice	pid=47161,nice=0
+2025-09-30T13:20:45.525908Z	supervisor	47159	INFO	spawned worker	idx=2,pid=47163,nice=0,cpus=[0, 1]
+2025-09-30T13:20:45.526307Z	worker-1	47162	INFO	applied nice	pid=47162,nice=10
+2025-09-30T13:20:45.526852Z	worker-2	47163	INFO	applied nice	pid=47163,nice=0
+2025-09-30T13:20:45.535799Z	worker-1	47162	INFO	applied affinity	pid=47162,cpus=[1]
+2025-09-30T13:20:45.536037Z	worker-1	47162	INFO	connected to shared memory	shm_name=sup_shm_47159
+2025-09-30T13:20:45.536233Z	worker-1	47162	INFO	started	pid=47162,mode=heavy
+2025-09-30T13:20:45.539762Z	worker-0	47161	INFO	applied affinity	pid=47161,cpus=[0]
+2025-09-30T13:20:45.539915Z	worker-0	47161	INFO	connected to shared memory	shm_name=sup_shm_47159
+2025-09-30T13:20:45.540110Z	worker-0	47161	INFO	started	pid=47161,mode=heavy
+2025-09-30T13:20:45.543742Z	worker-2	47163	INFO	applied affinity	pid=47163,cpus=[0, 1]
+2025-09-30T13:20:45.543889Z	worker-2	47163	INFO	connected to shared memory	shm_name=sup_shm_47159
+2025-09-30T13:20:45.544027Z	worker-2	47163	INFO	started	pid=47163,mode=heavy
+2025-09-30T13:20:46.555769Z	worker-0	47161	INFO	tick	pid=47161,tick=16,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:20:46.571754Z	worker-2	47163	INFO	tick	pid=47163,tick=13,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:20:46.595761Z	worker-1	47162	INFO	tick	pid=47162,tick=6,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:20:47.603748Z	worker-0	47161	INFO	tick	pid=47161,tick=34,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:20:47.623752Z	worker-2	47163	INFO	tick	pid=47163,tick=24,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:20:47.883761Z	worker-1	47162	INFO	tick	pid=47162,tick=10,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:20:48.663747Z	worker-0	47161	INFO	tick	pid=47161,tick=51,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:20:48.699758Z	worker-2	47163	INFO	tick	pid=47163,tick=36,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:20:48.931759Z	worker-1	47162	INFO	tick	pid=47162,tick=13,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:20:49.691746Z	worker-0	47161	INFO	tick	pid=47161,tick=70,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:20:49.783751Z	worker-2	47163	INFO	tick	pid=47163,tick=48,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:20:50.023754Z	worker-1	47162	INFO	tick	pid=47162,tick=15,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:20:50.248925Z	supervisor	47159	INFO	broadcast sigusr1 -> light	
+2025-09-30T13:20:50.249047Z	worker-0	47161	INFO	sigusr1 -> light	pid=47161
+2025-09-30T13:20:50.293787Z	worker-2	47163	INFO	sigusr1 -> light	pid=47163
+2025-09-30T13:20:50.343803Z	worker-1	47162	INFO	sigusr1 -> light	pid=47162
+2025-09-30T13:20:50.711761Z	worker-0	47161	INFO	tick	pid=47161,tick=98,mode=light,nice=0,affinity=[0]
+2025-09-30T13:20:50.815751Z	worker-2	47163	INFO	tick	pid=47163,tick=75,mode=light,nice=0,affinity=[0, 1]
+2025-09-30T13:20:51.053828Z	worker-1	47162	INFO	tick	pid=47162,tick=21,mode=light,nice=10,affinity=[1]
+2025-09-30T13:20:51.715749Z	worker-0	47161	INFO	tick	pid=47161,tick=137,mode=light,nice=0,affinity=[0]
+2025-09-30T13:20:51.815831Z	worker-2	47163	INFO	tick	pid=47163,tick=117,mode=light,nice=0,affinity=[0, 1]
+2025-09-30T13:20:52.121807Z	worker-1	47162	INFO	tick	pid=47162,tick=28,mode=light,nice=10,affinity=[1]
+2025-09-30T13:20:52.737801Z	worker-0	47161	INFO	tick	pid=47161,tick=177,mode=light,nice=0,affinity=[0]
+2025-09-30T13:20:52.764185Z	supervisor	47159	INFO	broadcast sigusr2 -> heavy	
+2025-09-30T13:20:52.779764Z	worker-0	47161	INFO	sigusr2 -> heavy	pid=47161
+2025-09-30T13:20:52.827788Z	worker-1	47162	INFO	sigusr2 -> heavy	pid=47162
+2025-09-30T13:20:52.831749Z	worker-2	47163	INFO	sigusr2 -> heavy	pid=47163
+2025-09-30T13:20:52.831791Z	worker-2	47163	INFO	tick	pid=47163,tick=156,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:20:53.399752Z	worker-1	47162	INFO	tick	pid=47162,tick=34,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:20:53.783752Z	worker-0	47161	INFO	tick	pid=47161,tick=193,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:20:53.851741Z	worker-2	47163	INFO	tick	pid=47163,tick=167,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:20:54.815761Z	worker-1	47162	INFO	tick	pid=47162,tick=37,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:20:54.827759Z	worker-0	47161	INFO	tick	pid=47161,tick=213,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:20:54.907769Z	worker-2	47163	INFO	tick	pid=47163,tick=179,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:20:55.743826Z	supervisor	47159	INFO	reloading config	
+2025-09-30T13:20:55.744250Z	supervisor	47159	INFO	wrote assignments to shm	shm_name=sup_shm_47159,count=3
+2025-09-30T13:20:55.744292Z	supervisor	47159	INFO	sent sighup to worker for config reload	idx=0,pid=47161
+2025-09-30T13:20:55.744305Z	supervisor	47159	INFO	sent sighup to worker for config reload	idx=1,pid=47162
+2025-09-30T13:20:55.744314Z	supervisor	47159	INFO	sent sighup to worker for config reload	idx=2,pid=47163
+2025-09-30T13:20:55.744321Z	supervisor	47159	INFO	config reload complete	
+2025-09-30T13:20:55.755979Z	worker-0	47161	INFO	applied nice	pid=47161,nice=0
+2025-09-30T13:20:55.755976Z	worker-2	47163	INFO	applied nice	pid=47163,nice=0
+2025-09-30T13:20:55.756055Z	worker-2	47163	INFO	applied affinity	pid=47163,cpus=[0, 1]
+2025-09-30T13:20:55.756055Z	worker-0	47161	INFO	applied affinity	pid=47161,cpus=[0]
+2025-09-30T13:20:55.756087Z	worker-0	47161	INFO	hup applied assignment	pid=47161,assignment={'nice': 0, 'cpus': [0]}
+2025-09-30T13:20:55.756087Z	worker-2	47163	INFO	hup applied assignment	pid=47163,assignment={'nice': 0, 'cpus': [0, 1]}
+2025-09-30T13:20:55.783998Z	worker-1	47162	INFO	applied nice	pid=47162,nice=10
+2025-09-30T13:20:55.784050Z	worker-1	47162	INFO	applied affinity	pid=47162,cpus=[1]
+2025-09-30T13:20:55.784064Z	worker-1	47162	INFO	hup applied assignment	pid=47162,assignment={'nice': 10, 'cpus': [1]}
+2025-09-30T13:20:55.873792Z	worker-1	47162	INFO	tick	pid=47162,tick=42,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:20:55.907754Z	worker-0	47161	INFO	tick	pid=47161,tick=232,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:20:55.963750Z	worker-2	47163	INFO	tick	pid=47163,tick=192,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:20:56.947741Z	worker-1	47162	INFO	tick	pid=47162,tick=45,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:20:56.955738Z	worker-0	47161	INFO	tick	pid=47161,tick=249,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:20:57.043752Z	worker-2	47163	INFO	tick	pid=47163,tick=203,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:20:58.003752Z	worker-0	47161	INFO	tick	pid=47161,tick=268,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:20:58.019753Z	worker-1	47162	INFO	tick	pid=47162,tick=49,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:20:58.071747Z	worker-2	47163	INFO	tick	pid=47163,tick=214,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:20:59.011746Z	worker-0	47161	INFO	tick	pid=47161,tick=286,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:20:59.099751Z	worker-2	47163	INFO	tick	pid=47163,tick=225,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:20:59.247754Z	worker-1	47162	INFO	tick	pid=47162,tick=52,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:00.035753Z	worker-0	47161	INFO	tick	pid=47161,tick=305,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:00.171760Z	worker-2	47163	INFO	tick	pid=47163,tick=238,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:00.381884Z	worker-1	47162	INFO	tick	pid=47162,tick=55,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:01.069345Z	worker-0	47161	INFO	tick	pid=47161,tick=328,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:01.217857Z	worker-2	47163	INFO	tick	pid=47163,tick=250,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:01.463766Z	worker-1	47162	INFO	tick	pid=47162,tick=59,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:02.071234Z	worker-0	47161	INFO	tick	pid=47161,tick=348,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:02.315750Z	worker-2	47163	INFO	tick	pid=47163,tick=262,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:02.515755Z	worker-1	47162	INFO	tick	pid=47162,tick=63,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:03.081836Z	worker-0	47161	INFO	tick	pid=47161,tick=369,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:03.327751Z	worker-2	47163	INFO	tick	pid=47163,tick=273,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:03.587748Z	worker-1	47162	INFO	tick	pid=47162,tick=66,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:04.103748Z	worker-0	47161	INFO	tick	pid=47161,tick=391,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:04.419746Z	worker-2	47163	INFO	tick	pid=47163,tick=285,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:04.663739Z	worker-1	47162	INFO	tick	pid=47162,tick=70,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:05.108520Z	worker-0	47161	INFO	tick	pid=47161,tick=410,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:05.467814Z	worker-2	47163	INFO	tick	pid=47163,tick=296,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:05.887772Z	worker-1	47162	INFO	tick	pid=47162,tick=74,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:06.155160Z	worker-0	47161	INFO	tick	pid=47161,tick=434,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:06.547762Z	worker-2	47163	INFO	tick	pid=47163,tick=309,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:07.039756Z	worker-1	47162	INFO	tick	pid=47162,tick=81,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:07.169734Z	worker-0	47161	INFO	tick	pid=47161,tick=455,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:07.555777Z	worker-2	47163	INFO	tick	pid=47163,tick=320,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:08.163832Z	worker-1	47162	INFO	tick	pid=47162,tick=86,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:08.237456Z	worker-0	47161	INFO	tick	pid=47161,tick=476,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:08.627754Z	worker-2	47163	INFO	tick	pid=47163,tick=333,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:09.219752Z	worker-1	47162	INFO	tick	pid=47162,tick=90,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:09.275812Z	worker-0	47161	INFO	tick	pid=47161,tick=494,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:09.719753Z	worker-2	47163	INFO	tick	pid=47163,tick=346,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:10.303768Z	worker-1	47162	INFO	tick	pid=47162,tick=97,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:10.311750Z	worker-0	47161	INFO	tick	pid=47161,tick=515,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:10.775742Z	worker-2	47163	INFO	tick	pid=47163,tick=357,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:11.336644Z	worker-0	47161	INFO	tick	pid=47161,tick=533,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:11.683755Z	worker-1	47162	INFO	tick	pid=47162,tick=101,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:11.855828Z	worker-2	47163	INFO	tick	pid=47163,tick=370,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:12.391754Z	worker-0	47161	INFO	tick	pid=47161,tick=554,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:12.911748Z	worker-2	47163	INFO	tick	pid=47163,tick=381,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:12.979743Z	worker-1	47162	INFO	tick	pid=47162,tick=104,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:13.407779Z	worker-0	47161	INFO	tick	pid=47161,tick=572,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:13.979749Z	worker-2	47163	INFO	tick	pid=47163,tick=393,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:14.067920Z	worker-1	47162	INFO	tick	pid=47162,tick=108,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:14.439753Z	worker-0	47161	INFO	tick	pid=47161,tick=588,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:15.079748Z	worker-2	47163	INFO	tick	pid=47163,tick=404,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:15.179774Z	worker-1	47162	INFO	tick	pid=47162,tick=113,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:15.483752Z	worker-0	47161	INFO	tick	pid=47161,tick=604,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:16.131748Z	worker-2	47163	INFO	tick	pid=47163,tick=415,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:16.530849Z	worker-0	47161	INFO	tick	pid=47161,tick=624,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:16.583778Z	worker-1	47162	INFO	tick	pid=47162,tick=117,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:17.217931Z	worker-2	47163	INFO	tick	pid=47163,tick=427,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:17.564655Z	worker-0	47161	INFO	tick	pid=47161,tick=645,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:17.911760Z	worker-1	47162	INFO	tick	pid=47162,tick=121,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:18.263758Z	worker-2	47163	INFO	tick	pid=47163,tick=438,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:18.594712Z	worker-0	47161	INFO	tick	pid=47161,tick=664,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:19.091761Z	worker-1	47162	INFO	tick	pid=47162,tick=125,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:19.335741Z	worker-2	47163	INFO	tick	pid=47163,tick=450,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:19.614053Z	worker-0	47161	INFO	tick	pid=47161,tick=682,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:20.223807Z	worker-1	47162	INFO	tick	pid=47162,tick=128,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:20.379749Z	worker-2	47163	INFO	tick	pid=47163,tick=461,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:20.689780Z	worker-0	47161	INFO	tick	pid=47161,tick=701,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:21.331751Z	worker-1	47162	INFO	tick	pid=47162,tick=131,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:21.447747Z	worker-2	47163	INFO	tick	pid=47163,tick=473,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:21.708688Z	worker-0	47161	INFO	tick	pid=47161,tick=720,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:22.450821Z	worker-2	47163	INFO	tick	pid=47163,tick=484,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:22.719757Z	worker-1	47162	INFO	tick	pid=47162,tick=135,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:22.739750Z	worker-0	47161	INFO	tick	pid=47161,tick=740,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:23.523787Z	worker-2	47163	INFO	tick	pid=47163,tick=496,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:23.744938Z	worker-0	47161	INFO	tick	pid=47161,tick=762,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:23.983760Z	worker-1	47162	INFO	tick	pid=47162,tick=139,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:24.603748Z	worker-2	47163	INFO	tick	pid=47163,tick=508,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:24.759193Z	worker-0	47161	INFO	tick	pid=47161,tick=785,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:25.495747Z	worker-1	47162	INFO	tick	pid=47162,tick=142,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:25.681775Z	worker-2	47163	INFO	tick	pid=47163,tick=521,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:25.788561Z	worker-0	47161	INFO	tick	pid=47161,tick=804,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:26.575759Z	worker-1	47162	INFO	tick	pid=47162,tick=144,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:26.607923Z	supervisor	47159	INFO	reloading config	
+2025-09-30T13:21:26.608130Z	supervisor	47159	INFO	scaling up workers	from_n=3,to_n=4
+2025-09-30T13:21:26.608826Z	supervisor	47159	INFO	spawned worker	idx=3,pid=47193,nice=-19,cpus=[0]
+2025-09-30T13:21:26.609137Z	supervisor	47159	INFO	wrote assignments to shm	shm_name=sup_shm_47159,count=4
+2025-09-30T13:21:26.609184Z	supervisor	47159	INFO	sent sighup to worker for config reload	idx=0,pid=47161
+2025-09-30T13:21:26.609196Z	supervisor	47159	INFO	sent sighup to worker for config reload	idx=1,pid=47162
+2025-09-30T13:21:26.609211Z	supervisor	47159	INFO	sent sighup to worker for config reload	idx=2,pid=47163
+2025-09-30T13:21:26.609224Z	supervisor	47159	INFO	sent sighup to worker for config reload	idx=3,pid=47193
+2025-09-30T13:21:26.609233Z	supervisor	47159	INFO	config reload complete	
+2025-09-30T13:21:26.609284Z	supervisor	47193	INFO	sighup reload requested	sig=1
+2025-09-30T13:21:26.625816Z	worker-3	47193	INFO	applied affinity	pid=47193,cpus=[0]
+2025-09-30T13:21:26.626056Z	worker-3	47193	INFO	connected to shared memory	shm_name=sup_shm_47159
+2025-09-30T13:21:26.626281Z	worker-3	47193	INFO	started	pid=47193,mode=heavy
+2025-09-30T13:21:26.643887Z	worker-2	47163	INFO	applied nice	pid=47163,nice=0
+2025-09-30T13:21:26.643966Z	worker-2	47163	INFO	applied affinity	pid=47163,cpus=[0, 1]
+2025-09-30T13:21:26.643995Z	worker-2	47163	INFO	hup applied assignment	pid=47163,assignment={'nice': 0, 'cpus': [0, 1]}
+2025-09-30T13:21:26.655827Z	worker-0	47161	INFO	applied nice	pid=47161,nice=0
+2025-09-30T13:21:26.655874Z	worker-0	47161	INFO	applied affinity	pid=47161,cpus=[0]
+2025-09-30T13:21:26.655891Z	worker-0	47161	INFO	hup applied assignment	pid=47161,assignment={'nice': 0, 'cpus': [0]}
+2025-09-30T13:21:26.715769Z	worker-2	47163	INFO	tick	pid=47163,tick=533,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:26.825826Z	worker-0	47161	INFO	tick	pid=47161,tick=821,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:26.979834Z	worker-1	47162	INFO	applied nice	pid=47162,nice=10
+2025-09-30T13:21:26.979910Z	worker-1	47162	INFO	applied affinity	pid=47162,cpus=[1]
+2025-09-30T13:21:26.979925Z	worker-1	47162	INFO	hup applied assignment	pid=47162,assignment={'nice': 10, 'cpus': [1]}
+2025-09-30T13:21:27.635762Z	worker-3	47193	INFO	tick	pid=47193,tick=15,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:27.675789Z	worker-1	47162	INFO	tick	pid=47162,tick=150,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:27.719810Z	worker-2	47163	INFO	tick	pid=47163,tick=544,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:27.863747Z	worker-0	47161	INFO	tick	pid=47161,tick=836,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:28.675747Z	worker-3	47193	INFO	tick	pid=47193,tick=33,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:28.775871Z	worker-2	47163	INFO	tick	pid=47163,tick=557,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:28.907739Z	worker-0	47161	INFO	tick	pid=47161,tick=850,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:28.939753Z	worker-1	47162	INFO	tick	pid=47162,tick=155,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:29.707750Z	worker-3	47193	INFO	tick	pid=47193,tick=51,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:29.811746Z	worker-2	47163	INFO	tick	pid=47163,tick=568,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:29.919761Z	worker-0	47161	INFO	tick	pid=47161,tick=868,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:30.355760Z	worker-1	47162	INFO	tick	pid=47162,tick=158,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:30.731748Z	worker-3	47193	INFO	tick	pid=47193,tick=67,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:30.887750Z	worker-2	47163	INFO	tick	pid=47163,tick=581,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:30.922830Z	worker-0	47161	INFO	tick	pid=47161,tick=883,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:31.531750Z	worker-1	47162	INFO	tick	pid=47162,tick=161,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:31.785874Z	worker-3	47193	INFO	tick	pid=47193,tick=83,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:31.923740Z	worker-0	47161	INFO	tick	pid=47161,tick=900,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:31.975740Z	worker-2	47163	INFO	tick	pid=47163,tick=593,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:32.836005Z	supervisor	47159	INFO	graceful shutdown initiated	
+2025-09-30T13:21:32.836128Z	worker-0	47161	INFO	sigterm received	pid=47161,sig=15
+2025-09-30T13:21:32.863749Z	worker-3	47193	INFO	sigterm received	pid=47193,sig=15
+2025-09-30T13:21:32.863820Z	worker-3	47193	INFO	tick	pid=47193,tick=100,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:32.863834Z	worker-3	47193	INFO	exiting	pid=47193,ticks=100
+2025-09-30T13:21:32.864755Z	supervisor	47159	INFO	sigchld received	sig=17
+2025-09-30T13:21:32.879798Z	worker-0	47161	INFO	exiting	pid=47161,ticks=917
+2025-09-30T13:21:32.880638Z	supervisor	47159	INFO	sigchld received	sig=17
+2025-09-30T13:21:32.889804Z	worker-2	47163	INFO	sigterm received	pid=47163,sig=15
+2025-09-30T13:21:32.889896Z	worker-2	47163	INFO	exiting	pid=47163,ticks=603
+2025-09-30T13:21:32.890783Z	supervisor	47159	INFO	sigchld received	sig=17
+2025-09-30T13:21:32.890804Z	worker-1	47162	INFO	sigterm received	pid=47162,sig=15
+2025-09-30T13:21:32.993873Z	worker-1	47162	INFO	tick	pid=47162,tick=165,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:32.993904Z	worker-1	47162	INFO	exiting	pid=47162,ticks=165
+2025-09-30T13:21:32.994840Z	supervisor	47159	INFO	sigchld received	sig=17
+2025-09-30T13:21:33.036712Z	supervisor	47159	INFO	shutdown complete	
+2025-09-30T13:21:33.993886Z	supervisor	47159	INFO	spawned worker	idx=0,pid=47200,nice=0,cpus=[0]
+2025-09-30T13:21:33.994869Z	supervisor	47159	INFO	spawned worker	idx=1,pid=47201,nice=10,cpus=[1]
+2025-09-30T13:21:33.995134Z	worker-0	47200	INFO	applied nice	pid=47200,nice=0
+2025-09-30T13:21:33.995508Z	supervisor	47159	INFO	spawned worker	idx=2,pid=47202,nice=0,cpus=[0, 1]
+2025-09-30T13:21:33.995824Z	worker-1	47201	INFO	applied nice	pid=47201,nice=10
+2025-09-30T13:21:33.996192Z	supervisor	47159	INFO	spawned worker	idx=3,pid=47203,nice=-19,cpus=[0]
+2025-09-30T13:21:33.996347Z	worker-2	47202	INFO	applied nice	pid=47202,nice=0
+2025-09-30T13:21:34.020837Z	worker-0	47200	INFO	applied affinity	pid=47200,cpus=[0]
+2025-09-30T13:21:34.021211Z	worker-0	47200	INFO	started	pid=47200,mode=heavy
+2025-09-30T13:21:34.031753Z	worker-3	47203	INFO	applied affinity	pid=47203,cpus=[0]
+2025-09-30T13:21:34.032095Z	worker-3	47203	INFO	started	pid=47203,mode=heavy
+2025-09-30T13:21:34.089809Z	worker-1	47201	INFO	applied affinity	pid=47201,cpus=[1]
+2025-09-30T13:21:34.090239Z	worker-1	47201	INFO	started	pid=47201,mode=heavy
+2025-09-30T13:21:34.099824Z	worker-2	47202	INFO	applied affinity	pid=47202,cpus=[0, 1]
+2025-09-30T13:21:34.100089Z	worker-2	47202	INFO	started	pid=47202,mode=heavy
+2025-09-30T13:21:35.031766Z	worker-0	47200	INFO	tick	pid=47200,tick=17,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:35.067761Z	worker-3	47203	INFO	tick	pid=47203,tick=17,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:35.103774Z	worker-1	47201	INFO	tick	pid=47201,tick=5,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:35.114815Z	worker-2	47202	INFO	tick	pid=47202,tick=11,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:36.067748Z	worker-0	47200	INFO	tick	pid=47200,tick=35,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:36.075738Z	worker-3	47203	INFO	tick	pid=47203,tick=35,mode=heavy,nice=0,affinity=[0]
+2025-09-30T13:21:36.151742Z	worker-2	47202	INFO	tick	pid=47202,tick=24,mode=heavy,nice=0,affinity=[0, 1]
+2025-09-30T13:21:36.242765Z	supervisor	47159	INFO	graceful shutdown initiated	
+2025-09-30T13:21:36.242844Z	worker-3	47203	INFO	sigterm received	pid=47203,sig=15
+2025-09-30T13:21:36.259765Z	worker-2	47202	INFO	sigterm received	pid=47202,sig=15
+2025-09-30T13:21:36.259848Z	worker-2	47202	INFO	exiting	pid=47202,ticks=25
+2025-09-30T13:21:36.260622Z	supervisor	47159	INFO	sigchld received	sig=17
+2025-09-30T13:21:36.288287Z	worker-0	47200	INFO	sigterm received	pid=47200,sig=15
+2025-09-30T13:21:36.288340Z	worker-0	47200	INFO	exiting	pid=47200,ticks=38
+2025-09-30T13:21:36.289143Z	supervisor	47159	INFO	sigchld received	sig=17
+2025-09-30T13:21:36.307956Z	worker-1	47201	INFO	sigterm received	pid=47201,sig=15
+2025-09-30T13:21:36.308033Z	worker-1	47201	INFO	tick	pid=47201,tick=9,mode=heavy,nice=10,affinity=[1]
+2025-09-30T13:21:36.308061Z	worker-1	47201	INFO	exiting	pid=47201,ticks=9
+2025-09-30T13:21:36.308847Z	supervisor	47159	INFO	sigchld received	sig=17
+2025-09-30T13:21:36.311841Z	worker-3	47203	INFO	exiting	pid=47203,ticks=39
+2025-09-30T13:21:36.312773Z	supervisor	47159	INFO	sigchld received	sig=17
+2025-09-30T13:21:36.343139Z	supervisor	47159	INFO	shutdown complete	
+2025-09-30T13:21:37.836541Z	supervisor	47159	INFO	graceful shutdown initiated	
+2025-09-30T13:21:37.836736Z	supervisor	47159	INFO	shutdown complete	
