@@ -1,0 +1,4 @@
+[SPY] openat(AT_FDCWD, "/tmp/test_grep.txt", 0x100) = 3
+[SPY] read(fd=3, buf=0x646fcfa66000, count=98304) = 35
+[SPY] read(fd=3, buf=0x646fcfa66023, count=98304) = 0
+[SPY] close(fd=3) = 0

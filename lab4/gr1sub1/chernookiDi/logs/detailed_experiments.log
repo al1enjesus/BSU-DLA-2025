@@ -1,0 +1,69 @@
+=== Правильные логи с перехватом ===
+
+=== LS с перехватом ===
+STDOUT:
+total 976
+drwxr-xr-x 2 surff surff   4096 Oct  5 22:56 .
+drwxr-xr-x 4 surff surff   4096 Oct  5 22:52 ..
+-rw-r--r-- 1 surff surff   1649 Oct  5 22:53 Makefile
+-rwxr-xr-x 1 surff surff  37168 Oct  5 22:56 benchmark
+-rw-r--r-- 1 surff surff   6087 Oct  5 22:56 benchmark.c
+-rw-r--r-- 1 surff surff     69 Oct  5 22:54 hello.c
+-rwxr-xr-x 1 surff surff 871896 Oct  5 22:54 hello_static
+-rwxr-xr-x 1 surff surff  26064 Oct  5 22:54 libsyscall_spy.so
+-rw-r--r-- 1 surff surff   4960 Oct  5 22:53 syscall_spy.c
+STDERR (перехваченные вызовы):
+
+=== CAT с перехватом ===
+STDOUT:
+test content for cat
+STDERR (перехваченные вызовы):
+[SPY] open("/tmp/test_cat.txt", flags=0x0) = 3
+[SPY] read(fd=3, buf=0x7945b892a000, count=131072) = 21
+[SPY] write(fd=1, buf=0x7945b892a000, count=21) = 21
+[SPY] read(fd=3, buf=0x7945b892a000, count=131072) = 0
+[SPY] close(fd=3) = 0
+
+=== GREP с перехватом ===
+STDOUT:
+test line
+another test
+STDERR (перехваченные вызовы):
+[SPY] openat(AT_FDCWD, "/tmp/test_grep.txt", 0x100) = 3
+[SPY] read(fd=3, buf=0x5b39b4d8b000, count=98304) = 35
+[SPY] read(fd=3, buf=0x5b39b4d8b023, count=98304) = 0
+[SPY] close(fd=3) = 0
+
+=== LS с перехватом ===
+STDOUT:
+total 976
+drwxr-xr-x 2 surff surff   4096 Oct  5 22:56 .
+drwxr-xr-x 4 surff surff   4096 Oct  5 22:52 ..
+-rw-r--r-- 1 surff surff   1649 Oct  5 22:53 Makefile
+-rwxr-xr-x 1 surff surff  37168 Oct  5 22:56 benchmark
+-rw-r--r-- 1 surff surff   6087 Oct  5 22:56 benchmark.c
+-rw-r--r-- 1 surff surff     69 Oct  5 22:54 hello.c
+-rwxr-xr-x 1 surff surff 871896 Oct  5 22:54 hello_static
+-rwxr-xr-x 1 surff surff  26064 Oct  5 22:54 libsyscall_spy.so
+-rw-r--r-- 1 surff surff   4960 Oct  5 22:53 syscall_spy.c
+STDERR (перехваченные вызовы):
+
+=== CAT с перехватом ===
+STDOUT:
+test content for cat
+STDERR (перехваченные вызовы):
+[SPY] open("/tmp/test_cat.txt", flags=0x0) = 3
+[SPY] read(fd=3, buf=0x7ec33963a000, count=131072) = 21
+[SPY] write(fd=1, buf=0x7ec33963a000, count=21) = 21
+[SPY] read(fd=3, buf=0x7ec33963a000, count=131072) = 0
+[SPY] close(fd=3) = 0
+
+=== GREP с перехватом ===
+STDOUT:
+test line
+another test
+STDERR (перехваченные вызовы):
+[SPY] openat(AT_FDCWD, "/tmp/test_grep.txt", 0x100) = 3
+[SPY] read(fd=3, buf=0x646fcfa66000, count=98304) = 35
+[SPY] read(fd=3, buf=0x646fcfa66023, count=98304) = 0
+[SPY] close(fd=3) = 0

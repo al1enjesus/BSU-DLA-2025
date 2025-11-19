@@ -1,0 +1,5 @@
+[SPY] open("/tmp/test_cat.txt", flags=0x0) = 3
+[SPY] read(fd=3, buf=0x7ec33963a000, count=131072) = 21
+[SPY] write(fd=1, buf=0x7ec33963a000, count=21) = 21
+[SPY] read(fd=3, buf=0x7ec33963a000, count=131072) = 0
+[SPY] close(fd=3) = 0
