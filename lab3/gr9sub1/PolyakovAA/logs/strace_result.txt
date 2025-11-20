@@ -1,0 +1,37 @@
+strace: Process 2705 attached with 20 threads
+strace: Process 2723 detached
+strace: Process 6588 detached
+strace: Process 3264 detached
+strace: Process 3215 detached
+strace: Process 2727 detached
+strace: Process 2726 detached
+strace: Process 2722 detached
+strace: Process 2721 detached
+strace: Process 2720 detached
+strace: Process 2719 detached
+strace: Process 2718 detached
+strace: Process 2717 detached
+strace: Process 2716 detached
+strace: Process 2715 detached
+strace: Process 2714 detached
+strace: Process 2713 detached
+strace: Process 2712 detached
+strace: Process 2710 detached
+strace: Process 2709 detached
+strace: Process 2705 detached
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ------------------
+ 58,29    0,056791          62       906           poll
+ 22,10    0,021537        7179         3           restart_syscall
+ 13,39    0,013050           3      3285      2954 recvmsg
+  2,47    0,002407           3       658           write
+  1,85    0,001805           5       340           writev
+  0,58    0,000563           3       163           read
+  0,45    0,000443           7        58           ioctl
+  0,44    0,000430           6        64           getpid
+  0,17    0,000163          16        10        10 inotify_add_watch
+  0,16    0,000160           5        30           timerfd_settime
+  0,08    0,000079          39         2           munmap
+  0,00    0,000004           4         1           sendmsg
+------ ----------- ----------- --------- --------- ------------------
+100,00    0,097432          17      5520      2964 total

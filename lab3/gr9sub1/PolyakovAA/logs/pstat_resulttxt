@@ -1,0 +1,13 @@
+PID: 2705 (gnome-shell)
+PPid: 2250
+State: S
+Threads: 20
+CPU time: 294.44 sec
+Voluntary ctxt switches: 2940719
+Nonvoluntary ctxt switches: 4571
+VmRSS: 319.29 MiB
+  RssAnon: 174.24 MiB
+  RssFile: 37.27 MiB
+IO:
+  read_bytes: 84.38 MiB
+  write_bytes: 200 KiB
