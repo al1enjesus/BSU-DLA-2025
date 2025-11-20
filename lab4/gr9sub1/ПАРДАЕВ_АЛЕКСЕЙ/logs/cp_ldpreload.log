@@ -1,0 +1,6 @@
+[SPY] open("/tmp/lab4_dstfile", flags=0x210000, mode=00) = -1 (Это не каталог)
+[SPY] open("/tmp/lab4_srcfile", flags=0x0, mode=00) = 3 (OK)
+[SPY] openat(AT_FDCWD, "/tmp/lab4_dstfile", 0x201, mode=00) = 4 (OK)
+[SPY] read(fd=3, buf=0x77a6fd545000, count=131072) = 0
+[SPY] close(fd=4) = 0 (OK)
+[SPY] close(fd=3) = 0 (OK)

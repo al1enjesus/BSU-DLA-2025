@@ -1,0 +1,6 @@
+dummy cycles avg: 27.67
+getpid cycles avg: 1461.44
+open+close cycles avg: 7548.29
+gettimeofday cycles avg: 69.79
+
+Assuming CPU = 3.00 GHz (1 cycle = 0.333 ns)
