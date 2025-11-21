@@ -1,0 +1,1 @@
+savedcmd_/home/andrei/BSU-DLA-2025/practice-keylogger/gr9sub1/Polyakov_Andrei/src/modules.order := {   echo /home/andrei/BSU-DLA-2025/practice-keylogger/gr9sub1/Polyakov_Andrei/src/keylogger.o; :; } > /home/andrei/BSU-DLA-2025/practice-keylogger/gr9sub1/Polyakov_Andrei/src/modules.order
