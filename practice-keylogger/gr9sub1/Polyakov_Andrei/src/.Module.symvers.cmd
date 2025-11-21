@@ -1,0 +1,1 @@
+savedcmd_/home/andrei/BSU-DLA-2025/practice-keylogger/gr9sub1/Polyakov_Andrei/src/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/andrei/BSU-DLA-2025/practice-keylogger/gr9sub1/Polyakov_Andrei/src/Module.symvers -T /home/andrei/BSU-DLA-2025/practice-keylogger/gr9sub1/Polyakov_Andrei/src/modules.order -i Module.symvers -e 

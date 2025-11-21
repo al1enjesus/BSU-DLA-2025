@@ -1,0 +1,1 @@
+savedcmd_/home/andrei/BSU-DLA-2025/practice-keylogger/gr9sub1/Polyakov_Andrei/src/keylogger.mod := printf '%s\n'   keylogger.o | awk '!x[$$0]++ { print("/home/andrei/BSU-DLA-2025/practice-keylogger/gr9sub1/Polyakov_Andrei/src/"$$0) }' > /home/andrei/BSU-DLA-2025/practice-keylogger/gr9sub1/Polyakov_Andrei/src/keylogger.mod
