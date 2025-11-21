@@ -1,0 +1,234 @@
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, buf=0x7ffeff16da90, count=16) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("hello.c", flags=0x100) = 3
+[SPY] close(fd=3) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/stdc-predef.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/stdc-predef.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/stdc-predef.h", flags=0x100) = -1
+[SPY] open("/usr/include/stdc-predef.h", flags=0x100) = 4
+[SPY] close(fd=4) = 0
+hello.c:1:19: warning: extra tokens at end of #include directive
+    1 | #include <stdio.h>\nint main() { printf("Hello GCC!\\n"); return 0; }
+      |                   ^
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/stdio.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/stdio.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/stdio.h", flags=0x100) = -1
+[SPY] open("/usr/include/stdio.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/libc-header-start.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/libc-header-start.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/libc-header-start.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/features.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/features.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/features.h", flags=0x100) = -1
+[SPY] open("/usr/include/features.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/features-time64.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/features-time64.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/features-time64.h", flags=0x100) = -1
+[SPY] open("/usr/include/features-time64.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/wordsize.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/wordsize.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/wordsize.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/timesize.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/timesize.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/timesize.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/wordsize.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/sys/cdefs.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/sys/cdefs.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/sys/cdefs.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/wordsize.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/long-double.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/long-double.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/long-double.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/gnu/stubs.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/gnu/stubs.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/gnu/stubs.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/gnu/stubs-64.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/gnu/stubs-64.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/gnu/stubs-64.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/types.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/types.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/types.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/wordsize.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/timesize.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/wordsize.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/typesizes.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/typesizes.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/typesizes.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/time64.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/time64.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/time64.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/types/__fpos_t.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/types/__fpos_t.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/types/__mbstate_t.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/types/__mbstate_t.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/types/__fpos64_t.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/types/__fpos64_t.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/types/__FILE.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/types/__FILE.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/__FILE.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/types/FILE.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/types/FILE.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/FILE.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/types/struct_FILE.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/types/struct_FILE.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/types/cookie_io_functions_t.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/types/cookie_io_functions_t.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/stdio_lim.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/stdio_lim.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/stdio_lim.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/floatn.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/floatn.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/floatn.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/bits/floatn-common.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/bits/floatn-common.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/floatn-common.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/include/x86_64-linux-gnu/bits/long-double.h", flags=0x100) = 5
+[SPY] close(fd=5) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, buf=0x7ffeff16e790, count=16) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, buf=0x7ffeff16da30, count=16) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, buf=0x7ffedb4caa90, count=16) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o", flags=0x0) = 5
+[SPY] read(fd=5, buf=0x7ffedeebb940, count=16) = 16
+[SPY] read(fd=5, buf=0x7ffedeebb810, count=64) = 64
+[SPY] read(fd=5, buf=0x5f9215ade810, count=832) = 832
+[SPY] read(fd=5, buf=0x5f9215adeb60, count=126) = 126
+[SPY] read(fd=5, buf=0x5f9215ade810, count=832) = 832
+[SPY] read(fd=5, buf=0x5f9215adeb60, count=126) = 126
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o", flags=0x0) = 6
+[SPY] read(fd=6, buf=0x7ffedeebb940, count=16) = 16
+[SPY] read(fd=6, buf=0x7ffedeebb810, count=64) = 64
+[SPY] read(fd=6, buf=0x5f9215b05be0, count=704) = 704
+[SPY] read(fd=6, buf=0x5f9215b05eb0, count=96) = 96
+[SPY] read(fd=6, buf=0x5f9215b05be0, count=704) = 704
+[SPY] read(fd=6, buf=0x5f9215b05eb0, count=96) = 96
+[SPY] close(fd=6) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o", flags=0x0) = 7
+[SPY] read(fd=7, buf=0x7ffedeebb940, count=16) = 16
+[SPY] read(fd=7, buf=0x7ffedeebb810, count=64) = 64
+[SPY] read(fd=7, buf=0x5f9215af8430, count=1088) = 1088
+[SPY] read(fd=7, buf=0x5f9215adee60, count=164) = 164
+[SPY] read(fd=7, buf=0x5f9215af8430, count=1088) = 1088
+[SPY] read(fd=7, buf=0x5f9215adee60, count=164) = 164
+[SPY] close(fd=7) = 0
+[SPY] open("/tmp/ccJEKLhn.o", flags=0x0) = 8
+[SPY] read(fd=8, buf=0x7ffedeebb940, count=16) = 16
+[SPY] read(fd=8, buf=0x7ffedeebb810, count=64) = 64
+[SPY] read(fd=8, buf=0x5f9215b11f50, count=576) = 576
+[SPY] read(fd=8, buf=0x5f9215b05f20, count=88) = 88
+[SPY] read(fd=8, buf=0x5f9215b11f50, count=576) = 576
+[SPY] read(fd=8, buf=0x5f9215b05f20, count=88) = 88
+[SPY] close(fd=8) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/libgcc_s.so", flags=0x0) = 10
+[SPY] read(fd=10, buf=0x7ffedeebb6e0, count=16) = 16
+[SPY] close(fd=10) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libgcc_s.so.1", flags=0x0) = 10
+[SPY] read(fd=10, buf=0x7ffedeebb870, count=16) = 16
+[SPY] read(fd=10, buf=0x7ffedeebb740, count=64) = 64
+[SPY] read(fd=10, buf=0x5f9215b44440, count=1920) = 1920
+[SPY] read(fd=10, buf=0x5f9215b44bd0, count=294) = 294
+[SPY] read(fd=10, buf=0x5f9215b44440, count=1920) = 1920
+[SPY] read(fd=10, buf=0x5f9215b44bd0, count=294) = 294
+[SPY] close(fd=10) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libc.so", flags=0x0) = 12
+[SPY] read(fd=12, buf=0x7ffedeebb6e0, count=16) = 16
+[SPY] close(fd=12) = 0
+[SPY] open("/lib/x86_64-linux-gnu/libc.so.6", flags=0x0) = 12
+[SPY] read(fd=12, buf=0x7ffedeebb870, count=16) = 16
+[SPY] read(fd=12, buf=0x7ffedeebb740, count=64) = 64
+[SPY] read(fd=12, buf=0x5f9215b95d50, count=4032) = 4032
+[SPY] read(fd=12, buf=0x5f9215b8e230, count=1063) = 1063
+[SPY] read(fd=12, buf=0x5f9215b95d50, count=4032) = 4032
+[SPY] read(fd=12, buf=0x5f9215b8e230, count=1063) = 1063
+[SPY] close(fd=12) = 0
+[SPY] open("/lib64/ld-linux-x86-64.so.2", flags=0x0) = 14
+[SPY] read(fd=14, buf=0x7ffedeebb870, count=16) = 16
+[SPY] read(fd=14, buf=0x7ffedeebb740, count=64) = 64
+[SPY] read(fd=14, buf=0x5f9215bd0ad0, count=1472) = 1472
+[SPY] read(fd=14, buf=0x5f9215ba8ba0, count=242) = 242
+[SPY] read(fd=14, buf=0x5f9215bd0ad0, count=1472) = 1472
+[SPY] read(fd=14, buf=0x5f9215ba8ba0, count=242) = 242
+[SPY] close(fd=14) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/libgcc_s.so", flags=0x0) = 16
+[SPY] read(fd=16, buf=0x7ffedeebb6e0, count=16) = 16
+[SPY] close(fd=16) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libgcc_s.so.1", flags=0x0) = 16
+[SPY] read(fd=16, buf=0x7ffedeebb870, count=16) = 16
+[SPY] read(fd=16, buf=0x7ffedeebb740, count=64) = 64
+[SPY] read(fd=16, buf=0x5f9215dad0d0, count=1920) = 1920
+[SPY] read(fd=16, buf=0x5f9215b44bd0, count=294) = 294
+[SPY] read(fd=16, buf=0x5f9215dad0d0, count=1920) = 1920
+[SPY] read(fd=16, buf=0x5f9215b44bd0, count=294) = 294
+[SPY] close(fd=16) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o", flags=0x0) = 18
+[SPY] read(fd=18, buf=0x7ffedeebb940, count=16) = 16
+[SPY] read(fd=18, buf=0x7ffedeebb810, count=64) = 64
+[SPY] read(fd=18, buf=0x5f9215b05be0, count=704) = 704
+[SPY] read(fd=18, buf=0x5f9215b8ecb0, count=114) = 114
+[SPY] read(fd=18, buf=0x5f9215b05be0, count=704) = 704
+[SPY] read(fd=18, buf=0x5f9215b8ecb0, count=114) = 114
+[SPY] close(fd=18) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o", flags=0x0) = 19
+[SPY] read(fd=19, buf=0x7ffedeebb940, count=16) = 16
+[SPY] read(fd=19, buf=0x7ffedeebb810, count=64) = 64
+[SPY] read(fd=19, buf=0x5f9215b44d70, count=512) = 512
+[SPY] read(fd=19, buf=0x5f9215de5400, count=75) = 75
+[SPY] read(fd=19, buf=0x5f9215b44d70, count=512) = 512
+[SPY] read(fd=19, buf=0x5f9215de5400, count=75) = 75
+[SPY] close(fd=19) = 0
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+collect2: error: ld returned 1 exit status
