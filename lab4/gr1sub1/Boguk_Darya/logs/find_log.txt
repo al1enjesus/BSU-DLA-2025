@@ -1,0 +1,17 @@
+[SPY] open(".", [O_CLOEXEC]) = 3
+[SPY] openat(AT_FDCWD, ".", [O_CLOEXEC|O_DIRECTORY|O_NOFOLLOW]) = 4
+[SPY] openat(<fd>, "logs", [O_CLOEXEC|O_DIRECTORY|O_NOFOLLOW]) = 6
+[SPY] close(fd=4) = 0
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] openat(<fd>, "test_dir", [O_CLOEXEC|O_DIRECTORY|O_NOFOLLOW]) = 6
+[SPY] close(fd=4) = 0
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] openat(<fd>, "src", [O_CLOEXEC|O_DIRECTORY|O_NOFOLLOW]) = 6
+[SPY] close(fd=4) = 0
+[SPY] close(fd=7) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=5) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
