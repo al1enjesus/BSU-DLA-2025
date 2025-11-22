@@ -1,0 +1,22 @@
+=== Module Information ===
+
+--- hello_module.ko ---
+filename:       /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/hello_module.ko
+version:        1.0
+description:    Lab5 Task A: Hello World Module with Parameters
+author:         Kirill Kurda
+license:        GPL
+
+--- proc_config.ko ---
+filename:       /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_config.ko
+version:        1.0
+description:    Lab5 Task B: /proc file with read/write support
+author:         Kirill Kurda
+license:        GPL
+
+--- proc_stats.ko ---
+filename:       /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko
+version:        1.0
+description:    Lab5 Task C: /proc file with system statistics
+author:         Kirill Kurda
+license:        GPL
