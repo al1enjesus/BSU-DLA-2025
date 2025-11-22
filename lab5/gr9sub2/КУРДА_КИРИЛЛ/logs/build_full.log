@@ -1,0 +1,35 @@
+=== Building kernel modules ===
+make -C /lib/modules/5.15.167.4-microsoft-standard-WSL2/build M=/home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src modules
+make[1]: Entering directory '/home/kirill_kurda/wsl2-kernel/WSL2-Linux-Kernel-linux-msft-wsl-5.15.y'
+  CC [M]  /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/hello_module.o
+  CC [M]  /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_config.o
+  CC [M]  /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.o
+WARNING: Symbol version dump "Module.symvers" is missing.
+         Modules may not have dependencies or modversions.
+         You may get many unresolved symbol warnings.
+  MODPOST /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/Module.symvers
+WARNING: modpost: "module_layout" [/home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko] undefined!
+WARNING: modpost: "proc_remove" [/home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko] undefined!
+WARNING: modpost: "proc_create" [/home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko] undefined!
+WARNING: modpost: "_printk" [/home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko] undefined!
+WARNING: modpost: "__stack_chk_fail" [/home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko] undefined!
+WARNING: modpost: "_copy_to_user" [/home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko] undefined!
+WARNING: modpost: "__check_object_size" [/home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko] undefined!
+WARNING: modpost: "snprintf" [/home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko] undefined!
+WARNING: modpost: "jiffies_to_msecs" [/home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko] undefined!
+WARNING: modpost: "jiffies" [/home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko] undefined!
+WARNING: modpost: suppressed 22 unresolved symbol warnings because there were too many)
+  CC [M]  /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/hello_module.mod.o
+  LD [M]  /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/hello_module.ko
+  CC [M]  /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_config.mod.o
+  LD [M]  /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_config.ko
+  CC [M]  /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.mod.o
+  LD [M]  /home/kirill_kurda/linux_labs/BSU-DLA-2025/lab5/gr9sub2/КУРДА_КИРИЛЛ/src/proc_stats.ko
+make[1]: Leaving directory '/home/kirill_kurda/wsl2-kernel/WSL2-Linux-Kernel-linux-msft-wsl-5.15.y'
+
+✓ Modules built successfully!
+
+-rw-r--r-- 1 kirill_kurda kirill_kurda  94K Nov 23 00:48 hello_module.ko
+-rw-r--r-- 1 kirill_kurda kirill_kurda 199K Nov 23 00:48 proc_config.ko
+-rw-r--r-- 1 kirill_kurda kirill_kurda 199K Nov 23 00:48 proc_stats.ko
+
