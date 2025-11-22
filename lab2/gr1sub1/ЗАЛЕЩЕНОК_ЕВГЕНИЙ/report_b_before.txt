@@ -1,0 +1,25 @@
+Linux 6.14.0-33-generic (zhenklchhhPC) 	10/05/2025 	_x86_64_	(12 CPU)
+
+05:02:48 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+05:02:49 PM  1000      9622   50.00    0.00    0.00   50.00   50.00     0  bash
+05:02:49 PM  1000      9623   50.00    0.00    0.00   50.00   50.00     0  bash
+
+05:02:49 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+05:02:50 PM  1000      9622   50.00    0.00    0.00   50.00   50.00     0  bash
+05:02:50 PM  1000      9623   50.00    0.00    0.00   50.00   50.00     0  bash
+
+05:02:50 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+05:02:51 PM  1000      9622   50.00    0.00    0.00   50.00   50.00     0  bash
+05:02:51 PM  1000      9623   50.00    0.00    0.00   50.00   50.00     0  bash
+
+05:02:51 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+05:02:52 PM  1000      9622   50.00    0.00    0.00   50.00   50.00     0  bash
+05:02:52 PM  1000      9623   50.00    0.00    0.00   50.00   50.00     0  bash
+
+05:02:52 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+05:02:53 PM  1000      9622   50.00    0.00    0.00   50.00   50.00     0  bash
+05:02:53 PM  1000      9623   50.00    0.00    0.00   50.00   50.00     0  bash
+
+Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+Average:     1000      9622   50.00    0.00    0.00   50.00   50.00     -  bash
+Average:     1000      9623   50.00    0.00    0.00   50.00   50.00     -  bash
