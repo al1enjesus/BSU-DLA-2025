@@ -1,0 +1,33 @@
+{
+    "workers": 4,
+    "mode_heavy": {
+        "work_us": 500000,
+        "sleep_us": 100000
+    },
+    "mode_light": {
+        "work_us": 100000,
+        "sleep_us": 400000
+    },
+    "scheduling": [
+        {
+            "worker_id": 0,
+            "nice": 0,
+            "cpu_affinity": [0]
+        },
+        {
+            "worker_id": 1,
+            "nice": 10,
+            "cpu_affinity": [0]
+        },
+        {
+            "worker_id": 2,
+            "nice": 0,
+            "cpu_affinity": [1]
+        },
+        {
+            "worker_id": 3,
+            "nice": -5,
+            "cpu_affinity": [1]
+        }
+    ]
+}
