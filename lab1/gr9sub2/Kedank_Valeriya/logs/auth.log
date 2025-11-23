@@ -1,0 +1,390 @@
+Aug 25 13:22:21 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[938]: New seat seat0.
+Aug 25 13:22:21 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[938]: Watching system buttons on /dev/input/event2 (Power Button)
+Aug 25 13:22:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[938]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Aug 25 13:22:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[938]: Watching system buttons on /dev/input/event1 (Power Button)
+Aug 25 13:22:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[938]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Aug 25 13:22:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Aug 25 13:22:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Aug 25 13:22:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[938]: New session 1 of user lera.
+Aug 25 13:22:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Aug 25 13:22:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Aug 25 13:22:23 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1114]: The Secret Service was already initialized
+Aug 25 13:22:23 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1114]: The PKCS#11 component was already initialized
+Aug 25 13:22:24 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.42 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Aug 25 13:23:17 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[938]: System is rebooting.
+Sep  7 21:38:07 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[681]: Watching system buttons on /dev/input/event2 (Power Button)
+Sep  7 21:38:07 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[681]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Sep  7 21:38:07 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[681]: Watching system buttons on /dev/input/event1 (Power Button)
+Sep  7 21:38:07 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[681]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Sep  7 21:38:07 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[681]: New seat seat0.
+Sep  7 21:38:09 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Sep  7 21:38:09 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Sep  7 21:38:09 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[681]: New session 1 of user lera.
+Sep  7 21:38:09 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Sep  7 21:38:09 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Sep  7 21:38:11 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1122]: The Secret Service was already initialized
+Sep  7 21:38:11 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1122]: The PKCS#11 component was already initialized
+Sep  7 21:38:12 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.46 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Sep  7 21:39:15 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Sep  7 21:39:15 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[2112]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep  7 21:39:38 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/apt update
+Sep  7 21:39:38 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep  7 21:39:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session closed for user root
+Sep  7 18:40:55 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/apt update
+Sep  7 18:40:55 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep  7 18:41:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session closed for user root
+Sep  7 18:41:24 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/apt upgrade
+Sep  7 18:41:24 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep  7 18:42:17 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Sep  7 18:42:17 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[2868]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep  7 18:44:58 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[681]: Watching system buttons on /dev/input/event2 (Power Button)
+Sep  7 18:44:58 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[681]: Watching system buttons on /dev/input/event1 (Power Button)
+Sep  7 18:44:58 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[681]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Sep  7 18:44:58 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[681]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Sep  7 18:49:53 lera-VivoBook-ASUSLaptop-X513EAN-K513EA dbus-daemon[653]: [system] Rejected send message, 0 matched rules; type="error", sender=":1.38" (uid=1000 pid=1117 comm="/usr/bin/pulseaudio --daemonize=no --log-target=jo" label="unconfined") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.4" (uid=0 pid=648 comm="/usr/lib/bluetooth/bluetoothd " label="unconfined")
+Sep  7 18:49:53 lera-VivoBook-ASUSLaptop-X513EAN-K513EA dbus-daemon[653]: [system] Rejected send message, 0 matched rules; type="error", sender=":1.38" (uid=1000 pid=1117 comm="/usr/bin/pulseaudio --daemonize=no --log-target=jo" label="unconfined") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.4" (uid=0 pid=648 comm="/usr/lib/bluetooth/bluetoothd " label="unconfined")
+Sep  7 18:50:08 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.46 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Sep  7 18:50:41 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session closed for user root
+Sep  7 18:51:15 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Sep  7 18:51:15 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[46505]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep  7 18:51:27 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: gkr-pam: unlocked login keyring
+Sep  7 18:51:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/apt install gdb
+Sep  7 18:51:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep  7 18:51:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session closed for user root
+Sep  7 18:52:07 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/apt install gcc
+Sep  7 18:52:07 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep  7 18:52:32 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session closed for user root
+Sep  7 18:53:00 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[681]: System is rebooting.
+Dec 15 16:53:41 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[741]: Watching system buttons on /dev/input/event2 (Power Button)
+Dec 15 16:53:41 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[741]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Dec 15 16:53:41 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[741]: Watching system buttons on /dev/input/event1 (Power Button)
+Dec 15 16:53:41 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[741]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Dec 15 16:53:41 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[741]: New seat seat0.
+Dec 15 16:53:42 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Dec 15 16:53:42 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Dec 15 16:53:42 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[741]: New session 1 of user lera.
+Dec 15 16:53:42 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Dec 15 16:53:42 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Dec 15 16:53:44 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1044]: The Secret Service was already initialized
+Dec 15 16:53:44 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1044]: The PKCS#11 component was already initialized
+Dec 15 16:53:46 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.43 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Dec 15 16:54:49 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Unregistered Authentication Agent for unix-session:1 (system bus name :1.43, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8) (disconnected from bus)
+Dec 15 16:54:49 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session closed for user lera
+Dec 15 16:54:49 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[741]: Session 1 logged out. Waiting for processes to exit.
+Dec 15 16:54:49 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Dec 15 16:54:49 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[741]: New session c1 of user gdm.
+Dec 15 16:54:49 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user gdm by (uid=0)
+Dec 15 16:54:50 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.84 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Dec 15 16:54:54 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[741]: Removed session 1.
+Dec 15 16:55:07 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[741]: System is rebooting.
+Nov 29 12:10:38 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[749]: Watching system buttons on /dev/input/event2 (Power Button)
+Nov 29 12:10:38 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[749]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Nov 29 12:10:38 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[749]: Watching system buttons on /dev/input/event1 (Power Button)
+Nov 29 12:10:38 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[749]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Nov 29 12:10:38 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[749]: New seat seat0.
+Nov 29 12:10:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Nov 29 12:10:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Nov 29 12:10:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[749]: New session 1 of user lera.
+Nov 29 12:10:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Nov 29 12:10:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Nov 29 12:10:40 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1052]: The Secret Service was already initialized
+Nov 29 12:10:40 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1052]: The PKCS#11 component was already initialized
+Nov 29 12:10:41 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.44 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Nov 29 12:13:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Unregistered Authentication Agent for unix-session:1 (system bus name :1.44, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8) (disconnected from bus)
+Nov 29 12:13:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session closed for user lera
+Nov 29 12:13:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[749]: Session 1 logged out. Waiting for processes to exit.
+Nov 29 12:13:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Nov 29 12:13:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[749]: New session c1 of user gdm.
+Nov 29 12:13:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user gdm by (uid=0)
+Nov 29 12:13:23 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.104 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Nov 29 12:13:30 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[749]: Removed session 1.
+Nov 29 12:13:33 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[749]: System is powering down.
+Dec  3 16:06:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[708]: Watching system buttons on /dev/input/event2 (Power Button)
+Dec  3 16:06:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[708]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Dec  3 16:06:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[708]: Watching system buttons on /dev/input/event1 (Power Button)
+Dec  3 16:06:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[708]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Dec  3 16:06:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[708]: New seat seat0.
+Dec  3 16:06:14 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Dec  3 16:06:14 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Dec  3 16:06:14 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[708]: New session 1 of user lera.
+Dec  3 16:06:14 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Dec  3 16:06:14 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Dec  3 16:06:15 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1015]: The Secret Service was already initialized
+Dec  3 16:06:15 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1015]: The PKCS#11 component was already initialized
+Dec  3 16:06:16 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.43 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Dec  3 13:17:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA CRON[5955]: pam_unix(cron:session): session opened for user root by (uid=0)
+Dec  3 13:17:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA CRON[5955]: pam_unix(cron:session): session closed for user root
+Dec  3 13:39:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Dec  3 13:39:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Dec  3 13:42:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Dec  3 13:42:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Dec  3 13:42:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Dec  3 13:42:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Dec  3 13:42:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Dec  3 13:42:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Dec  3 13:42:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Dec  3 13:42:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Dec  3 13:42:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Dec  3 13:42:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Dec  3 13:42:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Dec  3 13:42:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Dec  3 13:42:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Dec  3 13:42:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Dec  3 13:43:26 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Dec  3 13:43:26 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[11576]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Dec  3 13:49:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[708]: System is powering down.
+Dec  3 16:59:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: Watching system buttons on /dev/input/event2 (Power Button)
+Dec  3 16:59:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Dec  3 16:59:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: Watching system buttons on /dev/input/event1 (Power Button)
+Dec  3 16:59:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Dec  3 16:59:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: New seat seat0.
+Dec  3 17:00:00 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Dec  3 17:00:00 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Dec  3 17:00:00 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: New session 1 of user lera.
+Dec  3 17:00:00 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Dec  3 17:00:00 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Dec  3 17:00:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1048]: The Secret Service was already initialized
+Dec  3 17:00:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1048]: The PKCS#11 component was already initialized
+Dec  3 17:00:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.43 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Dec  3 14:01:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Dec  3 14:01:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[3106]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Dec  3 14:17:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA CRON[4153]: pam_unix(cron:session): session opened for user root by (uid=0)
+Dec  3 14:17:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA CRON[4153]: pam_unix(cron:session): session closed for user root
+Dec  3 15:03:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: System is powering down.
+Dec  6 14:07:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: Watching system buttons on /dev/input/event2 (Power Button)
+Dec  6 14:07:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Dec  6 14:07:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: Watching system buttons on /dev/input/event1 (Power Button)
+Dec  6 14:07:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Dec  6 14:07:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: New seat seat0.
+Dec  6 14:07:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Dec  6 14:07:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Dec  6 14:07:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: New session 1 of user lera.
+Dec  6 14:07:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Dec  6 14:07:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Dec  6 14:07:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1048]: The Secret Service was already initialized
+Dec  6 14:07:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1048]: The PKCS#11 component was already initialized
+Dec  6 14:07:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.43 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Dec  6 14:08:16 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Dec  6 14:08:16 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[2503]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Dec  6 11:17:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA CRON[4250]: pam_unix(cron:session): session opened for user root by (uid=0)
+Dec  6 11:17:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA CRON[4250]: pam_unix(cron:session): session closed for user root
+Dec  6 11:23:00 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: Power key pressed.
+Dec  6 11:23:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: Power key pressed.
+Dec  6 11:23:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: Operation 'sleep' finished.
+Dec  6 11:23:32 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Dec  6 11:24:00 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: Operation 'sleep' finished.
+Dec  6 11:24:16 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Dec  6 11:24:31 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Dec  6 11:24:42 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Dec  6 11:25:30 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Dec  6 11:25:45 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Dec  6 11:25:54 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Dec  6 11:25:54 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: New session c1 of user gdm.
+Dec  6 11:25:54 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user gdm by (uid=0)
+Dec  6 11:25:55 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.133 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Dec  6 11:26:18 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): check pass; user unknown
+Dec  6 11:26:18 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost= 
+Dec  6 11:26:52 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[738]: System is rebooting.
+Dec  6 11:26:52 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Dec  8 12:38:54 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: Watching system buttons on /dev/input/event2 (Power Button)
+Dec  8 12:38:54 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Dec  8 12:38:54 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: Watching system buttons on /dev/input/event1 (Power Button)
+Dec  8 12:38:54 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Dec  8 12:38:54 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: New seat seat0.
+Dec  8 12:38:55 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Dec  8 12:38:55 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Dec  8 12:38:55 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: New session 1 of user lera.
+Dec  8 12:38:55 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Dec  8 12:38:55 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Dec  8 12:38:56 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1044]: The Secret Service was already initialized
+Dec  8 12:38:56 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1044]: The PKCS#11 component was already initialized
+Dec  8 12:38:57 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.43 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Dec  8 12:40:06 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Dec  8 12:40:06 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[2127]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Dec  8 12:41:52 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: Lid closed.
+Dec  8 12:41:52 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: Suspending...
+Dec  8 12:44:16 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: Lid opened.
+Dec  8 12:44:16 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: Operation 'sleep' finished.
+Dec  8 12:44:27 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Dec  8 12:44:27 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: New session c1 of user gdm.
+Dec  8 12:44:27 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user gdm by (uid=0)
+Dec  8 12:44:28 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.104 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Dec  8 12:44:55 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: Power key pressed.
+Dec  8 12:44:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: System is rebooting.
+Dec  8 12:44:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Dec  8 12:44:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[743]: Session c1 logged out. Waiting for processes to exit.
+Dec  8 12:45:14 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Watching system buttons on /dev/input/event2 (Power Button)
+Dec  8 12:45:14 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Dec  8 12:45:14 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Watching system buttons on /dev/input/event1 (Power Button)
+Dec  8 12:45:15 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Dec  8 12:45:15 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: New seat seat0.
+Dec  8 12:45:17 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Dec  8 12:45:18 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Dec  8 12:45:18 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: New session 1 of user lera.
+Dec  8 12:45:18 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Dec  8 12:45:18 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Dec  8 12:45:18 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1055]: The Secret Service was already initialized
+Dec  8 12:45:18 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1055]: The PKCS#11 component was already initialized
+Dec  8 12:45:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.43 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Dec  8 12:45:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Lid closed.
+Dec  8 12:45:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Lid opened.
+Dec  8 12:46:29 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Dec  8 12:46:29 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[2106]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Dec  8 12:47:32 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Lid closed.
+Dec  8 12:47:32 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Suspending...
+Dec  8 12:47:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Lid opened.
+Dec  8 12:47:39 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Operation 'sleep' finished.
+Dec  8 12:47:51 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Dec  8 12:48:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Dec  8 12:48:11 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Dec  8 09:48:53 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Operation 'sleep' finished.
+Dec  8 09:48:54 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Power key pressed.
+                                                                                                Dec  8 09:50:33 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: Watching system buttons on /dev/input/event2 (Power Button)
+Dec  8 09:50:33 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Dec  8 09:50:33 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: Watching system buttons on /dev/input/event1 (Power Button)
+Dec  8 09:50:33 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Dec  8 09:50:33 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: New seat seat0.
+Dec  8 09:50:34 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Dec  8 09:50:34 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Dec  8 09:50:34 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[744]: New session 1 of user lera.
+Dec  8 09:50:34 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Dec  8 09:50:34 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Dec  8 09:50:35 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1047]: The Secret Service was already initialized
+Dec  8 09:50:35 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1047]: The PKCS#11 component was already initialized
+Dec  8 09:50:36 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.44 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Dec  8 09:51:45 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Dec  8 09:51:45 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[2028]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+                                                                                                            Dec  8 10:18:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[747]: Watching system buttons on /dev/input/event2 (Power Button)
+Dec  8 10:18:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[747]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Dec  8 10:18:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[747]: Watching system buttons on /dev/input/event1 (Power Button)
+Dec  8 10:18:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[747]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Dec  8 10:18:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[747]: New seat seat0.
+Dec  8 10:18:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Dec  8 10:18:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Dec  8 10:18:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[747]: New session 1 of user lera.
+Dec  8 10:18:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Dec  8 10:18:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Dec  8 10:18:06 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1052]: The Secret Service was already initialized
+Dec  8 10:18:06 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1052]: The PKCS#11 component was already initialized
+Dec  8 10:18:07 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.45 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Dec  8 10:19:16 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Dec  8 10:19:16 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[2152]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Dec  8 10:29:38 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[747]: System is rebooting.
+Sep 12 11:10:56 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[711]: Watching system buttons on /dev/input/event2 (Power Button)
+Sep 12 11:10:56 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[711]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Sep 12 11:10:56 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[711]: Watching system buttons on /dev/input/event1 (Power Button)
+Sep 12 11:10:56 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[711]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Sep 12 11:10:56 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[711]: New seat seat0.
+Sep 12 11:10:57 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Sep 12 11:10:57 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Sep 12 11:10:57 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[711]: New session 1 of user lera.
+Sep 12 11:10:57 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Sep 12 11:10:57 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Sep 12 11:10:58 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1015]: The Secret Service was already initialized
+Sep 12 11:10:58 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1015]: The PKCS#11 component was already initialized
+Sep 12 11:10:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.45 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Sep 12 11:12:08 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Sep 12 11:12:08 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[2393]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 12 08:15:48 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[711]: System is powering down.
+Sep 12 14:32:50 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Watching system buttons on /dev/input/event2 (Power Button)
+Sep 12 14:32:50 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Sep 12 14:32:50 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Watching system buttons on /dev/input/event1 (Power Button)
+Sep 12 14:32:50 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Sep 12 14:32:50 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: New seat seat0.
+Sep 12 14:32:51 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Sep 12 14:32:51 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Sep 12 14:32:51 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: New session 1 of user lera.
+Sep 12 14:32:51 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Sep 12 14:32:51 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Sep 12 14:32:52 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1046]: The Secret Service was already initialized
+Sep 12 14:32:52 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1046]: The PKCS#11 component was already initialized
+Sep 12 14:32:53 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.43 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Sep 12 14:33:32 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[745]: System is rebooting.
+Sep 15 20:49:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: Watching system buttons on /dev/input/event2 (Power Button)
+Sep 15 20:49:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Sep 15 20:49:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: Watching system buttons on /dev/input/event1 (Power Button)
+Sep 15 20:49:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Sep 15 20:49:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: New seat seat0.
+Sep 15 20:49:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Sep 15 20:49:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Sep 15 20:49:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: New session 1 of user lera.
+Sep 15 20:49:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Sep 15 20:49:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Sep 15 20:49:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1919]: The Secret Service was already initialized
+Sep 15 20:49:04 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1919]: The PKCS#11 component was already initialized
+Sep 15 20:49:05 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.43 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Sep 15 20:50:14 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Sep 15 20:50:14 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[21211]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 15 17:59:24 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=lera rhost=  user=lera
+Sep 15 17:59:49 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/apt install git
+Sep 15 17:59:58 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: Watching system buttons on /dev/input/event1 (Power Button)
+Sep 15 17:59:58 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Sep 15 17:59:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Sep 15 17:59:59 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: Watching system buttons on /dev/input/event2 (Power Button)
+Sep 15 18:01:11 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=lera rhost=  user=lera
+Sep 15 18:06:56 lera-VivoBook-ASUSLaptop-X513EAN-K513EA passwd[23877]: pam_unix(passwd:chauthtok): authentication failure; logname= uid=1000 euid=0 tty= ruser= rhost=  user=lera
+Sep 15 18:07:07 lera-VivoBook-ASUSLaptop-X513EAN-K513EA passwd[23879]: pam_unix(passwd:chauthtok): authentication failure; logname= uid=1000 euid=0 tty= ruser= rhost=  user=lera
+Sep 15 18:09:07 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=lera rhost=  user=lera
+Sep 15 18:09:38 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=lera rhost=  user=lera
+Sep 15 18:11:20 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/su lera
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:auth): conversation failed
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:auth): auth could not identify password for [lera]
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : 2 incorrect password attempts ; TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/su
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:auth): conversation failed
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:auth): auth could not identify password for [lera]
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : 2 incorrect password attempts ; TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/passwd lera
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:auth): conversation failed
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:auth): auth could not identify password for [lera]
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Unregistered Authentication Agent for unix-session:1 (system bus name :1.43, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8) (disconnected from bus)
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session closed for user lera
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: Session 1 logged out. Waiting for processes to exit.
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm by (uid=0)
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: New session c1 of user gdm.
+Sep 15 18:12:19 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user gdm by (uid=0)
+Sep 15 18:12:20 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:c1 (system bus name :1.123 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Sep 15 18:12:27 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: Removed session 1.
+Sep 15 18:12:36 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Sep 15 18:12:44 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Sep 15 18:12:50 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Sep 15 18:13:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera
+Sep 15 18:13:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-password]: message repeated 2 times: [ pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=lera]
+Sep 15 18:13:45 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[746]: System is powering down.
+Sep 15 18:17:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[1012]: New seat seat0.
+Sep 15 18:17:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[1012]: Watching system buttons on /dev/input/event2 (Power Button)
+Sep 15 18:17:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[1012]: Watching system buttons on /dev/input/event0 (Lid Switch)
+Sep 15 18:17:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[1012]: Watching system buttons on /dev/input/event1 (Power Button)
+Sep 15 18:17:02 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[1012]: Watching system buttons on /dev/input/event3 (AT Translated Set 2 keyboard)
+Sep 15 18:17:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: no password is available for user
+Sep 15 18:17:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user lera by (uid=0)
+Sep 15 18:17:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd-logind[1012]: New session 1 of user lera.
+Sep 15 18:17:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA systemd: pam_unix(systemd-user:session): session opened for user lera by (uid=0)
+Sep 15 18:17:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Sep 15 18:17:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1305]: The Secret Service was already initialized
+Sep 15 18:17:13 lera-VivoBook-ASUSLaptop-X513EAN-K513EA gnome-keyring-daemon[1305]: The PKCS#11 component was already initialized
+Sep 15 18:17:14 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.48 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale ru_RU.UTF-8)
+Sep 15 18:18:21 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/apt install git
+Sep 15 18:18:21 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep 15 18:18:23 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Sep 15 18:18:23 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[2844]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 15 18:18:28 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session closed for user root
+Sep 15 18:20:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/apt install git
+Sep 15 18:20:22 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep 15 18:20:28 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session closed for user root
+Sep 15 18:22:46 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/apt install git
+Sep 15 18:22:46 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep 15 18:22:50 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session closed for user root
+Sep 15 18:24:10 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/apt install git --fix-missing
+Sep 15 18:24:10 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep 15 18:24:15 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session closed for user root
+Sep 15 18:26:18 lera-VivoBook-ASUSLaptop-X513EAN-K513EA polkitd(authority=local): Operator of unix-session:1 successfully authenticated as unix-user:lera to gain TEMPORARY authorization for action com.ubuntu.softwareproperties.applychanges for system-bus-name::1.106 [/usr/bin/python3 /usr/bin/software-properties-gtk] (owned by unix-user:lera)
+Sep 15 18:27:45 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+Sep 15 18:27:45 lera-VivoBook-ASUSLaptop-X513EAN-K513EA PackageKit: uid 1000 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+Sep 15 18:30:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA CRON[4422]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 15 18:30:01 lera-VivoBook-ASUSLaptop-X513EAN-K513EA CRON[4422]: pam_unix(cron:session): session closed for user root
+Sep 15 18:30:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo:     lera : TTY=pts/0 ; PWD=/home/lera ; USER=root ; COMMAND=/usr/bin/apt install git --fix-missing
+Sep 15 18:30:03 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Sep 15 18:30:17 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Sep 15 18:30:17 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[4584]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Sep 15 18:30:23 lera-VivoBook-ASUSLaptop-X513EAN-K513EA sudo: pam_unix(sudo:session): session closed for user root
+Sep 15 18:33:17 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+Sep 15 18:33:17 lera-VivoBook-ASUSLaptop-X513EAN-K513EA pkexec[5344]: lera: Executing command [USER=root] [TTY=unknown] [CWD=/home/lera] [COMMAND=/usr/lib/update-notifier/package-system-locked]
