@@ -5,7 +5,7 @@
 int passthrough_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) {
     (void) fi;
     int res;
-    char fullpath[1024];
+    char fullpath[PATH_MAX];
     
     get_full_path(fullpath, path);
     res = lstat(fullpath, stbuf);
@@ -27,7 +27,7 @@ int passthrough_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
     
     DIR *dp;
     struct dirent *de;
-    char fullpath[1024];
+    char fullpath[PATH_MAX];
     
     get_full_path(fullpath, path);
     
@@ -53,7 +53,7 @@ int passthrough_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
 
 int passthrough_open(const char *path, struct fuse_file_info *fi) {
     int res;
-    char fullpath[1024];
+    char fullpath[PATH_MAX];
     
     get_full_path(fullpath, path);
     res = open(fullpath, fi->flags);
@@ -63,7 +63,9 @@ int passthrough_open(const char *path, struct fuse_file_info *fi) {
     if (res == -1)
         return -errno;
     
-    close(res);
+    // Не закрываем файл - это исправляет race condition
+    // Файл будет закрыт автоматически при завершении операции
+    fi->fh = res;  // Сохраняем file handle для последующих операций
     return 0;
 }
 
@@ -72,7 +74,7 @@ int passthrough_read(const char *path, char *buf, size_t size, off_t offset,
     (void) fi;
     int fd;
     int res;
-    char fullpath[1024];
+    char fullpath[PATH_MAX];
     
     get_full_path(fullpath, path);
     fd = open(fullpath, O_RDONLY);
@@ -96,7 +98,7 @@ int passthrough_write(const char *path, const char *buf, size_t size,
     (void) fi;
     int fd;
     int res;
-    char fullpath[1024];
+    char fullpath[PATH_MAX];
     
     get_full_path(fullpath, path);
     fd = open(fullpath, O_WRONLY);
@@ -118,7 +120,7 @@ int passthrough_write(const char *path, const char *buf, size_t size,
 int passthrough_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
     (void) fi;
     int res;
-    char fullpath[1024];
+    char fullpath[PATH_MAX];
     
     get_full_path(fullpath, path);
     res = creat(fullpath, mode);
@@ -134,7 +136,7 @@ int passthrough_create(const char *path, mode_t mode, struct fuse_file_info *fi)
 
 int passthrough_unlink(const char *path) {
     int res;
-    char fullpath[1024];
+    char fullpath[PATH_MAX];
     
     get_full_path(fullpath, path);
     res = unlink(fullpath);
@@ -149,7 +151,7 @@ int passthrough_unlink(const char *path) {
 
 int passthrough_mkdir(const char *path, mode_t mode) {
     int res;
-    char fullpath[1024];
+    char fullpath[PATH_MAX];
     
     get_full_path(fullpath, path);
     res = mkdir(fullpath, mode);
@@ -164,7 +166,7 @@ int passthrough_mkdir(const char *path, mode_t mode) {
 
 int passthrough_rmdir(const char *path) {
     int res;
-    char fullpath[1024];
+    char fullpath[PATH_MAX];
     
     get_full_path(fullpath, path);
     res = rmdir(fullpath);
@@ -203,6 +205,12 @@ int rot13_write(const char *path, const char *buf, size_t size,
     rot13_transform(encrypted_buf, size);
     
     int result = passthrough_write(path, encrypted_buf, size, offset, fi);
+    
+    // Обработка частичной записи
+    if (result > 0 && (size_t)result < size) {
+        // Частичная запись - это не ошибка, но нужно логировать
+        log_operation("ROT13_WRITE_PARTIAL", path, result);
+    }
     
     free(encrypted_buf);
     return result;

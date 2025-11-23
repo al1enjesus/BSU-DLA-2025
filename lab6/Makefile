@@ -12,13 +12,13 @@ OBJDIR = obj
 BINDIR = bin
 
 # Исходные файлы
-COMMON_SOURCES = $(SRCDIR)/operations.c $(SRCDIR)/utils.c
+COMMON_SOURCES = $(SRCDIR)/operations.c $(SRCDIR)/utils.c $(SRCDIR)/common.c
 PASSTHROUGH_SOURCES = $(SRCDIR)/passthrough_fs.c $(COMMON_SOURCES)
 ROT13_SOURCES = $(SRCDIR)/rot13_fs.c $(COMMON_SOURCES)
 UPPERCASE_SOURCES = $(SRCDIR)/uppercase_fs.c $(COMMON_SOURCES)
 
 # Объектные файлы
-COMMON_OBJECTS = $(OBJDIR)/operations.o $(OBJDIR)/utils.o
+COMMON_OBJECTS = $(OBJDIR)/operations.o $(OBJDIR)/utils.o $(OBJDIR)/common.o
 PASSTHROUGH_OBJECTS = $(OBJDIR)/passthrough_fs.o $(COMMON_OBJECTS)
 ROT13_OBJECTS = $(OBJDIR)/rot13_fs.o $(COMMON_OBJECTS)
 UPPERCASE_OBJECTS = $(OBJDIR)/uppercase_fs.o $(COMMON_OBJECTS)
@@ -187,6 +187,7 @@ uppercase_fs: directories $(UPPERCASE_TARGET)
 # Зависимости объектных файлов от заголовочных файлов
 $(OBJDIR)/operations.o: $(SRCDIR)/operations.h
 $(OBJDIR)/utils.o: $(SRCDIR)/operations.h
+$(OBJDIR)/common.o: $(SRCDIR)/operations.h
 $(OBJDIR)/passthrough_fs.o: $(SRCDIR)/operations.h
 $(OBJDIR)/rot13_fs.o: $(SRCDIR)/operations.h
 $(OBJDIR)/uppercase_fs.o: $(SRCDIR)/operations.h

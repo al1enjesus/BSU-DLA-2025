@@ -18,6 +18,10 @@
 #include <sys/types.h>
 #include <limits.h>
 
+#ifndef PATH_MAX
+#define PATH_MAX 4096
+#endif
+
 // Глобальная переменная для базовой директории
 extern char *base_path;
 
@@ -54,5 +58,9 @@ int rot13_write(const char *path, const char *buf, size_t size, off_t offset,
 // Uppercase операции для задания C
 int uppercase_read(const char *path, char *buf, size_t size, off_t offset, 
                   struct fuse_file_info *fi);
+
+// Общая функция для запуска FUSE программ
+int fuse_main_common(int argc, char *argv[], const char *description, 
+                    struct fuse_operations *operations);
 
 #endif // OPERATIONS_H

@@ -12,10 +12,21 @@ void log_operation(const char *op, const char *path, int result) {
     fprintf(stderr, "[%s] %s: %s (result: %d)\n", timestamp, op, path, result);
 }
 
-// Построить полный путь: base_path + relative_path
+// Построить полный путь: base_path + relative_path с защитой от path traversal
 void get_full_path(char *fullpath, const char *path) {
-    strcpy(fullpath, base_path);
-    strcat(fullpath, path);
+    // Проверка на path traversal атаки
+    if (strstr(path, "../") != NULL || strstr(path, "/..") != NULL) {
+        // Заменяем опасный путь на корень
+        snprintf(fullpath, PATH_MAX, "%s/", base_path);
+        return;
+    }
+    
+    // Безопасное создание полного пути
+    int ret = snprintf(fullpath, PATH_MAX, "%s%s", base_path, path);
+    if (ret >= PATH_MAX) {
+        // Путь слишком длинный, обрезаем до корня
+        snprintf(fullpath, PATH_MAX, "%s/", base_path);
+    }
 }
 
 // ROT13 преобразование для задания B
