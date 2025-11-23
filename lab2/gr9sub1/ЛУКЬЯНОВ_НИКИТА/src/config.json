@@ -1,0 +1,5 @@
+{
+    "workers": 4,
+    "mode_heavy": { "work_us": 7000, "sleep_us": 3000 },
+    "mode_light": { "work_us": 1500, "sleep_us": 8500 }
+}
