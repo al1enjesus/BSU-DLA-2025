@@ -1,0 +1,38 @@
+# Объектные файлы и исполняемые файлы
+*.o
+*.out
+*.exe
+bin/
+obj/
+
+# Временные файлы
+*~
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# IDE файлы
+.vscode/
+.idea/
+*.code-workspace
+
+# Файлы сборки
+*.a
+*.so
+*.dylib
+
+# Логи
+*.log
+
+# Core dumps
+core.*
+
+# Тестовые директории (локальные)
+/tmp/lab6_*
+test_data/
+mount_point/
