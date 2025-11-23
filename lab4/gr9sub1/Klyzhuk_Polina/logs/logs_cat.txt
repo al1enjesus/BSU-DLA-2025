@@ -1,0 +1,16 @@
+[SPY] open("/dev/tty", O_RDONLY|O_RDWR) = 3 (OK)
+[SPY] close(fd=3) = 0 (OK)
+[SPY] open("/etc/hosts", O_RDONLY) = 3 (OK)
+[SPY] read(fd=3, buf=0x794e45c99000, count=262144) = 273 (OK)
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost6.localdomain6	localhost6
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+[SPY] write(fd=1, buf=0x794e45c99000, count=273) = 273 (OK)
+[SPY] read(fd=3, buf=0x794e45c99000, count=262144) = 0 (OK)
+[SPY] close(fd=3) = 0 (OK)
