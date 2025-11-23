@@ -1,0 +1,8 @@
+[SPY] openat(AT_FDCWD, ".", flags=O_RDONLY|O_DIRECTORY) = 3 
+[SPY] getdents(fd=3, buf=0x7fffc700, count=8192) = 512 
+[SPY] write(fd=1, "cat\ngrep\nls\nbenchmark\n", count=23) = 23 
+[SPY] close(fd=3) = 0 
+[SPY] openat(AT_FDCWD, "/tmp/testfile.txt", flags=O_CREAT|O_WRONLY|O_TRUNC, mode=0644) = 4 
+[SPY] write(fd=4, "Hello, World!", count=13) = 13 
+[SPY] close(fd=4) = 0 
+[SPY] write(fd=1, "Benchmarking system calls vs regular functions\n", count=48) = 48 

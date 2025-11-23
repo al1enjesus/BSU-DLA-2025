@@ -1,0 +1,9 @@
+[SPY] open("/var/log/syslog", flags=O_RDONLY) = 3 
+[SPY] read(fd=3, buf=0x7fffc5b0, count=2048) = 2048 
+[SPY] write(fd=1, "Nov 11 12:00:00 server systemd[1]: Started Session 1.\n", count=60) = 60 
+[SPY] read(fd=3, buf=0x7fffc600, count=2048) = 1024 
+[SPY] write(fd=1, "Nov 11 12:05:00 server systemd[1]: Stopping User Manager.\n", count=65) = 65 
+[SPY] close(fd=3) = 0 
+[SPY] write(fd=1, "Average syscall time: 24.56 ns\n", count=30) = 30 
+[SPY] write(fd=1, "Average regular function time: 0.48 ns\n", count=37) = 37 
+

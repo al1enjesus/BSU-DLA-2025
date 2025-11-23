@@ -1,0 +1,7 @@
+[SPY] open("/etc/passwd", flags=O_RDONLY) = 3 
+[SPY] read(fd=3, buf=0x7fffc3e0, count=1024) = 512 
+[SPY] write(fd=1, "root:x:0:0:root:/root:/bin/bash\n", count=30) = 30 
+[SPY] read(fd=3, buf=0x7fffc400, count=1024) = 512 
+[SPY] write(fd=1, "daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\n", count=55) = 55 
+[SPY] close(fd=3) = 0 
+[SPY] write(fd=1, "Benchmarking system calls vs regular functions\n", count=48) = 48 
