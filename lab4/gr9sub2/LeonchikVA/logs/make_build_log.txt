@@ -1,0 +1,2 @@
+ERROR: ld.so: object './libsyscall_spy.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+make: *** No targets specified and no makefile found.  Stop.
