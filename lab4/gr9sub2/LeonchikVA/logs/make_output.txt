@@ -1,0 +1,73 @@
+
+[SPY] === Библиотека перехвата загружена ===
+[SPY] Студент №23, Программы: gcc, make, as
+
+gcc -c test.c -o test.o
+
+[SPY] === Библиотека перехвата загружена ===
+[SPY] Студент №23, Программы: gcc, make, as
+
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, count=16) = 0
+[SPY] close(fd=3) = 0
+
+[SPY] === Библиотека перехвата загружена ===
+[SPY] Студент №23, Программы: gcc, make, as
+
+[SPY] open("test.c", flags=0x100) = 3
+[SPY] close(fd=3) = 0
+[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/13/include/stdc-predef.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/stdc-predef.h", flags=0x100) = -1
+[SPY] open("/usr/include/x86_64-linux-gnu/stdc-predef.h", flags=0x100) = -1
+[SPY] open("/usr/include/stdc-predef.h", flags=0x100) = 4
+[SPY] close(fd=4) = 0
+
+=== [SPY STATISTICS] ===
+open():      5
+openat():    0
+read():      0
+write():     0
+close():     2
+ИТОГО:       7
+========================
+
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, count=16) = 0
+[SPY] close(fd=3) = 0
+
+[SPY] === Библиотека перехвата загружена ===
+[SPY] Студент №23, Программы: gcc, make, as
+
+
+=== [SPY STATISTICS] ===
+open():      0
+openat():    0
+read():      0
+write():     0
+close():     0
+ИТОГО:       0
+========================
+
+
+=== [SPY STATISTICS] ===
+open():      0
+openat():    0
+read():      2
+write():     0
+close():     7
+ИТОГО:       9
+========================
+
+
+=== [SPY STATISTICS] ===
+open():      0
+openat():    0
+read():      0
+write():     0
+close():     0
+ИТОГО:       0
+========================
+
