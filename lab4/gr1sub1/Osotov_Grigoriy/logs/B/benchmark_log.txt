@@ -1,0 +1,18 @@
+| Function           | Type       | Avg cycles |
+|--------------------|------------|------------|
+| dummy()            | userspace  |      13.24 |
+| empty_func()       | userspace  |      13.40 |
+| increment()        | userspace  |      12.88 |
+| arithmetic()       | userspace  |      13.04 |
+| small_loop()       | userspace  |      18.44 |
+| getpid()           | syscall    |     282.40 |
+| gettimeofday()     | syscall    |     705.08 |
+| time()             | syscall    |      56.20 |
+| clock_gettime()    | syscall    |      65.16 |
+| open+close()       | syscall    |    2195.68 |
+| stat()             | syscall    |     790.64 |
+| write(0B)          | syscall    |     291.28 |
+| read(0B)           | syscall    |    2402.48 |
+| usleep(0)          | syscall    |  108930.32 |
+| getcwd()           | syscall    |     488.56 |
+|--------------------|------------|------------|
