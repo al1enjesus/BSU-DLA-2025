@@ -46,6 +46,9 @@ int num_workers = 0;
 // --- Signal Handling ---
 
 static void supervisor_signal_handler(int sig) {
+    sig_atomic_t saved_errno = errno;  // Сохраняем errno
+    
+    // Только устанавливаем флаги - это async-signal-safe
     signal_received = sig;
     switch (sig) {
         case SIGTERM:
@@ -67,6 +70,8 @@ static void supervisor_signal_handler(int sig) {
         default:
             break;
     }
+    
+    errno = saved_errno;  // Восстанавливаем errno
 }
 
 static void setup_signals() {

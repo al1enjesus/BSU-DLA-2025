@@ -13,13 +13,15 @@
 // Глобальные флаги и переменные
 volatile sig_atomic_t running = 1;
 volatile sig_atomic_t mode_changed = 0;
+volatile sig_atomic_t current_mode_idx = 1; // 0=LIGHT, 1=HEAVY
 config_t current_config;
 mode_params_t current_mode;
-char *mode_name = "HEAVY";
 long long cycles_count = 0;
 
-// Функция-обработчик сигналов
+// Функция-обработчик сигналов (async-signal-safe)
 static void signal_handler(int sig) {
+    sig_atomic_t saved_errno = errno;  // Сохраняем errno
+    
     switch (sig) {
         case SIGTERM:
         case SIGINT:
@@ -29,19 +31,18 @@ static void signal_handler(int sig) {
         case SIGUSR1:
             // Переключение на ЛЕГКИЙ режим
             mode_changed = 1;
-            current_mode = current_config.light;
-            mode_name = "LIGHT";
+            current_mode_idx = 0;  // LIGHT
             break;
         case SIGUSR2:
             // Переключение на ТЯЖЕЛЫЙ режим
             mode_changed = 1;
-            current_mode = current_config.heavy;
-            mode_name = "HEAVY";
+            current_mode_idx = 1;  // HEAVY
             break;
         default:
             break;
     }
-    // Обработчик должен быть максимально простым!
+    
+    errno = saved_errno;  // Восстанавливаем errno
 }
 
 // Имитация "вычислений"
@@ -72,6 +73,10 @@ int run_worker(int worker_id, config_t *config) {
     pid_t pid = getpid();
     current_config = *config;
     current_mode = current_config.heavy; // Начинаем в тяжелом режиме
+    current_mode_idx = 1; // HEAVY
+    
+    // Массив имен режимов для безопасного вывода
+    const char *mode_names[] = {"LIGHT", "HEAVY"};
     
     // 1. Установка обработчиков сигналов
     struct sigaction sa;
@@ -87,12 +92,24 @@ int run_worker(int worker_id, config_t *config) {
         return EXIT_FAILURE;
     }
 
-    printf("[WORKER %d (PID %d)] Started. Initial mode: %s\n", worker_id, pid, mode_name);
+    printf("[WORKER %d (PID %d)] Started. Initial mode: %s\n", worker_id, pid, mode_names[current_mode_idx]);
 
     long long ticks = 0;
 
     // 2. Основной цикл работы
     while (running) {
+        // Обновляем режим если был изменен
+        if (mode_changed) {
+            if (current_mode_idx == 0) {
+                current_mode = current_config.light;
+            } else {
+                current_mode = current_config.heavy;
+            }
+            printf("[WORKER %d (PID %d)] Mode switched to %s (Work %d us, Sleep %d us)\n", 
+                   worker_id, pid, mode_names[current_mode_idx], current_mode.work_us, current_mode.sleep_us);
+            mode_changed = 0;
+        }
+        
         // Выполняем работу
         do_work(current_mode.work_us);
 
@@ -105,14 +122,7 @@ int run_worker(int worker_id, config_t *config) {
         // Вывод статистики
         if (++ticks % 10 == 0) { // Каждые 10 тиков
              printf("[WORKER %d (PID %d)] Mode: %s. Tick: %lld. Cycles: %lld. Working on CPU: %d\n", 
-                    worker_id, pid, mode_name, ticks, cycles_count, sched_getcpu());
-        }
-        
-        // Сброс флага смены режима
-        if (mode_changed) {
-            printf("[WORKER %d (PID %d)] Mode switched to %s (Work %d us, Sleep %d us)\n", 
-                   worker_id, pid, mode_name, current_mode.work_us, current_mode.sleep_us);
-            mode_changed = 0;
+                    worker_id, pid, mode_names[current_mode_idx], ticks, cycles_count, sched_getcpu());
         }
     }
 

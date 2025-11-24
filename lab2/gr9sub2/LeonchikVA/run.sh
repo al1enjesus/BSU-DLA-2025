@@ -1,6 +1,14 @@
 #!/bin/bash
 
 CONFIG_FILE="config.ini"
+
+if ! command -v pidstat &> /dev/null; then
+    echo "WARNING: pidstat not found. Install sysstat package for CPU metrics."
+    echo "On Debian/Ubuntu: sudo apt-get install sysstat"
+    echo "On RHEL/CentOS: sudo yum install sysstat"
+    echo ""
+fi
+
 SUP_BIN="./supervisor"
 
 echo "--- 1. Сборка проекта ---"
@@ -87,7 +95,7 @@ echo "Супервизор запущен с PID: $SUPERVISOR_PID"
 sleep 4 # Ждем запуска всех 4-х воркеров
 
 # Находим PID воркеров
-WORKER_PIDS=$(pgrep -P $SUPERVISOR_PID worker)
+WORKER_PIDS=$(ps -o pid --ppid=$SUPERVISOR_PID --no-headers | xargs)
 echo "Woker PIDs: $WORKER_PIDS"
 
 echo ""

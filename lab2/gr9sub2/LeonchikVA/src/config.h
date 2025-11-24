@@ -20,7 +20,7 @@ typedef struct {
     int nice_default; 
     int nice_low_prio;
     int affinity_cpu0;
-    int affinity_cpu1
+    int affinity_cpu1;
 } config_t;
 
 int read_config(const char* path, config_t* config);
