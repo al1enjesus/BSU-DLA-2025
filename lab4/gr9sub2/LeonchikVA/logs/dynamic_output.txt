@@ -1,0 +1,15 @@
+
+[SPY] === Библиотека перехвата загружена ===
+[SPY] Студент №23, Программы: gcc, make, as
+
+
+=== [SPY STATISTICS] ===
+open():      0
+openat():    0
+read():      0
+write():     0
+close():     0
+ИТОГО:       0
+========================
+
+Hello from test!
