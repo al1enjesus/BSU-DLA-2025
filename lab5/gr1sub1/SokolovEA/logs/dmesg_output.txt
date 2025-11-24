@@ -1,0 +1,37 @@
+# Логи dmesg с сообщениями модулей ядра
+# Дата: 24 ноября 2025
+# Система: Fedora 43, ядро 6.17.8-300.fc43.x86_64
+
+# Сообщения при загрузке и работе модулей:
+[  459.762785] proc_config: New value set: 
+[  459.762787] proc_config: New value set: 
+[  459.762789] proc_config: New value set: 
+[  459.762792] proc_config: New value set: 
+[  459.762794] proc_config: New value set: 
+[  459.762796] proc_config: New value set: 
+[  459.762798] proc_config: New value set: 
+[  459.762800] proc_config: New value set: 
+[  459.762802] proc_config: New value set: 
+[  459.762804] proc_config: New value set: 
+[  459.762807] proc_config: New value set: 
+[  459.762809] proc_config: New value set: 
+[  459.762811] proc_config: New value set: 
+[  459.803300] sys_stats: Statistics accessed
+[  466.024132] sys_stats: Statistics accessed
+
+# Сообщения при выгрузке модулей:
+[  511.151450] proc_config: /proc/my_config removed
+[  511.151455] proc_config: Memory freed
+[  511.151456] proc_config: Module unloaded
+[  511.188845] sys_stats: /proc/sys_stats removed
+[  511.188850] sys_stats: Module unloaded
+
+# Дополнительные сообщения hello_module (при тестировании с параметром):
+# hello_module: Hello from Sokolov Evgeny module!
+# hello_module: Goodbye from Sokolov Evgeny module!
+
+# Статистика:
+# - Модули успешно загружены и выгружены
+# - Все proc файлы корректно созданы и удалены
+# - Память освобождена правильно
+# - Нет ошибок kernel panic

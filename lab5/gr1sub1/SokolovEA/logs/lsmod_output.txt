@@ -1,0 +1,28 @@
+# Список загруженных модулей ядра
+# Команда: lsmod | grep -E "(hello_module|proc_config|sys_stats)"
+# Дата: 24 ноября 2025
+# Система: Fedora 43, ядро 6.17.8-300.fc43.x86_64
+
+# Заголовок:
+Module                  Size  Used by
+
+# Наши модули:
+sys_stats_module       16384  0
+proc_config_module     16384  0
+hello_module           12288  0
+
+# Анализ:
+# - Все 3 модуля успешно загружены
+# - Размеры модулей:
+#   * hello_module: 12,288 байт (12KB) - самый простой
+#   * proc_config_module: 16,384 байт (16KB) - с чтением/записью
+#   * sys_stats_module: 16,384 байт (16KB) - со статистикой системы
+# - Used by = 0 означает, что модули не используются другими модулями
+# - Готовы к безопасной выгрузке
+
+# Полный вывод команды lsmod | head -5:
+# Module                  Size  Used by
+# sys_stats_module       16384  0
+# proc_config_module     16384  0  
+# hello_module           12288  0
+# vboxguest             348160  2 vboxsf

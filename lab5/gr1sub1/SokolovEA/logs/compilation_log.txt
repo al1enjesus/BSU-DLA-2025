@@ -1,0 +1,49 @@
+# Полный лог компиляции модулей ядра
+# Дата: 24 ноября 2025
+# Система: Fedora 43, ядро 6.17.8-300.fc43.x86_64
+# Автор: Соколов Егор
+
+===== НАЧАЛО КОМПИЛЯЦИИ =====
+
+# Очистка:
+make -C /lib/modules/6.17.8-300.fc43.x86_64/build M=/home/surff/lab5_temp clean
+make[1]: вход в каталог «/usr/src/kernels/6.17.8-300.fc43.x86_64»
+make[2]: вход в каталог «/home/surff/lab5_temp»
+  CLEAN   Module.symvers
+make[2]: выход из каталога «/home/surff/lab5_temp»
+make[1]: выход из каталога «/usr/src/kernels/6.17.8-300.fc43.x86_64»
+
+# Компиляция модулей:
+make -C /lib/modules/6.17.8-300.fc43.x86_64/build M=/home/surff/lab5_temp modules
+make[1]: вход в каталог «/usr/src/kernels/6.17.8-300.fc43.x86_64»
+make[2]: вход в каталог «/home/surff/lab5_temp»
+
+warning: the compiler differs from the one used to build the kernel
+  The kernel was built by: gcc (GCC) 15.2.1 20251022 (Red Hat 15.2.1-3)
+  You are using:           gcc (GCC) 15.2.1 20251111 (Red Hat 15.2.1-4)
+
+  CC [M]  hello_module.o
+  CC [M]  proc_config_module.o
+  CC [M]  sys_stats_module.o
+  MODPOST Module.symvers
+  CC [M]  hello_module.mod.o
+  CC [M]  .module-common.o
+  LD [M]  hello_module.ko
+  BTF [M] hello_module.ko
+Skipping BTF generation for hello_module.ko due to unavailability of vmlinux
+  CC [M]  proc_config_module.mod.o
+  LD [M]  proc_config_module.ko
+  BTF [M] proc_config_module.ko
+Skipping BTF generation for proc_config_module.ko due to unavailability of vmlinux
+  CC [M]  sys_stats_module.mod.o
+  LD [M]  sys_stats_module.ko
+  BTF [M] sys_stats_module.ko
+Skipping BTF generation for sys_stats_module.ko due to unavailability of vmlinux
+
+make[2]: выход из каталога «/home/surff/lab5_temp»
+make[1]: выход из каталога «/usr/src/kernels/6.17.8-300.fc43.x86_64»
+
+===== РЕЗУЛЬТАТ КОМПИЛЯЦИИ =====
+-rw-r--r--. 1 surff surff 319488 ноя 24 03:15 hello_module.ko
+-rw-r--r--. 1 surff surff 347256 ноя 24 03:15 proc_config_module.ko
+-rw-r--r--. 1 surff surff 354544 ноя 24 03:15 sys_stats_module.ko
