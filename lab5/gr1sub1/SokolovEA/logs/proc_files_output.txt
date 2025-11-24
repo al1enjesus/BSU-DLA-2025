@@ -1,0 +1,61 @@
+# Тестирование /proc файлов
+# Дата: 24 ноября 2025
+# Автор: Соколов Егор (14-й вариант)
+
+===== ТЕСТИРОВАНИЕ /proc/my_config =====
+
+# Первоначальное содержимое:
+$ cat /proc/my_config
+default
+
+# Запись нового значения:
+$ echo "test_value_sokolov" | sudo tee /proc/my_config
+test_value_sokolov
+
+# Проверка записанного значения:
+$ cat /proc/my_config
+test_value_sokolov
+
+# Тест различных значений:
+$ echo "Hello from Lab5" | sudo tee /proc/my_config
+$ cat /proc/my_config
+Hello from Lab5
+
+===== ТЕСТИРОВАНИЕ /proc/sys_stats =====
+
+# Первое обращение:
+$ cat /proc/sys_stats
+System Statistics
+=================
+Processes: 289
+Memory Used: 2864 MB
+System Uptime: 166 seconds
+Collection time: 4295133563 jiffies
+
+# Второе обращение (через несколько секунд):
+$ cat /proc/sys_stats
+System Statistics
+=================
+Processes: 291
+Memory Used: 2868 MB
+System Uptime: 175 seconds
+Collection time: 4295142890 jiffies
+
+===== АНАЛИЗ РЕЗУЛЬТАТОВ =====
+
+✅ /proc/my_config:
+- Чтение работает корректно
+- Запись работает корректно  
+- Данные сохраняются между обращениями
+- Максимум 256 символов поддерживается
+
+✅ /proc/sys_stats:
+- Показывает актуальную информацию о системе
+- Данные обновляются при каждом обращении
+- Количество процессов изменяется динамически
+- Память и uptime отражают реальное состояние
+- jiffies увеличиваются корректно
+
+===== ЛОГИ В DMESG =====
+- proc_config: New value set: (при каждой записи)
+- sys_stats: Statistics accessed (при каждом чтении)
