@@ -1,0 +1,6 @@
+*.so
+*benchmark
+*logs_wget.txt
+*logs_curl.txt
+*logs_syscalls.txt
+*.out
