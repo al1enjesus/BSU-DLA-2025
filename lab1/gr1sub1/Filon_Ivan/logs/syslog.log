@@ -1,0 +1,595 @@
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketCreateListener: failed to bind listener
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: (EE)
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: Fatal server error:
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: (EE) Failed to find a socket to listen on(EE)
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: (EE)
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: Please consult the The X.Org Foundation support
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: #011 at http://wiki.x.org
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]:  for help.
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: (EE) Please also check the log file at "/var/log/Xorg.pid-1068.log" for additional information.
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: (EE)
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1068]: (EE) Server terminated with error (1). Closing log file.
+Sep 15 21:48:07 DESKTOP-OHCJ5SB /usr/lib/gdm3/gdm-x-session[1066]: Unable to run X server
+Sep 15 21:48:07 DESKTOP-OHCJ5SB gdm3: Child process -1066 was already dead.
+Sep 15 21:48:07 DESKTOP-OHCJ5SB systemd[1]: session-c2.scope: Succeeded.
+Sep 15 21:48:07 DESKTOP-OHCJ5SB systemd[1]: session-c2.scope: Consumed 4.664s CPU time.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1]: Stopping User Manager for UID 122...
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Stopped target Main User Target.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Stopping D-Bus User Message Bus...
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: dbus.service: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Stopped D-Bus User Message Bus.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Stopped target Basic System.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Stopped target Paths.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Stopped target Sockets.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Stopped target Timers.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: dbus.socket: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Closed D-Bus User Message Bus Socket.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: dirmngr.socket: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Closed GnuPG network certificate management daemon.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: gpg-agent-browser.socket: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Closed GnuPG cryptographic agent and passphrase cache (access for web browsers).
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: gpg-agent-extra.socket: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Closed GnuPG cryptographic agent and passphrase cache (restricted).
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: gpg-agent-ssh.socket: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Closed GnuPG cryptographic agent (ssh-agent emulation).
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: gpg-agent.socket: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Closed GnuPG cryptographic agent and passphrase cache.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: pk-debconf-helper.socket: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Closed debconf communication socket.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: snapd.session-agent.socket: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Closed REST API socket for snapd user session agent.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Reached target Shutdown.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: systemd-exit.service: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Finished Exit the Session.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1008]: Reached target Exit the Session.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1]: user@122.service: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1]: Stopped User Manager for UID 122.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1]: Stopping User Runtime Directory /run/user/122...
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1]: mnt-wslg-run-user-122.mount: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1]: run-user-122.mount: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[752]: mnt-wslg-run-user-122.mount: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[752]: run-user-122.mount: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1]: user-runtime-dir@122.service: Succeeded.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1]: Stopped User Runtime Directory /run/user/122.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1]: Removed slice User Slice of UID 122.
+Sep 15 21:48:17 DESKTOP-OHCJ5SB systemd[1]: user-122.slice: Consumed 5.374s CPU time.
+Sep 15 21:48:19 DESKTOP-OHCJ5SB systemd[1]: systemd-hostnamed.service: Succeeded.
+Sep 15 21:48:29 DESKTOP-OHCJ5SB kernel: [   48.600480] hv_balloon: Max. dynamic memory size: 3974 MB
+Sep 15 21:48:30 DESKTOP-OHCJ5SB systemd[1]: systemd-timedated.service: Succeeded.
