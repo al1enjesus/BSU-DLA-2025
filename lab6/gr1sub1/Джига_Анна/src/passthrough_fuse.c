@@ -28,16 +28,26 @@ static void log_operation(const char *op, const char *path, int result) {
 }
 
 static void get_full_path(char *fullpath, const char *path) {
+    char target_path[PATH_MAX];
+
     if (strcmp(path, "/") == 0) {
+        strcpy(target_path, base_path);
+    } else {
+        snprintf(target_path, PATH_MAX, "%s%s", base_path, path);
+    }
+
+    if (realpath(target_path, fullpath) == NULL) {
+        strncpy(fullpath, target_path, PATH_MAX);
+        fullpath[PATH_MAX - 1] = '\0';
+        return;
+    }
+    // @claude ПРОВЕРКА БЕЗОПАСНОСТИ: Убеждаемся, что канонический путь начинается с base_path.
+    // Если путь выходит за пределы base_path (например, через ../), то len будет меньше base_path.
+    size_t base_len = strlen(base_path);
+    if (strncmp(fullpath, base_path, base_len) != 0) {
+        fprintf(stderr, "SECURITY ALERT: Path traversal denied for: %s\n", path);
         strcpy(fullpath, base_path);
-        return;
     }
-    if (strlen(base_path) + strlen(path) + 1 > PATH_MAX) {
-        fprintf(stderr, "Error: Path buffer overflow\n");
-        return;
-    }
-    strcpy(fullpath, base_path);
-    strcat(fullpath, path);
 }
 
 static void rot13(char *buf, size_t size) {
@@ -321,7 +331,7 @@ int main(int argc, char *argv[]) {
     char **fuse_argv = malloc(sizeof(char*) * fuse_argc);
     if (!fuse_argv) {
         perror("malloc");
-        free(base_path);
+        free(base_path); // @claude Освобождаем память при ошибке malloc
         return 1;
     }
     
