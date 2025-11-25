@@ -109,6 +109,12 @@ pid_t spawn_worker(Config *cfg) {
             "--light-sleep-us", arg_ls,
             NULL
         };
+
+        if (access("./src/cpu_burn", F_OK | X_OK) != 0) {
+            perror("cpu_burn binary not found");
+            return -1;
+        }
+
         execvp(argv[0], argv);
         perror("execvp failed");
         exit(1);
@@ -124,7 +130,8 @@ void stop_all_workers() {
         }
     }
     // Ждем завершения
-    while(wait(NULL) > 0);
+    sleep(1);
+    while(waitpid(-1, NULL, WNOHANG) > 0);
     memset(workers, 0, sizeof(workers));
     current_worker_count = 0;
 }
