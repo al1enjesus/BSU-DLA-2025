@@ -1,0 +1,30 @@
+ 
+=== Test 3: Uppercase Filesystem ===
+Mounting Uppercase FS: /tmp/fuse_test_source at /tmp/fuse_test_mount
+Ignoring invalid max threads value 4294967295 > max (100000).
+[TEST] Reading with uppercase transform:
+Original (source): lowercase text
+Uppercase (FUSE): [2025-11-20 21:38:40] GETATTR: /case.txt (result: 0)
+[2025-11-20 21:38:40] OPEN: /case.txt (result: 0)
+    [TRANSFORM] Converted 15 bytes to uppercase
+[2025-11-20 21:38:40] READ: /case.txt (result: 15)
+LOWERCASE TEXT
+[TEST] Pangram test:
+Original: The Quick Brown Fox Jumps Over The Lazy Dog
+Uppercase: [2025-11-20 21:38:40] GETATTR: /pangram.txt (result: 0)
+[2025-11-20 21:38:40] OPEN: /pangram.txt (result: 0)
+    [TRANSFORM] Converted 44 bytes to uppercase
+[2025-11-20 21:38:40] READ: /pangram.txt (result: 44)
+THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+[TEST] Writing new file:
+[2025-11-20 21:38:40] GETATTR: /mixed.txt (result: -2)
+[2025-11-20 21:38:40] CREATE: /mixed.txt (result: 0)
+[2025-11-20 21:38:40] GETATTR: /mixed.txt (result: 0)
+[2025-11-20 21:38:40] WRITE: /mixed.txt (result: 16)
+Written (source): mixed CaSe TeXt
+Read back (FUSE): [2025-11-20 21:38:40] OPEN: /mixed.txt (result: 0)
+[2025-11-20 21:38:40] GETATTR: /mixed.txt (result: 0)
+    [TRANSFORM] Converted 16 bytes to uppercase
+[2025-11-20 21:38:40] READ: /mixed.txt (result: 16)
+MIXED CASE TEXT
+Uppercase test completed!
