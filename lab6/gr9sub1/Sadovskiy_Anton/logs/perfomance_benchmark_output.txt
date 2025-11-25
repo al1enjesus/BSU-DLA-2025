@@ -1,0 +1,317 @@
+ 
+=== Performance Benchmark ===
+[BENCHMARK] Direct read from source:
+10485760 bytes (10 MB, 10 MiB) copied, 0.00256326 s, 4.1 GB/s
+
+real    0m0.004s
+user    0m0.000s
+sys     0m0.005s
+Mounting /tmp/fuse_test_source at /tmp/fuse_test_mount
+Ignoring invalid max threads value 4294967295 > max (100000).
+[2025-11-20 21:38:42] GETATTR: / (result: 0)
+[2025-11-20 21:38:42] GETATTR: /mixed.txt (result: 0)
+[2025-11-20 21:38:42] GETATTR: /.directory (result: -2)
+[2025-11-20 21:38:42] GETATTR: /.directory (result: -2)
+[2025-11-20 21:38:42] READDIR: / (result: 0)
+[2025-11-20 21:38:42] GETATTR: /pangram.txt (result: 0)
+[2025-11-20 21:38:42] OPEN: /mixed.txt (result: 0)
+[2025-11-20 21:38:42] GETATTR: /test.txt (result: 0)
+[2025-11-20 21:38:42] OPEN: /pangram.txt (result: 0)
+[2025-11-20 21:38:42] GETATTR: /newfile.txt (result: 0)
+[2025-11-20 21:38:42] OPEN: /test.txt (result: 0)
+[2025-11-20 21:38:42] GETATTR: /case.txt (result: 0)
+[2025-11-20 21:38:42] OPEN: /newfile.txt (result: 0)
+[2025-11-20 21:38:42] GETATTR: /bigfile (result: 0)
+[BENCHMARK] Read through Passthrough FUSE:
+[2025-11-20 21:38:42] OPEN: /case.txt (result: 0)
+[2025-11-20 21:38:42] GETATTR: /secret.txt (result: 0)
+[2025-11-20 21:38:42] OPEN: /bigfile (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 16384)
+[2025-11-20 21:38:42] READ: /bigfile (result: 32768)
+[2025-11-20 21:38:42] GETATTR: /bigfile (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 65536)
+[2025-11-20 21:38:42] OPEN: /bigfile (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 8192)
+[2025-11-20 21:38:42] READ: /bigfile (result: 4096)
+[2025-11-20 21:38:42] READ: /bigfile (result: 32768)
+[2025-11-20 21:38:42] READ: /bigfile (result: 4096)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 73728)
+[2025-11-20 21:38:42] READ: /bigfile (result: 8192)
+[2025-11-20 21:38:42] GETATTR: /bigfile (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 16384)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 32768)
+[2025-11-20 21:38:42] READ: /bigfile (result: 65536)
+[2025-11-20 21:38:42] READ: /bigfile (result: 8192)
+[2025-11-20 21:38:42] READ: /bigfile (result: 8192)
+[2025-11-20 21:38:42] READ: /bigfile (result: 122880)
+[2025-11-20 21:38:42] GETATTR: /bigfile (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 32768)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] OPEN: /secret.txt (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] GETATTR: / (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READDIR: / (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] GETATTR: / (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READDIR: / (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] GETATTR: /subdir (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READDIR: /subdir (result: 0)
+[2025-11-20 21:38:42] GETATTR: /bigfile (result: 0)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:42] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:43] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:43] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:43] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:43] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:43] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:43] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:43] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:43] READ: /bigfile (result: 131072)
+[2025-11-20 21:38:43] READ: /bigfile (result: 24576)
+10485760 bytes (10 MB, 10 MiB) copied, 0.00761282 s, 1.4 GB/s
+
+real    0m0.009s
+user    0m0.004s
+sys     0m0.004s
+Mounting Uppercase FS: /tmp/fuse_test_source at /tmp/fuse_test_mount
+Ignoring invalid max threads value 4294967295 > max (100000).
+[BENCHMARK] Read through Uppercase FUSE:
+[2025-11-20 21:38:45] GETATTR: /bigfile (result: 0)
+[2025-11-20 21:38:45] OPEN: /bigfile (result: 0)
+    [TRANSFORM] Converted 16384 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 16384)
+    [TRANSFORM] Converted 32768 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 32768)
+    [TRANSFORM] Converted 65536 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 65536)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+    [TRANSFORM] Converted 16384 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 16384)
+    [TRANSFORM] Converted 131072 bytes to uppercase
+[2025-11-20 21:38:45] READ: /bigfile (result: 131072)
+10485760 bytes (10 MB, 10 MiB) copied, 0.0240455 s, 436 MB/s
+
+real    0m0.028s
+user    0m0.000s
+sys     0m0.021s
+Benchmark completed!

@@ -1,0 +1,24 @@
+ 
+=== Test 2: ROT13 Encryption Filesystem ===
+Mounting ROT13 FS: /tmp/fuse_test_source at /tmp/fuse_test_mount
+Ignoring invalid max threads value 4294967295 > max (100000).
+[TEST] Writing encrypted content:
+[2025-11-20 21:38:38] GETATTR: /secret.txt (result: -2)
+[2025-11-20 21:38:38] CREATE: /secret.txt (result: 0)
+[2025-11-20 21:38:38] GETATTR: /secret.txt (result: 0)
+[2025-11-20 21:38:38] WRITE: /secret.txt (result: 15)
+[TEST] Reading through FUSE (decrypted):
+[2025-11-20 21:38:38] OPEN: /secret.txt (result: 0)
+[2025-11-20 21:38:38] GETATTR: /secret.txt (result: 0)
+[2025-11-20 21:38:38] READ: /secret.txt (result: 15)
+Secret Message
+[TEST] Reading directly from source (encrypted):
+Frperg Zrffntr
+[TEST] Verification:
+Expected: Secret Message
+Got from FUSE: [2025-11-20 21:38:38] OPEN: /secret.txt (result: 0)
+[2025-11-20 21:38:38] GETATTR: /secret.txt (result: 0)
+[2025-11-20 21:38:38] READ: /secret.txt (result: 15)
+Secret Message
+Got from source (encrypted): Frperg Zrffntr
+ROT13 test completed!

@@ -1,0 +1,56 @@
+ === Test 1: Passthrough Filesystem ===
+Mounting /tmp/fuse_test_source at /tmp/fuse_test_mount
+[2025-11-20 21:38:35] GETATTR: / (result: 0)
+[2025-11-20 21:38:35] GETATTR: /.directory (result: -2)
+[2025-11-20 21:38:35] GETATTR: /.directory (result: -2)
+[2025-11-20 21:38:35] READDIR: / (result: 0)
+[2025-11-20 21:38:35] GETATTR: /pangram.txt (result: 0)
+[2025-11-20 21:38:35] GETATTR: /test.txt (result: 0)
+[2025-11-20 21:38:35] OPEN: /pangram.txt (result: 0)
+[2025-11-20 21:38:35] GETATTR: /case.txt (result: 0)
+[2025-11-20 21:38:35] OPEN: /test.txt (result: 0)
+[2025-11-20 21:38:35] OPEN: /case.txt (result: 0)
+[2025-11-20 21:38:35] GETATTR: / (result: 0)
+[2025-11-20 21:38:35] READDIR: / (result: 0)
+[2025-11-20 21:38:35] GETATTR: / (result: 0)
+[2025-11-20 21:38:35] READDIR: / (result: 0)
+[2025-11-20 21:38:35] GETATTR: /subdir (result: 0)
+[2025-11-20 21:38:35] READDIR: /subdir (result: 0)
+0 Reading file through FUSE:
+[2025-11-20 21:38:36] GETATTR: /test.txt (result: 0)
+[2025-11-20 21:38:36] OPEN: /test.txt (result: 0)
+[2025-11-20 21:38:36] READ: /test.txt (result: 12)
+Hello World
+0 Creating new file:
+[2025-11-20 21:38:36] GETATTR: /newfile.txt (result: -2)
+[2025-11-20 21:38:36] CREATE: /newfile.txt (result: 0)
+[2025-11-20 21:38:36] GETATTR: /newfile.txt (result: 0)
+[2025-11-20 21:38:36] WRITE: /newfile.txt (result: 12)
+[2025-11-20 21:38:36] OPEN: /newfile.txt (result: 0)
+[2025-11-20 21:38:36] GETATTR: /newfile.txt (result: 0)
+[2025-11-20 21:38:36] READ: /newfile.txt (result: 12)
+New content
+0 Listing mounted directory:
+[2025-11-20 21:38:36] GETATTR: / (result: 0)
+[2025-11-20 21:38:36] READDIR: / (result: 0)
+[2025-11-20 21:38:36] GETATTR: /pangram.txt (result: 0)
+[2025-11-20 21:38:36] GETATTR: /subdir (result: 0)
+[2025-11-20 21:38:36] GETATTR: /case.txt (result: 0)
+total 28
+drwxr-xr-x  3 kapusha kapusha 4096 Nov 20 21:38 .
+drwxrwxrwt 23 root    root    4096 Nov 20 21:38 ..
+-rw-r--r--  1 kapusha kapusha   15 Nov 20 21:38 case.txt
+-rw-r--r--  1 kapusha kapusha   12 Nov 20 21:38 newfile.txt
+-rw-r--r--  1 kapusha kapusha   44 Nov 20 21:38 pangram.txt
+drwxr-xr-x  2 kapusha kapusha 4096 Nov 20 21:38 subdir
+-rw-r--r--  1 kapusha kapusha   12 Nov 20 21:38 test.txt
+0 Checking source directory:
+total 28
+drwxr-xr-x  3 kapusha kapusha 4096 Nov 20 21:38 .
+drwxrwxrwt 23 root    root    4096 Nov 20 21:38 ..
+-rw-r--r--  1 kapusha kapusha   15 Nov 20 21:38 case.txt
+-rw-r--r--  1 kapusha kapusha   12 Nov 20 21:38 newfile.txt
+-rw-r--r--  1 kapusha kapusha   44 Nov 20 21:38 pangram.txt
+drwxr-xr-x  2 kapusha kapusha 4096 Nov 20 21:38 subdir
+-rw-r--r--  1 kapusha kapusha   12 Nov 20 21:38 test.txt
+Passthrough test completed!

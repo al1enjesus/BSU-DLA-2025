@@ -1,0 +1,14 @@
+=== FUSE Filesystem Testing Script ===
+
+1. Preparing test environment...
+Cleaning up...
+[2025-11-20 21:38:34] GETATTR: / (result: 0)
+Test files created in /tmp/fuse_test_source
+total 24
+drwxr-xr-x  3 kapusha kapusha 4096 Nov 20 21:38 .
+drwxrwxrwt 23 root    root    4096 Nov 20 21:38 ..
+-rw-r--r--  1 kapusha kapusha   15 Nov 20 21:38 case.txt
+-rw-r--r--  1 kapusha kapusha   44 Nov 20 21:38 pangram.txt
+drwxr-xr-x  2 kapusha kapusha 4096 Nov 20 21:38 subdir
+-rw-r--r--  1 kapusha kapusha   12 Nov 20 21:38 test.txt
+
