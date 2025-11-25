@@ -1,0 +1,7 @@
+program,total,open,openat,read,write,close
+gcc_version,0,0,0,0,0,0
+gcc_compile,19,5,0,4,0,9
+make_version,0,0,0,0,0,0
+make_build,164,21,0,75,0,36
+as_version,0,0,0,0,0,0
+as_assemble,0,0,0,0,0,0

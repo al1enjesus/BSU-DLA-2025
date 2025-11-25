@@ -1,0 +1,20 @@
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, buf=0x7fffdd769a30, count=16) = 0 bytes
+[SPY] close(fd=3) = 0
+[SPY] open(path="simple.c", flags=0x100)) = 3
+[SPY] read(fd=3, buf=0x299d570, count=25) = 25 bytes
+[SPY]   data: "int main() { return 0; }
+"
+[SPY] close(fd=3) = 0
+[SPY] open(path="/usr/lib/gcc/x86_64-linux-gnu/9/include/stdc-predef.h", flags=0x100)) = -1 (ENOENT)
+[SPY] open(path="/usr/local/include/stdc-predef.h", flags=0x100)) = -1 (ENOENT)
+[SPY] open(path="/usr/include/x86_64-linux-gnu/stdc-predef.h", flags=0x100)) = -1 (ENOENT)
+[SPY] open(path="/usr/include/stdc-predef.h", flags=0x100)) = 4
+[SPY] read(fd=4, buf=0x2a28f20, count=2290) = 2290 bytes
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=4) = 0
+[SPY] read(fd=3, buf=0x7fffdd76a7b0, count=16) = 0 bytes
+[SPY] close(fd=3) = 0
