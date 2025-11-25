@@ -1,0 +1,463 @@
+[34m[SPY] ========== Syscall interception started ==========
+[0m[34m[SPY] Monitoring: gcc, make, as
+[0m[35m[SPY] close(fd=3) = 0
+[0m[35m[SPY] close(fd=3) = 0
+[0m[35m[SPY] close(fd=4) = 0
+[0m[33m[SPY] read(fd=3, buf=0x7ffd2fe5bbd0, count=16) = 0[0m
+[35m[SPY] close(fd=3) = 0
+[0m[34m[SPY] ========== Syscall interception started ==========
+[0m[34m[SPY] Monitoring: gcc, make, as
+[0m[32m[SPY] open("src/test_prog.c", O_RDONLY) = 3[0m
+[33m[SPY] read(fd=3, buf=0x6375490, count=352) = 352[0m
+[35m[SPY] close(fd=3) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/stdc-predef.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/stdc-predef.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/include/x86_64-linux-gnu/stdc-predef.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/stdc-predef.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63c8620, count=2290) = 2290[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/stdio.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/stdio.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/include/x86_64-linux-gnu/stdio.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/stdio.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63c92b0, count=29950) = 29950[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/libc-header-start.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/libc-header-start.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/libc-header-start.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d1460, count=3288) = 3288[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/features.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/features.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/include/x86_64-linux-gnu/features.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/features.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d2de0, count=17079) = 17079[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/sys/cdefs.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/sys/cdefs.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/sys/cdefs.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d7d40, count=18308) = 18308[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/wordsize.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/wordsize.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/wordsize.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6339630, count=442) = 442[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/long-double.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/long-double.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/long-double.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x637dfb0, count=962) = 962[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/gnu/stubs.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/gnu/stubs.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/gnu/stubs.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63759a0, count=384) = 384[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/gnu/stubs-64.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/gnu/stubs-64.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/gnu/stubs-64.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6377380, count=523) = 523[0m
+[35m[SPY] close(fd=4) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d1460, count=12959) = 12959[0m
+[35m[SPY] close(fd=4) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d1460, count=4072) = 4072[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d1460, count=8757) = 8757[0m
+[35m[SPY] close(fd=4) = 0
+[0m[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/wordsize.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6339630, count=442) = 442[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/timesize.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/timesize.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/timesize.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63c1c10, count=1081) = 1081[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/typesizes.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/typesizes.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/typesizes.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d4340, count=3546) = 3546[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/time64.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/time64.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/time64.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63c1d80, count=1340) = 1340[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/__fpos_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/__fpos_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63759a0, count=381) = 381[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/__mbstate_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/__mbstate_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63779f0, count=564) = 564[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/__fpos64_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/__fpos64_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6375ef0, count=410) = 410[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/__FILE.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/__FILE.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/__FILE.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x635ab90, count=110) = 110[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/FILE.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/FILE.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/FILE.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6373d00, count=180) = 180[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/struct_FILE.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/struct_FILE.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d1460, count=4104) = 4104[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/stdio_lim.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/stdio_lim.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/stdio_lim.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d1460, count=1213) = 1213[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/sys_errlist.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/sys_errlist.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/sys_errlist.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d1d50, count=1216) = 1216[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/stdlib.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/stdlib.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/include/x86_64-linux-gnu/stdlib.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/stdlib.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63fa260, count=35835) = 35835[0m
+[35m[SPY] close(fd=4) = 0
+[0m[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/libc-header-start.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d45d0, count=3288) = 3288[0m
+[35m[SPY] close(fd=4) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d45d0, count=12959) = 12959[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/waitflags.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/waitflags.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/waitflags.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d3a90, count=2218) = 2218[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/waitstatus.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/waitstatus.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/waitstatus.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d3a90, count=2287) = 2287[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/floatn.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/floatn.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/floatn.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d45d0, count=4405) = 4405[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/floatn-common.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/floatn-common.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/floatn-common.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d63b0, count=9765) = 9765[0m
+[35m[SPY] close(fd=4) = 0
+[0m[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/long-double.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x637dfb0, count=962) = 962[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/sys/types.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/sys/types.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/sys/types.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d45d0, count=5713) = 5713[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/clock_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/clock_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/clock_t.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6373950, count=143) = 143[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/clockid_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/clockid_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6373d00, count=174) = 174[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/time_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/time_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/time_t.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6373950, count=138) = 138[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/timer_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/timer_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/timer_t.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6373b40, count=159) = 159[0m
+[35m[SPY] close(fd=4) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d68d0, count=12959) = 12959[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/stdint-intn.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/stdint-intn.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/stdint-intn.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d3e20, count=1037) = 1037[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/endian.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/endian.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/include/x86_64-linux-gnu/endian.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/endian.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d68d0, count=2299) = 2299[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/endian.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/endian.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/endian.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d7e80, count=1905) = 1905[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/endianness.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/endianness.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/endianness.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6374900, count=273) = 273[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/byteswap.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/byteswap.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/byteswap.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d7e80, count=2450) = 2450[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/uintn-identity.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/uintn-identity.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/uintn-identity.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d7f70, count=1542) = 1542[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/sys/select.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/sys/select.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/sys/select.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d69c0, count=4141) = 4141[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/select.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/select.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/select.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d8c00, count=2106) = 2106[0m
+[35m[SPY] close(fd=4) = 0
+[0m[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/wordsize.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6339630, count=442) = 442[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/sigset_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/sigset_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6373ed0, count=195) = 195[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/__sigset_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/__sigset_t.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x633baa0, count=206) = 206[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/struct_timeval.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/struct_timeval.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6374b30, count=287) = 287[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/types/struct_timespec.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/types/struct_timespec.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6379e10, count=728) = 728[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/pthreadtypes.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/pthreadtypes.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d69c0, count=3072) = 3072[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/thread-shared-types.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/thread-shared-types.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63ca2a0, count=3982) = 3982[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/pthreadtypes-arch.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/pthreadtypes-arch.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63cbee0, count=1838) = 1838[0m
+[35m[SPY] close(fd=4) = 0
+[0m[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/wordsize.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x6339630, count=442) = 442[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/struct_mutex.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/struct_mutex.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/struct_mutex.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d99c0, count=1810) = 1810[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/struct_rwlock.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/struct_rwlock.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63cbee0, count=2027) = 2027[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/alloca.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/alloca.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/include/x86_64-linux-gnu/alloca.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/alloca.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d9bb0, count=1204) = 1204[0m
+[35m[SPY] close(fd=4) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63ca2a0, count=12959) = 12959[0m
+[35m[SPY] close(fd=4) = 0
+[0m[31m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/include/bits/stdlib-float.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[31m[SPY] open("/usr/local/include/bits/stdlib-float.h", O_RDONLY) = -1 (errno=2: No such file or directory)[0m
+[32m[SPY] open("/usr/include/x86_64-linux-gnu/bits/stdlib-float.h", O_RDONLY) = 4[0m
+[33m[SPY] read(fd=4, buf=0x63d9bb0, count=1115) = 1115[0m
+[35m[SPY] close(fd=4) = 0
+[0m[34m
+[SPY] ========== Statistics ==========
+[SPY] open() calls:    167
+[SPY] openat() calls:  0
+[SPY] read() calls:    61 (total bytes: 251018)
+[SPY] write() calls:   0 (total bytes: 0)
+[SPY] close() calls:   61
+[SPY] ===================================
+[0m[35m[SPY] close(fd=3) = 0
+[0m[35m[SPY] close(fd=3) = 0
+[0m[35m[SPY] close(fd=4) = 0
+[0m[33m[SPY] read(fd=3, buf=0x7ffd2fe5c950, count=16) = 0[0m
+[35m[SPY] close(fd=3) = 0
+[0m[34m[SPY] ========== Syscall interception started ==========
+[0m[34m[SPY] Monitoring: gcc, make, as
+[0m[34m
+[SPY] ========== Statistics ==========
+[SPY] open() calls:    0
+[SPY] openat() calls:  0
+[SPY] read() calls:    0 (total bytes: 0)
+[SPY] write() calls:   0 (total bytes: 0)
+[SPY] close() calls:   0
+[SPY] ===================================
+[0m[35m[SPY] close(fd=3) = 0
+[0m[35m[SPY] close(fd=3) = 0
+[0m[35m[SPY] close(fd=4) = 0
+[0m[33m[SPY] read(fd=3, buf=0x7ffd2fe5bd70, count=16) = 0[0m
+[35m[SPY] close(fd=3) = 0
+[0m[34m[SPY] ========== Syscall interception started ==========
+[0m[34m[SPY] Monitoring: gcc, make, as
+[0m[35m[SPY] close(fd=3) = 0
+[0m[35m[SPY] close(fd=3) = 0
+[0m[35m[SPY] close(fd=3) = 0
+[0m[35m[SPY] close(fd=3) = 0
+[0m[32m[SPY] open("/tmp/cc5J6S5v.ld", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3[0m
+[32m[SPY] open("/tmp/ccg9QI2t.le", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 4[0m
+[35m[SPY] close(fd=5) = 0
+[0m[35m[SPY] close(fd=3) = 0
+[0m[35m[SPY] close(fd=6) = 0
+[0m[33m[SPY] read(fd=5, buf=0x7ffc391dfa50, count=16) = 0[0m
+[35m[SPY] close(fd=5) = 0
+[0m[35m[SPY] close(fd=3) = 0
+[0m[35m[SPY] close(fd=4) = 0
+[0m[35m[SPY] close(fd=4) = 0
+[0m[34m[SPY] ========== Syscall interception started ==========
+[0m[34m[SPY] Monitoring: gcc, make, as
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o", O_RDONLY) = 5[0m
+[33m[SPY] read(fd=5, buf=0x7ffef766f550, count=16) = 16[0m
+[33m[SPY] read(fd=5, buf=0x7ffef766f480, count=64) = 64[0m
+[33m[SPY] read(fd=5, buf=0x55cf45b184d0, count=832) = 832[0m
+[33m[SPY] read(fd=5, buf=0x55cf45b18820, count=126) = 126[0m
+[33m[SPY] read(fd=5, buf=0x55cf45b184d0, count=832) = 832[0m
+[33m[SPY] read(fd=5, buf=0x55cf45b18820, count=126) = 126[0m
+[35m[SPY] close(fd=5) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o", O_RDONLY) = 6[0m
+[33m[SPY] read(fd=6, buf=0x7ffef766f550, count=16) = 16[0m
+[33m[SPY] read(fd=6, buf=0x7ffef766f480, count=64) = 64[0m
+[33m[SPY] read(fd=6, buf=0x55cf45b3e880, count=704) = 704[0m
+[33m[SPY] read(fd=6, buf=0x55cf45b18cd0, count=96) = 96[0m
+[33m[SPY] read(fd=6, buf=0x55cf45b3e880, count=704) = 704[0m
+[33m[SPY] read(fd=6, buf=0x55cf45b18cd0, count=96) = 96[0m
+[35m[SPY] close(fd=6) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o", O_RDONLY) = 7[0m
+[33m[SPY] read(fd=7, buf=0x7ffef766f550, count=16) = 16[0m
+[33m[SPY] read(fd=7, buf=0x7ffef766f480, count=64) = 64[0m
+[33m[SPY] read(fd=7, buf=0x55cf45b317a0, count=1088) = 1088[0m
+[33m[SPY] read(fd=7, buf=0x55cf45b31bf0, count=164) = 164[0m
+[33m[SPY] read(fd=7, buf=0x55cf45b317a0, count=1088) = 1088[0m
+[33m[SPY] read(fd=7, buf=0x55cf45b31bf0, count=164) = 164[0m
+[35m[SPY] close(fd=7) = 0
+[0m[32m[SPY] open("/tmp/ccRY9nej.o", O_RDONLY) = 8[0m
+[33m[SPY] read(fd=8, buf=0x7ffef766f550, count=16) = 16[0m
+[33m[SPY] read(fd=8, buf=0x7ffef766f480, count=64) = 64[0m
+[33m[SPY] read(fd=8, buf=0x55cf45b184d0, count=832) = 832[0m
+[33m[SPY] read(fd=8, buf=0x55cf45b32350, count=116) = 116[0m
+[33m[SPY] read(fd=8, buf=0x55cf45b184d0, count=832) = 832[0m
+[33m[SPY] read(fd=8, buf=0x55cf45b32350, count=116) = 116[0m
+[35m[SPY] close(fd=8) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/libgcc_s.so", O_RDONLY) = 10[0m
+[33m[SPY] read(fd=10, buf=0x7ffef766f250, count=16) = 16[0m
+[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY) = 11[0m
+[33m[SPY] read(fd=11, buf=0x7ffef766f4a0, count=16) = 16[0m
+[33m[SPY] read(fd=11, buf=0x7ffef766f3d0, count=64) = 64[0m
+[33m[SPY] read(fd=11, buf=0x55cf45b8d2e0, count=1792) = 1792[0m
+[33m[SPY] read(fd=11, buf=0x55cf45b73e70, count=274) = 274[0m
+[33m[SPY] read(fd=11, buf=0x55cf45b8d2e0, count=1792) = 1792[0m
+[33m[SPY] read(fd=11, buf=0x55cf45b73e70, count=274) = 274[0m
+[35m[SPY] close(fd=11) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/libc.so", O_RDONLY) = 13[0m
+[33m[SPY] read(fd=13, buf=0x7ffef766f250, count=16) = 16[0m
+[32m[SPY] open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY) = 14[0m
+[33m[SPY] read(fd=14, buf=0x7ffef766f4a0, count=16) = 16[0m
+[33m[SPY] read(fd=14, buf=0x7ffef766f3d0, count=64) = 64[0m
+[33m[SPY] read(fd=14, buf=0x55cf45bcdbe0, count=4288) = 4288[0m
+[33m[SPY] read(fd=14, buf=0x55cf45bb5f90, count=1099) = 1099[0m
+[33m[SPY] read(fd=14, buf=0x55cf45bcdbe0, count=4288) = 4288[0m
+[33m[SPY] read(fd=14, buf=0x55cf45bb5f90, count=1099) = 1099[0m
+[35m[SPY] close(fd=14) = 0
+[0m[32m[SPY] open("/usr/lib/x86_64-linux-gnu/libc_nonshared.a", O_RDONLY) = 15[0m
+[33m[SPY] read(fd=15, buf=0x7ffef766f290, count=16) = 16[0m
+[33m[SPY] read(fd=15, buf=0x7ffef766f1c0, count=64) = 64[0m
+[33m[SPY] read(fd=15, buf=0x55cf45b3e880, count=704) = 704[0m
+[33m[SPY] read(fd=15, buf=0x55cf45b73d90, count=99) = 99[0m
+[33m[SPY] read(fd=15, buf=0x55cf45b3e880, count=704) = 704[0m
+[33m[SPY] read(fd=15, buf=0x55cf45b73d90, count=99) = 99[0m
+[35m[SPY] close(fd=15) = 0
+[0m[32m[SPY] open("/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2", O_RDONLY) = 16[0m
+[33m[SPY] read(fd=16, buf=0x7ffef766f4a0, count=16) = 16[0m
+[33m[SPY] read(fd=16, buf=0x7ffef766f3d0, count=64) = 64[0m
+[33m[SPY] read(fd=16, buf=0x55cf45b9ec60, count=1728) = 1728[0m
+[33m[SPY] read(fd=16, buf=0x55cf45b31910, count=264) = 264[0m
+[33m[SPY] read(fd=16, buf=0x55cf45b9ec60, count=1728) = 1728[0m
+[33m[SPY] read(fd=16, buf=0x55cf45b31910, count=264) = 264[0m
+[35m[SPY] close(fd=16) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/libgcc_s.so", O_RDONLY) = 18[0m
+[33m[SPY] read(fd=18, buf=0x7ffef766f250, count=16) = 16[0m
+[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY) = 19[0m
+[33m[SPY] read(fd=19, buf=0x7ffef766f4a0, count=16) = 16[0m
+[33m[SPY] read(fd=19, buf=0x7ffef766f3d0, count=64) = 64[0m
+[33m[SPY] read(fd=19, buf=0x55cf45d91830, count=1792) = 1792[0m
+[33m[SPY] read(fd=19, buf=0x55cf45d91f40, count=274) = 274[0m
+[33m[SPY] read(fd=19, buf=0x55cf45d91830, count=1792) = 1792[0m
+[33m[SPY] read(fd=19, buf=0x55cf45d91f40, count=274) = 274[0m
+[35m[SPY] close(fd=19) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o", O_RDONLY) = 21[0m
+[33m[SPY] read(fd=21, buf=0x7ffef766f550, count=16) = 16[0m
+[33m[SPY] read(fd=21, buf=0x7ffef766f480, count=64) = 64[0m
+[33m[SPY] read(fd=21, buf=0x55cf45b3e880, count=704) = 704[0m
+[33m[SPY] read(fd=21, buf=0x55cf45b32350, count=114) = 114[0m
+[33m[SPY] read(fd=21, buf=0x55cf45b3e880, count=704) = 704[0m
+[33m[SPY] read(fd=21, buf=0x55cf45b32350, count=114) = 114[0m
+[35m[SPY] close(fd=21) = 0
+[0m[32m[SPY] open("/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o", O_RDONLY) = 22[0m
+[33m[SPY] read(fd=22, buf=0x7ffef766f550, count=16) = 16[0m
+[33m[SPY] read(fd=22, buf=0x7ffef766f480, count=64) = 64[0m
+[33m[SPY] read(fd=22, buf=0x55cf45d7d0a0, count=512) = 512[0m
+[33m[SPY] read(fd=22, buf=0x55cf45d7d2b0, count=75) = 75[0m
+[33m[SPY] read(fd=22, buf=0x55cf45d7d0a0, count=512) = 512[0m
+[33m[SPY] read(fd=22, buf=0x55cf45d7d2b0, count=75) = 75[0m
+[35m[SPY] close(fd=22) = 0
+[0m[34m
+[SPY] ========== Statistics ==========
+[SPY] open() calls:    14
+[SPY] openat() calls:  0
+[SPY] read() calls:    69 (total bytes: 36282)
+[SPY] write() calls:   0 (total bytes: 0)
+[SPY] close() calls:   11
+[SPY] ===================================
+[0m[34m
+[SPY] ========== Statistics ==========
+[SPY] open() calls:    2
+[SPY] openat() calls:  0
+[SPY] read() calls:    1 (total bytes: 0)
+[SPY] write() calls:   0 (total bytes: 0)
+[SPY] close() calls:   11
+[SPY] ===================================
+[0m[34m
+[SPY] ========== Statistics ==========
+[SPY] open() calls:    0
+[SPY] openat() calls:  0
+[SPY] read() calls:    3 (total bytes: 0)
+[SPY] write() calls:   0 (total bytes: 0)
+[SPY] close() calls:   12
+[SPY] ===================================
+[0m

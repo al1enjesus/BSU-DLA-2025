@@ -1,0 +1,11 @@
+[34m[SPY] ========== Syscall interception started ==========
+[0m[34m[SPY] Monitoring: gcc, make, as
+[0m[34m
+[SPY] ========== Statistics ==========
+[SPY] open() calls:    0
+[SPY] openat() calls:  0
+[SPY] read() calls:    0 (total bytes: 0)
+[SPY] write() calls:   0 (total bytes: 0)
+[SPY] close() calls:   0
+[SPY] ===================================
+[0m

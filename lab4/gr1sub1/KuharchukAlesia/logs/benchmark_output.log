@@ -1,0 +1,60 @@
+========================================
+System Call Benchmark - Lab 4
+Variant 3 (Programs: gcc, make, as)
+========================================
+
+System info:
+CPU:  11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz
+Kernel: 5.15.0-139-generic
+
+=== Benchmarking userspace function (dummy) ===
+Total time: 2.99 ms
+Average per call: 2.99 ns (8.0 cycles)
+Calls per second: 335 million
+
+=== Benchmarking getpid() syscall ===
+Total time: 153.61 ms
+Average per call: 153.61 ns (412.9 cycles)
+Calls per second: 7 million
+PID value: 4133
+
+=== Benchmarking open()+close() syscalls ===
+Total time: 26.00 ms for 10000 iterations
+Average per open+close pair: 2600.13 ns (6989.2 cycles)
+Calls per second: 385 thousand
+
+=== Benchmarking gettimeofday() vDSO call ===
+Total time: 38.83 ms
+Average per call: 38.83 ns (104.4 cycles)
+Calls per second: 26 million
+Current time: 1760889102.548695
+
+=== Testing cache effects on open() ===
+
+Note: Run 'sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches' to clear cache before cold cache test
+
+1. Cold cache test (first access):
+   Average: 1189.71 ns (3197.9 cycles)
+
+2. Warm cache test (repeated access):
+   Average: 1165.26 ns (3132.2 cycles)
+
+3. Cache speedup: 1.02x faster when cached
+
+==================================================================
+SUMMARY TABLE (re-run all tests for accurate comparison)
+------------------------------------------------------------------
+| Operation               | Time (ns) | CPU Cycles | Slowdown vs userspace |
+|-------------------------|-----------|------------|-----------------------|
+| dummy() userspace       |      0.91 |        2.5 | 1.0x (baseline)       |
+| getpid()                |    143.15 |      384.8 | 156.5x                  |
+| open() + close()        |   1055.35 |     2836.8 | 1153.6x                |
+| gettimeofday() vDSO     |     20.53 |       55.2 | 22.4x                  |
+------------------------------------------------------------------
+
+CPU Frequency: 2.69 GHz
+Test iterations: 1000000 (except open+close: 10000)
+
+========================================
+Benchmark completed!
+========================================
