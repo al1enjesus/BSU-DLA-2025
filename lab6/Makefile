@@ -1,19 +1,30 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -g `pkg-config --cflags fuse3`
-LDFLAGS = `pkg-config --libs fuse3`
-SOURCES = src/myfuse.c src/operations.c src/utils.c
-OBJECTS = $(SOURCES:.c=.o)
+CFLAGS = -Wall -Wextra -g -D_FILE_OFFSET_BITS=64 `pkg-config --cflags fuse3`
+LIBS = `pkg-config --libs fuse3`
 TARGET = myfuse
+SOURCES = src/myfuse.c src/operations.c src/utils.c
+OBJS = $(SOURCES:.c=.o)
 
-all: $(TARGET)
+.PHONY: all clean check-deps
 
-$(TARGET): $(OBJECTS)
-	$(CC) -o $@ $^ $(LDFLAGS)
+all: check-deps $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(OBJS) -o $(TARGET) $(LIBS)
+
+check-deps:
+	@pkg-config --exists fuse3 || (echo "fuse3-dev не установлен. Установите: sudo apt-get install libfuse3-dev fuse3" && exit 1)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS) $(TARGET)
+	rm -f $(OBJS) $(TARGET)
 
-.PHONY: all clean
+test: $(TARGET)
+	@echo "Запуск тестов..."
+	# Добавьте тестовые команды здесь
+
+install-deps:
+	sudo apt-get update
+	sudo apt-get install libfuse3-dev fuse3 pkg-config

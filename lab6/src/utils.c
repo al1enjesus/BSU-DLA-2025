@@ -1,90 +1,76 @@
-#define _GNU_SOURCE
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#include <errno.h>
-#include <limits.h>
+#include "utils.h"
 #include <libgen.h>
-#include <sys/stat.h>
 #include <unistd.h>
 
-void log_timestamp(char *buf, size_t bufsz)
-{
-    time_t t = time(NULL);
-    struct tm tm;
-    localtime_r(&t, &tm);
-    strftime(buf, bufsz, "%Y-%m-%d %H:%M:%S", &tm);
+const char* get_timestamp() {
+    static char timestamp[SAFE_STR_SIZE];
+    time_t now = time(NULL);
+    struct tm *tm_info = localtime(&now);
+    strftime(timestamp, SAFE_STR_SIZE, "%Y-%m-%d %H:%M:%S", tm_info);
+    return timestamp;
 }
 
-void log_operation(const char *op, const char *path, const char *result)
-{
-    char ts[64];
-    log_timestamp(ts, sizeof(ts));
-    fprintf(stderr, "[%s] %s: %s (%s)\n", ts, op, path, result);
-    fflush(stderr);
+char* canonicalize_path(const char *path) {
+    if (!path) return NULL;
+
+    char *resolved = realpath(path, NULL);
+    if (!resolved) {
+        return strdup(path); // fallback
+    }
+    return resolved;
 }
 
-char *build_fullpath(const char *source_dir, const char *path)
-{
-    if (!source_dir || !path) {
-        errno = EINVAL;
+char* build_fullpath_safe(const char *base, const char *path, int *error_code) {
+    if (!base || !path) {
+        *error_code = -EINVAL;
         return NULL;
     }
 
-    char tmp[PATH_MAX];
-    if (strlen(source_dir) + strlen(path) + 2 > PATH_MAX) {
-        errno = ENAMETOOLONG;
+    char *canonical_base = canonicalize_path(base);
+    if (!canonical_base) {
+        *error_code = -ENOMEM;
         return NULL;
     }
 
-    if (path[0] == '/')
-        snprintf(tmp, sizeof(tmp), "%s%s", source_dir, path);
-    else
-        snprintf(tmp, sizeof(tmp), "%s/%s", source_dir, path);
-
-    char *components[PATH_MAX/2];
-    int compc = 0;
-
-    char *s = tmp;
-    while (*s == '/') ++s;
-    while (*s) {
-        char comp[PATH_MAX];
-        int i = 0;
-        while (*s && *s != '/') {
-            comp[i++] = *s++;
-        }
-        comp[i] = '\0';
-        if (strcmp(comp, "") == 0 || strcmp(comp, ".") == 0) {
-        } else if (strcmp(comp, "..") == 0) {
-            if (compc == 0) {
-                errno = EACCES;
-                return NULL;
-            }
-            free(components[--compc]);
-        } else {
-            components[compc] = strdup(comp);
-            if (!components[compc]) {
-                for (int j = 0; j < compc; ++j) free(components[j]);
-                errno = ENOMEM;
-                return NULL;
-            }
-            compc++;
-        }
-        while (*s == '/') ++s;
-    }
-
-    char *res = malloc(PATH_MAX);
-    if (!res) {
-        for (int j = 0; j < compc; ++j) free(components[j]);
-        errno = ENOMEM;
+    if (strstr(path, "..") != NULL || strstr(path, "//") != NULL) {
+        free(canonical_base);
+        *error_code = -EACCES;
         return NULL;
     }
-    strcpy(res, source_dir);
-    for (int i = 0; i < compc; ++i) {
-        strcat(res, "/");
-        strcat(res, components[i]);
-        free(components[i]);
+
+    char full_path[PATH_MAX];
+    int written = snprintf(full_path, sizeof(full_path), "%s%s",
+                          canonical_base, path);
+    free(canonical_base);
+
+    if (written < 0 || written >= (int)sizeof(full_path)) {
+        *error_code = -ENAMETOOLONG;
+        return NULL;
     }
-    return res;
+
+    char *result = canonicalize_path(full_path);
+    if (!result) {
+        *error_code = -ENOENT;
+        return NULL;
+    }
+
+    if (strncmp(result, base, strlen(base)) != 0) {
+        free(result);
+        *error_code = -EACCES;
+        return NULL;
+    }
+
+    *error_code = 0;
+    return result;
+}
+
+int check_access_permissions(const char *path, int mode) {
+    return 0;
+}
+
+int validate_operation_size(size_t size, off_t offset) {
+    if (size > SSIZE_MAX || offset < 0) {
+        return -EINVAL;
+    }
+    return 0;
 }
