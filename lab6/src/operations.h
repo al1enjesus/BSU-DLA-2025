@@ -3,8 +3,13 @@
 
 #include "utils.h"
 
-char* get_full_path_or_error(const char *path, int *error_code);
+// Объявление структуры операций FUSE
+struct fuse_operations;
 
+// Функция для заполнения операций FUSE
+void fill_operations(struct fuse_operations *ops);
+
+// File operations
 int myfuse_getattr(const char *path, struct stat *stbuf);
 int myfuse_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
                    off_t offset, struct fuse_file_info *fi);
