@@ -1,3 +1,4 @@
+// src/operations.c
 #define _XOPEN_SOURCE 700 
 #define _GNU_SOURCE 
 #define FUSE_USE_VERSION 26 
@@ -9,21 +10,18 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <errno.h>
+#include <errno.h>      // <-- Добавлен для errno
 #include <fcntl.h>
 #include <string.h>
 #include <dirent.h>
-// ... (остальные include'ы)
 
 // --- 2. FUSE ---
 #include <fuse.h>       
 
 #include "operations.h"
-// Примечание: Всякий раз, когда системный вызов возвращает -1 и устанавливает errno, 
-// функция FUSE должна вернуть отрицательное значение errno (например, -ENOENT).
 
 /**
- * @brief Получение метаданных файла (аналог stat/lstat).
+ * @brief Получение метаданных файла (аналог stat/lstat). FUSE 2.x сигнатура.
  */
 int my_getattr(const char *path, struct stat *stbuf) { 
     char fullpath[PATH_MAX_LEN];
@@ -41,7 +39,7 @@ int my_getattr(const char *path, struct stat *stbuf) {
 }
 
 /**
- * @brief Чтение содержимого директории (аналог readdir).
+ * @brief Чтение содержимого директории (аналог readdir). FUSE 2.x сигнатура.
  */
 int my_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
     char fullpath[PATH_MAX_LEN];
@@ -49,7 +47,7 @@ int my_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset
     struct dirent *de;
     int res = 0;
     
-    // Подавляем предупреждение о неиспользуемом аргументе, если он не нужен для Passthrough
+    // Подавляем предупреждение о неиспользуемом аргументе
     (void) fi; 
 
     get_full_path(fullpath, path);
@@ -68,7 +66,7 @@ int my_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset
         st.st_ino = de->d_ino;
         st.st_mode = de->d_type << 12; // Тип файла для filler
 
-        // Добавляем запись в буфер FUSE
+        // Вызов filler с 4 аргументами (FUSE 2.x совместимый)
         if (filler(buf, de->d_name, &st, 0)) {
             closedir(dp);
             log_operation("READDIR", path, -ENOMEM);
@@ -90,8 +88,6 @@ int my_open(const char *path, struct fuse_file_info *fi) {
 
     get_full_path(fullpath, path);
 
-    // Открываем реальный файл. Обратите внимание, что мы используем 
-    // flags из fuse_file_info (O_RDONLY, O_WRONLY, и т.д.)
     res = open(fullpath, fi->flags);
     if (res == -1) {
         res = -errno;
@@ -99,7 +95,6 @@ int my_open(const char *path, struct fuse_file_info *fi) {
         return res;
     }
     
-    // Сохраняем реальный файловый дескриптор в fi->fh для последующих операций (read/write)
     fi->fh = res;
 
     log_operation("OPEN", path, 0);
@@ -112,7 +107,6 @@ int my_open(const char *path, struct fuse_file_info *fi) {
 int my_read(const char *path, char *buf, size_t size, off_t offset, struct fuse_file_info *fi) {
     int res;
 
-    // Читаем из реального файлового дескриптора, сохраненного в fi->fh
     res = pread(fi->fh, buf, size, offset);
     if (res == -1) {
         res = -errno;
@@ -128,7 +122,6 @@ int my_read(const char *path, char *buf, size_t size, off_t offset, struct fuse_
 int my_write(const char *path, const char *buf, size_t size, off_t offset, struct fuse_file_info *fi) {
     int res;
 
-    // Пишем в реальный файловый дескриптор
     res = pwrite(fi->fh, buf, size, offset);
     if (res == -1) {
         res = -errno;
@@ -147,7 +140,6 @@ int my_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
 
     get_full_path(fullpath, path);
 
-    // Создаем файл с указанным режимом и флагами (O_CREAT | O_EXCL и т.д.)
     res = open(fullpath, fi->flags, mode);
     if (res == -1) {
         res = -errno;
@@ -155,7 +147,6 @@ int my_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
         return res;
     }
     
-    // Сохраняем реальный файловый дескриптор
     fi->fh = res; 
 
     log_operation("CREATE", path, 0);

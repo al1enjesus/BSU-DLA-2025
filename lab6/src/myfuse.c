@@ -1,17 +1,15 @@
-#define _XOPEN_SOURCE 700 // Активирует realpath и многие POSIX-типы
+// src/myfuse.c
+#define _XOPEN_SOURCE 700 // Активирует realpath и POSIX типы
 #define FUSE_USE_VERSION 26
 
-// --- 1. Системные и POSIX типы ---
 #include <stdio.h>
-#include <stdlib.h>     // ОПРЕДЕЛЯЕТ realpath()
+#include <stdlib.h>     
 #include <string.h>
 #include <unistd.h>
 #include <limits.h>
-#include <sys/stat.h>   // struct stat, косвенно timespec
-#include <time.h>       // ОПРЕДЕЛЯЕТ struct timespec
-
-// --- 2. FUSE ---
-#include <fuse.h>       // Включается после time.h
+#include <sys/stat.h>   
+#include <time.h>       
+#include <fuse.h>       
 
 #include "operations.h"
 
@@ -26,7 +24,7 @@ static struct fuse_operations passthrough_oper = {
     .unlink     = my_unlink,
     .mkdir      = my_mkdir,
     .rmdir      = my_rmdir,
-    .release    = my_release, // Важно для закрытия файловых дескрипторов
+    .release    = my_release, 
 };
 
 int main(int argc, char *argv[]) {
