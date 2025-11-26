@@ -1,0 +1,10 @@
+workers: 3
+scheduling_policy: 2 # 0=default, 1=mixed nice, 2=CPU affinity
+
+heavy:
+  work_us: 5000000
+  sleep_us: 1000000
+
+light:
+  work_us: 500000
+  sleep_us: 100000
