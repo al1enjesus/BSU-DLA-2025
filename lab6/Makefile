@@ -1,18 +1,19 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -g `pkg-config --cflags fuse3`
-LDLIBS = `pkg-config --libs fuse3`
-SRCDIR = src
-OBJ = $(SRCDIR)/myfuse.o $(SRCDIR)/operations.o $(SRCDIR)/utils.o
+LDFLAGS = `pkg-config --libs fuse3`
+SOURCES = src/myfuse.c src/operations.c src/utils.c
+OBJECTS = $(SOURCES:.c=.o)
+TARGET = myfuse
 
-all: myfuse
+all: $(TARGET)
 
-myfuse: $(OBJ)
-	$(CC) -o $@ $(OBJ) $(LDLIBS)
+$(TARGET): $(OBJECTS)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
-$(SRCDIR)/%.o: $(SRCDIR)/%.c
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) myfuse
+	rm -f $(OBJECTS) $(TARGET)
 
 .PHONY: all clean
