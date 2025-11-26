@@ -1,4 +1,5 @@
 #define _GNU_SOURCE
+#define FUSE_USE_VERSION 30
 #include <fuse3/fuse.h>
 #include <stdio.h>
 #include <stdlib.h>

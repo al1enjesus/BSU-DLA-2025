@@ -1,4 +1,5 @@
 #define _XOPEN_SOURCE 700
+#define FUSE_USE_VERSION 30
 #include <fuse3/fuse.h>
 #include <string.h>
 #include <errno.h>
