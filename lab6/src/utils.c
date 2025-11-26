@@ -17,7 +17,6 @@ char* canonicalize_path(const char *path) {
 
     char *resolved = realpath(path, NULL);
     if (!resolved) {
-        // Если realpath не сработал, создаем копию исходного пути
         char *fallback = strdup(path);
         if (!fallback) {
             return NULL;
@@ -33,14 +32,12 @@ char* build_fullpath_safe(const char *base, const char *path, int *error_code) {
         return NULL;
     }
 
-    // Канонизация базового пути
     char *canonical_base = canonicalize_path(base);
     if (!canonical_base) {
         *error_code = -ENOMEM;
         return NULL;
     }
 
-    // Проверка на path traversal
     if (strstr(path, "..") != NULL) {
         free(canonical_base);
         *error_code = -EACCES;
@@ -51,7 +48,6 @@ char* build_fullpath_safe(const char *base, const char *path, int *error_code) {
     int written = snprintf(full_path, sizeof(full_path), "%s%s",
                           canonical_base, path);
 
-    // Освобождаем временную память сразу после использования
     free(canonical_base);
 
     if (written < 0 || written >= (int)sizeof(full_path)) {
@@ -59,20 +55,28 @@ char* build_fullpath_safe(const char *base, const char *path, int *error_code) {
         return NULL;
     }
 
-    // Финальная канонизация полного пути
     char *result = canonicalize_path(full_path);
     if (!result) {
         *error_code = -ENOENT;
         return NULL;
     }
 
-    // Проверка, что результат внутри базовой директории
-    if (strncmp(result, base, strlen(base)) != 0) {
+    char *canonical_base_for_check = canonicalize_path(base);
+    if (!canonical_base_for_check) {
         free(result);
+        *error_code = -ENOMEM;
+        return NULL;
+    }
+
+
+    if (strncmp(result, canonical_base_for_check, strlen(canonical_base_for_check)) != 0) {
+        free(result);
+        free(canonical_base_for_check);
         *error_code = -EACCES;
         return NULL;
     }
 
+    free(canonical_base_for_check);
     *error_code = 0;
     return result;
 }

@@ -62,17 +62,14 @@ static int check_access_permissions_impl(const char *path, int mode) {
     }
 
     if (uid == st.st_uid) {
-        // Владелец файла
         if (!(st.st_mode & (mode << 6))) {
             return -EACCES;
         }
     } else if (gid == st.st_gid) {
-        // Член группы
         if (!(st.st_mode & (mode << 3))) {
             return -EACCES;
         }
     } else {
-        // Другие пользователи
         if (!(st.st_mode & mode)) {
             return -EACCES;
         }

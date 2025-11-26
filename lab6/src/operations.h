@@ -3,10 +3,8 @@
 
 #include "utils.h"
 
-// Объявление структуры операций FUSE
 struct fuse_operations;
 
-// Функция для заполнения операций FUSE
 void fill_operations(struct fuse_operations *ops);
 
 // File operations

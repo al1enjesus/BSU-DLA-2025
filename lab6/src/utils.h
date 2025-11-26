@@ -10,21 +10,13 @@
 #include <time.h>
 
 #define MAX_PATH_COMPONENTS 64
-#define SAFE_STR_SIZE 256
+#define TIMESTAMP_BUFFER_SIZE 64
+#define PATH_BUFFER_SIZE 4096
 
-// Безопасное построение полного пути
 char* build_fullpath_safe(const char *base, const char *path, int *error_code);
 
-// Проверка прав доступа
-int check_access_permissions(const char *path, int mode);
-
-// Валидация размера операций
-int validate_operation_size(size_t size, off_t offset);
-
-// Получение временной метки
 const char* get_timestamp();
 
-// Канонизация пути
 char* canonicalize_path(const char *path);
 
 #endif
