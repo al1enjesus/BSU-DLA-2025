@@ -34,6 +34,7 @@ int my_create(const char *path, mode_t mode, struct fuse_file_info *fi);
 int my_unlink(const char *path);
 int my_mkdir(const char *path, mode_t mode);
 int my_rmdir(const char *path);
+
 int my_release(const char *path, struct fuse_file_info *fi);
 
 #endif // OPERATIONS_H
