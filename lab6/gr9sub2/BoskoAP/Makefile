@@ -4,7 +4,7 @@ LDFLAGS = `pkg-config fuse3 --libs`
 SRCDIR = src
 OBJ = $(SRCDIR)/main.o $(SRCDIR)/operations.o $(SRCDIR)/utils.o $(SRCDIR)/transforms.o
 BINDIR = build
-TARGET = $(BINDIR)/virtfs
+TARGET = $(BINDIR)/myfuse
 
 all: $(TARGET)
 
