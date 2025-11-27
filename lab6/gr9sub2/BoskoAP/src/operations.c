@@ -35,6 +35,7 @@ static int passthrough_create(const char *path, mode_t mode, struct fuse_file_in
 static int passthrough_unlink(const char *path);
 static int passthrough_mkdir(const char *path, mode_t mode);
 static int passthrough_rmdir(const char *path);
+static int passthrough_release(const char *path, struct fuse_file_info *fi);
 
 struct fuse_operations passthrough_oper = {
     .getattr = passthrough_getattr,
