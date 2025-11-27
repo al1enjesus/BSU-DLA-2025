@@ -46,6 +46,7 @@ struct fuse_operations passthrough_oper = {
     .unlink  = passthrough_unlink,
     .mkdir   = passthrough_mkdir,
     .rmdir   = passthrough_rmdir,
+    .release = passthrough_release,
 };
 
 int init_fuse_environment(const char *source_dir, const char *mode_str) {
@@ -125,65 +126,79 @@ static int passthrough_readdir(const char *path, void *buf, fuse_fill_dir_t fill
 }
 
 static int passthrough_open(const char *path, struct fuse_file_info *fi) {
-    if (!path) return -EINVAL;
+    if (!path || !fi) return -EINVAL;
 
     char full[PATH_MAX];
     int rc = build_fullpath(path, full, sizeof(full), 0);
     if (rc < 0) { log_operation("OPEN", path, rc); return rc; }
 
+    /* Open with flags passed from FUSE (fi->flags). */
     int fd = open(full, fi->flags);
     if (fd == -1) {
         int err = -errno;
         log_operation("OPEN", path, err);
         return err;
     }
-    close(fd);
+
+    fi->fh = (uint64_t)fd;
+
     log_operation("OPEN", path, 0);
     return 0;
 }
 
 static int passthrough_read(const char *path, char *buf, size_t size, off_t offset,
                             struct fuse_file_info *fi) {
-    (void) fi;
-    if (!path || !buf) return -EINVAL;
+    (void) path;
+    if (!buf) return -EINVAL;
+
+    int fd = -1;
+    if (fi && fi->fh) fd = (int)fi->fh;
 
     char full[PATH_MAX];
-    int rc = build_fullpath(path, full, sizeof(full), 0);
-    if (rc < 0) { log_operation("READ", path, rc); return rc; }
-
-    int fd = open(full, O_RDONLY);
-    if (fd == -1) { int err = -errno; log_operation("READ", path, err); return err; }
+    if (fd == -1) { /* fallback if open didn't set fh */
+        int rc = build_fullpath(path, full, sizeof(full), 0);
+        if (rc < 0) { log_operation("READ", path, rc); return rc; }
+        fd = open(full, O_RDONLY);
+        if (fd == -1) { int err = -errno; log_operation("READ", path, err); return err; }
+    }
 
     ssize_t res = pread(fd, buf, size, offset);
-    if (res == -1) { int err = -errno; close(fd); log_operation("READ", path, err); return err; }
+    if (res == -1) {
+        int err = -errno;
+        if (fi && fi->fh) { /* if fd is persistent, don't close here */ }
+        else close(fd);
+        log_operation("READ", path, err);
+        return err;
+    }
 
     if (g_mode == MODE_ROT13 && res > 0) rot13_inplace(buf, (size_t)res);
     else if (g_mode == MODE_UPPER && res > 0) uppercase_inplace(buf, (size_t)res);
 
-    close(fd);
+    if (!(fi && fi->fh)) close(fd); /* close only if we opened a temporary fd */
 
-    char logmsg[128];
-    snprintf(logmsg, sizeof(logmsg), "READ (%zd bytes at %ld)", res, (long)offset);
-    log_operation("READ", path, 0);
+    log_operation("READ", path, (int)res);
     return (int)res;
 }
 
 static int passthrough_write(const char *path, const char *buf, size_t size, off_t offset,
                              struct fuse_file_info *fi) {
-    (void) fi;
     if (!path || (!buf && size > 0)) return -EINVAL;
 
-    char full[PATH_MAX];
-    int rc = build_fullpath(path, full, sizeof(full), 0);
-    if (rc < 0) { log_operation("WRITE", path, rc); return rc; }
+    int fd = -1;
+    if (fi && fi->fh) fd = (int)fi->fh;
 
-    int fd = open(full, O_WRONLY);
-    if (fd == -1) { int err = -errno; log_operation("WRITE", path, err); return err; }
+    char full[PATH_MAX];
+    if (fd == -1) {
+        int rc = build_fullpath(path, full, sizeof(full), 1); /* allow nonexistent for create/write */
+        if (rc < 0) { log_operation("WRITE", path, rc); return rc; }
+        fd = open(full, O_WRONLY);
+        if (fd == -1) { int err = -errno; log_operation("WRITE", path, err); return err; }
+    }
 
     ssize_t wrote = 0;
     if (g_mode == MODE_ROT13 && size > 0) {
         char *tmp = malloc(size);
-        if (!tmp) { close(fd); log_operation("WRITE", path, -ENOMEM); return -ENOMEM; }
+        if (!tmp) { if (!(fi && fi->fh)) close(fd); log_operation("WRITE", path, -ENOMEM); return -ENOMEM; }
         memcpy(tmp, buf, size);
         rot13_inplace(tmp, size);
         wrote = pwrite(fd, tmp, size, offset);
@@ -192,8 +207,14 @@ static int passthrough_write(const char *path, const char *buf, size_t size, off
         wrote = pwrite(fd, buf, size, offset);
     }
 
-    if (wrote == -1) { int err = -errno; close(fd); log_operation("WRITE", path, err); return err; }
-    close(fd);
+    if (wrote == -1) {
+        int err = -errno;
+        if (!(fi && fi->fh)) close(fd);
+        log_operation("WRITE", path, err);
+        return err;
+    }
+
+    if (!(fi && fi->fh)) close(fd);
 
     log_operation("WRITE", path, (int)wrote);
     return (int)wrote;
@@ -227,6 +248,16 @@ static int passthrough_unlink(const char *path) {
     int res = unlink(full);
     if (res == -1) { int err = -errno; log_operation("UNLINK", path, err); return err; }
     log_operation("UNLINK", path, 0);
+    return 0;
+}
+
+static int passthrough_release(const char *path, struct fuse_file_info *fi) {
+    (void) path;
+    if (fi && fi->fh) {
+        close((int)fi->fh);
+        fi->fh = 0;
+    }
+    log_operation("RELEASE", path, 0);
     return 0;
 }
 
