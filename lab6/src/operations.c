@@ -1,35 +1,31 @@
-// src/operations.c
-#define _XOPEN_SOURCE 700 
-#define _GNU_SOURCE 
-#define FUSE_USE_VERSION 26 
+#define _XOPEN_SOURCE 700
+#define _GNU_SOURCE
+#define FUSE_USE_VERSION 26
 
-// --- 1. Системные и POSIX типы ---
-#include <sys/stat.h>   
+#include <sys/stat.h>
 #include <sys/types.h>
-#include <time.h>       // struct timespec
+#include <time.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <errno.h>      // <-- Добавлен для errno
+#include <errno.h>
 #include <fcntl.h>
 #include <string.h>
 #include <dirent.h>
-
-// --- 2. FUSE ---
-#include <fuse.h>       
+#include <fuse.h>
 
 #include "operations.h"
 
 /**
- * @brief Получение метаданных файла (аналог stat/lstat). FUSE 2.x сигнатура.
+ * @brief Получение метаданных файла (аналог stat/lstat).
  */
-int my_getattr(const char *path, struct stat *stbuf) { 
+int my_getattr(const char *path, struct stat *stbuf) {
     char fullpath[PATH_MAX_LEN];
     int res = 0;
 
     get_full_path(fullpath, path);
 
-    // Используем lstat для получения информации, включая символические ссылки
+    // lstat вместо stat для корректной работы с symlinks
     if (lstat(fullpath, stbuf) == -1) {
         res = -errno;
     }
@@ -39,16 +35,17 @@ int my_getattr(const char *path, struct stat *stbuf) {
 }
 
 /**
- * @brief Чтение содержимого директории (аналог readdir). FUSE 2.x сигнатура.
+ * @brief Чтение содержимого директории (аналог readdir).
  */
-int my_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
+int my_readdir(const char *path, void *buf, fuse_fill_dir_t filler, 
+               off_t offset, struct fuse_file_info *fi) {
     char fullpath[PATH_MAX_LEN];
     DIR *dp;
     struct dirent *de;
     int res = 0;
-    
-    // Подавляем предупреждение о неиспользуемом аргументе
-    (void) fi; 
+
+    (void) offset;  // Не используется в этой реализации
+    (void) fi;
 
     get_full_path(fullpath, path);
 
@@ -59,14 +56,14 @@ int my_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset
         return res;
     }
 
-    // Игнорируем offset, просто читаем все записи
+    // Читаем все записи директории
     while ((de = readdir(dp)) != NULL) {
         struct stat st;
         memset(&st, 0, sizeof(st));
         st.st_ino = de->d_ino;
-        st.st_mode = de->d_type << 12; // Тип файла для filler
+        st.st_mode = de->d_type << 12;
 
-        // Вызов filler с 4 аргументами (FUSE 2.x совместимый)
+        // FUSE 2.x: filler принимает 4 аргумента
         if (filler(buf, de->d_name, &st, 0)) {
             closedir(dp);
             log_operation("READDIR", path, -ENOMEM);
@@ -94,9 +91,8 @@ int my_open(const char *path, struct fuse_file_info *fi) {
         log_operation("OPEN", path, res);
         return res;
     }
-    
-    fi->fh = res;
 
+    fi->fh = res;  // Сохраняем file descriptor
     log_operation("OPEN", path, 0);
     return 0;
 }
@@ -104,7 +100,8 @@ int my_open(const char *path, struct fuse_file_info *fi) {
 /**
  * @brief Чтение данных из файла (аналог pread).
  */
-int my_read(const char *path, char *buf, size_t size, off_t offset, struct fuse_file_info *fi) {
+int my_read(const char *path, char *buf, size_t size, off_t offset, 
+            struct fuse_file_info *fi) {
     int res;
 
     res = pread(fi->fh, buf, size, offset);
@@ -119,7 +116,8 @@ int my_read(const char *path, char *buf, size_t size, off_t offset, struct fuse_
 /**
  * @brief Запись данных в файл (аналог pwrite).
  */
-int my_write(const char *path, const char *buf, size_t size, off_t offset, struct fuse_file_info *fi) {
+int my_write(const char *path, const char *buf, size_t size, off_t offset, 
+             struct fuse_file_info *fi) {
     int res;
 
     res = pwrite(fi->fh, buf, size, offset);
@@ -146,9 +144,8 @@ int my_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
         log_operation("CREATE", path, res);
         return res;
     }
-    
-    fi->fh = res; 
 
+    fi->fh = res;
     log_operation("CREATE", path, 0);
     return 0;
 }
@@ -204,13 +201,17 @@ int my_rmdir(const char *path) {
     return res;
 }
 
-// Добавляем обязательный метод release для закрытия файлового дескриптора
+/**
+ * @brief Закрытие файла (аналог close).
+ */
 int my_release(const char *path, struct fuse_file_info *fi) {
-    (void) path; // Unused
-    int res = close(fi->fh);
+    int res;
+
+    res = close(fi->fh);
     if (res == -1) {
         res = -errno;
     }
+
     log_operation("RELEASE", path, res);
     return res;
 }
