@@ -1,0 +1,9 @@
+WARNING: perf not found for kernel 5.15.146.1-microsoft
+
+  You may need to install the following packages for this specific kernel:
+    linux-tools-5.15.146.1-microsoft-standard-WSL2
+    linux-cloud-tools-5.15.146.1-microsoft-standard-WSL2
+
+  You may also want to install one of the following packages to keep up to date:
+    linux-tools-standard-WSL2
+    linux-cloud-tools-standard-WSL2
