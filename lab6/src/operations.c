@@ -17,17 +17,33 @@
 #include "operations.h"
 
 /**
+ * @brief Макрос для выполнения преобразования пути и проверки безопасности.
+ * Возвращает ошибку, если путь слишком длинный или небезопасный.
+ */
+#define PREPARE_PATH(path, fullpath, res) \
+    if ((res = get_full_path(fullpath, path)) != 0) { \
+        return res; \
+    } \
+    if ((res = check_path_security(fullpath)) != 0) { \
+        log_operation("SECURITY_BLOCK", path, res); \
+        return res; \
+    }
+
+/**
  * @brief Получение метаданных файла (аналог stat/lstat).
  */
 int my_getattr(const char *path, struct stat *stbuf) {
     char fullpath[PATH_MAX_LEN];
-    int res = 0;
+    int res;
 
-    get_full_path(fullpath, path);
+    // 1. Преобразование пути и проверка безопасности
+    PREPARE_PATH(path, fullpath, res);
 
-    // lstat вместо stat для корректной работы с symlinks
+    // 2. Выполнение операции
     if (lstat(fullpath, stbuf) == -1) {
         res = -errno;
+    } else {
+        res = 0;
     }
 
     log_operation("GETATTR", path, res);
@@ -42,13 +58,15 @@ int my_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
     char fullpath[PATH_MAX_LEN];
     DIR *dp;
     struct dirent *de;
-    int res = 0;
+    int res;
 
-    (void) offset;  // Не используется в этой реализации
+    (void) offset;
     (void) fi;
 
-    get_full_path(fullpath, path);
+    // 1. Преобразование пути и проверка безопасности
+    PREPARE_PATH(path, fullpath, res);
 
+    // 2. Открытие директории
     dp = opendir(fullpath);
     if (dp == NULL) {
         res = -errno;
@@ -56,12 +74,13 @@ int my_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
         return res;
     }
 
-    // Читаем все записи директории
+    // 3. Читаем все записи директории
     while ((de = readdir(dp)) != NULL) {
         struct stat st;
         memset(&st, 0, sizeof(st));
         st.st_ino = de->d_ino;
-        st.st_mode = de->d_type << 12;
+        // FUSE 2.x требует, чтобы мы сами заполняли d_type в st_mode
+        st.st_mode = de->d_type << 12; 
 
         // FUSE 2.x: filler принимает 4 аргумента
         if (filler(buf, de->d_name, &st, 0)) {
@@ -83,8 +102,10 @@ int my_open(const char *path, struct fuse_file_info *fi) {
     char fullpath[PATH_MAX_LEN];
     int res;
 
-    get_full_path(fullpath, path);
+    // 1. Преобразование пути и проверка безопасности
+    PREPARE_PATH(path, fullpath, res);
 
+    // 2. Открытие реального файла
     res = open(fullpath, fi->flags);
     if (res == -1) {
         res = -errno;
@@ -103,6 +124,7 @@ int my_open(const char *path, struct fuse_file_info *fi) {
 int my_read(const char *path, char *buf, size_t size, off_t offset, 
             struct fuse_file_info *fi) {
     int res;
+    (void)path; // Не используется, так как используем fi->fh
 
     res = pread(fi->fh, buf, size, offset);
     if (res == -1) {
@@ -119,6 +141,7 @@ int my_read(const char *path, char *buf, size_t size, off_t offset,
 int my_write(const char *path, const char *buf, size_t size, off_t offset, 
              struct fuse_file_info *fi) {
     int res;
+    (void)path; // Не используется, так как используем fi->fh
 
     res = pwrite(fi->fh, buf, size, offset);
     if (res == -1) {
@@ -136,8 +159,10 @@ int my_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
     char fullpath[PATH_MAX_LEN];
     int res;
 
-    get_full_path(fullpath, path);
+    // 1. Преобразование пути и проверка безопасности
+    PREPARE_PATH(path, fullpath, res);
 
+    // 2. Создание и открытие файла
     res = open(fullpath, fi->flags, mode);
     if (res == -1) {
         res = -errno;
@@ -155,12 +180,16 @@ int my_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
  */
 int my_unlink(const char *path) {
     char fullpath[PATH_MAX_LEN];
-    int res = 0;
+    int res;
 
-    get_full_path(fullpath, path);
+    // 1. Преобразование пути и проверка безопасности
+    PREPARE_PATH(path, fullpath, res);
 
+    // 2. Удаление
     if (unlink(fullpath) == -1) {
         res = -errno;
+    } else {
+        res = 0;
     }
 
     log_operation("UNLINK", path, res);
@@ -172,12 +201,16 @@ int my_unlink(const char *path) {
  */
 int my_mkdir(const char *path, mode_t mode) {
     char fullpath[PATH_MAX_LEN];
-    int res = 0;
+    int res;
 
-    get_full_path(fullpath, path);
+    // 1. Преобразование пути и проверка безопасности
+    PREPARE_PATH(path, fullpath, res);
 
+    // 2. Создание директории
     if (mkdir(fullpath, mode) == -1) {
         res = -errno;
+    } else {
+        res = 0;
     }
 
     log_operation("MKDIR", path, res);
@@ -189,12 +222,16 @@ int my_mkdir(const char *path, mode_t mode) {
  */
 int my_rmdir(const char *path) {
     char fullpath[PATH_MAX_LEN];
-    int res = 0;
+    int res;
 
-    get_full_path(fullpath, path);
+    // 1. Преобразование пути и проверка безопасности
+    PREPARE_PATH(path, fullpath, res);
 
+    // 2. Удаление директории
     if (rmdir(fullpath) == -1) {
         res = -errno;
+    } else {
+        res = 0;
     }
 
     log_operation("RMDIR", path, res);
@@ -206,6 +243,7 @@ int my_rmdir(const char *path) {
  */
 int my_release(const char *path, struct fuse_file_info *fi) {
     int res;
+    (void)path; // Не используется, так как используем fi->fh
 
     res = close(fi->fh);
     if (res == -1) {

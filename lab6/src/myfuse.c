@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <fuse.h>
+#include <limits.h>
 
 #include "operations.h"
 
@@ -33,12 +34,29 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    // Получаем абсолютный путь к source_dir
+    // 1. Получаем абсолютный путь к source_dir
+    // realpath выделяет память, которую нужно освободить
     source_dir = realpath(argv[1], NULL);
     if (source_dir == NULL) {
         perror("Ошибка: не удалось получить абсолютный путь для source_dir");
         return 1;
     }
+    
+    // 2. Гарантируем, что source_dir заканчивается на '/'
+    size_t len = strlen(source_dir);
+    if (source_dir[len - 1] != '/') {
+        // Добавляем 2 байта: один для '/' и один для '\0'
+        char *new_source_dir = (char *)realloc(source_dir, len + 2);
+        if (new_source_dir == NULL) {
+            perror("Ошибка выделения памяти для source_dir");
+            free(source_dir);
+            return 1;
+        }
+        source_dir = new_source_dir;
+        source_dir[len] = '/';
+        source_dir[len+1] = '\0';
+    }
+
 
     fprintf(stderr, "========================================\n");
     fprintf(stderr, "  FUSE Passthrough FS запущен\n");

@@ -6,6 +6,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <dirent.h>
+#include <limits.h> // Для PATH_MAX
 
 // --- Forward Declarations для FUSE ---
 typedef int (*fuse_fill_dir_t)(void *buf, const char *name, 
@@ -19,7 +20,10 @@ struct fuse_file_info;
 extern char *source_dir;
 
 // --- Вспомогательные функции ---
-void get_full_path(char *fullpath, const char *path);
+// Возвращает 0 при успехе, -ENAMETOOLONG при переполнении
+int get_full_path(char *fullpath, const char *path); 
+// Проверяет путь на Path Traversal. Возвращает 0 или -EACCES.
+int check_path_security(const char *fullpath); 
 void log_operation(const char *op_name, const char *path, int result);
 
 // --- FUSE Operations (FUSE 2.x совместимые) ---
