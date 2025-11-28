@@ -9,6 +9,7 @@
 #include <dirent.h>
 #include <errno.h>
 #include <fcntl.h>
+#include "common.h"
 
 static char *base_path = NULL;
 
@@ -17,11 +18,6 @@ static struct {
     size_t bytes_read, bytes_written;
 } stats = {0};
 
-char* get_full_path(const char *path) {
-    char *fp = malloc(strlen(base_path) + strlen(path) + 1);
-    sprintf(fp, "%s%s", base_path, path);
-    return fp;
-}
 
 void log_op(const char *op, const char *path, int res) {
     time_t t = time(NULL);

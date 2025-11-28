@@ -5,13 +5,9 @@
 #include <string.h>
 #include <errno.h>
 #include <time.h>
+#include "common.h"
 
 static char *archive_path = NULL;
-
-void log_op(const char *op, const char *path, int res) {
-    time_t t = time(NULL);
-    fprintf(stderr, "[%s] %s: %s -> %d\n", ctime(&t), op, path, res);
-}
 
 static int archive_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) {
     memset(stbuf, 0, sizeof(struct stat));
@@ -39,7 +35,7 @@ static int archive_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
     filler(buf, ".", NULL, 0, 0);
     filler(buf, "..", NULL, 0, 0);
     
-    // Фиктивные файлы в архиве
+    
     filler(buf, "document.pdf", NULL, 0, 0);
     filler(buf, "image.jpg", NULL, 0, 0);
     filler(buf, "data.txt", NULL, 0, 0);
@@ -83,7 +79,7 @@ static int archive_read(const char *path, char *buf, size_t size, off_t offset,
 static int archive_write(const char *path, const char *buf, size_t size, off_t offset,
                         struct fuse_file_info *fi) {
     log_op("ARCHIVE_WRITE", path, -EROFS);
-    return -EROFS; // Read-only
+    return -EROFS; 
 }
 
 static int archive_create(const char *path, mode_t mode, struct fuse_file_info *fi) {

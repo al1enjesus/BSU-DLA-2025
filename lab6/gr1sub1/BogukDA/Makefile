@@ -4,13 +4,13 @@ LIBS = -lfuse3
 
 all: passthrough archive monitor
 
-passthrough: src/passthrough.c
+passthrough: src/passthrough.c src/common.h
 	$(CC) $(CFLAGS) -o $@ $< $(LIBS)
 
-archive: src/archive.c  
+archive: src/archive.c src/common.h
 	$(CC) $(CFLAGS) -o $@ $< $(LIBS)
 
-monitor: src/monitor.c
+monitor: src/monitor.c src/common.h
 	$(CC) $(CFLAGS) -o $@ $< $(LIBS)
 
 clean:

@@ -1,32 +1,22 @@
 #define FUSE_USE_VERSION 31
 #include <fuse3/fuse.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
 #include <time.h>
 #include <sys/stat.h>
 #include <dirent.h>
 #include <fcntl.h>
-#include <errno.h>
+#include "common.h"
 
 static char *base_path = NULL;
 
-char* get_full_path(const char *path) {
-    char *fp = malloc(strlen(base_path) + strlen(path) + 1);
-    sprintf(fp, "%s%s", base_path, path);
-    return fp;
-}
-
-void log_op(const char *op, const char *path, int res) {
-    time_t t = time(NULL);
-    fprintf(stderr, "[%s] %s: %s -> %d\n", ctime(&t), op, path, res);
-}
-
 static int passthrough_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) {
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -EINVAL;
+    
     int res = lstat(fp, stbuf);
     if (res == -1) res = -errno;
+    
     log_op("GETATTR", path, res);
     free(fp);
     return res;
@@ -34,7 +24,9 @@ static int passthrough_getattr(const char *path, struct stat *stbuf, struct fuse
 
 static int passthrough_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
                               off_t offset, struct fuse_file_info *fi, enum fuse_readdir_flags flags) {
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -EINVAL;
+    
     DIR *dp = opendir(fp);
     if (!dp) {
         int res = -errno;
@@ -59,10 +51,13 @@ static int passthrough_readdir(const char *path, void *buf, fuse_fill_dir_t fill
 }
 
 static int passthrough_open(const char *path, struct fuse_file_info *fi) {
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -EINVAL;
+    
     int fd = open(fp, fi->flags);
     int res = (fd == -1) ? -errno : 0;
     if (fd != -1) close(fd);
+    
     log_op("OPEN", path, res);
     free(fp);
     return res;
@@ -70,7 +65,9 @@ static int passthrough_open(const char *path, struct fuse_file_info *fi) {
 
 static int passthrough_read(const char *path, char *buf, size_t size, off_t offset,
                            struct fuse_file_info *fi) {
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -EINVAL;
+    
     int fd = open(fp, O_RDONLY);
     if (fd == -1) {
         int res = -errno;
@@ -90,7 +87,9 @@ static int passthrough_read(const char *path, char *buf, size_t size, off_t offs
 
 static int passthrough_write(const char *path, const char *buf, size_t size, off_t offset,
                             struct fuse_file_info *fi) {
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -EINVAL;
+    
     int fd = open(fp, O_WRONLY);
     if (fd == -1) {
         int res = -errno;
@@ -109,37 +108,49 @@ static int passthrough_write(const char *path, const char *buf, size_t size, off
 }
 
 static int passthrough_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -EINVAL;
+    
     int fd = open(fp, fi->flags, mode);
     int res = (fd == -1) ? -errno : 0;
     if (fd != -1) close(fd);
+    
     log_op("CREATE", path, res);
     free(fp);
     return res;
 }
 
 static int passthrough_unlink(const char *path) {
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -EINVAL;
+    
     int res = unlink(fp);
     if (res == -1) res = -errno;
+    
     log_op("UNLINK", path, res);
     free(fp);
     return res;
 }
 
 static int passthrough_mkdir(const char *path, mode_t mode) {
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -EINVAL;
+    
     int res = mkdir(fp, mode);
     if (res == -1) res = -errno;
+    
     log_op("MKDIR", path, res);
     free(fp);
     return res;
 }
 
 static int passthrough_rmdir(const char *path) {
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -EINVAL;
+    
     int res = rmdir(fp);
     if (res == -1) res = -errno;
+    
     log_op("RMDIR", path, res);
     free(fp);
     return res;
