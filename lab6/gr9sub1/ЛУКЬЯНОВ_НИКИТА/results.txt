@@ -1,0 +1,17 @@
+Filesystem,Category,Parameter,Value
+Native,Latency,open,0.007
+Native,Latency,write,0.015
+Native,Latency,read,0.007
+Native,Latency,getattr,0.010
+Native,Throughput,1,0.023
+Native,Throughput,10,0.106
+Native,Throughput,100,1.039
+Native,IOPS,1000,3.069
+FUSE,Latency,open,0.009
+FUSE,Latency,write,0.019
+FUSE,Latency,read,0.010
+FUSE,Latency,getattr,0.008
+FUSE,Throughput,1,0.027
+FUSE,Throughput,10,0.138
+FUSE,Throughput,100,1.144
+FUSE,IOPS,1000,6.589
