@@ -10,7 +10,6 @@ static char *archive_path = NULL;
 
 static int archive_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) {
     if (!path || !stbuf) return -EINVAL;
-    if (fi) 
     
     memset(stbuf, 0, sizeof(struct stat));
 
@@ -30,7 +29,6 @@ static int archive_getattr(const char *path, struct stat *stbuf, struct fuse_fil
 static int archive_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
                           off_t offset, struct fuse_file_info *fi, enum fuse_readdir_flags flags) {
     if (!path || !buf || !filler) return -EINVAL;
-    if (fi)
     
     if (strcmp(path, "/") != 0) {
         log_op("ARCHIVE_READDIR", path, -ENOTDIR);
@@ -69,7 +67,6 @@ static int archive_open(const char *path, struct fuse_file_info *fi) {
 static int archive_read(const char *path, char *buf, size_t size, off_t offset,
                        struct fuse_file_info *fi) {
     if (!path || !buf) return -EINVAL;
-    if (fi) 
     
     char content[512];
     const char *filename = (path[0] == '/') ? path + 1 : path;
@@ -94,8 +91,6 @@ static int archive_read(const char *path, char *buf, size_t size, off_t offset,
 static int archive_write(const char *path, const char *buf, size_t size, off_t offset,
                         struct fuse_file_info *fi) {
     if (!path || !buf) return -EINVAL;
-    if (fi) 
-    
     log_op("ARCHIVE_WRITE", path, -EROFS);
     return -EROFS;
 }

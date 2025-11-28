@@ -11,7 +11,6 @@ static char *base_path = NULL;
 
 static int passthrough_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) {
     if (!path || !stbuf) return -EINVAL;
-    if (fi) 
     
     char *fp = get_full_path(base_path, path);
     if (!fp) return -ENOENT;
@@ -27,7 +26,6 @@ static int passthrough_getattr(const char *path, struct stat *stbuf, struct fuse
 static int passthrough_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
                               off_t offset, struct fuse_file_info *fi, enum fuse_readdir_flags flags) {
     if (!path || !buf || !filler) return -EINVAL;
-    if (fi) 
     
     char *fp = get_full_path(base_path, path);
     if (!fp) return -ENOENT;
@@ -73,7 +71,6 @@ static int passthrough_open(const char *path, struct fuse_file_info *fi) {
 static int passthrough_read(const char *path, char *buf, size_t size, off_t offset,
                            struct fuse_file_info *fi) {
     if (!path || !buf) return -EINVAL;
-    if (fi) 
     
     char *fp = get_full_path(base_path, path);
     if (!fp) return -ENOENT;
@@ -98,7 +95,6 @@ static int passthrough_read(const char *path, char *buf, size_t size, off_t offs
 static int passthrough_write(const char *path, const char *buf, size_t size, off_t offset,
                             struct fuse_file_info *fi) {
     if (!path || !buf) return -EINVAL;
-    if (fi) 
     
     char *fp = get_full_path(base_path, path);
     if (!fp) return -ENOENT;

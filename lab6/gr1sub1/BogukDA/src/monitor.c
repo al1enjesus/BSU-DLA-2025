@@ -9,16 +9,6 @@
 #include <dirent.h>
 #include <fcntl.h>
 #include "common.h"
-#define FUSE_USE_VERSION 31
-#include <fuse3/fuse.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <time.h>
-#include <sys/stat.h>
-#include <dirent.h>
-#include <fcntl.h>
 
 static char *base_path = NULL;
 
@@ -37,7 +27,6 @@ static inline void update_stats(const char *op, int bytes) {
 
 static int monitor_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) {
     if (!path || !stbuf) return -EINVAL;
-    if (fi) 
     
     memset(stbuf, 0, sizeof(struct stat));
 
@@ -65,7 +54,6 @@ static int monitor_getattr(const char *path, struct stat *stbuf, struct fuse_fil
 static int monitor_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
                           off_t offset, struct fuse_file_info *fi, enum fuse_readdir_flags flags) {
     if (!path || !buf || !filler) return -EINVAL;
-    if (fi) 
     
     char *fp = get_full_path(base_path, path);
     if (!fp) return -ENOENT;
@@ -128,7 +116,6 @@ static int monitor_open(const char *path, struct fuse_file_info *fi) {
 static int monitor_read(const char *path, char *buf, size_t size, off_t offset,
                        struct fuse_file_info *fi) {
     if (!path || !buf) return -EINVAL;
-    if (fi) 
     
     if (strcmp(path, "/.stats") == 0) {
         char stat_buf[512];
@@ -178,7 +165,6 @@ static int monitor_read(const char *path, char *buf, size_t size, off_t offset,
 static int monitor_write(const char *path, const char *buf, size_t size, off_t offset,
                         struct fuse_file_info *fi) {
     if (!path || !buf) return -EINVAL;
-    if (fi) { /* fi может быть NULL */ }
     
     if (strcmp(path, "/.stats") == 0) {
         log_op("WRITE", path, -EACCES);

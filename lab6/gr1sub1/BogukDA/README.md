@@ -76,3 +76,8 @@ echo "More data" >> /mnt/monitor/file1.txt
 # 4. Проверяем обновленную статистику
 cat /mnt/monitor/.stats
 ```
+
+Удаление всех скомпилированных файлов
+```bash
+make clean
+```
