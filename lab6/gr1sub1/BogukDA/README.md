@@ -15,13 +15,14 @@ make
 mkdir -p /tmp/source /mnt/fuse
 ```
 Для размонтирования использовать команду
+
 ```bash
 fusermount -u /mnt/fuse
 ```
 # Задание A: Passthrough Filesystem
 В одном терминале сделать запуск FUSE
 ```bash
-./myfuse /tmp/source /mnt/fuse -f
+./passthrough /tmp/source /mnt/fuse -f
 ```
 В другом терминале тестируем команды
 ```bash

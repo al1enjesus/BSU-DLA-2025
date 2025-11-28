@@ -9,6 +9,16 @@
 #include <dirent.h>
 #include <fcntl.h>
 #include "common.h"
+#define FUSE_USE_VERSION 31
+#include <fuse3/fuse.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <time.h>
+#include <sys/stat.h>
+#include <dirent.h>
+#include <fcntl.h>
 
 static char *base_path = NULL;
 
@@ -27,6 +37,8 @@ static inline void update_stats(const char *op, int bytes) {
 
 static int monitor_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) {
     if (!path || !stbuf) return -EINVAL;
+    if (fi) 
+    
     memset(stbuf, 0, sizeof(struct stat));
 
     if (strcmp(path, "/.stats") == 0) {
@@ -53,6 +65,7 @@ static int monitor_getattr(const char *path, struct stat *stbuf, struct fuse_fil
 static int monitor_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
                           off_t offset, struct fuse_file_info *fi, enum fuse_readdir_flags flags) {
     if (!path || !buf || !filler) return -EINVAL;
+    if (fi) 
     
     char *fp = get_full_path(base_path, path);
     if (!fp) return -ENOENT;
@@ -115,6 +128,7 @@ static int monitor_open(const char *path, struct fuse_file_info *fi) {
 static int monitor_read(const char *path, char *buf, size_t size, off_t offset,
                        struct fuse_file_info *fi) {
     if (!path || !buf) return -EINVAL;
+    if (fi) 
     
     if (strcmp(path, "/.stats") == 0) {
         char stat_buf[512];
@@ -127,6 +141,10 @@ static int monitor_read(const char *path, char *buf, size_t size, off_t offset,
             stats.getattrs, stats.readdirs,
             stats.bytes_read, stats.bytes_written);
 
+        if (len < 0 || len >= (int)sizeof(stat_buf)) {
+            len = sizeof(stat_buf) - 1;
+        }
+        
         if (offset >= len) return 0;
         if (offset + size > len) size = len - offset;
         
@@ -160,6 +178,7 @@ static int monitor_read(const char *path, char *buf, size_t size, off_t offset,
 static int monitor_write(const char *path, const char *buf, size_t size, off_t offset,
                         struct fuse_file_info *fi) {
     if (!path || !buf) return -EINVAL;
+    if (fi) { /* fi может быть NULL */ }
     
     if (strcmp(path, "/.stats") == 0) {
         log_op("WRITE", path, -EACCES);
@@ -202,19 +221,19 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    base_path = realpath(argv[1], NULL);
-    if (!base_path) {
+    char *temp_base = realpath(argv[1], NULL);
+    if (!temp_base) {
         fprintf(stderr, "Error: Invalid source directory '%s'\n", argv[1]);
         return 1;
     }
-
     struct stat st;
-    if (stat(base_path, &st) == -1 || !S_ISDIR(st.st_mode)) {
-        fprintf(stderr, "Error: Cannot access source directory '%s'\n", base_path);
-        free(base_path);
+    if (stat(temp_base, &st) == -1 || !S_ISDIR(st.st_mode)) {
+        fprintf(stderr, "Error: Cannot access source directory '%s'\n", temp_base);
+        free(temp_base);
         return 1;
     }
 
+    base_path = temp_base;
     argv[1] = argv[2];
     int ret = fuse_main(argc - 1, argv + 1, &ops, NULL);
     

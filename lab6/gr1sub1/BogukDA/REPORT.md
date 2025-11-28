@@ -277,7 +277,7 @@ ARCHIVE_GETATTR: /newfile.txt -> 0
 # Задание C: Monitoring Filesystem
 ```bash
  Запуск
-./archive /any/file.tar /mnt/archive -f
+./monitor /tmp/source /mnt/monitor -f
 ```
 
 #### Тестирование

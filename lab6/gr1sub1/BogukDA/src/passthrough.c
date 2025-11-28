@@ -11,6 +11,7 @@ static char *base_path = NULL;
 
 static int passthrough_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) {
     if (!path || !stbuf) return -EINVAL;
+    if (fi) 
     
     char *fp = get_full_path(base_path, path);
     if (!fp) return -ENOENT;
@@ -26,6 +27,7 @@ static int passthrough_getattr(const char *path, struct stat *stbuf, struct fuse
 static int passthrough_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
                               off_t offset, struct fuse_file_info *fi, enum fuse_readdir_flags flags) {
     if (!path || !buf || !filler) return -EINVAL;
+    if (fi) 
     
     char *fp = get_full_path(base_path, path);
     if (!fp) return -ENOENT;
@@ -71,6 +73,7 @@ static int passthrough_open(const char *path, struct fuse_file_info *fi) {
 static int passthrough_read(const char *path, char *buf, size_t size, off_t offset,
                            struct fuse_file_info *fi) {
     if (!path || !buf) return -EINVAL;
+    if (fi) 
     
     char *fp = get_full_path(base_path, path);
     if (!fp) return -ENOENT;
@@ -95,6 +98,7 @@ static int passthrough_read(const char *path, char *buf, size_t size, off_t offs
 static int passthrough_write(const char *path, const char *buf, size_t size, off_t offset,
                             struct fuse_file_info *fi) {
     if (!path || !buf) return -EINVAL;
+    if (fi) 
     
     char *fp = get_full_path(base_path, path);
     if (!fp) return -ENOENT;
@@ -191,19 +195,19 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    base_path = realpath(argv[1], NULL);
-    if (!base_path) {
+    char *temp_base = realpath(argv[1], NULL);
+    if (!temp_base) {
         fprintf(stderr, "Error: Invalid source directory '%s'\n", argv[1]);
         return 1;
     }
-
     struct stat st;
-    if (stat(base_path, &st) == -1 || !S_ISDIR(st.st_mode)) {
-        fprintf(stderr, "Error: Cannot access source directory '%s'\n", base_path);
-        free(base_path);
+    if (stat(temp_base, &st) == -1 || !S_ISDIR(st.st_mode)) {
+        fprintf(stderr, "Error: Cannot access source directory '%s'\n", temp_base);
+        free(temp_base);
         return 1;
     }
 
+    base_path = temp_base;
     argv[1] = argv[2];
     int ret = fuse_main(argc - 1, argv + 1, &ops, NULL);
     
