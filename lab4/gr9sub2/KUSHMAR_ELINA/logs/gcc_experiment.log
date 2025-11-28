@@ -1,0 +1,61 @@
+ЭКСПЕРИМЕНТ 1: GCC
+[SPY] close(fd=3) = 0
+[SPY] open("test.c", flags=0x100) = 3
+[SPY] close(fd=3) = 0
+[SPY] open("/usr/lib/gcc/aarch64-linux-gnu/14/include/stdc-predef.h", flags=0x100) = -1
+[SPY] open("/usr/local/include/stdc-predef.h", flags=0x100) = -1
+[SPY] open("/usr/include/aarch64-linux-gnu/stdc-predef.h", flags=0x100) = -1
+[SPY] open("/usr/include/stdc-predef.h", flags=0x100) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/Scrt1.o", flags=0x0) = 5
+[SPY] read(fd=5, buf=0xffffdc2f1758, count=16) = 16
+[SPY] read(fd=5, buf=0xffffdc2f15c0, count=64) = 64
+[SPY] read(fd=5, buf=0xaf27a7f8fab0, count=896) = 896
+[SPY] read(fd=5, buf=0xaf27a7f8fe40, count=140) = 140
+[SPY] read(fd=5, buf=0xaf27a7f8fab0, count=896) = 896
+[SPY] read(fd=5, buf=0xaf27a7f8fe40, count=140) = 140
+[SPY] close(fd=5) = 0
+[SPY] open("/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/crti.o", flags=0x0) = 6
+[SPY] read(fd=6, buf=0xffffdc2f1758, count=16) = 16
+[SPY] read(fd=6, buf=0xffffdc2f15c0, count=64) = 64
+[SPY] read(fd=6, buf=0xaf27a7fa8e50, count=768) = 768
+[SPY] read(fd=6, buf=0xaf27a7f5ccf0, count=101) = 101
+[SPY] read(fd=6, buf=0xaf27a7fa8e50, count=768) = 768
+[SPY] read(fd=6, buf=0xaf27a7f5ccf0, count=101) = 101
+[SPY] close(fd=6) = 0
+[SPY] open("/usr/lib/gcc/aarch64-linux-gnu/14/crtbeginS.o", flags=0x0) = 7
+[SPY] read(fd=7, buf=0xffffdc2f1758, count=16) = 16
+[SPY] read(fd=7, buf=0xffffdc2f15c0, count=64) = 64
+[SPY] read(fd=7, buf=0xaf27a7fc4990, count=1216) = 1216
+[SPY] read(fd=7, buf=0xaf27a7fa9b50, count=179) = 179
+[SPY] read(fd=7, buf=0xaf27a7fc4990, count=1216) = 1216
+[SPY] read(fd=7, buf=0xaf27a7fa9b50, count=179) = 179
+[SPY] close(fd=7) = 0
+[SPY] open("/tmp/ccu3hOI6.o", flags=0x0) = 8
+[SPY] read(fd=8, buf=0xffffdc2f1758, count=16) = 16
+[SPY] read(fd=8, buf=0xffffdc2f15c0, count=64) = 64
+[SPY] read(fd=8, buf=0xaf27a7fb6090, count=640) = 640
+[SPY] read(fd=8, buf=0xaf27a7fb6320, count=84) = 84
+[SPY] read(fd=8, buf=0xaf27a7fb6090, count=640) = 640
+[SPY] read(fd=8, buf=0xaf27a7fb6320, count=84) = 84
+[SPY] close(fd=8) = 0
+[SPY] open("/usr/lib/gcc/aarch64-linux-gnu/14/libgcc_s.so", flags=0x0) = 10
+[SPY] read(fd=10, buf=0xffffdc2f14a8, count=16) = 16
+[SPY] close(fd=10) = 0
+[SPY] open("/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/libgcc_s.so.1", flags=0x0) = 10
+[SPY] read(fd=10, buf=0xffffdc2f1688, count=16) = 16
+[SPY] read(fd=10, buf=0xffffdc2f14f0, count=64) = 64
+[SPY] read(fd=10, buf=0xaf27a7ffdfb0, count=1792) = 1792
+[SPY] read(fd=10, buf=0xaf27a7ffe6c0, count=281) = 281
+[SPY] read(fd=10, buf=0xaf27a7ffdfb0, count=1792) = 1792
+[SPY] read(fd=10, buf=0xaf27a7ffe6c0, count=281) = 281
+[SPY] close(fd=10) = 0
+[SPY] open("/usr/lib/gcc/aarch64-linux-gnu/14/../../../aarch64-linux-gnu/libc.so", flags=0x0) = 12
+[SPY] read(fd=12, buf=0xffffdc2f14a8, count=16) = 16
+[SPY] close(fd=12) = 0
+[SPY] open("/lib/aarch64-linux-gnu/libc.so.6", flags=0x0) = 12
+[SPY] read(fd=12, buf=0xffffdc2f1688, count=16) = 16

@@ -1,0 +1,6 @@
+ЭКСПЕРИМЕНТ 4: СТАТИЧЕСКАЯ ПРОГРАМMA
+Запуск статической программы с LD_PRELOAD:
+Код возврата: 0
+
+Проверка типа файла:
+static_test: ELF 64-bit LSB executable, ARM aarch64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=1685a24db8b753c4ee3c7794b6b1169e4d7295a6, for GNU/Linux 3.7.0, not stripped
