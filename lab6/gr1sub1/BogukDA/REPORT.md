@@ -60,7 +60,11 @@
 sudo apt-get update
 sudo apt-get install -y libfuse3-dev fuse3 pkg-config build-essential
 ```
-
+Проверка
+```bash
+pkg-config --modversion fuse3
+ls -l /dev/fuse
+```
 
 ### Задание A: Passthrough FUSE
 

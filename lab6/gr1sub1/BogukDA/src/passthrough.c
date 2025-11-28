@@ -2,7 +2,6 @@
 #include <fuse3/fuse.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <time.h>
 #include <sys/stat.h>
 #include <dirent.h>
 #include <fcntl.h>
@@ -11,8 +10,10 @@
 static char *base_path = NULL;
 
 static int passthrough_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) {
+    if (!path || !stbuf) return -EINVAL;
+    
     char *fp = get_full_path(base_path, path);
-    if (!fp) return -EINVAL;
+    if (!fp) return -ENOENT;
     
     int res = lstat(fp, stbuf);
     if (res == -1) res = -errno;
@@ -24,8 +25,10 @@ static int passthrough_getattr(const char *path, struct stat *stbuf, struct fuse
 
 static int passthrough_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
                               off_t offset, struct fuse_file_info *fi, enum fuse_readdir_flags flags) {
+    if (!path || !buf || !filler) return -EINVAL;
+    
     char *fp = get_full_path(base_path, path);
-    if (!fp) return -EINVAL;
+    if (!fp) return -ENOENT;
     
     DIR *dp = opendir(fp);
     if (!dp) {
@@ -41,7 +44,7 @@ static int passthrough_readdir(const char *path, void *buf, fuse_fill_dir_t fill
         memset(&st, 0, sizeof(st));
         st.st_ino = de->d_ino;
         st.st_mode = de->d_type << 12;
-        filler(buf, de->d_name, &st, 0, 0);
+        if (filler(buf, de->d_name, &st, 0, 0)) break;
     }
 
     closedir(dp);
@@ -51,8 +54,10 @@ static int passthrough_readdir(const char *path, void *buf, fuse_fill_dir_t fill
 }
 
 static int passthrough_open(const char *path, struct fuse_file_info *fi) {
+    if (!path || !fi) return -EINVAL;
+    
     char *fp = get_full_path(base_path, path);
-    if (!fp) return -EINVAL;
+    if (!fp) return -ENOENT;
     
     int fd = open(fp, fi->flags);
     int res = (fd == -1) ? -errno : 0;
@@ -65,8 +70,10 @@ static int passthrough_open(const char *path, struct fuse_file_info *fi) {
 
 static int passthrough_read(const char *path, char *buf, size_t size, off_t offset,
                            struct fuse_file_info *fi) {
+    if (!path || !buf) return -EINVAL;
+    
     char *fp = get_full_path(base_path, path);
-    if (!fp) return -EINVAL;
+    if (!fp) return -ENOENT;
     
     int fd = open(fp, O_RDONLY);
     if (fd == -1) {
@@ -87,8 +94,10 @@ static int passthrough_read(const char *path, char *buf, size_t size, off_t offs
 
 static int passthrough_write(const char *path, const char *buf, size_t size, off_t offset,
                             struct fuse_file_info *fi) {
+    if (!path || !buf) return -EINVAL;
+    
     char *fp = get_full_path(base_path, path);
-    if (!fp) return -EINVAL;
+    if (!fp) return -ENOENT;
     
     int fd = open(fp, O_WRONLY);
     if (fd == -1) {
@@ -108,8 +117,10 @@ static int passthrough_write(const char *path, const char *buf, size_t size, off
 }
 
 static int passthrough_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
+    if (!path || !fi) return -EINVAL;
+    
     char *fp = get_full_path(base_path, path);
-    if (!fp) return -EINVAL;
+    if (!fp) return -ENOENT;
     
     int fd = open(fp, fi->flags, mode);
     int res = (fd == -1) ? -errno : 0;
@@ -121,8 +132,10 @@ static int passthrough_create(const char *path, mode_t mode, struct fuse_file_in
 }
 
 static int passthrough_unlink(const char *path) {
+    if (!path) return -EINVAL;
+    
     char *fp = get_full_path(base_path, path);
-    if (!fp) return -EINVAL;
+    if (!fp) return -ENOENT;
     
     int res = unlink(fp);
     if (res == -1) res = -errno;
@@ -133,8 +146,10 @@ static int passthrough_unlink(const char *path) {
 }
 
 static int passthrough_mkdir(const char *path, mode_t mode) {
+    if (!path) return -EINVAL;
+    
     char *fp = get_full_path(base_path, path);
-    if (!fp) return -EINVAL;
+    if (!fp) return -ENOENT;
     
     int res = mkdir(fp, mode);
     if (res == -1) res = -errno;
@@ -145,8 +160,10 @@ static int passthrough_mkdir(const char *path, mode_t mode) {
 }
 
 static int passthrough_rmdir(const char *path) {
+    if (!path) return -EINVAL;
+    
     char *fp = get_full_path(base_path, path);
-    if (!fp) return -EINVAL;
+    if (!fp) return -ENOENT;
     
     int res = rmdir(fp);
     if (res == -1) res = -errno;
@@ -176,10 +193,20 @@ int main(int argc, char *argv[]) {
 
     base_path = realpath(argv[1], NULL);
     if (!base_path) {
-        fprintf(stderr, "Error: Invalid source directory\n");
+        fprintf(stderr, "Error: Invalid source directory '%s'\n", argv[1]);
+        return 1;
+    }
+
+    struct stat st;
+    if (stat(base_path, &st) == -1 || !S_ISDIR(st.st_mode)) {
+        fprintf(stderr, "Error: Cannot access source directory '%s'\n", base_path);
+        free(base_path);
         return 1;
     }
 
     argv[1] = argv[2];
-    return fuse_main(argc - 1, argv + 1, &ops, NULL);
+    int ret = fuse_main(argc - 1, argv + 1, &ops, NULL);
+    
+    free(base_path);
+    return ret;
 }

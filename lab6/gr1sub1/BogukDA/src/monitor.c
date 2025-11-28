@@ -7,7 +7,6 @@
 #include <time.h>
 #include <sys/stat.h>
 #include <dirent.h>
-#include <errno.h>
 #include <fcntl.h>
 #include "common.h"
 
@@ -18,13 +17,7 @@ static struct {
     size_t bytes_read, bytes_written;
 } stats = {0};
 
-
-void log_op(const char *op, const char *path, int res) {
-    time_t t = time(NULL);
-    fprintf(stderr, "[%s] %s: %s -> %d\n", ctime(&t), op, path, res);
-}
-
-void update_stats(const char *op, int bytes) {
+static inline void update_stats(const char *op, int bytes) {
     if (strcmp(op, "READ") == 0) { stats.reads++; stats.bytes_read += bytes; }
     else if (strcmp(op, "WRITE") == 0) { stats.writes++; stats.bytes_written += bytes; }
     else if (strcmp(op, "OPEN") == 0) stats.opens++;
@@ -33,17 +26,21 @@ void update_stats(const char *op, int bytes) {
 }
 
 static int monitor_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) {
+    if (!path || !stbuf) return -EINVAL;
     memset(stbuf, 0, sizeof(struct stat));
 
     if (strcmp(path, "/.stats") == 0) {
         stbuf->st_mode = S_IFREG | 0444;
+        stbuf->st_nlink = 1;
         stbuf->st_size = 256;
         log_op("GETATTR", path, 0);
         update_stats("GETATTR", 0);
         return 0;
     }
 
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -ENOENT;
+    
     int res = lstat(fp, stbuf);
     if (res == -1) res = -errno;
     
@@ -55,7 +52,11 @@ static int monitor_getattr(const char *path, struct stat *stbuf, struct fuse_fil
 
 static int monitor_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
                           off_t offset, struct fuse_file_info *fi, enum fuse_readdir_flags flags) {
-    char *fp = get_full_path(path);
+    if (!path || !buf || !filler) return -EINVAL;
+    
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -ENOENT;
+    
     DIR *dp = opendir(fp);
     if (!dp) {
         int res = -errno;
@@ -70,13 +71,14 @@ static int monitor_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
         memset(&st, 0, sizeof(st));
         st.st_ino = de->d_ino;
         st.st_mode = de->d_type << 12;
-        filler(buf, de->d_name, &st, 0, 0);
+        if (filler(buf, de->d_name, &st, 0, 0)) break;
     }
 
     if (strcmp(path, "/") == 0) {
         struct stat st;
         memset(&st, 0, sizeof(st));
         st.st_mode = S_IFREG | 0444;
+        st.st_size = 256;
         filler(buf, ".stats", &st, 0, 0);
     }
 
@@ -88,6 +90,8 @@ static int monitor_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
 }
 
 static int monitor_open(const char *path, struct fuse_file_info *fi) {
+    if (!path || !fi) return -EINVAL;
+    
     if (strcmp(path, "/.stats") == 0) {
         if ((fi->flags & O_ACCMODE) != O_RDONLY) return -EACCES;
         log_op("OPEN", path, 0);
@@ -95,7 +99,9 @@ static int monitor_open(const char *path, struct fuse_file_info *fi) {
         return 0;
     }
 
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -ENOENT;
+    
     int fd = open(fp, fi->flags);
     int res = (fd == -1) ? -errno : 0;
     if (fd != -1) close(fd);
@@ -108,10 +114,12 @@ static int monitor_open(const char *path, struct fuse_file_info *fi) {
 
 static int monitor_read(const char *path, char *buf, size_t size, off_t offset,
                        struct fuse_file_info *fi) {
+    if (!path || !buf) return -EINVAL;
+    
     if (strcmp(path, "/.stats") == 0) {
-        char stat_buf[256];
+        char stat_buf[512];
         int len = snprintf(stat_buf, sizeof(stat_buf),
-            "Statistics:\n"
+            "File System Statistics:\n"
             "reads: %d\nwrites: %d\nopens: %d\n"
             "getattrs: %d\nreaddirs: %d\n"
             "bytes_read: %zu\nbytes_written: %zu\n",
@@ -128,7 +136,9 @@ static int monitor_read(const char *path, char *buf, size_t size, off_t offset,
         return size;
     }
 
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -ENOENT;
+    
     int fd = open(fp, O_RDONLY);
     if (fd == -1) {
         int res = -errno;
@@ -149,13 +159,17 @@ static int monitor_read(const char *path, char *buf, size_t size, off_t offset,
 
 static int monitor_write(const char *path, const char *buf, size_t size, off_t offset,
                         struct fuse_file_info *fi) {
+    if (!path || !buf) return -EINVAL;
+    
     if (strcmp(path, "/.stats") == 0) {
         log_op("WRITE", path, -EACCES);
         update_stats("WRITE", 0);
         return -EACCES;
     }
 
-    char *fp = get_full_path(path);
+    char *fp = get_full_path(base_path, path);
+    if (!fp) return -ENOENT;
+    
     int fd = open(fp, O_WRONLY);
     if (fd == -1) {
         int res = -errno;
@@ -190,10 +204,20 @@ int main(int argc, char *argv[]) {
 
     base_path = realpath(argv[1], NULL);
     if (!base_path) {
-        fprintf(stderr, "Error: Invalid source directory\n");
+        fprintf(stderr, "Error: Invalid source directory '%s'\n", argv[1]);
+        return 1;
+    }
+
+    struct stat st;
+    if (stat(base_path, &st) == -1 || !S_ISDIR(st.st_mode)) {
+        fprintf(stderr, "Error: Cannot access source directory '%s'\n", base_path);
+        free(base_path);
         return 1;
     }
 
     argv[1] = argv[2];
-    return fuse_main(argc - 1, argv + 1, &ops, NULL);
+    int ret = fuse_main(argc - 1, argv + 1, &ops, NULL);
+    
+    free(base_path);
+    return ret;
 }

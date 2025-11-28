@@ -14,7 +14,7 @@ make
 ```bash
 mkdir -p /tmp/source /mnt/fuse
 ```
-Для размонтирования использовтаь команду
+Для размонтирования использовать команду
 ```bash
 fusermount -u /mnt/fuse
 ```
