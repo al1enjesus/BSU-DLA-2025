@@ -1,0 +1,3 @@
+=== ЭКСПЕРИМЕНТ 2: MAKE ===
+Hello World
+[SPY] write(fd=1, buf=0xb8d8615cdda0, count=12) = 12
