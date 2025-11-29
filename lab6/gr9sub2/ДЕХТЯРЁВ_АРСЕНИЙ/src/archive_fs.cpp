@@ -7,11 +7,13 @@
 #include <vector>
 #include <map>
 #include <set>
+#include <memory>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <errno.h>
 #include <algorithm>
+#include <limits>
 
 struct TarEntry {
     std::string name;
@@ -24,13 +26,20 @@ struct TarEntry {
 static std::map<std::string, TarEntry> files;
 static std::map<std::string, std::set<std::string>> directories;
 static std::string tar_path;
-static int tar_fd;
+static int tar_fd = -1;
 
 static size_t oct2dec(const char *str, size_t size) {
     size_t result = 0;
-    for (size_t i = 0; i < size && str[i]; i++) {
-        if (str[i] >= '0' && str[i] <= '7')
+    for (size_t i = 0; i < size && str[i] && str[i] != ' '; i++) {
+        if (str[i] >= '0' && str[i] <= '7') {
+            // Проверка на переполнение
+            if (result > (std::numeric_limits<size_t>::max() >> 3)) {
+                return 0;
+            }
             result = (result << 3) + (str[i] - '0');
+        } else {
+            break;
+        }
     }
     return result;
 }
@@ -39,28 +48,64 @@ static char get_file_type(const char *flag) {
     if (flag[0] == '5') return 'd';
     if (flag[0] == '0') return 'f';
     if (flag[0] == '\0') return 'f';
+    if (flag[0] == '2') return 'l'; // symlink
     return 'f';
+}
+
+static bool validate_tar_header(const char* header) {
+    // Базовая проверка контрольной суммы
+    unsigned int checksum = 0;
+    unsigned int recorded_checksum = 0;
+    
+    for (int i = 0; i < 148; i++) checksum += (unsigned char)header[i];
+    for (int i = 148; i < 156; i++) checksum += ' ';
+    for (int i = 156; i < 512; i++) checksum += (unsigned char)header[i];
+    
+    recorded_checksum = oct2dec(header + 148, 8);
+    
+    return checksum == recorded_checksum;
 }
 
 static void parse_tar() {
     tar_fd = open(tar_path.c_str(), O_RDONLY);
     if (tar_fd < 0) {
-        perror("tar open");
+        fprintf(stderr, "Error: Cannot open tar file '%s': %s\n", 
+                tar_path.c_str(), strerror(errno));
         exit(1);
     }
 
-    while (1) {
-        char header[512];
+    char header[512];
+    while (true) {
         ssize_t r = read(tar_fd, header, 512);
         if (r == 0) break;
-        if (r < 0) break;
+        if (r < 0) {
+            fprintf(stderr, "Error reading tar file: %s\n", strerror(errno));
+            break;
+        }
+        if (r != 512) break;
 
         if (header[0] == '\0')
             break;
 
+        // Базовая валидация заголовка
+        if (!validate_tar_header(header)) {
+            fprintf(stderr, "Warning: Invalid tar header, skipping\n");
+            continue;
+        }
+
         TarEntry e;
+        // Безопасное извлечение имени (ограничение длины)
         e.name = std::string(header, 100);
-        e.name = e.name.c_str(); // trim
+        size_t null_pos = e.name.find('\0');
+        if (null_pos != std::string::npos) {
+            e.name.resize(null_pos);
+        }
+        
+        // Проверка на пустое имя
+        if (e.name.empty()) {
+            continue;
+        }
+
         e.size = oct2dec(header + 124, 12);
         e.mode = oct2dec(header + 100, 8);
         e.data_offset = lseek(tar_fd, 0, SEEK_CUR);
@@ -71,9 +116,13 @@ static void parse_tar() {
         files[e.name] = e;
 
         size_t blocks = (e.size + 511) / 512;
-        lseek(tar_fd, blocks * 512, SEEK_CUR);
+        if (lseek(tar_fd, blocks * 512, SEEK_CUR) < 0) {
+            fprintf(stderr, "Error seeking in tar file: %s\n", strerror(errno));
+            break;
+        }
     }
 
+    // Построение структуры директорий
     for (const auto& entry : files) {
         const std::string& full_path = entry.first;
         const TarEntry& e = entry.second;
@@ -117,6 +166,7 @@ static int fs_getattr(const char *path, struct stat *st,
     memset(st, 0, sizeof(*st));
     st->st_uid = getuid();
     st->st_gid = getgid();
+    st->st_atime = st->st_mtime = st->st_ctime = time(nullptr);
 
     if (strcmp(path, "/") == 0) {
         st->st_mode = S_IFDIR | 0555;
@@ -127,13 +177,8 @@ static int fs_getattr(const char *path, struct stat *st,
     std::string p = path + 1;
     
     if (directories.count(p)) {
-        if (files.count(p) && files[p].is_dir) {
-            st->st_mode = S_IFDIR | 0555;
-            st->st_nlink = 2;
-        } else {
-            st->st_mode = S_IFDIR | 0555;
-            st->st_nlink = 2;
-        }
+        st->st_mode = S_IFDIR | 0555;
+        st->st_nlink = 2;
         return 0;
     }
 
@@ -194,11 +239,11 @@ static int fs_open(const char *path, struct fuse_file_info *fi) {
     if (e.is_dir)
         return -EISDIR;
 
-    auto *hd = new HandleData;
+    auto hd = std::make_unique<HandleData>();
     hd->offset = e.data_offset;
     hd->size = e.size;
 
-    fi->fh = (uint64_t)hd;
+    fi->fh = reinterpret_cast<uint64_t>(hd.release());
     fi->direct_io = 1;
     return 0;
 }
@@ -206,7 +251,7 @@ static int fs_open(const char *path, struct fuse_file_info *fi) {
 static int fs_read(const char *path, char *buf, size_t size,
                    off_t offset, struct fuse_file_info *fi) {
 
-    auto *hd = (HandleData*)fi->fh;
+    auto *hd = reinterpret_cast<HandleData*>(fi->fh);
 
     if (offset >= hd->size)
         return 0;
@@ -226,7 +271,7 @@ static int fs_read(const char *path, char *buf, size_t size,
 }
 
 static int fs_release(const char *path, struct fuse_file_info *fi) {
-    delete (HandleData*)fi->fh;
+    delete reinterpret_cast<HandleData*>(fi->fh);
     return 0;
 }
 
@@ -239,21 +284,22 @@ int main(int argc, char *argv[]) {
     }
 
     tar_path = argv[1];
-    parse_tar();
+    
+    // Проверка существования файла
+    struct stat st;
+    if (stat(tar_path.c_str(), &st) != 0) {
+        fprintf(stderr, "Error: Cannot access tar file '%s': %s\n", 
+                tar_path.c_str(), strerror(errno));
+        return 1;
+    }
+    
+    // Проверка что это обычный файл
+    if (!S_ISREG(st.st_mode)) {
+        fprintf(stderr, "Error: '%s' is not a regular file\n", tar_path.c_str());
+        return 1;
+    }
 
-    // Debug
-    printf("Parsed files:\n");
-    for (const auto& f : files) {
-        printf("  %s %s\n", f.second.is_dir ? "DIR " : "FILE", f.first.c_str());
-    }
-    printf("Directory structure:\n");
-    for (const auto& d : directories) {
-        printf("  Dir '%s':", d.first.c_str());
-        for (const auto& entry : d.second) {
-            printf(" %s", entry.c_str());
-        }
-        printf("\n");
-    }
+    parse_tar();
 
     ops.getattr = fs_getattr;
     ops.readdir = fs_readdir;
@@ -261,5 +307,11 @@ int main(int argc, char *argv[]) {
     ops.read = fs_read;
     ops.release = fs_release;
 
-    return fuse_main(argc - 1, argv + 1, &ops, nullptr);
+    int result = fuse_main(argc - 1, argv + 1, &ops, nullptr);
+    
+    if (tar_fd >= 0) {
+        close(tar_fd);
+    }
+    
+    return result;
 }

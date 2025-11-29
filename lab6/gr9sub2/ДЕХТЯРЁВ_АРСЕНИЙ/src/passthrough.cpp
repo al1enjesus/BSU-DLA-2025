@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <string>
+#include <memory>
 #include <errno.h>
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -153,7 +154,10 @@ static int pt_symlink(const char *to, const char *from) {
 // readlink
 static int pt_readlink(const char *path, char *buf, size_t size) {
     std::string p = translate(path);
-    int res = readlink(p.c_str(), buf, size);
+    int res = readlink(p.c_str(), buf, size - 1); // Оставляем место для нуль-терминатора
+    if (res >= 0) {
+        buf[res] = '\0'; // Гарантируем нуль-терминацию
+    }
     return res == -1 ? -errno : res;
 }
 
@@ -188,16 +192,22 @@ static int pt_fsync(const char *path, int datasync,
     return res == -1 ? -errno : 0;
 }
 
-
 static struct fuse_operations pt_ops = {};
+
 int main(int argc, char *argv[]) {
     if (argc < 3) {
         fprintf(stderr, "Usage: %s <source_dir> <mountpoint>\n", argv[0]);
         return 1;
     }
 
-    root = realpath(argv[1], nullptr);
-    char *mountpoint = argv[2];
+    char *real_root = realpath(argv[1], nullptr);
+    if (!real_root) {
+        fprintf(stderr, "Error: Cannot resolve real path for '%s': %s\n", 
+                argv[1], strerror(errno));
+        return 1;
+    }
+    root = real_root;
+    free(real_root); // Исправление утечки памяти
 
     pt_ops.getattr = pt_getattr;
     pt_ops.open = pt_open;
@@ -220,4 +230,3 @@ int main(int argc, char *argv[]) {
 
     return fuse_main(argc - 1, argv + 1, &pt_ops, nullptr);
 }
-

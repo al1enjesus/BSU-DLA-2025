@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <string>
+#include <atomic>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -12,18 +13,15 @@
 
 static std::string root;
 
-
 struct Stats {
-    uint64_t reads = 0;
-    uint64_t writes = 0;
-    uint64_t opens = 0;
-    uint64_t bytes_read = 0;
-    uint64_t bytes_written = 0;
+    std::atomic<uint64_t> reads{0};
+    std::atomic<uint64_t> writes{0};
+    std::atomic<uint64_t> opens{0};
+    std::atomic<uint64_t> bytes_read{0};
+    std::atomic<uint64_t> bytes_written{0};
 };
 
 static Stats stats;
-
-
 
 static bool is_stats(const char *path) {
     return strcmp(path, "/.stats") == 0;
@@ -43,7 +41,7 @@ static int fs_getattr(const char *path, struct stat *st,
     if (is_stats(path)) {
         st->st_mode = S_IFREG | 0444;
         st->st_nlink = 1;
-        st->st_size = 1024;
+        st->st_size = 256; // Достаточно для статистики
         return 0;
     }
 
@@ -78,12 +76,19 @@ static int fs_read(const char *path, char *buf, size_t size,
     stats.reads++;
 
     if (is_stats(path)) {
+        // Атомарное чтение статистики
+        uint64_t reads = stats.reads.load();
+        uint64_t writes = stats.writes.load();
+        uint64_t opens = stats.opens.load();
+        uint64_t bytes_read = stats.bytes_read.load();
+        uint64_t bytes_written = stats.bytes_written.load();
+        
         std::string out =
-            "reads: " + std::to_string(stats.reads) + "\n" +
-            "writes: " + std::to_string(stats.writes) + "\n" +
-            "opens: " + std::to_string(stats.opens) + "\n" +
-            "bytes_read: " + std::to_string(stats.bytes_read) + "\n" +
-            "bytes_written: " + std::to_string(stats.bytes_written) + "\n";
+            "reads: " + std::to_string(reads) + "\n" +
+            "writes: " + std::to_string(writes) + "\n" +
+            "opens: " + std::to_string(opens) + "\n" +
+            "bytes_read: " + std::to_string(bytes_read) + "\n" +
+            "bytes_written: " + std::to_string(bytes_written) + "\n";
 
         if (offset >= (off_t)out.size())
             return 0;
@@ -234,7 +239,10 @@ static int fs_readlink(const char *path, char *buf, size_t size)
         return -EACCES;
 
     std::string p = fs_translate(path);
-    int r = readlink(p.c_str(), buf, size);
+    int r = readlink(p.c_str(), buf, size - 1);
+    if (r >= 0) {
+        buf[r] = '\0';
+    }
     return r == -1 ? -errno : r;
 }
 
@@ -289,7 +297,14 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    root = realpath(argv[1], nullptr);
+    char *real_root = realpath(argv[1], nullptr);
+    if (!real_root) {
+        fprintf(stderr, "Error: Cannot resolve real path for '%s': %s\n", 
+                argv[1], strerror(errno));
+        return 1;
+    }
+    root = real_root;
+    free(real_root);
 
     ops.getattr  = fs_getattr;
     ops.open     = fs_open;
