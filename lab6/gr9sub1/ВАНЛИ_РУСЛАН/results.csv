@@ -1,0 +1,13 @@
+TestType,Operation,FileSystem,Value,Unit
+Latency,Create,Native(ext4/tmp),2.3354,ms
+Latency,Getattr,Native(ext4/tmp),2.91547,ms
+Latency,Unlink,Native(ext4/tmp),2.36721,ms
+Throughput,Write,Native(ext4/tmp),1779.94,MB/s
+Throughput,Read,Native(ext4/tmp),5872.2,MB/s
+IOPS,Create_1K,Native(ext4/tmp),392.614,ops/sec
+Latency,Create,FUSE,5.73592,ms
+Latency,Getattr,FUSE,4.57969,ms
+Latency,Unlink,FUSE,4.35328,ms
+Throughput,Write,FUSE,444.527,MB/s
+Throughput,Read,FUSE,376.085,MB/s
+IOPS,Create_1K,FUSE,299.323,ops/sec
