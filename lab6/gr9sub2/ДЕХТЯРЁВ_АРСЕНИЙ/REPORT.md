@@ -57,11 +57,11 @@ FUSE предоставляет структуру `fuse_operations`. В рам�
 
 ### Требования 
 
-#### Linux
+- **Linux**
 
-#### g++
+- **g++**
 
-#### libfuse3 
+- **libfuse3** 
 
 ```bash
 sudo apt install libfuse3-dev
@@ -173,24 +173,6 @@ struct TarEntry {
 g++ archive_fs.cpp -o archive_fs -lfuse3
 ```
 
-### Запуск
-
-Создание тестового tar архива:
-```bash
-mkdir -p mydir \
-&& echo "root file" > file_root.txt \
-&& echo "inner file" > mydir/file_inner.txt \
-&& tar -cf /tmp/archive.tar mydir file_root.txt \
-&& rm -rf mydir file_root.txt
-```
-
-```bash
-`mkdir /tmp/mnt`
-./archive_fs /tmp/archive.tar /tmp/mnt
-ls /tmp/mnt
-cat /tmp/mnt/file_root.txt
-```
-
 ### Тестирование
 
 Создание тестового tar архива:
@@ -202,11 +184,18 @@ mkdir -p mydir \
 && rm -rf mydir file_root.txt
 ```
 
-| Операция      | Команда                       | Ожидаемый результат       |
-| ------------- | ----------------------------- | ------------------------- |
-| Список файлов | `ls /tmp/mnt`                 | отображает содержимое tar |
-| Чтение файла  | `cat /tmp/mnt/file_root.txt`  | файл успешно читается     |
-| Запись        | `echo abc > /tmp/mnt/x`       | ошибка (read-only)        |
+```bash
+mkdir -p /tmp/mnt
+./archive_fs /tmp/archive.tar /tmp/mnt
+ls /tmp/mnt
+cat /tmp/mnt/file_root.txt
+```
+
+| Операция      | Команда                       | Ожидаемый результат       | Пример                                     |
+| ------------- | ----------------------------- | ------------------------- | ------------------------------------------ |
+| Список файлов | `ls /tmp/mnt`                 | отображает содержимое tar | file_root.txt  mydir                       |
+| Чтение файла  | `cat /tmp/mnt/file_root.txt`  | файл успешно читается     | root file                                  |
+| Запись        | `echo abc > /tmp/mnt/x`       | ошибка (read-only)        | bash: /tmp/mnt/x: Function not implemented |
 
 ### Размонтирование
 
@@ -278,6 +267,7 @@ mkdir -p /tmp/mnt /tmp/source
 ls /tmp/mnt
 cat /tmp/mnt/.stats
 echo "abc" > /tmp/mnt/test.txt
+cat /tmp/mnt/test.txt
 cat /tmp/mnt/.stats
 ```
 
@@ -289,7 +279,17 @@ cat /tmp/mnt/.stats
 | Открытие файла | `cat mnt/a.txt`   | `opens++`, `read++`, `bytes_read += size` |
 | Запись         | `echo hi > mnt/b` | `writes++`, `bytes_written++`             |
 | Статистика     | `cat mnt/.stats`  | живой вывод статистики                    |
-`
+
+Пример:
+```bash
+$ cat /tmp/mnt/.stats
+reads: 3
+writes: 1
+opens: 4
+bytes_read: 4
+bytes_written: 4
+```
+
 ### Размонтирование
 
 ```bash
