@@ -27,6 +27,10 @@ static bool is_stats(const char *path) {
     return strcmp(path, "/.stats") == 0;
 }
 
+static bool is_root_dir(const char *path) {
+    return strcmp(path, "/") == 0;
+}
+
 static std::string fs_translate(const char *path) {
     if (strcmp(path, "/") == 0)
         return root;
@@ -140,7 +144,11 @@ static int fs_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
 {
     filler(buf, ".", nullptr, 0, FUSE_FILL_DIR_PLUS);
     filler(buf, "..", nullptr, 0, FUSE_FILL_DIR_PLUS);
-    filler(buf, ".stats", nullptr, 0, FUSE_FILL_DIR_PLUS);
+    
+    // Добавляем .stats только в корневую директорию
+    if (is_root_dir(path)) {
+        filler(buf, ".stats", nullptr, 0, FUSE_FILL_DIR_PLUS);
+    }
 
     std::string p = fs_translate(path);
     DIR *dp = opendir(p.c_str());
@@ -149,6 +157,10 @@ static int fs_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
 
     struct dirent *de;
     while ((de = readdir(dp))) {
+        // Пропускаем .stats в поддиректориях
+        if (!is_root_dir(path) && strcmp(de->d_name, ".stats") == 0) {
+            continue;
+        }
         filler(buf, de->d_name, nullptr, 0, FUSE_FILL_DIR_PLUS);
     }
 
