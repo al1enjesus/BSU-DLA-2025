@@ -1,0 +1,10 @@
+!src/*.c
+!src/Makefile
+
+src/*.mod.c
+src/*.mod.o
+src/*.ko
+src/*.cmd
+src/.tmp_versions/
+src/modules.order
+src/Module.symvers
