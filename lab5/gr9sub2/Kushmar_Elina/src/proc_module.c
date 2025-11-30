@@ -29,10 +29,21 @@ static ssize_t proc_read(struct file *file, char __user *ubuf,
 
     len = snprintf(buf, sizeof(buf),
         "Name: Элина Кушмар\n"
-        "Group: 9, Subgroup: 2\n"
+        "Group: 6, Subgroup: 1\n"
         "Module loaded at: %lu jiffies\n"
         "Read count: %d\n",
         load_time, read_count);
+
+    // Проверка возвращаемого значения snprintf()
+    if (len < 0) {
+        printk(KERN_ERR "proc_module: snprintf failed\n");
+        return -EIO;
+    }
+    
+    if (len >= sizeof(buf)) {
+        printk(KERN_WARNING "proc_module: Buffer too small, output truncated\n");
+        len = sizeof(buf) - 1;
+    }
 
     if (copy_to_user(ubuf, buf, len))
         return -EFAULT;
