@@ -14,6 +14,7 @@
 #define TAR_BLOCK_SIZE 512
 #define TAR_NAME_LEN 100
 #define TAR_SIZE_OFFSET 124
+#define TAR_MAGIC_OFFSET 257
 #define TAR_TYPE_OFFSET 156
 
 struct tar_entry {
@@ -28,20 +29,36 @@ static char *archive_path = NULL;
 static int archive_fd = -1;
 static struct tar_entry *entries_head = NULL;
 
-static void free_entries() {
+static void cleanup_resources(void) {
+    if (archive_path) {
+        free(archive_path);
+        archive_path = NULL;
+    }
+    
     struct tar_entry *curr = entries_head;
     while (curr) {
         struct tar_entry *next = curr->next;
         free(curr);
         curr = next;
     }
+    entries_head = NULL;
+
     if (archive_fd >= 0) {
         close(archive_fd);
+        archive_fd = -1;
     }
 }
 
-static long octal_to_decimal(const char *octal) {
-    return strtol(octal, NULL, 8);
+static long octal_to_decimal(const char *octal, size_t len) {
+    char buf[32];
+    if (len >= sizeof(buf)) len = sizeof(buf) - 1;
+    memcpy(buf, octal, len);
+    buf[len] = '\0';
+    
+    char *endptr;
+    long val = strtol(buf, &endptr, 8);
+    if (endptr == buf) return 0; 
+    return val;
 }
 
 static void parse_tar_archive() {
@@ -54,28 +71,35 @@ static void parse_tar_archive() {
     char block[TAR_BLOCK_SIZE];
     off_t current_offset = 0;
 
+    ssize_t res = read(archive_fd, block, TAR_BLOCK_SIZE);
+    if (res < TAR_BLOCK_SIZE) {
+        fprintf(stderr, "Archive too short\n");
+        exit(1);
+    }
+
+    if (strncmp(block + TAR_MAGIC_OFFSET, "ustar", 5) != 0) {
+         fprintf(stderr, "Invalid TAR archive: missing ustar magic\n");
+    }
+    
+    lseek(archive_fd, 0, SEEK_SET);
+
     while (1) {
-        ssize_t res = read(archive_fd, block, TAR_BLOCK_SIZE);
-        if (res < TAR_BLOCK_SIZE) break; 
-        
+        res = read(archive_fd, block, TAR_BLOCK_SIZE);
+        if (res < TAR_BLOCK_SIZE) break;
         if (block[0] == 0) break; 
 
         struct tar_entry *entry = malloc(sizeof(struct tar_entry));
         if (!entry) {
             perror("Memory allocation failed");
-            free_entries();
             exit(1);
         }
 
         snprintf(entry->name, sizeof(entry->name), "%.*s", TAR_NAME_LEN, block);
         
-        char size_str[12] = {0};
-        memcpy(size_str, block + TAR_SIZE_OFFSET, 11);
-        entry->size = octal_to_decimal(size_str);
+        entry->size = octal_to_decimal(block + TAR_SIZE_OFFSET, 11);
         
         char type = block[TAR_TYPE_OFFSET];
         size_t len = strlen(entry->name);
-        
         entry->is_dir = (type == '5' || (len > 0 && entry->name[len - 1] == '/'));
 
         if (entry->is_dir && len > 0 && entry->name[len - 1] == '/') {
@@ -89,8 +113,7 @@ static void parse_tar_archive() {
         size_t skip = (entry->size + TAR_BLOCK_SIZE - 1) / TAR_BLOCK_SIZE * TAR_BLOCK_SIZE;
         
         if (lseek(archive_fd, skip, SEEK_CUR) == (off_t)-1) {
-             perror("Lseek failed inside archive");
-             free_entries();
+             perror("Seek failed (corrupted archive?)");
              exit(1);
         }
         current_offset += TAR_BLOCK_SIZE + skip;
@@ -190,13 +213,13 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     
+    atexit(cleanup_resources);
+    
     archive_path = realpath(argv[1], NULL);
     if (!archive_path) {
         perror("Error resolving archive path");
         return 1;
     }
-    
-    atexit(free_entries);
     
     parse_tar_archive();
     

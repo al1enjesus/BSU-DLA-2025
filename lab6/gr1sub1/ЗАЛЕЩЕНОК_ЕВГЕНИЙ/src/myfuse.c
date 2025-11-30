@@ -24,8 +24,17 @@ static struct fs_stats stats = {0};
 static const char *STATS_PATH = "/.stats";
 static char *source_dir = NULL;
 
+static void cleanup_resources(void) {
+    if (source_dir) {
+        free(source_dir);
+        source_dir = NULL;
+    }
+}
+
 static int is_safe_path(const char *path) {
-    if (strstr(path, "..")) {
+    if (!path) return 0;
+    if (strstr(path, "/../") || strcmp(path, "..") == 0 || 
+        (strlen(path) >= 3 && strcmp(path + strlen(path) - 3, "/..") == 0)) {
         return 0;
     }
     return 1;
@@ -109,9 +118,7 @@ static int do_release(const char *path, struct fuse_file_info *fi) {
     if (strcmp(path, STATS_PATH) == 0) {
         return 0;
     }
-    if (close(fi->fh) == -1) {
-        return -errno;
-    }
+    close(fi->fh);
     return 0;
 }
 
@@ -131,12 +138,10 @@ static int do_read(const char *path, char *buf, size_t size, off_t offset,
         if (offset >= len) return 0;
         if (offset + size > len) size = len - offset;
         memcpy(buf, stat_buf + offset, size);
-        
         return size;
     }
 
     stats.reads++;
-
     int res = pread(fi->fh, buf, size, offset);
     if (res == -1) return -errno;
 
@@ -149,12 +154,9 @@ static int do_write(const char *path, const char *buf, size_t size, off_t offset
     if (strcmp(path, STATS_PATH) == 0) {
         return -EPERM;
     }
-
     stats.writes++;
-
     int res = pwrite(fi->fh, buf, size, offset);
     if (res == -1) return -errno;
-
     stats.bytes_written += res;
     return res;
 }
@@ -166,7 +168,6 @@ static int do_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
 
     int fd = creat(fpath, mode);
     if (fd == -1) return -errno;
-
     fi->fh = fd;
     return 0;
 }
@@ -175,10 +176,8 @@ static int do_mkdir(const char *path, mode_t mode) {
     char fpath[PATH_MAX];
     int err = get_full_path(fpath, sizeof(fpath), path);
     if (err != 0) return err;
-
     int res = mkdir(fpath, mode);
     if (res == -1) return -errno;
-
     return 0;
 }
 
@@ -186,10 +185,8 @@ static int do_unlink(const char *path) {
     char fpath[PATH_MAX];
     int err = get_full_path(fpath, sizeof(fpath), path);
     if (err != 0) return err;
-
     int res = unlink(fpath);
     if (res == -1) return -errno;
-
     return 0;
 }
 
@@ -197,10 +194,8 @@ static int do_rmdir(const char *path) {
     char fpath[PATH_MAX];
     int err = get_full_path(fpath, sizeof(fpath), path);
     if (err != 0) return err;
-
     int res = rmdir(fpath);
     if (res == -1) return -errno;
-
     return 0;
 }
 
@@ -222,6 +217,8 @@ int main(int argc, char *argv[]) {
         printf("Usage: %s <source_dir> <mount_point>\n", argv[0]);
         return 1;
     }
+
+    atexit(cleanup_resources);
 
     source_dir = realpath(argv[1], NULL);
     if (!source_dir) {
