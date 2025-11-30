@@ -24,7 +24,20 @@ static struct fs_stats stats = {0};
 static const char *STATS_PATH = "/.stats";
 static char *source_dir = NULL;
 
+static int is_safe_path(const char *path) {
+    if (strstr(path, "..")) {
+        return 0;
+    }
+    return 1;
+}
+
 static int get_full_path(char *fpath, size_t max_len, const char *path) {
+    if (!path || !source_dir) return -EFAULT;
+    
+    if (!is_safe_path(path)) {
+        return -EACCES;
+    }
+
     int written = snprintf(fpath, max_len, "%s%s", source_dir, path);
     if (written < 0 || (size_t)written >= max_len) {
         return -ENAMETOOLONG;
@@ -41,7 +54,8 @@ static int do_getattr(const char *path, struct stat *st) {
     }
 
     char fpath[PATH_MAX];
-    if (get_full_path(fpath, sizeof(fpath), path) != 0) return -ENAMETOOLONG;
+    int err = get_full_path(fpath, sizeof(fpath), path);
+    if (err != 0) return err;
 
     int res = lstat(fpath, st);
     if (res == -1)
@@ -53,7 +67,8 @@ static int do_getattr(const char *path, struct stat *st) {
 static int do_readdir(const char *path, void *buffer, fuse_fill_dir_t filler,
                       off_t offset, struct fuse_file_info *fi, enum fuse_readdir_flags flags) {
     char fpath[PATH_MAX];
-    if (get_full_path(fpath, sizeof(fpath), path) != 0) return -ENAMETOOLONG;
+    int err = get_full_path(fpath, sizeof(fpath), path);
+    if (err != 0) return err;
 
     DIR *dp = opendir(fpath);
     if (dp == NULL) return -errno;
@@ -80,7 +95,8 @@ static int do_open(const char *path, struct fuse_file_info *fi) {
     }
 
     char fpath[PATH_MAX];
-    if (get_full_path(fpath, sizeof(fpath), path) != 0) return -ENAMETOOLONG;
+    int err = get_full_path(fpath, sizeof(fpath), path);
+    if (err != 0) return err;
 
     int fd = open(fpath, fi->flags);
     if (fd == -1) return -errno;
@@ -93,7 +109,9 @@ static int do_release(const char *path, struct fuse_file_info *fi) {
     if (strcmp(path, STATS_PATH) == 0) {
         return 0;
     }
-    close(fi->fh);
+    if (close(fi->fh) == -1) {
+        return -errno;
+    }
     return 0;
 }
 
@@ -143,7 +161,8 @@ static int do_write(const char *path, const char *buf, size_t size, off_t offset
 
 static int do_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
     char fpath[PATH_MAX];
-    if (get_full_path(fpath, sizeof(fpath), path) != 0) return -ENAMETOOLONG;
+    int err = get_full_path(fpath, sizeof(fpath), path);
+    if (err != 0) return err;
 
     int fd = creat(fpath, mode);
     if (fd == -1) return -errno;
@@ -154,7 +173,8 @@ static int do_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
 
 static int do_mkdir(const char *path, mode_t mode) {
     char fpath[PATH_MAX];
-    if (get_full_path(fpath, sizeof(fpath), path) != 0) return -ENAMETOOLONG;
+    int err = get_full_path(fpath, sizeof(fpath), path);
+    if (err != 0) return err;
 
     int res = mkdir(fpath, mode);
     if (res == -1) return -errno;
@@ -164,7 +184,8 @@ static int do_mkdir(const char *path, mode_t mode) {
 
 static int do_unlink(const char *path) {
     char fpath[PATH_MAX];
-    if (get_full_path(fpath, sizeof(fpath), path) != 0) return -ENAMETOOLONG;
+    int err = get_full_path(fpath, sizeof(fpath), path);
+    if (err != 0) return err;
 
     int res = unlink(fpath);
     if (res == -1) return -errno;
@@ -174,7 +195,8 @@ static int do_unlink(const char *path) {
 
 static int do_rmdir(const char *path) {
     char fpath[PATH_MAX];
-    if (get_full_path(fpath, sizeof(fpath), path) != 0) return -ENAMETOOLONG;
+    int err = get_full_path(fpath, sizeof(fpath), path);
+    if (err != 0) return err;
 
     int res = rmdir(fpath);
     if (res == -1) return -errno;
@@ -202,12 +224,11 @@ int main(int argc, char *argv[]) {
     }
 
     source_dir = realpath(argv[1], NULL);
-    if (source_dir == NULL) {
+    if (!source_dir) {
         perror("Error resolving source path");
         return 1;
     }
 
     char *fuse_argv[] = { argv[0], argv[2], "-f", NULL };
-
     return fuse_main(3, fuse_argv, &operations, NULL);
 }
