@@ -1,5 +1,5 @@
 #define FUSE_USE_VERSION 31
-#include <fuse3/fuse.h>
+#include <fuse.h>
 #include <errno.h>
 #include <string.h>
 #include "tar.h"
@@ -67,5 +67,5 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    return fuse_main(argc - 1, (char **) {argv[0], argv[2], "-f"}, &ops, NULL);
+    return fuse_main(argc - 1, (char *[]){argv[0], argv[2], "-f"}, &ops, NULL);
 }
