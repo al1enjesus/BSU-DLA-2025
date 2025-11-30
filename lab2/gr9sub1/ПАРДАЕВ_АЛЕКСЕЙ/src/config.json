@@ -1,0 +1,8 @@
+{
+  "workers": 4,
+  "mode_heavy": { "work_us": 9000, "sleep_us": 1000 },
+  "mode_light": { "work_us": 2000, "sleep_us": 8000 },
+
+  "nice_map": [0, 0, 10, 10],
+  "affinity_map": [[0], [0], [1], [1]]
+}
