@@ -1,28 +1,27 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -D_FILE_OFFSET_BITS=64 $(shell pkg-config fuse --cflags)
-LDFLAGS = $(shell pkg-config fuse --libs)
+CFLAGS = -Wall -Wextra -O2 -D_FILE_OFFSET_BITS=64
+# Изменение: используем FUSE 2
+CFLAGS += -DFUSE_USE_VERSION=26 
+
+# Изменение: используем pkg-config fuse (FUSE 2)
+# -larchive был добавлен в FUSE_LIBS в предыдущей версии, оставим его,
+# но убедимся, что CFLAGS берутся корректно (они не нужны для libarchive)
+FUSE_CFLAGS = $(shell pkg-config fuse --cflags)
+FUSE_LIBS   = $(shell pkg-config fuse --libs) -larchive
+
+# Новые имена исходных файлов
+SRC = src/main.c src/utils.c \
+      src/task_proxy.c \
+      src/task_archive.c \
+      src/task_monitor.c
 
 TARGET = myfuse
-SRCDIR = src
-SOURCES = $(SRCDIR)/myfuse.c $(SRCDIR)/operations.c $(SRCDIR)/utils.c
-OBJECTS = $(SOURCES:.c=.o)
-
-.PHONY: all clean
 
 all: $(TARGET)
 
-$(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(TARGET): $(SRC)
+	# Добавляем CFLAGS FUSE и LIBS FUSE/libarchive
+	$(CC) $(CFLAGS) $(FUSE_CFLAGS) -o $@ $(SRC) $(FUSE_LIBS)
 
 clean:
-	rm -f $(OBJECTS) $(TARGET)
-	rm -rf /tmp/fuse_source /tmp/fuse_mount
-
-help:
-	@echo "Доступные цели:"
-	@echo "  make        - собрать проект"
-	@echo "  make clean  - удалить бинарники и тестовые директории"
-	@echo "  make help   - показать эту справку"
+	rm -f $(TARGET)
