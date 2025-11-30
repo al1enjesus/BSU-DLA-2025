@@ -29,7 +29,7 @@ static ssize_t proc_read(struct file *file, char __user *ubuf,
 
     len = snprintf(buf, sizeof(buf),
         "Name: Элина Кушмар\n"
-        "Group: 6, Subgroup: 1\n"
+        "Group: 9, Subgroup: 2\n"
         "Module loaded at: %lu jiffies\n"
         "Read count: %d\n",
         load_time, read_count);
