@@ -1,4 +1,3 @@
-// src/char_device.c
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/kernel.h>
@@ -69,7 +68,7 @@ static ssize_t dev_write(struct file *file,
     size_t to_write = min(size, available);
 
     if (to_write == 0)
-        return -ENOMEM;
+        return -ENOSPC;  // Исправлено: -ENOMEM -> -ENOSPC
 
     if (copy_from_user(device_buffer + *offset, user_buffer, to_write))
         return -EFAULT;

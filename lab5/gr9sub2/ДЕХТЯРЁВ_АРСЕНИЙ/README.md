@@ -13,12 +13,14 @@
 Структура проекта:
 
 ```
-lab2/
- ├── Makefile
- └── src/
-      ├── hello_module.c
-      ├── proc_module.c
-      └── char_device.c
+./
+├── README.md
+├── REPORT.md
+└── src/
+    ├── char_device.c
+    ├── hello_module.c
+    ├── Makefile
+    └── proc_module.c
 ```
 
 ---
@@ -109,21 +111,22 @@ dehtyarev_device registered with major X minor Y
 
 ```bash
 sudo mknod /dev/dehtyarev_device c X Y
-sudo chmod 666 /dev/dehtyarev_device
+sudo chmod 644 /dev/dehtyarev_device
 ```
 
 ---
 
 ## ✏ Пример работы с символьным устройством
 
-### Запись и чтение:
+### Запись и чтение(требует прав root):
 
 ```bash
-echo "Hello" > /dev/dehtyarev_device
-cat /dev/dehtyarev_device
+sudo echo "Hello" > /dev/dehtyarev_device
+sudo cat /dev/dehtyarev_device
 ```
 
-### Очистка буфера через ioctl:
+
+### Очистка буфера через ioctl(Требует root-прав для работы с устройством):
 
 ```c
 ioctl(fd, _IO('d', 1));
@@ -137,4 +140,11 @@ ioctl(fd, _IO('d', 1));
 sudo rm /dev/dehtyarev_device
 sudo rmmod char_device
 ```
+
+
+## 🔒 Рекомендации по безопасности
+
+1. Все операции с устройствами требуют прав superuser
+2. Файл устройства создаётся с правами 644 (только для root)
+3. После тестирования рекомендуется удалять модули и устройства
 

@@ -34,12 +34,13 @@ static const struct proc_ops proc_file_ops = {
 
 static int __init proc_module_init(void)
 {
-    if (!proc_create(PROC_FILENAME, 0, NULL, &proc_file_ops)) {
+    // Создаем файл с правами доступа 0444 (только чтение для всех)
+    if (!proc_create(PROC_FILENAME, 0444, NULL, &proc_file_ops)) {
         printk(KERN_ERR "Cannot create /proc/%s\n", PROC_FILENAME);
         return -ENOMEM;
     }
 
-    printk(KERN_INFO "/proc/%s created\n", PROC_FILENAME);
+    printk(KERN_INFO "/proc/%s created with permissions 0444\n", PROC_FILENAME);
     return 0;
 }
 
