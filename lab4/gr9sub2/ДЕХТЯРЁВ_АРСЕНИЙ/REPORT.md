@@ -50,6 +50,11 @@
     └── Makefile        — сборка всей лабораторной
 ```
 
+## Подготовка
+
+```bash
+echo "test" > /tmp/testfile
+```
 
 ## 3. Перехват системных вызовов через LD_PRELOAD
 
@@ -282,9 +287,9 @@ cd src/
 make
 
 # Задание A
-LD_PRELOAD=./libsyscall_spy.so find /tmp -name "*.txt"
-LD_PRELOAD=./libsyscall_spy.so tar -cf test.tar /tmp/testdir
-LD_PRELOAD=./libsyscall_spy.so cp source.txt dest.txt
+LD_PRELOAD=./liblogger.so find /tmp -name "*.txt"
+LD_PRELOAD=./liblogger.so tar -cf test.tar /tmp/testdir
+LD_PRELOAD=./liblogger.so cp source.txt dest.txt
 
 # Задание B
 ./benchmark
