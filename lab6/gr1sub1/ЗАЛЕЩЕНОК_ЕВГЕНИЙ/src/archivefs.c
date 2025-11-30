@@ -11,6 +11,9 @@
 #include <dirent.h>
 #include <stdlib.h>
 
+#define TAR_BLOCK_SIZE 512
+#define TAR_NAME_LEN 100
+
 struct tar_entry {
     char name[256];
     size_t size;
@@ -34,36 +37,43 @@ static void parse_tar_archive() {
         exit(1);
     }
 
-    char block[512];
+    char block[TAR_BLOCK_SIZE];
     off_t current_offset = 0;
 
     while (1) {
-        ssize_t res = read(archive_fd, block, 512);
-        if (res < 512) break;
+        ssize_t res = read(archive_fd, block, TAR_BLOCK_SIZE);
+        if (res < TAR_BLOCK_SIZE) break;
         if (block[0] == 0) break;
 
         struct tar_entry *entry = malloc(sizeof(struct tar_entry));
-        strncpy(entry->name, block, 100);
-        entry->name[100] = '\0';
+        if (!entry) {
+            perror("Memory allocation failed");
+            exit(1);
+        }
+
+        snprintf(entry->name, sizeof(entry->name), "%.*s", TAR_NAME_LEN, block);
         
         char size_str[12] = {0};
         memcpy(size_str, block + 124, 11);
         entry->size = octal_to_decimal(size_str);
         
         char type = block[156];
-        entry->is_dir = (type == '5' || entry->name[strlen(entry->name) - 1] == '/');
+        int len = strlen(entry->name);
+        entry->is_dir = (type == '5' || (len > 0 && entry->name[len - 1] == '/'));
 
-        if (entry->is_dir && entry->name[strlen(entry->name) - 1] == '/') {
-            entry->name[strlen(entry->name) - 1] = '\0';
+        if (entry->is_dir && len > 0 && entry->name[len - 1] == '/') {
+            entry->name[len - 1] = '\0';
         }
 
-        entry->data_offset = current_offset + 512;
+        entry->data_offset = current_offset + TAR_BLOCK_SIZE;
         entry->next = entries_head;
         entries_head = entry;
 
-        size_t skip = (entry->size + 511) / 512 * 512;
-        lseek(archive_fd, skip, SEEK_CUR);
-        current_offset += 512 + skip;
+        size_t skip = (entry->size + TAR_BLOCK_SIZE - 1) / TAR_BLOCK_SIZE * TAR_BLOCK_SIZE;
+        if (lseek(archive_fd, skip, SEEK_CUR) == (off_t)-1) {
+             break;
+        }
+        current_offset += TAR_BLOCK_SIZE + skip;
     }
 }
 
@@ -160,7 +170,13 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     archive_path = realpath(argv[1], NULL);
+    if (!archive_path) {
+        perror("Error resolving archive path");
+        return 1;
+    }
+    
     parse_tar_archive();
+    
     char *fuse_argv[] = { argv[0], argv[2], "-f", NULL };
     return fuse_main(3, fuse_argv, &operations, NULL);
 }
