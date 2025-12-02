@@ -1,0 +1,11 @@
+Iterations: 1000000
+
+>>> AVERAGE LATENCIES <<<  
+dummy()          :    2.09 ns  |  0.000025 cycles  
+getpid()         :  176.42 ns  
+clock_gettime()  : 1218.73 ns  
+open/close pair  : 2795.00 ns   (sampled over 100k ops)
+
+— Summary —  
+Total TSC cycles (dummy): 25  
+Sink value: 84000000
