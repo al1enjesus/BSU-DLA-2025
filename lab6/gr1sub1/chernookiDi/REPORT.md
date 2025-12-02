@@ -67,7 +67,7 @@ cat /mnt/fuse/test.txt # выводит содержимое в UPPERCASE
 ## 4. Нагрузочное тестирование
 Для автоматизации тестов добавлены скрипты в `tools/` (benchmarking и plotting). Скрипты собирают время выполнения операций и сохраняют CSV с результатами, затем Python-скрипт строит графики.
 
-Проведённый прогон (реальные результаты)
+Проведённый прогон 
 -------------------------------------
 
 Параметры прогона:
@@ -82,7 +82,7 @@ cat /mnt/fuse/test.txt # выводит содержимое в UPPERCASE
 - `throughput.csv` — строки `mode,fs,size_mb,secs,mb_per_s`
 - `iops.csv` — строки `mode,fs,count,secs,files_per_s`
 
-Ниже — агрегированные статистики (по `latency.csv`, все значения в миллисекундах, реальный прогон):
+Ниже — агрегированные статистики (по `latency.csv`, все значения в миллисекундах):
 
 ```
 native,getattr,n=50,mean_ms=0.001535,median_ms=0.001493,stdev_ms=0.000187
@@ -129,7 +129,8 @@ READ: /test_log.txt (result: 11)
 
 CSV и графики
 -------------
-CSV файлы результаты находятся в `tools/results/`. Для построения графиков используйте `tools/plot_results.py` (требует `matplotlib`, `numpy`). Пример запуска:
+log/pythonGrafics - находится код для построения графиков вместе с результатами по которым строим график
+log/plots - построенные графики
 
 ```bash
 # (рекомендуется) создать виртуное окружение
@@ -138,10 +139,10 @@ source venv/bin/activate
 pip install -r tools/requirements.txt
 
 # затем
-python3 tools/plot_results.py tools/results/latency.csv tools/results/throughput.csv tools/results/iops.csv tools/results
+python3 gr.py
 ```
 
-PNG будут сохранены в `tools/results/` как `latency_summary.png`, `throughput.png`, `iops.png`.
+
 ```bash
 # последовательное чтение 4KB 1000 раз
 time dd if=/mnt/fuse/test bs=4096 count=1000 of=/dev/null
@@ -250,7 +251,8 @@ time dd if=/tmp/source/test bs=4096 count=1000 of=/dev/null
 Выполнена реализация passthrough FUSE, а также два режима (ROT13 и Uppercase). FUSE позволяет гибко трансформировать данные "на лету" без изменения пользовательских утилит.
 
 ## 7. Использование AI
-AI-инструменты использовались для помощи с `libfuse3`, формулировки и редактирование текста отчета, контрольных вопросов, makefile
+AI-инструменты использовались для помощи с `libfuse3`, формулировки и редактирование текста отчета, makefile,
+построение графиков, тестирования
 
 ---
 
