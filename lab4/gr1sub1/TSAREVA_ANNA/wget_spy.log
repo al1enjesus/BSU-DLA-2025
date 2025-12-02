@@ -1,0 +1,35 @@
+--2025-10-20 14:56:03--  https://example.com/  
+[1760961363.210] pid=150582 tid=150582 [TRACE] open("/proc/sys/crypto/fips_enabled", O_RDONLY) = -1 (errno=2: No such file or directory)
+Resolving example.com (example.com)... 93.184.216.34, 2606:2800:220:1:248:1893:25c8:1946
+Connecting to example.com (example.com)|93.184.216.34|:443... connected.
+[1760961363.482] pid=150582 tid=150582 [TRACE] write(fd=3, len=412) = 412
+[1760961363.482] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = -1 (errno=11: Resource temporarily unavailable)
+[1760961363.745] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = 5
+[1760961363.745] pid=150582 tid=150582 [TRACE] read(fd=3, len=128) = 128
+[1760961363.745] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = 5
+[1760961363.745] pid=150582 tid=150582 [TRACE] read(fd=3, len=1) = 1
+[1760961363.746] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = 5
+[1760961363.746] pid=150582 tid=150582 [TRACE] read(fd=3, len=42) = 42
+[1760961363.746] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = 5
+[1760961363.746] pid=150582 tid=150582 [TRACE] read(fd=3, len=2370) = 2370
+[1760961363.801] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = 5
+[1760961363.801] pid=150582 tid=150582 [TRACE] read(fd=3, len=98) = 98
+[1760961363.802] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = 5
+[1760961363.802] pid=150582 tid=150582 [TRACE] read(fd=3, len=71) = 71
+[1760961363.802] pid=150582 tid=150582 [TRACE] write(fd=3, len=85) = 85
+[1760961363.802] pid=150582 tid=150582 [TRACE] write(fd=3, len=152) = 152
+HTTP request sent, awaiting response... [1760961363.802] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = -1 (errno=11: Resource temporarily unavailable)
+[1760961364.035] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = 5
+[1760961364.035] pid=150582 tid=150582 [TRACE] read(fd=3, len=285) = 285
+[1760961364.035] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = 5
+[1760961364.035] pid=150582 tid=150582 [TRACE] read(fd=3, len=285) = 285
+[1760961364.035] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = -1 (errno=11: Resource temporarily unavailable)
+[1760961364.361] pid=150582 tid=150582 [TRACE] read(fd=3, len=5) = 5
+[1760961364.361] pid=150582 tid=150582 [TRACE] read(fd=3, len=850) = 850
+200 OK
+Length: 513 [text/html]
+Saving to: ‘stdout’
+
+     0K                                                       100%  98.5M=0s
+
+2025-10-20 14:56:04 (98.5 MB/s) - written to stdout [513/513]

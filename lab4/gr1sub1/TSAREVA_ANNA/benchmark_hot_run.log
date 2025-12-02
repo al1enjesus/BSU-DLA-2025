@@ -1,0 +1,10 @@
+Iters=100000
+
+--- BENCHMARK AVERAGES ---
+dummy()         :   2.08 ns  |  0.00025 cycles
+getpid()        : 172.67 ns
+clock_gettime() : 1208.43 ns
+open/close pair : 2815.30 ns  (over 100000 runs)
+
+Total dummy cycles (raw): 25
+Sink accumulator: 8400000
