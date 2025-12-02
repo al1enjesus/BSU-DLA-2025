@@ -1,0 +1,13 @@
+mode,fs,size_mb,secs,mb_per_s
+native,source,1.000,0.000558,1791.524
+native,source,10.000,0.002997,3336.864
+native,source,100.000,0.016408,6094.631
+fuse_fuse_passthrough,fuse,1.000,0.002197,455.175
+fuse_fuse_passthrough,fuse,10.000,0.006937,1441.524
+fuse_fuse_passthrough,fuse,100.000,0.061750,1619.434
+fuse_fuse_rot13,fuse,1.000,0.003501,285.654
+fuse_fuse_rot13,fuse,10.000,0.012162,822.213
+fuse_fuse_rot13,fuse,100.000,0.119947,833.700
+fuse_fuse_uppercase,fuse,1.000,0.003050,327.909
+fuse_fuse_uppercase,fuse,10.000,0.018793,532.126
+fuse_fuse_uppercase,fuse,100.000,0.176302,567.209
