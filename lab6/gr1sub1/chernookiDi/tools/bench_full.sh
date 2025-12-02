@@ -5,6 +5,7 @@ ROOT=$(cd "$HERE/.." && pwd)
 MYFUSE=$ROOT/myfuse
 OUTDIR=$ROOT/tools/results
 mkdir -p $OUTDIR
+FUSE_PIDS=()
 
 
 # ITER can be overridden from environment for quick runs, default 200
@@ -57,23 +58,34 @@ mount_fuse_mode() {
   mkdir -p "$LOGDIR"
   logfile="$LOGDIR/fuse_${mountpoint##*/}.log"
   touch "$logfile" 2>/dev/null || true
-  chmod 666 "$logfile" 2>/dev/null || true
+  chmod 644 "$logfile" 2>/dev/null || true
   case $mode in
     passthrough)
       $MYFUSE /tmp/source $mountpoint -d 2> "$logfile" &
+      pid=$!
+      FUSE_PIDS+=("$pid")
       ;;
     rot13)
       $MYFUSE /tmp/source $mountpoint -m rot13 -d 2> "$logfile" &
+      pid=$!
+      FUSE_PIDS+=("$pid")
       ;;
     uppercase)
       $MYFUSE /tmp/source $mountpoint -m uppercase -d 2> "$logfile" &
+      pid=$!
+      FUSE_PIDS+=("$pid")
       ;;
   esac
   sleep 0.5
 }
 
 stop_background_myfuse() {
-  pkill -f "$MYFUSE" || true
+  # kill only processes we launched
+  for p in "${FUSE_PIDS[@]:-}"; do
+    kill "$p" 2>/dev/null || true
+    wait "$p" 2>/dev/null || true
+  done
+  FUSE_PIDS=()
   sleep 0.2
 }
 
@@ -160,9 +172,6 @@ else
 fi
 
 echo "Running FUSE modes..."
-for entry in "${targets_fuse[@]}"; do
-  IFS=':' read mode:mp <<< "$entry" || true
-done
 
 # mount and test each FUSE mode
 umount_if_mounted /tmp/mnt_fuse || true

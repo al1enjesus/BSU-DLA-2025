@@ -34,7 +34,7 @@ extern struct fs_config g_config;
    Комментарии к каждой функции находятся в реализациях (operations.c).
 */
 int fs_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi);
-int fs_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi);
+int fs_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi, enum fuse_readdir_flags flags);
 int fs_open(const char *path, struct fuse_file_info *fi);
 int fs_read(const char *path, char *buf, size_t size, off_t offset, struct fuse_file_info *fi);
 int fs_write(const char *path, const char *buf, size_t size, off_t offset, struct fuse_file_info *fi);

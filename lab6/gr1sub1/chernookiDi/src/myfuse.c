@@ -11,19 +11,19 @@
  * соответствующую реализацию операции в `operations.c`.
  */
 static struct fuse_operations fs_ops = {
-    .getattr = (void*)fs_getattr,
-    .readdir = (void*)fs_readdir,
-    .open = (void*)fs_open,
-    .read = (void*)fs_read,
-    .write = (void*)fs_write,
-    .create = (void*)fs_create,
-    .unlink = (void*)fs_unlink,
-    .mkdir = (void*)fs_mkdir,
-    .rmdir = (void*)fs_rmdir,
-    .release = (void*)fs_release,
-    .utimens = (void*)fs_utimens,
-    .access = (void*)fs_access,
-    .flush = (void*)fs_flush,
+    .getattr = fs_getattr,
+    .readdir = fs_readdir,
+    .open = fs_open,
+    .read = fs_read,
+    .write = fs_write,
+    .create = fs_create,
+    .unlink = fs_unlink,
+    .mkdir = fs_mkdir,
+    .rmdir = fs_rmdir,
+    .release = fs_release,
+    .utimens = fs_utimens,
+    .access = fs_access,
+    .flush = fs_flush,
 };
 
 /*
@@ -60,6 +60,10 @@ int main(int argc, char *argv[]) {
        (source). Опция -m обрабатывается отдельно и не передаётся в libfuse. */
     int fusargc = argc - 1; // пока оценка длины
     char **fusargv = malloc(sizeof(char*) * (argc+1));
+    if (!fusargv) {
+        fprintf(stderr, "allocation failed\n");
+        return 1;
+    }
     fusargv[0] = argv[0];
     int idx = 1;
     for (int i = 2; i < argc; ++i) {

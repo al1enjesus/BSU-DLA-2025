@@ -5,48 +5,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-/*
- * normalize_components
- * --------------------
- * Вспомогательная статическая функция.
- * Выполняет простую нормализацию пути, удаляя компоненты "." и корректно
- * обрабатывая ".." (поднимает уровень, если это возможно). Функция модифицирует
- * строку in-place: принимает строку в `out` и преобразует её в нормализованный путь.
- *
- * Примечание: это учебная реализация и она не покрывает всех граничных случаев
- * реальной файловой системы. Для production-решений рекомендуется использовать
- * `realpath` или тщательную проверку.
- */
-static void normalize_components(char *out) {
-    // simple normalization: remove ./ and handle ../ conservatively
-    // This implementation removes occurrences of "/./" and resolves "/x/../" patterns.
-    char tmp[PATH_MAX_LEN];
-    char *parts[PATH_MAX_LEN];
-    int pc = 0;
-    strncpy(tmp, out, PATH_MAX_LEN-1);
-    tmp[PATH_MAX_LEN-1] = 0;
-    char *p = strtok(tmp, "/");
-    while (p) {
-        if (strcmp(p, "") == 0 || strcmp(p, ".") == 0) {
-            // skip
-        } else if (strcmp(p, "..") == 0) {
-            if (pc > 0) pc--; // pop
-        } else {
-            parts[pc++] = p;
-        }
-        p = strtok(NULL, "/");
-    }
-    // rebuild out
-    out[0] = '\0';
-    if (pc == 0) {
-        strcpy(out, "/");
-        return;
-    }
-    for (int i = 0; i < pc; ++i) {
-        strcat(out, "/");
-        strcat(out, parts[i]);
-    }
-}
+/* Note: normalization is performed inside join_path; helper removed. */
 
 /*
  * join_path
@@ -70,28 +29,73 @@ int join_path(char *fullpath, const char *path) {
     strncpy(rootcopy, g_config.root, PATH_MAX_LEN-1);
     rootcopy[PATH_MAX_LEN-1] = 0;
     if (rootcopy[rootlen-1] == '/') rootcopy[rootlen-1] = '\0';
-    // build
+    // Build safe path by joining resolved root and normalized components from `path`.
+    // First, try to resolve realpath for g_config.root for symlink safety.
+    char resolved_root[PATH_MAX_LEN];
+    if (realpath(g_config.root, resolved_root) == NULL) {
+        // fallback to rootcopy if realpath fails
+        strncpy(resolved_root, rootcopy, PATH_MAX_LEN-1);
+        resolved_root[PATH_MAX_LEN-1] = '\0';
+    }
+    // remove trailing slash from resolved_root if present (but keep "/" as-is)
+    size_t rlen = strlen(resolved_root);
+    if (rlen > 1 && resolved_root[rlen-1] == '/') {
+        resolved_root[rlen-1] = '\0';
+        rlen--;
+    }
+
+    // Prepare working buffer for the candidate path
+    char candidate[PATH_MAX_LEN];
+    // Start with resolved_root
+    strncpy(candidate, resolved_root, PATH_MAX_LEN-1);
+    candidate[PATH_MAX_LEN-1] = '\0';
+
+    // If path is root ("/"), return resolved_root
     if (strcmp(path, "/") == 0) {
-        snprintf(fullpath, PATH_MAX_LEN, "%s/", rootcopy);
-    } else {
-        // remove leading '/'
-        const char *p = path;
-        if (p[0] == '/') p++;
-        snprintf(fullpath, PATH_MAX_LEN, "%s/%s", rootcopy, p);
+        strncpy(fullpath, candidate, PATH_MAX_LEN-1);
+        fullpath[PATH_MAX_LEN-1] = '\0';
+        return 0;
     }
-    // normalize to prevent traversal
-    char tmp[PATH_MAX_LEN];
-    strncpy(tmp, fullpath, PATH_MAX_LEN-1);
-    tmp[PATH_MAX_LEN-1] = 0;
-    normalize_components(tmp);
-    // If normalized path does not start with root, block (safety)
-    if (strncmp(tmp, g_config.root, strlen(g_config.root)) != 0 && strcmp(g_config.root, "/") != 0) {
-        // allow if root is '/'
-        // else return error
-        return -1;
+
+    // Append components from path safely, resolving '.' and '..'
+    const char *s = path;
+    if (*s == '/') s++;
+    while (*s) {
+        // find next segment
+        const char *slash = strchr(s, '/');
+        size_t seglen = slash ? (size_t)(slash - s) : strlen(s);
+        if (seglen == 0) {
+            // skip
+        } else if (seglen == 1 && s[0] == '.') {
+            // skip
+        } else if (seglen == 2 && s[0] == '.' && s[1] == '.') {
+            // go up one level in candidate (but never above resolved_root)
+            if (strlen(candidate) > rlen) {
+                char *last = strrchr(candidate, '/');
+                if (last && (size_t)(last - candidate) >= rlen) {
+                    *last = '\0';
+                } else {
+                    // cannot go above root; keep candidate as root
+                    candidate[rlen] = '\0';
+                }
+            }
+        } else {
+            // append '/segment' safely
+            if (strlen(candidate) + 1 + seglen >= PATH_MAX_LEN) return -1;
+            size_t off = strlen(candidate);
+            candidate[off] = '/';
+            memcpy(candidate + off + 1, s, seglen);
+            candidate[off + 1 + seglen] = '\0';
+        }
+        if (!slash) break;
+        s = slash + 1;
+        while (*s == '/') s++;
     }
-    strncpy(fullpath, tmp, PATH_MAX_LEN-1);
-    fullpath[PATH_MAX_LEN-1] = 0;
+
+    // Final safety: ensure candidate begins with resolved_root
+    if (strncmp(candidate, resolved_root, rlen) != 0) return -1;
+    strncpy(fullpath, candidate, PATH_MAX_LEN-1);
+    fullpath[PATH_MAX_LEN-1] = '\0';
     return 0;
 }
 

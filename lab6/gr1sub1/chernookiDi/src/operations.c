@@ -63,8 +63,8 @@ int fs_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) 
  *   всех найденных имён (включая "." и "..").
  * - Возвращает 0 при успехе или отрицательный код ошибки.
  */
-int fs_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
-    (void) offset; (void) fi;
+int fs_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi, enum fuse_readdir_flags flags) {
+    (void) offset; (void) fi; (void) flags;
     char full[PATH_MAX_LEN];
     if (ensure_fullpath(full, path) != 0) {
         log_op("READDIR", path, -EACCES);
