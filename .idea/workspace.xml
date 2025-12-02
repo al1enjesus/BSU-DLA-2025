@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e96012fc-d041-43a1-b744-5bf69d4bdb73" name="Changes" comment="lab_6_Chernookiy">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/myfuse.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/myfuse.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/myfuse.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/myfuse.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/operations.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/operations.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/operations.h" beforeDir="false" afterPath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/operations.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/operations.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/operations.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/utils.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab6/gr1sub1/chernookiDi/src/utils.o" afterDir="false" />
-    </list>
+    <list default="true" id="e96012fc-d041-43a1-b744-5bf69d4bdb73" name="Changes" comment="lab_6_Chernookiy" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "gr1sub1__lab6__chernookiDi",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Study/BSU/4Курс/линукс/BSU-DLA-2025-main/lab6/gr1sub1/chernookiDi",
+    "last_opened_file_path": "D:/Study/BSU/4Курс/линукс/BSU-DLA-2025-main/lab6/gr1sub1/chernookiDi/tools",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,11 +57,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Study\BSU\4Курс\линукс\BSU-DLA-2025-main\lab6\gr1sub1\chernookiDi\tools" />
       <recent name="D:\Study\BSU\4Курс\линукс\BSU-DLA-2025-main\lab6\gr1sub1\chernookiDi" />
       <recent name="D:\Study\BSU\4Курс\линукс\BSU-DLA-2025-main\lab6\gr1sub1\chernookiDi\log\pythonGrafics" />
       <recent name="D:\Study\BSU\4Курс\линукс\BSU-DLA-2025-main" />
       <recent name="D:\Study\BSU\4Курс\линукс\BSU-DLA-2025-main\lab5\gr1sub1" />
-      <recent name="D:\Study\BSU\4Курс\линукс\BSU-DLA-2025-main\lab4\gr1sub1\chernookiDi\logs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Study\BSU\4Курс\линукс\BSU-DLA-2025-main\lab6\gr1sub1" />
@@ -347,7 +338,7 @@
       <workItem from="1761219091908" duration="51000" />
       <workItem from="1762263712428" duration="5061000" />
       <workItem from="1762335999116" duration="70000" />
-      <workItem from="1764670514436" duration="3983000" />
+      <workItem from="1764670514436" duration="4851000" />
     </task>
     <task id="LOCAL-00001" summary="lab_1_Chernookiy">
       <option name="closed" value="true" />
@@ -421,7 +412,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764672729767</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="lab_6_Chernookiy">
+      <option name="closed" value="true" />
+      <created>1764675447128</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764675447128</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

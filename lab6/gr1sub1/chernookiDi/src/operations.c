@@ -77,9 +77,8 @@ int fs_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset
         return e;
     }
     struct dirent *de;
-    /* Обязательно возвращаем '.' и '..' */
-    filler(buf, ".", NULL, 0, 0);
-    filler(buf, "..", NULL, 0, 0);
+    /* Use directory stream entries returned by readdir() directly.
+       Avoid pre-inserting '.' and '..' to prevent duplicates. */
     while ((de = readdir(dp)) != NULL) {
         filler(buf, de->d_name, NULL, 0, 0);
     }
@@ -181,18 +180,49 @@ int fs_write(const char *path, const char *buf, size_t size, off_t offset, struc
         fd = open(full, O_WRONLY);
         if (fd == -1) { int e = -errno; log_op("WRITE", path, e); return e; }
     }
-    /* Создаём локальную копию буфера, т.к. возможно требуется модификация */
-    char *tmp = malloc(size);
-    if (!tmp) { if (!fi) close(fd); return -ENOMEM; }
-    memcpy(tmp, buf, size);
-    if (g_config.mode == MODE_ROT13) rot13_buf(tmp, size);
-    /* В режиме uppercase не модифицируем записываемые данные */
-    ssize_t res = pwrite(fd, tmp, size, offset);
-    free(tmp);
+    /* For safety with large writes, process in bounded chunks instead of
+       allocating a full-size temporary buffer. This prevents OOM when users
+       write very large buffers. */
+    const size_t CHUNK = 64 * 1024; /* 64KB */
+    size_t remaining = size;
+    const char *cur = buf;
+    off_t cur_offset = offset;
+    ssize_t total_written = 0;
+    while (remaining > 0) {
+        size_t towrite = remaining > CHUNK ? CHUNK : remaining;
+        char *tmp = malloc(towrite);
+        if (!tmp) {
+            if (!fi) close(fd);
+            log_op("WRITE", path, -ENOMEM);
+            return -ENOMEM;
+        }
+        memcpy(tmp, cur, towrite);
+        if (g_config.mode == MODE_ROT13) rot13_buf(tmp, towrite);
+
+        /* perform possibly partial writes until towrite bytes are written */
+        size_t written_here = 0;
+        while (written_here < towrite) {
+            ssize_t w = pwrite(fd, tmp + written_here, towrite - written_here, cur_offset + written_here);
+            if (w == -1) {
+                int e = -errno;
+                free(tmp);
+                if (!fi) close(fd);
+                log_op("WRITE", path, e);
+                return e;
+            }
+            written_here += (size_t)w;
+        }
+        free(tmp);
+
+        remaining -= written_here;
+        cur += written_here;
+        cur_offset += written_here;
+        total_written += written_here;
+    }
+
     if (!fi) close(fd);
-    if (res == -1) { int e = -errno; log_op("WRITE", path, e); return e; }
-    log_op("WRITE", path, (int)res);
-    return res;
+    log_op("WRITE", path, (int)total_written);
+    return total_written;
 }
 
 /*
