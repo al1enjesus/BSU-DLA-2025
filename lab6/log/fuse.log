@@ -1,0 +1,88 @@
+FUSE library version: 3.14.0
+nullpath_ok: 0
+Ignoring invalid max threads value 4294967295 > max (100000).
+unique: 2, opcode: INIT (26), nodeid: 0, insize: 56, pid: 0
+INIT: 7.34
+flags=0x33fffffb
+max_readahead=0x00020000
+   INIT: 7.31
+   flags=0x0040f039
+   max_readahead=0x00020000
+   max_write=0x00100000
+   max_background=0
+   congestion_threshold=0
+   time_gran=1
+   unique: 2, success, outsize: 80
+unique: 4, opcode: LOOKUP (1), nodeid: 1, insize: 49, pid: 12672
+LOOKUP /test.txt
+getattr[NULL] /test.txt
+[2025-11-25 21:16:16] GETATTR: /test.txt (result: -2)
+   unique: 4, error: -2 (No such file or directory), outsize: 16
+unique: 6, opcode: CREATE (35), nodeid: 1, insize: 65, pid: 12672
+create flags: 0x8241 /test.txt 0100644 umask=0022
+[2025-11-25 21:16:16] CREATE: /test.txt (result: 0)
+   create[4] flags: 0x8241 /test.txt
+getattr[4] /test.txt
+[2025-11-25 21:16:16] GETATTR: /test.txt (result: 0)
+   NODEID: 2
+   unique: 6, success, outsize: 160
+unique: 8, opcode: FLUSH (25), nodeid: 2, insize: 64, pid: 12672
+   unique: 8, error: -38 (Function not implemented), outsize: 16
+unique: 10, opcode: GETXATTR (22), nodeid: 2, insize: 68, pid: 12672
+   unique: 10, error: -38 (Function not implemented), outsize: 16
+unique: 12, opcode: WRITE (16), nodeid: 2, insize: 91, pid: 12672
+write[4] 11 bytes to 0 flags: 0x8001
+[2025-11-25 21:16:16] WRITE: /test.txt (result: 11)
+   write[4] 11 bytes to 0
+   unique: 12, success, outsize: 24
+unique: 14, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+release[4] flags: 0x8001
+[2025-11-25 21:16:16] RELEASE: /test.txt (result: 0)
+   unique: 14, success, outsize: 16
+unique: 16, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 12678
+open flags: 0x8000 /test.txt
+[2025-11-25 21:16:16] OPEN: /test.txt (result: 0)
+   open[4] flags: 0x8000 /test.txt
+   unique: 16, success, outsize: 32
+unique: 18, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 12678
+getattr[NULL] /test.txt
+[2025-11-25 21:16:16] GETATTR: /test.txt (result: 0)
+   unique: 18, success, outsize: 120
+unique: 20, opcode: READ (15), nodeid: 2, insize: 80, pid: 12678
+read[4] 4096 bytes from 0 flags: 0x8000
+[2025-11-25 21:16:16] READ: /test.txt (result: 11)
+   read[4] 11 bytes from 0
+   unique: 20, success, outsize: 27
+unique: 22, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+release[4] flags: 0x8000
+[2025-11-25 21:16:16] RELEASE: /test.txt (result: 0)
+   unique: 22, success, outsize: 16
+unique: 24, opcode: GETATTR (3), nodeid: 1, insize: 56, pid: 12679
+getattr[NULL] /
+[2025-11-25 21:16:16] GETATTR: / (result: 0)
+   unique: 24, success, outsize: 120
+unique: 26, opcode: LISTXATTR (23), nodeid: 1, insize: 48, pid: 12679
+   unique: 26, error: -38 (Function not implemented), outsize: 16
+unique: 28, opcode: OPENDIR (27), nodeid: 1, insize: 48, pid: 12679
+   unique: 28, success, outsize: 32
+unique: 30, opcode: READDIRPLUS (44), nodeid: 1, insize: 80, pid: 12679
+readdirplus[0] from 0
+[2025-11-25 21:16:16] READDIR: / (result: 0)
+   unique: 30, success, outsize: 816
+unique: 32, opcode: READDIR (28), nodeid: 1, insize: 80, pid: 12679
+   unique: 32, success, outsize: 16
+unique: 34, opcode: RELEASEDIR (29), nodeid: 1, insize: 64, pid: 0
+   unique: 34, success, outsize: 16
+unique: 36, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 12680
+getattr[NULL] /test.txt
+[2025-11-25 21:16:16] GETATTR: /test.txt (result: 0)
+   unique: 36, success, outsize: 120
+unique: 38, opcode: ACCESS (34), nodeid: 2, insize: 48, pid: 12680
+   unique: 38, error: -38 (Function not implemented), outsize: 16
+unique: 40, opcode: UNLINK (10), nodeid: 1, insize: 49, pid: 12680
+unlink /test.txt
+[2025-11-25 21:16:16] UNLINK: /test.txt (result: 0)
+   unique: 40, success, outsize: 16
+unique: 42, opcode: FORGET (2), nodeid: 2, insize: 48, pid: 0
+FORGET 2/1
+DELETE: 2
