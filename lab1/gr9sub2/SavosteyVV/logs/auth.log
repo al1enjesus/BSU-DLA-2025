@@ -1,0 +1,200 @@
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user kali from 192.168.1.55 port 41453 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 45.33.22.11 port 25672 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 45.33.22.11 port 11695 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 192.168.1.55 port 12309 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 45.33.22.11 port 16029 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 36339 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 12882 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 19386 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 192.168.1.55 port 21735 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 10.0.0.13 port 10858 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 45.33.22.11 port 16719 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 45.33.22.11 port 17041 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 172.16.0.5 port 28861 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 29590 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 172.16.0.5 port 25886 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 41848 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 14824 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 18098 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 30905 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 33765 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 10.0.0.13 port 18980 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 45.33.22.11 port 27138 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 192.168.1.55 port 40077 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 45.33.22.11 port 15548 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 20027 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 45.33.22.11 port 28210 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 29503 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 192.168.1.55 port 32353 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user oracle from 45.33.22.11 port 41462 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 192.168.1.55 port 24702 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 172.16.0.5 port 35895 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 10.0.0.13 port 39519 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 172.16.0.5 port 15323 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 45.33.22.11 port 21722 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 45.33.22.11 port 29536 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 192.168.1.55 port 24488 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user oracle from 10.0.0.13 port 37998 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 172.16.0.5 port 35567 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 39421 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 18594 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 22070 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 45.33.22.11 port 12180 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 35542 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 172.16.0.5 port 26996 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 22540 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 30588 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 27391 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 10.0.0.13 port 23812 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 192.168.1.55 port 42723 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 10.0.0.13 port 26752 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 45.33.22.11 port 28656 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user support from 45.33.22.11 port 15305 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user root from 192.168.1.55 port 13268 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 45.33.22.11 port 41751 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 15897 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 10.0.0.13 port 25232 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 40556 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 192.168.1.55 port 41765 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user admin from 45.33.22.11 port 16398 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 22138 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 33906 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 42402 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 10810 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 45.33.22.11 port 34218 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 172.16.0.5 port 39835 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user kali from 192.168.1.55 port 34921 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 31963 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user kali from 192.168.1.55 port 15247 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 13173 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 15884 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user root from 172.16.0.5 port 21901 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user support from 10.0.0.13 port 32699 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 17032 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 172.16.0.5 port 19309 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 172.16.0.5 port 22702 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 37414 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 192.168.1.55 port 32815 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 33120 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user oracle from 172.16.0.5 port 23464 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 192.168.1.55 port 13991 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 10.0.0.13 port 12191 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 45.33.22.11 port 26781 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 45.33.22.11 port 18447 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 192.168.1.55 port 20431 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 10.0.0.13 port 13122 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user admin from 192.168.1.55 port 12520 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 45.33.22.11 port 31254 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 45.33.22.11 port 42236 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 45.33.22.11 port 34131 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user user from 45.33.22.11 port 16143 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 45.33.22.11 port 20887 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 172.16.0.5 port 30414 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 192.168.1.55 port 28345 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 34606 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 10.0.0.13 port 32172 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 26670 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user admin from 45.33.22.11 port 32221 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 192.168.1.55 port 32409 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user admin from 192.168.1.55 port 32165 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user support from 45.33.22.11 port 41145 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user kali from 45.33.22.11 port 41328 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user admin from 192.168.1.55 port 22404 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 45.33.22.11 port 12962 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 32055 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 27851 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user oracle from 172.16.0.5 port 29183 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 45.33.22.11 port 33681 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user oracle from 192.168.1.55 port 32174 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 10.0.0.13 port 30579 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 172.16.0.5 port 35843 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 41935 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 45.33.22.11 port 10989 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user support from 192.168.1.55 port 25234 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user oracle from 10.0.0.13 port 16845 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 15724 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 45.33.22.11 port 33886 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 23741 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 23351 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 10.0.0.13 port 32346 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user kali from 192.168.1.55 port 20216 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 172.16.0.5 port 31837 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user kali from 192.168.1.55 port 38264 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 172.16.0.5 port 39599 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user kali from 172.16.0.5 port 16168 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 10481 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 45.33.22.11 port 17686 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 10.0.0.13 port 10543 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 38950 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 172.16.0.5 port 15254 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 192.168.1.55 port 34767 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 172.16.0.5 port 20617 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 12594 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 28269 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 10.0.0.13 port 10777 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 39791 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user root from 172.16.0.5 port 18296 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 45.33.22.11 port 23527 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 26681 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 20527 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 192.168.1.55 port 19468 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 27907 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 172.16.0.5 port 24841 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 172.16.0.5 port 10416 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 45.33.22.11 port 19415 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 30790 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 10.0.0.13 port 37124 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 45.33.22.11 port 27457 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 10.0.0.13 port 20970 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user kali from 192.168.1.55 port 21893 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 172.16.0.5 port 39665 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 10.0.0.13 port 18554 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 10.0.0.13 port 26596 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 172.16.0.5 port 11181 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 45.33.22.11 port 24455 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 172.16.0.5 port 28117 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 33487 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user user from 10.0.0.13 port 14072 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 26663 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 192.168.1.55 port 27478 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user admin from 172.16.0.5 port 18969 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 19644 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 28640 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 16166 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 13481 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 38541 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 23755 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 192.168.1.55 port 10899 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 192.168.1.55 port 26217 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 192.168.1.55 port 24090 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user admin from 45.33.22.11 port 34598 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 10.0.0.13 port 24017 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 10.0.0.13 port 29779 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user root from 192.168.1.55 port 13962 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user kali from 10.0.0.13 port 36778 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 172.16.0.5 port 21113 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 10.0.0.13 port 21453 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 10.0.0.13 port 26729 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for admin from 172.16.0.5 port 25410 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 192.168.1.55 port 25139 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 39213 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user admin from 192.168.1.55 port 36574 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 172.16.0.5 port 35791 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 15101 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for support from 45.33.22.11 port 28970 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user support from 192.168.1.55 port 20885 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 172.16.0.5 port 39254 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user admin from 45.33.22.11 port 35206 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for invalid user oracle from 192.168.1.55 port 18780 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 28924 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 45.33.22.11 port 37059 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 10.0.0.13 port 19858 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 45.33.22.11 port 13590 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 172.16.0.5 port 36828 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 10.0.0.13 port 22630 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for root from 192.168.1.55 port 39850 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for user from 192.168.1.55 port 10868 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 192.168.1.55 port 32277 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 45.33.22.11 port 27541 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for oracle from 172.16.0.5 port 27673 ssh2
+Dec 04 21:45:39 kali sshd[1337]: Failed password for kali from 192.168.1.55 port 22238 ssh2
