@@ -1,0 +1,105 @@
+[0;34m==========================================================[0m
+[0;34m    ПОЛНАЯ ДЕМОНСТРАЦИЯ ЗАДАНИЯ B (Affinity & Nice)       [0m
+[0;34m==========================================================[0m
+
+[1;33m[STEP 1] Генерация конфига и запуск...[0m
+Схема эксперимента:
+  CPU 0: Worker-0 (Nice 0) vs Worker-1 (Nice 10) -> Ожидаем НЕРАВЕНСТВО
+  CPU 1: Worker-2 (Nice 0) vs Worker-3 (Nice 0)  -> Ожидаем РАВЕНСТВО (50/50)
+
+[1;33m[STEP 2] Сбор статистики (Базовая линия)...[0m
+Замеряем pidstat (5 секунд)...
+[0;36mСледите за %CPU:[0m
+Linux 6.11.2-amd64 (kali) 	12/05/2025 	_x86_64_	(12 CPU)
+
+12:07:05 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:07:06 AM     0    134634   72.00    0.00    0.00    8.00   72.00     0  lab2-worker-0
+12:07:06 AM     0    134635   12.00    0.00    0.00   71.00   12.00     0  lab2-worker-1
+12:07:06 AM     0    134636   42.00    0.00    0.00   40.00   42.00     1  lab2-worker-2
+12:07:06 AM     0    134637   40.00    0.00    0.00   42.00   40.00     1  lab2-worker-3
+
+12:07:06 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:07:07 AM     0    134634   81.00    0.00    0.00    9.00   81.00     0  lab2-worker-0
+12:07:07 AM     0    134635   12.00    0.00    0.00   77.00   12.00     0  lab2-worker-1
+12:07:07 AM     0    134636   44.00    0.00    0.00   44.00   44.00     1  lab2-worker-2
+12:07:07 AM     0    134637   44.00    0.00    0.00   44.00   44.00     1  lab2-worker-3
+
+12:07:07 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:07:08 AM     0    134634   73.00    0.00    0.00    7.00   73.00     0  lab2-worker-0
+12:07:08 AM     0    134635   14.00    0.00    0.00   66.00   14.00     0  lab2-worker-1
+12:07:08 AM     0    134636   40.00    0.00    0.00   40.00   40.00     1  lab2-worker-2
+12:07:08 AM     0    134637   40.00    0.00    0.00   40.00   40.00     1  lab2-worker-3
+
+12:07:08 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:07:09 AM     0    134634   72.00    0.00    0.00    8.00   72.00     0  lab2-worker-0
+12:07:09 AM     0    134635   16.00    0.00    0.00   68.00   16.00     0  lab2-worker-1
+12:07:09 AM     0    134636   42.00    0.00    0.00   42.00   42.00     1  lab2-worker-2
+12:07:09 AM     0    134637   42.00    0.00    0.00   42.00   42.00     1  lab2-worker-3
+
+12:07:09 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:07:10 AM     0    134634   82.00    0.00    0.00    8.00   82.00     0  lab2-worker-0
+12:07:10 AM     0    134635   13.00    0.00    0.00   71.00   13.00     0  lab2-worker-1
+12:07:10 AM     0    134636   42.00    0.00    0.00   44.00   42.00     1  lab2-worker-2
+12:07:10 AM     0    134637   44.00    0.00    0.00   42.00   44.00     1  lab2-worker-3
+
+Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+Average:        0    134634   76.00    0.00    0.00    8.00   76.00     -  lab2-worker-0
+Average:        0    134635   13.40    0.00    0.00   70.60   13.40     -  lab2-worker-1
+Average:        0    134636   42.00    0.00    0.00   42.00   42.00     -  lab2-worker-2
+Average:        0    134637   42.00    0.00    0.00   42.00   42.00     -  lab2-worker-3
+
+[0;32m>>> АНАЛИЗ:[0m
+  На CPU 0: Worker-0 должен иметь ~65-70%, Worker-1 ~30% (из-за разницы nice).
+  На CPU 1: Worker-2 и Worker-3 должны иметь по ~50% (равный nice).
+
+[1;33m[STEP 3] Проверка CPU Affinity (Привязка к ядрам)[0m
+Используем 'ps' для проверки столбца PSR (Processor ID):
+    PID COMMAND         PSR  NI
+ 134634 lab2-worker-0     0   0
+ 134635 lab2-worker-1     0  10
+ 134636 lab2-worker-2     1   0
+ 134637 lab2-worker-3     1   0
+[0;32m>>> ПРОВЕРКА:[0m
+  Worker 0, 1 должны быть на PSR 0.
+  Worker 2, 3 должны быть на PSR 1.
+
+[1;33m[STEP 4] Демонстрация изменения Nice в реальном времени[0m
+Мы берем пару с CPU 1 (Worker-2 и Worker-3), которые сейчас равны.
+[0;31mДЕЙСТВИЕ: [0m
+  1. Worker-2: Nice 0 -> Nice 19 (Минимальный приоритет)
+  2. Worker-3: Nice 0 -> Nice -10 (Высокий приоритет)
+Приоритеты изменены. Замеряем влияние (5 секунд)...
+Linux 6.11.2-amd64 (kali) 	12/05/2025 	_x86_64_	(12 CPU)
+
+12:07:10 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:07:11 AM     0    134636    3.00    0.00    0.00   62.00    3.00     1  lab2-worker-2
+12:07:11 AM     0    134637   79.00    0.00    0.00    1.00   79.00     1  lab2-worker-3
+
+12:07:11 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:07:12 AM     0    134636    3.00    0.00    0.00   97.00    3.00     1  lab2-worker-2
+12:07:12 AM     0    134637   83.00    0.00    0.00    1.00   83.00     1  lab2-worker-3
+
+12:07:12 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:07:13 AM     0    134636    2.00    0.00    0.00   49.00    2.00     1  lab2-worker-2
+12:07:13 AM     0    134637   86.00    0.00    0.00    1.00   86.00     1  lab2-worker-3
+
+12:07:13 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:07:14 AM     0    134636    6.00    0.00    0.00   95.00    6.00     1  lab2-worker-2
+12:07:14 AM     0    134637   79.00    0.00    0.00    0.00   79.00     1  lab2-worker-3
+
+12:07:14 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:07:15 AM     0    134636    7.00    0.00    0.00   92.00    7.00     1  lab2-worker-2
+12:07:15 AM     0    134637   83.00    0.00    0.00    1.00   83.00     1  lab2-worker-3
+
+Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+Average:        0    134636    4.20    0.00    0.00   79.00    4.20     -  lab2-worker-2
+Average:        0    134637   82.00    0.00    0.00    0.80   82.00     -  lab2-worker-3
+
+[0;32m>>> ВЫВОД:[0m
+  Worker-3 должен захватить почти 90-95% ядра CPU 1.
+  Worker-2 должен остаться с минимумом ресурсов.
+
+[0;34mДемонстрация успешно завершена.[0m
+
+[0;34m[CLEANUP] Завершение процессов...[0m
+Done.

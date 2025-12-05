@@ -1,0 +1,19 @@
+{
+    "workers_count": 4,
+    "restart_window_sec": 30,
+    "max_restarts": 5,
+    "mode_heavy": {
+        "work_sec": 0.5,
+        "sleep_sec": 0.1
+    },
+    "mode_light": {
+        "work_sec": 0.05,
+        "sleep_sec": 0.5
+    },
+    "scheduling": [
+        {"worker_id": 0, "nice": 0,  "cpu_affinity": [0]},
+        {"worker_id": 1, "nice": 10, "cpu_affinity": [0]},
+        {"worker_id": 2, "nice": 0,  "cpu_affinity": [1]},
+        {"worker_id": 3, "nice": -5, "cpu_affinity": [1]}
+    ]
+}
