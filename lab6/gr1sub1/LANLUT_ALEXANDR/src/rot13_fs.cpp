@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <time.h>
+#include <vector>
 
 static std::string root;
 
@@ -18,8 +19,11 @@ static std::string root;
 static std::string get_timestamp() {
     time_t now = time(nullptr);
     struct tm *t = localtime(&now);
-    char buf[64];
-    strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", t);
+    char buf[128];
+    size_t written = strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", t);
+    if (written == 0) {
+        return "[timestamp-error]";
+    }
     return std::string(buf);
 }
 
@@ -42,6 +46,9 @@ static char rot13_char(char c) {
 
 // ROT13 преобразование буфера
 static void rot13_buffer(char *buf, size_t size) {
+    if (!buf || size == 0) {
+        return;
+    }
     for (size_t i = 0; i < size; i++) {
         buf[i] = rot13_char(buf[i]);
     }
@@ -107,20 +114,14 @@ static int rot13_write(const char *path, const char *buf, size_t size,
                        off_t offset, struct fuse_file_info *fi) {
     int fd = fi->fh;
     
-    // Создаем копию буфера для шифрования
-    char *encrypted_buf = (char*)malloc(size);
-    if (!encrypted_buf) {
-        return -ENOMEM;
-    }
+    std::vector<char> encrypted_buf(size);
     
-    memcpy(encrypted_buf, buf, size);
+    memcpy(encrypted_buf.data(), buf, size);
     
     // Шифруем данные перед записью
-    rot13_buffer(encrypted_buf, size);
+    rot13_buffer(encrypted_buf.data(), size);
     
-    int res = pwrite(fd, encrypted_buf, size, offset);
-    
-    free(encrypted_buf);
+    int res = pwrite(fd, encrypted_buf.data(), size, offset);
     
     int ret = res == -1 ? -errno : res;
     log_operation("WRITE", path, ret);

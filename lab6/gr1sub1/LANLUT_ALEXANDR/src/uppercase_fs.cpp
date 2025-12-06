@@ -19,8 +19,11 @@ static std::string root;
 static std::string get_timestamp() {
     time_t now = time(nullptr);
     struct tm *t = localtime(&now);
-    char buf[64];
-    strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", t);
+    char buf[128];
+    size_t written = strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", t);
+    if (written == 0) {
+        return "[timestamp-error]";
+    }
     return std::string(buf);
 }
 
@@ -32,6 +35,9 @@ static void log_operation(const char *op, const char *path, int result) {
 
 // Преобразование буфера в верхний регистр
 static void to_uppercase(char *buf, size_t size) {
+    if (!buf || size == 0) {
+        return;
+    }
     for (size_t i = 0; i < size; i++) {
         buf[i] = toupper((unsigned char)buf[i]);
     }

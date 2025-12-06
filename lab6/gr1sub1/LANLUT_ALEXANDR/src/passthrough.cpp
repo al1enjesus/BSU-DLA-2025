@@ -18,8 +18,11 @@ static std::string root;
 static std::string get_timestamp() {
     time_t now = time(nullptr);
     struct tm *t = localtime(&now);
-    char buf[64];
-    strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", t);
+    char buf[128];
+    size_t written = strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", t);
+    if (written == 0) {
+        return "[timestamp-error]";
+    }
     return std::string(buf);
 }
 
