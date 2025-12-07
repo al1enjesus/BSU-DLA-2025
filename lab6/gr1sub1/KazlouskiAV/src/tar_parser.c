@@ -29,7 +29,6 @@ int tar_load(const char *tar_path) {
         return -1;
     }
 
-    // Парсим
     size_t offset = 0;
     while (offset + 512 <= g_tar.size) {
         char *header = g_tar.data + offset;
@@ -43,7 +42,6 @@ int tar_load(const char *tar_path) {
         unsigned long mode = octal_to_ulong(header + 100, 8);
         unsigned long mtime = octal_to_ulong(header + 136, 12);
 
-        // Пропускаем директории (имена оканчиваются на /)
         if (name[strlen(name)-1] == '/') {
             offset += 512 + ((size + 511) / 512) * 512;
             continue;
@@ -53,7 +51,6 @@ int tar_load(const char *tar_path) {
         offset += 512 + ((size + 511) / 512) * 512;
     }
 
-    // Теперь выделяем и заполняем
     g_tar.entries = calloc(g_tar.entry_count, sizeof(tar_entry_t));
     if (!g_tar.entries) {
         munmap(g_tar.data, g_tar.size);
