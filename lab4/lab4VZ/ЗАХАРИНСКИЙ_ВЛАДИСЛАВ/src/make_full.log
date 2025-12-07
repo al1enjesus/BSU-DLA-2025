@@ -1,0 +1,29 @@
+[SPY] Library loaded successfully! (WSL version)
+[SPY] stat('/usr/gnu/include') = -1
+[SPY] stat('/usr/local/include') = 0
+[SPY] stat('/usr/include') = 0
+[SPY] stat('/usr/include') = 0
+[SPY] stat('.') = 0
+[SPY] opendir('.') = 0x643b74213440
+[SPY] readdir(0x643b74213440) = 'make_full.log'
+[SPY] readdir(0x643b74213440) = 'script.sh'
+[SPY] readdir(0x643b74213440) = 'make_full.log'
+[SPY] readdir(0x643b74213440) = 'hello.c'
+[SPY] readdir(0x643b74213440) = 'benchmark'
+[SPY] readdir(0x643b74213440) = '..'
+[SPY] readdir(0x643b74213440) = 'wsl_spy.c'
+[SPY] readdir(0x643b74213440) = 'gcc_full.log'
+[SPY] readdir(0x643b74213440) = '.'
+[SPY] readdir(0x643b74213440) = 'hello'
+[SPY] readdir(0x643b74213440) = 'wsl_spy.so'
+[SPY] readdir(0x643b74213440) = 'benchmark.c'
+[SPY] readdir(0x643b74213440) = 'gcc_full.log'
+[SPY] readdir(0x643b74213440) = 'as_full.log'
+[SPY] closedir(0x643b74213440) = 0
+[SPY] stat('RCS') = -1
+[SPY] stat('SCCS') = -1
+[SPY] stat('GNUmakefile') = -1
+[SPY] stat('makefile') = -1
+[SPY] stat('Makefile') = -1
+[SPY] stat('hello') = 0
+[SPY] stat('hello.c') = 0
