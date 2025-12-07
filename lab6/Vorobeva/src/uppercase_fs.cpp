@@ -10,40 +10,16 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <cctype>
-#include <ctime>
+#include "utils.h"
 
 static std::string root_path;
 
-// Получить текущее время в формате [YYYY-MM-DD HH:MM:SS]
-static std::string get_timestamp() {
-    time_t now = time(nullptr);
-    struct tm *t = localtime(&now);
-    char buf[128];
-    size_t written = strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", t);
-    if (written == 0) {
-        return "[timestamp-error]";
-    }
-    return std::string(buf);
-}
-
-// Логирование операций
-static void log_operation(const char *op, const char *path, int result) {
-    fprintf(stderr, "[%s] %s: %s (result: %d)\n", 
-            get_timestamp().c_str(), op, path, result);
-}
-
-// Преобразование пути из FUSE в реальную ФС
-static std::string translate_path(const char *path) {
-    if (strcmp(path, "/") == 0)
-        return root_path;
-    return root_path + path;
-}
-
-// Преобразование буфера в верхний регистр
-static void to_uppercase(char *buf, size_t size) {
-    if (!buf || size == 0) {
+// Преобразование буфера в верхний регистр с проверками
+inline void to_uppercase(char *buf, size_t size) {
+    if (!fuse_utils::check_null(buf, "to_uppercase: buf") || size == 0) {
         return;
     }
+    
     for (size_t i = 0; i < size; i++) {
         buf[i] = toupper((unsigned char)buf[i]);
     }
@@ -52,23 +28,43 @@ static void to_uppercase(char *buf, size_t size) {
 // getattr - получение атрибутов файла
 static int up_getattr(const char *path, struct stat *stbuf,
                       struct fuse_file_info *fi) {
-    std::string full_path = translate_path(path);
+    if (!fuse_utils::check_null(path, "up_getattr: path") || 
+        !fuse_utils::check_null(stbuf, "up_getattr: stbuf")) {
+        return -EINVAL;
+    }
+    
+    if (!fuse_utils::is_path_safe(path)) {
+        fuse_utils::log_operation("GETATTR", path, -EACCES);
+        return -EACCES;
+    }
+    
+    std::string full_path = fuse_utils::translate_path(root_path, path);
     int res;
 
-    if (fi != nullptr && fi->fh > 0) {
+    if (fi && fi->fh > 0) {
         res = fstat(fi->fh, stbuf);
     } else {
         res = lstat(full_path.c_str(), stbuf);
     }
 
     int ret = res == -1 ? -errno : 0;
-    log_operation("GETATTR", path, ret);
+    fuse_utils::log_operation("GETATTR", path, ret);
     return ret;
 }
 
 // open - открытие файла
 static int up_open(const char *path, struct fuse_file_info *fi) {
-    std::string full_path = translate_path(path);
+    if (!fuse_utils::check_null(path, "up_open: path") || 
+        !fuse_utils::check_null(fi, "up_open: fi")) {
+        return -EINVAL;
+    }
+    
+    if (!fuse_utils::is_path_safe(path)) {
+        fuse_utils::log_operation("OPEN", path, -EACCES);
+        return -EACCES;
+    }
+    
+    std::string full_path = fuse_utils::translate_path(root_path, path);
     int fd = open(full_path.c_str(), fi->flags);
 
     int ret = 0;
@@ -78,13 +74,18 @@ static int up_open(const char *path, struct fuse_file_info *fi) {
         fi->fh = fd;
     }
 
-    log_operation("OPEN", path, ret);
+    fuse_utils::log_operation("OPEN", path, ret);
     return ret;
 }
 
 // read - чтение из файла с преобразованием в uppercase
 static int up_read(const char *path, char *buf, size_t size,
                    off_t offset, struct fuse_file_info *fi) {
+    if (!fuse_utils::check_null(buf, "up_read: buf") || 
+        !fuse_utils::check_null(fi, "up_read: fi")) {
+        return -EINVAL;
+    }
+    
     int fd = fi->fh;
     int res = pread(fd, buf, size, offset);
 
@@ -94,72 +95,114 @@ static int up_read(const char *path, char *buf, size_t size,
     }
 
     int ret = res == -1 ? -errno : res;
-    log_operation("READ", path, ret);
+    fuse_utils::log_operation("READ", path, ret);
     return ret;
 }
 
 // write - запись в файл (без преобразования)
 static int up_write(const char *path, const char *buf, size_t size,
                     off_t offset, struct fuse_file_info *fi) {
+    if (!fuse_utils::check_null(buf, "up_write: buf") || 
+        !fuse_utils::check_null(fi, "up_write: fi")) {
+        return -EINVAL;
+    }
+    
     int fd = fi->fh;
     
     // Записываем данные как есть (без преобразования)
     int res = pwrite(fd, buf, size, offset);
 
     int ret = res == -1 ? -errno : res;
-    log_operation("WRITE", path, ret);
+    fuse_utils::log_operation("WRITE", path, ret);
     return ret;
 }
 
 // release - закрытие файла
 static int up_release(const char *path, struct fuse_file_info *fi) {
-    (void)path; // Не используется
+    if (!fuse_utils::check_null(fi, "up_release: fi")) {
+        return -EINVAL;
+    }
     
     close(fi->fh);
-    log_operation("RELEASE", path, 0);
+    fuse_utils::log_operation("RELEASE", path, 0);
     return 0;
 }
 
 // mkdir - создание директории
 static int up_mkdir(const char *path, mode_t mode) {
-    std::string full_path = translate_path(path);
+    if (!fuse_utils::check_null(path, "up_mkdir: path")) {
+        return -EINVAL;
+    }
+    
+    if (!fuse_utils::is_path_safe(path)) {
+        fuse_utils::log_operation("MKDIR", path, -EACCES);
+        return -EACCES;
+    }
+    
+    std::string full_path = fuse_utils::translate_path(root_path, path);
     int res = mkdir(full_path.c_str(), mode);
 
     int ret = res == -1 ? -errno : 0;
-    log_operation("MKDIR", path, ret);
+    fuse_utils::log_operation("MKDIR", path, ret);
     return ret;
 }
 
 // rmdir - удаление директории
 static int up_rmdir(const char *path) {
-    std::string full_path = translate_path(path);
+    if (!fuse_utils::check_null(path, "up_rmdir: path")) {
+        return -EINVAL;
+    }
+    
+    if (!fuse_utils::is_path_safe(path)) {
+        fuse_utils::log_operation("RMDIR", path, -EACCES);
+        return -EACCES;
+    }
+    
+    std::string full_path = fuse_utils::translate_path(root_path, path);
     int res = rmdir(full_path.c_str());
 
     int ret = res == -1 ? -errno : 0;
-    log_operation("RMDIR", path, ret);
+    fuse_utils::log_operation("RMDIR", path, ret);
     return ret;
 }
 
 // unlink - удаление файла
 static int up_unlink(const char *path) {
-    std::string full_path = translate_path(path);
+    if (!fuse_utils::check_null(path, "up_unlink: path")) {
+        return -EINVAL;
+    }
+    
+    if (!fuse_utils::is_path_safe(path)) {
+        fuse_utils::log_operation("UNLINK", path, -EACCES);
+        return -EACCES;
+    }
+    
+    std::string full_path = fuse_utils::translate_path(root_path, path);
     int res = unlink(full_path.c_str());
 
     int ret = res == -1 ? -errno : 0;
-    log_operation("UNLINK", path, ret);
+    fuse_utils::log_operation("UNLINK", path, ret);
     return ret;
 }
 
 // rename - переименование/перемещение файла
 static int up_rename(const char *from, const char *to, unsigned int flags) {
-    (void)flags; // Не используется
+    if (!fuse_utils::check_null(from, "up_rename: from") || 
+        !fuse_utils::check_null(to, "up_rename: to")) {
+        return -EINVAL;
+    }
     
-    std::string from_path = translate_path(from);
-    std::string to_path = translate_path(to);
+    if (!fuse_utils::is_path_safe(from) || !fuse_utils::is_path_safe(to)) {
+        fuse_utils::log_operation("RENAME", from, -EACCES);
+        return -EACCES;
+    }
+    
+    std::string from_path = fuse_utils::translate_path(root_path, from);
+    std::string to_path = fuse_utils::translate_path(root_path, to);
     int res = rename(from_path.c_str(), to_path.c_str());
 
     int ret = res == -1 ? -errno : 0;
-    log_operation("RENAME", from, ret);
+    fuse_utils::log_operation("RENAME", from, ret);
     return ret;
 }
 
@@ -167,16 +210,26 @@ static int up_rename(const char *from, const char *to, unsigned int flags) {
 static int up_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
                       off_t offset, struct fuse_file_info *fi,
                       enum fuse_readdir_flags flags) {
-    (void)offset; // Не используется
-    (void)fi;     // Не используется
-    (void)flags;  // Не используется
+    (void)offset;
+    (void)fi;
+    (void)flags;
     
-    std::string full_path = translate_path(path);
+    if (!fuse_utils::check_null(path, "up_readdir: path") || 
+        !fuse_utils::check_null(buf, "up_readdir: buf")) {
+        return -EINVAL;
+    }
+    
+    if (!fuse_utils::is_path_safe(path)) {
+        fuse_utils::log_operation("READDIR", path, -EACCES);
+        return -EACCES;
+    }
+    
+    std::string full_path = fuse_utils::translate_path(root_path, path);
 
     DIR *dp = opendir(full_path.c_str());
-    if (dp == nullptr) {
+    if (!dp) {
         int ret = -errno;
-        log_operation("READDIR", path, ret);
+        fuse_utils::log_operation("READDIR", path, ret);
         return ret;
     }
 
@@ -187,18 +240,29 @@ static int up_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
         st.st_ino = de->d_ino;
         st.st_mode = de->d_type << 12;
 
-        if (filler(buf, de->d_name, &st, 0, FUSE_FILL_DIR_PLUS))
+        if (filler(buf, de->d_name, &st, 0, FUSE_FILL_DIR_PLUS)) {
             break;
+        }
     }
 
     closedir(dp);
-    log_operation("READDIR", path, 0);
+    fuse_utils::log_operation("READDIR", path, 0);
     return 0;
 }
 
 // create - создание нового файла
 static int up_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
-    std::string full_path = translate_path(path);
+    if (!fuse_utils::check_null(path, "up_create: path") || 
+        !fuse_utils::check_null(fi, "up_create: fi")) {
+        return -EINVAL;
+    }
+    
+    if (!fuse_utils::is_path_safe(path)) {
+        fuse_utils::log_operation("CREATE", path, -EACCES);
+        return -EACCES;
+    }
+    
+    std::string full_path = fuse_utils::translate_path(root_path, path);
     int fd = open(full_path.c_str(), fi->flags, mode);
 
     int ret = 0;
@@ -208,23 +272,32 @@ static int up_create(const char *path, mode_t mode, struct fuse_file_info *fi) {
         fi->fh = fd;
     }
 
-    log_operation("CREATE", path, ret);
+    fuse_utils::log_operation("CREATE", path, ret);
     return ret;
 }
 
 // truncate - изменение размера файла
 static int up_truncate(const char *path, off_t size,
                        struct fuse_file_info *fi) {
+    if (!fuse_utils::check_null(path, "up_truncate: path")) {
+        return -EINVAL;
+    }
+    
+    if (!fuse_utils::is_path_safe(path)) {
+        fuse_utils::log_operation("TRUNCATE", path, -EACCES);
+        return -EACCES;
+    }
+    
     int res;
-    if (fi != nullptr && fi->fh > 0) {
+    if (fi && fi->fh > 0) {
         res = ftruncate(fi->fh, size);
     } else {
-        std::string full_path = translate_path(path);
+        std::string full_path = fuse_utils::translate_path(root_path, path);
         res = truncate(full_path.c_str(), size);
     }
 
     int ret = res == -1 ? -errno : 0;
-    log_operation("TRUNCATE", path, ret);
+    fuse_utils::log_operation("TRUNCATE", path, ret);
     return ret;
 }
 
@@ -271,8 +344,14 @@ int main(int argc, char *argv[]) {
     fprintf(stderr, "Mounting uppercase FS: %s -> %s\n", 
             root_path.c_str(), argv[2]);
 
+    // Передаем FUSE только mountpoint и опции (убираем source_dir)
     int fuse_argc = argc - 1;
     char **fuse_argv = (char**)malloc(sizeof(char*) * fuse_argc);
+    if (!fuse_argv) {
+        fprintf(stderr, "Error: Memory allocation failed\n");
+        return 1;
+    }
+    
     fuse_argv[0] = argv[0];
     for (int i = 2; i < argc; i++) {
         fuse_argv[i-1] = argv[i];
