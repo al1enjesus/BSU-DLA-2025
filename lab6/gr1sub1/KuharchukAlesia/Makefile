@@ -7,7 +7,7 @@ all: myfuse archive_fs_simple monitoring_fs
 myfuse: simple_fuse.c
 	$(CC) $(CFLAGS) -o $@ $< -lfuse3
 
-archive_fs_simple: archive_fs_simple.c
+archive_fs_simple: archive_fs_fixed.c
 	$(CC) $(CFLAGS) -o $@ $< -lfuse3
 
 monitoring_fs: monitoring_fs.c

@@ -24,9 +24,8 @@ void log_operation(const char* operation, const char* path, int result) {
 }
 
 void get_full_path(char full_path[PATH_MAX], const char *path) {
-    strcpy(full_path, base_path);
-    if (strcmp(path, "/") != 0) {
-        strcat(full_path, path);
+    if (snprintf(full_path, PATH_MAX, "%s%s", base_path, path) >= PATH_MAX) {
+        full_path[0] = '\0';
     }
 }
 
@@ -154,8 +153,10 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    if (base_path[strlen(base_path)-1] != '/') {
-        strcat(base_path, "/");
+    size_t len = strlen(base_path);
+    if (len > 0 && base_path[len-1] != '/' && len < PATH_MAX - 1) {
+        base_path[len] = '/';
+        base_path[len+1] = '\0';
     }
 
     fprintf(stderr, "Base path: %s\n", base_path);

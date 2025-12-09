@@ -52,7 +52,7 @@ int parse_tar_archive(const char *archive_path) {
         // Извлекаем имя файла
         char name[256];
         strncpy(name, header, 100);
-        name[100] = '\0';
+        name[99] = '\0';
         
         // Убираем завершающий слеш для директорий
         if (name[strlen(name)-1] == '/') {
