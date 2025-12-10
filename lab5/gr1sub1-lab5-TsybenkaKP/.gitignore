@@ -1,0 +1,26 @@
+# Compiled kernel modules
+*.ko
+*.o
+*.mod
+*.mod.c
+*.mod.o
+
+# Module build artifacts
+.*.cmd
+.tmp_versions/
+Module.symvers
+modules.order
+
+# Editor files
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test device nodes
+/dev/mychardev
