@@ -69,7 +69,8 @@ static int arc_load() {
         if (clean[0] != '/')
             snprintf(af->fpath, PATH_MAX, "/%s", clean);
         else
-            strncpy(af->fpath, clean, PATH_MAX);
+            strncpy(af->fpath, clean, PATH_MAX - 1);
+        af->fpath[PATH_MAX-1] = '\0';
 
         size_t len = strlen(af->fpath);
         if (len > 1 && af->fpath[len - 1] == '/')
@@ -80,7 +81,7 @@ static int arc_load() {
         af->mtime = archive_entry_mtime(ent);
         af->data_offset = archive_read_header_position(arc);
 
-        fprintf(stderr, "Загружено: %s (%zu байт)\n", af->fsize, af->fpath);
+        fprintf(stderr, "Загружено: %s (%zu байт)\n", af->fpath, af->fsize);
 
         arc_count++;
         if (arc_count >= MAX_FILES)
@@ -106,7 +107,6 @@ static int arc_getattr(const char *path, struct stat *st, struct fuse_file_info 
 
     arc_file_t *f = arc_find(path);
     if (!f) {
-
         size_t plen = strlen(path);
         for (int i = 0; i < arc_count; i++) {
             if (!strncmp(arc_files[i].fpath, path, plen) &&
@@ -118,7 +118,6 @@ static int arc_getattr(const char *path, struct stat *st, struct fuse_file_info 
                 return 0;
             }
         }
-
         return -ENOENT;
     }
 
@@ -132,7 +131,6 @@ static int arc_getattr(const char *path, struct stat *st, struct fuse_file_info 
 
 static int arc_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
                        off_t off, struct fuse_file_info *fi, enum fuse_readdir_flags fl) {
-
     (void) off; (void) fi; (void) fl;
 
     filler(buf, ".", NULL, 0, 0);
@@ -141,7 +139,8 @@ static int arc_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
     size_t plen = strlen(path);
     int root = !strcmp(path, "/");
 
-    char added[MAX_FILES][128];
+    char **added = calloc(MAX_FILES, sizeof(char*));
+    if (!added) return -ENOMEM;
     int added_n = 0;
 
     for (int i = 0; i < arc_count; i++) {
@@ -170,11 +169,10 @@ static int arc_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
             size_t n = slash - nm;
             if (n >= sizeof(out)) n = sizeof(out) - 1;
             strncpy(out, nm, n);
-            out[n] = 0;
+            out[n] = '\0';
             isdir = 1;
         } else {
-            strncpy(out, nm, sizeof(out));
-            out[sizeof(out)-1] = 0;
+            snprintf(out, sizeof(out), "%s", nm);
             isdir = S_ISDIR(arc_files[i].fmode);
         }
 
@@ -189,9 +187,16 @@ static int arc_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
             st.st_mode = isdir ? (S_IFDIR | 0755) : (S_IFREG | 0644);
 
             filler(buf, out, &st, 0, 0);
-            strcpy(added[added_n++], out);
+
+            added[added_n] = strdup(out);
+            added_n++;
         }
     }
+
+    for (int k = 0; k < added_n; k++)
+        free(added[k]);
+    free(added);
+
     return 0;
 }
 
@@ -204,7 +209,6 @@ static int arc_open(const char *p, struct fuse_file_info *fi) {
 
 static int arc_read(const char *path, char *buf, size_t sz, off_t off,
                     struct fuse_file_info *fi) {
-
     (void) fi;
 
     arc_file_t *f = arc_find(path);
@@ -225,7 +229,6 @@ static int arc_read(const char *path, char *buf, size_t sz, off_t off,
     }
 
     while (archive_read_next_header(a, &e) == ARCHIVE_OK) {
-
         const char *pn = archive_entry_pathname(e);
         if (!strcmp(pn, ".") || !strcmp(pn, "./")) {
             archive_read_data_skip(a);
@@ -243,10 +246,8 @@ static int arc_read(const char *path, char *buf, size_t sz, off_t off,
         if (cp[0] != '/')
             snprintf(np, PATH_MAX, "/%s", cp);
         else
-            strncpy(np, cp, PATH_MAX);
-
-        size_t L = strlen(np);
-        if (L > 1 && np[L - 1] == '/') np[L - 1] = 0;
+            strncpy(np, cp, PATH_MAX - 1);
+        np[PATH_MAX-1] = '\0';
 
         if (!strcmp(np, path)) {
 

@@ -55,7 +55,7 @@ static void update_stats(const char *op, ssize_t bytes) {
 
 static void generate_stats_content(char *buf, size_t size) {
     pthread_mutex_lock(&stats.lock);
-    snprintf(buf, size,
+    int n = snprintf(buf, size,
              "reads: %lu\n"
              "writes: %lu\n"
              "opens: %lu\n"
@@ -70,12 +70,12 @@ static void generate_stats_content(char *buf, size_t size) {
              stats.reads, stats.writes, stats.opens, stats.getattrs,
              stats.readdirs, stats.creates, stats.unlinks,
              stats.mkdirs, stats.rmdirs, stats.bytes_read, stats.bytes_written);
+    if (n < 0 || (size_t)n >= size) buf[size-1] = '\0';
     pthread_mutex_unlock(&stats.lock);
 }
 
 static void get_full_path(char *full_path, const char *path) {
-    strcpy(full_path, base_path);
-    strncat(full_path, path, PATH_MAX - strlen(base_path) - 1);
+    snprintf(full_path, PATH_MAX, "%s%s", base_path, path);
 }
 
 static int is_stats_file(const char *path) {
@@ -125,7 +125,7 @@ static int mon_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
     if (strcmp(path, "/") == 0) {
         struct stat st = {0};
         st.st_mode = S_IFREG | 0444;
-        filler(buf, ".stats", &st, 0, 0);
+        filler(buf, STATS_FILE + 1, &st, 0, 0);
     }
 
     closedir(dp);
@@ -165,7 +165,7 @@ static int mon_read(const char *path, char *buf, size_t size, off_t offset, stru
     get_full_path(full_path, path);
     int fd = open(full_path, O_RDONLY);
     if (fd == -1) return -errno;
-    int res = pread(fd, buf, size, offset);
+    ssize_t res = pread(fd, buf, size, offset);
     close(fd);
     if (res > 0) update_stats("read", res);
     return (res < 0) ? -errno : res;
@@ -179,7 +179,7 @@ static int mon_write(const char *path, const char *buf, size_t size, off_t offse
     get_full_path(full_path, path);
     int fd = open(full_path, O_WRONLY);
     if (fd == -1) return -errno;
-    int res = pwrite(fd, buf, size, offset);
+    ssize_t res = pwrite(fd, buf, size, offset);
     close(fd);
     if (res > 0) update_stats("write", res);
     return (res < 0) ? -errno : res;
