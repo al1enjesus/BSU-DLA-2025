@@ -69,7 +69,7 @@ static int arc_load() {
         if (clean[0] != '/')
             snprintf(af->fpath, PATH_MAX, "/%s", clean);
         else
-            strncpy(af->fpath, clean, PATH_MAX - 1);
+            snprintf(af->fpath, PATH_MAX, "%s", clean);
         af->fpath[PATH_MAX-1] = '\0';
 
         size_t len = strlen(af->fpath);
@@ -168,7 +168,10 @@ static int arc_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
         if (slash) {
             size_t n = slash - nm;
             if (n >= sizeof(out)) n = sizeof(out) - 1;
-            strncpy(out, nm, n);
+            if (cp[0] != '/')
+                snprintf(np, PATH_MAX, "/%s", cp);
+            else
+                snprintf(np, PATH_MAX, "%s", cp);
             out[n] = '\0';
             isdir = 1;
         } else {
@@ -246,7 +249,7 @@ static int arc_read(const char *path, char *buf, size_t sz, off_t off,
         if (cp[0] != '/')
             snprintf(np, PATH_MAX, "/%s", cp);
         else
-            strncpy(np, cp, PATH_MAX - 1);
+            snprintf(out, sizeof(out), "%.*s", (int)n, nm);
         np[PATH_MAX-1] = '\0';
 
         if (!strcmp(np, path)) {
