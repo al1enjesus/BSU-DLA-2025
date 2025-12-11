@@ -53,7 +53,7 @@ static int pt_readdir(const char *p, void *buf, fuse_fill_dir_t fill,
         char full[PATH_MAX];
         snprintf(full, PATH_MAX, "%s/%s", real, de->d_name);
 
-        stat(full, &st);
+        lstat(full, &st);
 
         if (fill(buf, de->d_name, &st, 0, 0))
             break;
