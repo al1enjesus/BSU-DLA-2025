@@ -168,10 +168,7 @@ static int arc_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
         if (slash) {
             size_t n = slash - nm;
             if (n >= sizeof(out)) n = sizeof(out) - 1;
-            if (cp[0] != '/')
-                snprintf(np, PATH_MAX, "/%s", cp);
-            else
-                snprintf(np, PATH_MAX, "%s", cp);
+            snprintf(out, sizeof(out), "%.*s", (int)n, nm);
             out[n] = '\0';
             isdir = 1;
         } else {
@@ -247,13 +244,12 @@ static int arc_read(const char *path, char *buf, size_t sz, off_t off,
 
         char np[PATH_MAX];
         if (cp[0] != '/')
-            snprintf(np, PATH_MAX, "/%s", cp);
+            snprintf(np, sizeof(np), "/%s", cp);
         else
-            snprintf(out, sizeof(out), "%.*s", (int)n, nm);
+            snprintf(np, sizeof(np), "%s", cp);
         np[PATH_MAX-1] = '\0';
 
         if (!strcmp(np, path)) {
-
             if (off > 0) {
                 char tmp[4096];
                 size_t r = off;
