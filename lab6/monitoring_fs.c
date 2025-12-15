@@ -33,7 +33,8 @@ static int mf_getattr(const char *path, struct stat *st, struct fuse_file_info *
     }
 
     char full[4096];
-    build_full_path(full, root_dir, path);
+    if (build_full_path(full, sizeof(full), root_dir, path) != 0)
+        return -EINVAL;
 
     int r = lstat(full, st);
     return r == -1 ? -errno : 0;
@@ -48,7 +49,8 @@ static int mf_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
     filler(buf, ".stats", NULL, 0, 0);
 
     char full[4096];
-    build_full_path(full, root_dir, path);
+    if (build_full_path(full, sizeof(full), root_dir, path) != 0)
+        return -EINVAL;
 
     DIR *dp = opendir(full);
     if (!dp) return -errno;
@@ -68,7 +70,8 @@ static int mf_open(const char *path, struct fuse_file_info *fi) {
     count_open++;
 
     char full[4096];
-    build_full_path(full, root_dir, path);
+    if (build_full_path(full, sizeof(full), root_dir, path) != 0)
+        return -EINVAL;
 
     int fd = open(full, fi->flags);
     if (fd == -1) return -errno;

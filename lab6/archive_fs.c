@@ -48,9 +48,24 @@ static void parse_tar() {
         if (hdr.name[0] == '\0')
             break;
 
-        size_t size = strtol(hdr.size, NULL, 8);
+        /* Проверка границ массива */
+        if (entry_count >= 1024) {
+            fprintf(stderr, "Warning: too many entries in tar, limit is 1024\n");
+            break;
+        }
 
-        strncpy(entries[entry_count].name, hdr.name, 255);
+        /* Безопасная конверсия размера */
+        char *endptr;
+        long size_val = strtol(hdr.size, &endptr, 8);
+        if (endptr == hdr.size || size_val < 0) {
+            fprintf(stderr, "Warning: invalid size in tar header, skipping\n");
+            continue;
+        }
+        size_t size = (size_t)size_val;
+
+        /* Безопасное копирование с гарантией нуль-терминатора */
+        strncpy(entries[entry_count].name, hdr.name, sizeof(entries[entry_count].name) - 1);
+        entries[entry_count].name[sizeof(entries[entry_count].name) - 1] = '\0';
         entries[entry_count].size = size;
         entries[entry_count].offset = offset + 512;
         entry_count++;

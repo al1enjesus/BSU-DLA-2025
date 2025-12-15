@@ -17,6 +17,42 @@
 
 ---
 
+## 1.1. Сборка и запуск
+
+### Требования
+
+- Linux с поддержкой FUSE
+- Библиотека libfuse3 (`apt install libfuse3-dev` или `dnf install fuse3-devel`)
+- GCC и pkg-config
+
+### Сборка
+
+```bash
+make
+```
+
+### Запуск
+
+```bash
+# Passthrough FS
+mkdir -p /tmp/source /tmp/mountpoint
+./myfuse passthrough /tmp/source /tmp/mountpoint -f
+
+# Archive FS
+./myfuse archive myarchive.tar /tmp/mountpoint -f
+
+# Monitoring FS
+./myfuse monitor /tmp/source /tmp/mountpoint -f
+```
+
+### Размонтирование
+
+```bash
+fusermount -u /tmp/mountpoint
+```
+
+---
+
 ## 2. Теория
 
 ### 2.1. Виртуальная файловая система (VFS)

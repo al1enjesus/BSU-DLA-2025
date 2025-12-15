@@ -23,7 +23,10 @@ static int pt_getattr(const char *path, struct stat *st, struct fuse_file_info *
     (void) fi;
 
     char full[4096];
-    build_full_path(full, root_dir, path);
+    if (build_full_path(full, sizeof(full), root_dir, path) != 0) {
+        log_op("GETATTR", path, -EINVAL);
+        return -EINVAL;
+    }
 
     int res = lstat(full, st);
     log_op("GETATTR", path, res == -1 ? -errno : 0);
@@ -36,7 +39,10 @@ static int pt_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
             enum fuse_readdir_flags flags)
 {
     char full[4096];
-    build_full_path(full, root_dir, path);
+    if (build_full_path(full, sizeof(full), root_dir, path) != 0) {
+        log_op("READDIR", path, -EINVAL);
+        return -EINVAL;
+    }
 
     DIR *dp = opendir(full);
     if (!dp) {
@@ -57,7 +63,10 @@ static int pt_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
 /* ---------------- open ---------------- */
 static int pt_open(const char *path, struct fuse_file_info *fi) {
     char full[4096];
-    build_full_path(full, root_dir, path);
+    if (build_full_path(full, sizeof(full), root_dir, path) != 0) {
+        log_op("OPEN", path, -EINVAL);
+        return -EINVAL;
+    }
 
     int fd = open(full, fi->flags);
     if (fd == -1) {
@@ -101,7 +110,10 @@ static int pt_create(const char *path, mode_t mode,
                      struct fuse_file_info *fi)
 {
     char full[4096];
-    build_full_path(full, root_dir, path);
+    if (build_full_path(full, sizeof(full), root_dir, path) != 0) {
+        log_op("CREATE", path, -EINVAL);
+        return -EINVAL;
+    }
 
     int fd = open(full, fi->flags | O_CREAT, mode);
     if (fd == -1) {
@@ -116,7 +128,10 @@ static int pt_create(const char *path, mode_t mode,
 /* ---------------- unlink ---------------- */
 static int pt_unlink(const char *path) {
     char full[4096];
-    build_full_path(full, root_dir, path);
+    if (build_full_path(full, sizeof(full), root_dir, path) != 0) {
+        log_op("UNLINK", path, -EINVAL);
+        return -EINVAL;
+    }
 
     int res = unlink(full);
     log_op("UNLINK", path, res == -1 ? -errno : 0);
@@ -126,7 +141,10 @@ static int pt_unlink(const char *path) {
 /* ---------------- mkdir ---------------- */
 static int pt_mkdir(const char *path, mode_t mode) {
     char full[4096];
-    build_full_path(full, root_dir, path);
+    if (build_full_path(full, sizeof(full), root_dir, path) != 0) {
+        log_op("MKDIR", path, -EINVAL);
+        return -EINVAL;
+    }
 
     int res = mkdir(full, mode);
     log_op("MKDIR", path, res == -1 ? -errno : 0);
@@ -136,7 +154,10 @@ static int pt_mkdir(const char *path, mode_t mode) {
 /* ---------------- rmdir ---------------- */
 static int pt_rmdir(const char *path) {
     char full[4096];
-    build_full_path(full, root_dir, path);
+    if (build_full_path(full, sizeof(full), root_dir, path) != 0) {
+        log_op("RMDIR", path, -EINVAL);
+        return -EINVAL;
+    }
 
     int res = rmdir(full);
     log_op("RMDIR", path, res == -1 ? -errno : 0);
