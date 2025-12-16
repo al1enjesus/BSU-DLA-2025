@@ -101,13 +101,6 @@ public:
 };
 
 int main() {
-    std::cout << "=======================================\n";
-    std::cout << "SIMPLE KEYLOGGER (Terminal Demo)\n";
-    std::cout << "=======================================\n";
-    std::cout << "WARNING: For educational purposes only!\n";
-    std::cout << "This version only logs input in THIS terminal.\n";
-    std::cout << "=======================================\n\n";
-
     SimpleKeylogger logger;
 
     if (!logger.start()) {
