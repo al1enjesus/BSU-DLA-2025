@@ -1,0 +1,7 @@
+      1 wmdocker
+      1 protoc-gen-go
+      1 protobuf-compiler
+      1 libprotoc23
+      1 libprotobuf-lite23
+      1 libprotobuf-dev
+      1 docker
