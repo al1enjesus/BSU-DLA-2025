@@ -1,0 +1,7 @@
+wmdocker
+docker
+libprotobuf-lite23
+libprotoc23
+libprotobuf-dev
+protobuf-compiler
+protoc-gen-go

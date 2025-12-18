@@ -1,0 +1,123 @@
+Nov 23 15:23:56 a gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user a(uid=1000) by (uid=0)
+Nov 23 15:23:56 a systemd-logind[760]: New session 1 of user a.
+Nov 23 15:23:56 a systemd: pam_unix(systemd-user:session): session opened for user a(uid=1000) by (uid=0)
+Nov 23 15:23:57 a gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Nov 23 15:23:59 a gnome-keyring-daemon[1122]: The Secret Service was already initialized
+Nov 23 15:23:59 a gnome-keyring-daemon[1122]: The SSH agent was already initialized
+Nov 23 15:23:59 a gnome-keyring-daemon[1122]: The PKCS#11 component was already initialized
+Nov 23 15:24:23 a polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.46 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Nov 23 15:25:12 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop ; USER=root ; COMMAND=/usr/bin/apt update
+Nov 23 15:25:12 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 15:25:55 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 15:25:55 a pkexec[3508]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 15:26:20 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 15:26:28 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop ; USER=root ; COMMAND=/usr/bin/apt-get install git
+Nov 23 15:26:28 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 15:26:44 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 15:27:19 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop ; USER=root ; COMMAND=/usr/bin/apt-get install docker
+Nov 23 15:27:19 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 15:27:31 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 15:27:44 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop ; USER=root ; COMMAND=/usr/bin/apt-get install protoc-gen-go
+Nov 23 15:27:44 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 15:27:55 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 15:28:33 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 15:28:33 a pkexec[4375]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 15:30:01 a CRON[5225]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Nov 23 15:30:01 a CRON[5225]: pam_unix(cron:session): session closed for user root
+Nov 23 15:48:27 a gdm-password]: gkr-pam: unlocked login keyring
+Nov 23 16:12:24 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna ; USER=root ; COMMAND=/usr/bin/cp /var/log/syslog logs/
+Nov 23 16:12:24 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:12:24 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:12:24 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna ; USER=root ; COMMAND=/usr/bin/cp /var/log/auth.log logs/
+Nov 23 16:12:24 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:12:24 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:12:24 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna ; USER=root ; COMMAND=/usr/bin/cp /var/log/dpkg.log logs/
+Nov 23 16:12:24 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:12:24 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:13:35 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna/logs ; USER=root ; COMMAND=/usr/bin/chown a:a logs/*
+Nov 23 16:13:35 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:13:35 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:13:42 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna/logs ; USER=root ; COMMAND=/usr/bin/chown a:a .
+Nov 23 16:13:42 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:13:42 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:14:15 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna/logs ; USER=root ; COMMAND=/usr/bin/chown a:a /Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna/logs/*
+Nov 23 16:14:15 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:14:15 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:14:27 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna/logs ; USER=root ; COMMAND=/usr/bin/chown a:a /home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna/logs/auth.log /home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna/logs/dpkg.log /home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna/logs/syslog
+Nov 23 16:14:27 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:14:27 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:16:35 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:16:35 a pkexec[7784]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 16:17:01 a CRON[8552]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Nov 23 16:17:01 a CRON[8552]: pam_unix(cron:session): session closed for user root
+Nov 23 16:19:35 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:19:35 a pkexec[13789]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 16:21:32 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna ; USER=root ; COMMAND=/usr/bin/systemctl status ssh
+Nov 23 16:21:35 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:21:35 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:21:35 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna ; USER=root ; COMMAND=/usr/bin/apt update
+Nov 23 16:21:35 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:22:16 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:22:16 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna ; USER=root ; COMMAND=/usr/bin/apt install openssh-server
+Nov 23 16:22:17 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:22:33 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:22:33 a pkexec[18921]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 16:22:57 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:22:57 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna ; USER=root ; COMMAND=/usr/bin/systemctl start ssh
+Nov 23 16:22:57 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:22:57 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:23:11 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna ; USER=root ; COMMAND=/usr/bin/systemctl start ssh
+Nov 23 16:23:11 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:23:11 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:24:25 a gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=a
+Nov 23 16:25:33 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:25:33 a pkexec[27718]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 16:26:21 a gdm-password]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=a
+Nov 23 16:26:30 a gdm-password]: message repeated 3 times: [ pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=a]
+Nov 23 16:26:34 a gdm-password]: gkr-pam: unlocked login keyring
+Nov 23 16:28:33 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:28:33 a pkexec[33235]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 16:30:02 a CRON[34184]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Nov 23 16:30:02 a CRON[34184]: pam_unix(cron:session): session closed for user root
+Nov 23 16:31:42 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:31:42 a pkexec[47658]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 16:34:33 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:34:33 a pkexec[62803]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 16:37:34 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:37:34 a pkexec[72137]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 16:41:59 a gdm-password]: gkr-pam: unlocked login keyring
+Nov 23 16:43:33 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:43:33 a pkexec[73420]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 16:44:11 a sudo:        a : TTY=pts/0 ; PWD=/home/a/Desktop/BSU-DLA-2025/lab1/gr9sub1/Titkova_Anna ; USER=root ; COMMAND=/usr/bin/apt update
+Nov 23 16:44:11 a sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:44:23 a sudo: pam_unix(sudo:session): session closed for user root
+Nov 23 16:46:37 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 16:46:38 a pkexec[76192]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 16:49:48 a polkitd(authority=local): Unregistered Authentication Agent for unix-session:1 (system bus name :1.46, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
+Nov 23 16:49:53 a gdm-autologin]: pam_unix(gdm-autologin:session): session closed for user a
+Nov 23 16:49:56 a systemd-logind[760]: Session 1 logged out. Waiting for processes to exit.
+Nov 23 16:49:56 a systemd-logind[760]: Removed session 1.
+Nov 23 16:49:57 a gdm-launch-environment]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=128) by (uid=0)
+Nov 23 16:49:59 a systemd-logind[760]: New session c1 of user gdm.
+Nov 23 16:49:59 a systemd: pam_unix(systemd-user:session): session opened for user gdm(uid=128) by (uid=0)
+Nov 23 16:50:10 a systemd-logind[760]: Delay lock is active (UID 0/root, PID 925/unattended-upgr) but inhibitor timeout is reached.
+Nov 23 16:50:10 a systemd-logind[760]: System is powering down.
+Nov 23 16:59:55 a systemd-logind[823]: New seat seat0.
+Nov 23 16:59:55 a systemd-logind[823]: Watching system buttons on /dev/input/event0 (Power Button)
+Nov 23 16:59:55 a systemd-logind[823]: Watching system buttons on /dev/input/event1 (AT Translated Set 2 keyboard)
+Nov 23 17:00:04 a gdm-autologin]: gkr-pam: no password is available for user
+Nov 23 17:00:05 a gdm-autologin]: pam_unix(gdm-autologin:session): session opened for user a(uid=1000) by (uid=0)
+Nov 23 17:00:06 a systemd-logind[823]: New session 1 of user a.
+Nov 23 17:00:06 a systemd: pam_unix(systemd-user:session): session opened for user a(uid=1000) by (uid=0)
+Nov 23 17:00:11 a gdm-autologin]: gkr-pam: gnome-keyring-daemon started properly
+Nov 23 17:00:23 a gnome-keyring-daemon[1129]: The Secret Service was already initialized
+Nov 23 17:00:23 a gnome-keyring-daemon[1129]: The SSH agent was already initialized
+Nov 23 17:00:23 a gnome-keyring-daemon[1129]: The PKCS#11 component was already initialized
+Nov 23 17:00:37 a polkitd(authority=local): Registered Authentication Agent for unix-session:1 (system bus name :1.53 [/usr/bin/gnome-shell], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+Nov 23 17:01:52 a pkexec: pam_unix(polkit-1:session): session opened for user root(uid=0) by (uid=1000)
+Nov 23 17:01:52 a pkexec[3084]: a: Executing command [USER=root] [TTY=unknown] [CWD=/home/a] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+Nov 23 17:17:02 a CRON[3270]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Nov 23 17:17:02 a CRON[3270]: pam_unix(cron:session): session closed for user root
+Nov 23 17:30:01 a CRON[3282]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Nov 23 17:30:01 a CRON[3282]: pam_unix(cron:session): session closed for user root
+Nov 23 17:54:44 a gdm-password]: gkr-pam: unlocked login keyring

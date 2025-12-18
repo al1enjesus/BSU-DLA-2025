@@ -1,0 +1,7 @@
+wmdocker:amd64
+docker:all
+libprotobuf-lite23:amd64
+libprotoc23:amd64
+libprotobuf-dev:amd64
+protobuf-compiler:amd64
+protoc-gen-go:amd64
