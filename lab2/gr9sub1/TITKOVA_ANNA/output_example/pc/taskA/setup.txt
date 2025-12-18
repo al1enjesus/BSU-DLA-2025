@@ -1,0 +1,44 @@
+./taskA/setup.sh 
+==================================================
+                  ЗАПУСК СИСТЕМЫ
+==================================================
+[INFO] Текущая директория: /home/glebateee/Desktop/today2/lab2/gr9sub1/Titkova_Anna
+[INFO] Очистка предыдущих запусков...
+[INFO] Сборка проекта...
+Building cpu_burn...
+gcc -O2 cfiles/cpu_burn.c -o bin/cpu_burn
+cpu_burn built!
+Building mem_touch...
+gcc -O2 cfiles/mem_touch.c -o bin/mem_touch
+mem_touch built!
+Building supervisor and worker...
+cd src/supervisor && go build -o ../../bin/supervisor .
+cd src/worker && go build -o ../../bin/worker .
+Base build complete! Binaries are in: bin/
+Copying config_a.json for Task A...
+mkdir -p bin/config
+cp src/config/config_a.json bin/config/config.json
+Task A build complete!
+[INFO] Создание директорий для логов и PID файлов...
+[INFO] Запуск супервизора с 4 воркерами...
+[SUCCESS] Супервизор запущен с PID: 25339
+[INFO] Ожидание запуска воркеров...
+[INFO] Сохранение PID воркеров...
+[SUCCESS] Запущено 4 воркеров
+
+=== ИНФОРМАЦИЯ О ПРОЦЕССАХ ===
+    PID    PPID  NI PSR %CPU %MEM COMMAND         COMMAND
+  25339   25158   0   1  0.0  0.0 supervisor      ./supervisor --config config/config.json --workers 4
+  25348   25339   0   0 73.8  0.0 worker          ./worker --id 0 --config config/config.json
+  25349   25339   0   0 73.2  0.0 worker          ./worker --id 1 --config config/config.json
+  25359   25339   0   0 74.8  0.0 worker          ./worker --id 2 --config config/config.json
+  25363   25339   0   3 72.5  0.0 worker          ./worker --id 3 --config config/config.json
+
+(Терминал 2): ./scripts/monitor.sh
+(Терминал 3): ./scripts/control.sh
+Остановка: kill -TERM 25339
+
+Логи: logs/supervisor.log
+PID файлы: pids/
+Супервизор и 4 воркеров запущены успешно.
+

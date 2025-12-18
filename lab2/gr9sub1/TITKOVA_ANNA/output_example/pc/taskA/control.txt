@@ -1,0 +1,110 @@
+./taskA/control.sh 
+==================================================
+               УПРАВЛЕНИЕ СИГНАЛАМИ
+==================================================
+
+Супервизор PID: 25339
+Логи: /home/glebateee/Desktop/today2/lab2/gr9sub1/Titkova_Anna/logs/supervisor.log
+
+[INFO] Обновление PID файлов перед началом демонстрации...
+[SUCCESS] Обновлено PID файлов: 4
+[INFO] 1. ДЕМОНСТРАЦИЯ: Переключение в ЛЕГКИЙ режим (SIGUSR1)
+   Ожидание: воркеры перейдут в легкий режим (20% CPU)
+
+[INFO] Воркеры переключаются в легкий режим...
+Ждем 5 секунд... (наблюдайте изменения в Терминале 2)
+.....
+=== ПОСЛЕДНИЕ СОБЫТИЯ ИЗ ЛОГА ===
+  2025/11/27 10:28:35 [worker 0] tick=1760 mode=light work_us=2000 sleep_us=8000 cpu=0
+  2025/11/27 10:28:35 [worker 2] tick=1760 mode=light work_us=2000 sleep_us=8000 cpu=0
+  2025/11/27 10:28:35 [worker 3] tick=1760 mode=light work_us=2000 sleep_us=8000 cpu=1
+  2025/11/27 10:28:35 [worker 1] tick=1760 mode=light work_us=2000 sleep_us=8000 cpu=2
+  2025/11/27 10:28:35 [worker 0] tick=1770 mode=light work_us=2000 sleep_us=8000 cpu=0
+  2025/11/27 10:28:35 [worker 2] tick=1770 mode=light work_us=2000 sleep_us=8000 cpu=0
+  2025/11/27 10:28:35 [worker 3] tick=1770 mode=light work_us=2000 sleep_us=8000 cpu=1
+  2025/11/27 10:28:35 [worker 1] tick=1770 mode=light work_us=2000 sleep_us=8000 cpu=2
+  2025/11/27 10:28:35 [worker 0] tick=1780 mode=light work_us=2000 sleep_us=8000 cpu=0
+  2025/11/27 10:28:35 [worker 2] tick=1780 mode=light work_us=2000 sleep_us=8000 cpu=0
+[INFO] 2. ДЕМОНСТРАЦИЯ: Переключение в ТЯЖЕЛЫЙ режим (SIGUSR2)
+   Ожидание: воркеры перейдут в тяжелый режим (90% CPU)
+
+[INFO] Воркеры переключаются в тяжелый режим...
+Ждем 5 секунд... (наблюдайте изменения в Терминале 2)
+.....
+=== ПОСЛЕДНИЕ СОБЫТИЯ ИЗ ЛОГА ===
+  2025/11/27 10:28:40 [worker 0] tick=2240 mode=heavy work_us=9000 sleep_us=1000 cpu=0
+  2025/11/27 10:28:40 [worker 3] tick=2240 mode=heavy work_us=9000 sleep_us=1000 cpu=1
+  2025/11/27 10:28:40 [worker 1] tick=2240 mode=heavy work_us=9000 sleep_us=1000 cpu=1
+  2025/11/27 10:28:40 [worker 2] tick=2250 mode=heavy work_us=9000 sleep_us=1000 cpu=2
+  2025/11/27 10:28:40 [worker 0] tick=2250 mode=heavy work_us=9000 sleep_us=1000 cpu=0
+  2025/11/27 10:28:40 [worker 3] tick=2250 mode=heavy work_us=9000 sleep_us=1000 cpu=1
+  2025/11/27 10:28:40 [worker 1] tick=2250 mode=heavy work_us=9000 sleep_us=1000 cpu=1
+  2025/11/27 10:28:40 [worker 2] tick=2260 mode=heavy work_us=9000 sleep_us=1000 cpu=2
+  2025/11/27 10:28:40 [worker 0] tick=2260 mode=heavy work_us=9000 sleep_us=1000 cpu=0
+  2025/11/27 10:28:40 [worker 3] tick=2260 mode=heavy work_us=9000 sleep_us=1000 cpu=1
+[INFO] 3. ДЕМОНСТРАЦИЯ: Graceful Reload конфигурации (SIGHUP)
+=== ДЕТАЛЬНАЯ ПРОВЕРКА ДО RELOAD ===
+Старые PIDs: 25348 25349 25359 25363 
+Не удалось получить информацию о процессах
+[INFO] Отправка SIGHUP супервизору...
+
+[INFO] Конфигурация перезагружается...
+Ждем 5 секунд... (наблюдайте изменения в Терминале 2)
+.....
+=== ПОСЛЕДНИЕ СОБЫТИЯ ИЗ ЛОГА ===
+  2025/11/27 10:28:45 [worker 1] tick=350 mode=heavy work_us=9000 sleep_us=1000 cpu=2
+  2025/11/27 10:28:45 [worker 3] tick=350 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+  2025/11/27 10:28:45 [worker 2] tick=360 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+  2025/11/27 10:28:45 [worker 0] tick=360 mode=heavy work_us=9000 sleep_us=1000 cpu=1
+  2025/11/27 10:28:45 [worker 1] tick=360 mode=heavy work_us=9000 sleep_us=1000 cpu=2
+  2025/11/27 10:28:45 [worker 3] tick=360 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+  2025/11/27 10:28:45 [worker 2] tick=370 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+  2025/11/27 10:28:45 [worker 0] tick=370 mode=heavy work_us=9000 sleep_us=1000 cpu=1
+  2025/11/27 10:28:45 [worker 1] tick=370 mode=heavy work_us=9000 sleep_us=1000 cpu=2
+  2025/11/27 10:28:45 [worker 3] tick=370 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+=== ДЕТАЛЬНАЯ ПРОВЕРКА ПОСЛЕ RELOAD ===
+[INFO] Принудительное обновление PID файлов...
+Новые PIDs: 25784 25785 25786 25794 
+Не удалось получить информацию о процессах
+[SUCCESS] Воркеры успешно перезапущены с новыми PID!
+Старые PIDs: 25348 25349 25359 25363 
+Новые PIDs: 25784 25785 25786 25794 
+[INFO] 4. ДЕМОНСТРАЦИЯ: Авторестарт воркеров
+[INFO] Обновление PID файлов перед авторестартом...
+[SUCCESS] Обновлено PID файлов: 4
+[INFO] Найден живой worker 0 с PID: 25784
+   'Убиваем' worker 0 для демонстрации авторестарта...
+   Отправлен SIGKILL worker 0 (PID: 25784)
+
+[INFO] Ожидаем авторестарта worker 0...
+Ждем 3 секунд... (наблюдайте изменения в Терминале 2)
+...
+=== ПОСЛЕДНИЕ СОБЫТИЯ ИЗ ЛОГА ===
+  2025/11/27 10:28:48 [worker 0] tick=250 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+  2025/11/27 10:28:48 [worker 1] tick=640 mode=heavy work_us=9000 sleep_us=1000 cpu=2
+  2025/11/27 10:28:48 [worker 2] tick=650 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+  2025/11/27 10:28:48 [worker 3] tick=650 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+  2025/11/27 10:28:48 [worker 0] tick=260 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+  2025/11/27 10:28:48 [worker 1] tick=650 mode=heavy work_us=9000 sleep_us=1000 cpu=2
+  2025/11/27 10:28:48 [worker 2] tick=660 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+  2025/11/27 10:28:48 [worker 3] tick=660 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+  2025/11/27 10:28:48 [worker 0] tick=270 mode=heavy work_us=9000 sleep_us=1000 cpu=3
+  2025/11/27 10:28:48 [worker 1] tick=660 mode=heavy work_us=9000 sleep_us=1000 cpu=2
+[INFO] Обновление PID файлов после авторестарта...
+[SUCCESS] Обновлено PID файлов: 4
+[SUCCESS] Worker 0 перезапущен!
+   Старый PID: 25784
+   Новый PID: 25785
+[INFO] 5. ДЕМОНСТРАЦИЯ: Проверка отсутствия зомби-процессов
+   Проверяем систему на наличие зомби-процессов...
+[SUCCESS] Зомби-процессов не обнаружено
+[INFO] 6. ДЕМОНСТРАЦИЯ: Graceful Shutdown (SIGTERM)
+   Ожидание: все процессы корректно завершатся в течение 5 секунд
+
+Ожидаем завершения процессов...
+Процессы еще завершаются... (1/6)
+[INFO] Очистка PID файлов...
+[SUCCESS] PID файлы очищены
+Проверьте что PID файлы автоматически очищены:
+PID файлы очищены - корректное завершение
+
