@@ -1,0 +1,1039 @@
+Nov 23 15:23:55 a systemd[1]: rsyslog.service: Sent signal SIGHUP to main process 756 (rsyslogd) on client request.
+Nov 23 15:23:55 a systemd[1]: logrotate.service: Deactivated successfully.
+Nov 23 15:23:55 a systemd[1]: Finished Rotate log files.
+Nov 23 15:23:55 a snapd[758]: stateengine.go:161: state ensure error: Get "https://api.snapcraft.io/api/v1/snaps/sections": dial tcp: lookup api.snapcraft.io: device or resource busy
+Nov 23 15:23:56 a NetworkManager[745]: <info>  [1763900636.3397] policy: auto-activating connection 'Wired connection 1' (2afb0b94-ac15-3d70-b068-d1d88cd7f454)
+Nov 23 15:23:56 a NetworkManager[745]: <info>  [1763900636.3402] device (ens33): Activation: starting connection 'Wired connection 1' (2afb0b94-ac15-3d70-b068-d1d88cd7f454)
+Nov 23 15:23:56 a NetworkManager[745]: <info>  [1763900636.3402] device (ens33): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Nov 23 15:23:56 a NetworkManager[745]: <info>  [1763900636.3403] manager: NetworkManager state is now CONNECTING
+Nov 23 15:23:56 a NetworkManager[745]: <info>  [1763900636.3404] device (ens33): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Nov 23 15:23:56 a NetworkManager[745]: <info>  [1763900636.3419] device (ens33): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+Nov 23 15:23:56 a NetworkManager[745]: <info>  [1763900636.3421] dhcp4 (ens33): activation: beginning transaction (timeout in 45 seconds)
+Nov 23 15:23:56 a systemd[1]: Created slice User Slice of UID 1000.
+Nov 23 15:23:56 a systemd[1]: Starting User Runtime Directory /run/user/1000...
+Nov 23 15:23:56 a systemd[1]: Finished User Runtime Directory /run/user/1000.
+Nov 23 15:23:56 a systemd[1]: Starting User Manager for UID 1000...
+Nov 23 15:23:57 a NetworkManager[745]: <info>  [1763900637.0218] dhcp4 (ens33): state changed new lease, address=192.168.228.128
+Nov 23 15:23:57 a avahi-daemon[741]: Joining mDNS multicast group on interface ens33.IPv4 with address 192.168.228.128.
+Nov 23 15:23:57 a avahi-daemon[741]: New relevant interface ens33.IPv4 for mDNS.
+Nov 23 15:23:57 a avahi-daemon[741]: Registering new address record for 192.168.228.128 on ens33.IPv4.
+Nov 23 15:23:57 a NetworkManager[745]: <info>  [1763900637.0249] device (ens33): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+Nov 23 15:23:57 a NetworkManager[745]: <info>  [1763900637.0290] device (ens33): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+Nov 23 15:23:57 a NetworkManager[745]: <info>  [1763900637.0292] device (ens33): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+Nov 23 15:23:57 a NetworkManager[745]: <info>  [1763900637.0295] manager: NetworkManager state is now CONNECTED_LOCAL
+Nov 23 15:23:57 a NetworkManager[745]: <info>  [1763900637.0297] manager: NetworkManager state is now CONNECTED_SITE
+Nov 23 15:23:57 a NetworkManager[745]: <info>  [1763900637.0297] policy: set 'Wired connection 1' (ens33) as default for IPv4 routing and DNS
+Nov 23 15:23:57 a NetworkManager[745]: <info>  [1763900637.0302] device (ens33): Activation: successful, device activated.
+Nov 23 15:23:57 a systemd-resolved[701]: ens33: Bus client set search domain list to: localdomain
+Nov 23 15:23:57 a systemd-resolved[701]: ens33: Bus client set default route setting: yes
+Nov 23 15:23:57 a systemd-resolved[701]: ens33: Bus client set DNS server list to: 192.168.228.2
+Nov 23 15:23:57 a ModemManager[869]: <info>  [base-manager] couldn't check support for device '/sys/devices/pci0000:00/0000:00:11.0/0000:02:01.0': not supported by any plugin
+Nov 23 15:23:57 a systemd[1071]: Queued start job for default target Main User Target.
+Nov 23 15:23:57 a kernel: [   31.933462] systemd-journald[340]: File /var/log/journal/87ddc12ce9404cb1ba7522fbee1d34d4/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+Nov 23 15:23:57 a systemd[1071]: Created slice User Application Slice.
+Nov 23 15:23:57 a systemd[1071]: Created slice User Core Session Slice.
+Nov 23 15:23:57 a systemd[1071]: Started Pending report trigger for Ubuntu Report.
+Nov 23 15:23:57 a systemd[1071]: Reached target Paths.
+Nov 23 15:23:57 a systemd[1071]: Reached target Timers.
+Nov 23 15:23:57 a systemd[1071]: Starting D-Bus User Message Bus Socket...
+Nov 23 15:23:57 a systemd[1071]: Listening on GnuPG network certificate management daemon.
+Nov 23 15:23:57 a systemd[1071]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+Nov 23 15:23:57 a systemd[1071]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+Nov 23 15:23:57 a systemd[1071]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+Nov 23 15:23:57 a systemd[1071]: Listening on GnuPG cryptographic agent and passphrase cache.
+Nov 23 15:23:57 a systemd[1071]: Listening on PipeWire Multimedia System Socket.
+Nov 23 15:23:57 a systemd[1071]: Listening on debconf communication socket.
+Nov 23 15:23:57 a systemd[1071]: Listening on Sound System.
+Nov 23 15:23:57 a systemd[1071]: Listening on REST API socket for snapd user session agent.
+Nov 23 15:23:57 a systemd[1071]: Listening on Speech Dispatcher Socket.
+Nov 23 15:23:57 a systemd[1071]: Listening on D-Bus User Message Bus Socket.
+Nov 23 15:23:57 a systemd[1071]: Reached target Sockets.
+Nov 23 15:23:57 a systemd[1071]: Reached target Basic System.
+Nov 23 15:23:57 a systemd[1]: Started User Manager for UID 1000.
+Nov 23 15:23:57 a systemd[1]: Started Session 1 of User a.
+Nov 23 15:23:57 a systemd[1071]: Started PipeWire Multimedia Service.
+Nov 23 15:23:57 a systemd[1071]: Started PipeWire Media Session Manager.
+Nov 23 15:23:57 a systemd[1071]: Starting Sound Service...
+Nov 23 15:23:57 a systemd[1071]: Started Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:23:58 a systemd[1071]: Started D-Bus User Message Bus.
+Nov 23 15:23:58 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.RealtimeKit1' unit='rtkit-daemon.service' requested by ':1.35' (uid=1000 pid=1102 comm="/usr/bin/pipewire " label="unconfined")
+Nov 23 15:23:58 a systemd[1]: Starting RealtimeKit Scheduling Policy Service...
+Nov 23 15:23:58 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.RealtimeKit1'
+Nov 23 15:23:58 a rtkit-daemon[1133]: Successfully called chroot.
+Nov 23 15:23:58 a systemd[1]: Started RealtimeKit Scheduling Policy Service.
+Nov 23 15:23:58 a rtkit-daemon[1133]: Successfully dropped privileges.
+Nov 23 15:23:58 a rtkit-daemon[1133]: Successfully limited resources.
+Nov 23 15:23:58 a rtkit-daemon[1133]: Running.
+Nov 23 15:23:58 a rtkit-daemon[1133]: Canary thread running.
+Nov 23 15:23:58 a rtkit-daemon[1133]: Watchdog thread running.
+Nov 23 15:23:58 a NetworkManager[745]: <info>  [1763900638.4914] manager: NetworkManager state is now CONNECTED_GLOBAL
+Nov 23 15:23:58 a rtkit-daemon[1133]: Successfully made thread 1102 of process 1102 owned by '1000' high priority at nice level -11.
+Nov 23 15:23:58 a rtkit-daemon[1133]: Supervising 1 threads of 1 processes of 1 users.
+Nov 23 15:23:58 a rtkit-daemon[1133]: message repeated 2 times: [ Supervising 1 threads of 1 processes of 1 users.]
+Nov 23 15:23:58 a rtkit-daemon[1133]: Successfully made thread 1105 of process 1105 owned by '1000' high priority at nice level -11.
+Nov 23 15:23:58 a rtkit-daemon[1133]: Supervising 2 threads of 2 processes of 1 users.
+Nov 23 15:23:59 a dbus-daemon[1129]: [session uid=1000 pid=1129] AppArmor D-Bus mediation is enabled
+Nov 23 15:23:59 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.freedesktop.portal.Documents' unit='xdg-document-portal.service' requested by ':1.2' (uid=1000 pid=1106 comm="/usr/bin/snap run snapd-desktop-integration " label="unconfined")
+Nov 23 15:23:59 a systemd[1071]: Starting flatpak document portal service...
+Nov 23 15:23:59 a rtkit-daemon[1133]: Supervising 2 threads of 2 processes of 1 users.
+Nov 23 15:23:59 a rtkit-daemon[1133]: Supervising 2 threads of 2 processes of 1 users.
+Nov 23 15:23:59 a rtkit-daemon[1133]: Successfully made thread 1147 of process 1103 owned by '1000' RT at priority 20.
+Nov 23 15:23:59 a rtkit-daemon[1133]: Supervising 3 threads of 3 processes of 1 users.
+Nov 23 15:23:59 a rtkit-daemon[1133]: Successfully made thread 1148 of process 1102 owned by '1000' RT at priority 20.
+Nov 23 15:23:59 a rtkit-daemon[1133]: Supervising 4 threads of 3 processes of 1 users.
+Nov 23 15:23:59 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.freedesktop.impl.portal.PermissionStore' unit='xdg-permission-store.service' requested by ':1.5' (uid=1000 pid=1139 comm="/usr/libexec/xdg-document-portal " label="unconfined")
+Nov 23 15:23:59 a systemd[1071]: Starting sandboxed app permission store...
+Nov 23 15:23:59 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.freedesktop.impl.portal.PermissionStore'
+Nov 23 15:23:59 a systemd[1071]: Started sandboxed app permission store.
+Nov 23 15:23:59 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.freedesktop.portal.Documents'
+Nov 23 15:23:59 a systemd[1071]: Started flatpak document portal service.
+Nov 23 15:23:59 a kernel: [   33.940546] audit: type=1400 audit(1763900639.378:55): apparmor="DENIED" operation="capable" class="cap" profile="/snap/snapd/23545/usr/lib/snapd/snap-confine" pid=1106 comm="snap-confine" capability=12  capname="net_admin"
+Nov 23 15:23:59 a kernel: [   33.941255] audit: type=1400 audit(1763900639.379:56): apparmor="DENIED" operation="capable" class="cap" profile="/snap/snapd/23545/usr/lib/snapd/snap-confine" pid=1106 comm="snap-confine" capability=38  capname="perfmon"
+Nov 23 15:23:59 a kernel: [   33.949412] audit: type=1400 audit(1763900639.386:57): apparmor="DENIED" operation="capable" class="cap" profile="/snap/snapd/23545/usr/lib/snapd/snap-confine" pid=1106 comm="snap-confine" capability=4  capname="fsetid"
+Nov 23 15:23:59 a systemd[1]: tmp-snap.rootfs_XjbkcY.mount: Deactivated successfully.
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01+03:00" level=warning msg="containerd config version `1` has been deprecated and will be converted on each startup in containerd v2.0, use `containerd config migrate` after upgrading to containerd 2.0 to avoid conversion on startup"
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.338890129+03:00" level=info msg="starting containerd" revision=bcc810d6b9066471b0b6fa75f557a15a1cbf31bb version=1.7.25
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.457481569+03:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.aufs\"..." type=io.containerd.snapshotter.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.461807728+03:00" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.aufs\"..." error="aufs is not supported (modprobe aufs failed: exit status 1 \"modprobe: FATAL: Module aufs not found in directory /lib/modules/6.8.0-52-generic\\n\"): skip plugin" type=io.containerd.snapshotter.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.461834566+03:00" level=info msg="loading plugin \"io.containerd.event.v1.exchange\"..." type=io.containerd.event.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.461846980+03:00" level=info msg="loading plugin \"io.containerd.internal.v1.opt\"..." type=io.containerd.internal.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.544266863+03:00" level=info msg="loading plugin \"io.containerd.warning.v1.deprecations\"..." type=io.containerd.warning.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.544299141+03:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.blockfile\"..." type=io.containerd.snapshotter.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.544812433+03:00" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.blockfile\"..." error="no scratch file generator: skip plugin" type=io.containerd.snapshotter.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.544839977+03:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.btrfs\"..." type=io.containerd.snapshotter.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.544980992+03:00" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.btrfs\"..." error="path /var/lib/containerd/io.containerd.snapshotter.v1.btrfs (ext4) must be a btrfs filesystem to be used with the btrfs snapshotter: skip plugin" type=io.containerd.snapshotter.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.545002808+03:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.devmapper\"..." type=io.containerd.snapshotter.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.545055025+03:00" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.devmapper\"..." error="devmapper not configured: skip plugin" type=io.containerd.snapshotter.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.545079371+03:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.native\"..." type=io.containerd.snapshotter.v1
+Nov 23 15:24:01 a containerd[948]: time="2025-11-23T15:24:01.545563634+03:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.overlayfs\"..." type=io.containerd.snapshotter.v1
+Nov 23 15:24:01 a pulseaudio[1105]: Disabling timer-based scheduling because running inside a VM.
+Nov 23 15:24:01 a rtkit-daemon[1133]: Supervising 4 threads of 3 processes of 1 users.
+Nov 23 15:24:01 a rtkit-daemon[1133]: Successfully made thread 1174 of process 1105 owned by '1000' RT at priority 5.
+Nov 23 15:24:01 a rtkit-daemon[1133]: Supervising 5 threads of 3 processes of 1 users.
+Nov 23 15:24:01 a pulseaudio[1105]: Disabling timer-based scheduling because running inside a VM.
+Nov 23 15:24:01 a pulseaudio[1105]: ALSA woke us up to write new data to the device, but there was actually nothing to write.
+Nov 23 15:24:01 a pulseaudio[1105]: Most likely this is a bug in the ALSA driver 'snd_ens1371'. Please report this issue to the ALSA developers.
+Nov 23 15:24:01 a pulseaudio[1105]: We were woken up with POLLOUT set -- however a subsequent snd_pcm_avail() returned 0 or another value < min_avail.
+Nov 23 15:24:01 a rtkit-daemon[1133]: Supervising 5 threads of 3 processes of 1 users.
+Nov 23 15:24:01 a rtkit-daemon[1133]: Successfully made thread 1175 of process 1105 owned by '1000' RT at priority 5.
+Nov 23 15:24:03 a pulseaudio[1105]: ALSA woke us up to read new data from the device, but there was actually nothing to read.
+Nov 23 15:24:03 a rtkit-daemon[1133]: Supervising 6 threads of 3 processes of 1 users.
+Nov 23 15:24:03 a pulseaudio[1105]: Most likely this is a bug in the ALSA driver 'snd_ens1371'. Please report this issue to the ALSA developers.
+Nov 23 15:24:03 a pulseaudio[1105]: We were woken up with POLLIN set -- however a subsequent snd_pcm_avail() returned 0 or another value < min_avail.
+Nov 23 15:24:03 a kernel: [   38.147069] sched: RT throttling activated
+Nov 23 15:24:03 a containerd[948]: time="2025-11-23T15:24:03.931357952+03:00" level=info msg="loading plugin \"io.containerd.snapshotter.v1.zfs\"..." type=io.containerd.snapshotter.v1
+Nov 23 15:24:03 a containerd[948]: time="2025-11-23T15:24:03.931510796+03:00" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.zfs\"..." error="path /var/lib/containerd/io.containerd.snapshotter.v1.zfs must be a zfs filesystem to be used with the zfs snapshotter: skip plugin" type=io.containerd.snapshotter.v1
+Nov 23 15:24:03 a containerd[948]: time="2025-11-23T15:24:03.931523800+03:00" level=info msg="loading plugin \"io.containerd.content.v1.content\"..." type=io.containerd.content.v1
+Nov 23 15:24:03 a containerd[948]: time="2025-11-23T15:24:03.931537044+03:00" level=info msg="loading plugin \"io.containerd.metadata.v1.bolt\"..." type=io.containerd.metadata.v1
+Nov 23 15:24:03 a containerd[948]: time="2025-11-23T15:24:03.931561079+03:00" level=info msg="metadata content store policy set" policy=shared
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.194856223+03:00" level=info msg="loading plugin \"io.containerd.gc.v1.scheduler\"..." type=io.containerd.gc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.194930905+03:00" level=info msg="loading plugin \"io.containerd.differ.v1.walking\"..." type=io.containerd.differ.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.194948885+03:00" level=info msg="loading plugin \"io.containerd.lease.v1.manager\"..." type=io.containerd.lease.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.194959811+03:00" level=info msg="loading plugin \"io.containerd.streaming.v1.manager\"..." type=io.containerd.streaming.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.194970316+03:00" level=info msg="loading plugin \"io.containerd.runtime.v1.linux\"..." type=io.containerd.runtime.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195138891+03:00" level=info msg="loading plugin \"io.containerd.monitor.v1.cgroups\"..." type=io.containerd.monitor.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195367331+03:00" level=info msg="loading plugin \"io.containerd.runtime.v2.task\"..." type=io.containerd.runtime.v2
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195481621+03:00" level=info msg="loading plugin \"io.containerd.runtime.v2.shim\"..." type=io.containerd.runtime.v2
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195515380+03:00" level=info msg="loading plugin \"io.containerd.sandbox.store.v1.local\"..." type=io.containerd.sandbox.store.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195573903+03:00" level=info msg="loading plugin \"io.containerd.sandbox.controller.v1.local\"..." type=io.containerd.sandbox.controller.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195615677+03:00" level=info msg="loading plugin \"io.containerd.service.v1.containers-service\"..." type=io.containerd.service.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195652047+03:00" level=info msg="loading plugin \"io.containerd.service.v1.content-service\"..." type=io.containerd.service.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195708825+03:00" level=info msg="loading plugin \"io.containerd.service.v1.diff-service\"..." type=io.containerd.service.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195726282+03:00" level=info msg="loading plugin \"io.containerd.service.v1.images-service\"..." type=io.containerd.service.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195736065+03:00" level=info msg="loading plugin \"io.containerd.service.v1.introspection-service\"..." type=io.containerd.service.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195770124+03:00" level=info msg="loading plugin \"io.containerd.service.v1.namespaces-service\"..." type=io.containerd.service.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195782322+03:00" level=info msg="loading plugin \"io.containerd.service.v1.snapshots-service\"..." type=io.containerd.service.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195815712+03:00" level=info msg="loading plugin \"io.containerd.service.v1.tasks-service\"..." type=io.containerd.service.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195853773+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.containers\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195910433+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.content\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195924936+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.diff\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195957205+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.events\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.195968186+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.images\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196074365+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.introspection\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196108755+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.leases\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196121284+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.namespaces\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196155722+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.sandbox-controllers\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196218127+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.sandboxes\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196256134+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.snapshots\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196290466+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.streaming\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196300958+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.tasks\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196370845+03:00" level=info msg="loading plugin \"io.containerd.transfer.v1.local\"..." type=io.containerd.transfer.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196444629+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.transfer\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196480544+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.version\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.196520176+03:00" level=info msg="loading plugin \"io.containerd.internal.v1.restart\"..." type=io.containerd.internal.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.249683230+03:00" level=info msg="loading plugin \"io.containerd.tracing.processor.v1.otlp\"..." type=io.containerd.tracing.processor.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.249738325+03:00" level=info msg="skip loading plugin \"io.containerd.tracing.processor.v1.otlp\"..." error="skip plugin: tracing endpoint not configured" type=io.containerd.tracing.processor.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.249749236+03:00" level=info msg="loading plugin \"io.containerd.internal.v1.tracing\"..." type=io.containerd.internal.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.249758024+03:00" level=info msg="skip loading plugin \"io.containerd.internal.v1.tracing\"..." error="skip plugin: tracing endpoint not configured" type=io.containerd.internal.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.249765448+03:00" level=info msg="loading plugin \"io.containerd.grpc.v1.healthcheck\"..." type=io.containerd.grpc.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.249774744+03:00" level=info msg="loading plugin \"io.containerd.nri.v1.nri\"..." type=io.containerd.nri.v1
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.249782757+03:00" level=info msg="NRI interface is disabled by configuration."
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.292763140+03:00" level=info msg=serving... address=/run/containerd/containerd.sock.ttrpc
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.292936937+03:00" level=info msg=serving... address=/run/containerd/containerd.sock
+Nov 23 15:24:04 a containerd[948]: time="2025-11-23T15:24:04.293298846+03:00" level=info msg="containerd successfully booted in 2.978923s"
+Nov 23 15:24:04 a systemd[1]: Started containerd container runtime.
+Nov 23 15:24:04 a systemd[1]: Starting Docker Application Container Engine...
+Nov 23 15:24:06 a systemd[1071]: Started Sound Service.
+Nov 23 15:24:06 a systemd[1071]: Reached target Main User Target.
+Nov 23 15:24:06 a systemd[1071]: Startup finished in 9.309s.
+Nov 23 15:24:08 a systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+Nov 23 15:24:10 a systemd[1]: systemd-fsckd.service: Deactivated successfully.
+Nov 23 15:23:56 a systemd-resolved[701]: Clock change detected. Flushing caches.
+Nov 23 15:23:56 a systemd-timesyncd[702]: Initial synchronization to time server 91.189.91.157:123 (ntp.ubuntu.com).
+Nov 23 15:23:57 a systemd[1071]: Created slice Slice /app/gnome-session-manager.
+Nov 23 15:23:57 a systemd[1071]: Created slice User Background Tasks Slice.
+Nov 23 15:23:57 a systemd[1071]: Started Path trigger for Apport crash notifications.
+Nov 23 15:23:57 a systemd[1071]: Started Path trigger for new release of Ubuntu notifications.
+Nov 23 15:23:57 a systemd[1071]: Reached target GNOME Wayland Session.
+Nov 23 15:23:57 a systemd[1071]: Reached target GNOME Shell.
+Nov 23 15:23:57 a systemd[1071]: Condition check resulted in GNOME Initial Setup Copy Worker being skipped.
+Nov 23 15:23:57 a systemd[1071]: Starting Start gnome-keyring as SSH agent...
+Nov 23 15:23:57 a systemd[1071]: Starting Start gnome-keyring for the Secrets Service, and PKCS #11...
+Nov 23 15:23:57 a systemd[1071]: Starting Monitor Session leader for GNOME Session...
+Nov 23 15:23:57 a systemd[1071]: Starting Session Migration...
+Nov 23 15:23:57 a systemd[1071]: Starting Rewrite dynamic launcher portal entries...
+Nov 23 15:23:57 a systemd[1071]: Started Monitor Session leader for GNOME Session.
+Nov 23 15:23:57 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gtk.vfs.Daemon' unit='gvfs-daemon.service' requested by ':1.11' (uid=1000 pid=1254 comm="/usr/libexec/xdg-desktop-portal-rewrite-launchers " label="unconfined")
+Nov 23 15:23:57 a systemd[1071]: Starting Virtual filesystem service...
+Nov 23 15:23:57 a sh[1260]: dbus-update-activation-environment: setting SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+Nov 23 15:23:57 a sh[1260]: dbus-update-activation-environment: setting SSH_AGENT_LAUNCHER=gnome-keyring
+Nov 23 15:23:57 a sh[1246]: /bin/sh: 1: initctl: not found
+Nov 23 15:23:57 a systemd[1071]: Finished Start gnome-keyring as SSH agent.
+Nov 23 15:23:57 a systemd[1071]: Started OpenSSH Agent.
+Nov 23 15:23:57 a systemd[1071]: Finished Session Migration.
+Nov 23 15:23:57 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gtk.vfs.Daemon'
+Nov 23 15:23:57 a systemd[1071]: Started Virtual filesystem service.
+Nov 23 15:23:57 a systemd[1071]: Finished Rewrite dynamic launcher portal entries.
+Nov 23 15:23:58 a gnome-keyring-daemon[1253]: SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+Nov 23 15:23:58 a systemd[1071]: Finished Start gnome-keyring for the Secrets Service, and PKCS #11.
+Nov 23 15:23:58 a systemd[1071]: Reached target Session services which should run early before the graphical session is brought up.
+Nov 23 15:23:58 a systemd[1071]: Reached target Tasks to be run before GNOME Session starts.
+Nov 23 15:23:58 a systemd[1071]: Starting GNOME Session Manager (session: ubuntu)...
+Nov 23 15:23:59 a snapd-desktop-i[1239]: Failed to do gtk init. Waiting for a new session with desktop capabilities.
+Nov 23 15:23:59 a snapd-desktop-i[1239]: Checking session /org/freedesktop/login1/session/_31...
+Nov 23 15:23:59 a snapd-desktop-i[1239]: Is a desktop session! Forcing a reload.
+Nov 23 15:23:59 a snapd-desktop-i[1239]: Loop exited. Forcing reload.
+Nov 23 15:23:59 a systemd[1071]: snap.snapd-desktop-integration.snapd-desktop-integration.service: Consumed 1.553s CPU time.
+Nov 23 15:23:59 a dockerd[1187]: time="2025-11-23T15:23:59.840537058+03:00" level=info msg="Starting up"
+Nov 23 15:23:59 a dockerd[1187]: time="2025-11-23T15:23:59.845780485+03:00" level=info msg="OTEL tracing is not configured, using no-op tracer provider"
+Nov 23 15:23:59 a dockerd[1187]: time="2025-11-23T15:23:59.846024375+03:00" level=info msg="detected 127.0.0.53 nameserver, assuming systemd-resolved, so using resolv.conf: /run/systemd/resolve/resolv.conf"
+Nov 23 15:23:59 a gnome-keyring-secrets.desktop[1290]: SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+Nov 23 15:23:59 a gnome-session[1275]: gnome-session-binary[1275]: GnomeDesktop-WARNING: Could not create transient scope for PID 1285: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 1285 does not exist.
+Nov 23 15:23:59 a gnome-session-binary[1275]: GnomeDesktop-WARNING: Could not create transient scope for PID 1285: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 1285 does not exist.
+Nov 23 15:23:59 a gnome-keyring-ssh.desktop[1291]: SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+Nov 23 15:23:59 a gnome-keyring-pkcs11.desktop[1292]: SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+Nov 23 15:23:59 a systemd[1071]: Started GNOME Session Manager (session: ubuntu).
+Nov 23 15:23:59 a systemd[1071]: app-gnome-gnome\x2dkeyring\x2dpkcs11-1289.scope: Couldn't move process 1289 to requested cgroup '/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome-gnome\x2dkeyring\x2dpkcs11-1289.scope': No such process
+Nov 23 15:23:59 a systemd[1071]: app-gnome-gnome\x2dkeyring\x2dpkcs11-1289.scope: Failed to add PIDs to scope's control group: No such process
+Nov 23 15:23:59 a systemd[1071]: app-gnome-gnome\x2dkeyring\x2dpkcs11-1289.scope: Failed with result 'resources'.
+Nov 23 15:23:59 a systemd[1071]: Failed to start Application launched by gnome-session-binary.
+Nov 23 15:23:59 a systemd[1071]: app-gnome-gnome\x2dkeyring\x2dssh-1288.scope: Couldn't move process 1288 to requested cgroup '/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome-gnome\x2dkeyring\x2dssh-1288.scope': No such process
+Nov 23 15:23:59 a systemd[1071]: app-gnome-gnome\x2dkeyring\x2dssh-1288.scope: Failed to add PIDs to scope's control group: No such process
+Nov 23 15:23:59 a systemd[1071]: app-gnome-gnome\x2dkeyring\x2dssh-1288.scope: Failed with result 'resources'.
+Nov 23 15:23:59 a systemd[1071]: Failed to start Application launched by gnome-session-binary.
+Nov 23 15:23:59 a systemd[1071]: Reached target GNOME Session Manager is ready.
+Nov 23 15:23:59 a systemd[1071]: Starting GNOME Shell on Wayland...
+Nov 23 15:23:59 a systemd[1071]: Starting GNOME Shell on X11...
+Nov 23 15:23:59 a systemd[1071]: org.gnome.Shell@x11.service: Skipped due to 'exec-condition'.
+Nov 23 15:23:59 a systemd[1071]: Condition check resulted in GNOME Shell on X11 being skipped.
+Nov 23 15:23:59 a systemd[1071]: org.gnome.Shell@x11.service: Scheduled restart job, restart counter is at 1.
+Nov 23 15:23:59 a systemd[1071]: Started Application launched by gnome-session-binary.
+Nov 23 15:23:59 a systemd[1071]: Started Application launched by gnome-session-binary.
+Nov 23 15:23:59 a systemd[1071]: Stopped GNOME Shell on X11.
+Nov 23 15:23:59 a systemd[1071]: Starting GNOME Shell on X11...
+Nov 23 15:23:59 a systemd[1071]: org.gnome.Shell@x11.service: Skipped due to 'exec-condition'.
+Nov 23 15:23:59 a systemd[1071]: Condition check resulted in GNOME Shell on X11 being skipped.
+Nov 23 15:23:59 a systemd[1071]: org.gnome.Shell@x11.service: Scheduled restart job, restart counter is at 2.
+Nov 23 15:23:59 a systemd[1071]: Stopped GNOME Shell on X11.
+Nov 23 15:23:59 a systemd[1071]: Starting GNOME Shell on X11...
+Nov 23 15:23:59 a systemd[1071]: org.gnome.Shell@x11.service: Skipped due to 'exec-condition'.
+Nov 23 15:23:59 a systemd[1071]: Condition check resulted in GNOME Shell on X11 being skipped.
+Nov 23 15:23:59 a systemd[1071]: org.gnome.Shell@x11.service: Scheduled restart job, restart counter is at 3.
+Nov 23 15:23:59 a systemd[1071]: Stopped GNOME Shell on X11.
+Nov 23 15:23:59 a systemd[1071]: org.gnome.Shell@x11.service: Start request repeated too quickly.
+Nov 23 15:23:59 a systemd[1071]: org.gnome.Shell@x11.service: Skipped due to 'exec-condition'.
+Nov 23 15:23:59 a systemd[1071]: Started GNOME Shell on X11.
+Nov 23 15:23:59 a systemd[1]: e2scrub_all.service: Deactivated successfully.
+Nov 23 15:23:59 a systemd[1]: Finished Online ext4 Metadata Check for All Filesystems.
+Nov 23 15:24:00 a kernel: [   51.702086] audit: type=1400 audit(1763900640.860:58): apparmor="STATUS" operation="profile_load" profile="unconfined" name="docker-default" pid=1318 comm="apparmor_parser"
+Nov 23 15:24:01 a kernel: [   52.011825] evm: overlay not supported
+Nov 23 15:24:01 a dockerd[1187]: time="2025-11-23T15:24:01.173278408+03:00" level=info msg="[graphdriver] using prior storage driver: overlay2"
+Nov 23 15:24:01 a systemd[1071]: snap.snapd-desktop-integration.snapd-desktop-integration.service: Scheduled restart job, restart counter is at 1.
+Nov 23 15:24:01 a systemd[1071]: Stopped Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:01 a systemd[1071]: snap.snapd-desktop-integration.snapd-desktop-integration.service: Consumed 1.553s CPU time.
+Nov 23 15:24:01 a systemd[1071]: Started Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:01 a kernel: [   52.338389] audit: type=1400 audit(1763900641.496:59): apparmor="DENIED" operation="capable" class="cap" profile="/snap/snapd/23545/usr/lib/snapd/snap-confine" pid=1320 comm="snap-confine" capability=12  capname="net_admin"
+Nov 23 15:24:01 a kernel: [   52.338503] audit: type=1400 audit(1763900641.496:60): apparmor="DENIED" operation="capable" class="cap" profile="/snap/snapd/23545/usr/lib/snapd/snap-confine" pid=1320 comm="snap-confine" capability=38  capname="perfmon"
+Nov 23 15:24:01 a snapd-desktop-i[1372]: Failed to do gtk init. Waiting for a new session with desktop capabilities.
+Nov 23 15:24:01 a snapd-desktop-i[1372]: Checking session /org/freedesktop/login1/session/_31...
+Nov 23 15:24:01 a snapd-desktop-i[1372]: Is a desktop session! Forcing a reload.
+Nov 23 15:24:01 a snapd-desktop-i[1372]: Loop exited. Forcing reload.
+Nov 23 15:24:02 a systemd[1]: Received SIGRTMIN+21 from PID 422 (plymouthd).
+Nov 23 15:24:02 a systemd[1]: Finished Hold until boot process finishes up.
+Nov 23 15:24:02 a systemd[1]: Starting Set console scheme...
+Nov 23 15:24:02 a systemd[1]: Finished Set console scheme.
+Nov 23 15:24:02 a systemd[1]: Created slice Slice /system/getty.
+Nov 23 15:24:02 a gnome-shell[1297]: Running GNOME Shell (using mutter 42.9) as a Wayland display server
+Nov 23 15:24:03 a gnome-shell[1297]: Added device '/dev/dri/card0' (vmwgfx) using non-atomic mode setting.
+Nov 23 15:24:03 a systemd[1071]: snap.snapd-desktop-integration.snapd-desktop-integration.service: Scheduled restart job, restart counter is at 2.
+Nov 23 15:24:03 a systemd[1071]: Stopped Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:03 a systemd[1071]: Started Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:04 a snapd-desktop-i[1437]: Failed to do gtk init. Waiting for a new session with desktop capabilities.
+Nov 23 15:24:04 a snapd-desktop-i[1437]: Checking session /org/freedesktop/login1/session/_31...
+Nov 23 15:24:04 a snapd-desktop-i[1437]: Is a desktop session! Forcing a reload.
+Nov 23 15:24:04 a snapd-desktop-i[1437]: Loop exited. Forcing reload.
+Nov 23 15:24:04 a systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Nov 23 15:24:04 a dockerd[1187]: time="2025-11-23T15:24:04.931268452+03:00" level=info msg="Loading containers: start."
+Nov 23 15:24:06 a systemd[1071]: snap.snapd-desktop-integration.snapd-desktop-integration.service: Scheduled restart job, restart counter is at 3.
+Nov 23 15:24:06 a systemd[1071]: Stopped Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:06 a systemd[1071]: Started Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:06 a systemd[1]: e2scrub_reap.service: Deactivated successfully.
+Nov 23 15:24:06 a systemd[1]: Finished Remove Stale Online ext4 Metadata Check Snapshots.
+Nov 23 15:24:06 a snapd-desktop-i[1530]: Failed to do gtk init. Waiting for a new session with desktop capabilities.
+Nov 23 15:24:06 a snapd-desktop-i[1530]: Checking session /org/freedesktop/login1/session/_31...
+Nov 23 15:24:06 a snapd-desktop-i[1530]: Is a desktop session! Forcing a reload.
+Nov 23 15:24:06 a snapd-desktop-i[1530]: Loop exited. Forcing reload.
+Nov 23 15:24:06 a kernel: [   57.698317] Initializing XFRM netlink socket
+Nov 23 15:24:07 a kernel: [   57.897965] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.0587] manager: (br-dc5ad9d3a1a5): new Bridge device (/org/freedesktop/NetworkManager/Devices/3)
+Nov 23 15:24:07 a systemd-udevd[1572]: Using default interface naming scheme 'v249'.
+Nov 23 15:24:07 a avahi-daemon[741]: Joining mDNS multicast group on interface br-dc5ad9d3a1a5.IPv4 with address 172.18.0.1.
+Nov 23 15:24:07 a avahi-daemon[741]: New relevant interface br-dc5ad9d3a1a5.IPv4 for mDNS.
+Nov 23 15:24:07 a avahi-daemon[741]: Registering new address record for 172.18.0.1 on br-dc5ad9d3a1a5.IPv4.
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.2624] device (br-dc5ad9d3a1a5): state change: unmanaged -> unavailable (reason 'connection-assumed', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.2648] device (br-dc5ad9d3a1a5): state change: unavailable -> disconnected (reason 'connection-assumed', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.2656] device (br-dc5ad9d3a1a5): Activation: starting connection 'br-dc5ad9d3a1a5' (077934cb-b1aa-4b9e-80e6-4d94a2f853cb)
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.2682] device (br-dc5ad9d3a1a5): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.2685] device (br-dc5ad9d3a1a5): state change: prepare -> config (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.2688] device (br-dc5ad9d3a1a5): state change: config -> ip-config (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.2699] manager: (br-8467c7f7a74b): new Bridge device (/org/freedesktop/NetworkManager/Devices/4)
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.2704] device (br-dc5ad9d3a1a5): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.14' (uid=0 pid=745 comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined")
+Nov 23 15:24:07 a systemd[1]: Starting Network Manager Script Dispatcher Service...
+Nov 23 15:24:07 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Nov 23 15:24:07 a systemd[1]: Started Network Manager Script Dispatcher Service.
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.2851] device (br-dc5ad9d3a1a5): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.2853] device (br-dc5ad9d3a1a5): state change: secondaries -> activated (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.2855] device (br-dc5ad9d3a1a5): Activation: successful, device activated.
+Nov 23 15:24:07 a avahi-daemon[741]: Joining mDNS multicast group on interface br-8467c7f7a74b.IPv4 with address 172.19.0.1.
+Nov 23 15:24:07 a avahi-daemon[741]: New relevant interface br-8467c7f7a74b.IPv4 for mDNS.
+Nov 23 15:24:07 a avahi-daemon[741]: Registering new address record for 172.19.0.1 on br-8467c7f7a74b.IPv4.
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3110] device (br-8467c7f7a74b): state change: unmanaged -> unavailable (reason 'connection-assumed', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3113] device (br-8467c7f7a74b): state change: unavailable -> disconnected (reason 'connection-assumed', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3116] device (br-8467c7f7a74b): Activation: starting connection 'br-8467c7f7a74b' (d5d7b058-ee5a-449a-84a2-5b66abcfea5f)
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3118] device (br-8467c7f7a74b): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3119] device (br-8467c7f7a74b): state change: prepare -> config (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3120] device (br-8467c7f7a74b): state change: config -> ip-config (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3147] manager: (docker0): new Bridge device (/org/freedesktop/NetworkManager/Devices/5)
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3157] device (br-8467c7f7a74b): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3178] device (br-8467c7f7a74b): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3179] device (br-8467c7f7a74b): state change: secondaries -> activated (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3181] device (br-8467c7f7a74b): Activation: successful, device activated.
+Nov 23 15:24:07 a avahi-daemon[741]: Joining mDNS multicast group on interface docker0.IPv4 with address 172.17.0.1.
+Nov 23 15:24:07 a avahi-daemon[741]: New relevant interface docker0.IPv4 for mDNS.
+Nov 23 15:24:07 a avahi-daemon[741]: Registering new address record for 172.17.0.1 on docker0.IPv4.
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3545] device (docker0): state change: unmanaged -> unavailable (reason 'connection-assumed', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3548] device (docker0): state change: unavailable -> disconnected (reason 'connection-assumed', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3554] device (docker0): Activation: starting connection 'docker0' (5b1cfa5a-52c1-4c46-99c4-4b2945b78a32)
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3556] device (docker0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3559] device (docker0): state change: prepare -> config (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3560] device (docker0): state change: config -> ip-config (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3561] device (docker0): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3573] device (docker0): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3575] device (docker0): state change: secondaries -> activated (reason 'none', sys-iface-state: 'external')
+Nov 23 15:24:07 a NetworkManager[745]: <info>  [1763900647.3577] device (docker0): Activation: successful, device activated.
+Nov 23 15:24:07 a dockerd[1187]: time="2025-11-23T15:24:07.786378865+03:00" level=info msg="Removing stale sandbox 5b0ad4d8af72b60497c7f47a3ad80abad3121c4f69a85621de2ece9f04db5905 (ed36ffefecfa8d9db95de06539620c21658fbe6d15e51f09b3e0ceb545037c7b)"
+Nov 23 15:24:07 a dockerd[1187]: time="2025-11-23T15:24:07.823582125+03:00" level=warning msg="Error (Unable to complete atomic operation, key modified) deleting object [endpoint 8467c7f7a74b1f137588655f274d2fdccbaa47ef7485cf859046a40be9e69cc4 f1aeb8ca12c8b1fbf49e7f579fea08580f6fd0aee14cdacc1f0095747aea458b], retrying...."
+Nov 23 15:24:07 a systemd[1]: run-docker-netns-5b0ad4d8af72.mount: Deactivated successfully.
+Nov 23 15:24:07 a dockerd[1187]: time="2025-11-23T15:24:07.924120119+03:00" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+Nov 23 15:24:08 a dockerd[1187]: time="2025-11-23T15:24:08.009826211+03:00" level=warning msg="error locating sandbox id 3d48fa292219b03bab45edc5353938f24992259f2816e3767275284190b247a2: sandbox 3d48fa292219b03bab45edc5353938f24992259f2816e3767275284190b247a2 not found"
+Nov 23 15:24:08 a dockerd[1187]: time="2025-11-23T15:24:08.009855154+03:00" level=warning msg="error locating sandbox id 0acb8c4359b79746350ac0414200f0b9b0a93f4f8f23254c014181930a850c3e: sandbox 0acb8c4359b79746350ac0414200f0b9b0a93f4f8f23254c014181930a850c3e not found"
+Nov 23 15:24:08 a dockerd[1187]: time="2025-11-23T15:24:08.009868695+03:00" level=warning msg="error locating sandbox id 5b0ad4d8af72b60497c7f47a3ad80abad3121c4f69a85621de2ece9f04db5905: sandbox 5b0ad4d8af72b60497c7f47a3ad80abad3121c4f69a85621de2ece9f04db5905 not found"
+Nov 23 15:24:08 a systemd-udevd[1447]: Using default interface naming scheme 'v249'.
+Nov 23 15:24:08 a NetworkManager[745]: <info>  [1763900648.1025] manager: (veth75a8072): new Veth device (/org/freedesktop/NetworkManager/Devices/6)
+Nov 23 15:24:08 a NetworkManager[745]: <info>  [1763900648.1033] manager: (veth2d40eee): new Veth device (/org/freedesktop/NetworkManager/Devices/7)
+Nov 23 15:24:08 a kernel: [   58.945294] br-8467c7f7a74b: port 1(veth2d40eee) entered blocking state
+Nov 23 15:24:08 a kernel: [   58.945299] br-8467c7f7a74b: port 1(veth2d40eee) entered disabled state
+Nov 23 15:24:08 a kernel: [   58.945313] veth2d40eee: entered allmulticast mode
+Nov 23 15:24:08 a kernel: [   58.945980] veth2d40eee: entered promiscuous mode
+Nov 23 15:24:08 a dockerd[1187]: time="2025-11-23T15:24:08.110770039+03:00" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+Nov 23 15:24:08 a systemd-udevd[1874]: Using default interface naming scheme 'v249'.
+Nov 23 15:24:08 a systemd[1071]: snap.snapd-desktop-integration.snapd-desktop-integration.service: Scheduled restart job, restart counter is at 4.
+Nov 23 15:24:08 a systemd[1071]: Stopped Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:08 a systemd[1071]: Started Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:08 a snapd-desktop-i[1934]: Failed to do gtk init. Waiting for a new session with desktop capabilities.
+Nov 23 15:24:08 a snapd-desktop-i[1934]: Checking session /org/freedesktop/login1/session/_31...
+Nov 23 15:24:08 a snapd-desktop-i[1934]: Is a desktop session! Forcing a reload.
+Nov 23 15:24:08 a snapd-desktop-i[1934]: Loop exited. Forcing reload.
+Nov 23 15:24:10 a systemd[1]: systemd-timedated.service: Deactivated successfully.
+Nov 23 15:24:10 a gnome-shell[1297]: Created gbm renderer for '/dev/dri/card0'
+Nov 23 15:24:10 a gnome-shell[1297]: Boot VGA GPU /dev/dri/card0 selected as primary
+Nov 23 15:24:10 a systemd[1071]: snap.snapd-desktop-integration.snapd-desktop-integration.service: Scheduled restart job, restart counter is at 5.
+Nov 23 15:24:10 a systemd[1071]: Stopped Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:10 a systemd[1071]: Started Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:10 a systemd[1]: Started libcontainer container ed36ffefecfa8d9db95de06539620c21658fbe6d15e51f09b3e0ceb545037c7b.
+Nov 23 15:24:10 a snapd-desktop-i[2059]: Failed to do gtk init. Waiting for a new session with desktop capabilities.
+Nov 23 15:24:10 a snapd-desktop-i[2059]: Checking session /org/freedesktop/login1/session/_31...
+Nov 23 15:24:10 a snapd-desktop-i[2059]: Is a desktop session! Forcing a reload.
+Nov 23 15:24:10 a snapd-desktop-i[2059]: Loop exited. Forcing reload.
+Nov 23 15:24:11 a kernel: [   62.275894] eth0: renamed from veth75a8072
+Nov 23 15:24:11 a kernel: [   62.283608] br-8467c7f7a74b: port 1(veth2d40eee) entered blocking state
+Nov 23 15:24:11 a kernel: [   62.283613] br-8467c7f7a74b: port 1(veth2d40eee) entered forwarding state
+Nov 23 15:24:11 a NetworkManager[745]: <info>  [1763900651.4445] device (veth2d40eee): carrier: link connected
+Nov 23 15:24:11 a NetworkManager[745]: <info>  [1763900651.4446] device (br-8467c7f7a74b): carrier: link connected
+Nov 23 15:24:11 a dockerd[1187]: time="2025-11-23T15:24:11.997505982+03:00" level=info msg="Loading containers: done."
+Nov 23 15:24:12 a dockerd[1187]: time="2025-11-23T15:24:12.058742799+03:00" level=info msg="Docker daemon" commit=4c9b3b0 containerd-snapshotter=false storage-driver=overlay2 version=27.5.1
+Nov 23 15:24:12 a dockerd[1187]: time="2025-11-23T15:24:12.115699716+03:00" level=info msg="Daemon has completed initialization"
+Nov 23 15:24:12 a avahi-daemon[741]: Joining mDNS multicast group on interface br-8467c7f7a74b.IPv6 with address fe80::42:36ff:fe45:78e5.
+Nov 23 15:24:12 a avahi-daemon[741]: New relevant interface br-8467c7f7a74b.IPv6 for mDNS.
+Nov 23 15:24:12 a avahi-daemon[741]: Registering new address record for fe80::42:36ff:fe45:78e5 on br-8467c7f7a74b.*.
+Nov 23 15:24:12 a avahi-daemon[741]: Joining mDNS multicast group on interface veth2d40eee.IPv6 with address fe80::78f9:58ff:feda:be6.
+Nov 23 15:24:12 a avahi-daemon[741]: New relevant interface veth2d40eee.IPv6 for mDNS.
+Nov 23 15:24:12 a avahi-daemon[741]: Registering new address record for fe80::78f9:58ff:feda:be6 on veth2d40eee.*.
+Nov 23 15:24:12 a systemd[1071]: snap.snapd-desktop-integration.snapd-desktop-integration.service: Scheduled restart job, restart counter is at 6.
+Nov 23 15:24:12 a systemd[1071]: Stopped Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:12 a systemd[1071]: Started Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:13 a snapd-desktop-i[2151]: Failed to do gtk init. Waiting for a new session with desktop capabilities.
+Nov 23 15:24:13 a snapd-desktop-i[2151]: Checking session /org/freedesktop/login1/session/_31...
+Nov 23 15:24:13 a snapd-desktop-i[2151]: Is a desktop session! Forcing a reload.
+Nov 23 15:24:13 a snapd-desktop-i[2151]: Loop exited. Forcing reload.
+Nov 23 15:24:13 a systemd-resolved[701]: Using degraded feature set UDP instead of UDP+EDNS0 for DNS server 192.168.228.2.
+Nov 23 15:24:13 a dockerd[1187]: time="2025-11-23T15:24:13.579196915+03:00" level=info msg="API listen on /run/docker.sock"
+Nov 23 15:24:13 a systemd[1]: Started Docker Application Container Engine.
+Nov 23 15:24:13 a systemd[1]: Reached target Multi-User System.
+Nov 23 15:24:13 a systemd[1]: Reached target Graphical Interface.
+Nov 23 15:24:13 a systemd[1]: Starting Record Runlevel Change in UTMP...
+Nov 23 15:24:13 a systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+Nov 23 15:24:13 a systemd[1]: Finished Record Runlevel Change in UTMP.
+Nov 23 15:24:13 a systemd[1]: Startup finished in 6.035s (kernel) + 58.394s (userspace) = 1min 4.429s.
+Nov 23 15:24:14 a gnome-shell[1297]: Using public X11 display :0, (using :1 for managed services)
+Nov 23 15:24:14 a gnome-shell[1297]: Using Wayland display name 'wayland-0'
+Nov 23 15:24:15 a systemd[1071]: snap.snapd-desktop-integration.snapd-desktop-integration.service: Scheduled restart job, restart counter is at 7.
+Nov 23 15:24:15 a systemd[1071]: Stopped Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:15 a systemd[1071]: Started Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:24:17 a systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+Nov 23 15:24:20 a gnome-shell[1297]: Unset XDG_SESSION_ID, getCurrentSessionProxy() called outside a user session. Asking logind directly.
+Nov 23 15:24:20 a gnome-shell[1297]: Will monitor session 1
+Nov 23 15:24:22 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.gnome.Shell.CalendarServer' requested by ':1.28' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:22 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.UPower' unit='upower.service' requested by ':1.46' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:23 a systemd[1]: Starting Daemon for power management...
+Nov 23 15:24:23 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.UPower'
+Nov 23 15:24:23 a systemd[1]: Started Daemon for power management.
+Nov 23 15:24:23 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gnome.evolution.dataserver.Sources5' unit='evolution-source-registry.service' requested by ':1.31' (uid=1000 pid=2252 comm="/usr/libexec/gnome-shell-calendar-server " label="unconfined")
+Nov 23 15:24:23 a systemd[1071]: Starting Evolution source registry...
+Nov 23 15:24:23 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.GeoClue2' unit='geoclue.service' requested by ':1.46' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:23 a gnome-shell[1297]: Telepathy is not available, chat integration will be disabled.
+Nov 23 15:24:23 a systemd[1]: Starting Location Lookup Service...
+Nov 23 15:24:23 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gtk.vfs.UDisks2VolumeMonitor' unit='gvfs-udisks2-volume-monitor.service' requested by ':1.28' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:23 a systemd[1071]: Starting Virtual filesystem service - disk device monitor...
+Nov 23 15:24:23 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.GeoClue2'
+Nov 23 15:24:23 a systemd[1]: Started Location Lookup Service.
+Nov 23 15:24:23 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gtk.vfs.UDisks2VolumeMonitor'
+Nov 23 15:24:23 a systemd[1071]: Started Virtual filesystem service - disk device monitor.
+Nov 23 15:24:23 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gtk.vfs.GoaVolumeMonitor' unit='gvfs-goa-volume-monitor.service' requested by ':1.28' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:24 a systemd[1071]: Starting Virtual filesystem service - GNOME Online Accounts monitor...
+Nov 23 15:24:24 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.gnome.OnlineAccounts' requested by ':1.34' (uid=1000 pid=2278 comm="/usr/libexec/gvfs-goa-volume-monitor " label="unconfined")
+Nov 23 15:24:25 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.evolution.dataserver.Sources5'
+Nov 23 15:24:25 a systemd[1071]: Started Evolution source registry.
+Nov 23 15:24:25 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gnome.evolution.dataserver.Calendar8' unit='evolution-calendar-factory.service' requested by ':1.31' (uid=1000 pid=2252 comm="/usr/libexec/gnome-shell-calendar-server " label="unconfined")
+Nov 23 15:24:25 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.Shell.CalendarServer'
+Nov 23 15:24:25 a systemd[1071]: Starting Evolution calendar service...
+Nov 23 15:24:26 a goa-daemon[2282]: goa-daemon version 3.44.0 starting
+Nov 23 15:24:26 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.gnome.Identity' requested by ':1.36' (uid=1000 pid=2282 comm="/usr/libexec/goa-daemon " label="unconfined")
+Nov 23 15:24:26 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.OnlineAccounts'
+Nov 23 15:24:26 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gtk.vfs.GoaVolumeMonitor'
+Nov 23 15:24:26 a systemd[1071]: Started Virtual filesystem service - GNOME Online Accounts monitor.
+Nov 23 15:24:26 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gtk.vfs.MTPVolumeMonitor' unit='gvfs-mtp-volume-monitor.service' requested by ':1.28' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:26 a systemd[1071]: Starting Virtual filesystem service - Media Transfer Protocol monitor...
+Nov 23 15:24:26 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.Identity'
+Nov 23 15:24:26 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gtk.vfs.MTPVolumeMonitor'
+Nov 23 15:24:26 a systemd[1071]: Started Virtual filesystem service - Media Transfer Protocol monitor.
+Nov 23 15:24:26 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gtk.vfs.AfcVolumeMonitor' unit='gvfs-afc-volume-monitor.service' requested by ':1.28' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:26 a systemd[1071]: Starting Virtual filesystem service - Apple File Conduit monitor...
+Nov 23 15:24:26 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gtk.vfs.AfcVolumeMonitor'
+Nov 23 15:24:26 a systemd[1071]: Started Virtual filesystem service - Apple File Conduit monitor.
+Nov 23 15:24:26 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gtk.vfs.GPhoto2VolumeMonitor' unit='gvfs-gphoto2-volume-monitor.service' requested by ':1.28' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:26 a systemd[1071]: Starting Virtual filesystem service - digital camera monitor...
+Nov 23 15:24:27 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.evolution.dataserver.Calendar8'
+Nov 23 15:24:27 a systemd[1071]: Started Evolution calendar service.
+Nov 23 15:24:27 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='ca.desrt.dconf' unit='dconf.service' requested by ':1.35' (uid=1000 pid=2286 comm="/usr/libexec/evolution-calendar-factory " label="unconfined")
+Nov 23 15:24:27 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gnome.evolution.dataserver.AddressBook10' unit='evolution-addressbook-factory.service' requested by ':1.35' (uid=1000 pid=2286 comm="/usr/libexec/evolution-calendar-factory " label="unconfined")
+Nov 23 15:24:27 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gtk.vfs.GPhoto2VolumeMonitor'
+Nov 23 15:24:27 a systemd[1071]: Started Virtual filesystem service - digital camera monitor.
+Nov 23 15:24:27 a systemd[1071]: Starting User preferences database...
+Nov 23 15:24:27 a systemd[1071]: Starting Evolution address book service...
+Nov 23 15:24:27 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'ca.desrt.dconf'
+Nov 23 15:24:27 a systemd[1071]: Started User preferences database.
+Nov 23 15:24:27 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.PackageKit' unit='packagekit.service' requested by ':1.46' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:27 a systemd[1]: Starting PackageKit Daemon...
+Nov 23 15:24:27 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.evolution.dataserver.AddressBook10'
+Nov 23 15:24:27 a systemd[1071]: Started Evolution address book service.
+Nov 23 15:24:27 a PackageKit: daemon start
+Nov 23 15:24:27 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.freedesktop.FileManager1' requested by ':1.28' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:27 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.gnome.Shell.Notifications' requested by ':1.28' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:27 a at-spi-dbus-bus.desktop[1307]: dbus-daemon[1307]: Activating service name='org.a11y.atspi.Registry' requested by ':1.0' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:27 a systemd[1071]: Started GNOME Shell on Wayland.
+Nov 23 15:24:27 a systemd[1071]: Reached target GNOME Session is initialized.
+Nov 23 15:24:27 a systemd[1071]: GNOME session X11 services is inactive.
+Nov 23 15:24:27 a systemd[1071]: Dependency failed for GNOME XSettings service.
+Nov 23 15:24:27 a systemd[1071]: org.gnome.SettingsDaemon.XSettings.service: Job org.gnome.SettingsDaemon.XSettings.service/start failed with result 'dependency'.
+Nov 23 15:24:27 a systemd[1071]: gnome-session-x11-services-ready.target: Job gnome-session-x11-services-ready.target/verify-active failed with result 'dependency'.
+Nov 23 15:24:27 a systemd[1071]: Reached target GNOME Session (session: ubuntu).
+Nov 23 15:24:27 a systemd[1071]: Reached target GNOME XSettings target.
+Nov 23 15:24:27 a systemd[1071]: Starting Signal initialization done to GNOME Session Manager...
+Nov 23 15:24:27 a systemd[1071]: Starting IBus Daemon for GNOME...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME accessibility service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME color management service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME date & time service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME maintenance of expirable data service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME keyboard configuration service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME keyboard shortcuts service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME power management service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME printer notifications service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME RFKill support service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME FreeDesktop screensaver service...
+Nov 23 15:24:27 a at-spi-dbus-bus.desktop[1307]: dbus-daemon[1307]: Successfully activated service 'org.a11y.atspi.Registry'
+Nov 23 15:24:27 a at-spi-dbus-bus.desktop[2355]: SpiRegistry daemon is running with well-known name - org.a11y.atspi.Registry
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME file sharing service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME smartcard service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME sound sample caching service...
+Nov 23 15:24:27 a systemd[1071]: Starting GNOME Wacom tablet support service...
+Nov 23 15:24:27 a systemd[1071]: Finished Signal initialization done to GNOME Session Manager.
+Nov 23 15:24:27 a systemd[1071]: Started Application launched by gnome-session-binary.
+Nov 23 15:24:28 a udisksd[761]: Mounted /dev/sr0 at /media/a/CDROM on behalf of uid 1000
+Nov 23 15:24:28 a systemd[1071]: Started GNOME file sharing service.
+Nov 23 15:24:28 a systemd[1071]: Reached target GNOME file sharing target.
+Nov 23 15:24:28 a spice-vdagent[2368]: vdagent virtio channel /dev/virtio-ports/com.redhat.spice.0 does not exist, exiting
+Nov 23 15:24:28 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.65' (uid=1000 pid=2378 comm="/usr/libexec/gsd-rfkill " label="unconfined")
+Nov 23 15:24:28 a systemd[1]: Starting Hostname Service...
+Nov 23 15:24:28 a systemd[1071]: Started GNOME FreeDesktop screensaver service.
+Nov 23 15:24:28 a systemd[1071]: Reached target GNOME FreeDesktop screensaver target.
+Nov 23 15:24:28 a systemd[1071]: Started GNOME accessibility service.
+Nov 23 15:24:28 a systemd[1071]: Reached target GNOME accessibility target.
+Nov 23 15:24:28 a systemd[1071]: Started GNOME sound sample caching service.
+Nov 23 15:24:28 a systemd[1071]: Reached target GNOME sound sample caching target.
+Nov 23 15:24:28 a systemd[1071]: Started GNOME smartcard service.
+Nov 23 15:24:28 a systemd[1071]: Reached target GNOME smartcard target.
+Nov 23 15:24:28 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Nov 23 15:24:28 a systemd[1]: Started Hostname Service.
+Nov 23 15:24:28 a systemd[1071]: Started GNOME RFKill support service.
+Nov 23 15:24:28 a kernel: [   79.276150] rfkill: input handler disabled
+Nov 23 15:24:28 a systemd[1071]: Reached target GNOME RFKill support target.
+Nov 23 15:24:28 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.Shell.Notifications'
+Nov 23 15:24:28 a systemd[1071]: Started GNOME maintenance of expirable data service.
+Nov 23 15:24:28 a systemd[1071]: Reached target GNOME maintenance of expirable data target.
+Nov 23 15:24:28 a NetworkManager[745]: <info>  [1763900668.6149] agent-manager: agent[3e1657a8ee2941ea,:1.46/org.gnome.Shell.NetworkAgent/1000]: agent registered
+Nov 23 15:24:28 a systemd[1071]: Started GNOME date & time service.
+Nov 23 15:24:28 a systemd[1071]: Reached target GNOME date & time target.
+Nov 23 15:24:28 a gnome-session-binary[1275]: Entering running state
+Nov 23 15:24:28 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.PackageKit'
+Nov 23 15:24:28 a systemd[1]: Started PackageKit Daemon.
+Nov 23 15:24:28 a gnome-shell[1297]: Error looking up permission: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for geolocation
+Nov 23 15:24:28 a at-spi2-registr[2355]: Failed to register client: GDBus.Error:org.gnome.SessionManager.AlreadyRegistered: Unable to register client
+Nov 23 15:24:28 a at-spi2-registr[2355]: Unable to register client with session manager
+Nov 23 15:24:28 a gnome-session[1275]: gnome-session-binary[1275]: GnomeDesktop-WARNING: Could not create transient scope for PID 2472: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 2472 does not exist.
+Nov 23 15:24:28 a gnome-session-binary[1275]: GnomeDesktop-WARNING: Could not create transient scope for PID 2472: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 2472 does not exist.
+Nov 23 15:24:28 a gnome-session[1275]: gnome-session-binary[1275]: GnomeDesktop-WARNING: Could not create transient scope for PID 2473: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 2473 does not exist.
+Nov 23 15:24:28 a gnome-session-binary[1275]: GnomeDesktop-WARNING: Could not create transient scope for PID 2473: GDBus.Error:org.freedesktop.DBus.Error.UnixProcessIdUnknown: Process with ID 2473 does not exist.
+Nov 23 15:24:28 a systemd[1071]: Started GNOME printer notifications service.
+Nov 23 15:24:28 a systemd[1071]: Started Application launched by gnome-session-binary.
+Nov 23 15:24:28 a systemd[1071]: message repeated 3 times: [ Started Application launched by gnome-session-binary.]
+Nov 23 15:24:28 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gtk.vfs.Metadata' unit='gvfs-metadata.service' requested by ':1.28' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:24:28 a systemd[1071]: Started Application launched by gnome-session-binary.
+Nov 23 15:24:28 a systemd[1071]: Started Application launched by gnome-session-binary.
+Nov 23 15:24:28 a systemd[1071]: Reached target GNOME printer notifications target.
+Nov 23 15:24:28 a systemd[1071]: Starting Virtual filesystem metadata service...
+Nov 23 15:24:28 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gtk.vfs.Metadata'
+Nov 23 15:24:28 a systemd[1071]: Started Virtual filesystem metadata service.
+Nov 23 15:24:29 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 15:24:29 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 15:24:29 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 15:24:29 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 15:24:29 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 15:24:29 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 15:24:29 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 15:24:29 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 15:24:29 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 15:24:29 a snapd-desktop-i[2230]: New theme: gtk=Yaru icon=Yaru cursor=Yaru, sound=Yaru
+Nov 23 15:24:29 a snapd-desktop-i[2230]: All available theme snaps installed
+Nov 23 15:24:29 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.freedesktop.portal.IBus' requested by ':1.68' (uid=1000 pid=2366 comm="/usr/bin/ibus-daemon --panel disable " label="unconfined")
+Nov 23 15:24:29 a systemd[1071]: Started IBus Daemon for GNOME.
+Nov 23 15:24:29 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.freedesktop.portal.IBus'
+Nov 23 15:24:31 a gnome-shell[2584]: (WW) Option "-listen" for file descriptors is deprecated
+Nov 23 15:24:31 a gnome-shell[2584]: Please use "-listenfd" instead.
+Nov 23 15:24:31 a gnome-shell[2584]: (WW) Option "-listen" for file descriptors is deprecated
+Nov 23 15:24:31 a gnome-shell[2584]: Please use "-listenfd" instead.
+Nov 23 15:24:34 a gnome-shell[1297]: GNOME Shell started at Sun Nov 23 2025 15:24:27 GMT+0300 (+03)
+Nov 23 15:24:34 a gnome-shell[1297]: Registering session with GDM
+Nov 23 15:24:34 a systemd[1071]: Started GNOME power management service.
+Nov 23 15:24:34 a systemd[1071]: Reached target GNOME power management target.
+Nov 23 15:24:34 a systemd[1071]: Started GNOME keyboard configuration service.
+Nov 23 15:24:34 a systemd[1071]: Reached target GNOME keyboard configuration target.
+Nov 23 15:24:34 a systemd[1071]: Started GNOME color management service.
+Nov 23 15:24:34 a systemd[1071]: Reached target GNOME color management target.
+Nov 23 15:24:34 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.locale1' unit='dbus-org.freedesktop.locale1.service' requested by ':1.73' (uid=1000 pid=2374 comm="/usr/libexec/gsd-keyboard " label="unconfined")
+Nov 23 15:24:34 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.ColorManager' unit='colord.service' requested by ':1.75' (uid=1000 pid=2367 comm="/usr/libexec/gsd-color " label="unconfined")
+Nov 23 15:24:34 a systemd[1071]: Started GNOME keyboard shortcuts service.
+Nov 23 15:24:34 a systemd[1071]: Reached target GNOME keyboard shortcuts target.
+Nov 23 15:24:34 a systemd[1071]: Started GNOME Wacom tablet support service.
+Nov 23 15:24:34 a systemd[1071]: Reached target GNOME Wacom tablet support target.
+Nov 23 15:24:34 a systemd[1071]: Reached target GNOME Session.
+Nov 23 15:24:34 a systemd[1071]: Reached target GNOME Wayland Session (session: ubuntu).
+Nov 23 15:24:34 a systemd[1071]: Reached target Current graphical user session.
+Nov 23 15:24:34 a systemd[1071]: Condition check resulted in GNOME Initial Setup being skipped.
+Nov 23 15:24:34 a systemd[1071]: Starting Tracker file system data miner...
+Nov 23 15:24:34 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.gnome.ScreenSaver' requested by ':1.60' (uid=1000 pid=2376 comm="/usr/libexec/gsd-power " label="unconfined")
+Nov 23 15:24:34 a systemd[1]: Starting Manage, Install and Generate Color Profiles...
+Nov 23 15:24:34 a systemd[1]: Starting Locale Service...
+Nov 23 15:24:35 a gsd-media-keys[2375]: Failed to grab accelerator for keybinding settings:playback-repeat
+Nov 23 15:24:35 a gsd-media-keys[2375]: Failed to grab accelerator for keybinding settings:hibernate
+Nov 23 15:24:35 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.locale1'
+Nov 23 15:24:35 a systemd[1]: Started Locale Service.
+Nov 23 15:24:35 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.freedesktop.portal.Desktop' unit='xdg-desktop-portal.service' requested by ':1.67' (uid=1000 pid=2342 comm="/usr/bin/nautilus --gapplication-service " label="unconfined")
+Nov 23 15:24:35 a systemd[1071]: Starting Portal service...
+Nov 23 15:24:35 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.ScreenSaver'
+Nov 23 15:24:35 a colord[2677]: failed to get edid data: EDID length is too small
+Nov 23 15:24:35 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.ColorManager'
+Nov 23 15:24:35 a systemd[1]: Started Manage, Install and Generate Color Profiles.
+Nov 23 15:24:36 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.freedesktop.impl.portal.desktop.gnome' unit='xdg-desktop-portal-gnome.service' requested by ':1.84' (uid=1000 pid=2695 comm="/usr/libexec/xdg-desktop-portal " label="unconfined")
+Nov 23 15:24:36 a systemd[1071]: Starting Portal service (GNOME implementation)...
+Nov 23 15:24:36 a systemd[1071]: Reached target GNOME session X11 services.
+Nov 23 15:24:36 a systemd[1071]: Starting GNOME XSettings service...
+Nov 23 15:24:36 a gnome-shell[2728]: The XKEYBOARD keymap compiler (xkbcomp) reports:
+Nov 23 15:24:36 a gnome-shell[2728]: > Warning:          Unsupported maximum keycode 708, clipping.
+Nov 23 15:24:36 a gnome-shell[2728]: >                   X11 cannot support keycodes above 255.
+Nov 23 15:24:36 a gnome-shell[2728]: Errors from xkbcomp are not fatal to the X server
+Nov 23 15:24:36 a gsd-color[2367]: failed to get edid: unable to get EDID for output
+Nov 23 15:24:36 a gsd-color[2367]: unable to get EDID for xrandr-Virtual-1: unable to get EDID for output
+Nov 23 15:24:42 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.freedesktop.impl.portal.desktop.gnome'
+Nov 23 15:24:42 a systemd[1071]: Started Portal service (GNOME implementation).
+Nov 23 15:24:42 a rtkit-daemon[1133]: Supervising 6 threads of 3 processes of 1 users.
+Nov 23 15:24:42 a rtkit-daemon[1133]: message repeated 2 times: [ Supervising 6 threads of 3 processes of 1 users.]
+Nov 23 15:24:42 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.freedesktop.impl.portal.desktop.gtk' unit='xdg-desktop-portal-gtk.service' requested by ':1.84' (uid=1000 pid=2695 comm="/usr/libexec/xdg-desktop-portal " label="unconfined")
+Nov 23 15:24:43 a systemd[1071]: Starting Portal service (GTK/GNOME implementation)...
+Nov 23 15:24:43 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.freedesktop.impl.portal.desktop.gtk'
+Nov 23 15:24:43 a systemd[1071]: Started Portal service (GTK/GNOME implementation).
+Nov 23 15:24:43 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.freedesktop.portal.Desktop'
+Nov 23 15:24:43 a systemd[1071]: Started Portal service.
+Nov 23 15:24:43 a systemd[1071]: Started GNOME XSettings service.
+Nov 23 15:24:43 a systemd[1071]: Reached target GNOME session X11 services.
+Nov 23 15:24:43 a gnome-shell[1297]: ATK Bridge is disabled but a11y has already been enabled.
+Nov 23 15:24:44 a vmtoolsd[2497]: gtk_disable_setlocale() must be called before gtk_init()
+Nov 23 15:24:44 a kernel: [   95.321575] input: VMware DnD UInput pointer as /devices/virtual/input/input6
+Nov 23 15:24:47 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.freedesktop.FileManager1'
+Nov 23 15:24:47 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.gnome.ArchiveManager1' requested by ':1.81' (uid=1000 pid=2657 comm="gjs /usr/share/gnome-shell/extensions/ding@rasters" label="unconfined")
+Nov 23 15:24:49 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.ArchiveManager1'
+Nov 23 15:24:50 a gsd-color[2367]: unable to get EDID for xrandr-Virtual-1: unable to get EDID for output
+Nov 23 15:24:50 a gnome-shell[1297]: DING: Detected async api for thumbnails
+Nov 23 15:24:50 a gsd-color[2367]: unable to get EDID for xrandr-Virtual-1: unable to get EDID for output
+Nov 23 15:24:50 a gnome-shell[1297]: DING: GNOME nautilus 42.6
+Nov 23 15:24:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 15:24:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 15:24:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 15:24:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 15:24:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 15:24:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 15:24:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 15:24:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 15:24:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 15:24:57 a nautilus[2342]: Could not delete '.meta.isrunning': No such file or directory
+Nov 23 15:25:03 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gnome.Terminal' unit='gnome-terminal-server.service' requested by ':1.98' (uid=1000 pid=2862 comm="/usr/bin/gnome-terminal.real --wait " label="unconfined")
+Nov 23 15:25:03 a systemd[1071]: Created slice Slice /app/org.gnome.Terminal.
+Nov 23 15:25:03 a systemd[1071]: Starting GNOME Terminal Server...
+Nov 23 15:25:04 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.Terminal'
+Nov 23 15:25:04 a systemd[1071]: Started GNOME Terminal Server.
+Nov 23 15:25:04 a systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Nov 23 15:25:05 a systemd[1071]: Started VTE child process 2887 launched by gnome-terminal-server process 2867.
+Nov 23 15:25:05 a systemd[1]: systemd-localed.service: Deactivated successfully.
+Nov 23 15:25:13 a systemd[1]: Starting Update APT News...
+Nov 23 15:25:13 a systemd[1]: Starting Update the local ESM caches...
+Nov 23 15:25:17 a systemd[1]: esm-cache.service: Deactivated successfully.
+Nov 23 15:25:17 a systemd[1]: Finished Update the local ESM caches.
+Nov 23 15:25:24 a geoclue[2266]: Service not used for 60 seconds. Shutting down..
+Nov 23 15:25:24 a systemd[1]: geoclue.service: Deactivated successfully.
+Nov 23 15:25:29 a systemd[1071]: Started Application launched by gnome-session-binary.
+Nov 23 15:25:29 a systemd[1071]: Started Application launched by gnome-session-binary.
+Nov 23 15:25:35 a systemd[1]: apt-news.service: Deactivated successfully.
+Nov 23 15:25:35 a systemd[1]: Finished Update APT News.
+Nov 23 15:25:53 a update-notifier.desktop[3321]: /usr/lib/ubuntu-release-upgrader/check-new-release-gtk:145: PyGIDeprecationWarning: Using positional arguments with the GObject constructor has been deprecated. Please specify keyword(s) for "schema" or use a class specific constructor. See: https://wiki.gnome.org/PyGObject/InitializerDeprecations
+Nov 23 15:25:53 a update-notifier.desktop[3321]:   client = Gio.Settings("com.ubuntu.update-notifier")
+Nov 23 15:25:56 a update-notifier.desktop[3515]: /var/lib/apt/lists/lock:
+Nov 23 15:25:57 a ubuntu-appindicators@ubuntu.com[1297]: unable to update icon for software-update-available
+Nov 23 15:25:57 a ubuntu-appindicators@ubuntu.com[1297]: unable to update icon for livepatch
+Nov 23 15:26:05 a systemd[1071]: tracker-miner-fs-3.service: start operation timed out. Terminating.
+Nov 23 15:26:05 a systemd[1071]: tracker-miner-fs-3.service: Failed with result 'timeout'.
+Nov 23 15:26:05 a systemd[1071]: Failed to start Tracker file system data miner.
+Nov 23 15:26:05 a systemd[1071]: tracker-miner-fs-3.service: Consumed 1.898s CPU time.
+Nov 23 15:26:05 a systemd[1071]: tracker-miner-fs-3.service: Scheduled restart job, restart counter is at 1.
+Nov 23 15:26:05 a systemd[1071]: Stopped Tracker file system data miner.
+Nov 23 15:26:05 a systemd[1071]: tracker-miner-fs-3.service: Consumed 1.898s CPU time.
+Nov 23 15:26:05 a systemd[1071]: Starting Tracker file system data miner...
+Nov 23 15:27:35 a systemd[1071]: tracker-miner-fs-3.service: start operation timed out. Terminating.
+Nov 23 15:27:35 a systemd[1071]: tracker-miner-fs-3.service: Failed with result 'timeout'.
+Nov 23 15:27:35 a systemd[1071]: Failed to start Tracker file system data miner.
+Nov 23 15:27:35 a systemd[1071]: tracker-miner-fs-3.service: Consumed 4.295s CPU time.
+Nov 23 15:27:35 a systemd[1071]: tracker-miner-fs-3.service: Scheduled restart job, restart counter is at 2.
+Nov 23 15:27:35 a systemd[1071]: Stopped Tracker file system data miner.
+Nov 23 15:27:35 a systemd[1071]: tracker-miner-fs-3.service: Consumed 4.295s CPU time.
+Nov 23 15:27:35 a systemd[1071]: Starting Tracker file system data miner...
+Nov 23 15:27:49 a systemd[1071]: Started Tracker file system data miner.
+Nov 23 15:28:21 a systemd[1]: Starting Download data for packages that failed at package install time...
+Nov 23 15:28:21 a systemd[1]: update-notifier-download.service: Deactivated successfully.
+Nov 23 15:28:21 a systemd[1]: Finished Download data for packages that failed at package install time.
+Nov 23 15:28:28 a anacron[739]: Job `cron.daily' started
+Nov 23 15:28:28 a anacron[4259]: Updated timestamp for job `cron.daily' to 2025-11-23
+Nov 23 15:28:30 a cracklib: no dictionary update necessary.
+Nov 23 15:28:30 a anacron[739]: Job `cron.daily' terminated
+Nov 23 15:28:33 a update-notifier.desktop[4382]: #015Reading package lists... 0%#015#015Reading package lists... 100%#015#015Reading package lists... Done
+Nov 23 15:28:34 a update-notifier.desktop[4382]: #015Building dependency tree... 0%#015#015Building dependency tree... 0%#015#015Building dependency tree... 50%#015#015Building dependency tree... 50%#015#015Building dependency tree... Done
+Nov 23 15:28:34 a update-notifier.desktop[4382]: #015Reading state information... 0% #015#015Reading state information... 0%#015#015Reading state information... Done
+Nov 23 15:28:40 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.24' (uid=0 pid=758 comm="/usr/lib/snapd/snapd " label="unconfined")
+Nov 23 15:28:40 a systemd[1]: Starting Time & Date Service...
+Nov 23 15:28:40 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.timedate1'
+Nov 23 15:28:40 a systemd[1]: Started Time & Date Service.
+Nov 23 15:28:42 a snapd[758]: storehelpers.go:954: cannot refresh: snap has no updates available: "bare", "core22", "gnome-42-2204", "gtk-common-themes", "snap-store"
+Nov 23 15:28:43 a update-notifier.desktop[4387]: WARNING:root:Error loading .desktop file /usr/share/applications/evolution-calendar.desktop: constructor returned NULL
+Nov 23 15:28:44 a update-notifier.desktop[4387]: WARNING:root:Error loading .desktop file /usr/share/applications/vim.desktop: constructor returned NULL
+Nov 23 15:28:58 a systemd[1]: Reloading.
+Nov 23 15:28:58 a systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Nov 23 15:28:58 a systemd[1]: Mounting Mount unit for snapd, revision 25577...
+Nov 23 15:28:58 a kernel: [  349.151915] loop14: detected capacity change from 0 to 104296
+Nov 23 15:28:58 a systemd[1]: Mounted Mount unit for snapd, revision 25577.
+Nov 23 15:29:00 a kernel: [  351.819601] audit: type=1400 audit(1763900940.954:61): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/snap/snapd/25577/usr/lib/snapd/snap-confine" pid=4523 comm="apparmor_parser"
+Nov 23 15:29:00 a kernel: [  351.820038] audit: type=1400 audit(1763900940.955:62): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/snap/snapd/25577/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=4523 comm="apparmor_parser"
+Nov 23 15:29:02 a kernel: [  353.763725] audit: type=1400 audit(1763900942.897:63): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.firefox" pid=4525 comm="apparmor_parser"
+Nov 23 15:29:03 a kernel: [  354.180641] audit: type=1400 audit(1763900943.314:64): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.snap-store" pid=4526 comm="apparmor_parser"
+Nov 23 15:29:04 a kernel: [  355.027480] audit: type=1400 audit(1763900944.161:65): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.snapd-desktop-integration" pid=4527 comm="apparmor_parser"
+Nov 23 15:29:05 a kernel: [  356.237104] audit: type=1400 audit(1763900945.370:66): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.firefox.firefox" pid=4529 comm="apparmor_parser"
+Nov 23 15:29:05 a kernel: [  356.337227] audit: type=1400 audit(1763900945.470:67): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.firefox.geckodriver" pid=4530 comm="apparmor_parser"
+Nov 23 15:29:05 a kernel: [  356.342523] audit: type=1400 audit(1763900945.475:68): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.firefox.hook.configure" pid=4531 comm="apparmor_parser"
+Nov 23 15:29:05 a kernel: [  356.346180] audit: type=1400 audit(1763900945.479:69): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.firefox.hook.disconnect-plug-host-hunspell" pid=4532 comm="apparmor_parser"
+Nov 23 15:29:05 a kernel: [  356.350147] audit: type=1400 audit(1763900945.483:70): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.firefox.hook.install" pid=4533 comm="apparmor_parser"
+Nov 23 15:29:06 a snapd[758]: daemon.go:548: gracefully waiting for running hooks
+Nov 23 15:29:06 a snapd[758]: daemon.go:550: done waiting for running hooks
+Nov 23 15:29:06 a snapd-desktop-integration.snapd-desktop-integration[2230]: Error 10; status-code=500 kind=(null) message=request canceled
+Nov 23 15:29:09 a snapd[758]: overlord.go:518: Released state lock file
+Nov 23 15:29:09 a systemd[1]: snapd.service: Deactivated successfully.
+Nov 23 15:29:09 a systemd[1]: snapd.service: Consumed 6.067s CPU time.
+Nov 23 15:29:10 a systemd[1]: snapd.service: Scheduled restart job, restart counter is at 1.
+Nov 23 15:29:10 a systemd[1]: Stopped Snap Daemon.
+Nov 23 15:29:10 a systemd[1]: snapd.service: Consumed 6.067s CPU time.
+Nov 23 15:29:10 a systemd[1]: Starting Snap Daemon...
+Nov 23 15:29:10 a systemd[1]: systemd-timedated.service: Deactivated successfully.
+Nov 23 15:29:11 a snapd[4542]: overlord.go:288: Acquiring state lock file
+Nov 23 15:29:11 a snapd[4542]: overlord.go:293: Acquired state lock file
+Nov 23 15:29:11 a snapd[4542]: patch.go:64: Patching system state level 6 to sublevel 1...
+Nov 23 15:29:11 a snapd[4542]: patch.go:64: Patching system state level 6 to sublevel 2...
+Nov 23 15:29:11 a snapd[4542]: patch.go:64: Patching system state level 6 to sublevel 3...
+Nov 23 15:29:11 a snapd[4542]: daemon.go:276: started snapd/2.72 (series 16; classic) ubuntu/22.04 (amd64) linux/6.8.0-52-generic.
+Nov 23 15:29:11 a kernel: [  361.905562] loop15: detected capacity change from 0 to 8
+Nov 23 15:29:11 a systemd[1]: tmp-syscheck\x2dmountpoint\x2d3160893396.mount: Deactivated successfully.
+Nov 23 15:29:11 a snapd[4542]: daemon.go:370: adjusting startup timeout by 1m10s (pessimistic estimate of 30s plus 5s per snap)
+Nov 23 15:29:11 a snapd[4542]: backends.go:70: AppArmor status: apparmor is enabled and all features are available (using snapd provided apparmor_parser)
+Nov 23 15:29:11 a snapd[4542]: backend.go:141: delegating reload of snap-confine profiles to system snap security profiles setup
+Nov 23 15:29:13 a systemd-udevd[4719]: Using default interface naming scheme 'v249'.
+Nov 23 15:29:13 a systemd-udevd[4711]: Using default interface naming scheme 'v249'.
+Nov 23 15:29:13 a systemd-udevd[4722]: Using default interface naming scheme 'v249'.
+Nov 23 15:29:13 a systemd-udevd[4715]: Using default interface naming scheme 'v249'.
+Nov 23 15:29:13 a systemd-udevd[4721]: Using default interface naming scheme 'v249'.
+Nov 23 15:29:14 a snapd[4542]: backend.go:285: reloading profiles of snap-confine provided by the system snap
+Nov 23 15:29:14 a kernel: [  365.335009] kauditd_printk_skb: 7 callbacks suppressed
+Nov 23 15:29:14 a kernel: [  365.335012] audit: type=1400 audit(1763900954.464:78): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/snapd/25577/usr/lib/snapd/snap-confine" pid=4832 comm="apparmor_parser"
+Nov 23 15:29:14 a kernel: [  365.340362] audit: type=1400 audit(1763900954.470:79): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/snapd/25577/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=4832 comm="apparmor_parser"
+Nov 23 15:29:14 a kernel: [  365.760173] audit: type=1400 audit(1763900954.888:80): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.firefox" pid=4834 comm="apparmor_parser"
+Nov 23 15:29:15 a kernel: [  366.413589] audit: type=1400 audit(1763900955.541:81): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.firefox" pid=4835 comm="apparmor_parser"
+Nov 23 15:29:16 a ModemManager[869]: <info>  [base-manager] couldn't check support for device '/sys/devices/pci0000:00/0000:00:11.0/0000:02:01.0': not supported by any plugin
+Nov 23 15:29:16 a kernel: [  367.082264] audit: type=1400 audit(1763900956.207:82): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.geckodriver" pid=4836 comm="apparmor_parser"
+Nov 23 15:29:16 a kernel: [  367.231621] audit: type=1400 audit(1763900956.360:83): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.configure" pid=4837 comm="apparmor_parser"
+Nov 23 15:29:16 a kernel: [  367.331948] audit: type=1400 audit(1763900956.459:84): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.disconnect-plug-host-hunspell" pid=4838 comm="apparmor_parser"
+Nov 23 15:29:16 a kernel: [  367.427641] audit: type=1400 audit(1763900956.555:85): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.install" pid=4839 comm="apparmor_parser"
+Nov 23 15:29:16 a kernel: [  367.522292] audit: type=1400 audit(1763900956.649:86): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.post-refresh" pid=4840 comm="apparmor_parser"
+Nov 23 15:29:17 a kernel: [  367.958126] audit: type=1400 audit(1763900957.085:87): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.snap-store" pid=4841 comm="apparmor_parser"
+Nov 23 15:29:19 a kernel: [  370.362506] kauditd_printk_skb: 6 callbacks suppressed
+Nov 23 15:29:19 a kernel: [  370.362508] audit: type=1400 audit(1763900959.488:94): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.snapd-desktop-integration.snapd-desktop-integration" pid=4848 comm="apparmor_parser"
+Nov 23 15:29:19 a systemd[1]: Started Snap Daemon.
+Nov 23 15:29:19 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.102' (uid=0 pid=4542 comm="/usr/lib/snapd/snapd " label="unconfined")
+Nov 23 15:29:19 a systemd[1]: Starting Time & Date Service...
+Nov 23 15:29:19 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.timedate1'
+Nov 23 15:29:19 a systemd[1]: Started Time & Date Service.
+Nov 23 15:29:29 a systemd[1]: snap-snapd-21759.mount: Deactivated successfully.
+Nov 23 15:29:29 a systemd[1]: Reloading.
+Nov 23 15:29:29 a systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Nov 23 15:29:38 a systemd[1]: Reloading.
+Nov 23 15:29:38 a systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Nov 23 15:29:38 a systemd[1]: Mounting Mount unit for snapd-desktop-integration, revision 315...
+Nov 23 15:29:38 a kernel: [  389.373761] loop11: detected capacity change from 0 to 1152
+Nov 23 15:29:38 a systemd[1]: Mounted Mount unit for snapd-desktop-integration, revision 315.
+Nov 23 15:29:38 a systemd[1071]: Starting snapd user session agent...
+Nov 23 15:29:39 a systemd[1071]: Started snapd user session agent.
+Nov 23 15:29:39 a systemd[1071]: Stopping Service for snap application snapd-desktop-integration.snapd-desktop-integration...
+Nov 23 15:29:39 a systemd[1071]: snap.snapd-desktop-integration.snapd-desktop-integration.service: Main process exited, code=exited, status=143/n/a
+Nov 23 15:29:39 a systemd[1071]: snap.snapd-desktop-integration.snapd-desktop-integration.service: Failed with result 'exit-code'.
+Nov 23 15:29:39 a systemd[1071]: Stopped Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:29:39 a snapd[4542]: services.go:1152: RemoveSnapServices - disabling snap.snapd-desktop-integration.snapd-desktop-integration.service
+Nov 23 15:29:39 a systemd[1071]: Reloading.
+Nov 23 15:29:40 a snapd[4542]: backend.go:285: reloading profiles of snap-confine provided by the system snap
+Nov 23 15:29:40 a kernel: [  391.791770] audit: type=1400 audit(1763900980.951:95): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/25577/usr/lib/snapd/snap-confine" pid=5016 comm="apparmor_parser"
+Nov 23 15:29:40 a kernel: [  391.791907] audit: type=1400 audit(1763900980.952:96): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/25577/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=5016 comm="apparmor_parser"
+Nov 23 15:29:41 a kernel: [  392.472725] audit: type=1400 audit(1763900981.633:97): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.snapd-desktop-integration" pid=5018 comm="apparmor_parser"
+Nov 23 15:29:41 a kernel: [  392.662887] audit: type=1400 audit(1763900981.823:98): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.snapd-desktop-integration.hook.configure" pid=5019 comm="apparmor_parser"
+Nov 23 15:29:42 a kernel: [  393.072217] audit: type=1400 audit(1763900982.233:99): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.snapd-desktop-integration.snapd-desktop-integration" pid=5020 comm="apparmor_parser"
+Nov 23 15:29:42 a systemd[1071]: Reloading.
+Nov 23 15:29:42 a systemd[1071]: Reloading.
+Nov 23 15:29:42 a systemd[1071]: Started Service for snap application snapd-desktop-integration.snapd-desktop-integration.
+Nov 23 15:29:44 a systemd[1]: snap-snapd\x2ddesktop\x2dintegration-83.mount: Deactivated successfully.
+Nov 23 15:29:44 a systemd[1]: Reloading.
+Nov 23 15:29:44 a systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Nov 23 15:29:44 a systemd[1]: Started snap.snapd-desktop-integration.hook.configure-2d5b55e9-7506-47ee-877c-91f96de4c1e2.scope.
+Nov 23 15:29:46 a snapd-desktop-i[5206]: New theme: gtk=Yaru icon=Yaru cursor=Yaru, sound=Yaru
+Nov 23 15:29:46 a snapd-desktop-i[5206]: All available theme snaps installed
+Nov 23 15:29:49 a systemd[1]: systemd-timedated.service: Deactivated successfully.
+Nov 23 15:29:52 a systemd[1]: snap.snapd-desktop-integration.hook.configure-2d5b55e9-7506-47ee-877c-91f96de4c1e2.scope: Deactivated successfully.
+Nov 23 15:30:01 a CRON[5226]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 23 15:30:12 a snap[4975]: session_agent.go:332: read unix @->/run/user/1000/bus: use of closed network connection
+Nov 23 15:30:19 a systemd[1]: Reloading.
+Nov 23 15:30:19 a systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Nov 23 15:30:19 a systemd[1]: Mounting Mount unit for firefox, revision 7355...
+Nov 23 15:30:19 a kernel: [  430.587043] loop10: detected capacity change from 0 to 512216
+Nov 23 15:30:19 a systemd[1]: Mounted Mount unit for firefox, revision 7355.
+Nov 23 15:30:23 a snapd[4542]: backend.go:285: reloading profiles of snap-confine provided by the system snap
+Nov 23 15:30:23 a kernel: [  434.537718] audit: type=1400 audit(1763901023.706:100): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/25577/usr/lib/snapd/snap-confine" pid=5314 comm="apparmor_parser"
+Nov 23 15:30:23 a kernel: [  434.537723] audit: type=1400 audit(1763901023.706:101): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/25577/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=5314 comm="apparmor_parser"
+Nov 23 15:30:24 a kernel: [  434.947362] audit: type=1400 audit(1763901024.116:102): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.firefox" pid=5316 comm="apparmor_parser"
+Nov 23 15:30:24 a kernel: [  435.694846] audit: type=1400 audit(1763901024.861:103): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.firefox" pid=5317 comm="apparmor_parser"
+Nov 23 15:30:25 a kernel: [  436.368021] audit: type=1400 audit(1763901025.531:104): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.geckodriver" pid=5318 comm="apparmor_parser"
+Nov 23 15:30:25 a kernel: [  436.509085] audit: type=1400 audit(1763901025.672:105): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.configure" pid=5321 comm="apparmor_parser"
+Nov 23 15:30:25 a kernel: [  436.600915] audit: type=1400 audit(1763901025.763:106): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.disconnect-plug-host-hunspell" pid=5322 comm="apparmor_parser"
+Nov 23 15:30:25 a kernel: [  436.696504] audit: type=1400 audit(1763901025.858:107): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.install" pid=5323 comm="apparmor_parser"
+Nov 23 15:30:25 a kernel: [  436.789210] audit: type=1400 audit(1763901025.951:108): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.post-refresh" pid=5324 comm="apparmor_parser"
+Nov 23 15:30:26 a kernel: [  437.033875] audit: type=1400 audit(1763901026.194:109): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/25577/usr/lib/snapd/snap-confine" pid=5343 comm="apparmor_parser"
+Nov 23 15:30:26 a snapd[4542]: backend.go:285: reloading profiles of snap-confine provided by the system snap
+Nov 23 15:30:30 a systemd[1]: Started snap.firefox.hook.post-refresh-65449427-276e-472b-a562-e9e5f299adbf.scope.
+Nov 23 15:30:30 a systemd[1]: tmp-snap.rootfs_YpwmuK.mount: Deactivated successfully.
+Nov 23 15:30:31 a systemd[1]: snap.firefox.hook.post-refresh-65449427-276e-472b-a562-e9e5f299adbf.scope: Deactivated successfully.
+Nov 23 15:30:31 a systemd[1]: snap-firefox-3836.mount: Deactivated successfully.
+Nov 23 15:30:31 a systemd[1]: Reloading.
+Nov 23 15:30:31 a systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Nov 23 15:30:32 a systemd[1]: Started snap.firefox.hook.configure-7e346c6a-e800-427c-b632-069330df424d.scope.
+Nov 23 15:30:38 a systemd[1]: snap.firefox.hook.configure-7e346c6a-e800-427c-b632-069330df424d.scope: Deactivated successfully.
+Nov 23 15:30:39 a snapd[4542]: storehelpers.go:916: cannot refresh: snap has no updates available: "firefox", "snapd", "snapd-desktop-integration"
+Nov 23 15:31:57 a kernel: [  527.929872] hrtimer: interrupt took 3527156 ns
+Nov 23 15:33:30 a update-notifier[3306]: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+Nov 23 15:33:30 a update-notifier[3306]: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+Nov 23 15:33:39 a rsyslogd: [origin software="rsyslogd" swVersion="8.2112.0" x-pid="756" x-info="https://www.rsyslog.com"] rsyslogd was HUPed
+Nov 23 15:33:44 a anacron[739]: Job `cron.weekly' started
+Nov 23 15:33:44 a anacron[739]: Job `cron.weekly' terminated
+Nov 23 15:33:44 a anacron[5468]: Updated timestamp for job `cron.weekly' to 2025-11-23
+Nov 23 15:36:45 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.freedesktop.Tracker3.Miner.Extract' unit='tracker-extract-3.service' requested by ':1.111' (uid=1000 pid=4015 comm="/usr/libexec/tracker-miner-fs-3 " label="unconfined")
+Nov 23 15:36:45 a systemd[1071]: Starting Tracker metadata extractor...
+Nov 23 15:36:47 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.freedesktop.Tracker3.Miner.Extract'
+Nov 23 15:36:47 a systemd[1071]: Started Tracker metadata extractor.
+Nov 23 15:38:13 a systemd[1]: Starting Cleanup of Temporary Directories...
+Nov 23 15:38:14 a systemd[1]: systemd-tmpfiles-clean.service: Deactivated successfully.
+Nov 23 15:38:14 a systemd[1]: Finished Cleanup of Temporary Directories.
+Nov 23 15:38:40 a NetworkManager[745]: <info>  [1763901520.1276] dhcp4 (ens33): state changed new lease, address=192.168.228.128
+Nov 23 15:38:44 a anacron[739]: Job `cron.monthly' started
+Nov 23 15:38:44 a anacron[739]: Job `cron.monthly' terminated
+Nov 23 15:38:44 a anacron[739]: Normal exit (3 jobs run)
+Nov 23 15:38:44 a systemd[1]: anacron.service: Killing process 5493 (anacron) with signal SIGKILL.
+Nov 23 15:38:44 a systemd[1]: anacron.service: Killing process 5493 (anacron) with signal SIGKILL.
+Nov 23 15:38:44 a systemd[1]: anacron.service: Deactivated successfully.
+Nov 23 15:38:44 a systemd[1]: anacron.service: Unit process 5493 (anacron) remains running after unit stopped.
+Nov 23 15:38:44 a systemd[1]: Started Run anacron jobs.
+Nov 23 15:38:44 a anacron[5494]: Anacron 2.3 started on 2025-11-23
+Nov 23 15:38:44 a anacron[5494]: Normal exit (0 jobs run)
+Nov 23 15:38:44 a systemd[1]: anacron.service: Deactivated successfully.
+Nov 23 15:48:26 a dbus-daemon[744]: [system] Activating via systemd: service name='net.reactivated.Fprint' unit='fprintd.service' requested by ':1.46' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:48:27 a systemd[1]: Starting Fingerprint Authentication Daemon...
+Nov 23 15:48:27 a dbus-daemon[744]: [system] Successfully activated service 'net.reactivated.Fprint'
+Nov 23 15:48:27 a systemd[1]: Started Fingerprint Authentication Daemon.
+Nov 23 15:48:27 a gnome-shell[1297]: JS ERROR: Failed to initialize fprintd service: Gio.IOErrorEnum: GDBus.Error:net.reactivated.Fprint.Error.NoSuchDevice: No devices available#012asyncCallback@resource:///org/gnome/gjs/modules/core/overrides/Gio.js:114:23
+Nov 23 15:48:27 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.freedesktop.FileManager1' requested by ':1.28' (uid=1000 pid=1297 comm="/usr/bin/gnome-shell " label="unconfined")
+Nov 23 15:48:27 a NetworkManager[745]: <info>  [1763902107.8889] agent-manager: agent[c06199b588374024,:1.46/org.gnome.Shell.NetworkAgent/1000]: agent registered
+Nov 23 15:48:27 a ubuntu-appindicators@ubuntu.com[1297]: unable to update icon for software-update-available
+Nov 23 15:48:27 a ubuntu-appindicators@ubuntu.com[1297]: unable to update icon for livepatch
+Nov 23 15:48:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 15:48:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 15:48:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 15:48:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 15:48:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 15:48:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 15:48:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 15:48:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 15:48:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 15:48:29 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.freedesktop.FileManager1'
+Nov 23 15:48:29 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.gnome.ArchiveManager1' requested by ':1.119' (uid=1000 pid=5532 comm="gjs /usr/share/gnome-shell/extensions/ding@rasters" label="unconfined")
+Nov 23 15:48:29 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.ArchiveManager1'
+Nov 23 15:48:29 a gnome-shell[1297]: DING: Detected async api for thumbnails
+Nov 23 15:48:29 a gnome-shell[1297]: DING: GNOME nautilus 42.6
+Nov 23 15:48:31 a systemd[1071]: vte-spawn-1619a886-0623-4748-8e90-96efc6c120ac.scope: Consumed 35.450s CPU time.
+Nov 23 15:48:31 a systemd[1071]: gnome-terminal-server.service: Consumed 2.004s CPU time.
+Nov 23 15:48:35 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.freedesktop.Tracker3.Miner.Extract' unit='tracker-extract-3.service' requested by ':1.111' (uid=1000 pid=4015 comm="/usr/libexec/tracker-miner-fs-3 " label="unconfined")
+Nov 23 15:48:35 a systemd[1071]: Starting Tracker metadata extractor...
+Nov 23 15:48:35 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.freedesktop.Tracker3.Miner.Extract'
+Nov 23 15:48:35 a systemd[1071]: Started Tracker metadata extractor.
+Nov 23 15:48:39 a nautilus[5527]: Could not delete '.meta.isrunning': No such file or directory
+Nov 23 15:48:40 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.gnome.Nautilus' requested by ':1.119' (uid=1000 pid=5532 comm="gjs /usr/share/gnome-shell/extensions/ding@rasters" label="unconfined")
+Nov 23 15:48:40 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.Nautilus'
+Nov 23 15:48:43 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.110' (uid=1000 pid=5597 comm="/usr/bin/nautilus --gapplication-service " label="unconfined")
+Nov 23 15:48:43 a systemd[1]: Starting Hostname Service...
+Nov 23 15:48:43 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Nov 23 15:48:43 a systemd[1]: Started Hostname Service.
+Nov 23 15:48:48 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gnome.Terminal' unit='gnome-terminal-server.service' requested by ':1.126' (uid=1000 pid=5597 comm="/usr/bin/nautilus --gapplication-service " label="unconfined")
+Nov 23 15:48:48 a systemd[1071]: Starting GNOME Terminal Server...
+Nov 23 15:48:48 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.Terminal'
+Nov 23 15:48:48 a systemd[1071]: Started GNOME Terminal Server.
+Nov 23 15:48:48 a systemd[1071]: Started VTE child process 5636 launched by gnome-terminal-server process 5618.
+Nov 23 15:48:57 a systemd[1]: fprintd.service: Deactivated successfully.
+Nov 23 15:49:05 a nautilus[5597]: Called "net usershare info" but it failed: Failed to execute child process “net” (No such file or directory)
+Nov 23 15:49:13 a systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Nov 23 15:49:15 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gnome.Terminal' unit='gnome-terminal-server.service' requested by ':1.126' (uid=1000 pid=5597 comm="/usr/bin/nautilus --gapplication-service " label="unconfined")
+Nov 23 15:49:15 a systemd[1071]: Starting GNOME Terminal Server...
+Nov 23 15:49:15 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.Terminal'
+Nov 23 15:49:15 a systemd[1071]: Started GNOME Terminal Server.
+Nov 23 15:49:15 a systemd[1071]: Started VTE child process 5687 launched by gnome-terminal-server process 5669.
+Nov 23 15:51:32 a gsd-color[2367]: unable to get EDID for xrandr-Virtual-1: unable to get EDID for output
+Nov 23 15:51:34 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.gnome.Terminal' unit='gnome-terminal-server.service' requested by ':1.132' (uid=1000 pid=5707 comm="/usr/bin/gnome-terminal.real --wait " label="unconfined")
+Nov 23 15:51:34 a systemd[1071]: Starting GNOME Terminal Server...
+Nov 23 15:51:34 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.Terminal'
+Nov 23 15:51:34 a systemd[1071]: Started GNOME Terminal Server.
+Nov 23 15:51:34 a systemd[1071]: Started VTE child process 5730 launched by gnome-terminal-server process 5712.
+Nov 23 15:53:37 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating via systemd: service name='org.freedesktop.Tracker3.Miner.Extract' unit='tracker-extract-3.service' requested by ':1.111' (uid=1000 pid=4015 comm="/usr/libexec/tracker-miner-fs-3 " label="unconfined")
+Nov 23 15:53:37 a systemd[1071]: Starting Tracker metadata extractor...
+Nov 23 15:53:37 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.freedesktop.Tracker3.Miner.Extract'
+Nov 23 15:53:37 a systemd[1071]: Started Tracker metadata extractor.
+Nov 23 15:53:40 a NetworkManager[745]: <info>  [1763902420.1079] dhcp4 (ens33): state changed new lease, address=192.168.228.128
+Nov 23 16:01:36 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.gnome.Nautilus' requested by ':1.119' (uid=1000 pid=5532 comm="gjs /usr/share/gnome-shell/extensions/ding@rasters" label="unconfined")
+Nov 23 16:01:36 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.Nautilus'
+Nov 23 16:01:36 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.112' (uid=1000 pid=5827 comm="/usr/bin/nautilus --gapplication-service " label="unconfined")
+Nov 23 16:01:36 a nautilus[5827]: Called "net usershare info" but it failed: Failed to execute child process “net” (No such file or directory)
+Nov 23 16:01:36 a systemd[1]: Starting Hostname Service...
+Nov 23 16:01:36 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Nov 23 16:01:36 a systemd[1]: Started Hostname Service.
+Nov 23 16:01:43 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.gnome.gedit' requested by ':1.137' (uid=1000 pid=5827 comm="/usr/bin/nautilus --gapplication-service " label="unconfined")
+Nov 23 16:01:44 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.gedit'
+Nov 23 16:01:45 a gnome-shell[1297]: meta_window_set_stack_position_no_sync: assertion 'window->stack_position >= 0' failed
+Nov 23 16:01:56 a dbus-daemon[1129]: [session uid=1000 pid=1129] Activating service name='org.gnome.gedit' requested by ':1.137' (uid=1000 pid=5827 comm="/usr/bin/nautilus --gapplication-service " label="unconfined")
+Nov 23 16:01:56 a dbus-daemon[1129]: [session uid=1000 pid=1129] Successfully activated service 'org.gnome.gedit'
+Nov 23 16:01:56 a gnome-shell[1297]: meta_window_set_stack_position_no_sync: assertion 'window->stack_position >= 0' failed
+Nov 23 16:02:06 a systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Nov 23 16:02:26 a systemd[1071]: Started Application launched by gnome-shell.
+Nov 23 16:02:44 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 16:02:44 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 16:02:44 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 16:02:44 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 16:02:44 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 16:02:44 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 16:02:44 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 16:02:44 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 16:02:44 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 16:02:44 a gnome-shell[6009]: The XKEYBOARD keymap compiler (xkbcomp) reports:
+Nov 23 16:02:44 a gnome-shell[6009]: > Warning:          Unsupported maximum keycode 708, clipping.
+Nov 23 16:02:44 a gnome-shell[6009]: >                   X11 cannot support keycodes above 255.
+Nov 23 16:02:44 a gnome-shell[6009]: Errors from xkbcomp are not fatal to the X server
+Nov 23 16:02:45 a systemd[1071]: app-gnome-gnome\x2dcontrol\x2dcenter-5942.scope: Consumed 2.206s CPU time.
+Nov 23 16:02:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 16:02:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 16:02:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 16:02:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 16:02:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 16:02:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 16:02:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 16:02:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 16:02:50 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 16:05:26 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 16:05:26 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 16:05:26 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 16:05:26 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 16:05:26 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 16:05:26 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 16:05:26 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 16:05:26 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 16:05:26 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 16:06:15 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 16:06:15 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 16:06:15 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 16:06:15 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 16:06:15 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 16:06:15 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 16:06:15 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 16:06:15 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 16:06:15 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 16:06:42 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 16:06:42 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 16:06:42 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 16:06:42 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 16:06:42 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 16:06:42 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 16:06:42 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 16:06:42 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 16:06:42 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 16:07:35 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 16:07:35 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 16:07:35 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 16:07:35 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 16:07:35 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 16:07:35 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 16:07:35 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 16:07:35 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 16:07:35 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 16:08:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 16:08:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 16:08:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 16:08:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 16:08:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 16:08:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 16:08:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 16:08:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 16:08:28 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 16:08:40 a NetworkManager[745]: <info>  [1763903320.1037] dhcp4 (ens33): state changed new lease, address=192.168.228.128
+Nov 23 16:08:58 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 16:08:58 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 16:08:58 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 16:08:58 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 16:08:58 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 16:08:58 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 16:08:58 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 16:08:58 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 16:08:58 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 16:09:31 a systemd[1071]: Started Application launched by gnome-shell.
+Nov 23 16:09:38 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.115' (uid=1000 pid=6074 comm="gnome-control-center " label="unconfined")
+Nov 23 16:09:38 a systemd[1]: Starting Time & Date Service...
+Nov 23 16:09:38 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.timedate1'
+Nov 23 16:09:38 a systemd[1]: Started Time & Date Service.
+Nov 23 16:09:40 a systemd-timedated[6097]: systemd-timesyncd.service: Disabling unit.
+Nov 23 16:09:40 a systemd[1]: Reloading.
+Nov 23 16:09:41 a systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Nov 23 16:09:42 a systemd-timedated[6097]: Set NTP to disabled.
+Nov 23 16:09:42 a systemd[1]: Starting Daily apt upgrade and clean activities...
+Nov 23 16:09:42 a systemd[1]: Stopping Network Time Synchronization...
+Nov 23 16:09:42 a systemd[1]: systemd-timesyncd.service: Deactivated successfully.
+Nov 23 16:09:42 a systemd[1]: Stopped Network Time Synchronization.
+Nov 23 16:09:42 a systemd-timedated[6097]: systemd-timesyncd.service: Enabling unit.
+Nov 23 16:09:42 a systemd[1]: Reloading.
+Nov 23 16:09:42 a systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Nov 23 16:09:42 a systemd-timedated[6097]: Set NTP to enabled (systemd-timesyncd.service).
+Nov 23 16:09:42 a systemd[1]: Starting Discard unused blocks on filesystems from /etc/fstab...
+Nov 23 16:09:42 a systemd[1]: Starting Network Time Synchronization...
+Nov 23 16:09:43 a systemd[1]: Started Network Time Synchronization.
+Nov 23 16:09:43 a systemd[1]: fstrim.service: Deactivated successfully.
+Nov 23 16:09:43 a systemd[1]: Finished Discard unused blocks on filesystems from /etc/fstab.
+Nov 23 16:09:43 a systemd-timesyncd[6155]: Initial synchronization to time server 185.125.190.58:123 (ntp.ubuntu.com).
+Nov 23 16:10:02 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 31 with keysym 31 (keycode a).
+Nov 23 16:10:02 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 32 with keysym 32 (keycode b).
+Nov 23 16:10:02 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 33 with keysym 33 (keycode c).
+Nov 23 16:10:02 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 34 with keysym 34 (keycode d).
+Nov 23 16:10:02 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 35 with keysym 35 (keycode e).
+Nov 23 16:10:02 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 36 with keysym 36 (keycode f).
+Nov 23 16:10:02 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 37 with keysym 37 (keycode 10).
+Nov 23 16:10:02 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 38 with keysym 38 (keycode 11).
+Nov 23 16:10:02 a gnome-shell[1297]: Window manager warning: Overwriting existing binding of keysym 39 with keysym 39 (keycode 12).
+Nov 23 16:10:04 a dbus-daemon[744]: [system] Activating via systemd: service name='org.freedesktop.locale1' unit='dbus-org.freedesktop.locale1.service' requested by ':1.115' (uid=1000 pid=6074 comm="gnome-control-center " label="unconfined")
+Nov 23 16:10:04 a systemd[1]: Starting Locale Service...
+Nov 23 16:10:05 a dbus-daemon[744]: [system] Successfully activated service 'org.freedesktop.locale1'
+Nov 23 16:10:05 a systemd[1]: Started Locale Service.
+Nov 23 16:10:13 a systemd[1]: systemd-timedated.service: Deactivated successfully.
+Nov 23 16:10:35 a systemd[1]: systemd-localed.service: Deactivated successfully.
+Nov 23 16:10:57 a gnome-session-binary[1275]: Entering running state
+Nov 23 16:10:57 a at-spi2-registr[2355]: Failed to register client: GDBus.Error:org.gnome.SessionManager.AlreadyRegistered: Unable to register client
+Nov 23 16:10:57 a at-spi2-registr[2355]: Unable to register client with session manager
