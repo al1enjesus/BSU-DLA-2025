@@ -1,0 +1,118 @@
+./run-task-c.sh 
+==================================================
+=== Task C: pstat utility and /proc metrics ===
+==================================================
+
+ Building tools for Task C...
+go build -o bin/imitation ./src/cmd/imitation/imitation.go
+go build -o bin/pstat ./src/cmd/pstat/pstat.go
+
+ Starting imitation process...
+Imitation process PID: 12697
+
+ Waiting for process to complete file operations...
+worker: start
+writing sync to ./pstat_io_test.bin
+written bytes: 26214400
+reading back
+read bytes: 26214400
+sleep 30s
+ ============ pstat OUTPUT ============
+pstat-go vpstat-go-1.0 — quick snapshot for PID 12697
+
+system: CLK_TCK=100  PAGE_SIZE=4096 bytes
+--- process summary ---
+PID/Name : 12697 / imitation
+PPid     : 12590    Threads: 5    State: S
+CPU(ticks): utime=0 stime=10   CPU seconds=10/100 = 0.100s
+
+--- memory ---
+Memory RSS : 6912 kB (6.75 MiB)
+Stat RSS   : 7077888 bytes (6.75 MiB)
+VmSize     : 1225856 kB (1.17 GiB)   RSS/VmSize = 0.6%
+
+--- smaps (rollup) ---
+  Rss: 7252 kB (7.08 MiB)
+  Anonymous: 6032 kB (5.89 MiB)
+  File: 0 kB (0 B)
+  Shared: 0 kB (0 B)
+
+--- IO ---
+rchar/wchar : 26215000 / 26214518  (syscall bytes)
+read_bytes/write_bytes: 8192 / 26214400  (8.0 KiB / 25.00 MiB)
+
+--- context switches ---
+voluntary   : 533
+non-voluntary: 9
+
+--- comparison with system tools ---
+
+=== ps ===
+  12697   12590 imitation       S 00:00:00  6912 1225856
+
+=== top ===
+top - 09:34:15 up  1:04,  1 user,  load average: 3.18, 2.17, 1.86
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  2.4 us,  4.8 sy,  7.1 ni, 66.7 id, 19.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  15878.7 total,   9184.0 free,   3507.6 used,   3835.2 buff/cache     
+MiB Swap:   4096.0 total,   4096.0 free,      0.0 used.  12371.1 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  12697 glebate+  20   0 1225856   6912   1152 S   0.0   0.0   0:00.10 imitati+
+
+=== pidstat ===
+Linux 6.8.0-51-generic (pc) 	27/11/25 	_x86_64_	(4 CPU)
+
+09:34:15      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:34:16     1000     12697    0.00    0.00    0.00    0.00    0.00     2  imitation
+Average:     1000     12697    0.00    0.00    0.00    0.00    0.00     -  imitation
+
+ ============ COMPARISON WITH SYSTEM TOOLS ============
+
+=== ps command ===
+  12697   12590 imitation       S 00:00:00  6912 1225856  2
+
+=== top command (snapshot) ===
+top - 09:34:16 up  1:04,  1 user,  load average: 3.00, 2.15, 1.85
+Tasks:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  2.4 us,  2.4 sy,  0.0 ni, 22.0 id, 73.2 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  15878.7 total,   9182.4 free,   3508.0 used,   3836.3 buff/cache     
+MiB Swap:   4096.0 total,   4096.0 free,      0.0 used.  12370.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  12697 glebate+  20   0 1225856   6912   1152 S   0.0   0.0   0:00.10 imitati+
+
+=== pidstat command ===
+Linux 6.8.0-51-generic (pc) 	27/11/25 	_x86_64_	(4 CPU)
+
+09:34:16      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:34:17     1000     12697    0.00    0.00    0.00    0.00    0.00     2  imitation
+Average:     1000     12697    0.00    0.00    0.00    0.00    0.00     -  imitation
+
+=== /proc files (raw samples) ===
+/proc/12697/stat (first 200 chars):
+12697 (imitation) S 12590 12590 12574 34821 12590 4194304 1718 0 0 0 0 10 0 0 20 0 5 0 384679 1255276544 1728 18446744073709551615 4194304 4735981 140730549498800 0 0 0 0 2 2143420157 0 0 0 17 2 0 0 0
+...
+/proc/12697/status (key fields):
+State:	S (sleeping)
+Pid:	12697
+PPid:	12590
+VmSize:	 1225856 kB
+VmRSS:	    6912 kB
+Threads:	5
+voluntary_ctxt_switches:	533
+nonvoluntary_ctxt_switches:	9
+/proc/12697/io:
+rchar: 26215000
+wchar: 26214518
+syscr: 11
+syscw: 31
+read_bytes: 8192
+write_bytes: 26214400
+cancelled_write_bytes: 0
+
+ Waiting for imitation process to complete...
+removed ./pstat_io_test.bin
+worker: done
+Process completed successfully
+
