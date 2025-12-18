@@ -1,0 +1,29 @@
+[SPY] open("/dev/tty", flags=O_RDWR|O_NONBLOCK [0x802]) = 3
+[SPY] close(fd=3) = 0
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/special.txt", flags=0 [0x0]) = 3
+[SPY] read(fd=3, count=131072) = 54, data="Hello World! This is test data for read/write logging\n"
+[SPY] write(fd=1, count=54) = 54, data="Hello World! This is test data for read/write logging\n"
+[SPY] read(fd=3, count=131072) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/multiline.txt", flags=0 [0x0]) = 3
+[SPY] read(fd=3, count=131072) = 25, data="Line1\nLine2\nLine3\tTabbed\n"
+[SPY] write(fd=1, count=25) = 25, data="Line1\nLine2\nLine3\tTabbed\n"
+[SPY] read(fd=3, count=131072) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("temp_out.txt", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+[SPY] close(fd=3) = 0
+[SPY] close(fd=10) = 0
+[SPY] open("temp_out.txt", flags=O_WRONLY|O_CREAT|O_APPEND, mode=0666 [0x441]) = 3
+[SPY] close(fd=3) = 0
+[SPY] close(fd=10) = 0
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/binary.dat", flags=0 [0x0]) = 3
+[SPY] read(fd=3, count=131072) = 16, data="\x01\x02\x03Hello\x00World\xff\xfe"
+[SPY] write(fd=1, count=16) = 16, data="\x01\x02\x03Hello\x00World\xff\xfe"
+[SPY] read(fd=3, count=131072) = 0
+[SPY] close(fd=3) = 0

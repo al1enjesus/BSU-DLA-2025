@@ -1,0 +1,5 @@
+[SPY] open(".", flags=O_CLOEXEC [0x80000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir", flags=O_NONBLOCK|O_CLOEXEC|O_DIRECTORY|O_NOFOLLOW [0xb0900]) = 4
+[SPY] close(fd=5) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0

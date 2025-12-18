@@ -1,0 +1,124 @@
+./spy_analysis.sh 
+Compilation and Checks:
+======================
+Output for file bin/libsyscall_spy.so:
+bin/libsyscall_spy.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=55d20a3942815f60b975b3c4b84e380a2559854e, not stripped
+
+Output for ldd bin/libsyscall_spy.so:
+	linux-vdso.so.1 (0x00007fff68dd2000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007c9634e00000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007c9635093000)
+
+Creating test data...
+Creating special test files for data logging...
+Testing Error Logging:
+======================
+Error test log created: logs/error_test.txt
+Error log content:
+[SPY] open("/dev/tty", flags=O_RDWR|O_NONBLOCK [0x802]) = 3
+[SPY] close(fd=3) = 0
+=== Generating test errors ===
+[SPY] close(fd=10) = 0
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+[SPY] open("protected.txt", flags=O_WRONLY|O_CREAT|O_NONBLOCK, mode=0666 [0x941]) = 3
+[SPY] close(fd=3) = 0
+[SPY] close(fd=0) = 0
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+[SPY] close(fd=999) = -1 (errno=9: Bad file descriptor)
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+
+Testing Data Logging:
+=====================
+Data test log created: logs/data_test.txt
+
+Running experiments...
+=====================
+Testing data-intensive operations...
+Log File Statistics:
+===================
+  413 logs/cp_log.txt
+   25 logs/data_intensive_log.txt
+   29 logs/data_test.txt
+   12 logs/error_test.txt
+    5 logs/find_log.txt
+  218 logs/tar_log.txt
+
+Sample Logs (showing new features):
+===================================
+
+1. Error Logging Examples:
+---------------------------
+[SPY] close(fd=999) = -1 (errno=9: Bad file descriptor)
+
+2. Data Logging Examples:
+--------------------------
+[SPY] read(fd=3, count=131072) = 54, data="Hello World! This is test data for read/write logging\n"
+[SPY] write(fd=1, count=54) = 54, data="Hello World! This is test data for read/write logging\n"
+[SPY] read(fd=3, count=131072) = 25, data="Line1\nLine2\nLine3\tTabbed\n"
+[SPY] write(fd=1, count=25) = 25, data="Line1\nLine2\nLine3\tTabbed\n"
+[SPY] read(fd=3, count=131072) = 16, data="\x01\x02\x03Hello\x00World\xff\xfe"
+
+3. Find (first 5 lines):
+[SPY] open(".", flags=O_CLOEXEC [0x80000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir", flags=O_NONBLOCK|O_CLOEXEC|O_DIRECTORY|O_NOFOLLOW [0xb0900]) = 4
+[SPY] close(fd=5) = 0
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+
+4. Tar (showing read data):
+[SPY] read(fd=5, count=151) = 151, data="test content 1\ntest content 2\ntest content 3\ntest content 4\ntest"...
+[SPY] read(fd=5, count=151) = 151, data="test content 1\ntest content 2\ntest content 3\ntest content 4\ntest"...
+[SPY] read(fd=5, count=151) = 151, data="test content 1\ntest content 2\ntest content 3\ntest content 4\ntest"...
+
+5. CP (first 5 lines):
+[SPY] open("test_data/test_dir_copy", flags=O_DIRECTORY [0x210000]) = -1 (errno=2: No such file or directory)
+[SPY] open("test_data/test_dir/file0.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file0.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+
+6. Data Intensive (write operations):
+
+Comparative System Call Analysis:
+================================
+┌──────────┬────────────┬────────────┬────────────┐
+│ Function │   Find     │    Tar     │     CP     │
+├──────────┼────────────┼────────────┼────────────┤
+│ open     │          1 │          0 │        104 │
+│ openat   │          1 │          0 │        103 │
+│ read     │          0 │        103 │          0 │
+│ write    │          0 │         11 │          0 │
+│ close    │          3 │        104 │        206 │
+└──────────┴────────────┴────────────┴────────────┘
+
+Error Statistics:
+=================
+┌────────────────┬────────────┬────────────┬────────────┐
+│    Program     │ Total Calls│  Errors    │ Error Rate │
+├────────────────┼────────────┼────────────┼────────────┤
+│ find           │          5 │          0 │         0% │
+│ tar            │        218 │          0 │         0% │
+│ cp             │        413 │          1 │       .24% │
+│ error_test     │          0 │          0 │      0.00% │
+└────────────────┴────────────┴────────────┴────────────┘
+
+Data Logging Summary:
+=====================
+Files with data content logged:
+  data_intensive_log.txt: 2 data entries
+  data_test.txt: 6 data entries
+  tar_log.txt: 114 data entries
+
+Static Binary Test:
+===================
+Static test log lines: 0 (expected: 0)
+Confirmed: LD_PRELOAD doesn't work with static binaries
+
+Cleaning up temporary files...
+
+Analysis Complete!
+
+2. Most common errors:
+      1 Bad file descriptor (errno=9)
+
