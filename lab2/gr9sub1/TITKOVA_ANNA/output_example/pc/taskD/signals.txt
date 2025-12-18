@@ -1,0 +1,147 @@
+./scripts/taskD/signals.sh 
+==================================================
+       СИГНАЛЫ УПРАВЛЕНИЯ ПАМЯТЬЮ
+==================================================
+ Запускаем mem_touch для управления сигналами...
+
+ mem_touch запущен с PID: 43081
+ Используйте эти команды в другом терминале:
+
+   Увеличить память:  kill -USR1 43081
+   Уменьшить память: kill -USR2 43081
+   Завершить:        kill -TERM 43081
+
+ Текущий статус процесса:
+mem_touch started: pid=43081 target=96MB step=16MB sleep=400ms limit=0MB
+=== start: /proc/self/status ===
+VmPeak:	    2680 kB
+VmSize:	    2680 kB
+VmHWM:	    1408 kB
+VmRSS:	    1408 kB
+[mem_touch] allocated +16MB -> total: 16MB
+----------------------------------------
+Thu 27 Nov 10:50:58 +03 2025
+PID: 43081, VmSize: 18.6MB, VmRSS: 17.2MB, Command: mem_touch
+Ожидание сигналов... (для выхода: Ctrl+C)
+[mem_touch] allocated +16MB -> total: 32MB
+=== progress: /proc/self/status ===
+VmPeak:	   35456 kB
+VmSize:	   35456 kB
+VmHWM:	   34176 kB
+VmRSS:	   34176 kB
+[mem_touch] allocated +16MB -> total: 48MB
+[mem_touch] allocated +16MB -> total: 64MB
+=== progress: /proc/self/status ===
+VmPeak:	   68232 kB
+VmSize:	   68232 kB
+VmHWM:	   66944 kB
+VmRSS:	   66944 kB
+[mem_touch] allocated +16MB -> total: 80MB
+[mem_touch] allocated +16MB -> total: 96MB
+=== progress: /proc/self/status ===
+VmPeak:	  101008 kB
+VmSize:	  101008 kB
+VmHWM:	   99712 kB
+VmRSS:	   99712 kB
+----------------------------------------
+Thu 27 Nov 10:51:01 +03 2025
+PID: 43081, VmSize: 98.6MB, VmRSS: 97.4MB, Command: mem_touch
+Ожидание сигналов... (для выхода: Ctrl+C)
+----------------------------------------
+Thu 27 Nov 10:51:04 +03 2025
+PID: 43081, VmSize: 98.6MB, VmRSS: 97.4MB, Command: mem_touch
+Ожидание сигналов... (для выхода: Ctrl+C)
+----------------------------------------
+Thu 27 Nov 10:51:07 +03 2025
+PID: 43081, VmSize: 98.6MB, VmRSS: 97.4MB, Command: mem_touch
+Ожидание сигналов... (для выхода: Ctrl+C)
+----------------------------------------
+Thu 27 Nov 10:51:10 +03 2025
+PID: 43081, VmSize: 98.6MB, VmRSS: 97.4MB, Command: mem_touch
+Ожидание сигналов... (для выхода: Ctrl+C)
+[mem_touch] SIGUSR2: freed -16MB -> total: 80MB
+[mem_touch] allocated +16MB -> total: 96MB
+=== progress: /proc/self/status ===
+VmPeak:	  101008 kB
+VmSize:	  101004 kB
+VmHWM:	   99712 kB
+VmRSS:	   99656 kB
+[mem_touch] SIGUSR2: freed -16MB -> total: 80MB
+[mem_touch] allocated +16MB -> total: 96MB
+=== progress: /proc/self/status ===
+VmPeak:	  101008 kB
+VmSize:	  101004 kB
+VmHWM:	   99712 kB
+VmRSS:	   99656 kB
+[mem_touch] SIGUSR2: freed -16MB -> total: 80MB
+[mem_touch] allocated +16MB -> total: 96MB
+=== progress: /proc/self/status ===
+VmPeak:	  101008 kB
+VmSize:	  101004 kB
+VmHWM:	   99712 kB
+VmRSS:	   99656 kB
+----------------------------------------
+Thu 27 Nov 10:51:13 +03 2025
+PID: 43081, VmSize: 98.6MB, VmRSS: 97.3MB, Command: mem_touch
+Ожидание сигналов... (для выхода: Ctrl+C)
+[mem_touch] SIGUSR2: freed -16MB -> total: 80MB
+[mem_touch] allocated +16MB -> total: 96MB
+=== progress: /proc/self/status ===
+VmPeak:	  101008 kB
+VmSize:	  101004 kB
+VmHWM:	   99712 kB
+VmRSS:	   99656 kB
+[mem_touch] SIGUSR2: freed -16MB -> total: 80MB
+[mem_touch] allocated +16MB -> total: 96MB
+=== progress: /proc/self/status ===
+VmPeak:	  101008 kB
+VmSize:	  101004 kB
+VmHWM:	   99712 kB
+VmRSS:	   99656 kB
+[mem_touch] SIGUSR2: freed -16MB -> total: 80MB
+[mem_touch] allocated +16MB -> total: 96MB
+=== progress: /proc/self/status ===
+VmPeak:	  101008 kB
+VmSize:	  101004 kB
+VmHWM:	   99712 kB
+VmRSS:	   99656 kB
+[mem_touch] SIGUSR2: freed -16MB -> total: 80MB
+[mem_touch] allocated +16MB -> total: 96MB
+=== progress: /proc/self/status ===
+VmPeak:	  101008 kB
+VmSize:	  101004 kB
+VmHWM:	   99712 kB
+VmRSS:	   99656 kB
+----------------------------------------
+Thu 27 Nov 10:51:16 +03 2025
+PID: 43081, VmSize: 98.6MB, VmRSS: 97.3MB, Command: mem_touch
+Ожидание сигналов... (для выхода: Ctrl+C)
+----------------------------------------
+Thu 27 Nov 10:51:19 +03 2025
+PID: 43081, VmSize: 98.6MB, VmRSS: 97.3MB, Command: mem_touch
+Ожидание сигналов... (для выхода: Ctrl+C)
+[mem_touch] SIGUSR1: allocated +16MB -> total: 112MB
+----------------------------------------
+Thu 27 Nov 10:51:22 +03 2025
+PID: 43081, VmSize: 114.6MB, VmRSS: 113.3MB, Command: mem_touch
+Ожидание сигналов... (для выхода: Ctrl+C)
+[mem_touch] SIGUSR2: freed -16MB -> total: 96MB
+[mem_touch] SIGUSR1: allocated +16MB -> total: 112MB
+----------------------------------------
+Thu 27 Nov 10:51:25 +03 2025
+PID: 43081, VmSize: 114.6MB, VmRSS: 113.3MB, Command: mem_touch
+Ожидание сигналов... (для выхода: Ctrl+C)
+----------------------------------------
+Thu 27 Nov 10:51:28 +03 2025
+PID: 43081, VmSize: 114.6MB, VmRSS: 113.3MB, Command: mem_touch
+Ожидание сигналов... (для выхода: Ctrl+C)
+Cleaning up: freeing 7 blocks (112 MB)
+=== end: /proc/self/status ===
+VmPeak:	  117388 kB
+VmSize:	    2680 kB
+VmHWM:	  116040 kB
+VmRSS:	    1468 kB
+mem_touch stopped: pid=43081
+
+ Демонстрация завершена
+

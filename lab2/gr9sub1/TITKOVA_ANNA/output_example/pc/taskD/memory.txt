@@ -1,0 +1,67 @@
+./scripts/taskD/memory.sh 
+==================================================
+              РОСТ ПАМЯТИ
+==================================================
+Building mem_touch...
+gcc -O2 cfiles/mem_touch.c -o bin/mem_touch
+mem_touch built!
+Запускаем mem_touch...
+Параметры: цель 128MB, шаг 16MB
+
+mem_touch запущен с PID: 40066
+
+МОНИТОРИНГ ПРОЦЕССА:
+PID     COMMAND    VmSize    VmRSS
+----------------------------------
+mem_touch started: pid=40066 target=128MB step=16MB sleep=300ms limit=0MB
+=== start: /proc/self/status ===
+VmPeak:	    2680 kB
+VmSize:	    2680 kB
+VmHWM:	    1408 kB
+VmRSS:	    1408 kB
+[mem_touch] allocated +16MB -> total: 16MB
+40066  mem_touch  18MB     17MB
+[mem_touch] allocated +16MB -> total: 32MB
+=== progress: /proc/self/status ===
+VmPeak:	   35456 kB
+VmSize:	   35456 kB
+VmHWM:	   34304 kB
+VmRSS:	   34304 kB
+[mem_touch] allocated +16MB -> total: 48MB
+[mem_touch] allocated +16MB -> total: 64MB
+=== progress: /proc/self/status ===
+VmPeak:	   68232 kB
+VmSize:	   68232 kB
+VmHWM:	   67072 kB
+VmRSS:	   67072 kB
+40066  mem_touch  66MB     65MB
+[mem_touch] allocated +16MB -> total: 80MB
+[mem_touch] allocated +16MB -> total: 96MB
+=== progress: /proc/self/status ===
+VmPeak:	  101008 kB
+VmSize:	  101008 kB
+VmHWM:	   99840 kB
+VmRSS:	   99840 kB
+[mem_touch] allocated +16MB -> total: 112MB
+40066  mem_touch  114MB     113MB
+[mem_touch] allocated +16MB -> total: 128MB
+=== progress: /proc/self/status ===
+VmPeak:	  133784 kB
+VmSize:	  133784 kB
+VmHWM:	  132736 kB
+VmRSS:	  132736 kB
+40066  mem_touch  130MB     129MB
+40066  mem_touch  130MB     129MB
+40066  mem_touch  130MB     129MB
+40066  mem_touch  130MB     129MB
+40066  mem_touch  130MB     129MB
+40066  mem_touch  130MB     129MB
+40066  mem_touch  130MB     129MB
+40066  mem_touch  130MB     129MB
+40066  mem_touch  130MB     129MB
+40066  mem_touch  130MB     129MB
+40066  mem_touch  130MB     129MB
+40066  mem_touch  130MB     129MB
+
+ Завершаем процесс...
+
