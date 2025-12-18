@@ -1,0 +1,89 @@
+sudo ./run-task-e.sh 
+==================================================
+=== Task E*: Complete Diagnostics ===
+==================================================
+
+ perf found: perf version 6.8.12
+ Building tools...
+go build -o bin/imitation-active ./src/cmd/imitation-active/imitation-active.go
+go build -o bin/pstat ./src/cmd/pstat/pstat.go
+ Build complete
+
+=== 1. STRACE - SYSTEM CALL ANALYSIS ===
+Running strace for 6 seconds...
+  0.10    0.000163          13        12           sigaltstack
+  0.08    0.000127           0       305           getpid
+  0.06    0.000097          19         5           read
+  0.06    0.000096           8        11           gettid
+  0.06    0.000094          18         5           openat
+  0.04    0.000067           3        22           fcntl
+  0.03    0.000044           2        19           sched_yield
+  0.01    0.000020          20         1           setrlimit
+  0.01    0.000012           6         2           madvise
+  0.01    0.000011          11         1           getrlimit
+  0.01    0.000010           2         5         4 epoll_ctl
+  0.01    0.000010          10         1           pipe2
+  0.00    0.000007           7         1           epoll_create1
+  0.00    0.000002           0         5           close
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         2           fsync
+  0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           sched_getaffinity
+------ ----------- ----------- --------- --------- ------------------
+100.00    0.156410          49      3137        70 total
+
+=== 2. PERF STAT - HARDWARE COUNTERS ===
+--- Method 1: Direct measurement ---
+
+ Performance counter stats for process id '12354':
+
+    19,540,851,436      cycles                                                                
+    50,238,130,815      instructions                     #    2.57  insn per cycle            
+
+       5.002961788 seconds time elapsed
+
+
+--- Method 2: Alternative counters ---
+
+ Performance counter stats for process id '12354':
+
+               661      context-switches                                                      
+                 0      page-faults                                                           
+
+       4.003836339 seconds time elapsed
+
+
+=== 3. REAL-TIME PROCESS MONITORING ===
+Starting process for live monitoring...
+Monitoring PID: 12377
+
+--- pstat output ---
+pstat-go vpstat-go-1.0 — quick snapshot for PID 12377
+
+system: CLK_TCK=100  PAGE_SIZE=4096 bytes
+--- process summary ---
+PID/Name : 12377 / imitation-activ
+PPid     : 12209    Threads: 6    State: S
+CPU(ticks): utime=202 stime=0   CPU seconds=202/100 = 2.020s
+
+--- memory ---
+Memory RSS : 3968 kB (3.88 MiB)
+Stat RSS   : 4063232 bytes (3.88 MiB)
+VmSize     : 1225856 kB (1.17 GiB)   RSS/VmSize = 0.3%
+
+--- smaps (rollup) ---
+  Rss: 4192 kB (4.09 MiB)
+  Anonymous: 3036 kB (2.96 MiB)
+  File: 0 kB (0 B)
+  Shared: 0 kB (0 B)
+
+--- IO ---
+
+--- system process info ---
+  12377   12209 imitation-activ S  100  0.0  3968 1225856  2
+
+--- resource usage ---
+Second 1 - CPU:  100% | MEM:  0.0%
+Second 2 - CPU:  100% | MEM:  0.0%
+Second 3 - CPU:  100% | MEM:  0.0%
+
