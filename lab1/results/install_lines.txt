@@ -1,0 +1,7 @@
+2025-11-23 15:27:25 install wmdocker:amd64 <none> 1.5-2
+2025-11-23 15:27:25 install docker:all <none> 1.5-2
+2025-11-23 15:27:50 install libprotobuf-lite23:amd64 <none> 3.12.4-1ubuntu7.22.04.4
+2025-11-23 15:27:50 install libprotoc23:amd64 <none> 3.12.4-1ubuntu7.22.04.4
+2025-11-23 15:27:50 install libprotobuf-dev:amd64 <none> 3.12.4-1ubuntu7.22.04.4
+2025-11-23 15:27:50 install protobuf-compiler:amd64 <none> 3.12.4-1ubuntu7.22.04.4
+2025-11-23 15:27:50 install protoc-gen-go:amd64 <none> 1.27.1-1ubuntu0.1
