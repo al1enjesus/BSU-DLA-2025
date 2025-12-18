@@ -1,0 +1,13 @@
+Measurement overhead: 115 cycles
+
+dummy() (userspace):   5.49 cycles       1.40 ns
+getpid() (fast):     1915.35 cycles     489.62 ns
+open+close (cached): 9747.53 cycles    2491.75 ns
+gettimeofday (vDSO):  61.40 cycles      15.70 ns
+clock_gettime(vDSO):  59.43 cycles      15.19 ns
+
+Relative slowdown compared to dummy():
+getpid():       349x slower
+open+close:     1776x slower
+gettimeofday:   11x slower
+clock_gettime:  11x slower

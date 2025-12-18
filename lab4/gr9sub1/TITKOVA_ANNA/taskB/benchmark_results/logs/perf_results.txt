@@ -1,0 +1,14 @@
+
+ Performance counter stats for 'benchmark_results/bin/benchmark':
+
+    11,968,123,051      cycles                                                                
+     9,698,138,720      instructions                     #    0.81  insn per cycle            
+                43      context-switches                                                      
+               460      page-faults                                                           
+
+       3.107381315 seconds time elapsed
+
+       1.008076000 seconds user
+       2.065592000 seconds sys
+
+

@@ -1,0 +1,25 @@
+[SPY] open("/dev/tty", flags=O_RDWR|O_NONBLOCK [0x802]) = 3
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/copy_special.txt", flags=O_DIRECTORY [0x210000]) = -1 (errno=2: No such file or directory)
+[SPY] open("test_data/test_dir/special.txt", flags=0 [0x0]) = 3
+[SPY] openat(AT_FDCWD, "test_data/copy_special.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+[SPY] close(fd=3) = 0
+[SPY] open("/proc/self/maps", flags=0 [0x0]) = 3
+[SPY] read(fd=3, count=8192) = 3849, data="5ef280f0e000-5ef280f12000 r--p 00000000 08:01 27525958          "...
+[SPY] read(fd=3, count=4343) = 0
+[SPY] close(fd=3) = 0
+[SPY] openat(AT_FDCWD, "test_data/test_dir/file0.txt", flags=0 [0x100]) = 3
+[SPY] read(fd=3, count=98304) = 151, data="test content 1\ntest content 2\ntest content 3\ntest content 4\ntest"...
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/multi_write.txt", flags=O_WRONLY|O_CREAT|O_APPEND, mode=0666 [0x441]) = 3
+[SPY] close(fd=3) = 0
+[SPY] close(fd=10) = 0
+[SPY] open("test_data/multi_write.txt", flags=O_WRONLY|O_CREAT|O_APPEND, mode=0666 [0x441]) = 3
+[SPY] close(fd=3) = 0
+[SPY] close(fd=10) = 0
+[SPY] open("test_data/multi_write.txt", flags=O_WRONLY|O_CREAT|O_APPEND, mode=0666 [0x441]) = 3
+[SPY] close(fd=3) = 0
+[SPY] close(fd=10) = 0

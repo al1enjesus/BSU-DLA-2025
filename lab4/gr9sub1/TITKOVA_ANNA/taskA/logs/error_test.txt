@@ -1,0 +1,12 @@
+[SPY] open("/dev/tty", flags=O_RDWR|O_NONBLOCK [0x802]) = 3
+[SPY] close(fd=3) = 0
+=== Generating test errors ===
+[SPY] close(fd=10) = 0
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+[SPY] open("protected.txt", flags=O_WRONLY|O_CREAT|O_NONBLOCK, mode=0666 [0x941]) = 3
+[SPY] close(fd=3) = 0
+[SPY] close(fd=0) = 0
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3
+[SPY] close(fd=999) = -1 (errno=9: Bad file descriptor)
+[SPY] open("/dev/null", flags=O_WRONLY|O_CREAT|O_TRUNC, mode=0666 [0x241]) = 3

@@ -1,0 +1,413 @@
+[SPY] open("test_data/test_dir_copy", flags=O_DIRECTORY [0x210000]) = -1 (errno=2: No such file or directory)
+[SPY] open("test_data/test_dir/file0.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file0.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file1.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file1.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file2.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file2.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file3.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file3.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file4.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file4.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file5.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file5.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file6.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file6.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file7.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file7.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file8.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file8.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file9.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file9.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file10.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file10.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file11.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file11.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file12.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file12.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file13.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file13.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file14.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file14.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file15.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file15.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file16.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file16.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file17.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file17.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file18.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file18.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file19.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file19.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file20.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file20.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file21.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file21.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file22.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file22.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file23.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file23.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file24.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file24.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file25.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file25.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file26.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file26.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file27.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file27.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file28.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file28.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file29.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file29.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file30.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file30.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file31.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file31.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file32.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file32.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file33.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file33.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file34.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file34.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file35.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file35.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file36.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file36.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file37.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file37.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file38.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file38.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file39.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file39.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file40.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file40.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file41.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file41.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file42.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file42.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file43.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file43.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file44.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file44.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file45.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file45.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file46.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file46.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file47.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file47.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file48.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file48.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file49.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file49.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file50.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file50.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file51.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file51.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file52.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file52.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file53.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file53.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file54.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file54.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file55.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file55.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file56.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file56.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file57.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file57.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file58.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file58.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file59.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file59.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file60.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file60.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file61.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file61.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file62.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file62.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file63.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file63.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file64.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file64.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file65.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file65.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file66.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file66.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file67.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file67.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file68.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file68.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file69.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file69.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file70.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file70.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file71.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file71.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file72.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file72.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file73.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file73.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file74.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file74.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file75.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file75.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file76.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file76.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file77.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file77.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file78.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file78.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file79.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file79.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file80.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file80.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file81.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file81.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file82.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file82.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file83.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file83.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file84.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file84.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file85.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file85.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file86.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file86.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file87.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file87.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file88.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file88.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file89.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file89.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file90.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file90.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file91.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file91.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file92.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file92.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file93.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file93.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file94.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file94.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file95.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file95.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file96.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file96.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file97.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file97.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file98.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file98.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/file99.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/file99.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/special.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/special.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/multiline.txt", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/multiline.txt", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
+[SPY] open("test_data/test_dir/binary.dat", flags=O_NOFOLLOW [0x20000]) = 3
+[SPY] openat(AT_FDCWD, "test_data/test_dir_copy/binary.dat", flags=O_WRONLY|O_CREAT|O_EXCL, mode=0664 [0xc1]) = 4
+[SPY] close(fd=4) = 0
+[SPY] close(fd=3) = 0
