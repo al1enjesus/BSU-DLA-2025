@@ -1,25 +1,54 @@
-#include <linux/init.h>
-#include <linux/module.h>
-#include <linux/kernel.h>
+/*
+ * hello_module.c - Простейший модуль ядра "Hello World"
+ * 
+ * Автор: Черноокий Д И
+ * Номер студента: 20 (Вариант 2 - чётный номер)
+ *
+ * Компиляция: make
+ * Загрузка: sudo insmod hello_module.ko
+ * Выгрузка: sudo rmmod hello_module
+ * Логи: dmesg | tail
+ */
 
-MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Chernooki DI");
-MODULE_DESCRIPTION("Simple Hello World module");
+#include <linux/module.h>      // Обязательно для всех модулей
+#include <linux/kernel.h>      // Для printk, KERN_*
+#include <linux/init.h>        // Для __init, __exit
+#include <linux/moduleparam.h> // Для module_param
 
-static char *message = "Hello from Chernooki DI module!";
+/* Параметр модуля "message" (строка) */
+static char *message = NULL;
 module_param(message, charp, 0644);
-MODULE_PARM_DESC(message, "Message to display on load");
+MODULE_PARM_DESC(message, "Custom greeting message");
 
+/*
+ * Функция инициализации модуля
+ * Вызывается при insmod
+ */
 static int __init hello_init(void)
 {
-    printk(KERN_INFO "%s\n", message);
-    return 0;
+    if (message) {
+        printk(KERN_INFO "hello_module: %s\n", message);
+    } else {
+        printk(KERN_INFO "hello_module: Hello from Chernookii D.I. module!\n");
+    }
+    
+    return 0; /* 0 = успех */
 }
 
+/*
+ * Функция выгрузки модуля
+ * Вызывается при rmmod
+ */
 static void __exit hello_exit(void)
 {
-    printk(KERN_INFO "Goodbye from Chernooki DI module!\n");
+    printk(KERN_INFO "hello_module: Goodbye from Chernookii D.I. module!\n");
 }
 
+/* Регистрация функций init/exit */
 module_init(hello_init);
 module_exit(hello_exit);
+
+/* Метаданные модуля */
+MODULE_LICENSE("GPL");
+MODULE_DESCRIPTION("Simple Hello World kernel module for Lab 5");
+MODULE_VERSION("1.0");
