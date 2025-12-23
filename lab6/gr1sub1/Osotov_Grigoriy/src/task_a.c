@@ -20,7 +20,7 @@ static char *base_dir_path;
  * @brief Логирует выполненную операцию в stderr.
  *
  * @param op Название операции (e.g., "GETATTR").
- * @param path Относительный путь к файлу.
+ * @param path Относительный  путь к файлу.
  *
  * @param result Результат операции (0 для успеха, -errno для ошибки).
  */

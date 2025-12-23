@@ -20,7 +20,7 @@ def plot_throughput(df):
 
     # График для чтения
     sns.barplot(x='file_size_mb', y='value_mb_s', hue='fs_type', data=read_data, ax=ax[1])
-    ax[1].set_title('Пропускная способность (Чтение)')
+    ax[1].set_title('Пропускная способность')
     ax[1].set_xlabel('Размер файла (MB)')
     ax[1].set_ylabel('') # Ось Y общая
 

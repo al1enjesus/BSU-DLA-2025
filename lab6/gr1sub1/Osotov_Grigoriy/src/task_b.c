@@ -283,7 +283,7 @@ int main(int argc, char *argv[]) {
 
     // FUSE получает все аргументы, но мы должны "удалить" наш первый аргумент (source_dir)
     // argv[0] - имя программы
-    // argv[1] - source_dir (не нужен FUSE)
+    // argv[1] - source_dir
     // argv[2] - mount_point
     // argv[3..] - опции FUSE
     argv[1] = argv[2];

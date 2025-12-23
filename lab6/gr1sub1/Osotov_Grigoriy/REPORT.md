@@ -443,7 +443,7 @@ Hello World! 123
 python -m venv .venv
 source .venv/bin/activate
 
-# Установка зависимостей для скрипта построения графиков
+# Установка зависимостей для скрипта  графиков
 pip install pandas matplotlib seaborn
 
 # Сборка FUSE-демона для теста (используем простую passthrough-версию)

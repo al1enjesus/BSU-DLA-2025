@@ -118,7 +118,7 @@ echo "$FS_TYPE,latency_read,$read_latency_ms,0" >> "$RESULTS_FILE"
 echo "  Средняя задержка чтения: ${read_latency_ms} ms"
 
 
-# ===== Очистка =====
+# ===== Очистка ====
 echo "Очистка..."
 cd "$SCRIPT_DIR"
 rm -rf "$TEST_DIR"/*

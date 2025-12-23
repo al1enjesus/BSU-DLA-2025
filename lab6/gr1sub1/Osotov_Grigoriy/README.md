@@ -66,7 +66,7 @@ rm /tmp/fuse/file_a.txt
 # Записываем обычный текст
 echo "Hello ROT13" > /tmp/fuse/file_b.txt
 
-# Проверяем, что через FUSE он читается как обычный
+# Проверяем, что через FUS он читается как обычный
 cat /tmp/fuse/file_b.txt
 # Ожидаемый вывод: Hello ROT13
 
