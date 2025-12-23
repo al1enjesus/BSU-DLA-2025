@@ -38,6 +38,7 @@ mkdir -p /tmp/source /tmp/fuse
 
 **Запуск:**
 ```bash
+
 ./build/task_a /tmp/source /tmp/fuse -f
 ```
 Ключ `-f` оставляет программу работать в foreground режиме для удобства отладки и просмотра логов.

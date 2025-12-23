@@ -19,13 +19,14 @@ static char *base_dir_path;
 /**
  * @brief Логирует выполненную операцию в stderr.
  *
- * @param op Название операции (e.g., "GETATTR").
+ * @param op Название операции.
  * @param path Относительный путь к файлу/директории.
  * @param result Результат операции (0 для успеха, -errno для ошибки).
  */
 static void log_operation(const char *op, const char *path, int result) {
     time_t now = time(NULL);
     char timestamp[100];
+
     strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %H:%M:%S", localtime(&now));
 
     if (result < 0) {
@@ -42,7 +43,7 @@ static void log_operation(const char *op, const char *path, int result) {
  * @param path Относительный путь, полученный от FUSE.
  */
 static void get_full_path(char fullpath[MAX_PATH_LEN], const char *path) {
-    snprintf(fullpath, MAX_PATH_LEN, "%s%s", base_dir_path, path);
+    snprintf( fullpath, MAX_PATH_LEN, "%s%s", base_dir_path, path);
 }
 
 /**

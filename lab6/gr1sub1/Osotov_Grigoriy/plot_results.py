@@ -13,7 +13,7 @@ def plot_throughput(df):
 
     # График для записи
     sns.barplot(x='file_size_mb', y='value_mb_s', hue='fs_type', data=write_data, ax=ax[0])
-    ax[0].set_title('Пропускная способность (Запись)')
+    ax[0].set_title('Пропускная способность ')
     ax[0].set_xlabel('Размер файла (MB)')
     ax[0].set_ylabel('Скорость (MB/s)')
     ax[0].legend(title='Тип ФС')
