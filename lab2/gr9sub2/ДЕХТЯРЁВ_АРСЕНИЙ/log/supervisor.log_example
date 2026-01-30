@@ -1,0 +1,256 @@
+[2025-10-04 10:49:51] Supervisor started with PID 377747
+[2025-10-04 10:49:51] Starting 4 workers in heavy mode
+[2025-10-04 10:49:52] Worker 0 (377771): set nice=10
+[2025-10-04 10:49:52] Worker 0 (377771): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:49:52] Started worker 0 with PID 377771
+[2025-10-04 10:49:52] Worker 1 (377894): set nice=10
+[2025-10-04 10:49:52] Worker 1 (377894): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:49:52] Started worker 1 with PID 377894
+[2025-10-04 10:49:52] Worker 2 (378137): set nice=0
+[2025-10-04 10:49:52] Worker 2 (378137): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:49:52] Started worker 2 with PID 378137
+[2025-10-04 10:49:52] Worker 3 (378478): set nice=0
+[2025-10-04 10:49:52] Worker 3 (378478): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:49:52] Started worker 3 with PID 378478
+[2025-10-04 10:49:53] Worker 0 (377771): mode=heavy, iter=1, work=907ms, sleep=121ms, cpu=0, avg_work=907ms, avg_sleep=121ms
+[2025-10-04 10:49:53] Worker 1 (377894): mode=heavy, iter=1, work=905ms, sleep=119ms, cpu=1, avg_work=905ms, avg_sleep=119ms
+[2025-10-04 10:49:53] Worker 2 (378137): mode=heavy, iter=1, work=902ms, sleep=105ms, cpu=0, avg_work=902ms, avg_sleep=105ms
+[2025-10-04 10:49:53] Worker 3 (378478): mode=heavy, iter=1, work=903ms, sleep=104ms, cpu=1, avg_work=903ms, avg_sleep=104ms
+[2025-10-04 10:49:54] Worker 0 (377771): mode=heavy, iter=2, work=910ms, sleep=127ms, cpu=0, avg_work=908ms, avg_sleep=124ms
+[2025-10-04 10:49:54] Worker 1 (377894): mode=heavy, iter=2, work=910ms, sleep=119ms, cpu=1, avg_work=907ms, avg_sleep=119ms
+[2025-10-04 10:49:54] Worker 2 (378137): mode=heavy, iter=2, work=903ms, sleep=104ms, cpu=0, avg_work=902ms, avg_sleep=104ms
+[2025-10-04 10:49:54] Worker 3 (378478): mode=heavy, iter=2, work=903ms, sleep=104ms, cpu=1, avg_work=903ms, avg_sleep=104ms
+[2025-10-04 10:49:55] Worker 0 (377771): mode=heavy, iter=3, work=910ms, sleep=124ms, cpu=0, avg_work=909ms, avg_sleep=124ms
+[2025-10-04 10:49:55] Worker 2 (378137): mode=heavy, iter=3, work=902ms, sleep=104ms, cpu=0, avg_work=902ms, avg_sleep=104ms
+[2025-10-04 10:49:55] Worker 1 (377894): mode=heavy, iter=3, work=911ms, sleep=121ms, cpu=1, avg_work=908ms, avg_sleep=119ms
+[2025-10-04 10:49:55] Worker 3 (378478): mode=heavy, iter=3, work=903ms, sleep=105ms, cpu=1, avg_work=903ms, avg_sleep=104ms
+[2025-10-04 10:49:56] Worker 0 (377771): mode=heavy, iter=4, work=904ms, sleep=111ms, cpu=0, avg_work=907ms, avg_sleep=120ms
+[2025-10-04 10:49:56] Worker 2 (378137): mode=heavy, iter=4, work=902ms, sleep=104ms, cpu=0, avg_work=902ms, avg_sleep=104ms
+[2025-10-04 10:49:56] Worker 1 (377894): mode=heavy, iter=4, work=913ms, sleep=113ms, cpu=1, avg_work=909ms, avg_sleep=118ms
+[2025-10-04 10:49:56] Worker 3 (378478): mode=heavy, iter=4, work=903ms, sleep=104ms, cpu=1, avg_work=903ms, avg_sleep=104ms
+[2025-10-04 10:49:56] Get SIGTERM/SIGINT
+[2025-10-04 10:49:56] Stopping workers...
+[2025-10-04 10:49:57] All workers stopped
+[2025-10-04 10:49:57] Supervisor shutdown completed
+[2025-10-04 10:49:57] Get EXIT
+[2025-10-04 10:50:02] Supervisor started with PID 388753
+[2025-10-04 10:50:03] Starting 4 workers in heavy mode
+[2025-10-04 10:50:03] Worker 0 (388777): set nice=10
+[2025-10-04 10:50:03] Worker 0 (388777): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:03] Started worker 0 with PID 388777
+[2025-10-04 10:50:03] Worker 1 (388887): set nice=10
+[2025-10-04 10:50:03] Worker 1 (388887): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:03] Started worker 1 with PID 388887
+[2025-10-04 10:50:03] Worker 2 (389122): set nice=0
+[2025-10-04 10:50:03] Worker 2 (389122): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:03] Started worker 2 with PID 389122
+[2025-10-04 10:50:03] Worker 3 (389476): set nice=0
+[2025-10-04 10:50:03] Worker 3 (389476): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:03] Started worker 3 with PID 389476
+[2025-10-04 10:50:04] Worker 0 (388777): mode=heavy, iter=1, work=905ms, sleep=118ms, cpu=0, avg_work=905ms, avg_sleep=118ms
+[2025-10-04 10:50:04] Worker 1 (388887): mode=heavy, iter=1, work=906ms, sleep=118ms, cpu=1, avg_work=906ms, avg_sleep=118ms
+[2025-10-04 10:50:04] Worker 2 (389122): mode=heavy, iter=1, work=904ms, sleep=104ms, cpu=0, avg_work=904ms, avg_sleep=104ms
+[2025-10-04 10:50:04] Worker 3 (389476): mode=heavy, iter=1, work=902ms, sleep=105ms, cpu=1, avg_work=902ms, avg_sleep=105ms
+[2025-10-04 10:50:05] Worker 0 (388777): mode=heavy, iter=2, work=907ms, sleep=120ms, cpu=0, avg_work=906ms, avg_sleep=119ms
+[2025-10-04 10:50:05] Worker 1 (388887): mode=heavy, iter=2, work=908ms, sleep=119ms, cpu=1, avg_work=907ms, avg_sleep=118ms
+[2025-10-04 10:50:05] Worker 2 (389122): mode=heavy, iter=2, work=902ms, sleep=104ms, cpu=0, avg_work=903ms, avg_sleep=104ms
+[2025-10-04 10:50:05] Worker 3 (389476): mode=heavy, iter=2, work=902ms, sleep=105ms, cpu=1, avg_work=902ms, avg_sleep=105ms
+[2025-10-04 10:50:06] Worker 0 (388777): mode=heavy, iter=3, work=910ms, sleep=116ms, cpu=0, avg_work=907ms, avg_sleep=118ms
+[2025-10-04 10:50:06] Worker 2 (389122): mode=heavy, iter=3, work=903ms, sleep=105ms, cpu=0, avg_work=903ms, avg_sleep=104ms
+[2025-10-04 10:50:06] Worker 1 (388887): mode=heavy, iter=3, work=908ms, sleep=123ms, cpu=1, avg_work=907ms, avg_sleep=120ms
+[2025-10-04 10:50:06] Worker 3 (389476): mode=heavy, iter=3, work=902ms, sleep=106ms, cpu=1, avg_work=902ms, avg_sleep=105ms
+[2025-10-04 10:50:07] Worker 0 (388777): mode=heavy, iter=4, work=905ms, sleep=112ms, cpu=0, avg_work=906ms, avg_sleep=116ms
+[2025-10-04 10:50:07] Worker 2 (389122): mode=heavy, iter=4, work=902ms, sleep=104ms, cpu=0, avg_work=902ms, avg_sleep=104ms
+[2025-10-04 10:50:07] Worker 1 (388887): mode=heavy, iter=4, work=906ms, sleep=111ms, cpu=1, avg_work=907ms, avg_sleep=117ms
+[2025-10-04 10:50:07] Worker 3 (389476): mode=heavy, iter=4, work=903ms, sleep=104ms, cpu=1, avg_work=902ms, avg_sleep=105ms
+[2025-10-04 10:50:08] Get SIGHUP
+[2025-10-04 10:50:08] Reloading configuration...
+[2025-10-04 10:50:08] Stopping workers...
+[2025-10-04 10:50:08] Worker 0 (PID 388777) died, checking restart policy...
+[2025-10-04 10:50:08] Restarting worker 0...
+[2025-10-04 10:50:08] Worker 0 (399802): set nice=10
+[2025-10-04 10:50:08] Worker 0 (399802): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:08] Restarted worker 0 with PID 399802
+[2025-10-04 10:50:08] Worker 1 (PID 388887) died, checking restart policy...
+[2025-10-04 10:50:08] Restarting worker 1...
+[2025-10-04 10:50:08] Worker 1 (399934): set nice=10
+[2025-10-04 10:50:08] Worker 1 (399934): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:08] Restarted worker 1 with PID 399934
+[2025-10-04 10:50:08] Worker 2 (PID 389122) died, checking restart policy...
+[2025-10-04 10:50:08] Restarting worker 2...
+[2025-10-04 10:50:08] Worker 2 (400187): set nice=10
+[2025-10-04 10:50:08] Worker 2 (400187): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:08] Restarted worker 2 with PID 400187
+[2025-10-04 10:50:08] Worker 3 (PID 389476) died, checking restart policy...
+[2025-10-04 10:50:08] Restarting worker 3...
+[2025-10-04 10:50:08] Worker 3 (400548): set nice=0
+[2025-10-04 10:50:08] Worker 3 (400548): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:08] Restarted worker 3 with PID 400548
+[2025-10-04 10:50:09] Worker 0 (399802): mode=heavy, iter=1, work=902ms, sleep=107ms, cpu=0, avg_work=902ms, avg_sleep=107ms
+[2025-10-04 10:50:09] Worker 1 (399934): mode=heavy, iter=1, work=913ms, sleep=130ms, cpu=1, avg_work=913ms, avg_sleep=130ms
+[2025-10-04 10:50:09] Worker 2 (400187): mode=heavy, iter=1, work=903ms, sleep=107ms, cpu=0, avg_work=903ms, avg_sleep=107ms
+[2025-10-04 10:50:09] Worker 3 (400548): mode=heavy, iter=1, work=903ms, sleep=105ms, cpu=1, avg_work=903ms, avg_sleep=105ms
+[2025-10-04 10:50:10] Worker 0 (399802): mode=heavy, iter=2, work=906ms, sleep=106ms, cpu=0, avg_work=904ms, avg_sleep=106ms
+[2025-10-04 10:50:10] Worker 1 (399934): mode=heavy, iter=2, work=907ms, sleep=120ms, cpu=1, avg_work=910ms, avg_sleep=125ms
+[2025-10-04 10:50:10] Worker 2 (400187): mode=heavy, iter=2, work=905ms, sleep=106ms, cpu=0, avg_work=904ms, avg_sleep=106ms
+[2025-10-04 10:50:10] Worker 3 (400548): mode=heavy, iter=2, work=904ms, sleep=105ms, cpu=1, avg_work=903ms, avg_sleep=105ms
+[2025-10-04 10:50:11] Supervisor started with PID 406523
+[2025-10-04 10:50:11] Starting 6 workers in heavy mode
+[2025-10-04 10:50:11] Get SIGTERM/SIGINT
+[2025-10-04 10:50:11] Worker 0 (399802): mode=heavy, iter=3, work=904ms, sleep=109ms, cpu=0, avg_work=904ms, avg_sleep=107ms
+[2025-10-04 10:50:11] Worker 0 (406577): set nice=10
+[2025-10-04 10:50:11] Worker 0 (406577): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:11] Started worker 0 with PID 406577
+[2025-10-04 10:50:11] Worker 1 (406923): set nice=10
+[2025-10-04 10:50:11] Worker 1 (406923): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:11] Started worker 1 with PID 406923
+[2025-10-04 10:50:11] Worker 1 (399934): mode=heavy, iter=3, work=909ms, sleep=122ms, cpu=1, avg_work=909ms, avg_sleep=124ms
+[2025-10-04 10:50:11] Worker 2 (400187): mode=heavy, iter=3, work=907ms, sleep=110ms, cpu=0, avg_work=905ms, avg_sleep=107ms
+[2025-10-04 10:50:11] Worker 2 (407272): set nice=10
+[2025-10-04 10:50:11] Worker 2 (407272): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:11] Started worker 2 with PID 407272
+[2025-10-04 10:50:11] Worker 3 (400548): mode=heavy, iter=3, work=902ms, sleep=105ms, cpu=1, avg_work=903ms, avg_sleep=105ms
+[2025-10-04 10:50:11] Worker 3 (407614): set nice=0
+[2025-10-04 10:50:11] Worker 3 (407614): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:11] Started worker 3 with PID 407614
+[2025-10-04 10:50:11] Worker 4 (407952): set nice=0
+[2025-10-04 10:50:11] Worker 4 (407952): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:11] Started worker 4 with PID 407952
+[2025-10-04 10:50:11] Worker 5 (408301): set nice=0
+[2025-10-04 10:50:11] Worker 5 (408301): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:11] Started worker 5 with PID 408301
+[2025-10-04 10:50:12] Worker 0 (406577): mode=heavy, iter=1, work=922ms, sleep=141ms, cpu=0, avg_work=922ms, avg_sleep=141ms
+[2025-10-04 10:50:12] Worker 0 (399802): mode=heavy, iter=4, work=907ms, sleep=146ms, cpu=0, avg_work=904ms, avg_sleep=117ms
+[2025-10-04 10:50:12] Worker 1 (406923): mode=heavy, iter=1, work=954ms, sleep=200ms, cpu=1, avg_work=954ms, avg_sleep=200ms
+[2025-10-04 10:50:12] Worker 2 (407272): mode=heavy, iter=1, work=908ms, sleep=139ms, cpu=0, avg_work=908ms, avg_sleep=139ms
+[2025-10-04 10:50:12] Worker 3 (407614): mode=heavy, iter=1, work=905ms, sleep=112ms, cpu=1, avg_work=905ms, avg_sleep=112ms
+[2025-10-04 10:50:12] Worker 2 (400187): mode=heavy, iter=4, work=922ms, sleep=130ms, cpu=0, avg_work=909ms, avg_sleep=113ms
+[2025-10-04 10:50:12] Worker 3 (400548): mode=heavy, iter=4, work=905ms, sleep=109ms, cpu=1, avg_work=903ms, avg_sleep=106ms
+[2025-10-04 10:50:12] Worker 4 (407952): mode=heavy, iter=1, work=902ms, sleep=107ms, cpu=0, avg_work=902ms, avg_sleep=107ms
+[2025-10-04 10:50:12] Worker 1 (399934): mode=heavy, iter=4, work=930ms, sleep=189ms, cpu=1, avg_work=914ms, avg_sleep=140ms
+[2025-10-04 10:50:12] Worker 5 (408301): mode=heavy, iter=1, work=906ms, sleep=113ms, cpu=1, avg_work=906ms, avg_sleep=113ms
+[2025-10-04 10:50:13] Force killing worker 399802
+[2025-10-04 10:50:13] Force killing worker 399934
+[2025-10-04 10:50:13] Force killing worker 400187
+[2025-10-04 10:50:13] Worker 0 (406577): mode=heavy, iter=2, work=915ms, sleep=128ms, cpu=0, avg_work=918ms, avg_sleep=134ms
+[2025-10-04 10:50:13] Force killing worker 400548
+[2025-10-04 10:50:13] All workers stopped
+[2025-10-04 10:50:13] Starting 6 workers in heavy mode
+[2025-10-04 10:50:13] Worker 2 (407272): mode=heavy, iter=2, work=910ms, sleep=134ms, cpu=0, avg_work=909ms, avg_sleep=136ms
+[2025-10-04 10:50:13] Worker 0 (412076): set nice=10
+[2025-10-04 10:50:13] Worker 0 (412076): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:13] Started worker 0 with PID 412076
+[2025-10-04 10:50:13] Worker 3 (407614): mode=heavy, iter=2, work=905ms, sleep=111ms, cpu=1, avg_work=905ms, avg_sleep=111ms
+[2025-10-04 10:50:13] Worker 1 (406923): mode=heavy, iter=2, work=938ms, sleep=147ms, cpu=1, avg_work=946ms, avg_sleep=173ms
+[2025-10-04 10:50:13] Worker 4 (407952): mode=heavy, iter=2, work=903ms, sleep=105ms, cpu=0, avg_work=902ms, avg_sleep=106ms
+[2025-10-04 10:50:13] Worker 1 (412417): set nice=10
+[2025-10-04 10:50:13] Worker 1 (412417): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:13] Started worker 1 with PID 412417
+[2025-10-04 10:50:13] Worker 2 (412755): set nice=10
+[2025-10-04 10:50:13] Worker 2 (412755): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:13] Started worker 2 with PID 412755
+[2025-10-04 10:50:13] Worker 5 (408301): mode=heavy, iter=2, work=905ms, sleep=109ms, cpu=1, avg_work=905ms, avg_sleep=111ms
+[2025-10-04 10:50:13] Worker 3 (413091): set nice=0
+[2025-10-04 10:50:13] Worker 3 (413091): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:13] Started worker 3 with PID 413091
+[2025-10-04 10:50:13] Worker 4 (413427): set nice=0
+[2025-10-04 10:50:13] Worker 4 (413427): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:13] Started worker 4 with PID 413427
+[2025-10-04 10:50:13] Worker 5 (413755): set nice=0
+[2025-10-04 10:50:13] Worker 5 (413755): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:13] Started worker 5 with PID 413755
+[2025-10-04 10:50:14] Stopping workers...
+[2025-10-04 10:50:14] All workers stopped
+[2025-10-04 10:50:14] Supervisor shutdown completed
+[2025-10-04 10:50:14] Get EXIT
+[2025-10-04 10:50:14] Worker 0 (406577): mode=heavy, iter=3, work=921ms, sleep=121ms, cpu=0, avg_work=919ms, avg_sleep=130ms
+[2025-10-04 10:50:14] Worker 3 (407614): mode=heavy, iter=3, work=905ms, sleep=109ms, cpu=1, avg_work=905ms, avg_sleep=110ms
+[2025-10-04 10:50:14] Worker 2 (407272): mode=heavy, iter=3, work=908ms, sleep=121ms, cpu=0, avg_work=908ms, avg_sleep=131ms
+[2025-10-04 10:50:14] Worker 4 (407952): mode=heavy, iter=3, work=903ms, sleep=104ms, cpu=0, avg_work=902ms, avg_sleep=105ms
+[2025-10-04 10:50:14] Worker 1 (406923): mode=heavy, iter=3, work=935ms, sleep=147ms, cpu=1, avg_work=942ms, avg_sleep=164ms
+[2025-10-04 10:50:14] Worker 5 (408301): mode=heavy, iter=3, work=905ms, sleep=108ms, cpu=1, avg_work=905ms, avg_sleep=110ms
+[2025-10-04 10:50:15] Get SIGUSR1
+[2025-10-04 10:50:15] Worker 0 (406577): mode=light, iter=4, work=908ms, sleep=126ms, cpu=0, avg_work=916ms, avg_sleep=129ms
+[2025-10-04 10:50:15] Worker 3 (407614): mode=light, iter=4, work=903ms, sleep=107ms, cpu=1, avg_work=904ms, avg_sleep=109ms
+[2025-10-04 10:50:15] Worker 2 (407272): mode=light, iter=4, work=912ms, sleep=122ms, cpu=0, avg_work=909ms, avg_sleep=129ms
+[2025-10-04 10:50:15] Worker 4 (407952): mode=light, iter=4, work=903ms, sleep=105ms, cpu=0, avg_work=902ms, avg_sleep=105ms
+[2025-10-04 10:50:15] Worker 5 (408301): mode=light, iter=4, work=905ms, sleep=106ms, cpu=1, avg_work=905ms, avg_sleep=109ms
+[2025-10-04 10:50:15] Worker 1 (406923): mode=light, iter=4, work=916ms, sleep=140ms, cpu=1, avg_work=935ms, avg_sleep=158ms
+[2025-10-04 10:50:16] Worker 0 (406577): mode=light, iter=5, work=223ms, sleep=821ms, cpu=0, avg_work=777ms, avg_sleep=267ms
+[2025-10-04 10:50:16] Worker 3 (407614): mode=light, iter=5, work=203ms, sleep=803ms, cpu=1, avg_work=764ms, avg_sleep=248ms
+[2025-10-04 10:50:16] Worker 2 (407272): mode=light, iter=5, work=209ms, sleep=815ms, cpu=0, avg_work=769ms, avg_sleep=266ms
+[2025-10-04 10:50:16] Worker 4 (407952): mode=light, iter=5, work=202ms, sleep=804ms, cpu=0, avg_work=762ms, avg_sleep=245ms
+[2025-10-04 10:50:16] Worker 5 (408301): mode=light, iter=5, work=202ms, sleep=804ms, cpu=1, avg_work=764ms, avg_sleep=248ms
+[2025-10-04 10:50:16] Worker 1 (406923): mode=light, iter=5, work=206ms, sleep=806ms, cpu=1, avg_work=789ms, avg_sleep=288ms
+[2025-10-04 10:50:17] Worker 0 (406577): mode=light, iter=6, work=212ms, sleep=823ms, cpu=0, avg_work=683ms, avg_sleep=360ms
+[2025-10-04 10:50:17] Worker 3 (407614): mode=light, iter=6, work=202ms, sleep=804ms, cpu=1, avg_work=670ms, avg_sleep=341ms
+[2025-10-04 10:50:17] Worker 4 (407952): mode=light, iter=6, work=203ms, sleep=805ms, cpu=0, avg_work=669ms, avg_sleep=338ms
+[2025-10-04 10:50:17] Worker 2 (407272): mode=light, iter=6, work=209ms, sleep=814ms, cpu=0, avg_work=676ms, avg_sleep=357ms
+[2025-10-04 10:50:17] Worker 5 (408301): mode=light, iter=6, work=203ms, sleep=804ms, cpu=1, avg_work=671ms, avg_sleep=340ms
+[2025-10-04 10:50:17] Worker 1 (406923): mode=light, iter=6, work=203ms, sleep=805ms, cpu=1, avg_work=692ms, avg_sleep=374ms
+[2025-10-04 10:50:18] Get SIGUSR2
+[2025-10-04 10:50:18] Worker 0 (406577): mode=heavy, iter=7, work=209ms, sleep=817ms, cpu=0, avg_work=615ms, avg_sleep=425ms
+[2025-10-04 10:50:18] Worker 3 (407614): mode=heavy, iter=7, work=200ms, sleep=807ms, cpu=1, avg_work=603ms, avg_sleep=407ms
+[2025-10-04 10:50:18] Worker 4 (407952): mode=heavy, iter=7, work=203ms, sleep=804ms, cpu=0, avg_work=602ms, avg_sleep=404ms
+[2025-10-04 10:50:18] Worker 2 (407272): mode=heavy, iter=7, work=203ms, sleep=812ms, cpu=0, avg_work=608ms, avg_sleep=422ms
+[2025-10-04 10:50:18] Worker 5 (408301): mode=heavy, iter=7, work=203ms, sleep=805ms, cpu=1, avg_work=604ms, avg_sleep=407ms
+[2025-10-04 10:50:18] Worker 1 (406923): mode=heavy, iter=7, work=204ms, sleep=813ms, cpu=1, avg_work=622ms, avg_sleep=436ms
+[2025-10-04 10:50:19] Worker 3 (407614): mode=heavy, iter=8, work=904ms, sleep=107ms, cpu=1, avg_work=640ms, avg_sleep=370ms
+[2025-10-04 10:50:19] Worker 0 (406577): mode=heavy, iter=8, work=915ms, sleep=117ms, cpu=0, avg_work=653ms, avg_sleep=386ms
+[2025-10-04 10:50:19] Worker 4 (407952): mode=heavy, iter=8, work=903ms, sleep=104ms, cpu=0, avg_work=640ms, avg_sleep=367ms
+[2025-10-04 10:50:19] Worker 2 (407272): mode=heavy, iter=8, work=908ms, sleep=112ms, cpu=0, avg_work=645ms, avg_sleep=383ms
+[2025-10-04 10:50:19] Worker 5 (408301): mode=heavy, iter=8, work=906ms, sleep=108ms, cpu=1, avg_work=641ms, avg_sleep=369ms
+[2025-10-04 10:50:20] Worker 1 (406923): mode=heavy, iter=8, work=919ms, sleep=149ms, cpu=1, avg_work=659ms, avg_sleep=400ms
+[2025-10-04 10:50:20] Worker 3 (407614): mode=heavy, iter=9, work=903ms, sleep=107ms, cpu=1, avg_work=670ms, avg_sleep=340ms
+[2025-10-04 10:50:20] Worker 0 (406577): mode=heavy, iter=9, work=906ms, sleep=114ms, cpu=0, avg_work=681ms, avg_sleep=356ms
+[2025-10-04 10:50:20] Worker 4 (407952): mode=heavy, iter=9, work=903ms, sleep=104ms, cpu=0, avg_work=669ms, avg_sleep=338ms
+[2025-10-04 10:50:20] Worker 5 (408301): mode=heavy, iter=9, work=905ms, sleep=108ms, cpu=1, avg_work=671ms, avg_sleep=340ms
+[2025-10-04 10:50:20] Worker 2 (407272): mode=heavy, iter=9, work=915ms, sleep=128ms, cpu=0, avg_work=675ms, avg_sleep=355ms
+[2025-10-04 10:50:21] Supervisor started with PID 425535
+[2025-10-04 10:50:21] Starting 6 workers in heavy mode
+[2025-10-04 10:50:21] Get SIGTERM/SIGINT
+[2025-10-04 10:50:21] Stopping workers...
+[2025-10-04 10:50:21] Worker 0 (425589): set nice=10
+[2025-10-04 10:50:21] Worker 0 (425589): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:21] Started worker 0 with PID 425589
+[2025-10-04 10:50:21] All workers stopped
+[2025-10-04 10:50:21] Supervisor shutdown completed
+[2025-10-04 10:50:21] Get EXIT
+[2025-10-04 10:50:21] Worker 1 (425747): set nice=10
+[2025-10-04 10:50:21] Worker 1 (425747): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:21] Started worker 1 with PID 425747
+[2025-10-04 10:50:21] Worker 2 (425995): set nice=10
+[2025-10-04 10:50:21] Worker 2 (425995): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:21] Started worker 2 with PID 425995
+[2025-10-04 10:50:21] Worker 3 (426334): set nice=0
+[2025-10-04 10:50:21] Worker 3 (426334): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:21] Started worker 3 with PID 426334
+[2025-10-04 10:50:21] Worker 4 (426675): set nice=0
+[2025-10-04 10:50:21] Worker 4 (426675): set CPU affinity to mask 1 (CPU 0)
+[2025-10-04 10:50:21] Started worker 4 with PID 426675
+[2025-10-04 10:50:21] Worker 5 (427020): set nice=0
+[2025-10-04 10:50:21] Worker 5 (427020): set CPU affinity to mask 2 (CPU 1)
+[2025-10-04 10:50:21] Started worker 5 with PID 427020
+[2025-10-04 10:50:22] Worker 0 (425589): mode=heavy, iter=1, work=909ms, sleep=126ms, cpu=0, avg_work=909ms, avg_sleep=126ms
+[2025-10-04 10:50:22] Worker 1 (425747): mode=heavy, iter=1, work=918ms, sleep=154ms, cpu=1, avg_work=918ms, avg_sleep=154ms
+[2025-10-04 10:50:22] Worker 2 (425995): mode=heavy, iter=1, work=911ms, sleep=127ms, cpu=0, avg_work=911ms, avg_sleep=127ms
+[2025-10-04 10:50:22] Worker 3 (426334): mode=heavy, iter=1, work=903ms, sleep=109ms, cpu=1, avg_work=903ms, avg_sleep=109ms
+[2025-10-04 10:50:22] Worker 4 (426675): mode=heavy, iter=1, work=903ms, sleep=104ms, cpu=0, avg_work=903ms, avg_sleep=104ms
+[2025-10-04 10:50:22] Worker 5 (427020): mode=heavy, iter=1, work=904ms, sleep=107ms, cpu=1, avg_work=904ms, avg_sleep=107ms
+[2025-10-04 10:50:23] Worker 0 (425589): mode=heavy, iter=2, work=918ms, sleep=137ms, cpu=0, avg_work=913ms, avg_sleep=131ms
+[2025-10-04 10:50:23] Worker 1 (425747): mode=heavy, iter=2, work=928ms, sleep=136ms, cpu=1, avg_work=923ms, avg_sleep=145ms
+[2025-10-04 10:50:23] Worker 2 (425995): mode=heavy, iter=2, work=914ms, sleep=130ms, cpu=0, avg_work=912ms, avg_sleep=128ms
+[2025-10-04 10:50:23] Worker 3 (426334): mode=heavy, iter=2, work=904ms, sleep=108ms, cpu=1, avg_work=903ms, avg_sleep=108ms
+[2025-10-04 10:50:23] Worker 4 (426675): mode=heavy, iter=2, work=904ms, sleep=107ms, cpu=0, avg_work=903ms, avg_sleep=105ms
+[2025-10-04 10:50:23] Worker 5 (427020): mode=heavy, iter=2, work=905ms, sleep=108ms, cpu=1, avg_work=904ms, avg_sleep=107ms
+[2025-10-04 10:50:24] Worker 0 (425589): mode=heavy, iter=3, work=932ms, sleep=124ms, cpu=0, avg_work=919ms, avg_sleep=129ms
+[2025-10-04 10:50:24] Worker 3 (426334): mode=heavy, iter=3, work=905ms, sleep=108ms, cpu=1, avg_work=904ms, avg_sleep=108ms
+[2025-10-04 10:50:24] Worker 2 (425995): mode=heavy, iter=3, work=911ms, sleep=113ms, cpu=0, avg_work=912ms, avg_sleep=123ms
+[2025-10-04 10:50:24] Worker 4 (426675): mode=heavy, iter=3, work=902ms, sleep=106ms, cpu=0, avg_work=903ms, avg_sleep=105ms
+[2025-10-04 10:50:24] Worker 1 (425747): mode=heavy, iter=3, work=922ms, sleep=144ms, cpu=1, avg_work=922ms, avg_sleep=144ms
+[2025-10-04 10:50:24] Worker 5 (427020): mode=heavy, iter=3, work=906ms, sleep=108ms, cpu=1, avg_work=905ms, avg_sleep=107ms
+[2025-10-04 10:50:25] Get SIGTERM/SIGINT
+[2025-10-04 10:50:25] Stopping workers...
+[2025-10-04 10:50:25] All workers stopped
+[2025-10-04 10:50:25] Supervisor shutdown completed
+[2025-10-04 10:50:25] Get EXIT
