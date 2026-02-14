@@ -1,0 +1,703 @@
+ts_iso,container,stream,message
+2025-09-18T17:32:14.442088693Z,compose-nginx-1,stdout, /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty  will attempt to perform configuration
+2025-09-18T17:32:14.442123114Z,compose-nginx-1,stdout, /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+2025-09-18T17:32:14.443201557Z,compose-nginx-1,stdout, /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+2025-09-18T17:32:14.562146041Z,compose-app-1,stdout, INFO 2025-09-18T17:32:14 app: request handled ok 1
+2025-09-18T17:32:14.662986602Z,compose-app-1,stdout, INFO 2025-09-18T17:32:14 app: request handled ok 2
+2025-09-18T17:32:14.763391645Z,compose-app-1,stdout, INFO 2025-09-18T17:32:14 app: request handled ok 3
+2025-09-18T17:32:14.867598402Z,compose-app-1,stdout, INFO 2025-09-18T17:32:14 app: request handled ok 4
+2025-09-18T17:32:14.967503004Z,compose-app-1,stdout, INFO 2025-09-18T17:32:14 app: request handled ok 5
+2025-09-18T17:32:15.052936726Z,compose-nginx-1,stdout, 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+2025-09-18T17:32:15.068815223Z,compose-app-1,stdout, INFO 2025-09-18T17:32:15 app: request handled ok 6
+2025-09-18T17:32:15.095462478Z,compose-nginx-1,stdout, 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+2025-09-18T17:32:15.096607071Z,compose-nginx-1,stdout, /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+2025-09-18T17:32:15.097045488Z,compose-nginx-1,stdout, /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+2025-09-18T17:32:15.108948504Z,compose-nginx-1,stdout, /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+2025-09-18T17:32:15.114498156Z,compose-nginx-1,stdout, /docker-entrypoint.sh: Configuration complete; ready for start up
+2025-09-18T17:32:15.169835257Z,compose-app-1,stdout, INFO 2025-09-18T17:32:15 app: request handled ok 7
+2025-09-18T17:32:15.270886724Z,compose-app-1,stdout, INFO 2025-09-18T17:32:15 app: request handled ok 8
+2025-09-18T17:32:15.363916245Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: using the "epoll" event method
+2025-09-18T17:32:15.363970261Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: nginx/1.29.1
+2025-09-18T17:32:15.363983943Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0)
+2025-09-18T17:32:15.363993117Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: OS: Linux 6.10.14-linuxkit
+2025-09-18T17:32:15.364002035Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025-09-18T17:32:15.371602628Z,compose-app-1,stdout, INFO 2025-09-18T17:32:15 app: request handled ok 9
+2025-09-18T17:32:15.424612060Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: start worker processes
+2025-09-18T17:32:15.424727937Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: start worker process 30
+2025-09-18T17:32:15.425386104Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: start worker process 31
+2025-09-18T17:32:15.425727928Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: start worker process 32
+2025-09-18T17:32:15.426312763Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: start worker process 33
+2025-09-18T17:32:15.426556075Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: start worker process 34
+2025-09-18T17:32:15.428130575Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [notice] 1#1: start worker process 35
+2025-09-18T17:32:15.428177315Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [error] 30#30: *1 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:15.428221661Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:15 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:15.472842155Z,compose-app-1,stdout, INFO 2025-09-18T17:32:15 app: request handled ok 10
+2025-09-18T17:32:15.573830149Z,compose-app-1,stdout, INFO 2025-09-18T17:32:15 app: request handled ok 11
+2025-09-18T17:32:15.659573918Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:15 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:15.675182612Z,compose-app-1,stdout, INFO 2025-09-18T17:32:15 app: request handled ok 12
+2025-09-18T17:32:15.685955145Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:15 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:15.686057667Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [error] 30#30: *3 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:15.775805434Z,compose-app-1,stdout, INFO 2025-09-18T17:32:15 app: request handled ok 13
+2025-09-18T17:32:15.876818941Z,compose-app-1,stdout, INFO 2025-09-18T17:32:15 app: request handled ok 14
+2025-09-18T17:32:15.916949392Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:15 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:15.943741196Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:15 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:15.943789188Z,compose-nginx-1,stdout, 2025/09/18 17:32:15 [error] 30#30: *5 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:15.977856292Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:15 app: fatal: cannot allocate resource
+2025-09-18T17:32:16.078842180Z,compose-app-1,stdout, INFO 2025-09-18T17:32:16 app: request handled ok 16
+2025-09-18T17:32:16.173595378Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:16 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:16.180028969Z,compose-app-1,stdout, INFO 2025-09-18T17:32:16 app: request handled ok 17
+2025-09-18T17:32:16.200042499Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:16 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:16.200184237Z,compose-nginx-1,stdout, 2025/09/18 17:32:16 [error] 30#30: *7 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:16.280867073Z,compose-app-1,stdout, INFO 2025-09-18T17:32:16 app: request handled ok 18
+2025-09-18T17:32:16.381859879Z,compose-app-1,stdout, INFO 2025-09-18T17:32:16 app: request handled ok 19
+2025-09-18T17:32:16.431594868Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:16 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:16.454238685Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:16 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:16.454276285Z,compose-nginx-1,stdout, 2025/09/18 17:32:16 [error] 30#30: *9 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:16.482533993Z,compose-app-1,stdout, INFO 2025-09-18T17:32:16 app: request handled ok 20
+2025-09-18T17:32:16.583882765Z,compose-app-1,stdout, INFO 2025-09-18T17:32:16 app: request handled ok 21
+2025-09-18T17:32:16.682730275Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:16 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:16.684833452Z,compose-app-1,stdout, INFO 2025-09-18T17:32:16 app: request handled ok 22
+2025-09-18T17:32:16.702464538Z,compose-nginx-1,stdout, 2025/09/18 17:32:16 [error] 30#30: *11 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:16.702510477Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:16 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:16.785889709Z,compose-app-1,stdout, INFO 2025-09-18T17:32:16 app: request handled ok 23
+2025-09-18T17:32:16.886846363Z,compose-app-1,stdout, INFO 2025-09-18T17:32:16 app: request handled ok 24
+2025-09-18T17:32:16.929777674Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:16 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:16.956981663Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:16 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:16.957145596Z,compose-nginx-1,stdout, 2025/09/18 17:32:16 [error] 30#30: *13 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:16.987806431Z,compose-app-1,stdout, INFO 2025-09-18T17:32:16 app: request handled ok 25
+2025-09-18T17:32:17.088876497Z,compose-app-1,stdout, INFO 2025-09-18T17:32:17 app: request handled ok 26
+2025-09-18T17:32:17.188705515Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:17 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:17.189925704Z,compose-app-1,stdout, INFO 2025-09-18T17:32:17 app: request handled ok 27
+2025-09-18T17:32:17.216193713Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:17 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:17.216214963Z,compose-nginx-1,stdout, 2025/09/18 17:32:17 [error] 30#30: *15 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:17.290803737Z,compose-app-1,stdout, INFO 2025-09-18T17:32:17 app: request handled ok 28
+2025-09-18T17:32:17.391835854Z,compose-app-1,stdout, INFO 2025-09-18T17:32:17 app: request handled ok 29
+2025-09-18T17:32:17.445313723Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:17 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:17.466910267Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:17 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:17.466920901Z,compose-nginx-1,stdout, 2025/09/18 17:32:17 [error] 30#30: *17 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:17.492432754Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:17 app: db connection failed: timeout
+2025-09-18T17:32:17.593858560Z,compose-app-1,stdout, INFO 2025-09-18T17:32:17 app: request handled ok 31
+2025-09-18T17:32:17.694727705Z,compose-app-1,stdout, INFO 2025-09-18T17:32:17 app: request handled ok 32
+2025-09-18T17:32:17.694758347Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:17 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:17.721367404Z,compose-nginx-1,stdout, 2025/09/18 17:32:17 [error] 33#33: *19 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:17.721572455Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:17 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:17.795850766Z,compose-app-1,stdout, INFO 2025-09-18T17:32:17 app: request handled ok 33
+2025-09-18T17:32:17.896813925Z,compose-app-1,stdout, INFO 2025-09-18T17:32:17 app: request handled ok 34
+2025-09-18T17:32:17.952638704Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:17 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:17.979846205Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:17 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:17.979907910Z,compose-nginx-1,stdout, 2025/09/18 17:32:17 [error] 32#32: *21 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:17.997966044Z,compose-app-1,stdout, INFO 2025-09-18T17:32:17 app: request handled ok 35
+2025-09-18T17:32:18.098820253Z,compose-app-1,stdout, INFO 2025-09-18T17:32:18 app: request handled ok 36
+2025-09-18T17:32:18.199842838Z,compose-app-1,stdout, INFO 2025-09-18T17:32:18 app: request handled ok 37
+2025-09-18T17:32:18.212711361Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:18 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:18.238822135Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:18 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:18.238833861Z,compose-nginx-1,stdout, 2025/09/18 17:32:18 [error] 30#30: *23 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:18.300872407Z,compose-app-1,stdout, INFO 2025-09-18T17:32:18 app: request handled ok 38
+2025-09-18T17:32:18.401798714Z,compose-app-1,stdout, INFO 2025-09-18T17:32:18 app: request handled ok 39
+2025-09-18T17:32:18.469502993Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:18 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:18.496341069Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:18 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:18.496373293Z,compose-nginx-1,stdout, 2025/09/18 17:32:18 [error] 30#30: *25 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:18.502784199Z,compose-app-1,stdout, INFO 2025-09-18T17:32:18 app: request handled ok 40
+2025-09-18T17:32:18.603792815Z,compose-app-1,stdout, INFO 2025-09-18T17:32:18 app: request handled ok 41
+2025-09-18T17:32:18.705411389Z,compose-app-1,stdout, INFO 2025-09-18T17:32:18 app: request handled ok 42
+2025-09-18T17:32:18.728171837Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:18 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:18.754835853Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:18 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:18.754922260Z,compose-nginx-1,stdout, 2025/09/18 17:32:18 [error] 30#30: *27 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:18.805814974Z,compose-app-1,stdout, INFO 2025-09-18T17:32:18 app: request handled ok 43
+2025-09-18T17:32:18.906802321Z,compose-app-1,stdout, INFO 2025-09-18T17:32:18 app: request handled ok 44
+2025-09-18T17:32:18.985533587Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:18 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:19.007912352Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:19 app: error: upstream service unavailable
+2025-09-18T17:32:19.012640965Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:19 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:19.012746770Z,compose-nginx-1,stdout, 2025/09/18 17:32:19 [error] 30#30: *29 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:19.108846849Z,compose-app-1,stdout, INFO 2025-09-18T17:32:19 app: request handled ok 46
+2025-09-18T17:32:19.209820623Z,compose-app-1,stdout, INFO 2025-09-18T17:32:19 app: request handled ok 47
+2025-09-18T17:32:19.243367244Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:19 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:19.265271091Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:19 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:19.265316376Z,compose-nginx-1,stdout, 2025/09/18 17:32:19 [error] 30#30: *31 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:19.310730420Z,compose-app-1,stdout, INFO 2025-09-18T17:32:19 app: request handled ok 48
+2025-09-18T17:32:19.411950479Z,compose-app-1,stdout, INFO 2025-09-18T17:32:19 app: request handled ok 49
+2025-09-18T17:32:19.493492402Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:19 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:19.512539847Z,compose-app-1,stdout, INFO 2025-09-18T17:32:19 app: request handled ok 50
+2025-09-18T17:32:19.516062346Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:19 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:19.516133756Z,compose-nginx-1,stdout, 2025/09/18 17:32:19 [error] 30#30: *33 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:19.613882575Z,compose-app-1,stdout, INFO 2025-09-18T17:32:19 app: request handled ok 51
+2025-09-18T17:32:19.714801507Z,compose-app-1,stdout, INFO 2025-09-18T17:32:19 app: request handled ok 52
+2025-09-18T17:32:19.743062527Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:19 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:19.764939006Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:19 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:19.764986023Z,compose-nginx-1,stdout, 2025/09/18 17:32:19 [error] 30#30: *35 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:19.815805055Z,compose-app-1,stdout, INFO 2025-09-18T17:32:19 app: request handled ok 53
+2025-09-18T17:32:19.916912356Z,compose-app-1,stdout, INFO 2025-09-18T17:32:19 app: request handled ok 54
+2025-09-18T17:32:19.992993849Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:19 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:20.012872055Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:20 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:20.012891019Z,compose-nginx-1,stdout, 2025/09/18 17:32:20 [error] 30#30: *37 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:20.017446614Z,compose-app-1,stdout, INFO 2025-09-18T17:32:20 app: request handled ok 55
+2025-09-18T17:32:20.118816319Z,compose-app-1,stdout, INFO 2025-09-18T17:32:20 app: request handled ok 56
+2025-09-18T17:32:20.219988781Z,compose-app-1,stdout, INFO 2025-09-18T17:32:20 app: request handled ok 57
+2025-09-18T17:32:20.240335848Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:20 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:20.266533813Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:20 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:20.266535333Z,compose-nginx-1,stdout, 2025/09/18 17:32:20 [error] 31#31: *39 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:20.320813905Z,compose-app-1,stdout, INFO 2025-09-18T17:32:20 app: request handled ok 58
+2025-09-18T17:32:20.421942864Z,compose-app-1,stdout, INFO 2025-09-18T17:32:20 app: request handled ok 59
+2025-09-18T17:32:20.498018486Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:20 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:20.519911627Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:20 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:20.519992001Z,compose-nginx-1,stdout, 2025/09/18 17:32:20 [error] 31#31: *41 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:20.522451162Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:20 app: error: upstream service unavailable
+2025-09-18T17:32:20.623833216Z,compose-app-1,stdout, INFO 2025-09-18T17:32:20 app: request handled ok 61
+2025-09-18T17:32:20.724934349Z,compose-app-1,stdout, INFO 2025-09-18T17:32:20 app: request handled ok 62
+2025-09-18T17:32:20.747512074Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:20 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:20.774370242Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:20 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:20.774372463Z,compose-nginx-1,stdout, 2025/09/18 17:32:20 [error] 31#31: *43 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:20.825771706Z,compose-app-1,stdout, INFO 2025-09-18T17:32:20 app: request handled ok 63
+2025-09-18T17:32:20.926822471Z,compose-app-1,stdout, INFO 2025-09-18T17:32:20 app: request handled ok 64
+2025-09-18T17:32:21.003978921Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:21 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:21.027985244Z,compose-app-1,stdout, INFO 2025-09-18T17:32:21 app: request handled ok 65
+2025-09-18T17:32:21.031885397Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:21 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:21.031885466Z,compose-nginx-1,stdout, 2025/09/18 17:32:21 [error] 31#31: *45 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:21.128837831Z,compose-app-1,stdout, INFO 2025-09-18T17:32:21 app: request handled ok 66
+2025-09-18T17:32:21.229828392Z,compose-app-1,stdout, INFO 2025-09-18T17:32:21 app: request handled ok 67
+2025-09-18T17:32:21.262705846Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:21 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:21.292128097Z,compose-nginx-1,stdout, 2025/09/18 17:32:21 [error] 31#31: *47 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:21.292191223Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:21 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:21.330506653Z,compose-app-1,stdout, INFO 2025-09-18T17:32:21 app: request handled ok 68
+2025-09-18T17:32:21.431879787Z,compose-app-1,stdout, INFO 2025-09-18T17:32:21 app: request handled ok 69
+2025-09-18T17:32:21.525009097Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:21 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:21.532745404Z,compose-app-1,stdout, INFO 2025-09-18T17:32:21 app: request handled ok 70
+2025-09-18T17:32:21.546254944Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:21 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:21.546261606Z,compose-nginx-1,stdout, 2025/09/18 17:32:21 [error] 31#31: *49 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:21.633871524Z,compose-app-1,stdout, INFO 2025-09-18T17:32:21 app: request handled ok 71
+2025-09-18T17:32:21.734939221Z,compose-app-1,stdout, INFO 2025-09-18T17:32:21 app: request handled ok 72
+2025-09-18T17:32:21.774755868Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:21 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:21.796438733Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:21 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:21.796467189Z,compose-nginx-1,stdout, 2025/09/18 17:32:21 [error] 31#31: *51 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:21.835535079Z,compose-app-1,stdout, INFO 2025-09-18T17:32:21 app: request handled ok 73
+2025-09-18T17:32:21.936950951Z,compose-app-1,stdout, INFO 2025-09-18T17:32:21 app: request handled ok 74
+2025-09-18T17:32:22.023429013Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:22 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:22.037938837Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:22 app: fatal: cannot allocate resource
+2025-09-18T17:32:22.051017452Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:22 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:22.051174864Z,compose-nginx-1,stdout, 2025/09/18 17:32:22 [error] 31#31: *53 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:22.138929122Z,compose-app-1,stdout, INFO 2025-09-18T17:32:22 app: request handled ok 76
+2025-09-18T17:32:22.239387404Z,compose-app-1,stdout, INFO 2025-09-18T17:32:22 app: request handled ok 77
+2025-09-18T17:32:22.263779911Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:22 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:22.270321168Z,compose-nginx-1,stdout, 2025/09/18 17:32:22 [error] 33#33: *55 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:22.270341458Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:22 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:22.340808659Z,compose-app-1,stdout, INFO 2025-09-18T17:32:22 app: request handled ok 78
+2025-09-18T17:32:22.441828746Z,compose-app-1,stdout, INFO 2025-09-18T17:32:22 app: request handled ok 79
+2025-09-18T17:32:22.496358348Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:22 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:22.523560481Z,compose-nginx-1,stdout, 172.18.0.1 - - [18/Sep/2025:17:32:22 +0000] "GET /notfound HTTP/1.1" 404 153 "-" "curl/8.5.0" "-"
+2025-09-18T17:32:22.523630970Z,compose-nginx-1,stdout, 2025/09/18 17:32:22 [error] 33#33: *57 open() "/usr/share/nginx/html/notfound" failed (2: No such file or directory)  client: 172.18.0.1  server: localhost  request: "GET /notfound HTTP/1.1"  host: "localhost:8080"
+2025-09-18T17:32:22.542867499Z,compose-app-1,stdout, INFO 2025-09-18T17:32:22 app: request handled ok 80
+2025-09-18T17:32:22.644177441Z,compose-app-1,stdout, INFO 2025-09-18T17:32:22 app: request handled ok 81
+2025-09-18T17:32:22.744933325Z,compose-app-1,stdout, INFO 2025-09-18T17:32:22 app: request handled ok 82
+2025-09-18T17:32:22.845918404Z,compose-app-1,stdout, INFO 2025-09-18T17:32:22 app: request handled ok 83
+2025-09-18T17:32:22.947034248Z,compose-app-1,stdout, INFO 2025-09-18T17:32:22 app: request handled ok 84
+2025-09-18T17:32:23.047763564Z,compose-app-1,stdout, INFO 2025-09-18T17:32:23 app: request handled ok 85
+2025-09-18T17:32:23.148867091Z,compose-app-1,stdout, INFO 2025-09-18T17:32:23 app: request handled ok 86
+2025-09-18T17:32:23.249867008Z,compose-app-1,stdout, INFO 2025-09-18T17:32:23 app: request handled ok 87
+2025-09-18T17:32:23.350852870Z,compose-app-1,stdout, INFO 2025-09-18T17:32:23 app: request handled ok 88
+2025-09-18T17:32:23.451861054Z,compose-app-1,stdout, INFO 2025-09-18T17:32:23 app: request handled ok 89
+2025-09-18T17:32:23.552925055Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:23 app: error: upstream service unavailable
+2025-09-18T17:32:23.653929254Z,compose-app-1,stdout, INFO 2025-09-18T17:32:23 app: request handled ok 91
+2025-09-18T17:32:23.754725540Z,compose-app-1,stdout, INFO 2025-09-18T17:32:23 app: request handled ok 92
+2025-09-18T17:32:23.855882493Z,compose-app-1,stdout, INFO 2025-09-18T17:32:23 app: request handled ok 93
+2025-09-18T17:32:23.956927146Z,compose-app-1,stdout, INFO 2025-09-18T17:32:23 app: request handled ok 94
+2025-09-18T17:32:24.057906751Z,compose-app-1,stdout, INFO 2025-09-18T17:32:24 app: request handled ok 95
+2025-09-18T17:32:24.158846118Z,compose-app-1,stdout, INFO 2025-09-18T17:32:24 app: request handled ok 96
+2025-09-18T17:32:24.260027855Z,compose-app-1,stdout, INFO 2025-09-18T17:32:24 app: request handled ok 97
+2025-09-18T17:32:24.360902677Z,compose-app-1,stdout, INFO 2025-09-18T17:32:24 app: request handled ok 98
+2025-09-18T17:32:24.461984586Z,compose-app-1,stdout, INFO 2025-09-18T17:32:24 app: request handled ok 99
+2025-09-18T17:32:24.562866800Z,compose-app-1,stdout, INFO 2025-09-18T17:32:24 app: request handled ok 100
+2025-09-18T17:32:24.663878112Z,compose-app-1,stdout, INFO 2025-09-18T17:32:24 app: request handled ok 101
+2025-09-18T17:32:24.764852001Z,compose-app-1,stdout, INFO 2025-09-18T17:32:24 app: request handled ok 102
+2025-09-18T17:32:24.865883461Z,compose-app-1,stdout, INFO 2025-09-18T17:32:24 app: request handled ok 103
+2025-09-18T17:32:24.966795269Z,compose-app-1,stdout, INFO 2025-09-18T17:32:24 app: request handled ok 104
+2025-09-18T17:32:25.067899382Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:25 app: db connection failed: timeout
+2025-09-18T17:32:25.168793378Z,compose-app-1,stdout, INFO 2025-09-18T17:32:25 app: request handled ok 106
+2025-09-18T17:32:25.269836647Z,compose-app-1,stdout, INFO 2025-09-18T17:32:25 app: request handled ok 107
+2025-09-18T17:32:25.370852514Z,compose-app-1,stdout, INFO 2025-09-18T17:32:25 app: request handled ok 108
+2025-09-18T17:32:25.471786214Z,compose-app-1,stdout, INFO 2025-09-18T17:32:25 app: request handled ok 109
+2025-09-18T17:32:25.572888064Z,compose-app-1,stdout, INFO 2025-09-18T17:32:25 app: request handled ok 110
+2025-09-18T17:32:25.673721287Z,compose-app-1,stdout, INFO 2025-09-18T17:32:25 app: request handled ok 111
+2025-09-18T17:32:25.774958148Z,compose-app-1,stdout, INFO 2025-09-18T17:32:25 app: request handled ok 112
+2025-09-18T17:32:25.876040127Z,compose-app-1,stdout, INFO 2025-09-18T17:32:25 app: request handled ok 113
+2025-09-18T17:32:25.976994807Z,compose-app-1,stdout, INFO 2025-09-18T17:32:25 app: request handled ok 114
+2025-09-18T17:32:26.077899201Z,compose-app-1,stdout, INFO 2025-09-18T17:32:26 app: request handled ok 115
+2025-09-18T17:32:26.178880096Z,compose-app-1,stdout, INFO 2025-09-18T17:32:26 app: request handled ok 116
+2025-09-18T17:32:26.279896197Z,compose-app-1,stdout, INFO 2025-09-18T17:32:26 app: request handled ok 117
+2025-09-18T17:32:26.380873626Z,compose-app-1,stdout, INFO 2025-09-18T17:32:26 app: request handled ok 118
+2025-09-18T17:32:26.481856609Z,compose-app-1,stdout, INFO 2025-09-18T17:32:26 app: request handled ok 119
+2025-09-18T17:32:26.582874288Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:26 app: panic: nil pointer dereference
+2025-09-18T17:32:26.683860692Z,compose-app-1,stdout, INFO 2025-09-18T17:32:26 app: request handled ok 121
+2025-09-18T17:32:26.784823248Z,compose-app-1,stdout, INFO 2025-09-18T17:32:26 app: request handled ok 122
+2025-09-18T17:32:26.885853762Z,compose-app-1,stdout, INFO 2025-09-18T17:32:26 app: request handled ok 123
+2025-09-18T17:32:26.986813320Z,compose-app-1,stdout, INFO 2025-09-18T17:32:26 app: request handled ok 124
+2025-09-18T17:32:27.087863812Z,compose-app-1,stdout, INFO 2025-09-18T17:32:27 app: request handled ok 125
+2025-09-18T17:32:27.188793821Z,compose-app-1,stdout, INFO 2025-09-18T17:32:27 app: request handled ok 126
+2025-09-18T17:32:27.289755250Z,compose-app-1,stdout, INFO 2025-09-18T17:32:27 app: request handled ok 127
+2025-09-18T17:32:27.390928112Z,compose-app-1,stdout, INFO 2025-09-18T17:32:27 app: request handled ok 128
+2025-09-18T17:32:27.491916128Z,compose-app-1,stdout, INFO 2025-09-18T17:32:27 app: request handled ok 129
+2025-09-18T17:32:27.592886424Z,compose-app-1,stdout, INFO 2025-09-18T17:32:27 app: request handled ok 130
+2025-09-18T17:32:27.693790705Z,compose-app-1,stdout, INFO 2025-09-18T17:32:27 app: request handled ok 131
+2025-09-18T17:32:27.794747015Z,compose-app-1,stdout, INFO 2025-09-18T17:32:27 app: request handled ok 132
+2025-09-18T17:32:27.895884001Z,compose-app-1,stdout, INFO 2025-09-18T17:32:27 app: request handled ok 133
+2025-09-18T17:32:27.996871056Z,compose-app-1,stdout, INFO 2025-09-18T17:32:27 app: request handled ok 134
+2025-09-18T17:32:28.097863519Z,compose-app-1,stdout, FATAL 2025-09-18T17:32:28 app: panic: nil pointer dereference
+2025-09-18T17:32:28.198821168Z,compose-app-1,stdout, INFO 2025-09-18T17:32:28 app: request handled ok 136
+2025-09-18T17:32:28.299803969Z,compose-app-1,stdout, INFO 2025-09-18T17:32:28 app: request handled ok 137
+2025-09-18T17:32:28.400847948Z,compose-app-1,stdout, INFO 2025-09-18T17:32:28 app: request handled ok 138
+2025-09-18T17:32:28.501787711Z,compose-app-1,stdout, INFO 2025-09-18T17:32:28 app: request handled ok 139
+2025-09-18T17:32:28.602870008Z,compose-app-1,stdout, INFO 2025-09-18T17:32:28 app: request handled ok 140
+2025-09-18T17:32:28.703890799Z,compose-app-1,stdout, INFO 2025-09-18T17:32:28 app: request handled ok 141
+2025-09-18T17:32:28.804844762Z,compose-app-1,stdout, INFO 2025-09-18T17:32:28 app: request handled ok 142
+2025-09-18T17:32:28.905912134Z,compose-app-1,stdout, INFO 2025-09-18T17:32:28 app: request handled ok 143
+2025-09-18T17:32:29.006873960Z,compose-app-1,stdout, INFO 2025-09-18T17:32:29 app: request handled ok 144
+2025-09-18T17:32:29.107910213Z,compose-app-1,stdout, INFO 2025-09-18T17:32:29 app: request handled ok 145
+2025-09-18T17:32:29.208972641Z,compose-app-1,stdout, INFO 2025-09-18T17:32:29 app: request handled ok 146
+2025-09-18T17:32:29.309932425Z,compose-app-1,stdout, INFO 2025-09-18T17:32:29 app: request handled ok 147
+2025-09-18T17:32:29.410861788Z,compose-app-1,stdout, INFO 2025-09-18T17:32:29 app: request handled ok 148
+2025-09-18T17:32:29.511831041Z,compose-app-1,stdout, INFO 2025-09-18T17:32:29 app: request handled ok 149
+2025-09-18T17:32:29.612886678Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:29 app: error: upstream service unavailable
+2025-09-18T17:32:29.713749045Z,compose-app-1,stdout, INFO 2025-09-18T17:32:29 app: request handled ok 151
+2025-09-18T17:32:29.814768530Z,compose-app-1,stdout, INFO 2025-09-18T17:32:29 app: request handled ok 152
+2025-09-18T17:32:29.915845751Z,compose-app-1,stdout, INFO 2025-09-18T17:32:29 app: request handled ok 153
+2025-09-18T17:32:30.016809632Z,compose-app-1,stdout, INFO 2025-09-18T17:32:30 app: request handled ok 154
+2025-09-18T17:32:30.117781151Z,compose-app-1,stdout, INFO 2025-09-18T17:32:30 app: request handled ok 155
+2025-09-18T17:32:30.218788640Z,compose-app-1,stdout, INFO 2025-09-18T17:32:30 app: request handled ok 156
+2025-09-18T17:32:30.319821497Z,compose-app-1,stdout, INFO 2025-09-18T17:32:30 app: request handled ok 157
+2025-09-18T17:32:30.420844916Z,compose-app-1,stdout, INFO 2025-09-18T17:32:30 app: request handled ok 158
+2025-09-18T17:32:30.521800579Z,compose-app-1,stdout, INFO 2025-09-18T17:32:30 app: request handled ok 159
+2025-09-18T17:32:30.622938576Z,compose-app-1,stdout, INFO 2025-09-18T17:32:30 app: request handled ok 160
+2025-09-18T17:32:30.724053237Z,compose-app-1,stdout, INFO 2025-09-18T17:32:30 app: request handled ok 161
+2025-09-18T17:32:30.824769685Z,compose-app-1,stdout, INFO 2025-09-18T17:32:30 app: request handled ok 162
+2025-09-18T17:32:30.925938839Z,compose-app-1,stdout, INFO 2025-09-18T17:32:30 app: request handled ok 163
+2025-09-18T17:32:31.026847350Z,compose-app-1,stdout, INFO 2025-09-18T17:32:31 app: request handled ok 164
+2025-09-18T17:32:31.127867257Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:31 app: panic: nil pointer dereference
+2025-09-18T17:32:31.228832579Z,compose-app-1,stdout, INFO 2025-09-18T17:32:31 app: request handled ok 166
+2025-09-18T17:32:31.330012211Z,compose-app-1,stdout, INFO 2025-09-18T17:32:31 app: request handled ok 167
+2025-09-18T17:32:31.430869686Z,compose-app-1,stdout, INFO 2025-09-18T17:32:31 app: request handled ok 168
+2025-09-18T17:32:31.531868612Z,compose-app-1,stdout, INFO 2025-09-18T17:32:31 app: request handled ok 169
+2025-09-18T17:32:31.632850151Z,compose-app-1,stdout, INFO 2025-09-18T17:32:31 app: request handled ok 170
+2025-09-18T17:32:31.733866018Z,compose-app-1,stdout, INFO 2025-09-18T17:32:31 app: request handled ok 171
+2025-09-18T17:32:31.834877242Z,compose-app-1,stdout, INFO 2025-09-18T17:32:31 app: request handled ok 172
+2025-09-18T17:32:31.935842487Z,compose-app-1,stdout, INFO 2025-09-18T17:32:31 app: request handled ok 173
+2025-09-18T17:32:32.036860819Z,compose-app-1,stdout, INFO 2025-09-18T17:32:32 app: request handled ok 174
+2025-09-18T17:32:32.137793537Z,compose-app-1,stdout, INFO 2025-09-18T17:32:32 app: request handled ok 175
+2025-09-18T17:32:32.238865136Z,compose-app-1,stdout, INFO 2025-09-18T17:32:32 app: request handled ok 176
+2025-09-18T17:32:32.339426419Z,compose-app-1,stdout, INFO 2025-09-18T17:32:32 app: request handled ok 177
+2025-09-18T17:32:32.440920795Z,compose-app-1,stdout, INFO 2025-09-18T17:32:32 app: request handled ok 178
+2025-09-18T17:32:32.541876509Z,compose-app-1,stdout, INFO 2025-09-18T17:32:32 app: request handled ok 179
+2025-09-18T17:32:32.643010460Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:32 app: fatal: cannot allocate resource
+2025-09-18T17:32:32.743876048Z,compose-app-1,stdout, INFO 2025-09-18T17:32:32 app: request handled ok 181
+2025-09-18T17:32:32.844881456Z,compose-app-1,stdout, INFO 2025-09-18T17:32:32 app: request handled ok 182
+2025-09-18T17:32:32.945873192Z,compose-app-1,stdout, INFO 2025-09-18T17:32:32 app: request handled ok 183
+2025-09-18T17:32:33.046865002Z,compose-app-1,stdout, INFO 2025-09-18T17:32:33 app: request handled ok 184
+2025-09-18T17:32:33.147913131Z,compose-app-1,stdout, INFO 2025-09-18T17:32:33 app: request handled ok 185
+2025-09-18T17:32:33.248883460Z,compose-app-1,stdout, INFO 2025-09-18T17:32:33 app: request handled ok 186
+2025-09-18T17:32:33.349831226Z,compose-app-1,stdout, INFO 2025-09-18T17:32:33 app: request handled ok 187
+2025-09-18T17:32:33.450876590Z,compose-app-1,stdout, INFO 2025-09-18T17:32:33 app: request handled ok 188
+2025-09-18T17:32:33.551937866Z,compose-app-1,stdout, INFO 2025-09-18T17:32:33 app: request handled ok 189
+2025-09-18T17:32:33.652868461Z,compose-app-1,stdout, INFO 2025-09-18T17:32:33 app: request handled ok 190
+2025-09-18T17:32:33.753850433Z,compose-app-1,stdout, INFO 2025-09-18T17:32:33 app: request handled ok 191
+2025-09-18T17:32:33.854783200Z,compose-app-1,stdout, INFO 2025-09-18T17:32:33 app: request handled ok 192
+2025-09-18T17:32:33.955895417Z,compose-app-1,stdout, INFO 2025-09-18T17:32:33 app: request handled ok 193
+2025-09-18T17:32:34.056845027Z,compose-app-1,stdout, INFO 2025-09-18T17:32:34 app: request handled ok 194
+2025-09-18T17:32:34.157906539Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:34 app: panic: nil pointer dereference
+2025-09-18T17:32:34.258832371Z,compose-app-1,stdout, INFO 2025-09-18T17:32:34 app: request handled ok 196
+2025-09-18T17:32:34.359869280Z,compose-app-1,stdout, INFO 2025-09-18T17:32:34 app: request handled ok 197
+2025-09-18T17:32:34.460886821Z,compose-app-1,stdout, INFO 2025-09-18T17:32:34 app: request handled ok 198
+2025-09-18T17:32:34.561814580Z,compose-app-1,stdout, INFO 2025-09-18T17:32:34 app: request handled ok 199
+2025-09-18T17:32:34.662924330Z,compose-app-1,stdout, INFO 2025-09-18T17:32:34 app: request handled ok 200
+2025-09-18T17:32:34.763854460Z,compose-app-1,stdout, INFO 2025-09-18T17:32:34 app: request handled ok 201
+2025-09-18T17:32:34.865275070Z,compose-app-1,stdout, INFO 2025-09-18T17:32:34 app: request handled ok 202
+2025-09-18T17:32:34.966306478Z,compose-app-1,stdout, INFO 2025-09-18T17:32:34 app: request handled ok 203
+2025-09-18T17:32:35.067269357Z,compose-app-1,stdout, INFO 2025-09-18T17:32:35 app: request handled ok 204
+2025-09-18T17:32:35.168263453Z,compose-app-1,stdout, INFO 2025-09-18T17:32:35 app: request handled ok 205
+2025-09-18T17:32:35.269389446Z,compose-app-1,stdout, INFO 2025-09-18T17:32:35 app: request handled ok 206
+2025-09-18T17:32:35.370372991Z,compose-app-1,stdout, INFO 2025-09-18T17:32:35 app: request handled ok 207
+2025-09-18T17:32:35.471368034Z,compose-app-1,stdout, INFO 2025-09-18T17:32:35 app: request handled ok 208
+2025-09-18T17:32:35.572557085Z,compose-app-1,stdout, INFO 2025-09-18T17:32:35 app: request handled ok 209
+2025-09-18T17:32:35.673366280Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:35 app: panic: nil pointer dereference
+2025-09-18T17:32:35.774340139Z,compose-app-1,stdout, INFO 2025-09-18T17:32:35 app: request handled ok 211
+2025-09-18T17:32:35.875503904Z,compose-app-1,stdout, INFO 2025-09-18T17:32:35 app: request handled ok 212
+2025-09-18T17:32:35.976375123Z,compose-app-1,stdout, INFO 2025-09-18T17:32:35 app: request handled ok 213
+2025-09-18T17:32:36.077407032Z,compose-app-1,stdout, INFO 2025-09-18T17:32:36 app: request handled ok 214
+2025-09-18T17:32:36.178416928Z,compose-app-1,stdout, INFO 2025-09-18T17:32:36 app: request handled ok 215
+2025-09-18T17:32:36.279403577Z,compose-app-1,stdout, INFO 2025-09-18T17:32:36 app: request handled ok 216
+2025-09-18T17:32:36.380383073Z,compose-app-1,stdout, INFO 2025-09-18T17:32:36 app: request handled ok 217
+2025-09-18T17:32:36.481382150Z,compose-app-1,stdout, INFO 2025-09-18T17:32:36 app: request handled ok 218
+2025-09-18T17:32:36.582386839Z,compose-app-1,stdout, INFO 2025-09-18T17:32:36 app: request handled ok 219
+2025-09-18T17:32:36.683347825Z,compose-app-1,stdout, INFO 2025-09-18T17:32:36 app: request handled ok 220
+2025-09-18T17:32:36.784338767Z,compose-app-1,stdout, INFO 2025-09-18T17:32:36 app: request handled ok 221
+2025-09-18T17:32:36.885359532Z,compose-app-1,stdout, INFO 2025-09-18T17:32:36 app: request handled ok 222
+2025-09-18T17:32:36.986351693Z,compose-app-1,stdout, INFO 2025-09-18T17:32:36 app: request handled ok 223
+2025-09-18T17:32:37.087418576Z,compose-app-1,stdout, INFO 2025-09-18T17:32:37 app: request handled ok 224
+2025-09-18T17:32:37.188415552Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:37 app: panic: nil pointer dereference
+2025-09-18T17:32:37.289363368Z,compose-app-1,stdout, INFO 2025-09-18T17:32:37 app: request handled ok 226
+2025-09-18T17:32:37.390457320Z,compose-app-1,stdout, INFO 2025-09-18T17:32:37 app: request handled ok 227
+2025-09-18T17:32:37.491386310Z,compose-app-1,stdout, INFO 2025-09-18T17:32:37 app: request handled ok 228
+2025-09-18T17:32:37.592354911Z,compose-app-1,stdout, INFO 2025-09-18T17:32:37 app: request handled ok 229
+2025-09-18T17:32:37.693374399Z,compose-app-1,stdout, INFO 2025-09-18T17:32:37 app: request handled ok 230
+2025-09-18T17:32:37.794356389Z,compose-app-1,stdout, INFO 2025-09-18T17:32:37 app: request handled ok 231
+2025-09-18T17:32:37.895356836Z,compose-app-1,stdout, INFO 2025-09-18T17:32:37 app: request handled ok 232
+2025-09-18T17:32:37.996209137Z,compose-app-1,stdout, INFO 2025-09-18T17:32:37 app: request handled ok 233
+2025-09-18T17:32:38.097284455Z,compose-app-1,stdout, INFO 2025-09-18T17:32:38 app: request handled ok 234
+2025-09-18T17:32:38.198295755Z,compose-app-1,stdout, INFO 2025-09-18T17:32:38 app: request handled ok 235
+2025-09-18T17:32:38.299363873Z,compose-app-1,stdout, INFO 2025-09-18T17:32:38 app: request handled ok 236
+2025-09-18T17:32:38.400276191Z,compose-app-1,stdout, INFO 2025-09-18T17:32:38 app: request handled ok 237
+2025-09-18T17:32:38.501376756Z,compose-app-1,stdout, INFO 2025-09-18T17:32:38 app: request handled ok 238
+2025-09-18T17:32:38.602313048Z,compose-app-1,stdout, INFO 2025-09-18T17:32:38 app: request handled ok 239
+2025-09-18T17:32:38.703386620Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:38 app: db connection failed: timeout
+2025-09-18T17:32:38.804419764Z,compose-app-1,stdout, INFO 2025-09-18T17:32:38 app: request handled ok 241
+2025-09-18T17:32:38.905431110Z,compose-app-1,stdout, INFO 2025-09-18T17:32:38 app: request handled ok 242
+2025-09-18T17:32:39.006301064Z,compose-app-1,stdout, INFO 2025-09-18T17:32:39 app: request handled ok 243
+2025-09-18T17:32:39.107270529Z,compose-app-1,stdout, INFO 2025-09-18T17:32:39 app: request handled ok 244
+2025-09-18T17:32:39.208312684Z,compose-app-1,stdout, INFO 2025-09-18T17:32:39 app: request handled ok 245
+2025-09-18T17:32:39.309319009Z,compose-app-1,stdout, INFO 2025-09-18T17:32:39 app: request handled ok 246
+2025-09-18T17:32:39.410303829Z,compose-app-1,stdout, INFO 2025-09-18T17:32:39 app: request handled ok 247
+2025-09-18T17:32:39.511267458Z,compose-app-1,stdout, INFO 2025-09-18T17:32:39 app: request handled ok 248
+2025-09-18T17:32:39.612365360Z,compose-app-1,stdout, INFO 2025-09-18T17:32:39 app: request handled ok 249
+2025-09-18T17:32:39.713352868Z,compose-app-1,stdout, INFO 2025-09-18T17:32:39 app: request handled ok 250
+2025-09-18T17:32:39.814376944Z,compose-app-1,stdout, INFO 2025-09-18T17:32:39 app: request handled ok 251
+2025-09-18T17:32:39.915308576Z,compose-app-1,stdout, INFO 2025-09-18T17:32:39 app: request handled ok 252
+2025-09-18T17:32:40.016352789Z,compose-app-1,stdout, INFO 2025-09-18T17:32:40 app: request handled ok 253
+2025-09-18T17:32:40.117315545Z,compose-app-1,stdout, INFO 2025-09-18T17:32:40 app: request handled ok 254
+2025-09-18T17:32:40.218372399Z,compose-app-1,stdout, FATAL 2025-09-18T17:32:40 app: db connection failed: timeout
+2025-09-18T17:32:40.319245930Z,compose-app-1,stdout, INFO 2025-09-18T17:32:40 app: request handled ok 256
+2025-09-18T17:32:40.420352919Z,compose-app-1,stdout, INFO 2025-09-18T17:32:40 app: request handled ok 257
+2025-09-18T17:32:40.521436202Z,compose-app-1,stdout, INFO 2025-09-18T17:32:40 app: request handled ok 258
+2025-09-18T17:32:40.622392170Z,compose-app-1,stdout, INFO 2025-09-18T17:32:40 app: request handled ok 259
+2025-09-18T17:32:40.723413404Z,compose-app-1,stdout, INFO 2025-09-18T17:32:40 app: request handled ok 260
+2025-09-18T17:32:40.824349276Z,compose-app-1,stdout, INFO 2025-09-18T17:32:40 app: request handled ok 261
+2025-09-18T17:32:40.925379513Z,compose-app-1,stdout, INFO 2025-09-18T17:32:40 app: request handled ok 262
+2025-09-18T17:32:41.026341505Z,compose-app-1,stdout, INFO 2025-09-18T17:32:41 app: request handled ok 263
+2025-09-18T17:32:41.127350705Z,compose-app-1,stdout, INFO 2025-09-18T17:32:41 app: request handled ok 264
+2025-09-18T17:32:41.228346545Z,compose-app-1,stdout, INFO 2025-09-18T17:32:41 app: request handled ok 265
+2025-09-18T17:32:41.329325772Z,compose-app-1,stdout, INFO 2025-09-18T17:32:41 app: request handled ok 266
+2025-09-18T17:32:41.430360130Z,compose-app-1,stdout, INFO 2025-09-18T17:32:41 app: request handled ok 267
+2025-09-18T17:32:41.531397625Z,compose-app-1,stdout, INFO 2025-09-18T17:32:41 app: request handled ok 268
+2025-09-18T17:32:41.632351738Z,compose-app-1,stdout, INFO 2025-09-18T17:32:41 app: request handled ok 269
+2025-09-18T17:32:41.733280028Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:41 app: fatal: cannot allocate resource
+2025-09-18T17:32:41.834409586Z,compose-app-1,stdout, INFO 2025-09-18T17:32:41 app: request handled ok 271
+2025-09-18T17:32:41.935395859Z,compose-app-1,stdout, INFO 2025-09-18T17:32:41 app: request handled ok 272
+2025-09-18T17:32:42.036667687Z,compose-app-1,stdout, INFO 2025-09-18T17:32:42 app: request handled ok 273
+2025-09-18T17:32:42.137501982Z,compose-app-1,stdout, INFO 2025-09-18T17:32:42 app: request handled ok 274
+2025-09-18T17:32:42.238340169Z,compose-app-1,stdout, INFO 2025-09-18T17:32:42 app: request handled ok 275
+2025-09-18T17:32:42.339364648Z,compose-app-1,stdout, INFO 2025-09-18T17:32:42 app: request handled ok 276
+2025-09-18T17:32:42.440388023Z,compose-app-1,stdout, INFO 2025-09-18T17:32:42 app: request handled ok 277
+2025-09-18T17:32:42.541345721Z,compose-app-1,stdout, INFO 2025-09-18T17:32:42 app: request handled ok 278
+2025-09-18T17:32:42.642383457Z,compose-app-1,stdout, INFO 2025-09-18T17:32:42 app: request handled ok 279
+2025-09-18T17:32:42.743306517Z,compose-app-1,stdout, INFO 2025-09-18T17:32:42 app: request handled ok 280
+2025-09-18T17:32:42.844340510Z,compose-app-1,stdout, INFO 2025-09-18T17:32:42 app: request handled ok 281
+2025-09-18T17:32:42.945452652Z,compose-app-1,stdout, INFO 2025-09-18T17:32:42 app: request handled ok 282
+2025-09-18T17:32:43.046342732Z,compose-app-1,stdout, INFO 2025-09-18T17:32:43 app: request handled ok 283
+2025-09-18T17:32:43.147310911Z,compose-app-1,stdout, INFO 2025-09-18T17:32:43 app: request handled ok 284
+2025-09-18T17:32:43.248351503Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:43 app: error: upstream service unavailable
+2025-09-18T17:32:43.349312608Z,compose-app-1,stdout, INFO 2025-09-18T17:32:43 app: request handled ok 286
+2025-09-18T17:32:43.450345848Z,compose-app-1,stdout, INFO 2025-09-18T17:32:43 app: request handled ok 287
+2025-09-18T17:32:43.551332569Z,compose-app-1,stdout, INFO 2025-09-18T17:32:43 app: request handled ok 288
+2025-09-18T17:32:43.652658557Z,compose-app-1,stdout, INFO 2025-09-18T17:32:43 app: request handled ok 289
+2025-09-18T17:32:43.753400813Z,compose-app-1,stdout, INFO 2025-09-18T17:32:43 app: request handled ok 290
+2025-09-18T17:32:43.854352903Z,compose-app-1,stdout, INFO 2025-09-18T17:32:43 app: request handled ok 291
+2025-09-18T17:32:43.955377989Z,compose-app-1,stdout, INFO 2025-09-18T17:32:43 app: request handled ok 292
+2025-09-18T17:32:44.056368952Z,compose-app-1,stdout, INFO 2025-09-18T17:32:44 app: request handled ok 293
+2025-09-18T17:32:44.157358455Z,compose-app-1,stdout, INFO 2025-09-18T17:32:44 app: request handled ok 294
+2025-09-18T17:32:44.258316633Z,compose-app-1,stdout, INFO 2025-09-18T17:32:44 app: request handled ok 295
+2025-09-18T17:32:44.359358214Z,compose-app-1,stdout, INFO 2025-09-18T17:32:44 app: request handled ok 296
+2025-09-18T17:32:44.460343242Z,compose-app-1,stdout, INFO 2025-09-18T17:32:44 app: request handled ok 297
+2025-09-18T17:32:44.561516299Z,compose-app-1,stdout, INFO 2025-09-18T17:32:44 app: request handled ok 298
+2025-09-18T17:32:44.662388778Z,compose-app-1,stdout, INFO 2025-09-18T17:32:44 app: request handled ok 299
+2025-09-18T17:32:44.763402967Z,compose-app-1,stdout, FATAL 2025-09-18T17:32:44 app: error: upstream service unavailable
+2025-09-18T17:32:44.864280762Z,compose-app-1,stdout, INFO 2025-09-18T17:32:44 app: request handled ok 301
+2025-09-18T17:32:44.965256565Z,compose-app-1,stdout, INFO 2025-09-18T17:32:44 app: request handled ok 302
+2025-09-18T17:32:45.066317049Z,compose-app-1,stdout, INFO 2025-09-18T17:32:45 app: request handled ok 303
+2025-09-18T17:32:45.167343186Z,compose-app-1,stdout, INFO 2025-09-18T17:32:45 app: request handled ok 304
+2025-09-18T17:32:45.268442287Z,compose-app-1,stdout, INFO 2025-09-18T17:32:45 app: request handled ok 305
+2025-09-18T17:32:45.369360033Z,compose-app-1,stdout, INFO 2025-09-18T17:32:45 app: request handled ok 306
+2025-09-18T17:32:45.470371009Z,compose-app-1,stdout, INFO 2025-09-18T17:32:45 app: request handled ok 307
+2025-09-18T17:32:45.571501880Z,compose-app-1,stdout, INFO 2025-09-18T17:32:45 app: request handled ok 308
+2025-09-18T17:32:45.672371512Z,compose-app-1,stdout, INFO 2025-09-18T17:32:45 app: request handled ok 309
+2025-09-18T17:32:45.773371774Z,compose-app-1,stdout, INFO 2025-09-18T17:32:45 app: request handled ok 310
+2025-09-18T17:32:45.874309297Z,compose-app-1,stdout, INFO 2025-09-18T17:32:45 app: request handled ok 311
+2025-09-18T17:32:45.975357315Z,compose-app-1,stdout, INFO 2025-09-18T17:32:45 app: request handled ok 312
+2025-09-18T17:32:46.076369771Z,compose-app-1,stdout, INFO 2025-09-18T17:32:46 app: request handled ok 313
+2025-09-18T17:32:46.177337245Z,compose-app-1,stdout, INFO 2025-09-18T17:32:46 app: request handled ok 314
+2025-09-18T17:32:46.278480044Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:46 app: error: upstream service unavailable
+2025-09-18T17:32:46.379350007Z,compose-app-1,stdout, INFO 2025-09-18T17:32:46 app: request handled ok 316
+2025-09-18T17:32:46.480307249Z,compose-app-1,stdout, INFO 2025-09-18T17:32:46 app: request handled ok 317
+2025-09-18T17:32:46.581336270Z,compose-app-1,stdout, INFO 2025-09-18T17:32:46 app: request handled ok 318
+2025-09-18T17:32:46.682300351Z,compose-app-1,stdout, INFO 2025-09-18T17:32:46 app: request handled ok 319
+2025-09-18T17:32:46.783324313Z,compose-app-1,stdout, INFO 2025-09-18T17:32:46 app: request handled ok 320
+2025-09-18T17:32:46.884368991Z,compose-app-1,stdout, INFO 2025-09-18T17:32:46 app: request handled ok 321
+2025-09-18T17:32:46.985458292Z,compose-app-1,stdout, INFO 2025-09-18T17:32:46 app: request handled ok 322
+2025-09-18T17:32:47.086339164Z,compose-app-1,stdout, INFO 2025-09-18T17:32:47 app: request handled ok 323
+2025-09-18T17:32:47.187343784Z,compose-app-1,stdout, INFO 2025-09-18T17:32:47 app: request handled ok 324
+2025-09-18T17:32:47.288320455Z,compose-app-1,stdout, INFO 2025-09-18T17:32:47 app: request handled ok 325
+2025-09-18T17:32:47.389352599Z,compose-app-1,stdout, INFO 2025-09-18T17:32:47 app: request handled ok 326
+2025-09-18T17:32:47.490470940Z,compose-app-1,stdout, INFO 2025-09-18T17:32:47 app: request handled ok 327
+2025-09-18T17:32:47.591336416Z,compose-app-1,stdout, INFO 2025-09-18T17:32:47 app: request handled ok 328
+2025-09-18T17:32:47.692288752Z,compose-app-1,stdout, INFO 2025-09-18T17:32:47 app: request handled ok 329
+2025-09-18T17:32:47.793307991Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:47 app: fatal: cannot allocate resource
+2025-09-18T17:32:47.894345468Z,compose-app-1,stdout, INFO 2025-09-18T17:32:47 app: request handled ok 331
+2025-09-18T17:32:47.995377837Z,compose-app-1,stdout, INFO 2025-09-18T17:32:47 app: request handled ok 332
+2025-09-18T17:32:48.096349012Z,compose-app-1,stdout, INFO 2025-09-18T17:32:48 app: request handled ok 333
+2025-09-18T17:32:48.197342091Z,compose-app-1,stdout, INFO 2025-09-18T17:32:48 app: request handled ok 334
+2025-09-18T17:32:48.298270446Z,compose-app-1,stdout, INFO 2025-09-18T17:32:48 app: request handled ok 335
+2025-09-18T17:32:48.399395581Z,compose-app-1,stdout, INFO 2025-09-18T17:32:48 app: request handled ok 336
+2025-09-18T17:32:48.500727582Z,compose-app-1,stdout, INFO 2025-09-18T17:32:48 app: request handled ok 337
+2025-09-18T17:32:48.601350683Z,compose-app-1,stdout, INFO 2025-09-18T17:32:48 app: request handled ok 338
+2025-09-18T17:32:48.702330382Z,compose-app-1,stdout, INFO 2025-09-18T17:32:48 app: request handled ok 339
+2025-09-18T17:32:48.803346867Z,compose-app-1,stdout, INFO 2025-09-18T17:32:48 app: request handled ok 340
+2025-09-18T17:32:48.904426996Z,compose-app-1,stdout, INFO 2025-09-18T17:32:48 app: request handled ok 341
+2025-09-18T17:32:49.005331164Z,compose-app-1,stdout, INFO 2025-09-18T17:32:49 app: request handled ok 342
+2025-09-18T17:32:49.106491311Z,compose-app-1,stdout, INFO 2025-09-18T17:32:49 app: request handled ok 343
+2025-09-18T17:32:49.207353615Z,compose-app-1,stdout, INFO 2025-09-18T17:32:49 app: request handled ok 344
+2025-09-18T17:32:49.308334608Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:49 app: db connection failed: timeout
+2025-09-18T17:32:49.409317905Z,compose-app-1,stdout, INFO 2025-09-18T17:32:49 app: request handled ok 346
+2025-09-18T17:32:49.510361311Z,compose-app-1,stdout, INFO 2025-09-18T17:32:49 app: request handled ok 347
+2025-09-18T17:32:49.611332563Z,compose-app-1,stdout, INFO 2025-09-18T17:32:49 app: request handled ok 348
+2025-09-18T17:32:49.712259792Z,compose-app-1,stdout, INFO 2025-09-18T17:32:49 app: request handled ok 349
+2025-09-18T17:32:49.813361841Z,compose-app-1,stdout, INFO 2025-09-18T17:32:49 app: request handled ok 350
+2025-09-18T17:32:49.914356494Z,compose-app-1,stdout, INFO 2025-09-18T17:32:49 app: request handled ok 351
+2025-09-18T17:32:50.015291766Z,compose-app-1,stdout, INFO 2025-09-18T17:32:50 app: request handled ok 352
+2025-09-18T17:32:50.116558111Z,compose-app-1,stdout, INFO 2025-09-18T17:32:50 app: request handled ok 353
+2025-09-18T17:32:50.217478414Z,compose-app-1,stdout, INFO 2025-09-18T17:32:50 app: request handled ok 354
+2025-09-18T17:32:50.318329860Z,compose-app-1,stdout, INFO 2025-09-18T17:32:50 app: request handled ok 355
+2025-09-18T17:32:50.419391606Z,compose-app-1,stdout, INFO 2025-09-18T17:32:50 app: request handled ok 356
+2025-09-18T17:32:50.520309026Z,compose-app-1,stdout, INFO 2025-09-18T17:32:50 app: request handled ok 357
+2025-09-18T17:32:50.621459917Z,compose-app-1,stdout, INFO 2025-09-18T17:32:50 app: request handled ok 358
+2025-09-18T17:32:50.722323632Z,compose-app-1,stdout, INFO 2025-09-18T17:32:50 app: request handled ok 359
+2025-09-18T17:32:50.823320613Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:50 app: error: upstream service unavailable
+2025-09-18T17:32:50.924342824Z,compose-app-1,stdout, INFO 2025-09-18T17:32:50 app: request handled ok 361
+2025-09-18T17:32:51.025323819Z,compose-app-1,stdout, INFO 2025-09-18T17:32:51 app: request handled ok 362
+2025-09-18T17:32:51.126388006Z,compose-app-1,stdout, INFO 2025-09-18T17:32:51 app: request handled ok 363
+2025-09-18T17:32:51.227331469Z,compose-app-1,stdout, INFO 2025-09-18T17:32:51 app: request handled ok 364
+2025-09-18T17:32:51.328296932Z,compose-app-1,stdout, INFO 2025-09-18T17:32:51 app: request handled ok 365
+2025-09-18T17:32:51.429356621Z,compose-app-1,stdout, INFO 2025-09-18T17:32:51 app: request handled ok 366
+2025-09-18T17:32:51.530373738Z,compose-app-1,stdout, INFO 2025-09-18T17:32:51 app: request handled ok 367
+2025-09-18T17:32:51.631349607Z,compose-app-1,stdout, INFO 2025-09-18T17:32:51 app: request handled ok 368
+2025-09-18T17:32:51.732358406Z,compose-app-1,stdout, INFO 2025-09-18T17:32:51 app: request handled ok 369
+2025-09-18T17:32:51.833414419Z,compose-app-1,stdout, INFO 2025-09-18T17:32:51 app: request handled ok 370
+2025-09-18T17:32:51.934357611Z,compose-app-1,stdout, INFO 2025-09-18T17:32:51 app: request handled ok 371
+2025-09-18T17:32:52.035334689Z,compose-app-1,stdout, INFO 2025-09-18T17:32:52 app: request handled ok 372
+2025-09-18T17:32:52.136297269Z,compose-app-1,stdout, INFO 2025-09-18T17:32:52 app: request handled ok 373
+2025-09-18T17:32:52.237329324Z,compose-app-1,stdout, INFO 2025-09-18T17:32:52 app: request handled ok 374
+2025-09-18T17:32:52.338368355Z,compose-app-1,stdout, FATAL 2025-09-18T17:32:52 app: error: upstream service unavailable
+2025-09-18T17:32:52.439332902Z,compose-app-1,stdout, INFO 2025-09-18T17:32:52 app: request handled ok 376
+2025-09-18T17:32:52.540434887Z,compose-app-1,stdout, INFO 2025-09-18T17:32:52 app: request handled ok 377
+2025-09-18T17:32:52.641360058Z,compose-app-1,stdout, INFO 2025-09-18T17:32:52 app: request handled ok 378
+2025-09-18T17:32:52.742296974Z,compose-app-1,stdout, INFO 2025-09-18T17:32:52 app: request handled ok 379
+2025-09-18T17:32:52.843396110Z,compose-app-1,stdout, INFO 2025-09-18T17:32:52 app: request handled ok 380
+2025-09-18T17:32:52.944302622Z,compose-app-1,stdout, INFO 2025-09-18T17:32:52 app: request handled ok 381
+2025-09-18T17:32:53.045350874Z,compose-app-1,stdout, INFO 2025-09-18T17:32:53 app: request handled ok 382
+2025-09-18T17:32:53.146326492Z,compose-app-1,stdout, INFO 2025-09-18T17:32:53 app: request handled ok 383
+2025-09-18T17:32:53.247482029Z,compose-app-1,stdout, INFO 2025-09-18T17:32:53 app: request handled ok 384
+2025-09-18T17:32:53.348446361Z,compose-app-1,stdout, INFO 2025-09-18T17:32:53 app: request handled ok 385
+2025-09-18T17:32:53.449353226Z,compose-app-1,stdout, INFO 2025-09-18T17:32:53 app: request handled ok 386
+2025-09-18T17:32:53.550334087Z,compose-app-1,stdout, INFO 2025-09-18T17:32:53 app: request handled ok 387
+2025-09-18T17:32:53.651418034Z,compose-app-1,stdout, INFO 2025-09-18T17:32:53 app: request handled ok 388
+2025-09-18T17:32:53.752322303Z,compose-app-1,stdout, INFO 2025-09-18T17:32:53 app: request handled ok 389
+2025-09-18T17:32:53.853412128Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:53 app: panic: nil pointer dereference
+2025-09-18T17:32:53.954299171Z,compose-app-1,stdout, INFO 2025-09-18T17:32:53 app: request handled ok 391
+2025-09-18T17:32:54.055393088Z,compose-app-1,stdout, INFO 2025-09-18T17:32:54 app: request handled ok 392
+2025-09-18T17:32:54.156347842Z,compose-app-1,stdout, INFO 2025-09-18T17:32:54 app: request handled ok 393
+2025-09-18T17:32:54.257339196Z,compose-app-1,stdout, INFO 2025-09-18T17:32:54 app: request handled ok 394
+2025-09-18T17:32:54.357965868Z,compose-app-1,stdout, INFO 2025-09-18T17:32:54 app: request handled ok 395
+2025-09-18T17:32:54.459426196Z,compose-app-1,stdout, INFO 2025-09-18T17:32:54 app: request handled ok 396
+2025-09-18T17:32:54.560474289Z,compose-app-1,stdout, INFO 2025-09-18T17:32:54 app: request handled ok 397
+2025-09-18T17:32:54.661283246Z,compose-app-1,stdout, INFO 2025-09-18T17:32:54 app: request handled ok 398
+2025-09-18T17:32:54.762331676Z,compose-app-1,stdout, INFO 2025-09-18T17:32:54 app: request handled ok 399
+2025-09-18T17:32:54.863429322Z,compose-app-1,stdout, INFO 2025-09-18T17:32:54 app: request handled ok 400
+2025-09-18T17:32:54.964652731Z,compose-app-1,stdout, INFO 2025-09-18T17:32:54 app: request handled ok 401
+2025-09-18T17:32:55.065532548Z,compose-app-1,stdout, INFO 2025-09-18T17:32:55 app: request handled ok 402
+2025-09-18T17:32:55.165955859Z,compose-app-1,stdout, INFO 2025-09-18T17:32:55 app: request handled ok 403
+2025-09-18T17:32:55.267485264Z,compose-app-1,stdout, INFO 2025-09-18T17:32:55 app: request handled ok 404
+2025-09-18T17:32:55.368330266Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:55 app: panic: nil pointer dereference
+2025-09-18T17:32:55.469370232Z,compose-app-1,stdout, INFO 2025-09-18T17:32:55 app: request handled ok 406
+2025-09-18T17:32:55.570282637Z,compose-app-1,stdout, INFO 2025-09-18T17:32:55 app: request handled ok 407
+2025-09-18T17:32:55.671390437Z,compose-app-1,stdout, INFO 2025-09-18T17:32:55 app: request handled ok 408
+2025-09-18T17:32:55.772366792Z,compose-app-1,stdout, INFO 2025-09-18T17:32:55 app: request handled ok 409
+2025-09-18T17:32:55.873300268Z,compose-app-1,stdout, INFO 2025-09-18T17:32:55 app: request handled ok 410
+2025-09-18T17:32:55.974358221Z,compose-app-1,stdout, INFO 2025-09-18T17:32:55 app: request handled ok 411
+2025-09-18T17:32:56.075383377Z,compose-app-1,stdout, INFO 2025-09-18T17:32:56 app: request handled ok 412
+2025-09-18T17:32:56.176428863Z,compose-app-1,stdout, INFO 2025-09-18T17:32:56 app: request handled ok 413
+2025-09-18T17:32:56.277371014Z,compose-app-1,stdout, INFO 2025-09-18T17:32:56 app: request handled ok 414
+2025-09-18T17:32:56.378364465Z,compose-app-1,stdout, INFO 2025-09-18T17:32:56 app: request handled ok 415
+2025-09-18T17:32:56.479400940Z,compose-app-1,stdout, INFO 2025-09-18T17:32:56 app: request handled ok 416
+2025-09-18T17:32:56.580339686Z,compose-app-1,stdout, INFO 2025-09-18T17:32:56 app: request handled ok 417
+2025-09-18T17:32:56.681481490Z,compose-app-1,stdout, INFO 2025-09-18T17:32:56 app: request handled ok 418
+2025-09-18T17:32:56.782439384Z,compose-app-1,stdout, INFO 2025-09-18T17:32:56 app: request handled ok 419
+2025-09-18T17:32:56.883445558Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:56 app: error: upstream service unavailable
+2025-09-18T17:32:56.984292750Z,compose-app-1,stdout, INFO 2025-09-18T17:32:56 app: request handled ok 421
+2025-09-18T17:32:57.085369930Z,compose-app-1,stdout, INFO 2025-09-18T17:32:57 app: request handled ok 422
+2025-09-18T17:32:57.186324293Z,compose-app-1,stdout, INFO 2025-09-18T17:32:57 app: request handled ok 423
+2025-09-18T17:32:57.287309351Z,compose-app-1,stdout, INFO 2025-09-18T17:32:57 app: request handled ok 424
+2025-09-18T17:32:57.388392281Z,compose-app-1,stdout, INFO 2025-09-18T17:32:57 app: request handled ok 425
+2025-09-18T17:32:57.489281281Z,compose-app-1,stdout, INFO 2025-09-18T17:32:57 app: request handled ok 426
+2025-09-18T17:32:57.590349923Z,compose-app-1,stdout, INFO 2025-09-18T17:32:57 app: request handled ok 427
+2025-09-18T17:32:57.691347913Z,compose-app-1,stdout, INFO 2025-09-18T17:32:57 app: request handled ok 428
+2025-09-18T17:32:57.792441449Z,compose-app-1,stdout, INFO 2025-09-18T17:32:57 app: request handled ok 429
+2025-09-18T17:32:57.893403970Z,compose-app-1,stdout, INFO 2025-09-18T17:32:57 app: request handled ok 430
+2025-09-18T17:32:57.994426657Z,compose-app-1,stdout, INFO 2025-09-18T17:32:57 app: request handled ok 431
+2025-09-18T17:32:58.095306761Z,compose-app-1,stdout, INFO 2025-09-18T17:32:58 app: request handled ok 432
+2025-09-18T17:32:58.196500593Z,compose-app-1,stdout, INFO 2025-09-18T17:32:58 app: request handled ok 433
+2025-09-18T17:32:58.297284011Z,compose-app-1,stdout, INFO 2025-09-18T17:32:58 app: request handled ok 434
+2025-09-18T17:32:58.398422474Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:58 app: db connection failed: timeout
+2025-09-18T17:32:58.499355824Z,compose-app-1,stdout, INFO 2025-09-18T17:32:58 app: request handled ok 436
+2025-09-18T17:32:58.600413260Z,compose-app-1,stdout, INFO 2025-09-18T17:32:58 app: request handled ok 437
+2025-09-18T17:32:58.701422017Z,compose-app-1,stdout, INFO 2025-09-18T17:32:58 app: request handled ok 438
+2025-09-18T17:32:58.802381900Z,compose-app-1,stdout, INFO 2025-09-18T17:32:58 app: request handled ok 439
+2025-09-18T17:32:58.903371112Z,compose-app-1,stdout, INFO 2025-09-18T17:32:58 app: request handled ok 440
+2025-09-18T17:32:59.004273340Z,compose-app-1,stdout, INFO 2025-09-18T17:32:59 app: request handled ok 441
+2025-09-18T17:32:59.105392482Z,compose-app-1,stdout, INFO 2025-09-18T17:32:59 app: request handled ok 442
+2025-09-18T17:32:59.206351918Z,compose-app-1,stdout, INFO 2025-09-18T17:32:59 app: request handled ok 443
+2025-09-18T17:32:59.307344804Z,compose-app-1,stdout, INFO 2025-09-18T17:32:59 app: request handled ok 444
+2025-09-18T17:32:59.408407489Z,compose-app-1,stdout, INFO 2025-09-18T17:32:59 app: request handled ok 445
+2025-09-18T17:32:59.509385269Z,compose-app-1,stdout, INFO 2025-09-18T17:32:59 app: request handled ok 446
+2025-09-18T17:32:59.609883247Z,compose-app-1,stdout, INFO 2025-09-18T17:32:59 app: request handled ok 447
+2025-09-18T17:32:59.710894795Z,compose-app-1,stdout, INFO 2025-09-18T17:32:59 app: request handled ok 448
+2025-09-18T17:32:59.812372839Z,compose-app-1,stdout, INFO 2025-09-18T17:32:59 app: request handled ok 449
+2025-09-18T17:32:59.913446958Z,compose-app-1,stdout, ERROR 2025-09-18T17:32:59 app: db connection failed: timeout
+2025-09-18T17:33:00.014402699Z,compose-app-1,stdout, INFO 2025-09-18T17:33:00 app: request handled ok 451
+2025-09-18T17:33:00.115324483Z,compose-app-1,stdout, INFO 2025-09-18T17:33:00 app: request handled ok 452
+2025-09-18T17:33:00.215872855Z,compose-app-1,stdout, INFO 2025-09-18T17:33:00 app: request handled ok 453
+2025-09-18T17:33:00.317416896Z,compose-app-1,stdout, INFO 2025-09-18T17:33:00 app: request handled ok 454
+2025-09-18T17:33:00.418405260Z,compose-app-1,stdout, INFO 2025-09-18T17:33:00 app: request handled ok 455
+2025-09-18T17:33:00.519490990Z,compose-app-1,stdout, INFO 2025-09-18T17:33:00 app: request handled ok 456
+2025-09-18T17:33:00.620421901Z,compose-app-1,stdout, INFO 2025-09-18T17:33:00 app: request handled ok 457
+2025-09-18T17:33:00.721329241Z,compose-app-1,stdout, INFO 2025-09-18T17:33:00 app: request handled ok 458
+2025-09-18T17:33:00.822383412Z,compose-app-1,stdout, INFO 2025-09-18T17:33:00 app: request handled ok 459
+2025-09-18T17:33:00.923422407Z,compose-app-1,stdout, INFO 2025-09-18T17:33:00 app: request handled ok 460
+2025-09-18T17:33:01.024366092Z,compose-app-1,stdout, INFO 2025-09-18T17:33:01 app: request handled ok 461
+2025-09-18T17:33:01.124895145Z,compose-app-1,stdout, INFO 2025-09-18T17:33:01 app: request handled ok 462
+2025-09-18T17:33:01.225882753Z,compose-app-1,stdout, INFO 2025-09-18T17:33:01 app: request handled ok 463
+2025-09-18T17:33:01.327026437Z,compose-app-1,stdout, INFO 2025-09-18T17:33:01 app: request handled ok 464
+2025-09-18T17:33:01.427905263Z,compose-app-1,stdout, ERROR 2025-09-18T17:33:01 app: db connection failed: timeout
+2025-09-18T17:33:01.528896537Z,compose-app-1,stdout, INFO 2025-09-18T17:33:01 app: request handled ok 466
+2025-09-18T17:33:01.629892033Z,compose-app-1,stdout, INFO 2025-09-18T17:33:01 app: request handled ok 467
+2025-09-18T17:33:01.731351207Z,compose-app-1,stdout, INFO 2025-09-18T17:33:01 app: request handled ok 468
+2025-09-18T17:33:01.832362130Z,compose-app-1,stdout, INFO 2025-09-18T17:33:01 app: request handled ok 469
+2025-09-18T17:33:01.933313443Z,compose-app-1,stdout, INFO 2025-09-18T17:33:01 app: request handled ok 470
+2025-09-18T17:33:02.034371215Z,compose-app-1,stdout, INFO 2025-09-18T17:33:02 app: request handled ok 471
+2025-09-18T17:33:02.135386980Z,compose-app-1,stdout, INFO 2025-09-18T17:33:02 app: request handled ok 472
+2025-09-18T17:33:02.236364313Z,compose-app-1,stdout, INFO 2025-09-18T17:33:02 app: request handled ok 473
+2025-09-18T17:33:02.337393102Z,compose-app-1,stdout, INFO 2025-09-18T17:33:02 app: request handled ok 474
+2025-09-18T17:33:02.438401151Z,compose-app-1,stdout, INFO 2025-09-18T17:33:02 app: request handled ok 475
+2025-09-18T17:33:02.539328645Z,compose-app-1,stdout, INFO 2025-09-18T17:33:02 app: request handled ok 476
+2025-09-18T17:33:02.640374003Z,compose-app-1,stdout, INFO 2025-09-18T17:33:02 app: request handled ok 477
+2025-09-18T17:33:02.741333857Z,compose-app-1,stdout, INFO 2025-09-18T17:33:02 app: request handled ok 478
+2025-09-18T17:33:02.842385561Z,compose-app-1,stdout, INFO 2025-09-18T17:33:02 app: request handled ok 479
+2025-09-18T17:33:02.943402961Z,compose-app-1,stdout, ERROR 2025-09-18T17:33:02 app: db connection failed: timeout
+2025-09-18T17:33:03.044174818Z,compose-app-1,stdout, INFO 2025-09-18T17:33:03 app: request handled ok 481
+2025-09-18T17:33:03.145369928Z,compose-app-1,stdout, INFO 2025-09-18T17:33:03 app: request handled ok 482
+2025-09-18T17:33:03.246473220Z,compose-app-1,stdout, INFO 2025-09-18T17:33:03 app: request handled ok 483
+2025-09-18T17:33:03.347362331Z,compose-app-1,stdout, INFO 2025-09-18T17:33:03 app: request handled ok 484
+2025-09-18T17:33:03.448356861Z,compose-app-1,stdout, INFO 2025-09-18T17:33:03 app: request handled ok 485
+2025-09-18T17:33:03.549436341Z,compose-app-1,stdout, INFO 2025-09-18T17:33:03 app: request handled ok 486
+2025-09-18T17:33:03.650396972Z,compose-app-1,stdout, INFO 2025-09-18T17:33:03 app: request handled ok 487
+2025-09-18T17:33:03.751295191Z,compose-app-1,stdout, INFO 2025-09-18T17:33:03 app: request handled ok 488
+2025-09-18T17:33:03.852401830Z,compose-app-1,stdout, INFO 2025-09-18T17:33:03 app: request handled ok 489
+2025-09-18T17:33:03.953392477Z,compose-app-1,stdout, INFO 2025-09-18T17:33:03 app: request handled ok 490
+2025-09-18T17:33:04.054374359Z,compose-app-1,stdout, INFO 2025-09-18T17:33:04 app: request handled ok 491
+2025-09-18T17:33:04.155360017Z,compose-app-1,stdout, INFO 2025-09-18T17:33:04 app: request handled ok 492
+2025-09-18T17:33:04.256306848Z,compose-app-1,stdout, INFO 2025-09-18T17:33:04 app: request handled ok 493
+2025-09-18T17:33:04.357397501Z,compose-app-1,stdout, INFO 2025-09-18T17:33:04 app: request handled ok 494
+2025-09-18T17:33:04.458442403Z,compose-app-1,stdout, ERROR 2025-09-18T17:33:04 app: panic: nil pointer dereference
+2025-09-18T17:33:04.559468381Z,compose-app-1,stdout, INFO 2025-09-18T17:33:04 app: request handled ok 496
+2025-09-18T17:33:04.660477620Z,compose-app-1,stdout, INFO 2025-09-18T17:33:04 app: request handled ok 497
+2025-09-18T17:33:04.761505931Z,compose-app-1,stdout, INFO 2025-09-18T17:33:04 app: request handled ok 498
+2025-09-18T17:33:04.862624209Z,compose-app-1,stdout, INFO 2025-09-18T17:33:04 app: request handled ok 499
+2025-09-18T17:33:04.963654850Z,compose-app-1,stdout, INFO 2025-09-18T17:33:04 app: request handled ok 500
+2025-09-18T17:33:05.064711998Z,compose-app-1,stdout, INFO 2025-09-18T17:33:05 app: request handled ok 501
+2025-09-18T17:33:05.165711415Z,compose-app-1,stdout, INFO 2025-09-18T17:33:05 app: request handled ok 502
+2025-09-18T17:33:05.266674052Z,compose-app-1,stdout, INFO 2025-09-18T17:33:05 app: request handled ok 503
+2025-09-18T17:33:05.367589024Z,compose-app-1,stdout, INFO 2025-09-18T17:33:05 app: request handled ok 504
+2025-09-18T17:33:05.468662693Z,compose-app-1,stdout, INFO 2025-09-18T17:33:05 app: request handled ok 505
+2025-09-18T17:33:05.569644223Z,compose-app-1,stdout, INFO 2025-09-18T17:33:05 app: request handled ok 506
+2025-09-18T17:33:05.670698953Z,compose-app-1,stdout, INFO 2025-09-18T17:33:05 app: request handled ok 507
+2025-09-18T17:33:05.771691325Z,compose-app-1,stdout, INFO 2025-09-18T17:33:05 app: request handled ok 508
+2025-09-18T17:33:05.872818158Z,compose-app-1,stdout, INFO 2025-09-18T17:33:05 app: request handled ok 509
+2025-09-18T17:33:05.973746589Z,compose-app-1,stdout, ERROR 2025-09-18T17:33:05 app: panic: nil pointer dereference
+2025-09-18T17:33:06.074656502Z,compose-app-1,stdout, INFO 2025-09-18T17:33:06 app: request handled ok 511
+2025-09-18T17:33:06.175627369Z,compose-app-1,stdout, INFO 2025-09-18T17:33:06 app: request handled ok 512
+2025-09-18T17:33:06.276730875Z,compose-app-1,stdout, INFO 2025-09-18T17:33:06 app: request handled ok 513
+2025-09-18T17:33:06.377611161Z,compose-app-1,stdout, INFO 2025-09-18T17:33:06 app: request handled ok 514
+2025-09-18T17:33:06.478620548Z,compose-app-1,stdout, INFO 2025-09-18T17:33:06 app: request handled ok 515
+2025-09-18T17:33:06.579667899Z,compose-app-1,stdout, INFO 2025-09-18T17:33:06 app: request handled ok 516
+2025-09-18T17:33:06.680563858Z,compose-app-1,stdout, INFO 2025-09-18T17:33:06 app: request handled ok 517
+2025-09-18T17:33:06.781637019Z,compose-app-1,stdout, INFO 2025-09-18T17:33:06 app: request handled ok 518
+2025-09-18T17:33:06.882650306Z,compose-app-1,stdout, INFO 2025-09-18T17:33:06 app: request handled ok 519
+2025-09-18T17:33:06.983552479Z,compose-app-1,stdout, INFO 2025-09-18T17:33:06 app: request handled ok 520
+2025-09-18T17:33:07.084601938Z,compose-app-1,stdout, INFO 2025-09-18T17:33:07 app: request handled ok 521
+2025-09-18T17:33:07.185662637Z,compose-app-1,stdout, INFO 2025-09-18T17:33:07 app: request handled ok 522
+2025-09-18T17:33:07.286664018Z,compose-app-1,stdout, INFO 2025-09-18T17:33:07 app: request handled ok 523
+2025-09-18T17:33:07.387639171Z,compose-app-1,stdout, INFO 2025-09-18T17:33:07 app: request handled ok 524
+2025-09-18T17:33:07.488667292Z,compose-app-1,stdout, ERROR 2025-09-18T17:33:07 app: panic: nil pointer dereference
+2025-09-18T17:33:07.589619639Z,compose-app-1,stdout, INFO 2025-09-18T17:33:07 app: request handled ok 526
+2025-09-18T17:33:07.690681720Z,compose-app-1,stdout, INFO 2025-09-18T17:33:07 app: request handled ok 527
+2025-09-18T17:33:07.791622431Z,compose-app-1,stdout, INFO 2025-09-18T17:33:07 app: request handled ok 528
+2025-09-18T17:33:07.892596949Z,compose-app-1,stdout, INFO 2025-09-18T17:33:07 app: request handled ok 529
+2025-09-18T17:33:07.993698965Z,compose-app-1,stdout, INFO 2025-09-18T17:33:07 app: request handled ok 530
+2025-09-18T17:33:08.094465204Z,compose-app-1,stdout, INFO 2025-09-18T17:33:08 app: request handled ok 531
+2025-09-18T17:33:08.195834353Z,compose-app-1,stdout, INFO 2025-09-18T17:33:08 app: request handled ok 532
+2025-09-18T17:33:08.296492713Z,compose-app-1,stdout, INFO 2025-09-18T17:33:08 app: request handled ok 533
+2025-09-18T17:33:08.397616401Z,compose-app-1,stdout, INFO 2025-09-18T17:33:08 app: request handled ok 534
+2025-09-18T17:33:08.498036637Z,compose-app-1,stdout, INFO 2025-09-18T17:33:08 app: request handled ok 535
+2025-09-18T17:33:08.599702625Z,compose-app-1,stdout, INFO 2025-09-18T17:33:08 app: request handled ok 536
+2025-09-18T17:33:08.700791030Z,compose-app-1,stdout, INFO 2025-09-18T17:33:08 app: request handled ok 537
+2025-09-18T17:33:08.801573583Z,compose-app-1,stdout, INFO 2025-09-18T17:33:08 app: request handled ok 538
+2025-09-18T17:33:08.902525486Z,compose-app-1,stdout, INFO 2025-09-18T17:33:08 app: request handled ok 539
+2025-09-18T17:33:09.003496616Z,compose-app-1,stdout, FATAL 2025-09-18T17:33:09 app: panic: nil pointer dereference
+2025-09-18T17:33:09.104208302Z,compose-app-1,stdout, INFO 2025-09-18T17:33:09 app: request handled ok 541
+2025-09-18T17:33:09.205288084Z,compose-app-1,stdout, INFO 2025-09-18T17:33:09 app: request handled ok 542
+2025-09-18T17:33:09.306573634Z,compose-app-1,stdout, INFO 2025-09-18T17:33:09 app: request handled ok 543
+2025-09-18T17:33:09.407932167Z,compose-app-1,stdout, INFO 2025-09-18T17:33:09 app: request handled ok 544
+2025-09-18T17:33:09.508625678Z,compose-app-1,stdout, INFO 2025-09-18T17:33:09 app: request handled ok 545
+2025-09-18T17:33:09.609736993Z,compose-app-1,stdout, INFO 2025-09-18T17:33:09 app: request handled ok 546
+2025-09-18T17:33:09.710239096Z,compose-app-1,stdout, INFO 2025-09-18T17:33:09 app: request handled ok 547
+2025-09-18T17:33:09.811272790Z,compose-app-1,stdout, INFO 2025-09-18T17:33:09 app: request handled ok 548
+2025-09-18T17:33:09.912254717Z,compose-app-1,stdout, INFO 2025-09-18T17:33:09 app: request handled ok 549
+2025-09-18T17:33:10.013266418Z,compose-app-1,stdout, INFO 2025-09-18T17:33:10 app: request handled ok 550
+2025-09-18T17:33:10.114060191Z,compose-app-1,stdout, INFO 2025-09-18T17:33:10 app: request handled ok 551
+2025-09-18T17:33:10.215224337Z,compose-app-1,stdout, INFO 2025-09-18T17:33:10 app: request handled ok 552
+2025-09-18T17:33:10.316670822Z,compose-app-1,stdout, INFO 2025-09-18T17:33:10 app: request handled ok 553
+2025-09-18T17:33:10.417607124Z,compose-app-1,stdout, INFO 2025-09-18T17:33:10 app: request handled ok 554
+2025-09-18T17:33:10.518690110Z,compose-app-1,stdout, ERROR 2025-09-18T17:33:10 app: fatal: cannot allocate resource
+2025-09-18T17:33:10.619221967Z,compose-app-1,stdout, INFO 2025-09-18T17:33:10 app: request handled ok 556
+2025-09-18T17:33:10.720156761Z,compose-app-1,stdout, INFO 2025-09-18T17:33:10 app: request handled ok 557
+2025-09-18T17:33:10.821089267Z,compose-app-1,stdout, INFO 2025-09-18T17:33:10 app: request handled ok 558
+2025-09-18T17:33:10.922728968Z,compose-app-1,stdout, INFO 2025-09-18T17:33:10 app: request handled ok 559
+2025-09-18T17:33:11.023672832Z,compose-app-1,stdout, INFO 2025-09-18T17:33:11 app: request handled ok 560
+2025-09-18T17:33:11.124719214Z,compose-app-1,stdout, INFO 2025-09-18T17:33:11 app: request handled ok 561
+2025-09-18T17:33:11.225258108Z,compose-app-1,stdout, INFO 2025-09-18T17:33:11 app: request handled ok 562
+2025-09-18T17:33:11.326420045Z,compose-app-1,stdout, INFO 2025-09-18T17:33:11 app: request handled ok 563
+2025-09-18T17:33:11.427527190Z,compose-app-1,stdout, INFO 2025-09-18T17:33:11 app: request handled ok 564
+2025-09-18T17:33:11.528451220Z,compose-app-1,stdout, INFO 2025-09-18T17:33:11 app: request handled ok 565
+2025-09-18T17:33:11.629751540Z,compose-app-1,stdout, INFO 2025-09-18T17:33:11 app: request handled ok 566
+2025-09-18T17:33:11.730810734Z,compose-app-1,stdout, INFO 2025-09-18T17:33:11 app: request handled ok 567
+2025-09-18T17:33:11.831625741Z,compose-app-1,stdout, INFO 2025-09-18T17:33:11 app: request handled ok 568
+2025-09-18T17:33:11.932032163Z,compose-app-1,stdout, INFO 2025-09-18T17:33:11 app: request handled ok 569
+2025-09-18T17:33:12.033249550Z,compose-app-1,stdout, ERROR 2025-09-18T17:33:12 app: panic: nil pointer dereference
+2025-09-18T17:33:12.134266683Z,compose-app-1,stdout, INFO 2025-09-18T17:33:12 app: request handled ok 571
+2025-09-18T17:33:12.235534073Z,compose-app-1,stdout, INFO 2025-09-18T17:33:12 app: request handled ok 572
+2025-09-18T17:33:12.336718442Z,compose-app-1,stdout, INFO 2025-09-18T17:33:12 app: request handled ok 573
+2025-09-18T17:33:12.437716580Z,compose-app-1,stdout, INFO 2025-09-18T17:33:12 app: request handled ok 574
+2025-09-18T17:33:12.538600637Z,compose-app-1,stdout, INFO 2025-09-18T17:33:12 app: request handled ok 575
+2025-09-18T17:33:12.639745629Z,compose-app-1,stdout, INFO 2025-09-18T17:33:12 app: request handled ok 576
+2025-09-18T17:33:12.740796328Z,compose-app-1,stdout, INFO 2025-09-18T17:33:12 app: request handled ok 577
+2025-09-18T17:33:12.841809453Z,compose-app-1,stdout, INFO 2025-09-18T17:33:12 app: request handled ok 578
+2025-09-18T17:33:12.942801983Z,compose-app-1,stdout, INFO 2025-09-18T17:33:12 app: request handled ok 579
+2025-09-18T17:33:13.043681062Z,compose-app-1,stdout, INFO 2025-09-18T17:33:13 app: request handled ok 580
+2025-09-18T17:33:13.144627941Z,compose-app-1,stdout, INFO 2025-09-18T17:33:13 app: request handled ok 581
+2025-09-18T17:33:13.245642374Z,compose-app-1,stdout, INFO 2025-09-18T17:33:13 app: request handled ok 582
+2025-09-18T17:33:13.346679165Z,compose-app-1,stdout, INFO 2025-09-18T17:33:13 app: request handled ok 583
+2025-09-18T17:33:13.447662011Z,compose-app-1,stdout, INFO 2025-09-18T17:33:13 app: request handled ok 584
+2025-09-18T17:33:13.548659307Z,compose-app-1,stdout, ERROR 2025-09-18T17:33:13 app: error: upstream service unavailable
+2025-09-18T17:33:13.649741216Z,compose-app-1,stdout, INFO 2025-09-18T17:33:13 app: request handled ok 586
+2025-09-18T17:33:13.750651805Z,compose-app-1,stdout, INFO 2025-09-18T17:33:13 app: request handled ok 587
+2025-09-18T17:33:13.851657430Z,compose-app-1,stdout, INFO 2025-09-18T17:33:13 app: request handled ok 588
+2025-09-18T17:33:13.952646039Z,compose-app-1,stdout, INFO 2025-09-18T17:33:13 app: request handled ok 589
+2025-09-18T17:33:14.053648818Z,compose-app-1,stdout, INFO 2025-09-18T17:33:14 app: request handled ok 590
+2025-09-18T17:33:14.154625663Z,compose-app-1,stdout, INFO 2025-09-18T17:33:14 app: request handled ok 591
+2025-09-18T17:33:14.255636635Z,compose-app-1,stdout, INFO 2025-09-18T17:33:14 app: request handled ok 592
+2025-09-18T17:33:14.356694637Z,compose-app-1,stdout, INFO 2025-09-18T17:33:14 app: request handled ok 593
+2025-09-18T17:33:14.457087249Z,compose-app-1,stdout, INFO 2025-09-18T17:33:14 app: request handled ok 594
+2025-09-18T17:33:14.558720126Z,compose-app-1,stdout, INFO 2025-09-18T17:33:14 app: request handled ok 595
