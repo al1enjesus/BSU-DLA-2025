@@ -1,0 +1,964 @@
+Sep 10 01:38:22 DESKTOP-1R6JDGE systemd[1]: rsyslog.service: Sent signal SIGHUP to main process 222 (rsyslogd) on client request.
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]: No valid path found for iwconfig
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]: No valid path found for iw
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.589619] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.590319] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.591897] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.592661] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.593221] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.593795] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.594311] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE systemd[1]: logrotate.service: Deactivated successfully.
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.595212] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.596160] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.596764] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.597479] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.598187] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE systemd[1]: Finished Rotate log files.
+Sep 10 01:38:22 DESKTOP-1R6JDGE kernel: [    4.599214] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:22 DESKTOP-1R6JDGE dbus-daemon[217]: [system] Activating via systemd: service name='org.freedesktop.network1' unit='dbus-org.freedesktop.network1.service' requested by ':1.3' (uid=0 pid=293 comm="/usr/bin/networkctl list --no-pager --no-legend " label="kernel")
+Sep 10 01:38:22 DESKTOP-1R6JDGE dbus-daemon[217]: [system] Activation via systemd failed for unit 'dbus-org.freedesktop.network1.service': Unit dbus-org.freedesktop.network1.service not found.
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[293]: WARNING: systemd-networkd is not running, output will be incomplete.
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]: ERROR:Unknown state for interface NetworkctlListState(idx=1, name='lo', type='loopback', operational='n/a', administrative='unmanaged'): n/a
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]: Traceback (most recent call last):
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]:   File "/usr/bin/networkd-dispatcher", line 298, in trigger_all
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]:     self.handle_state(iface_name,
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]:   File "/usr/bin/networkd-dispatcher", line 348, in handle_state
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]:     raise UnknownState(operational_state)
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]: UnknownState: n/a
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]: ERROR:Unknown state for interface NetworkctlListState(idx=2, name='eth0', type='ether', operational='n/a', administrative='unmanaged'): n/a
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]: Traceback (most recent call last):
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]:   File "/usr/bin/networkd-dispatcher", line 298, in trigger_all
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]:     self.handle_state(iface_name,
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]:   File "/usr/bin/networkd-dispatcher", line 348, in handle_state
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]:     raise UnknownState(operational_state)
+Sep 10 01:38:22 DESKTOP-1R6JDGE networkd-dispatcher[221]: UnknownState: n/a
+Sep 10 01:38:22 DESKTOP-1R6JDGE systemd[1]: Started Dispatcher daemon for systemd-networkd.
+Sep 10 01:38:23 DESKTOP-1R6JDGE kernel: [    4.934636] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 10 01:38:23 DESKTOP-1R6JDGE snapd[224]: overlord.go:284: Acquiring state lock file
+Sep 10 01:38:23 DESKTOP-1R6JDGE snapd[224]: overlord.go:289: Acquired state lock file
+Sep 10 01:38:23 DESKTOP-1R6JDGE snapd[224]: daemon.go:250: started snapd/2.68.4 (series 16; classic; devmode; wsl) ubuntu/22.04 (amd64) linux/6.6.87.2-microsoft-standa.
+Sep 10 01:38:23 DESKTOP-1R6JDGE systemd[1]: tmp-syscheck\x2dmountpoint\x2d3996023.mount: Deactivated successfully.
+Sep 10 01:38:23 DESKTOP-1R6JDGE snapd[224]: daemon.go:353: adjusting startup timeout by 55s (pessimistic estimate of 30s plus 5s per snap)
+Sep 10 01:38:23 DESKTOP-1R6JDGE snapd[224]: backends.go:91: AppArmor status: apparmor not enabled
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Started Snap Daemon.
+Sep 10 01:38:24 DESKTOP-1R6JDGE dbus-daemon[217]: [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.6' (uid=0 pid=224 comm="/usr/lib/snapd/snapd " label="kernel")
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Starting Time & Date Service...
+Sep 10 01:38:24 DESKTOP-1R6JDGE dbus-daemon[217]: [system] Successfully activated service 'org.freedesktop.timedate1'
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Started Time & Date Service.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Finished Wait until snapd is fully seeded.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Auto import assertions from block devices being skipped.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Reached target Multi-User System.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Reached target Graphical Interface.
+Sep 10 01:38:24 DESKTOP-1R6JDGE -m: i18n file is /snap/ubuntu-desktop-installer/1286/bin/subiquity/subiquitycore/i18n.py
+Sep 10 01:38:24 DESKTOP-1R6JDGE -m: Final localedir is /snap/ubuntu-desktop-installer/share/locale
+Sep 10 01:38:24 DESKTOP-1R6JDGE -m: switch_language en_US
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Starting Record Runlevel Change in UTMP...
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Finished Record Runlevel Change in UTMP.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Startup finished in 2.240s.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Created slice User Slice of UID 1000.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Starting User Runtime Directory /run/user/1000...
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Finished User Runtime Directory /run/user/1000.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Starting User Manager for UID 1000...
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Queued start job for default target Main User Target.
+Sep 10 01:38:24 DESKTOP-1R6JDGE kernel: [    6.270073] systemd-journald[40]: File /var/log/journal/e732954cd8f74711b31b325f2520d83e/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: dmesg.service: Deactivated successfully.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Created slice User Application Slice.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Reached target Paths.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Reached target Timers.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Listening on GnuPG network certificate management daemon.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Listening on GnuPG cryptographic agent and passphrase cache.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Listening on debconf communication socket.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Listening on REST API socket for snapd user session agent.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Reached target Sockets.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Reached target Basic System.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Reached target Main User Target.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[479]: Startup finished in 126ms.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Started User Manager for UID 1000.
+Sep 10 01:38:24 DESKTOP-1R6JDGE systemd[1]: Started Session 1 of User kaiser.
+Sep 10 01:38:41 DESKTOP-1R6JDGE systemd[1]: Starting Daily man-db regeneration...
+Sep 10 01:38:42 DESKTOP-1R6JDGE systemd[1]: man-db.service: Deactivated successfully.
+Sep 10 01:38:42 DESKTOP-1R6JDGE systemd[1]: Finished Daily man-db regeneration.
+Sep 10 01:38:54 DESKTOP-1R6JDGE systemd[1]: systemd-timedated.service: Deactivated successfully.
+Sep 10 01:39:03 DESKTOP-1R6JDGE systemd[1]: Starting Online ext4 Metadata Check for All Filesystems...
+Sep 10 01:39:03 DESKTOP-1R6JDGE systemd[1]: e2scrub_all.service: Deactivated successfully.
+Sep 10 01:39:03 DESKTOP-1R6JDGE systemd[1]: Finished Online ext4 Metadata Check for All Filesystems.
+Sep 10 01:39:07 DESKTOP-1R6JDGE kernel: [    7.639086] WSL (258) ERROR: CheckConnection: getaddrinfo() failed: -5
+Sep 10 01:39:07 DESKTOP-1R6JDGE kernel: [   49.650184] hv_balloon: Max. dynamic memory size: 7894 MB
+Sep 10 01:43:24 DESKTOP-1R6JDGE dbus-daemon[217]: [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.6' (uid=0 pid=224 comm="/usr/lib/snapd/snapd " label="kernel")
+Sep 10 01:43:24 DESKTOP-1R6JDGE systemd[1]: Starting Time & Date Service...
+Sep 10 01:43:25 DESKTOP-1R6JDGE dbus-daemon[217]: [system] Successfully activated service 'org.freedesktop.timedate1'
+Sep 10 01:43:25 DESKTOP-1R6JDGE systemd[1]: Started Time & Date Service.
+Sep 10 01:43:25 DESKTOP-1R6JDGE kernel: [  307.563127] TCP: eth0: Driver has suspect GRO implementation, TCP performance may be compromised.
+Sep 10 01:43:25 DESKTOP-1R6JDGE snapd[224]: storehelpers.go:916: cannot refresh: snap has no updates available: "bare", "gtk-common-themes", "ubuntu-desktop-installer"
+Sep 10 01:43:32 DESKTOP-1R6JDGE systemd[1]: Reloading.
+Sep 10 01:43:32 DESKTOP-1R6JDGE systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Sep 10 01:43:32 DESKTOP-1R6JDGE systemd[1]: Mounting Mount unit for snapd, revision 25202...
+Sep 10 01:43:32 DESKTOP-1R6JDGE systemd[1]: Mounted Mount unit for snapd, revision 25202.
+Sep 10 01:43:32 DESKTOP-1R6JDGE snapd[224]: daemon.go:548: gracefully waiting for running hooks
+Sep 10 01:43:32 DESKTOP-1R6JDGE snapd[224]: daemon.go:550: done waiting for running hooks
+Sep 10 01:43:35 DESKTOP-1R6JDGE snapd[224]: overlord.go:528: Released state lock file
+Sep 10 01:43:35 DESKTOP-1R6JDGE systemd[1]: snapd.service: Deactivated successfully.
+Sep 10 01:43:35 DESKTOP-1R6JDGE systemd[1]: snapd.service: Consumed 3.203s CPU time.
+Sep 10 01:43:36 DESKTOP-1R6JDGE systemd[1]: snapd.service: Scheduled restart job, restart counter is at 1.
+Sep 10 01:43:36 DESKTOP-1R6JDGE systemd[1]: Stopped Snap Daemon.
+Sep 10 01:43:36 DESKTOP-1R6JDGE systemd[1]: snapd.service: Consumed 3.203s CPU time.
+Sep 10 01:43:36 DESKTOP-1R6JDGE systemd[1]: Starting Snap Daemon...
+Sep 10 01:43:37 DESKTOP-1R6JDGE snapd[1956]: overlord.go:284: Acquiring state lock file
+Sep 10 01:43:37 DESKTOP-1R6JDGE snapd[1956]: overlord.go:289: Acquired state lock file
+Sep 10 01:43:37 DESKTOP-1R6JDGE snapd[1956]: patch.go:64: Patching system state level 6 to sublevel 1...
+Sep 10 01:43:37 DESKTOP-1R6JDGE snapd[1956]: patch.go:64: Patching system state level 6 to sublevel 2...
+Sep 10 01:43:37 DESKTOP-1R6JDGE snapd[1956]: patch.go:64: Patching system state level 6 to sublevel 3...
+Sep 10 01:43:37 DESKTOP-1R6JDGE snapd[1956]: daemon.go:276: started snapd/2.71 (series 16; classic; devmode; wsl) ubuntu/22.04 (amd64) linux/6.6.87.2-microsoft-standa.
+Sep 10 01:43:37 DESKTOP-1R6JDGE systemd[1]: tmp-syscheck\x2dmountpoint\x2d705527166.mount: Deactivated successfully.
+Sep 10 01:43:37 DESKTOP-1R6JDGE snapd[1956]: daemon.go:370: adjusting startup timeout by 55s (pessimistic estimate of 30s plus 5s per snap)
+Sep 10 01:43:37 DESKTOP-1R6JDGE snapd[1956]: backends.go:68: AppArmor status: apparmor not enabled
+Sep 10 01:43:37 DESKTOP-1R6JDGE systemd[1]: Started Snap Daemon.
+Sep 10 01:43:39 DESKTOP-1R6JDGE systemd[1]: snap-snapd-23771.mount: Deactivated successfully.
+Sep 10 01:43:39 DESKTOP-1R6JDGE systemd[1]: Reloading.
+Sep 10 01:43:39 DESKTOP-1R6JDGE systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Sep 10 01:43:44 DESKTOP-1R6JDGE systemd[1]: Reloading.
+Sep 10 01:43:44 DESKTOP-1R6JDGE systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Sep 10 01:43:44 DESKTOP-1R6JDGE systemd[1]: Mounting Mount unit for core22, revision 2111...
+Sep 10 01:43:44 DESKTOP-1R6JDGE systemd[1]: Mounted Mount unit for core22, revision 2111.
+Sep 10 01:43:45 DESKTOP-1R6JDGE systemd[1]: snap-core22-1908.mount: Deactivated successfully.
+Sep 10 01:43:45 DESKTOP-1R6JDGE systemd[1]: Reloading.
+Sep 10 01:43:45 DESKTOP-1R6JDGE systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+Sep 10 01:43:45 DESKTOP-1R6JDGE snapd[1956]: storehelpers.go:916: cannot refresh: snap has no updates available: "core22", "snapd"
+Sep 10 01:44:07 DESKTOP-1R6JDGE systemd[1]: systemd-timedated.service: Deactivated successfully.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: modprobe@pstore_zone.service: Deactivated successfully.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Load Kernel Module pstore_zone.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: modprobe@ramoops.service: Deactivated successfully.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Load Kernel Module ramoops.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Set the console keyboard layout.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Remount Root and Kernel File Systems.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Apply Kernel Variables.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounting FUSE Control File System...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] Linux version 6.6.87.2-microsoft-standard-WSL2 (root@439a258ad544) (gcc (GCC) 11.2.0, GNU ld (GNU Binutils) 2.37) #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Kernel Configuration File System being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] Command line: initrd=\initrd.img WSL_ROOT_INIT=1 panic=-1 nr_cpus=16 hv_utils.timesync_implicit=1 console=hvc0 debug pty.legacy_count=0 WSL_ENABLE_CRASH_DUMP=1
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] KERNEL supported cpus:
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000]   Intel GenuineIntel
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000]   AMD AuthenticAMD
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] BIOS-provided physical RAM map:
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009ffff] usable
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Flush Journal to Persistent Storage...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] BIOS-e820: [mem 0x00000000000e0000-0x00000000000e0fff] reserved
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000001fffff] ACPI data
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Platform Persistent Storage Archival being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] BIOS-e820: [mem 0x0000000000200000-0x00000000f7ffffff] usable
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] BIOS-e820: [mem 0x0000000100000000-0x00000001f55fffff] usable
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] NX (Execute Disable) protection: active
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] APIC: Static calls initialized
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Load/Save Random Seed being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] DMI not present or invalid.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] Hypervisor detected: Microsoft Hyper-V
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] Hyper-V: privilege flags low 0xae7f, high 0x3b8030, hints 0xc2c, misc 0x20bed7b2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] Hyper-V: Nested features: 0x0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] Hyper-V: LAPIC Timer Frequency: 0xc3500
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] Hyper-V: Using hypercall for remote TLB flush
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in First Boot Complete being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000000] clocksource: hyperv_clocksource_tsc_page: mask: 0xffffffffffffffff max_cycles: 0x24e6a1710, max_idle_ns: 440795202120 ns
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000001] clocksource: hyperv_clocksource_msr: mask: 0xffffffffffffffff max_cycles: 0x24e6a1710, max_idle_ns: 440795202120 ns
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000003] tsc: Marking TSC unstable due to running on Hyper-V
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000005] tsc: Detected 2894.553 MHz processor
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000064] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000067] e820: remove [mem 0x000a0000-0x000fffff] usable
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000070] last_pfn = 0x1f5600 max_arch_pfn = 0x400000000
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Create System Users...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000094] MTRR map: 5 entries (4 fixed + 1 variable; max 20), built from 8 variable MTRRs
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000096] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000141] last_pfn = 0xf8000 max_arch_pfn = 0x400000000
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000157] Using GB pages for direct mapping
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000325] RAMDISK: [mem 0x04be4000-0x04e7ffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000329] ACPI: Early table checksum verification disabled
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000333] ACPI: RSDP 0x00000000000E0000 000024 (v02 VRTUAL)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000337] ACPI: XSDT 0x0000000000100000 000044 (v01 VRTUAL MICROSFT 00000001 MSFT 00000001)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000342] ACPI: FACP 0x0000000000101000 000114 (v06 VRTUAL MICROSFT 00000001 MSFT 00000001)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000345] ACPI: DSDT 0x00000000001011B8 01E184 (v02 MSFTVM DSDT01   00000001 MSFT 05000000)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000348] ACPI: FACS 0x0000000000101114 000040
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000350] ACPI: OEM0 0x0000000000101154 000064 (v01 VRTUAL MICROSFT 00000001 MSFT 00000001)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000352] ACPI: SRAT 0x000000000011F33C 000310 (v02 VRTUAL MICROSFT 00000001 MSFT 00000001)
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounted FUSE Control File System.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000355] ACPI: APIC 0x000000000011F64C 0000C8 (v04 VRTUAL MICROSFT 00000001 MSFT 00000001)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000356] ACPI: Reserving FACP table memory at [mem 0x101000-0x101113]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000357] ACPI: Reserving DSDT table memory at [mem 0x1011b8-0x11f33b]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000358] ACPI: Reserving FACS table memory at [mem 0x101114-0x101153]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000359] ACPI: Reserving OEM0 table memory at [mem 0x101154-0x1011b7]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000359] ACPI: Reserving SRAT table memory at [mem 0x11f33c-0x11f64b]
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Create System Users.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000360] ACPI: Reserving APIC table memory at [mem 0x11f64c-0x11f713]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000397] SRAT: PXM 0 -> APIC 0x00 -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000398] SRAT: PXM 0 -> APIC 0x01 -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000399] SRAT: PXM 0 -> APIC 0x02 -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000399] SRAT: PXM 0 -> APIC 0x03 -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000400] SRAT: PXM 0 -> APIC 0x04 -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Create Static Device Nodes in /dev...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000400] SRAT: PXM 0 -> APIC 0x05 -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000401] SRAT: PXM 0 -> APIC 0x06 -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000401] SRAT: PXM 0 -> APIC 0x07 -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000402] SRAT: PXM 0 -> APIC 0x08 -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000403] SRAT: PXM 0 -> APIC 0x09 -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000403] SRAT: PXM 0 -> APIC 0x0a -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000404] SRAT: PXM 0 -> APIC 0x0b -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Create Static Device Nodes in /dev.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000404] SRAT: PXM 0 -> APIC 0x0c -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000405] SRAT: PXM 0 -> APIC 0x0d -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000405] SRAT: PXM 0 -> APIC 0x0e -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Preparation for Local File Systems.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000406] SRAT: PXM 0 -> APIC 0x0f -> Node 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000407] ACPI: SRAT: Node 0 PXM 0 [mem 0x00000000-0xf7ffffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000409] ACPI: SRAT: Node 0 PXM 0 [mem 0x100000000-0x1f55fffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000410] ACPI: SRAT: Node 0 PXM 0 [mem 0x1f5600000-0x9ffdfffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000411] ACPI: SRAT: Node 0 PXM 0 [mem 0x1000000000-0xfcffffffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000412] ACPI: SRAT: Node 0 PXM 0 [mem 0x10000000000-0x1ffffffffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000413] ACPI: SRAT: Node 0 PXM 0 [mem 0x20000000000-0x3ffffffffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000413] ACPI: SRAT: Node 0 PXM 0 [mem 0x40000000000-0x7ffffffffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000414] ACPI: SRAT: Node 0 PXM 0 [mem 0x80000000000-0xfffffffffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000415] ACPI: SRAT: Node 0 PXM 0 [mem 0x100000000000-0x1fffffffffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: snap.mount: Directory /snap to mount over is not empty, mounting anyway.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000416] ACPI: SRAT: Node 0 PXM 0 [mem 0x200000000000-0x3fffffffffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000417] ACPI: SRAT: Node 0 PXM 0 [mem 0x400000000000-0x7fffffffffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000418] ACPI: SRAT: Node 0 PXM 0 [mem 0x800000000000-0xffffffffffff] hotplug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000420] NUMA: Node 0 [mem 0x00000000-0xf7ffffff] + [mem 0x100000000-0x1f55fffff] -> [mem 0x00000000-0x1f55fffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000426] NODE_DATA(0) allocated [mem 0x1f55de000-0x1f55fffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000541] Zone ranges:
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounting Ensure that the snap directory shares mount events....
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000543]   DMA32    [mem 0x0000000000001000-0x00000000ffffffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000544]   Normal   [mem 0x0000000100000000-0x00000001f55fffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000546]   Device   empty
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000547] Movable zone start for each node
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Rule-based Manager for Device Events and Files...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000548] Early memory node ranges
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000548]   node   0: [mem 0x0000000000001000-0x000000000009ffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000550]   node   0: [mem 0x0000000000200000-0x00000000f7ffffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounted Ensure that the snap directory shares mount events..
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000551]   node   0: [mem 0x0000000100000000-0x00000001f55fffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000552] Initmem setup node 0 [mem 0x0000000000001000-0x00000001f55fffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.000588] On node 0, zone DMA32: 1 pages in unavailable ranges
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.029501] On node 0, zone DMA32: 352 pages in unavailable ranges
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.030844] On node 0, zone Normal: 10752 pages in unavailable ranges
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.030893] ACPI: PM-Timer IO Port: 0x408
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounting Mount unit for bare, revision 5...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.030900] ACPI: LAPIC_NMI (acpi_id[0x01] dfl dfl lint[0x1])
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032094] IOAPIC[0]: apic_id 16, version 17, address 0xfec00000, GSI 0-23
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032103] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032111] ACPI: Using ACPI (MADT) for SMP configuration information
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032114] smpboot: Allowing 16 CPUs, 0 hotplug CPUs
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounting Mount unit for core22, revision 1963...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032129] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032132] PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000dffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounting Mount unit for core22, revision 2111...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032134] PM: hibernation: Registered nosave memory: [mem 0x000e0000-0x000e0fff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032135] PM: hibernation: Registered nosave memory: [mem 0x000e1000-0x000fffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032136] PM: hibernation: Registered nosave memory: [mem 0x00100000-0x001fffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032138] PM: hibernation: Registered nosave memory: [mem 0xf8000000-0xffffffff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032141] [mem 0xf8000000-0xffffffff] available for PCI devices
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032143] Booting paravirtualized kernel on Hyper-V
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032147] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounting Mount unit for gtk-common-themes, revision 1535...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.032223] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:16 nr_cpu_ids:16 nr_node_ids:1
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.035063] percpu: Embedded 63 pages/cpu s221184 r8192 d28672 u262144
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.035074] pcpu-alloc: s221184 r8192 d28672 u262144 alloc=1*2097152
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.035076] pcpu-alloc: [0] 00 01 02 03 04 05 06 07 [0] 08 09 10 11 12 13 14 15 
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounting Mount unit for snapd, revision 24505...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounting Mount unit for snapd, revision 25202...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounting Mount unit for ubuntu-desktop-installer, revision 1278...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounting Mount unit for ubuntu-desktop-installer, revision 1286...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Coldplug All udev Devices.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounted Mount unit for bare, revision 5.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounted Mount unit for core22, revision 1963.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounted Mount unit for core22, revision 2111.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounted Mount unit for gtk-common-themes, revision 1535.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounted Mount unit for snapd, revision 24505.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounted Mount unit for snapd, revision 25202.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounted Mount unit for ubuntu-desktop-installer, revision 1278.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Mounted Mount unit for ubuntu-desktop-installer, revision 1286.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Mounted snaps.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Local File Systems.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.035097] Hyper-V: PV spinlocks enabled
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Load AppArmor profiles being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.035099] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.035101] Kernel command line: initrd=\initrd.img WSL_ROOT_INIT=1 panic=-1 nr_cpus=16 hv_utils.timesync_implicit=1 console=hvc0 debug pty.legacy_count=0 WSL_ENABLE_CRASH_DUMP=1
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.035218] Unknown kernel command line parameters "WSL_ROOT_INIT=1 WSL_ENABLE_CRASH_DUMP=1", will be passed to user space.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.035254] random: crng init done
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.038984] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.040814] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Set console font and keymap...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.040959] Fallback order for Node 0: 0 
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.040966] Built 1 zonelists, mobility grouping on.  Total pages: 1988264
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.040967] Policy zone: Normal
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.040976] mem auto-init: stack:off, heap alloc:on, heap free:off
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Tell Plymouth To Write Out Runtime Data...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.040983] software IO TLB: area num 16.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.095359] Memory: 4123788K/8082044K available (20480K kernel code, 3457K rwdata, 13496K rodata, 4492K init, 6208K bss, 262424K reserved, 0K cma-reserved)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.095583] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=16, Nodes=1
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.095643] ftrace: allocating 55808 entries in 218 pages
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.104152] ftrace: allocated 218 pages with 5 groups
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Load AppArmor profiles managed internally by snapd being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.105349] Dynamic Preempt: none
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.105464] rcu: Preemptible hierarchical RCU implementation.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.105465] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=16.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.105466] 	Trampoline variant of Tasks RCU enabled.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Store a System Token in an EFI Variable being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Commit a transient machine-id on disk being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.105466] 	Rude variant of Tasks RCU enabled.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.105466] 	Tracing variant of Tasks RCU enabled.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.105467] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.105468] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=16
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.109184] Using NULL legacy PIC
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Uncomplicated firewall...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.109185] NR_IRQS: 524544, nr_irqs: 552, preallocated irqs: 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.109242] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.109804] Console: colour dummy device 80x25
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.109825] ACPI: Core revision 20230628
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Set console font and keymap.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.109931] Failed to register legacy timer interrupt
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.109932] APIC: Switch to symmetric I/O mode setup
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112050] APIC: Switched APIC routing to: physical flat
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112056] Hyper-V: Host Build 10.0.19041.6328-6-0
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Uncomplicated firewall.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112058] Hyper-V: enabling crash_kexec_post_notifiers
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112110] Hyper-V: Using IPI hypercalls
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112113] APIC: send_IPI() replaced with hv_send_ipi()
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112119] APIC: send_IPI_mask() replaced with hv_send_ipi_mask()
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112120] APIC: send_IPI_mask_allbutself() replaced with hv_send_ipi_mask_allbutself()
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Rule-based Manager for Device Events and Files.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112122] APIC: send_IPI_allbutself() replaced with hv_send_ipi_allbutself()
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112123] APIC: send_IPI_all() replaced with hv_send_ipi_all()
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112124] APIC: send_IPI_self() replaced with hv_send_ipi_self()
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112125] Hyper-V: Using enlightened APIC (xapic mode)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112132] APIC: eoi() replaced with hv_apic_eoi_write()
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112151] APIC: read() replaced with hv_apic_read()
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112166] APIC: write() replaced with hv_apic_write()
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Preparation for Network.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112168] APIC: icr_write() replaced with hv_apic_icr_write()
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112169] APIC: icr_read() replaced with hv_apic_icr_read()
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112305] Calibrating delay loop (skipped), value calculated using timer frequency.. 5789.10 BogoMIPS (lpj=11578212)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112403] x86/cpu: User Mode Instruction Prevention (UMIP) activated
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112429] Last level iTLB entries: 4KB 1024, 2MB 1024, 4MB 512
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112430] Last level dTLB entries: 4KB 2048, 2MB 2048, 4MB 1024, 1GB 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Show Plymouth Boot Screen being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112433] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112435] Spectre V2 : Mitigation: Retpolines
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112435] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112436] Spectre V2 : Spectre v2 / SpectreRSB : Filling RSB on VMEXIT
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112436] Spectre V2 : Enabling Speculation Barrier for firmware calls
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112436] RETBleed: Mitigation: untrained return thunk
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112438] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112438] Spectre V2 : Selecting STIBP always-on mode to complement retbleed mitigation
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112439] Spectre V2 : User space: Mitigation: STIBP always-on protection
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112439] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112440] Speculative Return Stack Overflow: IBPB-extending microcode not applied!
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Forward Password Requests to Plymouth Directory Watch being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112441] Speculative Return Stack Overflow: WARNING: See https://kernel.org/doc/html/latest/admin-guide/hw-vuln/srso.html for mitigation options.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112441] Speculative Return Stack Overflow: Vulnerable: Safe RET, no microcode
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112451] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112452] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Local Encrypted Volumes.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112453] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112454] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.112455] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'compacted' format.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] Freeing SMP alternatives memory: 44K
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] pid_max: default: 32768 minimum: 301
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] LSM: initializing lsm=capability,landlock,yama,safesetid,selinux,integrity
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] landlock: Up and running.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] Yama: becoming mindful.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] SELinux:  Initializing.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Load Kernel Module configfs...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] smpboot: CPU0: AMD Ryzen 7 4800H with Radeon Graphics (family: 0x17, model: 0x60, stepping: 0x1)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] RCU Tasks: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=16.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] RCU Tasks Rude: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=16.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] RCU Tasks Trace: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=16.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] Performance Events: PMU not available due to virtualization, using software events only.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Tell Plymouth To Write Out Runtime Data.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] signal: max sigframe size: 1776
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] rcu: Hierarchical SRCU implementation.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.116301] rcu: 	Max phase no-delay instances is 1000.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.117481] NMI watchdog: Perf NMI watchdog permanently disabled
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: modprobe@configfs.service: Deactivated successfully.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.117942] smp: Bringing up secondary CPUs ...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.118172] smpboot: x86: Booting SMP configuration:
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Load Kernel Module configfs.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.118173] .... node  #0, CPUs:        #2  #4  #6  #8 #10 #12 #14  #1  #3  #5  #7  #9 #11 #13 #15
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Kernel Configuration File System being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    0.764910] Spectre V2 : Update user space SMT mitigation: STIBP always-on
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.324702] smp: Brought up 1 node, 16 CPUs
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.324710] smpboot: Max logical packages: 1
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.324714] smpboot: Total of 16 processors activated (93904.41 BogoMIPS)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.336364] node 0 deferred pages initialised in 12ms
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Flush Journal to Persistent Storage.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd-udevd[138]: Using default interface naming scheme 'v249'.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.337082] devtmpfs: initialized
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.337082] x86/mm: Memory block size: 128MB
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.338104] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.340314] futex hash table entries: 4096 (order: 6, 262144 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.340444] pinctrl core: initialized pinctrl subsystem
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.342209] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Create Volatile Files and Directories...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Create Volatile Files and Directories.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd-udevd[135]: sda: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/sda' failed with exit code 1.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd-udevd[128]: sdb: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/sdb' failed with exit code 1.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Network Name Resolution...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd-udevd[139]: sdc: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/sdc' failed with exit code 1.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Network Time Synchronization being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target System Time Set.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Record System Boot/Shutdown in UTMP...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd-udevd[129]: sdd: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/sdd' failed with exit code 1.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in WSLg Remount Service being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Record System Boot/Shutdown in UTMP.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target System Initialization.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.343006] DMA: preallocated 1024 KiB GFP_KERNEL pool for atomic allocations
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Process error reports when automatic reporting is enabled (file watch) being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.343518] DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.343563] audit: initializing netlink subsys (disabled)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.343610] audit: type=2000 audit(1758052801.228:1): state=initialized audit_enabled=0 res=1
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.343610] thermal_sys: Registered thermal governor 'step_wise'
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.343610] thermal_sys: Registered thermal governor 'user_space'
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.343610] cpuidle: using governor ladder
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Process error reports when automatic reporting is enabled (timer based) being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Daily apt download activities.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Daily apt upgrade and clean activities.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Daily dpkg database backup timer.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Periodic ext4 Online Metadata Check for All Filesystems.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Discard unused blocks once a week being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Daily rotation of log files.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Daily man-db regeneration.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Message of the Day.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Timer to automatically fetch and run repair assertions being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Daily Cleanup of Temporary Directories.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Ubuntu Advantage Timer for running repeated jobs.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Path Units.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Timer Units.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Listening on Unix socket for apport crash forwarding.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Listening on D-Bus System Message Bus Socket.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.343610] cpuidle: using governor menu
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Socket activation for snappy daemon...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.344453] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.344552] dca service started, version 1.12.1
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.344569] PCI: Fatal: No config space access function found
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Listening on UUID daemon activation socket.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.345665] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.345693] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Listening on Socket activation for snappy daemon.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Socket Units.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.345693] HugeTLB: 16380 KiB vmemmap can be freed for a 1.00 GiB page
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.345693] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.345693] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.348406] cryptd: max_cpu_qlen set to 1000
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.348532] ACPI: Added _OSI(Module Device)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.348535] ACPI: Added _OSI(Processor Device)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.348536] ACPI: Added _OSI(3.0 _SCP Extensions)
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Basic System.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.348538] ACPI: Added _OSI(Processor Aggregator Device)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.358612] ACPI: 1 ACPI AML tables successfully acquired and loaded
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.360577] ACPI: _OSC evaluation for CPUs failed, trying _PDC
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.360577] ACPI: Interpreter enabled
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.360577] ACPI: PM: (supports S0 S5)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.360577] ACPI: Using IOAPIC for interrupt routing
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting LSB: automatic crash report generation...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Regular background program processing daemon.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started D-Bus System Message Bus.
+Sep 16 23:00:05 DESKTOP-1R6JDGE cron[216]: (CRON) INFO (pidfile fd = 3)
+Sep 16 23:00:05 DESKTOP-1R6JDGE cron[216]: (CRON) INFO (Running @reboot jobs)
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Save initial kernel messages after boot.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Remove Stale Online ext4 Metadata Check Snapshots...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in getty on tty2-tty6 if dbus and logind are not available being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in irqbalance daemon being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Dispatcher daemon for systemd-networkd...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting System Logging Service...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.360577] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.360577] PCI: Using E820 reservations for host bridge windows
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.361121] ACPI: Enabled 2 GPEs in block 00 to 0F
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.364428] iommu: Default domain type: Translated
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.364428] iommu: DMA domain TLB invalidation policy: lazy mode
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.364853] SCSI subsystem initialized
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Automatically repair incorrect owner/permissions on core devices being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.368389] libata version 3.00 loaded.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.368389] pps_core: LinuxPPS API ver. 1 registered
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.368389] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.368389] PTP clock support registered
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.368390] EDAC MC: Ver: 3.0.0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.376484] hv_vmbus: Vmbus version:5.2
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Wait for the Ubuntu Core chooser trigger being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.376660] hv_vmbus: Unknown GUID: 6e382d18-3336-4f4b-acc4-2b7703d4df4a
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.376712] hv_vmbus: Unknown GUID: dde9cbc0-5060-4436-9448-ea1254a5d177
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.376841] hv_vmbus: Unknown GUID: 6e382d18-3336-4f4b-acc4-2b7703d4df4a
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.376759] NetLabel: Initializing
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.376764] NetLabel:  domain hash size = 128
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.376766] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.376809] NetLabel:  unlabeled traffic allowed by default
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.376811] PCI: Using ACPI for IRQ routing
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.376814] PCI: System does not support PCI
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.380332] vgaarb: loaded
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.380729] clocksource: Switched to clocksource hyperv_clocksource_tsc_page
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.381684] VFS: Disk quotas dquot_6.6.0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.381702] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.381749] FS-Cache: Loaded
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.381808] pnp: PnP ACPI init
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.382123] pnp: PnP ACPI: found 1 devices
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.394099] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.394246] NET: Registered PF_INET protocol family
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.394762] IP idents hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.395974] tcp_listen_portaddr_hash hash table entries: 4096 (order: 4, 65536 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.396091] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.396364] TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.397316] TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.397424] TCP: Hash tables configured (established 65536 bind 65536)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.397606] UDP hash table entries: 4096 (order: 5, 131072 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.397676] UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes, linear)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.397769] NET: Registered PF_UNIX/PF_LOCAL protocol family
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.397779] NET: Registered PF_XDP protocol family
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.397786] PCI: CLS 0 bytes, default 64
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.397819] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.397820] software IO TLB: mapped [mem 0x00000000f4000000-0x00000000f8000000] (64MB)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.398252] Trying to unpack rootfs image as initramfs...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.402182] Freeing initrd memory: 2672K
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.402518] Initialise system trusted keyrings
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.402526] Key type blacklist registered
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.402818] workingset: timestamp_bits=36 max_order=21 bucket_order=0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.403285] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.403306] fuse: init (API version 7.39)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.403764] SGI XFS with ACLs, security attributes, realtime, verbose warnings, quota, no debug enabled
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.404285] 9p: Installing v9fs 9p2000 file system support
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.414520] Key type asymmetric registered
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.414524] Asymmetric key parser 'x509' registered
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.414563] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.414852] io scheduler mq-deadline registered
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.414856] io scheduler kyber registered
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Preparation for Logins.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.420111] hv_vmbus: registering driver hv_pci
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.432217] hv_pci 594002dc-e5f1-4593-8f8b-c8f65a3eaa96: PCI VMBus probing: Using version 0x10003
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.433615] hv_pci 594002dc-e5f1-4593-8f8b-c8f65a3eaa96: PCI host bridge to bus e5f1:00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.433618] pci_bus e5f1:00: root bus resource [mem 0x9ffe00000-0x9ffe02fff window]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.433621] pci_bus e5f1:00: No busn resource found for root bus, will use [bus 00-ff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.434399] pci e5f1:00:00.0: [1af4:1043] type 00 class 0x010000
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.435094] pci e5f1:00:00.0: reg 0x10: [mem 0x9ffe00000-0x9ffe00fff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.435516] pci e5f1:00:00.0: reg 0x18: [mem 0x9ffe01000-0x9ffe01fff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Wait until snapd is fully seeded...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Snap Daemon...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.435951] pci e5f1:00:00.0: reg 0x20: [mem 0x9ffe02000-0x9ffe02fff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.438822] pci_bus e5f1:00: busn_res: [bus 00-ff] end is updated to 00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.438829] pci e5f1:00:00.0: BAR 0: assigned [mem 0x9ffe00000-0x9ffe00fff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.439151] pci e5f1:00:00.0: BAR 2: assigned [mem 0x9ffe01000-0x9ffe01fff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting User Login Management...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.439476] pci e5f1:00:00.0: BAR 4: assigned [mem 0x9ffe02000-0x9ffe02fff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Ubuntu Advantage reboot cmds being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Rotate log files...
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.440506] hv_pci cde895c0-01b0-4a32-94d6-e420d3356596: PCI VMBus probing: Using version 0x10003
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.441317] hv_pci cde895c0-01b0-4a32-94d6-e420d3356596: PCI host bridge to bus 01b0:00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.441320] pci_bus 01b0:00: No busn resource found for root bus, will use [bus 00-ff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.441699] pci 01b0:00:00.0: [1414:008e] type 00 class 0x030200
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.446278] pci_bus 01b0:00: busn_res: [bus 00-ff] end is updated to 00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.447082] hv_pci c2f5a956-39fd-4075-92cd-cead260fb681: PCI VMBus probing: Using version 0x10003
+Sep 16 23:00:05 DESKTOP-1R6JDGE rsyslogd: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2112.0]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.447881] hv_pci c2f5a956-39fd-4075-92cd-cead260fb681: PCI host bridge to bus 39fd:00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.447883] pci_bus 39fd:00: No busn resource found for root bus, will use [bus 00-ff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.448251] pci 39fd:00:00.0: [1414:008e] type 00 class 0x030200
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.452617] pci_bus 39fd:00: busn_res: [bus 00-ff] end is updated to 00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.453754] ioatdma: Intel(R) QuickData Technology Driver 5.00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.453901] virtio-pci e5f1:00:00.0: enabling device (0000 -> 0002)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.457619] Serial: 8250/16550 driver, 8 ports, IRQ sharing enabled
+Sep 16 23:00:05 DESKTOP-1R6JDGE rsyslogd: rsyslogd's groupid changed to 111
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.498335] Linux agpgart interface v0.103
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.498370] AMD-Vi: AMD IOMMUv2 functionality not available on this system - This is not a bug.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.498380] ACPI: bus type drm_connector registered
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.501477] printk: console [hvc0] enabled
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.507861] brd: module loaded
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.512787] loop: module loaded
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.513626] Loading iSCSI transport class v2.0-870.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.514525] rdac: device handler registered
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.515073] Microchip SmartPQI Driver (v2.1.24-046)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.515454] VMware PVSCSI driver - version 1.0.7.0-k
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.515787] hv_vmbus: registering driver hv_storvsc
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.518125] scsi host0: storvsc_host_t
+Sep 16 23:00:05 DESKTOP-1R6JDGE rsyslogd: rsyslogd's userid changed to 104
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.518202] PPP generic driver version 2.4.2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.518983] VMware vmxnet3 virtual NIC driver - version 1.7.0.0-k-NAPI
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.519479] hv_vmbus: registering driver hv_netvsc
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.519855] Fusion MPT base driver 3.04.20
+Sep 16 23:00:05 DESKTOP-1R6JDGE rsyslogd: [origin software="rsyslogd" swVersion="8.2112.0" x-pid="223" x-info="https://www.rsyslog.com"] start
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.520085] Copyright (c) 1999-2008 LSI Corporation
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.520397] Fusion MPT SPI Host driver 3.04.20
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.520727] Fusion MPT SAS Host driver 3.04.20
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.521051] Fusion MPT misc device (ioctl) driver 3.04.20
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.521551] mptctl: Registered with Fusion MPT base driver
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.521881] mptctl: /dev/mptctl @ (major,minor=10,220)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.522285] i8042: PNP: No PS/2 controller found.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.522660] hv_vmbus: registering driver hyperv_keyboard
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.523078] rtc_cmos 00:00: RTC can wake from S4
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.525657] rtc_cmos 00:00: registered as rtc0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.526760] rtc_cmos 00:00: setting system clock to 2025-09-16T20:00:01 UTC (1758052801)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.527640] rtc_cmos 00:00: alarms up to one month, 114 bytes nvram
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.528149] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.529020] device-mapper: uevent: version 1.0.3
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.529636] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@redhat.com
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.531029] hv_utils: Registering HyperV Utility Driver
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.531519] hv_vmbus: registering driver hv_utils
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.531930] hv_vmbus: registering driver hv_balloon
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.532441] hv_vmbus: registering driver dxgkrnl
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.532564] hv_utils: TimeSync IC version 4.0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.534171] hv_balloon: Using Dynamic Memory protocol version 2.0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.535118] Free page reporting enabled
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.535340] hv_balloon: Cold memory discard hint enabled with order 9
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.536884] drop_monitor: Initializing network drop monitor service
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.556542] NET: Registered PF_INET6 protocol family
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.558187] Segment Routing with IPv6
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.558645] In-situ OAM (IOAM) with IPv6
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.559108] NET: Registered PF_PACKET protocol family
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.560184] 9pnet: Installing 9P2000 support
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.560683] NET: Registered PF_VSOCK protocol family
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.561074] hv_vmbus: registering driver hv_sock
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.564649] IPI shorthand broadcast: enabled
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.565204] AVX2 version of gcm_enc/dec engaged.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.566612] AES CTR mode by8 optimization enabled
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.571251] sched_clock: Marking stable (1568007700, 2583300)->(1613937100, -43346100)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.573145] registered taskstats version 1
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.573771] Loading compiled-in X.509 certificates
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.581007] ima: No TPM chip found, activating TPM-bypass!
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.582616] ima: Allocated hash algorithm: sha256
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.583967] ima: No architecture policies found
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.670308] RAS: Correctable Errors collector initialized.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.671238] clk: Disabling unused clocks
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.673570] Freeing unused decrypted memory: 2028K
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.675427] Freeing unused kernel image (initmem) memory: 4492K
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.675936] Write protecting the kernel read-only data: 34816k
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.677420] Freeing unused kernel image (rodata/data gap) memory: 840K
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.677869] Run /init as init process
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.678141]   with arguments:
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.678403]     /init
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.678610]   with environment:
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.678878]     HOME=/
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.679042]     TERM=linux
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.679252]     WSL_ROOT_INIT=1
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.679509]     WSL_ENABLE_CRASH_DUMP=1
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.767886] scsi 0:0:0:0: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.771076] scsi 0:0:0:1: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.779102] sd 0:0:0:0: Attached scsi generic sg0 type 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.779360] sd 0:0:0:0: [sda] 795536 512-byte logical blocks: (407 MB/388 MiB)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.780015] sd 0:0:0:1: Attached scsi generic sg1 type 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.780366] sd 0:0:0:0: [sda] Write Protect is on
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.780400] sd 0:0:0:1: [sdb] 381016 512-byte logical blocks: (195 MB/186 MiB)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.780505] sd 0:0:0:1: [sdb] Write Protect is on
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.780508] sd 0:0:0:1: [sdb] Mode Sense: 0f 00 80 00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.780709] sd 0:0:0:1: [sdb] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.781017] sd 0:0:0:0: [sda] Mode Sense: 0f 00 80 00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.783097] sd 0:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.783736] sd 0:0:0:1: [sdb] Attached SCSI disk
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.785938] sd 0:0:0:0: [sda] Attached SCSI disk
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.791181] scsi 0:0:0:2: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.797916] sd 0:0:0:2: Attached scsi generic sg2 type 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.798142] sd 0:0:0:2: [sdc] 4194312 512-byte logical blocks: (2.15 GB/2.00 GiB)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.798437] EXT4-fs (sda): mounted filesystem 00000000-0000-0000-0000-000000000000 ro without journal. Quota mode: none.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.799831] sd 0:0:0:2: [sdc] 4096-byte physical blocks
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.800236] sd 0:0:0:2: [sdc] Write Protect is off
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.800567] sd 0:0:0:2: [sdc] Mode Sense: 0f 00 00 00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.801054] sd 0:0:0:2: [sdc] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.802340] EXT4-fs (sdb): mounted filesystem 00000000-0000-0000-0000-000000000000 ro without journal. Quota mode: none.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.803563] sd 0:0:0:2: [sdc] Attached SCSI disk
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.831472] tun: Universal TUN/TAP device driver, 1.6
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.863828] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.867302] Bridge firewalling registered
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    1.869921] Adding 2097152k swap on /dev/sdc.  Priority:-2 extents:1 across:2097152k 
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.556750] hv_pci dcf5fe87-136f-4f0f-952f-782a254808e7: PCI VMBus probing: Using version 0x10003
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.558864] hv_pci dcf5fe87-136f-4f0f-952f-782a254808e7: PCI host bridge to bus 136f:00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.559560] pci_bus 136f:00: root bus resource [mem 0xc00000000-0xe00001fff window]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.560021] pci_bus 136f:00: No busn resource found for root bus, will use [bus 00-ff]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.562052] pci 136f:00:00.0: [1af4:105a] type 00 class 0x088000
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.563186] pci 136f:00:00.0: reg 0x10: [mem 0xe00000000-0xe00000fff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.564001] pci 136f:00:00.0: reg 0x18: [mem 0xe00001000-0xe00001fff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.565136] pci 136f:00:00.0: reg 0x20: [mem 0xc00000000-0xdffffffff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.569113] pci_bus 136f:00: busn_res: [bus 00-ff] end is updated to 00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.570137] pci 136f:00:00.0: BAR 4: assigned [mem 0xc00000000-0xdffffffff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.571491] pci 136f:00:00.0: BAR 0: assigned [mem 0xe00000000-0xe00000fff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.572324] pci 136f:00:00.0: BAR 2: assigned [mem 0xe00001000-0xe00001fff 64bit]
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.573250] virtio-pci 136f:00:00.0: enabling device (0000 -> 0002)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.590858] virtiofs virtio1: Cache len: 0x200000000 @ 0xc00000000
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.845391] scsi 0:0:0:3: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.853398] sd 0:0:0:3: Attached scsi generic sg3 type 0
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.853624] sd 0:0:0:3: [sdd] 2147483648 512-byte logical blocks: (1.10 TB/1.00 TiB)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.855097] sd 0:0:0:3: [sdd] 4096-byte physical blocks
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.855627] sd 0:0:0:3: [sdd] Write Protect is off
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.855950] sd 0:0:0:3: [sdd] Mode Sense: 0f 00 00 00
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.856427] sd 0:0:0:3: [sdd] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    2.859089] sd 0:0:0:3: [sdd] Attached SCSI disk
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.163052] EXT4-fs (sdd): recovery complete
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.165622] EXT4-fs (sdd): mounted filesystem 4f84b2f5-899f-45ef-a50a-8aee04a2f9ea r/w with ordered data mode. Quota mode: none.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.579693] hv_balloon: Cold memory discard hypercall failed with status 1b00000005
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.580512] hv_balloon: Underlying Hyper-V does not support order less than 9. Hypercall failed
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.581084] hv_balloon: Defaulting to page_reporting_order 9
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.802927] pulseaudio[294]: memfd_create() called without MFD_EXEC or MFD_NOEXEC_SEAL set
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.945681] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.954448] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.955595] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.956515] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.957468] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.961930] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.962778] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.963639] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.964696] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    3.965472] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.227407] systemd-journald[40]: Received client request to flush runtime journal.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.237015] systemd-journald[40]: File /var/log/journal/e732954cd8f74711b31b325f2520d83e/system.journal corrupted or uncleanly shut down, renaming and replacing.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.380365] ACPI: AC: AC Adapter [AC1] (on-line)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.380821] ACPI: battery: Slot [BAT1] (battery present)
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.500600] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started System Logging Service.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: e2scrub_reap.service: Deactivated successfully.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Remove Stale Online ext4 Metadata Check Snapshots.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started LSB: automatic crash report generation.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd-resolved[192]: Positive Trust Anchors:
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd-resolved[192]: . IN DS 20326 8 2 e06d44b80b8f1d39a95c0b0d7c65d08458e880409bbc683457104237c7f8ec8d
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd-resolved[192]: Negative trust anchors: home.arpa 10.in-addr.arpa 16.172.in-addr.arpa 17.172.in-addr.arpa 18.172.in-addr.arpa 19.172.in-addr.arpa 20.172.in-addr.arpa 21.172.in-addr.arpa 22.172.in-addr.arpa 23.172.in-addr.arpa 24.172.in-addr.arpa 25.172.in-addr.arpa 26.172.in-addr.arpa 27.172.in-addr.arpa 28.172.in-addr.arpa 29.172.in-addr.arpa 30.172.in-addr.arpa 31.172.in-addr.arpa 168.192.in-addr.arpa d.f.ip6.arpa corp home internal intranet lan local private test
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started User Login Management.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd-resolved[192]: Using system hostname 'DESKTOP-1R6JDGE'.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Network Name Resolution.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Network.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Host and Network Name Lookups.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Service for snap application ubuntu-desktop-installer.subiquity-server.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Permit User Sessions...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Ubuntu Pro Background Auto Attach being skipped.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Unattended Upgrades Shutdown.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: logrotate.service: Deactivated successfully.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Rotate log files.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Permit User Sessions.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Hold until boot process finishes up...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Terminate Plymouth Boot Screen...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Hold until boot process finishes up.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Console Getty.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Starting Set console scheme...
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Terminate Plymouth Boot Screen.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Finished Set console scheme.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Created slice Slice /system/getty.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Getty on tty1.
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Reached target Login Prompts.
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]: No valid path found for iwconfig
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]: No valid path found for iw
+Sep 16 23:00:05 DESKTOP-1R6JDGE dbus-daemon[218]: [system] Activating via systemd: service name='org.freedesktop.network1' unit='dbus-org.freedesktop.network1.service' requested by ':1.3' (uid=0 pid=283 comm="/usr/bin/networkctl list --no-pager --no-legend " label="kernel")
+Sep 16 23:00:05 DESKTOP-1R6JDGE dbus-daemon[218]: [system] Activation via systemd failed for unit 'dbus-org.freedesktop.network1.service': Unit dbus-org.freedesktop.network1.service not found.
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[283]: WARNING: systemd-networkd is not running, output will be incomplete.
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]: ERROR:Unknown state for interface NetworkctlListState(idx=1, name='lo', type='loopback', operational='n/a', administrative='unmanaged'): n/a
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]: Traceback (most recent call last):
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]:   File "/usr/bin/networkd-dispatcher", line 298, in trigger_all
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]:     self.handle_state(iface_name,
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]:   File "/usr/bin/networkd-dispatcher", line 348, in handle_state
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]:     raise UnknownState(operational_state)
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]: UnknownState: n/a
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]: ERROR:Unknown state for interface NetworkctlListState(idx=2, name='eth0', type='ether', operational='n/a', administrative='unmanaged'): n/a
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]: Traceback (most recent call last):
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]:   File "/usr/bin/networkd-dispatcher", line 298, in trigger_all
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]:     self.handle_state(iface_name,
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]:   File "/usr/bin/networkd-dispatcher", line 348, in handle_state
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]:     raise UnknownState(operational_state)
+Sep 16 23:00:05 DESKTOP-1R6JDGE networkd-dispatcher[222]: UnknownState: n/a
+Sep 16 23:00:05 DESKTOP-1R6JDGE systemd[1]: Started Dispatcher daemon for systemd-networkd.
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.774129] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.774972] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.776349] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.777305] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.778014] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.778637] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.779527] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.780272] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.780933] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.781554] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.782210] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.782841] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    4.783410] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:05 DESKTOP-1R6JDGE kernel: [    5.055317] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:00:06 DESKTOP-1R6JDGE snapd[225]: overlord.go:284: Acquiring state lock file
+Sep 16 23:00:06 DESKTOP-1R6JDGE snapd[225]: overlord.go:289: Acquired state lock file
+Sep 16 23:00:06 DESKTOP-1R6JDGE snapd[225]: daemon.go:276: started snapd/2.71 (series 16; classic; devmode; wsl) ubuntu/22.04 (amd64) linux/6.6.87.2-microsoft-standa.
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: tmp-syscheck\x2dmountpoint\x2d3866432253.mount: Deactivated successfully.
+Sep 16 23:00:06 DESKTOP-1R6JDGE snapd[225]: daemon.go:370: adjusting startup timeout by 55s (pessimistic estimate of 30s plus 5s per snap)
+Sep 16 23:00:06 DESKTOP-1R6JDGE snapd[225]: backends.go:68: AppArmor status: apparmor not enabled
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: Started Snap Daemon.
+Sep 16 23:00:06 DESKTOP-1R6JDGE dbus-daemon[218]: [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.6' (uid=0 pid=225 comm="/usr/lib/snapd/snapd " label="kernel")
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: Starting Time & Date Service...
+Sep 16 23:00:06 DESKTOP-1R6JDGE dbus-daemon[218]: [system] Successfully activated service 'org.freedesktop.timedate1'
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: Started Time & Date Service.
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: Finished Wait until snapd is fully seeded.
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: Condition check resulted in Auto import assertions from block devices being skipped.
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: Reached target Multi-User System.
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: Reached target Graphical Interface.
+Sep 16 23:00:06 DESKTOP-1R6JDGE -m: i18n file is /snap/ubuntu-desktop-installer/1286/bin/subiquity/subiquitycore/i18n.py
+Sep 16 23:00:06 DESKTOP-1R6JDGE -m: Final localedir is /snap/ubuntu-desktop-installer/share/locale
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: Starting Record Runlevel Change in UTMP...
+Sep 16 23:00:06 DESKTOP-1R6JDGE -m: switch_language en_US
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: Finished Record Runlevel Change in UTMP.
+Sep 16 23:00:06 DESKTOP-1R6JDGE systemd[1]: Startup finished in 2.186s.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[1]: Created slice User Slice of UID 1000.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[1]: Starting User Runtime Directory /run/user/1000...
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[1]: dmesg.service: Deactivated successfully.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[1]: Finished User Runtime Directory /run/user/1000.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[1]: Starting User Manager for UID 1000...
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Queued start job for default target Main User Target.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Created slice User Application Slice.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Reached target Paths.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Reached target Timers.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Listening on GnuPG network certificate management daemon.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Listening on GnuPG cryptographic agent and passphrase cache.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Listening on debconf communication socket.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Listening on REST API socket for snapd user session agent.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Reached target Sockets.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Reached target Basic System.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Reached target Main User Target.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[1]: Started User Manager for UID 1000.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[1]: Started Session 1 of User kaiser.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Starting WSLg user service...
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Finished WSLg user service.
+Sep 16 23:00:07 DESKTOP-1R6JDGE systemd[438]: Startup finished in 160ms.
+Sep 16 23:00:21 DESKTOP-1R6JDGE systemd[1]: Starting Online ext4 Metadata Check for All Filesystems...
+Sep 16 23:00:22 DESKTOP-1R6JDGE systemd[1]: e2scrub_all.service: Deactivated successfully.
+Sep 16 23:00:22 DESKTOP-1R6JDGE systemd[1]: Finished Online ext4 Metadata Check for All Filesystems.
+Sep 16 23:00:38 DESKTOP-1R6JDGE systemd[1]: systemd-timedated.service: Deactivated successfully.
+Sep 16 23:00:50 DESKTOP-1R6JDGE kernel: [    7.526035] WSL (258) ERROR: CheckConnection: getaddrinfo() failed: -5
+Sep 16 23:00:50 DESKTOP-1R6JDGE kernel: [   49.622728] hv_balloon: Max. dynamic memory size: 7894 MB
+Sep 16 23:01:59 DESKTOP-1R6JDGE kernel: [   54.213147] WSL (258) ERROR: CheckConnection: getaddrinfo() failed: -5
+Sep 16 23:01:59 DESKTOP-1R6JDGE kernel: [  118.342338] TCP: eth0: Driver has suspect GRO implementation, TCP performance may be compromised.
+Sep 16 23:05:08 DESKTOP-1R6JDGE dbus-daemon[218]: [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.6' (uid=0 pid=225 comm="/usr/lib/snapd/snapd " label="kernel")
+Sep 16 23:05:08 DESKTOP-1R6JDGE systemd[1]: Starting Time & Date Service...
+Sep 16 23:05:08 DESKTOP-1R6JDGE dbus-daemon[218]: [system] Successfully activated service 'org.freedesktop.timedate1'
+Sep 16 23:05:08 DESKTOP-1R6JDGE systemd[1]: Started Time & Date Service.
+Sep 16 23:05:08 DESKTOP-1R6JDGE snapd[225]: storehelpers.go:916: cannot refresh: snap has no updates available: "bare", "core22", "gtk-common-themes", "snapd", "ubuntu-desktop-installer"
+Sep 16 23:05:38 DESKTOP-1R6JDGE systemd[1]: systemd-timedated.service: Deactivated successfully.
+Sep 16 23:10:02 DESKTOP-1R6JDGE kernel: [  601.934005] mini_init (243): drop_caches: 1
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.241998] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.252408] Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.252572] Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db18c600'
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.253385] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.253395] cfg80211: failed to load regulatory.db
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Early/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Early/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Reporting/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Reporting/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Error/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Error/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Userdata/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Userdata/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Package/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Package/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Debconf/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Debconf/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Kernel/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Kernel/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Zdev/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Zdev/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Ad/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Ad/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Late/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.446411] block sda: the capability attribute has been deprecated.
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.722652] raid6: avx2x4   gen() 25390 MB/s
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.790655] raid6: avx2x2   gen() 23654 MB/s
+Sep 16 23:10:11 DESKTOP-1R6JDGE subiquity_event.340[340]: subiquity/Late/apply_autoinstall_config
+Sep 16 23:10:11 DESKTOP-1R6JDGE snapd[225]: storehelpers.go:916: cannot refresh: snap has no updates available: "bare", "core22", "gtk-common-themes", "snapd", "ubuntu-desktop-installer"
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.858650] raid6: avx2x1   gen() 26113 MB/s
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.858661] raid6: using algorithm avx2x1 gen() 26113 MB/s
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.926658] raid6: .... xor() 16554 MB/s, rmw enabled
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.926667] raid6: using avx2x2 recovery algorithm
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  610.929390] xor: automatically using best checksumming function   avx       
+Sep 16 23:10:11 DESKTOP-1R6JDGE kernel: [  611.078764] Btrfs loaded, zoned=yes, fsverity=no
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  654.432078] scsi 0:0:0:4: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  654.439992] sd 0:0:0:4: Attached scsi generic sg4 type 0
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  654.440192] sd 0:0:0:4: [sde] 2147483648 512-byte logical blocks: (1.10 TB/1.00 TiB)
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  654.440197] sd 0:0:0:4: [sde] 4096-byte physical blocks
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  654.440309] sd 0:0:0:4: [sde] Write Protect is off
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  654.440313] sd 0:0:0:4: [sde] Mode Sense: 0f 00 00 00
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  654.440528] sd 0:0:0:4: [sde] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  654.442408] sd 0:0:0:4: [sde] Attached SCSI disk
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  654.465477] EXT4-fs (sde): mounted filesystem 26fdb5d2-195b-4feb-8e71-b0d34078cf33 r/w with ordered data mode. Quota mode: none.
+Sep 16 23:10:55 DESKTOP-1R6JDGE systemd-udevd[3183]: sde: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/sde' failed with exit code 1.
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  654.886717] WSL (1 - init(docker-desktop)) ERROR: ConfigApplyWindowsLibPath:2058: open /etc/ld.so.conf.d/ld.wsl.conf failed 2
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  654.899164] WSL (1 - init(docker-desktop)) WARNING: /usr/share/zoneinfo/Europe/Moscow not found. Is the tzdata package installed?
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  655.067128] scsi 0:0:0:5: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  655.075103] sd 0:0:0:5: Attached scsi generic sg5 type 0
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  655.075318] sd 0:0:0:5: [sdf] 2147483648 512-byte logical blocks: (1.10 TB/1.00 TiB)
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  655.075322] sd 0:0:0:5: [sdf] 4096-byte physical blocks
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  655.075410] sd 0:0:0:5: [sdf] Write Protect is off
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  655.075414] sd 0:0:0:5: [sdf] Mode Sense: 0f 00 00 00
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  655.075555] sd 0:0:0:5: [sdf] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  655.077740] sd 0:0:0:5: [sdf] Attached SCSI disk
+Sep 16 23:10:55 DESKTOP-1R6JDGE kernel: [  655.103405] EXT4-fs (sdf): mounted filesystem 677e4e04-fb63-461f-969f-9f2a23f0f0aa r/w with ordered data mode. Quota mode: none.
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.111629] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.116529] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.117159] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.117671] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.118258] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.121795] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.122714] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.123551] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.124184] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.124843] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE systemd-udevd[3179]: sdf: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/sdf' failed with exit code 1.
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.199566] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.270052] WSL (2 - init(docker-desktop-data)) ERROR: UtilCreateProcessAndWait:685: execv(/bin/mount) failed with 2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.271329] WSL (1 - init(docker-desktop-data)) ERROR: UtilCreateProcessAndWait:707: /bin/mount failed with status 0xff00
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.272246] WSL (1 - init(docker-desktop-data)) ERROR: ConfigMountFsTab:2111: Processing /etc/fstab with mount -a failed.
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.275447] WSL (1 - init(docker-desktop-data)) ERROR: ConfigApplyWindowsLibPath:2058: open /etc/ld.so.conf.d/ld.wsl.conf failed 2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.326713] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.327831] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.328746] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.329515] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.330161] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.330788] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.331480] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.332032] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.332615] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.333388] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.334002] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.335128] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.336298] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.389683] WSL (3 - init(docker-desktop-data)) ERROR: UtilCreateProcessAndWait:685: execv(/bin/mount) failed with 2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.391398] WSL (1 - init(docker-desktop-data)) ERROR: UtilCreateProcessAndWait:707: /bin/mount failed with status 0xff00
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.394067] WSL (4 - init(docker-desktop-data)) ERROR: UtilCreateProcessAndWait:685: execv(/bin/mount) failed with 2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.395623] WSL (1 - init(docker-desktop-data)) ERROR: UtilCreateProcessAndWait:707: /bin/mount failed with status 0xff00
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.402910] WSL (1 - init(docker-desktop-data)) WARNING: /usr/share/zoneinfo/Europe/Moscow not found. Is the tzdata package installed?
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.414717] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.441388] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.443478] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.444161] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.444818] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.445756] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.447880] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.448627] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.449245] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.449848] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.450489] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.466837] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.567072] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.567748] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.568359] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.568980] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.569541] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.570172] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.570937] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.571648] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.572410] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.573342] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.574078] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.574750] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.575677] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:10:56 DESKTOP-1R6JDGE kernel: [  655.644555] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Sep 16 23:11:10 DESKTOP-1R6JDGE kernel: [  669.909200] Exception: 
+Sep 16 23:11:10 DESKTOP-1R6JDGE kernel: [  669.909209] Operation canceled @p9io.cpp:258 (AcceptAsync)
+Sep 16 23:11:10 DESKTOP-1R6JDGE kernel: [  669.909215] 
+Sep 16 23:11:10 DESKTOP-1R6JDGE kernel: [  669.932668] EXT4-fs (sde): unmounting filesystem 26fdb5d2-195b-4feb-8e71-b0d34078cf33.
+Sep 16 23:11:26 DESKTOP-1R6JDGE kernel: [  685.425072] Exception: 
+Sep 16 23:11:26 DESKTOP-1R6JDGE kernel: [  685.425085] Operation canceled @p9io.cpp:258 (AcceptAsync)
+Sep 16 23:11:26 DESKTOP-1R6JDGE kernel: [  685.425089] 
+Sep 16 23:11:26 DESKTOP-1R6JDGE kernel: [  685.451043] EXT4-fs (sdf): unmounting filesystem 677e4e04-fb63-461f-969f-9f2a23f0f0aa.
+Sep 16 23:15:04 DESKTOP-1R6JDGE systemd[1]: Starting Cleanup of Temporary Directories...
+Sep 16 23:15:04 DESKTOP-1R6JDGE systemd[1]: systemd-tmpfiles-clean.service: Deactivated successfully.
+Sep 16 23:15:04 DESKTOP-1R6JDGE systemd[1]: Finished Cleanup of Temporary Directories.
+Sep 16 23:17:01 DESKTOP-1R6JDGE CRON[4699]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
